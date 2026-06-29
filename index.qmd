@@ -1,0 +1,17 @@
+---
+title: ""
+engine: knitr
+format:
+  html:
+    body-classes: front-page
+---
+
+::: {.content-visible when-format="html"}
+<p style="text-align:center;">
+<img src="assets/images/cover/ai-systems-cover.png" style="width:75%; max-width:720px;" alt="AI Systems cover">
+</p>
+
+<p style="text-align:center; font-size:0.95rem; color:#667085;">
+Updated: {{< meta date >}}
+</p>
+:::

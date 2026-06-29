@@ -1,0 +1,27 @@
+# AI-Assisted Analysis and Reporting {#ai-analysis-reporting}
+
+:::cdi-message
+- **ID:** AI-009
+- **Type:** Applied Chapter
+- **Audience:** Data analysts and report writers
+- **Theme:** AI can accelerate analysis communication when results remain reproducible
+:::
+
+
+AI can help explain results, draft reports, create summaries, and convert technical outputs into audience-specific communication.
+
+However, the underlying analysis should remain reproducible.
+
+A CDI workflow keeps analysis outputs separate from AI-generated interpretation.
+
+## Recommended Separation
+
+```text
+Data analysis scripts
+  -> tidy result tables
+  -> visualizations
+  -> AI-assisted explanation draft
+  -> human review
+  -> final report
+```
+

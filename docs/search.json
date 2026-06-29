@@ -1,0 +1,1046 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "AI Systems",
+    "section": "",
+    "text": "Updated: Jun 2026",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.html</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html",
+    "href": "00-preface-and-overview.html",
+    "title": "Preface and Overview",
+    "section": "",
+    "text": "Why This Guide Exists\nAI is now part of everyday learning, research, analysis, writing, coding, decision-making, and professional work.\nBut using AI is not the same as building an AI system.\nA person can ask a chatbot a question and get an answer.\nThat is AI use.\nA person can design a workflow where the problem is clearly framed, the context is provided, the output is evaluated, the limitations are documented, and the final decision remains human-led.\nThat is an AI system.\nThis guide is about the second path.\nIt teaches AI as a practical system for responsible, reproducible, and impactful work.\nMany people learn AI through tools.\nThey learn prompts.\nThey learn apps.\nThey learn shortcuts.\nThat is useful, but incomplete.\nTools change quickly. Workflows, reasoning habits, evaluation practices, and documentation standards last longer.\nThe purpose of this guide is to help learners move beyond casual AI use into structured AI practice.\nThe goal is not to make AI mysterious.\nThe goal is to make AI usable, inspectable, teachable, and accountable.\nIn Complex Data Insights, AI is treated as part of a broader data and decision ecosystem.\nAI can support discovery, analysis, communication, automation, and learning. But it must remain connected to human judgment, evidence, context, and responsibility.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#the-core-philosophy",
+    "href": "00-preface-and-overview.html#the-core-philosophy",
+    "title": "Preface and Overview",
+    "section": "The Core Philosophy",
+    "text": "The Core Philosophy\nThe central philosophy of this guide is simple:\n\nAI should assist human thinking, not replace human responsibility.\n\nThis guide uses a Human–AI–Human model.\nHuman frames the problem\n        ↓\nAI assists with generation, reasoning, analysis, or automation\n        ↓\nHuman evaluates, decides, documents, and acts\nThe workflow begins with a human question and ends with a human decision.\nAI sits in the middle as an assistant, accelerator, analyst, reviewer, coder, summarizer, or workflow component.\nThis framing is important because AI outputs can be fluent without being correct. They can be useful without being complete. They can be impressive without being reliable.\nA responsible AI system must therefore include evaluation, review, and documentation from the beginning.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#relationship-to-thinking-with-ai",
+    "href": "00-preface-and-overview.html#relationship-to-thinking-with-ai",
+    "title": "Preface and Overview",
+    "section": "Relationship to Thinking with AI",
+    "text": "Relationship to Thinking with AI\nThis guide connects naturally to the earlier Thinking with AI idea, but it is not the same thing.\nThinking with AI focuses on reasoning habits:\n\nasking better questions,\nexploring ideas,\nchallenging assumptions,\nimproving explanations,\nreflecting before deciding,\nand using AI to strengthen human thinking.\n\nAI Systems is broader and more operational.\nIt asks how AI-supported work can be designed, evaluated, repeated, documented, governed, and shared.\nThe relationship can be viewed as:\nThinking with AI\n        ↓\nHuman–AI–Human reasoning loop\n        ↓\nAI Systems\n        ↓\nApplied workflows, evaluation, governance, and impact\nThinking with AI is therefore a foundation inside AI Systems.\nAI Systems extends that foundation into real workflows.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#who-this-guide-is-for",
+    "href": "00-preface-and-overview.html#who-this-guide-is-for",
+    "title": "Preface and Overview",
+    "section": "Who This Guide Is For",
+    "text": "Who This Guide Is For\nThis guide is for people who want to use AI seriously and responsibly.\nIt is especially useful for:\n\nstudents learning how to work with AI without becoming dependent on it,\nresearchers using AI to support reading, synthesis, coding, analysis, or writing,\ndata scientists building reproducible AI-assisted workflows,\neducators designing AI-aware learning activities,\nprofessionals using AI to improve productivity and communication,\nmentors training learners for an AI-enabled workplace,\nand teams that need governance, documentation, and quality control.\n\nThe guide does not assume that the reader is an AI engineer.\nIt does assume that the reader wants to think carefully, work reproducibly, and communicate limitations honestly.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#what-this-guide-is-not",
+    "href": "00-preface-and-overview.html#what-this-guide-is-not",
+    "title": "Preface and Overview",
+    "section": "What This Guide Is Not",
+    "text": "What This Guide Is Not\nThis guide is not a collection of prompt tricks.\nIt is not a list of AI tools.\nIt is not a promise that AI can solve every problem.\nIt is not a replacement for domain expertise, statistical reasoning, data science, ethics, or human judgment.\nInstead, it is a system-level guide for using AI in a structured way.\nThe focus is on workflows that can be explained, repeated, evaluated, improved, and responsibly shared.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#learning-outcomes",
+    "href": "00-preface-and-overview.html#learning-outcomes",
+    "title": "Preface and Overview",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nBy the end of this guide, the learner should be able to:\n\nExplain AI as part of a broader human-led system.\nDistinguish casual AI use from structured AI workflows.\nFrame AI tasks with clear goals, context, constraints, and expected outputs.\nDesign prompts and context packages that improve output quality.\nUse grounding materials such as data, documents, code, examples, and references.\nEvaluate AI outputs for correctness, relevance, completeness, clarity, and risk.\nBuild human-in-the-loop review workflows.\nDocument AI use transparently.\nIdentify governance, privacy, bias, and safety concerns.\nCreate reproducible AI-assisted workflows that support real work.\nCommunicate AI-supported outputs without overstating certainty.\nPrepare learners and professionals for responsible AI-enabled careers.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#the-ai-systems-architecture",
+    "href": "00-preface-and-overview.html#the-ai-systems-architecture",
+    "title": "Preface and Overview",
+    "section": "The AI Systems Architecture",
+    "text": "The AI Systems Architecture\nThis guide organizes AI work into a layered system.\nProblem\n  ↓\nContext\n  ↓\nData and Knowledge\n  ↓\nPrompt or Workflow Design\n  ↓\nAI Assistance\n  ↓\nEvaluation\n  ↓\nHuman Decision\n  ↓\nDocumentation and Impact\nEach layer matters.\nA weak problem statement produces unclear outputs.\nPoor context produces shallow responses.\nUngrounded AI work increases the risk of error.\nNo evaluation makes outputs difficult to trust.\nNo documentation makes the workflow difficult to repeat or defend.\nA strong AI system connects all of these layers.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#guide-structure",
+    "href": "00-preface-and-overview.html#guide-structure",
+    "title": "Preface and Overview",
+    "section": "Guide Structure",
+    "text": "Guide Structure\nThe guide is organized into four major sections.\n\nFoundation\nThe foundation chapters introduce AI systems thinking, AI literacy, responsible use, and problem framing.\nThese chapters establish the mindset needed before building applied workflows.\n\n\nApplied AI Workflows\nThe applied workflow chapters focus on prompt design, context design, grounding, evaluation, and human review.\nThese chapters move from general AI awareness to reproducible AI practice.\n\n\nOperational AI Systems\nThe operational chapters focus on automation, agentic workflows, AI-assisted analysis, reporting, governance, documentation, and an end-to-end case study.\nThese chapters show how AI can become part of real systems without removing human responsibility.\n\n\nGrowth and Reference\nThe final section connects AI systems to career readiness, workforce development, appendices, and references.\nThis section supports learners who want to use AI as part of long-term professional growth.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#reproducible-project-layout",
+    "href": "00-preface-and-overview.html#reproducible-project-layout",
+    "title": "Preface and Overview",
+    "section": "Reproducible Project Layout",
+    "text": "Reproducible Project Layout\nThis guide is designed as a publishable Quarto book from the beginning.\nA typical project layout is:\nai-systems/\n├── index.qmd\n├── 00-preface-and-overview.qmd\n├── 01-ai-systems-thinking.qmd\n├── 02-ai-literacy-and-responsible-use.qmd\n├── 03-problem-framing-for-ai.qmd\n├── 04-prompt-and-context-design.qmd\n├── 05-data-and-knowledge-grounding.qmd\n├── 06-evaluation-and-quality-control.qmd\n├── 07-human-in-the-loop-workflows.qmd\n├── 08-automation-and-agentic-workflows.qmd\n├── 09-ai-assisted-analysis-and-reporting.qmd\n├── 10-governance-risk-and-documentation.qmd\n├── 11-end-to-end-case-study.qmd\n├── 12-career-and-workforce-readiness.qmd\n├── 999-appendix.qmd\n├── 999-references.qmd\n├── assets/\n├── data/\n├── scripts/\n├── library/\n├── docs/\n├── _quarto.yml\n└── README.md\nThe project is intended to support both learning and publication.\nThe qmd files explain the concepts.\nThe scripts create small reproducible examples.\nThe data/ directory stores example inputs and outputs.\nThe docs/ directory stores the rendered website for GitHub Pages.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#supporting-scripts",
+    "href": "00-preface-and-overview.html#supporting-scripts",
+    "title": "Preface and Overview",
+    "section": "Supporting Scripts",
+    "text": "Supporting Scripts\nThe scaffold includes small scripts to demonstrate AI systems practice without requiring live API keys.\nThe first example workflow creates a simple AI task log, evaluates the quality of AI-supported outputs, builds a prompt registry, and plots an evaluation summary.\nbash scripts/bash/00-check-environment.sh\nbash scripts/bash/01-create-example-ai-task-log.sh\n\npython scripts/python/02-evaluate-ai-output-quality.py \\\n  data/example/ai-task-log.csv \\\n  data/results\n\npython scripts/python/03-build-prompt-registry.py \\\n  data/example/ai-task-log.csv \\\n  data/results\n\nRscript scripts/R/04-plot-evaluation-summary.R \\\n  data/results/ai-evaluation-summary.csv \\\n  data/reports\nExpected outputs include:\ndata/example/ai-task-log.csv\ndata/results/ai-evaluation-summary.csv\ndata/results/prompt-registry.csv\ndata/reports/ai-evaluation-summary.png\nThese examples are intentionally lightweight.\nThey teach the structure of responsible AI workflows without forcing learners to use paid APIs or expose secret keys.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#publication-workflow",
+    "href": "00-preface-and-overview.html#publication-workflow",
+    "title": "Preface and Overview",
+    "section": "Publication Workflow",
+    "text": "Publication Workflow\nThe guide is designed to render locally and publish through GitHub Pages.\nTo render the site:\nquarto render\nExpected output:\ndocs/index.html\nA typical Git workflow is:\ngit status\ngit add .\ngit commit -m \"Add AI Systems guide content\"\ngit push\nThe repository can then publish the rendered docs/ output using the configured GitHub Pages workflow.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#how-to-read-this-guide",
+    "href": "00-preface-and-overview.html#how-to-read-this-guide",
+    "title": "Preface and Overview",
+    "section": "How to Read This Guide",
+    "text": "How to Read This Guide\nThis guide can be read sequentially, but it is also designed as a reference.\nReaders who are new to AI should begin with the foundation chapters.\nReaders who already use AI regularly may want to focus on evaluation, human review, governance, and documentation.\nTeams building workflows may want to start with the end-to-end case study and then return to earlier chapters as needed.\nThe most important idea is repeated throughout the guide:\n\nAI work becomes stronger when it is framed, grounded, evaluated, documented, and kept human-led.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#closing-note",
+    "href": "00-preface-and-overview.html#closing-note",
+    "title": "Preface and Overview",
+    "section": "Closing Note",
+    "text": "Closing Note\nAI systems are not only technical systems.\nThey are learning systems.\nThey are communication systems.\nThey are decision-support systems.\nThey are professional systems.\nThey affect how people think, work, teach, analyze, and act.\nFor that reason, AI should be approached with both curiosity and discipline.\nThis guide begins from that balance.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface-and-overview.html#looking-ahead",
+    "href": "00-preface-and-overview.html#looking-ahead",
+    "title": "Preface and Overview",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter begins by introducing AI systems thinking.\nFrom there, we move step by step from AI literacy into problem framing, prompt and context design, data and knowledge grounding, evaluation, human review, automation, governance, reporting, and workforce readiness.\nBy the end of this guide, you should be able to move beyond isolated AI use and begin designing responsible, reproducible, human-led AI workflows.\nThe central pattern throughout the guide is the Human–AI–Human workflow:\nHuman defines the problem.\nAI assists with generation, reasoning, analysis, or automation.\nHuman evaluates, decides, documents, and acts.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Preface and Overview</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html",
+    "href": "01-ai-systems-thinking.html",
+    "title": "AI Systems Thinking",
+    "section": "",
+    "text": "Why AI Systems Thinking Matters\nAI is often introduced as a tool.\nA chatbot.\nA writing assistant.\nA coding helper.\nA search companion.\nA summarizer.\nThose uses are helpful, but they are only the beginning.\nThe real value of AI appears when it is used as part of a system.\nA system has a purpose.\nIt has inputs.\nIt has a workflow.\nIt has quality checks.\nIt has human judgment.\nIt has outputs that can be reviewed, improved, reused, and trusted.\nThis chapter introduces AI systems thinking: the habit of designing AI use around problems, people, evidence, decisions, and accountability rather than around isolated prompts.\nMany people first experience AI as a conversation.\nThey ask a question.\nThe model responds.\nThey accept, reject, or revise the answer.\nThat is useful, but it can also create a weak habit: treating AI output as the final product.\nAI systems thinking changes the question from:\ninto:\nThis shift matters because real work usually requires more than generation.\nReal work requires clarity, context, evaluation, documentation, and responsibility.\nFor example, a learner may ask AI to explain a concept.\nAn analyst may ask AI to summarize results.\nA researcher may ask AI to help structure a report.\nA professional may ask AI to draft a decision memo.\nIn each case, the AI output is not enough by itself.\nThe human still needs to frame the task, check the output, compare it with evidence, decide what to use, and explain the final result.\nThat is why CDI treats AI as part of a human-led system.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html#why-ai-systems-thinking-matters",
+    "href": "01-ai-systems-thinking.html#why-ai-systems-thinking-matters",
+    "title": "AI Systems Thinking",
+    "section": "",
+    "text": "What can AI generate?\n\n\n\nWhat workflow are we building, and where should AI assist?",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html#from-ai-tool-use-to-ai-system-design",
+    "href": "01-ai-systems-thinking.html#from-ai-tool-use-to-ai-system-design",
+    "title": "AI Systems Thinking",
+    "section": "From AI Tool Use to AI System Design",
+    "text": "From AI Tool Use to AI System Design\nTool use asks:\nCan this AI help me complete this task?\nSystem design asks:\nHow should this task be structured so AI support is useful, safe, repeatable, and reviewable?\nThe difference is important.\nA tool-use mindset often leads to one-off outputs.\nA systems mindset creates reusable workflows.\n\n\n\nTool-use mindset\nSystems mindset\n\n\n\n\nAsk a prompt\nDefine the problem\n\n\nGet an answer\nDesign a workflow\n\n\nCopy useful text\nReview and improve output\n\n\nTrust based on fluency\nTrust based on checks\n\n\nStart over each time\nReuse templates and patterns\n\n\nFocus on speed\nBalance speed, quality, and responsibility\n\n\n\nAI systems thinking does not reject simple AI use.\nIt improves it.\nA good prompt is still useful.\nBut a good prompt becomes much stronger when it sits inside a clear workflow.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html#the-human-ai-human-workflow",
+    "href": "01-ai-systems-thinking.html#the-human-ai-human-workflow",
+    "title": "AI Systems Thinking",
+    "section": "The Human-AI-Human Workflow",
+    "text": "The Human-AI-Human Workflow\nThe central pattern in this guide is the Human-AI-Human workflow.\nHuman frames the problem\n        ↓\nAI assists with generation, reasoning, analysis, or automation\n        ↓\nHuman evaluates, decides, documents, and acts\nThis pattern keeps responsibility in the right place.\nThe human is not removed from the work.\nThe human leads the work.\nAI contributes support inside the workflow.\nThe final output is reviewed, interpreted, and owned by the human or team using it.\nThis is especially important in education, research, data analysis, health, business, leadership, and public communication, where fluent output can look convincing even when it is incomplete or wrong.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html#what-counts-as-an-ai-system",
+    "href": "01-ai-systems-thinking.html#what-counts-as-an-ai-system",
+    "title": "AI Systems Thinking",
+    "section": "What Counts as an AI System?",
+    "text": "What Counts as an AI System?\nAn AI system does not have to be complex.\nIt can be small and practical.\nFor example:\nA learner uses AI to explain a concept,\nchecks the explanation against course notes,\nwrites their own summary,\nand records what they learned.\nThat is a simple AI learning system.\nAnother example:\nAn analyst gives AI a cleaned results table,\nasks for plain-language interpretation,\nchecks the interpretation against the data,\ncreates a figure,\nand writes a transparent report.\nThat is an AI-assisted analysis system.\nAnother example:\nA team creates a prompt template,\nuses it to classify support requests,\nreviews uncertain cases,\ntracks errors,\nand updates the template over time.\nThat is an operational AI workflow.\nThe common feature is not complexity.\nThe common feature is structure.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html#core-components-of-ai-systems-thinking",
+    "href": "01-ai-systems-thinking.html#core-components-of-ai-systems-thinking",
+    "title": "AI Systems Thinking",
+    "section": "Core Components of AI Systems Thinking",
+    "text": "Core Components of AI Systems Thinking\nAI systems thinking includes five core components.\nflowchart TD\n    A[Problem Framing] --&gt; B[Context and Inputs]\n    B --&gt; C[AI Assistance]\n    C --&gt; D[Human Review]\n    D --&gt; E[Decision or Output]\n    E --&gt; F[Documentation and Improvement]\n    F --&gt; A\n\nProblem Framing\nThe human defines what needs to be done and why it matters.\nA weakly framed problem produces weak AI support.\nA clearly framed problem gives the AI a useful role.\n\n\nContext and Inputs\nAI needs context.\nThis may include goals, audience, data, examples, constraints, definitions, previous decisions, or quality criteria.\nBetter context usually leads to better output.\n\n\nAI Assistance\nAI can assist with generation, summarization, comparison, coding, analysis planning, translation, explanation, documentation, and workflow design.\nBut assistance is not the same as authority.\n\n\nHuman Review\nThe human checks whether the output is accurate, appropriate, complete, and useful.\nReview may include fact-checking, data validation, expert judgment, ethical reflection, or stakeholder review.\n\n\nDocumentation and Improvement\nA system improves when people document what worked, what failed, and what should change next time.\nThis can be as simple as saving a prompt template or as formal as maintaining an evaluation log.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html#ai-systems-are-socio-technical-systems",
+    "href": "01-ai-systems-thinking.html#ai-systems-are-socio-technical-systems",
+    "title": "AI Systems Thinking",
+    "section": "AI Systems Are Socio-Technical Systems",
+    "text": "AI Systems Are Socio-Technical Systems\nAI systems are not only technical.\nThey are socio-technical.\nThis means they include both technology and people.\nThey include:\n\nusers,\nlearners,\nteams,\norganizations,\ndata,\ntools,\npolicies,\nincentives,\nrisks,\ndecisions,\nand consequences.\n\nA model may generate text, code, or analysis.\nBut people decide where the model is used, what data it sees, what outputs are accepted, and what actions follow.\nThat is why AI systems thinking must include human responsibility, not only technical capability.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html#where-thinking-with-ai-fits",
+    "href": "01-ai-systems-thinking.html#where-thinking-with-ai-fits",
+    "title": "AI Systems Thinking",
+    "section": "Where Thinking with AI Fits",
+    "text": "Where Thinking with AI Fits\nThinking with AI and AI Systems are closely related, but they are not identical.\nThinking with AI focuses on how a person uses AI to think better.\nIt supports questioning, reasoning, reflection, learning, creativity, critique, and decision-making.\nAI Systems expands that mindset into workflows that can be repeated, evaluated, documented, and shared.\nThinking with AI\n        ↓\nHuman-AI-Human reasoning loop\n        ↓\nAI Systems\n        ↓\nReusable workflows, evaluation, governance, and impact\nIn other words, Thinking with AI is the reasoning layer.\nAI Systems is the workflow layer.\nBoth belong together.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html#a-practical-example",
+    "href": "01-ai-systems-thinking.html#a-practical-example",
+    "title": "AI Systems Thinking",
+    "section": "A Practical Example",
+    "text": "A Practical Example\nSuppose a learner wants to understand a difficult topic.\nA simple AI interaction may look like this:\nExplain machine learning in simple terms.\nThat may produce a useful answer.\nBut a systems-thinking version is stronger:\nGoal: Understand machine learning well enough to explain it to beginners.\nAudience: Secondary school or early university learners.\nTask: Explain the concept using simple language, one analogy, and one practical example.\nQuality check: Avoid exaggeration. Clearly distinguish data, model, training, prediction, and evaluation.\nOutput: A short teaching note followed by three review questions.\nThe second version gives the AI a role inside a learning workflow.\nIt defines the goal.\nIt defines the audience.\nIt defines quality expectations.\nIt defines the output.\nThe learner can then review, revise, and save the final explanation.\nThat is AI systems thinking in practice.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html#common-failure-modes",
+    "href": "01-ai-systems-thinking.html#common-failure-modes",
+    "title": "AI Systems Thinking",
+    "section": "Common Failure Modes",
+    "text": "Common Failure Modes\nAI systems thinking helps reduce common failures.\n\n\n\n\n\n\n\n\nFailure mode\nWhat happens\nSystems response\n\n\n\n\nVague prompting\nOutput is generic\nClarify goal, audience, and constraints\n\n\nOver-trust\nFluent output is accepted too quickly\nAdd review and evidence checks\n\n\nNo documentation\nGood workflows are lost\nSave prompts, decisions, and outputs\n\n\nNo evaluation\nErrors repeat\nTrack quality and failure patterns\n\n\nHuman removed too early\nAI output becomes unowned\nKeep human review and responsibility\n\n\nTool chasing\nFocus shifts to novelty\nReturn to the problem and workflow\n\n\n\nThe goal is not to make AI perfect.\nThe goal is to design workflows where AI can be useful without removing judgment.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html#cdi-working-principle",
+    "href": "01-ai-systems-thinking.html#cdi-working-principle",
+    "title": "AI Systems Thinking",
+    "section": "CDI Working Principle",
+    "text": "CDI Working Principle\nIn CDI guides, AI is treated as a capability inside a broader data, learning, and decision system.\nThe working principle is:\nAI should make human work clearer, faster, more reflective, and more reproducible.\nIt should not replace thinking, evidence, accountability, or communication.\nThis principle will guide the rest of the book.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html#chapter-summary",
+    "href": "01-ai-systems-thinking.html#chapter-summary",
+    "title": "AI Systems Thinking",
+    "section": "Chapter Summary",
+    "text": "Chapter Summary\nAI systems thinking moves us beyond isolated AI prompts.\nIt asks us to design workflows where AI has a clear role, humans remain responsible, and outputs can be reviewed and improved.\nThe Human-AI-Human workflow is the central pattern:\nHuman frames the problem.\nAI assists.\nHuman evaluates, decides, documents, and acts.\nThis chapter also positioned Thinking with AI as the reasoning layer and AI Systems as the workflow layer.\nTogether, they support responsible, reproducible, human-led AI use.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "01-ai-systems-thinking.html#looking-ahead",
+    "href": "01-ai-systems-thinking.html#looking-ahead",
+    "title": "AI Systems Thinking",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter introduces AI literacy and responsible use.\nWe will move from systems thinking into the practical knowledge learners need to understand what AI can do, where it can fail, and how to use it safely and productively.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI Systems Thinking</span>"
+    ]
+  },
+  {
+    "objectID": "02-ai-literacy-and-responsible-use.html",
+    "href": "02-ai-literacy-and-responsible-use.html",
+    "title": "AI Literacy and Responsible Use",
+    "section": "",
+    "text": "Why AI Literacy Matters\nAI literacy is not the same as knowing how to use a chatbot.\nA person can write prompts every day and still misunderstand what AI is doing.\nA person can receive useful answers from AI and still fail to evaluate whether those answers are accurate, safe, complete, or appropriate for the situation.\nAI literacy means understanding AI well enough to use it responsibly.\nIt means knowing when AI can help.\nIt means knowing when human judgment matters more.\nIt means knowing how to ask better questions, evaluate outputs, protect sensitive information, and avoid turning AI assistance into unsupported claims.\nIn this guide, AI literacy is not treated as a small beginner topic.\nIt is the foundation for every responsible AI system.\nAI systems can generate text, summarize documents, draft code, organize ideas, assist with analysis, and support decision-making workflows.\nBut AI systems can also produce confident errors.\nThey can omit important context.\nThey can reflect bias from training data or user framing.\nThey can overgeneralize.\nThey can create outputs that sound polished but are not ready to use.\nThis is why AI literacy must come before automation.\nA weak user with a powerful AI tool can produce weak work faster.\nA skilled user with a well-designed workflow can use AI to improve clarity, productivity, reasoning, documentation, and system design.\nThe difference is not only the tool.\nThe difference is the human workflow around the tool.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>AI Literacy and Responsible Use</span>"
+    ]
+  },
+  {
+    "objectID": "02-ai-literacy-and-responsible-use.html#ai-literacy-is-a-human-skill",
+    "href": "02-ai-literacy-and-responsible-use.html#ai-literacy-is-a-human-skill",
+    "title": "AI Literacy and Responsible Use",
+    "section": "AI Literacy Is a Human Skill",
+    "text": "AI Literacy Is a Human Skill\nAI literacy includes several practical abilities.\nThese abilities help a person use AI as an assistant rather than as an unchecked authority.\nAI literacy includes the ability to:\n\n1. Understand what AI tools are good at.\n2. Understand where AI tools can fail.\n3. Frame tasks clearly.\n4. Provide useful context.\n5. Evaluate outputs critically.\n6. Protect private and sensitive information.\n7. Document how AI was used.\n8. Decide when expert review is needed.\nThis is why AI literacy belongs inside the Human–AI–Human model.\nThe human begins the process by defining the task.\nThe AI assists.\nThe human returns to evaluate, revise, decide, and act.\nflowchart LR\n    A[Human defines task and context] --&gt; B[AI assists]\n    B --&gt; C[Human evaluates output]\n    C --&gt; D[Human decides next action]\n    D --&gt; E[Documentation and accountability]\nAI literacy is the skill that keeps this loop responsible.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>AI Literacy and Responsible Use</span>"
+    ]
+  },
+  {
+    "objectID": "02-ai-literacy-and-responsible-use.html#what-ai-can-do-well",
+    "href": "02-ai-literacy-and-responsible-use.html#what-ai-can-do-well",
+    "title": "AI Literacy and Responsible Use",
+    "section": "What AI Can Do Well",
+    "text": "What AI Can Do Well\nAI tools are useful when the task benefits from language, pattern recognition, structured thinking, summarization, synthesis, or repetitive transformation.\nExamples include:\nUseful AI-supported tasks:\n\n- Drafting an outline\n- Summarizing a document\n- Rewriting text for clarity\n- Creating checklists\n- Explaining unfamiliar concepts\n- Brainstorming alternatives\n- Generating first-pass code\n- Reviewing code structure\n- Turning notes into documentation\n- Comparing options\n- Designing workflows\n- Creating templates\nThese are powerful uses.\nBut most of them are not final-answer tasks.\nThey are support tasks.\nAI can accelerate the work, but the human remains responsible for whether the output is correct, complete, ethical, and appropriate.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>AI Literacy and Responsible Use</span>"
+    ]
+  },
+  {
+    "objectID": "02-ai-literacy-and-responsible-use.html#what-ai-does-not-guarantee",
+    "href": "02-ai-literacy-and-responsible-use.html#what-ai-does-not-guarantee",
+    "title": "AI Literacy and Responsible Use",
+    "section": "What AI Does Not Guarantee",
+    "text": "What AI Does Not Guarantee\nAI output should not be treated as guaranteed truth.\nAI does not automatically guarantee:\nAI does not guarantee:\n\n- factual accuracy\n- completeness\n- fairness\n- privacy protection\n- legal correctness\n- medical correctness\n- financial correctness\n- statistical validity\n- source reliability\n- reproducibility\n- suitability for a specific audience\nThis does not make AI useless.\nIt means AI must be used inside a system that includes evaluation.\nIn CDI guides, we treat AI output like any other analytical output.\nIt must be inspected.\nIt must be tested.\nIt must be interpreted in context.\nIt must be documented before it becomes part of a decision.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>AI Literacy and Responsible Use</span>"
+    ]
+  },
+  {
+    "objectID": "02-ai-literacy-and-responsible-use.html#responsible-use-starts-with-task-classification",
+    "href": "02-ai-literacy-and-responsible-use.html#responsible-use-starts-with-task-classification",
+    "title": "AI Literacy and Responsible Use",
+    "section": "Responsible Use Starts With Task Classification",
+    "text": "Responsible Use Starts With Task Classification\nNot every AI task carries the same level of risk.\nA low-risk task may only need a quick review.\nA high-risk task may require source verification, expert review, privacy checks, and formal documentation.\nOne practical habit is to classify the task before using AI.\nLow-risk tasks:\n- brainstorming titles\n- improving grammar\n- summarizing personal notes\n- drafting non-sensitive outlines\n\nModerate-risk tasks:\n- drafting public educational content\n- creating code for analysis\n- interpreting a dataset\n- preparing internal documentation\n\nHigh-risk tasks:\n- medical, legal, or financial advice\n- decisions affecting people\n- clinical interpretation\n- hiring or evaluation decisions\n- use of private or sensitive data\n- claims that require strong evidence\nThe higher the risk, the stronger the review process must be.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>AI Literacy and Responsible Use</span>"
+    ]
+  },
+  {
+    "objectID": "02-ai-literacy-and-responsible-use.html#the-responsible-ai-use-checklist",
+    "href": "02-ai-literacy-and-responsible-use.html#the-responsible-ai-use-checklist",
+    "title": "AI Literacy and Responsible Use",
+    "section": "The Responsible AI Use Checklist",
+    "text": "The Responsible AI Use Checklist\nBefore using AI output, ask the following questions.\nResponsible AI use checklist:\n\n[ ] Did I define the task clearly?\n[ ] Did I provide enough context?\n[ ] Did I avoid sharing sensitive information unnecessarily?\n[ ] Did I check the output for factual errors?\n[ ] Did I check whether sources are needed?\n[ ] Did I check whether expert review is required?\n[ ] Did I revise the output for my actual audience?\n[ ] Did I document how AI was used when appropriate?\n[ ] Did I remain responsible for the final decision?\nThis checklist is simple, but it changes how AI is used.\nIt moves the user from passive acceptance to active evaluation.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>AI Literacy and Responsible Use</span>"
+    ]
+  },
+  {
+    "objectID": "02-ai-literacy-and-responsible-use.html#privacy-and-sensitive-information",
+    "href": "02-ai-literacy-and-responsible-use.html#privacy-and-sensitive-information",
+    "title": "AI Literacy and Responsible Use",
+    "section": "Privacy and Sensitive Information",
+    "text": "Privacy and Sensitive Information\nResponsible AI use requires careful handling of private and sensitive information.\nA practical rule is to avoid sharing unnecessary details.\nInstead of pasting sensitive raw information into an AI tool, consider whether the task can be reframed using synthetic, anonymized, or summarized data.\nUnsafe pattern:\nPaste private records directly into an AI tool without considering privacy.\n\nSafer pattern:\nRemove identifiers, summarize the structure, or use synthetic examples when the real details are not needed.\nThis is especially important for clinical, educational, financial, employment, and personal data.\nIn AI Systems, privacy is not an afterthought.\nIt is part of workflow design.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>AI Literacy and Responsible Use</span>"
+    ]
+  },
+  {
+    "objectID": "02-ai-literacy-and-responsible-use.html#from-ai-literacy-to-ai-systems",
+    "href": "02-ai-literacy-and-responsible-use.html#from-ai-literacy-to-ai-systems",
+    "title": "AI Literacy and Responsible Use",
+    "section": "From AI Literacy to AI Systems",
+    "text": "From AI Literacy to AI Systems\nAI literacy begins with individual responsibility.\nAI systems extend that responsibility into repeatable workflows.\nThe difference looks like this:\nAI literacy question:\nCan I use this AI tool responsibly for this task?\n\nAI systems question:\nCan this AI-supported workflow be repeated, evaluated, documented, and improved?\nThis distinction matters.\nA literate AI user can produce better individual outputs.\nA well-designed AI system can produce better organizational workflows.\nThe goal of this guide is to move from the first to the second.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>AI Literacy and Responsible Use</span>"
+    ]
+  },
+  {
+    "objectID": "02-ai-literacy-and-responsible-use.html#common-failure-modes",
+    "href": "02-ai-literacy-and-responsible-use.html#common-failure-modes",
+    "title": "AI Literacy and Responsible Use",
+    "section": "Common Failure Modes",
+    "text": "Common Failure Modes\nMany AI problems are not caused by the model alone.\nThey are caused by poor workflow design.\nCommon failure modes include:\nCommon failure modes:\n\n1. Unclear task framing\n2. Missing context\n3. Overtrusting fluent output\n4. No evaluation step\n5. No documentation\n6. No privacy review\n7. No human ownership\n8. Using AI for a task that requires expert judgment\n9. Automating before understanding the workflow\n10. Treating AI output as a finished product\nThese failure modes are preventable.\nThe solution is not to avoid AI.\nThe solution is to design better human-led systems around AI.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>AI Literacy and Responsible Use</span>"
+    ]
+  },
+  {
+    "objectID": "02-ai-literacy-and-responsible-use.html#practical-example-rewriting-an-output-responsibly",
+    "href": "02-ai-literacy-and-responsible-use.html#practical-example-rewriting-an-output-responsibly",
+    "title": "AI Literacy and Responsible Use",
+    "section": "Practical Example: Rewriting an Output Responsibly",
+    "text": "Practical Example: Rewriting an Output Responsibly\nImagine a learner asks AI to summarize a technical article.\nA weak workflow might look like this:\nPrompt:\nSummarize this article.\n\nAction:\nCopy the AI summary into a report.\nA stronger workflow looks like this:\nPrompt:\nSummarize this article for a beginner audience.\nHighlight the main claim, key evidence, limitations, and any terms that need explanation.\n\nReview:\nCompare the summary with the original article.\nCheck whether limitations were included.\nRevise unclear language.\nAdd citation or source information.\nDocument that AI was used for first-pass summarization.\nThe tool may be the same.\nThe system is different.\nThe second workflow is more responsible because it includes context, evaluation, revision, and documentation.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>AI Literacy and Responsible Use</span>"
+    ]
+  },
+  {
+    "objectID": "02-ai-literacy-and-responsible-use.html#key-takeaways",
+    "href": "02-ai-literacy-and-responsible-use.html#key-takeaways",
+    "title": "AI Literacy and Responsible Use",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\nAI literacy is the foundation of responsible AI systems.\nAI can assist with many tasks, but it does not remove the need for human judgment.\nResponsible use requires task framing, privacy awareness, output evaluation, and documentation.\nThe Human–AI–Human workflow helps keep AI use human-led.\nThe next step is to move from responsible use into problem framing, where we define what should and should not become an AI-supported task.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>AI Literacy and Responsible Use</span>"
+    ]
+  },
+  {
+    "objectID": "02-ai-literacy-and-responsible-use.html#looking-ahead",
+    "href": "02-ai-literacy-and-responsible-use.html#looking-ahead",
+    "title": "AI Literacy and Responsible Use",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter focuses on problem framing for AI.\nWe will move from responsible use into the practical skill of deciding what problem is being solved, who the workflow serves, what success looks like, and whether AI is appropriate for the task.\nThis is where AI work begins to shift from tool use into system design.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>AI Literacy and Responsible Use</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html",
+    "href": "03-problem-framing-for-ai.html",
+    "title": "Problem Framing for AI",
+    "section": "",
+    "text": "Learning Outcomes\nAI systems do not begin with prompts.\nThey begin with problems.\nBefore a model is asked to summarize, generate, classify, analyze, automate, or recommend, a human must decide what problem is being addressed, why it matters, who will use the result, and how success will be judged.\nThis chapter focuses on problem framing for AI.\nProblem framing is the step where a broad need is converted into a clear, bounded, responsible, and evaluable AI task.\nIt is where the Human–AI–Human workflow begins.\nIf the first human step is weak, the rest of the workflow becomes unstable.\nA vague problem produces vague prompts.\nA vague prompt produces unreliable outputs.\nUnreliable outputs create confusion, rework, or risk.\nThe goal of this chapter is to help you slow down before using AI and define the work clearly enough that AI assistance becomes useful, reviewable, and responsible.\nBy the end of this chapter, you should be able to:",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#learning-outcomes",
+    "href": "03-problem-framing-for-ai.html#learning-outcomes",
+    "title": "Problem Framing for AI",
+    "section": "",
+    "text": "distinguish a broad goal from an AI-ready task;\ndefine the user, purpose, input, output, and decision context for an AI workflow;\nidentify whether a task is appropriate for AI assistance;\nclassify AI tasks by risk, complexity, and required human review;\nconvert an unclear AI request into a structured problem statement;\nprepare a problem-framing template that can be reused across CDI AI workflows.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#why-problem-framing-matters",
+    "href": "03-problem-framing-for-ai.html#why-problem-framing-matters",
+    "title": "Problem Framing for AI",
+    "section": "Why Problem Framing Matters",
+    "text": "Why Problem Framing Matters\nMany AI failures are not model failures.\nThey are framing failures.\nThe user asks the wrong question.\nThe context is incomplete.\nThe expected output is unclear.\nThe audience is not defined.\nThe risk level is underestimated.\nThe result is used for a decision it was not designed to support.\nAI tools can produce fluent answers even when the task is poorly framed. That fluency can hide uncertainty, missing context, or weak assumptions.\nProblem framing protects the workflow by making the human intention explicit before AI enters the process.\nIn CDI terms, problem framing turns AI use from an isolated interaction into part of a system.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#from-broad-goal-to-ai-ready-task",
+    "href": "03-problem-framing-for-ai.html#from-broad-goal-to-ai-ready-task",
+    "title": "Problem Framing for AI",
+    "section": "From Broad Goal to AI-Ready Task",
+    "text": "From Broad Goal to AI-Ready Task\nA broad goal is usually too large for direct AI use.\nFor example:\nHelp me improve this report.\nThis may be useful as a conversation starter, but it is not yet an AI-ready task.\nA better AI-ready task is more specific:\nReview this report introduction for clarity, audience fit, and logical flow.\nDo not rewrite the technical findings.\nReturn three sections:\n1. strengths,\n2. unclear areas,\n3. suggested revision priorities.\nThe second version gives the AI a defined role, a scope, constraints, and an expected output format.\nThe human still decides what to accept.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#the-cdi-problem-framing-pattern",
+    "href": "03-problem-framing-for-ai.html#the-cdi-problem-framing-pattern",
+    "title": "Problem Framing for AI",
+    "section": "The CDI Problem-Framing Pattern",
+    "text": "The CDI Problem-Framing Pattern\nA practical AI problem statement should answer seven questions.\n1. What is the real-world problem?\n2. Who is the intended user or audience?\n3. What input will the AI receive?\n4. What should the AI produce?\n5. What should the AI not do?\n6. How will the output be evaluated?\n7. What human decision or action follows?\nThese questions keep AI work connected to purpose, context, and review.\nThey also make the task easier to reproduce later.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#example-weak-vs-strong-framing",
+    "href": "03-problem-framing-for-ai.html#example-weak-vs-strong-framing",
+    "title": "Problem Framing for AI",
+    "section": "Example: Weak vs Strong Framing",
+    "text": "Example: Weak vs Strong Framing\nWeak framing:\nUse AI to analyze survey responses.\nThis is too broad.\nIt does not say what kind of analysis is needed, what the survey is about, what outputs are expected, or how the results will be used.\nStronger framing:\nWe have short-text survey responses from training participants.\nThe goal is to identify common themes about what learners found useful and what they found confusing.\nThe AI should group responses into themes, provide short labels, and include representative examples.\nThe AI should not infer demographic information or make claims beyond the provided responses.\nA human reviewer will check the themes before they are included in the final report.\nThis version is clearer because it defines the purpose, input, output, limits, and review step.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#task-type-matters",
+    "href": "03-problem-framing-for-ai.html#task-type-matters",
+    "title": "Problem Framing for AI",
+    "section": "Task Type Matters",
+    "text": "Task Type Matters\nNot all AI tasks are the same.\nA task may involve:\n\nsummarization;\ndrafting;\nclassification;\nextraction;\ncomparison;\nbrainstorming;\ntranslation;\ncode assistance;\ndata interpretation;\nworkflow automation;\ndecision support.\n\nEach task type requires different framing.\nSummarization requires source boundaries.\nDrafting requires audience and tone.\nExtraction requires fields and rules.\nClassification requires categories and examples.\nData interpretation requires assumptions and limits.\nDecision support requires strong human review.\nThe task type determines the prompt structure, evaluation strategy, and risk controls.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#ai-task-risk-levels",
+    "href": "03-problem-framing-for-ai.html#ai-task-risk-levels",
+    "title": "Problem Framing for AI",
+    "section": "AI Task Risk Levels",
+    "text": "AI Task Risk Levels\nA useful CDI AI workflow separates low-risk tasks from higher-risk tasks.\nLow risk\n- brainstorming titles\n- summarizing non-sensitive public text\n- improving grammar\n- generating study questions\n\nModerate risk\n- summarizing internal notes\n- drafting professional communication\n- extracting information from documents\n- preparing analytical interpretations\n\nHigh risk\n- medical, legal, financial, or safety-related advice\n- decisions affecting people, eligibility, employment, or access\n- automated judgments without human review\n- use of sensitive or private data\nHigher-risk tasks require stronger constraints, better documentation, and more human review.\nIn some cases, AI should support the workflow but not produce the final answer alone.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#the-human-decision-context",
+    "href": "03-problem-framing-for-ai.html#the-human-decision-context",
+    "title": "Problem Framing for AI",
+    "section": "The Human Decision Context",
+    "text": "The Human Decision Context\nEvery AI task should be connected to a human decision context.\nAsk:\nWhat will someone do with the AI output?\nWill they publish it?\nWill they send it to someone?\nWill they use it to make a decision?\nWill they use it to prioritize work?\nWill they use it to interpret data?\nThe more consequential the downstream action, the more careful the problem framing must be.\nThe AI output is not the endpoint.\nThe human action after the AI output is the endpoint.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#a-reusable-problem-framing-template",
+    "href": "03-problem-framing-for-ai.html#a-reusable-problem-framing-template",
+    "title": "Problem Framing for AI",
+    "section": "A Reusable Problem-Framing Template",
+    "text": "A Reusable Problem-Framing Template\nUse this template before building a prompt or workflow.\nProject or workflow name:\n\nProblem:\nWhat real-world problem are we trying to address?\n\nAudience or user:\nWho will use the output?\n\nAI task type:\nIs this summarization, drafting, extraction, classification, analysis, automation, or decision support?\n\nInput:\nWhat information will be provided to the AI?\n\nExpected output:\nWhat should the AI return?\n\nBoundaries:\nWhat should the AI avoid doing?\n\nRisk level:\nIs this low, moderate, or high risk?\n\nEvaluation:\nHow will we check whether the output is good enough?\n\nHuman review:\nWho reviews the output before it is used?\n\nFinal human action:\nWhat decision, communication, report, or workflow step follows?\nThis template can be saved as part of project documentation.\nIt can also be used before creating prompt libraries, automation scripts, or AI-assisted reports.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#problem-framing-before-prompting",
+    "href": "03-problem-framing-for-ai.html#problem-framing-before-prompting",
+    "title": "Problem Framing for AI",
+    "section": "Problem Framing Before Prompting",
+    "text": "Problem Framing Before Prompting\nPrompt design is easier after problem framing.\nWithout framing, prompt writing becomes guesswork.\nWith framing, the prompt can inherit the structure of the task.\nFor example, a framed task can be converted into a prompt like this:\nRole:\nYou are helping review short-text survey responses from a training workshop.\n\nTask:\nIdentify common themes about what learners found useful and what they found confusing.\n\nInput:\nThe responses are provided below.\n\nOutput format:\nReturn a table with theme, description, example response, and reviewer note.\n\nBoundaries:\nDo not infer demographic information.\nDo not make claims beyond the provided text.\n\nReview expectation:\nThe output will be checked by a human before reporting.\nThe prompt becomes stronger because the problem was framed first.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#common-framing-mistakes",
+    "href": "03-problem-framing-for-ai.html#common-framing-mistakes",
+    "title": "Problem Framing for AI",
+    "section": "Common Framing Mistakes",
+    "text": "Common Framing Mistakes\nCommon mistakes include:\nMistake 1: Asking AI to solve a problem before defining the problem.\nMistake 2: Giving AI a task without identifying the audience.\nMistake 3: Asking for analysis without explaining how the result will be used.\nMistake 4: Treating a high-risk decision as a simple writing task.\nMistake 5: Forgetting to define what the AI should not do.\nMistake 6: Skipping human review because the output sounds confident.\nThese mistakes are preventable.\nThe solution is not necessarily a more complex prompt.\nThe solution is a clearer problem frame.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#mini-case-study-framing-an-ai-reporting-task",
+    "href": "03-problem-framing-for-ai.html#mini-case-study-framing-an-ai-reporting-task",
+    "title": "Problem Framing for AI",
+    "section": "Mini Case Study: Framing an AI Reporting Task",
+    "text": "Mini Case Study: Framing an AI Reporting Task\nSuppose a team wants to use AI to help prepare a monthly project update.\nA weak request might be:\nWrite a project update using these notes.\nA stronger problem frame might be:\nProblem:\nThe team needs a concise monthly project update for internal stakeholders.\n\nAudience:\nProject leads and collaborators who need progress, blockers, and next steps.\n\nInput:\nMeeting notes, task list, and recent completed activities.\n\nExpected output:\nA structured update with three sections: progress, blockers, and next steps.\n\nBoundaries:\nDo not invent progress that is not in the notes.\nDo not assign blame.\nDo not include private comments.\n\nRisk level:\nModerate, because the update may influence stakeholder expectations.\n\nEvaluation:\nA human reviewer checks accuracy against the notes before sending.\n\nFinal action:\nThe reviewed update is sent to stakeholders.\nThis framing makes the AI task clearer, safer, and easier to evaluate.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#practical-exercise",
+    "href": "03-problem-framing-for-ai.html#practical-exercise",
+    "title": "Problem Framing for AI",
+    "section": "Practical Exercise",
+    "text": "Practical Exercise\nChoose one AI task you currently do or want to do.\nBefore writing a prompt, complete the problem-framing template.\nThen rewrite your original request as an AI-ready task.\nUse this structure:\nOriginal request:\n\nFramed problem:\n\nAI-ready task:\n\nRisk level:\n\nRequired human review:\nThe goal is not to make the prompt longer.\nThe goal is to make the work clearer.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#chapter-summary",
+    "href": "03-problem-framing-for-ai.html#chapter-summary",
+    "title": "Problem Framing for AI",
+    "section": "Chapter Summary",
+    "text": "Chapter Summary\nProblem framing is the first step in responsible AI systems work.\nIt defines the purpose, audience, input, output, boundaries, evaluation method, and human decision context.\nA well-framed AI task is easier to prompt, easier to evaluate, and safer to use.\nThe Human–AI–Human workflow begins with the human responsibility to define the problem clearly.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "03-problem-framing-for-ai.html#looking-ahead",
+    "href": "03-problem-framing-for-ai.html#looking-ahead",
+    "title": "Problem Framing for AI",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter moves from problem framing to prompt and context design.\nWe will use the structure developed here to build clearer prompts, provide better context, define useful constraints, and prepare AI interactions that can be reviewed and reused.",
+    "crumbs": [
+      "Foundation",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Problem Framing for AI</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html",
+    "href": "04-prompt-and-context-design.html",
+    "title": "Prompt and Context Design",
+    "section": "",
+    "text": "Chapter Purpose\nAI systems do not begin with prompts.\nThey begin with intent.\nA prompt is only the visible instruction given to an AI tool. Behind every useful prompt is a human decision about the task, the audience, the context, the constraints, the expected output, and the level of review required.\nThis chapter introduces prompt and context design as a practical system skill.\nThe goal is not to memorize prompt formulas.\nThe goal is to design instructions that help AI tools produce outputs that are useful, reviewable, and aligned with the human purpose of the work.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#learning-outcomes",
+    "href": "04-prompt-and-context-design.html#learning-outcomes",
+    "title": "Prompt and Context Design",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nBy the end of this chapter, you should be able to:\n\nExplain why prompts are only one part of an AI workflow.\nDistinguish between a weak prompt and a well-framed task instruction.\nIdentify the types of context an AI system needs to produce useful outputs.\nUse a reusable prompt structure for analysis, writing, summarization, planning, and decision support.\nDesign prompts that make outputs easier to evaluate.\nApply the Human–AI–Human workflow to prompt design.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#prompting-is-not-magic",
+    "href": "04-prompt-and-context-design.html#prompting-is-not-magic",
+    "title": "Prompt and Context Design",
+    "section": "Prompting Is Not Magic",
+    "text": "Prompting Is Not Magic\nA weak AI workflow treats prompting as trial and error.\nThe user asks something vague.\nThe AI gives a broad answer.\nThe user asks again.\nThe AI guesses again.\nThis may work for casual exploration, but it is not enough for reliable work.\nIn a CDI AI Systems workflow, prompting is not magic. It is structured communication.\nA good prompt tells the AI system:\n\nwhat task is being performed,\nwhy the task matters,\nwhat context should be used,\nwhat constraints must be respected,\nwhat form the output should take,\nand how the output will be reviewed.\n\nThe better the task design, the easier the output is to evaluate.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#the-humanaihuman-prompting-loop",
+    "href": "04-prompt-and-context-design.html#the-humanaihuman-prompting-loop",
+    "title": "Prompt and Context Design",
+    "section": "The Human–AI–Human Prompting Loop",
+    "text": "The Human–AI–Human Prompting Loop\nPrompt and context design follows the Human–AI–Human pattern.\nHuman frames the task and supplies context\n        ↓\nAI generates, analyzes, reorganizes, or drafts\n        ↓\nHuman evaluates, edits, verifies, and decides\nThis loop matters because the AI output is not the final authority.\nThe output is a working artifact.\nThe human remains responsible for deciding whether the output is correct, useful, ethical, and appropriate for the situation.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#from-question-to-task",
+    "href": "04-prompt-and-context-design.html#from-question-to-task",
+    "title": "Prompt and Context Design",
+    "section": "From Question to Task",
+    "text": "From Question to Task\nMany weak prompts are weak because they are written as questions instead of tasks.\nA question asks for an answer.\nA task defines work to be done.\nFor example:\nWeak question:\nExplain AI governance.\n\nBetter task:\nExplain AI governance for a beginner audience in 5 short sections. Focus on why governance matters in organizations that use AI for analysis, writing, decision support, and automation. Avoid legal jargon. End with a practical checklist.\nThe second version gives the AI system a clearer job.\nIt defines the audience, scope, structure, tone, and expected output.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#the-cdi-prompt-structure",
+    "href": "04-prompt-and-context-design.html#the-cdi-prompt-structure",
+    "title": "Prompt and Context Design",
+    "section": "The CDI Prompt Structure",
+    "text": "The CDI Prompt Structure\nA reusable prompt structure can help make AI work more consistent.\nThe following structure can be adapted across many tasks.\nTask:\nWhat should the AI do?\n\nContext:\nWhat background information should the AI use?\n\nAudience:\nWho is the output for?\n\nConstraints:\nWhat should the AI avoid, include, or respect?\n\nOutput format:\nWhat should the result look like?\n\nReview criteria:\nHow will the human judge whether the output is good enough?\nThis structure is not a rigid formula.\nIt is a thinking aid.\nIt helps the human decide what information is needed before asking the AI to act.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#example-rewriting-a-technical-explanation",
+    "href": "04-prompt-and-context-design.html#example-rewriting-a-technical-explanation",
+    "title": "Prompt and Context Design",
+    "section": "Example: Rewriting a Technical Explanation",
+    "text": "Example: Rewriting a Technical Explanation\nA vague prompt may produce a generic result.\nRewrite this more clearly.\nA stronger prompt gives context and review criteria.\nTask:\nRewrite the following technical explanation so that it is clear to a non-technical project manager.\n\nContext:\nThe explanation describes why AI-generated summaries must be reviewed before being used in a report.\n\nAudience:\nA project manager who understands business workflows but does not have a machine learning background.\n\nConstraints:\nUse plain language. Do not overpromise AI accuracy. Keep the explanation under 200 words.\n\nOutput format:\nReturn one revised paragraph followed by three bullet points.\n\nReview criteria:\nThe output should be accurate, easy to understand, and clear about the need for human review.\nThis prompt is easier to evaluate because the expectations are explicit.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#context-is-part-of-the-system",
+    "href": "04-prompt-and-context-design.html#context-is-part-of-the-system",
+    "title": "Prompt and Context Design",
+    "section": "Context Is Part of the System",
+    "text": "Context Is Part of the System\nAI tools can only respond based on the information available to them.\nWhen context is missing, the AI may fill gaps with assumptions.\nSometimes those assumptions are useful.\nSometimes they are wrong.\nContext design asks: what does the AI need to know to complete this task well?\nUseful context may include:\n\nproject purpose,\ntarget audience,\ndefinitions,\nexamples,\nsource material,\ndata tables,\nconstraints,\nprior decisions,\nformatting expectations,\nand quality standards.\n\nThe goal is not to overload the AI with everything.\nThe goal is to provide the context that changes the quality of the answer.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#types-of-context",
+    "href": "04-prompt-and-context-design.html#types-of-context",
+    "title": "Prompt and Context Design",
+    "section": "Types of Context",
+    "text": "Types of Context\nDifferent AI tasks require different types of context.\n\n\n\n\n\n\n\n\nContext type\nPurpose\nExample\n\n\n\n\nTask context\nDefines the work\n“Summarize this meeting transcript into decisions and action items.”\n\n\nDomain context\nDefines the subject area\n“This is for a clinical data management workflow.”\n\n\nAudience context\nDefines the reader\n“Write for public health analysts, not software engineers.”\n\n\nSource context\nGrounds the answer\n“Use only the text provided below.”\n\n\nStyle context\nShapes delivery\n“Use a CDI guide tone: clear, structured, practical.”\n\n\nConstraint context\nSets boundaries\n“Do not include claims not supported by the source text.”\n\n\nEvaluation context\nMakes review possible\n“Flag uncertain points separately.”\n\n\n\nWhen AI output quality is poor, missing context is often the reason.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#prompt-design-for-reviewable-outputs",
+    "href": "04-prompt-and-context-design.html#prompt-design-for-reviewable-outputs",
+    "title": "Prompt and Context Design",
+    "section": "Prompt Design for Reviewable Outputs",
+    "text": "Prompt Design for Reviewable Outputs\nA good AI output is not only useful.\nIt is reviewable.\nReviewable outputs make it easy for the human to inspect, correct, and decide.\nA prompt can improve reviewability by asking the AI to separate different types of content.\nFor example:\nReturn the result in four sections:\n\n1. Summary\n2. Key assumptions\n3. Uncertain points\n4. Recommended next steps\nThis structure makes it easier to see what the AI is claiming, what it is assuming, and what still needs human judgment.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#prompt-design-for-data-and-analysis-workflows",
+    "href": "04-prompt-and-context-design.html#prompt-design-for-data-and-analysis-workflows",
+    "title": "Prompt and Context Design",
+    "section": "Prompt Design for Data and Analysis Workflows",
+    "text": "Prompt Design for Data and Analysis Workflows\nIn analytical workflows, prompts should be especially careful.\nAI can help describe datasets, plan analysis steps, interpret outputs, generate code drafts, and explain results.\nBut it should not replace verification.\nA stronger analytical prompt may look like this:\nTask:\nReview this results table and suggest possible interpretation themes.\n\nContext:\nThe table contains differential results from a biological analysis. Columns include feature_id, log2fc, p_value, adjusted_p_value, and annotation.\n\nConstraints:\nDo not claim biological significance based only on p-values. Separate observations from interpretations. Flag any missing information needed for stronger conclusions.\n\nOutput format:\nReturn a table with columns: theme, supporting rows, interpretation caution, and next validation step.\n\nReview criteria:\nThe output should help a human analyst decide what to inspect next, not make final biological claims.\nThis reflects the CDI pattern: AI assists analysis, but the human analyst remains responsible for interpretation.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#prompt-design-for-automation",
+    "href": "04-prompt-and-context-design.html#prompt-design-for-automation",
+    "title": "Prompt and Context Design",
+    "section": "Prompt Design for Automation",
+    "text": "Prompt Design for Automation\nAutomation increases the need for careful prompt design.\nA prompt used once can be flexible.\nA prompt used repeatedly must be more stable.\nFor repeated workflows, document:\n\nthe task name,\nthe prompt version,\nthe input requirements,\nthe expected output format,\nthe review process,\nand known limitations.\n\nThis is why prompt registries are useful in AI systems.\nThey turn informal prompting into a documented workflow component.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#example-prompt-registry-entry",
+    "href": "04-prompt-and-context-design.html#example-prompt-registry-entry",
+    "title": "Prompt and Context Design",
+    "section": "Example Prompt Registry Entry",
+    "text": "Example Prompt Registry Entry\nA prompt registry does not need to be complex at the beginning.\nIt can start as a simple table.\nprompt_id: AI-PROMPT-001\nname: Summarize source document\nversion: 1.0\npurpose: Convert a source document into a structured summary for human review\nrequired_input: Source text or document excerpt\noutput_format: Summary, key points, uncertainties, suggested next steps\nreview_required: Yes\nrisk_level: Medium\nnotes: Do not use for final publication without human verification\nThis makes the prompt easier to reuse, improve, and audit.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#common-prompt-design-mistakes",
+    "href": "04-prompt-and-context-design.html#common-prompt-design-mistakes",
+    "title": "Prompt and Context Design",
+    "section": "Common Prompt Design Mistakes",
+    "text": "Common Prompt Design Mistakes\nSeveral mistakes appear repeatedly in AI workflows.\n\n\n\n\n\n\n\n\nMistake\nWhy it causes problems\nBetter practice\n\n\n\n\nAsking vague questions\nProduces broad or generic answers\nDefine a task and output format\n\n\nMissing audience\nTone and depth may be wrong\nState who the output is for\n\n\nMissing source limits\nAI may add unsupported claims\nSpecify what sources may be used\n\n\nNo constraints\nOutput may be too long, risky, or unfocused\nState boundaries clearly\n\n\nNo review criteria\nHard to judge quality\nDefine what a good output looks like\n\n\nTreating output as final\nIncreases risk of errors\nUse human review before action\n\n\n\nPrompt design improves when the human becomes clear about the work.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#practical-checklist",
+    "href": "04-prompt-and-context-design.html#practical-checklist",
+    "title": "Prompt and Context Design",
+    "section": "Practical Checklist",
+    "text": "Practical Checklist\nBefore using AI for a meaningful task, ask:\n\nWhat exactly do I want the AI to do?\nWhat context does the AI need?\nWhat should the AI avoid?\nWho is the output for?\nWhat format will make the output easiest to review?\nWhat would make this output unacceptable?\nWhat must a human verify before using it?\n\nThese questions turn prompting into a system habit.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#supporting-script",
+    "href": "04-prompt-and-context-design.html#supporting-script",
+    "title": "Prompt and Context Design",
+    "section": "Supporting Script",
+    "text": "Supporting Script\nThis guide includes a simple prompt registry script that can summarize prompts from an example AI task log.\nRun it from the project root after creating the example data.\nbash scripts/bash/01-create-example-ai-task-log.sh\n\npython scripts/python/03-build-prompt-registry.py \\\n  data/example/ai-task-log.csv \\\n  data/results\nExpected output:\ndata/results/prompt-registry.csv\nThe script is intentionally simple. Its purpose is to demonstrate the system idea: prompts can be documented, summarized, reviewed, and improved over time.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#chapter-summary",
+    "href": "04-prompt-and-context-design.html#chapter-summary",
+    "title": "Prompt and Context Design",
+    "section": "Chapter Summary",
+    "text": "Chapter Summary\nPrompt and context design is not about finding magic words.\nIt is about designing clear human instructions for AI-assisted work.\nA good prompt defines the task, supplies relevant context, sets constraints, requests a reviewable output, and supports human judgment.\nIn CDI AI Systems, prompts are not isolated tricks.\nThey are reusable workflow components inside a Human–AI–Human system.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompt-and-context-design.html#looking-ahead",
+    "href": "04-prompt-and-context-design.html#looking-ahead",
+    "title": "Prompt and Context Design",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter focuses on data and knowledge grounding.\nWe will move from designing better prompts to ensuring that AI outputs are connected to appropriate source material, project context, evidence, and documented knowledge.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Prompt and Context Design</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html",
+    "href": "05-data-and-knowledge-grounding.html",
+    "title": "Data and Knowledge Grounding",
+    "section": "",
+    "text": "Grounding Sources\nGrounding connects AI work to trusted data, documents, domain knowledge, or user-provided context.\nGrounded workflows reduce unsupported claims.\nThey also make outputs easier to review.\nThe stronger the grounding, the easier it is to evaluate the output.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#grounding-sources",
+    "href": "05-data-and-knowledge-grounding.html#grounding-sources",
+    "title": "Data and Knowledge Grounding",
+    "section": "",
+    "text": "User-provided documents\nProject datasets\nPublished references\nStandard operating procedures\nInternal policy documents\nExpert review notes",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html",
+    "href": "06-evaluation-and-quality-control.html",
+    "title": "Evaluation and Quality Control",
+    "section": "",
+    "text": "Example Evaluation Dimensions\nEvaluation turns AI use from guessing into a controlled workflow.\nThis guide starts with a simple task log and scoring system.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#example-evaluation-dimensions",
+    "href": "06-evaluation-and-quality-control.html#example-evaluation-dimensions",
+    "title": "Evaluation and Quality Control",
+    "section": "",
+    "text": "accuracy\ncompleteness\nclarity\nusefulness\nrisk level\nreview status",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#supporting-script",
+    "href": "06-evaluation-and-quality-control.html#supporting-script",
+    "title": "Evaluation and Quality Control",
+    "section": "Supporting Script",
+    "text": "Supporting Script\npython scripts/python/02-evaluate-ai-output-quality.py data/example/ai-task-log.csv data/results\nExpected output:\ndata/results/ai-evaluation-summary.csv",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html",
+    "href": "07-human-in-the-loop-workflows.html",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "",
+    "text": "Review Points\nHuman-in-the-loop design defines where people review, approve, correct, or reject AI outputs.\nThis is especially important in education, research, health, finance, policy, and public communication.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#review-points",
+    "href": "07-human-in-the-loop-workflows.html#review-points",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "",
+    "text": "Before AI: Is the task appropriate?\nDuring AI: Is the context sufficient?\nAfter AI: Is the output correct and useful?\nBefore action: Has a human accepted responsibility?",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html",
+    "href": "08-automation-and-agentic-workflows.html",
+    "title": "Automation and Agentic Workflows",
+    "section": "",
+    "text": "Safe Automation Pattern\nAutomation becomes useful when repeated tasks have clear inputs, outputs, and review rules.\nAgentic workflows add planning, tool use, and multi-step execution.\nThey should be introduced gradually.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#safe-automation-pattern",
+    "href": "08-automation-and-agentic-workflows.html#safe-automation-pattern",
+    "title": "Automation and Agentic Workflows",
+    "section": "",
+    "text": "Start manual\n  -&gt; standardize the workflow\n  -&gt; add AI assistance\n  -&gt; add evaluation\n  -&gt; automate low-risk steps\n  -&gt; monitor outputs\n  -&gt; keep human override",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html",
+    "href": "09-ai-assisted-analysis-and-reporting.html",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "",
+    "text": "Recommended Separation\nAI can help explain results, draft reports, create summaries, and convert technical outputs into audience-specific communication.\nHowever, the underlying analysis should remain reproducible.\nA CDI workflow keeps analysis outputs separate from AI-generated interpretation.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#recommended-separation",
+    "href": "09-ai-assisted-analysis-and-reporting.html#recommended-separation",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "",
+    "text": "Data analysis scripts\n  -&gt; tidy result tables\n  -&gt; visualizations\n  -&gt; AI-assisted explanation draft\n  -&gt; human review\n  -&gt; final report",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html",
+    "href": "10-governance-risk-and-documentation.html",
+    "title": "Governance, Risk, and Documentation",
+    "section": "",
+    "text": "Documentation Template\nGovernance defines what AI may do, what it may not do, who reviews outputs, and how risk is managed.\nDocumentation helps teams learn from previous AI use and avoid repeating mistakes.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#documentation-template",
+    "href": "10-governance-risk-and-documentation.html#documentation-template",
+    "title": "Governance, Risk, and Documentation",
+    "section": "",
+    "text": "Task name:\nPurpose:\nInput data or context:\nAI tool used:\nHuman reviewer:\nKnown limitations:\nRisk level:\nDecision made:",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html",
+    "href": "11-end-to-end-case-study.html",
+    "title": "End-to-End Case Study",
+    "section": "",
+    "text": "Run the Case Study\nThis case study uses a simple AI task log.\nThe goal is not to depend on any specific AI provider.\nThe goal is to show how an AI workflow can be documented, evaluated, and improved.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#run-the-case-study",
+    "href": "11-end-to-end-case-study.html#run-the-case-study",
+    "title": "End-to-End Case Study",
+    "section": "",
+    "text": "bash scripts/bash/01-create-example-ai-task-log.sh\npython scripts/python/02-evaluate-ai-output-quality.py data/example/ai-task-log.csv data/results\npython scripts/python/03-build-prompt-registry.py data/example/ai-task-log.csv data/results\nRscript scripts/R/04-plot-evaluation-summary.R data/results/ai-evaluation-summary.csv data/reports\nquarto render",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html",
+    "href": "12-career-and-workforce-readiness.html",
+    "title": "Career and Workforce Readiness",
+    "section": "",
+    "text": "Practical Career Capabilities\nAI readiness does not mean everyone must become an AI engineer.\nIt means learners and professionals should understand how to work with AI tools responsibly in their own domain.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#practical-career-capabilities",
+    "href": "12-career-and-workforce-readiness.html#practical-career-capabilities",
+    "title": "Career and Workforce Readiness",
+    "section": "",
+    "text": "AI literacy\nproblem framing\nprompt and context design\nverification\nworkflow documentation\ncommunication\nethical judgment\ncontinuous learning",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html",
+    "href": "999-appendix.html",
+    "title": "Appendix",
+    "section": "",
+    "text": "AI Task Log Columns",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#ai-task-log-columns",
+    "href": "999-appendix.html#ai-task-log-columns",
+    "title": "Appendix",
+    "section": "",
+    "text": "task_id\ntask_type\naudience\nAI_role\ninput_context\nexpected_output\naccuracy_score\ncompleteness_score\nclarity_score\nrisk_level\nreview_status\nhuman_decision",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#minimal-project-commands",
+    "href": "999-appendix.html#minimal-project-commands",
+    "title": "Appendix",
+    "section": "Minimal Project Commands",
+    "text": "Minimal Project Commands\nbash scripts/bash/00-check-environment.sh\nbash scripts/bash/01-create-example-ai-task-log.sh\npython scripts/python/02-evaluate-ai-output-quality.py data/example/ai-task-log.csv data/results\npython scripts/python/03-build-prompt-registry.py data/example/ai-task-log.csv data/results\nRscript scripts/R/04-plot-evaluation-summary.R data/results/ai-evaluation-summary.csv data/reports\nquarto render",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "999-references.html",
+    "href": "999-references.html",
+    "title": "References",
+    "section": "",
+    "text": "ID: AI-999R\nType: References\nAudience: All readers\nTheme: AI systems should be connected to documented sources\n\n\nReferences will be expanded as the guide matures.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>References</span>"
+    ]
+  }
+]

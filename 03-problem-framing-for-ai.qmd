@@ -1,0 +1,438 @@
+# Problem Framing for AI
+
+:::cdi-message
+- **ID:** AI-SYS-03
+- **Type:** Core Chapter
+- **Audience:** Learners, analysts, educators, knowledge workers, technical teams, and decision-makers using AI in real workflows
+- **Theme:** Effective AI work begins with a well-framed human problem
+:::
+
+AI systems do not begin with prompts.
+
+They begin with problems.
+
+Before a model is asked to summarize, generate, classify, analyze, automate, or recommend, a human must decide what problem is being addressed, why it matters, who will use the result, and how success will be judged.
+
+This chapter focuses on problem framing for AI.
+
+Problem framing is the step where a broad need is converted into a clear, bounded, responsible, and evaluable AI task.
+
+It is where the Human–AI–Human workflow begins.
+
+```text
+Human frames the problem
+        ↓
+AI assists with generation, reasoning, analysis, or automation
+        ↓
+Human evaluates, decides, documents, and acts
+```
+
+If the first human step is weak, the rest of the workflow becomes unstable.
+
+A vague problem produces vague prompts.
+
+A vague prompt produces unreliable outputs.
+
+Unreliable outputs create confusion, rework, or risk.
+
+The goal of this chapter is to help you slow down before using AI and define the work clearly enough that AI assistance becomes useful, reviewable, and responsible.
+
+---
+
+## Learning Outcomes
+
+By the end of this chapter, you should be able to:
+
+- distinguish a broad goal from an AI-ready task;
+- define the user, purpose, input, output, and decision context for an AI workflow;
+- identify whether a task is appropriate for AI assistance;
+- classify AI tasks by risk, complexity, and required human review;
+- convert an unclear AI request into a structured problem statement;
+- prepare a problem-framing template that can be reused across CDI AI workflows.
+
+---
+
+## Why Problem Framing Matters
+
+Many AI failures are not model failures.
+
+They are framing failures.
+
+The user asks the wrong question.
+
+The context is incomplete.
+
+The expected output is unclear.
+
+The audience is not defined.
+
+The risk level is underestimated.
+
+The result is used for a decision it was not designed to support.
+
+AI tools can produce fluent answers even when the task is poorly framed. That fluency can hide uncertainty, missing context, or weak assumptions.
+
+Problem framing protects the workflow by making the human intention explicit before AI enters the process.
+
+In CDI terms, problem framing turns AI use from an isolated interaction into part of a system.
+
+---
+
+## From Broad Goal to AI-Ready Task
+
+A broad goal is usually too large for direct AI use.
+
+For example:
+
+```text
+Help me improve this report.
+```
+
+This may be useful as a conversation starter, but it is not yet an AI-ready task.
+
+A better AI-ready task is more specific:
+
+```text
+Review this report introduction for clarity, audience fit, and logical flow.
+Do not rewrite the technical findings.
+Return three sections:
+1. strengths,
+2. unclear areas,
+3. suggested revision priorities.
+```
+
+The second version gives the AI a defined role, a scope, constraints, and an expected output format.
+
+The human still decides what to accept.
+
+---
+
+## The CDI Problem-Framing Pattern
+
+A practical AI problem statement should answer seven questions.
+
+```text
+1. What is the real-world problem?
+2. Who is the intended user or audience?
+3. What input will the AI receive?
+4. What should the AI produce?
+5. What should the AI not do?
+6. How will the output be evaluated?
+7. What human decision or action follows?
+```
+
+These questions keep AI work connected to purpose, context, and review.
+
+They also make the task easier to reproduce later.
+
+---
+
+## Example: Weak vs Strong Framing
+
+Weak framing:
+
+```text
+Use AI to analyze survey responses.
+```
+
+This is too broad.
+
+It does not say what kind of analysis is needed, what the survey is about, what outputs are expected, or how the results will be used.
+
+Stronger framing:
+
+```text
+We have short-text survey responses from training participants.
+The goal is to identify common themes about what learners found useful and what they found confusing.
+The AI should group responses into themes, provide short labels, and include representative examples.
+The AI should not infer demographic information or make claims beyond the provided responses.
+A human reviewer will check the themes before they are included in the final report.
+```
+
+This version is clearer because it defines the purpose, input, output, limits, and review step.
+
+---
+
+## Task Type Matters
+
+Not all AI tasks are the same.
+
+A task may involve:
+
+- summarization;
+- drafting;
+- classification;
+- extraction;
+- comparison;
+- brainstorming;
+- translation;
+- code assistance;
+- data interpretation;
+- workflow automation;
+- decision support.
+
+Each task type requires different framing.
+
+Summarization requires source boundaries.
+
+Drafting requires audience and tone.
+
+Extraction requires fields and rules.
+
+Classification requires categories and examples.
+
+Data interpretation requires assumptions and limits.
+
+Decision support requires strong human review.
+
+The task type determines the prompt structure, evaluation strategy, and risk controls.
+
+---
+
+## AI Task Risk Levels
+
+A useful CDI AI workflow separates low-risk tasks from higher-risk tasks.
+
+```text
+Low risk
+- brainstorming titles
+- summarizing non-sensitive public text
+- improving grammar
+- generating study questions
+
+Moderate risk
+- summarizing internal notes
+- drafting professional communication
+- extracting information from documents
+- preparing analytical interpretations
+
+High risk
+- medical, legal, financial, or safety-related advice
+- decisions affecting people, eligibility, employment, or access
+- automated judgments without human review
+- use of sensitive or private data
+```
+
+Higher-risk tasks require stronger constraints, better documentation, and more human review.
+
+In some cases, AI should support the workflow but not produce the final answer alone.
+
+---
+
+## The Human Decision Context
+
+Every AI task should be connected to a human decision context.
+
+Ask:
+
+```text
+What will someone do with the AI output?
+```
+
+Will they publish it?
+
+Will they send it to someone?
+
+Will they use it to make a decision?
+
+Will they use it to prioritize work?
+
+Will they use it to interpret data?
+
+The more consequential the downstream action, the more careful the problem framing must be.
+
+The AI output is not the endpoint.
+
+The human action after the AI output is the endpoint.
+
+---
+
+## A Reusable Problem-Framing Template
+
+Use this template before building a prompt or workflow.
+
+```text
+Project or workflow name:
+
+Problem:
+What real-world problem are we trying to address?
+
+Audience or user:
+Who will use the output?
+
+AI task type:
+Is this summarization, drafting, extraction, classification, analysis, automation, or decision support?
+
+Input:
+What information will be provided to the AI?
+
+Expected output:
+What should the AI return?
+
+Boundaries:
+What should the AI avoid doing?
+
+Risk level:
+Is this low, moderate, or high risk?
+
+Evaluation:
+How will we check whether the output is good enough?
+
+Human review:
+Who reviews the output before it is used?
+
+Final human action:
+What decision, communication, report, or workflow step follows?
+```
+
+This template can be saved as part of project documentation.
+
+It can also be used before creating prompt libraries, automation scripts, or AI-assisted reports.
+
+---
+
+## Problem Framing Before Prompting
+
+Prompt design is easier after problem framing.
+
+Without framing, prompt writing becomes guesswork.
+
+With framing, the prompt can inherit the structure of the task.
+
+For example, a framed task can be converted into a prompt like this:
+
+```text
+Role:
+You are helping review short-text survey responses from a training workshop.
+
+Task:
+Identify common themes about what learners found useful and what they found confusing.
+
+Input:
+The responses are provided below.
+
+Output format:
+Return a table with theme, description, example response, and reviewer note.
+
+Boundaries:
+Do not infer demographic information.
+Do not make claims beyond the provided text.
+
+Review expectation:
+The output will be checked by a human before reporting.
+```
+
+The prompt becomes stronger because the problem was framed first.
+
+---
+
+## Common Framing Mistakes
+
+Common mistakes include:
+
+```text
+Mistake 1: Asking AI to solve a problem before defining the problem.
+Mistake 2: Giving AI a task without identifying the audience.
+Mistake 3: Asking for analysis without explaining how the result will be used.
+Mistake 4: Treating a high-risk decision as a simple writing task.
+Mistake 5: Forgetting to define what the AI should not do.
+Mistake 6: Skipping human review because the output sounds confident.
+```
+
+These mistakes are preventable.
+
+The solution is not necessarily a more complex prompt.
+
+The solution is a clearer problem frame.
+
+---
+
+## Mini Case Study: Framing an AI Reporting Task
+
+Suppose a team wants to use AI to help prepare a monthly project update.
+
+A weak request might be:
+
+```text
+Write a project update using these notes.
+```
+
+A stronger problem frame might be:
+
+```text
+Problem:
+The team needs a concise monthly project update for internal stakeholders.
+
+Audience:
+Project leads and collaborators who need progress, blockers, and next steps.
+
+Input:
+Meeting notes, task list, and recent completed activities.
+
+Expected output:
+A structured update with three sections: progress, blockers, and next steps.
+
+Boundaries:
+Do not invent progress that is not in the notes.
+Do not assign blame.
+Do not include private comments.
+
+Risk level:
+Moderate, because the update may influence stakeholder expectations.
+
+Evaluation:
+A human reviewer checks accuracy against the notes before sending.
+
+Final action:
+The reviewed update is sent to stakeholders.
+```
+
+This framing makes the AI task clearer, safer, and easier to evaluate.
+
+---
+
+## Practical Exercise
+
+Choose one AI task you currently do or want to do.
+
+Before writing a prompt, complete the problem-framing template.
+
+Then rewrite your original request as an AI-ready task.
+
+Use this structure:
+
+```text
+Original request:
+
+Framed problem:
+
+AI-ready task:
+
+Risk level:
+
+Required human review:
+```
+
+The goal is not to make the prompt longer.
+
+The goal is to make the work clearer.
+
+---
+
+## Chapter Summary
+
+Problem framing is the first step in responsible AI systems work.
+
+It defines the purpose, audience, input, output, boundaries, evaluation method, and human decision context.
+
+A well-framed AI task is easier to prompt, easier to evaluate, and safer to use.
+
+The Human–AI–Human workflow begins with the human responsibility to define the problem clearly.
+
+---
+
+## Looking Ahead
+
+The next chapter moves from problem framing to prompt and context design.
+
+We will use the structure developed here to build clearer prompts, provide better context, define useful constraints, and prepare AI interactions that can be reviewed and reused.

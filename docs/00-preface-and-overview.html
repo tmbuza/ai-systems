@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Preface and Overview – AI Systems</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./01-ai-systems-thinking.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-231ef2f9d4ce3268f31ef752336c15d2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="assets/css/cdi.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface-and-overview.html">Foundation</a></li><li class="breadcrumb-item"><a href="./00-preface-and-overview.html"><span class="chapter-title">Preface and Overview</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI Systems</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">index.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Foundation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-preface-and-overview.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Preface and Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-ai-systems-thinking.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Systems Thinking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-ai-literacy-and-responsible-use.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Literacy and Responsible Use</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-problem-framing-for-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Problem Framing for AI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Applied AI Workflows</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-prompt-and-context-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Prompt and Context Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-data-and-knowledge-grounding.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data and Knowledge Grounding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-evaluation-and-quality-control.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Evaluation and Quality Control</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-human-in-the-loop-workflows.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Human-in-the-Loop Workflows</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Operational AI Systems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-automation-and-agentic-workflows.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Automation and Agentic Workflows</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-ai-assisted-analysis-and-reporting.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI-Assisted Analysis and Reporting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-governance-risk-and-documentation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Governance, Risk, and Documentation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-end-to-end-case-study.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">End-to-End Case Study</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Growth and Reference</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-career-and-workforce-readiness.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Career and Workforce Readiness</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-this-guide-exists" id="toc-why-this-guide-exists" class="nav-link active" data-scroll-target="#why-this-guide-exists">Why This Guide Exists</a></li>
+  <li><a href="#the-core-philosophy" id="toc-the-core-philosophy" class="nav-link" data-scroll-target="#the-core-philosophy">The Core Philosophy</a></li>
+  <li><a href="#relationship-to-thinking-with-ai" id="toc-relationship-to-thinking-with-ai" class="nav-link" data-scroll-target="#relationship-to-thinking-with-ai">Relationship to Thinking with AI</a></li>
+  <li><a href="#who-this-guide-is-for" id="toc-who-this-guide-is-for" class="nav-link" data-scroll-target="#who-this-guide-is-for">Who This Guide Is For</a></li>
+  <li><a href="#what-this-guide-is-not" id="toc-what-this-guide-is-not" class="nav-link" data-scroll-target="#what-this-guide-is-not">What This Guide Is Not</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#the-ai-systems-architecture" id="toc-the-ai-systems-architecture" class="nav-link" data-scroll-target="#the-ai-systems-architecture">The AI Systems Architecture</a></li>
+  <li><a href="#guide-structure" id="toc-guide-structure" class="nav-link" data-scroll-target="#guide-structure">Guide Structure</a>
+  <ul class="collapse">
+  <li><a href="#foundation" id="toc-foundation" class="nav-link" data-scroll-target="#foundation">Foundation</a></li>
+  <li><a href="#applied-ai-workflows" id="toc-applied-ai-workflows" class="nav-link" data-scroll-target="#applied-ai-workflows">Applied AI Workflows</a></li>
+  <li><a href="#operational-ai-systems" id="toc-operational-ai-systems" class="nav-link" data-scroll-target="#operational-ai-systems">Operational AI Systems</a></li>
+  <li><a href="#growth-and-reference" id="toc-growth-and-reference" class="nav-link" data-scroll-target="#growth-and-reference">Growth and Reference</a></li>
+  </ul></li>
+  <li><a href="#reproducible-project-layout" id="toc-reproducible-project-layout" class="nav-link" data-scroll-target="#reproducible-project-layout">Reproducible Project Layout</a></li>
+  <li><a href="#supporting-scripts" id="toc-supporting-scripts" class="nav-link" data-scroll-target="#supporting-scripts">Supporting Scripts</a></li>
+  <li><a href="#publication-workflow" id="toc-publication-workflow" class="nav-link" data-scroll-target="#publication-workflow">Publication Workflow</a></li>
+  <li><a href="#how-to-read-this-guide" id="toc-how-to-read-this-guide" class="nav-link" data-scroll-target="#how-to-read-this-guide">How to Read This Guide</a></li>
+  <li><a href="#closing-note" id="toc-closing-note" class="nav-link" data-scroll-target="#closing-note">Closing Note</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface-and-overview.html">Foundation</a></li><li class="breadcrumb-item"><a href="./00-preface-and-overview.html"><span class="chapter-title">Preface and Overview</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="preface" class="quarto-section-identifier"><span class="chapter-title">Preface and Overview</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Jun 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cdi-message">
+<ul>
+<li><strong>ID:</strong> AI-000</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> AI should be treated as a human-led system, not a magic tool</li>
+</ul>
+</div>
+<p>AI is now part of everyday learning, research, analysis, writing, coding, decision-making, and professional work.</p>
+<p>But using AI is not the same as building an AI system.</p>
+<p>A person can ask a chatbot a question and get an answer.</p>
+<p>That is AI use.</p>
+<p>A person can design a workflow where the problem is clearly framed, the context is provided, the output is evaluated, the limitations are documented, and the final decision remains human-led.</p>
+<p>That is an AI system.</p>
+<p>This guide is about the second path.</p>
+<p>It teaches AI as a practical system for responsible, reproducible, and impactful work.</p>
+<hr>
+<section id="why-this-guide-exists" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-guide-exists">Why This Guide Exists</h2>
+<p>Many people learn AI through tools.</p>
+<p>They learn prompts.</p>
+<p>They learn apps.</p>
+<p>They learn shortcuts.</p>
+<p>That is useful, but incomplete.</p>
+<p>Tools change quickly. Workflows, reasoning habits, evaluation practices, and documentation standards last longer.</p>
+<p>The purpose of this guide is to help learners move beyond casual AI use into structured AI practice.</p>
+<p>The goal is not to make AI mysterious.</p>
+<p>The goal is to make AI usable, inspectable, teachable, and accountable.</p>
+<p>In Complex Data Insights, AI is treated as part of a broader data and decision ecosystem.</p>
+<p>AI can support discovery, analysis, communication, automation, and learning. But it must remain connected to human judgment, evidence, context, and responsibility.</p>
+<hr>
+</section>
+<section id="the-core-philosophy" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-philosophy">The Core Philosophy</h2>
+<p>The central philosophy of this guide is simple:</p>
+<blockquote class="blockquote">
+<p>AI should assist human thinking, not replace human responsibility.</p>
+</blockquote>
+<p>This guide uses a <strong>Human–AI–Human</strong> model.</p>
+<pre class="text"><code>Human frames the problem
+        ↓
+AI assists with generation, reasoning, analysis, or automation
+        ↓
+Human evaluates, decides, documents, and acts</code></pre>
+<p>The workflow begins with a human question and ends with a human decision.</p>
+<p>AI sits in the middle as an assistant, accelerator, analyst, reviewer, coder, summarizer, or workflow component.</p>
+<p>This framing is important because AI outputs can be fluent without being correct. They can be useful without being complete. They can be impressive without being reliable.</p>
+<p>A responsible AI system must therefore include evaluation, review, and documentation from the beginning.</p>
+<hr>
+</section>
+<section id="relationship-to-thinking-with-ai" class="level2">
+<h2 class="anchored" data-anchor-id="relationship-to-thinking-with-ai">Relationship to Thinking with AI</h2>
+<p>This guide connects naturally to the earlier <strong>Thinking with AI</strong> idea, but it is not the same thing.</p>
+<p><strong>Thinking with AI</strong> focuses on reasoning habits:</p>
+<ul>
+<li>asking better questions,</li>
+<li>exploring ideas,</li>
+<li>challenging assumptions,</li>
+<li>improving explanations,</li>
+<li>reflecting before deciding,</li>
+<li>and using AI to strengthen human thinking.</li>
+</ul>
+<p><strong>AI Systems</strong> is broader and more operational.</p>
+<p>It asks how AI-supported work can be designed, evaluated, repeated, documented, governed, and shared.</p>
+<p>The relationship can be viewed as:</p>
+<pre class="text"><code>Thinking with AI
+        ↓
+Human–AI–Human reasoning loop
+        ↓
+AI Systems
+        ↓
+Applied workflows, evaluation, governance, and impact</code></pre>
+<p>Thinking with AI is therefore a foundation inside AI Systems.</p>
+<p>AI Systems extends that foundation into real workflows.</p>
+<hr>
+</section>
+<section id="who-this-guide-is-for" class="level2">
+<h2 class="anchored" data-anchor-id="who-this-guide-is-for">Who This Guide Is For</h2>
+<p>This guide is for people who want to use AI seriously and responsibly.</p>
+<p>It is especially useful for:</p>
+<ul>
+<li>students learning how to work with AI without becoming dependent on it,</li>
+<li>researchers using AI to support reading, synthesis, coding, analysis, or writing,</li>
+<li>data scientists building reproducible AI-assisted workflows,</li>
+<li>educators designing AI-aware learning activities,</li>
+<li>professionals using AI to improve productivity and communication,</li>
+<li>mentors training learners for an AI-enabled workplace,</li>
+<li>and teams that need governance, documentation, and quality control.</li>
+</ul>
+<p>The guide does not assume that the reader is an AI engineer.</p>
+<p>It does assume that the reader wants to think carefully, work reproducibly, and communicate limitations honestly.</p>
+<hr>
+</section>
+<section id="what-this-guide-is-not" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-guide-is-not">What This Guide Is Not</h2>
+<p>This guide is not a collection of prompt tricks.</p>
+<p>It is not a list of AI tools.</p>
+<p>It is not a promise that AI can solve every problem.</p>
+<p>It is not a replacement for domain expertise, statistical reasoning, data science, ethics, or human judgment.</p>
+<p>Instead, it is a system-level guide for using AI in a structured way.</p>
+<p>The focus is on workflows that can be explained, repeated, evaluated, improved, and responsibly shared.</p>
+<hr>
+</section>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this guide, the learner should be able to:</p>
+<ol type="1">
+<li>Explain AI as part of a broader human-led system.</li>
+<li>Distinguish casual AI use from structured AI workflows.</li>
+<li>Frame AI tasks with clear goals, context, constraints, and expected outputs.</li>
+<li>Design prompts and context packages that improve output quality.</li>
+<li>Use grounding materials such as data, documents, code, examples, and references.</li>
+<li>Evaluate AI outputs for correctness, relevance, completeness, clarity, and risk.</li>
+<li>Build human-in-the-loop review workflows.</li>
+<li>Document AI use transparently.</li>
+<li>Identify governance, privacy, bias, and safety concerns.</li>
+<li>Create reproducible AI-assisted workflows that support real work.</li>
+<li>Communicate AI-supported outputs without overstating certainty.</li>
+<li>Prepare learners and professionals for responsible AI-enabled careers.</li>
+</ol>
+<hr>
+</section>
+<section id="the-ai-systems-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="the-ai-systems-architecture">The AI Systems Architecture</h2>
+<p>This guide organizes AI work into a layered system.</p>
+<pre class="text"><code>Problem
+  ↓
+Context
+  ↓
+Data and Knowledge
+  ↓
+Prompt or Workflow Design
+  ↓
+AI Assistance
+  ↓
+Evaluation
+  ↓
+Human Decision
+  ↓
+Documentation and Impact</code></pre>
+<p>Each layer matters.</p>
+<p>A weak problem statement produces unclear outputs.</p>
+<p>Poor context produces shallow responses.</p>
+<p>Ungrounded AI work increases the risk of error.</p>
+<p>No evaluation makes outputs difficult to trust.</p>
+<p>No documentation makes the workflow difficult to repeat or defend.</p>
+<p>A strong AI system connects all of these layers.</p>
+<hr>
+</section>
+<section id="guide-structure" class="level2">
+<h2 class="anchored" data-anchor-id="guide-structure">Guide Structure</h2>
+<p>The guide is organized into four major sections.</p>
+<section id="foundation" class="level3">
+<h3 class="anchored" data-anchor-id="foundation">Foundation</h3>
+<p>The foundation chapters introduce AI systems thinking, AI literacy, responsible use, and problem framing.</p>
+<p>These chapters establish the mindset needed before building applied workflows.</p>
+</section>
+<section id="applied-ai-workflows" class="level3">
+<h3 class="anchored" data-anchor-id="applied-ai-workflows">Applied AI Workflows</h3>
+<p>The applied workflow chapters focus on prompt design, context design, grounding, evaluation, and human review.</p>
+<p>These chapters move from general AI awareness to reproducible AI practice.</p>
+</section>
+<section id="operational-ai-systems" class="level3">
+<h3 class="anchored" data-anchor-id="operational-ai-systems">Operational AI Systems</h3>
+<p>The operational chapters focus on automation, agentic workflows, AI-assisted analysis, reporting, governance, documentation, and an end-to-end case study.</p>
+<p>These chapters show how AI can become part of real systems without removing human responsibility.</p>
+</section>
+<section id="growth-and-reference" class="level3">
+<h3 class="anchored" data-anchor-id="growth-and-reference">Growth and Reference</h3>
+<p>The final section connects AI systems to career readiness, workforce development, appendices, and references.</p>
+<p>This section supports learners who want to use AI as part of long-term professional growth.</p>
+<hr>
+</section>
+</section>
+<section id="reproducible-project-layout" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-project-layout">Reproducible Project Layout</h2>
+<p>This guide is designed as a publishable Quarto book from the beginning.</p>
+<p>A typical project layout is:</p>
+<pre class="text"><code>ai-systems/
+├── index.qmd
+├── 00-preface-and-overview.qmd
+├── 01-ai-systems-thinking.qmd
+├── 02-ai-literacy-and-responsible-use.qmd
+├── 03-problem-framing-for-ai.qmd
+├── 04-prompt-and-context-design.qmd
+├── 05-data-and-knowledge-grounding.qmd
+├── 06-evaluation-and-quality-control.qmd
+├── 07-human-in-the-loop-workflows.qmd
+├── 08-automation-and-agentic-workflows.qmd
+├── 09-ai-assisted-analysis-and-reporting.qmd
+├── 10-governance-risk-and-documentation.qmd
+├── 11-end-to-end-case-study.qmd
+├── 12-career-and-workforce-readiness.qmd
+├── 999-appendix.qmd
+├── 999-references.qmd
+├── assets/
+├── data/
+├── scripts/
+├── library/
+├── docs/
+├── _quarto.yml
+└── README.md</code></pre>
+<p>The project is intended to support both learning and publication.</p>
+<p>The <code>qmd</code> files explain the concepts.</p>
+<p>The scripts create small reproducible examples.</p>
+<p>The <code>data/</code> directory stores example inputs and outputs.</p>
+<p>The <code>docs/</code> directory stores the rendered website for GitHub Pages.</p>
+<hr>
+</section>
+<section id="supporting-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-scripts">Supporting Scripts</h2>
+<p>The scaffold includes small scripts to demonstrate AI systems practice without requiring live API keys.</p>
+<p>The first example workflow creates a simple AI task log, evaluates the quality of AI-supported outputs, builds a prompt registry, and plots an evaluation summary.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/00-check-environment.sh</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/01-create-example-ai-task-log.sh</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py <span class="dt">\</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  data/results</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/03-build-prompt-registry.py <span class="dt">\</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  data/results</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> scripts/R/04-plot-evaluation-summary.R <span class="dt">\</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  data/results/ai-evaluation-summary.csv <span class="dt">\</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  data/reports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Expected outputs include:</p>
+<pre class="text"><code>data/example/ai-task-log.csv
+data/results/ai-evaluation-summary.csv
+data/results/prompt-registry.csv
+data/reports/ai-evaluation-summary.png</code></pre>
+<p>These examples are intentionally lightweight.</p>
+<p>They teach the structure of responsible AI workflows without forcing learners to use paid APIs or expose secret keys.</p>
+<hr>
+</section>
+<section id="publication-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="publication-workflow">Publication Workflow</h2>
+<p>The guide is designed to render locally and publish through GitHub Pages.</p>
+<p>To render the site:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Expected output:</p>
+<pre class="text"><code>docs/index.html</code></pre>
+<p>A typical Git workflow is:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add AI Systems guide content"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The repository can then publish the rendered <code>docs/</code> output using the configured GitHub Pages workflow.</p>
+<hr>
+</section>
+<section id="how-to-read-this-guide" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-read-this-guide">How to Read This Guide</h2>
+<p>This guide can be read sequentially, but it is also designed as a reference.</p>
+<p>Readers who are new to AI should begin with the foundation chapters.</p>
+<p>Readers who already use AI regularly may want to focus on evaluation, human review, governance, and documentation.</p>
+<p>Teams building workflows may want to start with the end-to-end case study and then return to earlier chapters as needed.</p>
+<p>The most important idea is repeated throughout the guide:</p>
+<blockquote class="blockquote">
+<p>AI work becomes stronger when it is framed, grounded, evaluated, documented, and kept human-led.</p>
+</blockquote>
+<hr>
+</section>
+<section id="closing-note" class="level2">
+<h2 class="anchored" data-anchor-id="closing-note">Closing Note</h2>
+<p>AI systems are not only technical systems.</p>
+<p>They are learning systems.</p>
+<p>They are communication systems.</p>
+<p>They are decision-support systems.</p>
+<p>They are professional systems.</p>
+<p>They affect how people think, work, teach, analyze, and act.</p>
+<p>For that reason, AI should be approached with both curiosity and discipline.</p>
+<p>This guide begins from that balance.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter begins by introducing AI systems thinking.</p>
+<p>From there, we move step by step from AI literacy into problem framing, prompt and context design, data and knowledge grounding, evaluation, human review, automation, governance, reporting, and workforce readiness.</p>
+<p>By the end of this guide, you should be able to move beyond isolated AI use and begin designing responsible, reproducible, human-led AI workflows.</p>
+<p>The central pattern throughout the guide is the Human–AI–Human workflow:</p>
+<p>Human defines the problem.</p>
+<p>AI assists with generation, reasoning, analysis, or automation.</p>
+<p>Human evaluates, decides, documents, and acts.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="index.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">index.html</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./01-ai-systems-thinking.html" class="pagination-link" aria-label="AI Systems Thinking">
+        <span class="nav-page-text"><span class="chapter-title">AI Systems Thinking</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

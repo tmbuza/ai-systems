@@ -1,0 +1,28 @@
+# Automation and Agentic Workflows {#automation-agentic}
+
+:::cdi-message
+- **ID:** AI-008
+- **Type:** Advanced Chapter
+- **Audience:** Builders and workflow designers
+- **Theme:** Automation requires boundaries, monitoring, and fallback plans
+:::
+
+
+Automation becomes useful when repeated tasks have clear inputs, outputs, and review rules.
+
+Agentic workflows add planning, tool use, and multi-step execution.
+
+They should be introduced gradually.
+
+## Safe Automation Pattern
+
+```text
+Start manual
+  -> standardize the workflow
+  -> add AI assistance
+  -> add evaluation
+  -> automate low-risk steps
+  -> monitor outputs
+  -> keep human override
+```
+

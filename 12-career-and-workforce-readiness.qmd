@@ -1,0 +1,27 @@
+# Career and Workforce Readiness {#career-workforce}
+
+:::cdi-message
+- **ID:** AI-012
+- **Type:** Workforce Chapter
+- **Audience:** Learners, mentors, and professionals
+- **Theme:** AI readiness is now part of career readiness
+:::
+
+
+AI readiness does not mean everyone must become an AI engineer.
+
+It means learners and professionals should understand how to work with AI tools responsibly in their own domain.
+
+## Practical Career Capabilities
+
+```text
+AI literacy
+problem framing
+prompt and context design
+verification
+workflow documentation
+communication
+ethical judgment
+continuous learning
+```
+

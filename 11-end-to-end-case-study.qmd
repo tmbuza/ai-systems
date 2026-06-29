@@ -1,0 +1,26 @@
+# End-to-End Case Study {#case-study}
+
+:::cdi-message
+- **ID:** AI-011
+- **Type:** Case Study
+- **Audience:** Learners ready to combine the workflow
+- **Theme:** A complete AI system connects framing, prompting, evaluation, and reporting
+:::
+
+
+This case study uses a simple AI task log.
+
+The goal is not to depend on any specific AI provider.
+
+The goal is to show how an AI workflow can be documented, evaluated, and improved.
+
+## Run the Case Study
+
+```bash
+bash scripts/bash/01-create-example-ai-task-log.sh
+python scripts/python/02-evaluate-ai-output-quality.py data/example/ai-task-log.csv data/results
+python scripts/python/03-build-prompt-registry.py data/example/ai-task-log.csv data/results
+Rscript scripts/R/04-plot-evaluation-summary.R data/results/ai-evaluation-summary.csv data/reports
+quarto render
+```
+

@@ -1,0 +1,13 @@
+name: cdi-ai-systems
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.12
+  - pandas
+  - matplotlib
+  - quarto
+  - r-base
+  - r-readr
+  - r-dplyr
+  - r-ggplot2
+  - r-tibble

@@ -1,0 +1,27 @@
+# Governance, Risk, and Documentation {#governance-risk}
+
+:::cdi-message
+- **ID:** AI-010
+- **Type:** Governance Chapter
+- **Audience:** Leaders, educators, analysts, and teams
+- **Theme:** AI systems need documented boundaries
+:::
+
+
+Governance defines what AI may do, what it may not do, who reviews outputs, and how risk is managed.
+
+Documentation helps teams learn from previous AI use and avoid repeating mistakes.
+
+## Documentation Template
+
+```text
+Task name:
+Purpose:
+Input data or context:
+AI tool used:
+Human reviewer:
+Known limitations:
+Risk level:
+Decision made:
+```
+

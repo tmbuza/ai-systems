@@ -1,0 +1,23 @@
+# Human-in-the-Loop Workflows {#human-in-loop}
+
+:::cdi-message
+- **ID:** AI-007
+- **Type:** Workflow Chapter
+- **Audience:** Teams using AI for consequential work
+- **Theme:** AI should assist judgment, not replace accountability
+:::
+
+
+Human-in-the-loop design defines where people review, approve, correct, or reject AI outputs.
+
+This is especially important in education, research, health, finance, policy, and public communication.
+
+## Review Points
+
+```text
+Before AI: Is the task appropriate?
+During AI: Is the context sufficient?
+After AI: Is the output correct and useful?
+Before action: Has a human accepted responsibility?
+```
+

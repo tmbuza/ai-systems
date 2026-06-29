@@ -1,0 +1,405 @@
+# Prompt and Context Design
+
+:::cdi-message
+- **ID:** AI-004
+- **Type:** Core Chapter
+- **Audience:** Learners, analysts, educators, researchers, and professionals building AI-supported workflows
+- **Theme:** Useful AI outputs depend on clear tasks, relevant context, and human review
+:::
+
+## Chapter Purpose
+
+AI systems do not begin with prompts.
+
+They begin with intent.
+
+A prompt is only the visible instruction given to an AI tool. Behind every useful prompt is a human decision about the task, the audience, the context, the constraints, the expected output, and the level of review required.
+
+This chapter introduces prompt and context design as a practical system skill.
+
+The goal is not to memorize prompt formulas.
+
+The goal is to design instructions that help AI tools produce outputs that are useful, reviewable, and aligned with the human purpose of the work.
+
+---
+
+## Learning Outcomes
+
+By the end of this chapter, you should be able to:
+
+- Explain why prompts are only one part of an AI workflow.
+- Distinguish between a weak prompt and a well-framed task instruction.
+- Identify the types of context an AI system needs to produce useful outputs.
+- Use a reusable prompt structure for analysis, writing, summarization, planning, and decision support.
+- Design prompts that make outputs easier to evaluate.
+- Apply the Human–AI–Human workflow to prompt design.
+
+---
+
+## Prompting Is Not Magic
+
+A weak AI workflow treats prompting as trial and error.
+
+The user asks something vague.
+
+The AI gives a broad answer.
+
+The user asks again.
+
+The AI guesses again.
+
+This may work for casual exploration, but it is not enough for reliable work.
+
+In a CDI AI Systems workflow, prompting is not magic. It is structured communication.
+
+A good prompt tells the AI system:
+
+- what task is being performed,
+- why the task matters,
+- what context should be used,
+- what constraints must be respected,
+- what form the output should take,
+- and how the output will be reviewed.
+
+The better the task design, the easier the output is to evaluate.
+
+---
+
+## The Human–AI–Human Prompting Loop
+
+Prompt and context design follows the Human–AI–Human pattern.
+
+```text
+Human frames the task and supplies context
+        ↓
+AI generates, analyzes, reorganizes, or drafts
+        ↓
+Human evaluates, edits, verifies, and decides
+```
+
+This loop matters because the AI output is not the final authority.
+
+The output is a working artifact.
+
+The human remains responsible for deciding whether the output is correct, useful, ethical, and appropriate for the situation.
+
+---
+
+## From Question to Task
+
+Many weak prompts are weak because they are written as questions instead of tasks.
+
+A question asks for an answer.
+
+A task defines work to be done.
+
+For example:
+
+```text
+Weak question:
+Explain AI governance.
+
+Better task:
+Explain AI governance for a beginner audience in 5 short sections. Focus on why governance matters in organizations that use AI for analysis, writing, decision support, and automation. Avoid legal jargon. End with a practical checklist.
+```
+
+The second version gives the AI system a clearer job.
+
+It defines the audience, scope, structure, tone, and expected output.
+
+---
+
+## The CDI Prompt Structure
+
+A reusable prompt structure can help make AI work more consistent.
+
+The following structure can be adapted across many tasks.
+
+```text
+Task:
+What should the AI do?
+
+Context:
+What background information should the AI use?
+
+Audience:
+Who is the output for?
+
+Constraints:
+What should the AI avoid, include, or respect?
+
+Output format:
+What should the result look like?
+
+Review criteria:
+How will the human judge whether the output is good enough?
+```
+
+This structure is not a rigid formula.
+
+It is a thinking aid.
+
+It helps the human decide what information is needed before asking the AI to act.
+
+---
+
+## Example: Rewriting a Technical Explanation
+
+A vague prompt may produce a generic result.
+
+```text
+Rewrite this more clearly.
+```
+
+A stronger prompt gives context and review criteria.
+
+```text
+Task:
+Rewrite the following technical explanation so that it is clear to a non-technical project manager.
+
+Context:
+The explanation describes why AI-generated summaries must be reviewed before being used in a report.
+
+Audience:
+A project manager who understands business workflows but does not have a machine learning background.
+
+Constraints:
+Use plain language. Do not overpromise AI accuracy. Keep the explanation under 200 words.
+
+Output format:
+Return one revised paragraph followed by three bullet points.
+
+Review criteria:
+The output should be accurate, easy to understand, and clear about the need for human review.
+```
+
+This prompt is easier to evaluate because the expectations are explicit.
+
+---
+
+## Context Is Part of the System
+
+AI tools can only respond based on the information available to them.
+
+When context is missing, the AI may fill gaps with assumptions.
+
+Sometimes those assumptions are useful.
+
+Sometimes they are wrong.
+
+Context design asks: what does the AI need to know to complete this task well?
+
+Useful context may include:
+
+- project purpose,
+- target audience,
+- definitions,
+- examples,
+- source material,
+- data tables,
+- constraints,
+- prior decisions,
+- formatting expectations,
+- and quality standards.
+
+The goal is not to overload the AI with everything.
+
+The goal is to provide the context that changes the quality of the answer.
+
+---
+
+## Types of Context
+
+Different AI tasks require different types of context.
+
+| Context type | Purpose | Example |
+|---|---|---|
+| Task context | Defines the work | “Summarize this meeting transcript into decisions and action items.” |
+| Domain context | Defines the subject area | “This is for a clinical data management workflow.” |
+| Audience context | Defines the reader | “Write for public health analysts, not software engineers.” |
+| Source context | Grounds the answer | “Use only the text provided below.” |
+| Style context | Shapes delivery | “Use a CDI guide tone: clear, structured, practical.” |
+| Constraint context | Sets boundaries | “Do not include claims not supported by the source text.” |
+| Evaluation context | Makes review possible | “Flag uncertain points separately.” |
+
+When AI output quality is poor, missing context is often the reason.
+
+---
+
+## Prompt Design for Reviewable Outputs
+
+A good AI output is not only useful.
+
+It is reviewable.
+
+Reviewable outputs make it easy for the human to inspect, correct, and decide.
+
+A prompt can improve reviewability by asking the AI to separate different types of content.
+
+For example:
+
+```text
+Return the result in four sections:
+
+1. Summary
+2. Key assumptions
+3. Uncertain points
+4. Recommended next steps
+```
+
+This structure makes it easier to see what the AI is claiming, what it is assuming, and what still needs human judgment.
+
+---
+
+## Prompt Design for Data and Analysis Workflows
+
+In analytical workflows, prompts should be especially careful.
+
+AI can help describe datasets, plan analysis steps, interpret outputs, generate code drafts, and explain results.
+
+But it should not replace verification.
+
+A stronger analytical prompt may look like this:
+
+```text
+Task:
+Review this results table and suggest possible interpretation themes.
+
+Context:
+The table contains differential results from a biological analysis. Columns include feature_id, log2fc, p_value, adjusted_p_value, and annotation.
+
+Constraints:
+Do not claim biological significance based only on p-values. Separate observations from interpretations. Flag any missing information needed for stronger conclusions.
+
+Output format:
+Return a table with columns: theme, supporting rows, interpretation caution, and next validation step.
+
+Review criteria:
+The output should help a human analyst decide what to inspect next, not make final biological claims.
+```
+
+This reflects the CDI pattern: AI assists analysis, but the human analyst remains responsible for interpretation.
+
+---
+
+## Prompt Design for Automation
+
+Automation increases the need for careful prompt design.
+
+A prompt used once can be flexible.
+
+A prompt used repeatedly must be more stable.
+
+For repeated workflows, document:
+
+- the task name,
+- the prompt version,
+- the input requirements,
+- the expected output format,
+- the review process,
+- and known limitations.
+
+This is why prompt registries are useful in AI systems.
+
+They turn informal prompting into a documented workflow component.
+
+---
+
+## Example Prompt Registry Entry
+
+A prompt registry does not need to be complex at the beginning.
+
+It can start as a simple table.
+
+```text
+prompt_id: AI-PROMPT-001
+name: Summarize source document
+version: 1.0
+purpose: Convert a source document into a structured summary for human review
+required_input: Source text or document excerpt
+output_format: Summary, key points, uncertainties, suggested next steps
+review_required: Yes
+risk_level: Medium
+notes: Do not use for final publication without human verification
+```
+
+This makes the prompt easier to reuse, improve, and audit.
+
+---
+
+## Common Prompt Design Mistakes
+
+Several mistakes appear repeatedly in AI workflows.
+
+| Mistake | Why it causes problems | Better practice |
+|---|---|---|
+| Asking vague questions | Produces broad or generic answers | Define a task and output format |
+| Missing audience | Tone and depth may be wrong | State who the output is for |
+| Missing source limits | AI may add unsupported claims | Specify what sources may be used |
+| No constraints | Output may be too long, risky, or unfocused | State boundaries clearly |
+| No review criteria | Hard to judge quality | Define what a good output looks like |
+| Treating output as final | Increases risk of errors | Use human review before action |
+
+Prompt design improves when the human becomes clear about the work.
+
+---
+
+## Practical Checklist
+
+Before using AI for a meaningful task, ask:
+
+- What exactly do I want the AI to do?
+- What context does the AI need?
+- What should the AI avoid?
+- Who is the output for?
+- What format will make the output easiest to review?
+- What would make this output unacceptable?
+- What must a human verify before using it?
+
+These questions turn prompting into a system habit.
+
+---
+
+## Supporting Script
+
+This guide includes a simple prompt registry script that can summarize prompts from an example AI task log.
+
+Run it from the project root after creating the example data.
+
+```bash
+bash scripts/bash/01-create-example-ai-task-log.sh
+
+python scripts/python/03-build-prompt-registry.py \
+  data/example/ai-task-log.csv \
+  data/results
+```
+
+Expected output:
+
+```text
+data/results/prompt-registry.csv
+```
+
+The script is intentionally simple. Its purpose is to demonstrate the system idea: prompts can be documented, summarized, reviewed, and improved over time.
+
+---
+
+## Chapter Summary
+
+Prompt and context design is not about finding magic words.
+
+It is about designing clear human instructions for AI-assisted work.
+
+A good prompt defines the task, supplies relevant context, sets constraints, requests a reviewable output, and supports human judgment.
+
+In CDI AI Systems, prompts are not isolated tricks.
+
+They are reusable workflow components inside a Human–AI–Human system.
+
+---
+
+## Looking Ahead
+
+The next chapter focuses on data and knowledge grounding.
+
+We will move from designing better prompts to ensuring that AI outputs are connected to appropriate source material, project context, evidence, and documented knowledge.

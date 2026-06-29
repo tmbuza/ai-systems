@@ -1,0 +1,59 @@
+project:
+  type: book
+  output-dir: docs
+
+bibliography: library/references.bib
+date: last-modified
+date-format: "MMM YYYY"
+
+book:
+  title: "AI Systems"
+  subtitle: "From AI Literacy to Applied Intelligent Workflows"
+  author: "Teresia Mrema Buza | Complex Data Insights"
+
+  chapters:
+    - index.qmd
+    - part: "Foundation"
+      chapters:
+        - 00-preface-and-overview.qmd
+        - 01-ai-systems-thinking.qmd
+        - 02-ai-literacy-and-responsible-use.qmd
+        - 03-problem-framing-for-ai.qmd
+    - part: "Applied AI Workflows"
+      chapters:
+        - 04-prompt-and-context-design.qmd
+        - 05-data-and-knowledge-grounding.qmd
+        - 06-evaluation-and-quality-control.qmd
+        - 07-human-in-the-loop-workflows.qmd
+    - part: "Operational AI Systems"
+      chapters:
+        - 08-automation-and-agentic-workflows.qmd
+        - 09-ai-assisted-analysis-and-reporting.qmd
+        - 10-governance-risk-and-documentation.qmd
+        - 11-end-to-end-case-study.qmd
+    - part: "Growth and Reference"
+      chapters:
+        - 12-career-and-workforce-readiness.qmd
+        - 999-appendix.qmd
+        - 999-references.qmd
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    number-depth: 2
+    smooth-scroll: true
+    anchor-sections: true
+    link-external-icon: true
+    css: assets/css/cdi.css
+    code-fold: true
+    mermaid:
+      theme: forest
+
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+  working-dir: .

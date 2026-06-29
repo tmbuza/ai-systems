@@ -1,0 +1,36 @@
+# Appendix {#appendix}
+
+:::cdi-message
+- **ID:** AI-999A
+- **Type:** Appendix
+- **Audience:** Learners and instructors
+- **Theme:** Reusable templates support repeatable AI workflows
+:::
+
+## AI Task Log Columns
+
+```text
+task_id
+task_type
+audience
+AI_role
+input_context
+expected_output
+accuracy_score
+completeness_score
+clarity_score
+risk_level
+review_status
+human_decision
+```
+
+## Minimal Project Commands
+
+```bash
+bash scripts/bash/00-check-environment.sh
+bash scripts/bash/01-create-example-ai-task-log.sh
+python scripts/python/02-evaluate-ai-output-quality.py data/example/ai-task-log.csv data/results
+python scripts/python/03-build-prompt-registry.py data/example/ai-task-log.csv data/results
+Rscript scripts/R/04-plot-evaluation-summary.R data/results/ai-evaluation-summary.csv data/reports
+quarto render
+```

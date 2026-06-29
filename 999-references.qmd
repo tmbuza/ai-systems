@@ -1,0 +1,13 @@
+# References {#references}
+
+:::cdi-message
+- **ID:** AI-999R
+- **Type:** References
+- **Audience:** All readers
+- **Theme:** AI systems should be connected to documented sources
+:::
+
+References will be expanded as the guide matures.
+
+::: {#refs}
+:::
