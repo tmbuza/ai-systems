@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -223,12 +258,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -243,7 +280,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#grounding-sources" id="toc-grounding-sources" class="nav-link active" data-scroll-target="#grounding-sources">Grounding Sources</a></li>
+  <li><a href="#chapter-purpose" id="toc-chapter-purpose" class="nav-link active" data-scroll-target="#chapter-purpose">Chapter Purpose</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#what-grounding-means" id="toc-what-grounding-means" class="nav-link" data-scroll-target="#what-grounding-means">What Grounding Means</a></li>
+  <li><a href="#the-humanaihuman-grounding-loop" id="toc-the-humanaihuman-grounding-loop" class="nav-link" data-scroll-target="#the-humanaihuman-grounding-loop">The Human–AI–Human Grounding Loop</a></li>
+  <li><a href="#why-ungrounded-ai-outputs-are-risky" id="toc-why-ungrounded-ai-outputs-are-risky" class="nav-link" data-scroll-target="#why-ungrounded-ai-outputs-are-risky">Why Ungrounded AI Outputs Are Risky</a></li>
+  <li><a href="#types-of-grounding" id="toc-types-of-grounding" class="nav-link" data-scroll-target="#types-of-grounding">Types of Grounding</a></li>
+  <li><a href="#general-knowledge-is-not-enough" id="toc-general-knowledge-is-not-enough" class="nav-link" data-scroll-target="#general-knowledge-is-not-enough">General Knowledge Is Not Enough</a></li>
+  <li><a href="#source-grounded-prompts" id="toc-source-grounded-prompts" class="nav-link" data-scroll-target="#source-grounded-prompts">Source-Grounded Prompts</a></li>
+  <li><a href="#data-grounded-prompts" id="toc-data-grounded-prompts" class="nav-link" data-scroll-target="#data-grounded-prompts">Data-Grounded Prompts</a></li>
+  <li><a href="#knowledge-grounding-with-project-files" id="toc-knowledge-grounding-with-project-files" class="nav-link" data-scroll-target="#knowledge-grounding-with-project-files">Knowledge Grounding with Project Files</a></li>
+  <li><a href="#example-project-context-file" id="toc-example-project-context-file" class="nav-link" data-scroll-target="#example-project-context-file">Example Project Context File</a></li>
+  <li><a href="#grounded-outputs-should-separate-claims" id="toc-grounded-outputs-should-separate-claims" class="nav-link" data-scroll-target="#grounded-outputs-should-separate-claims">Grounded Outputs Should Separate Claims</a></li>
+  <li><a href="#grounding-and-citations" id="toc-grounding-and-citations" class="nav-link" data-scroll-target="#grounding-and-citations">Grounding and Citations</a></li>
+  <li><a href="#knowledge-grounding-and-retrieval" id="toc-knowledge-grounding-and-retrieval" class="nav-link" data-scroll-target="#knowledge-grounding-and-retrieval">Knowledge Grounding and Retrieval</a></li>
+  <li><a href="#common-grounding-mistakes" id="toc-common-grounding-mistakes" class="nav-link" data-scroll-target="#common-grounding-mistakes">Common Grounding Mistakes</a></li>
+  <li><a href="#supporting-workflow" id="toc-supporting-workflow" class="nav-link" data-scroll-target="#supporting-workflow">Supporting Workflow</a></li>
+  <li><a href="#practical-checklist" id="toc-practical-checklist" class="nav-link" data-scroll-target="#practical-checklist">Practical Checklist</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
@@ -252,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-prompt-and-context-design.html">Applied AI Workflows</a></li><li class="breadcrumb-item"><a href="./05-data-and-knowledge-grounding.html"><span class="chapter-title">Data and Knowledge Grounding</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="grounding" class="quarto-section-identifier"><span class="chapter-title">Data and Knowledge Grounding</span></span></h1>
+<h1 class="title"><span class="chapter-title">Data and Knowledge Grounding</span></h1>
 </div>
 
 
@@ -278,23 +333,448 @@ ul.task-list li input[type="checkbox"] {
 <div class="cdi-message">
 <ul>
 <li><strong>ID:</strong> AI-005</li>
-<li><strong>Type:</strong> Workflow Chapter</li>
-<li><strong>Audience:</strong> Analysts, educators, and technical teams</li>
-<li><strong>Theme:</strong> AI outputs should be grounded in the right evidence</li>
+<li><strong>Type:</strong> Core Chapter</li>
+<li><strong>Audience:</strong> Learners, analysts, educators, researchers, and professionals building AI-supported workflows</li>
+<li><strong>Theme:</strong> AI outputs become more useful when they are grounded in appropriate data, source material, and documented knowledge</li>
 </ul>
 </div>
-<p>Grounding connects AI work to trusted data, documents, domain knowledge, or user-provided context.</p>
-<p>Grounded workflows reduce unsupported claims.</p>
-<p>They also make outputs easier to review.</p>
-<section id="grounding-sources" class="level2">
-<h2 class="anchored" data-anchor-id="grounding-sources">Grounding Sources</h2>
-<pre class="text"><code>User-provided documents
-Project datasets
-Published references
-Standard operating procedures
-Internal policy documents
-Expert review notes</code></pre>
-<p>The stronger the grounding, the easier it is to evaluate the output.</p>
+<section id="chapter-purpose" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-purpose">Chapter Purpose</h2>
+<p>AI systems are most useful when they are connected to the right context.</p>
+<p>A prompt can ask a clear question.</p>
+<p>But a clear question is not enough if the AI system does not have the information needed to answer well.</p>
+<p>When source material, data, definitions, prior decisions, and constraints are missing, the AI may rely on general patterns instead of project-specific evidence.</p>
+<p>That can produce fluent but unsupported output.</p>
+<p>This chapter introduces data and knowledge grounding as a core AI systems skill.</p>
+<p>Grounding means connecting AI work to the information that should shape the answer.</p>
+<p>In a CDI workflow, grounding helps move AI use from casual assistance toward reproducible, reviewable, and defensible work.</p>
+<hr>
+</section>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this chapter, you should be able to:</p>
+<ul>
+<li>Explain what grounding means in an AI workflow.</li>
+<li>Distinguish between general AI knowledge, user-provided context, project data, and authoritative sources.</li>
+<li>Identify when an AI output is insufficiently grounded.</li>
+<li>Design grounded prompts that separate source-based claims from interpretation.</li>
+<li>Use simple project files to organize AI-ready knowledge.</li>
+<li>Apply the Human–AI–Human workflow to source review, evidence use, and documentation.</li>
+</ul>
+<hr>
+</section>
+<section id="what-grounding-means" class="level2">
+<h2 class="anchored" data-anchor-id="what-grounding-means">What Grounding Means</h2>
+<p>Grounding means linking an AI task to relevant evidence or context.</p>
+<p>In practical work, grounding may include:</p>
+<ul>
+<li>a dataset,</li>
+<li>a table of results,</li>
+<li>a report,</li>
+<li>a protocol,</li>
+<li>meeting notes,</li>
+<li>a style guide,</li>
+<li>a project decision log,</li>
+<li>a reference document,</li>
+<li>a glossary,</li>
+<li>or a trusted external source.</li>
+</ul>
+<p>The purpose is simple.</p>
+<p>The AI should not have to guess the project context.</p>
+<p>The human supplies or identifies the information that matters.</p>
+<p>Then the AI assists within that context.</p>
+<hr>
+</section>
+<section id="the-humanaihuman-grounding-loop" class="level2">
+<h2 class="anchored" data-anchor-id="the-humanaihuman-grounding-loop">The Human–AI–Human Grounding Loop</h2>
+<p>Grounding follows the Human–AI–Human workflow.</p>
+<pre class="text"><code>Human selects the relevant sources and context
+        ↓
+AI summarizes, extracts, compares, reorganizes, or drafts
+        ↓
+Human verifies claims against the sources and decides what to use</code></pre>
+<p>The human role is especially important at the beginning and the end.</p>
+<p>At the beginning, the human decides what counts as relevant source material.</p>
+<p>At the end, the human checks whether the AI output is faithful to that material.</p>
+<p>AI can assist with evidence organization.</p>
+<p>It should not silently replace evidence judgment.</p>
+<hr>
+</section>
+<section id="why-ungrounded-ai-outputs-are-risky" class="level2">
+<h2 class="anchored" data-anchor-id="why-ungrounded-ai-outputs-are-risky">Why Ungrounded AI Outputs Are Risky</h2>
+<p>AI-generated text can sound confident even when it is weakly supported.</p>
+<p>This is one of the main reasons grounding matters.</p>
+<p>An ungrounded AI output may:</p>
+<ul>
+<li>invent details,</li>
+<li>overgeneralize,</li>
+<li>miss project-specific constraints,</li>
+<li>mix facts with assumptions,</li>
+<li>cite unclear evidence,</li>
+<li>or produce recommendations that do not fit the actual situation.</li>
+</ul>
+<p>In low-risk brainstorming, this may be acceptable.</p>
+<p>In analysis, reporting, education, governance, health, finance, or organizational decision-making, it is not enough.</p>
+<p>The stronger the consequence of the output, the stronger the grounding and review process should be.</p>
+<hr>
+</section>
+<section id="types-of-grounding" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-grounding">Types of Grounding</h2>
+<p>Not all grounding is the same.</p>
+<p>Different tasks require different forms of context.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Grounding type</th>
+<th>What it provides</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Task grounding</td>
+<td>Defines the work</td>
+<td>“Extract action items from these meeting notes.”</td>
+</tr>
+<tr class="even">
+<td>Source grounding</td>
+<td>Limits claims to provided material</td>
+<td>“Use only the attached report.”</td>
+</tr>
+<tr class="odd">
+<td>Data grounding</td>
+<td>Connects output to structured data</td>
+<td>“Interpret this results table.”</td>
+</tr>
+<tr class="even">
+<td>Domain grounding</td>
+<td>Adds subject-matter context</td>
+<td>“This is for a clinical data workflow.”</td>
+</tr>
+<tr class="odd">
+<td>Decision grounding</td>
+<td>Connects work to prior choices</td>
+<td>“Use the approved inclusion criteria.”</td>
+</tr>
+<tr class="even">
+<td>Style grounding</td>
+<td>Aligns presentation</td>
+<td>“Write in CDI guide style.”</td>
+</tr>
+<tr class="odd">
+<td>Governance grounding</td>
+<td>Adds rules and constraints</td>
+<td>“Do not include confidential information.”</td>
+</tr>
+</tbody>
+</table>
+<p>A strong AI workflow makes the grounding type explicit.</p>
+<hr>
+</section>
+<section id="general-knowledge-is-not-enough" class="level2">
+<h2 class="anchored" data-anchor-id="general-knowledge-is-not-enough">General Knowledge Is Not Enough</h2>
+<p>Large AI models can provide useful general explanations.</p>
+<p>But general knowledge is not the same as project knowledge.</p>
+<p>For example, an AI tool may explain what evaluation means in machine learning.</p>
+<p>That does not mean it knows:</p>
+<ul>
+<li>which dataset your project uses,</li>
+<li>which metric your team selected,</li>
+<li>which tradeoffs were accepted,</li>
+<li>which assumptions were documented,</li>
+<li>which audience will read the report,</li>
+<li>or which decisions depend on the output.</li>
+</ul>
+<p>General AI knowledge can support understanding.</p>
+<p>Project-specific knowledge must come from the project.</p>
+<hr>
+</section>
+<section id="source-grounded-prompts" class="level2">
+<h2 class="anchored" data-anchor-id="source-grounded-prompts">Source-Grounded Prompts</h2>
+<p>A source-grounded prompt gives the AI a clear boundary.</p>
+<p>For example:</p>
+<pre class="text"><code>Task:
+Summarize the source text below into key decisions, open questions, and next steps.
+
+Source boundary:
+Use only the source text provided. Do not add external facts.
+
+Output format:
+Return three sections: Decisions, Open Questions, Next Steps.
+
+Review rule:
+If a point is not clearly supported by the source text, place it under Open Questions instead of presenting it as a decision.</code></pre>
+<p>This prompt does not only ask for a summary.</p>
+<p>It defines what evidence is allowed.</p>
+<p>It also gives the AI a way to handle uncertainty.</p>
+<hr>
+</section>
+<section id="data-grounded-prompts" class="level2">
+<h2 class="anchored" data-anchor-id="data-grounded-prompts">Data-Grounded Prompts</h2>
+<p>Data-grounded prompts are especially important in analytical workflows.</p>
+<p>The AI should know what the table represents, what columns mean, and what it should avoid claiming.</p>
+<p>For example:</p>
+<pre class="text"><code>Task:
+Review the following AI evaluation summary table and identify quality patterns.
+
+Data context:
+Each row represents an AI-assisted task. Columns include task_id, task_type, risk_level, output_quality_score, review_status, and reviewer_notes.
+
+Constraints:
+Do not make claims beyond the table. Do not treat a quality score as proof of correctness. Separate observations from recommendations.
+
+Output format:
+Return a table with columns: observation, supporting_field, possible_interpretation, recommended_human_review.</code></pre>
+<p>This helps keep the AI output connected to the actual data.</p>
+<p>It also prevents the AI from presenting unsupported conclusions as facts.</p>
+<hr>
+</section>
+<section id="knowledge-grounding-with-project-files" class="level2">
+<h2 class="anchored" data-anchor-id="knowledge-grounding-with-project-files">Knowledge Grounding with Project Files</h2>
+<p>A practical AI system often needs a small knowledge structure.</p>
+<p>This does not need to be complex at the beginning.</p>
+<p>A simple project can include:</p>
+<pre class="text"><code>data/
+├── example/
+│   └── ai-task-log.csv
+├── input/
+│   └── project-context.md
+├── results/
+│   ├── ai-evaluation-summary.csv
+│   └── prompt-registry.csv
+└── reports/
+    └── ai-evaluation-summary.png</code></pre>
+<p>The goal is to make context reusable.</p>
+<p>Instead of rewriting the same background every time, the project can maintain stable files that describe the work.</p>
+<p>Examples include:</p>
+<ul>
+<li>a project overview,</li>
+<li>a glossary,</li>
+<li>a task registry,</li>
+<li>a prompt registry,</li>
+<li>an evaluation rubric,</li>
+<li>and a decision log.</li>
+</ul>
+<p>These files become the memory of the workflow.</p>
+<hr>
+</section>
+<section id="example-project-context-file" class="level2">
+<h2 class="anchored" data-anchor-id="example-project-context-file">Example Project Context File</h2>
+<p>A simple project context file can help ground AI work.</p>
+<pre class="text"><code>Project name:
+CDI AI Systems Guide
+
+Purpose:
+Teach learners how to design responsible, reproducible, human-led AI workflows.
+
+Core workflow:
+Human defines the problem.
+AI assists with generation, reasoning, analysis, or automation.
+Human evaluates, decides, documents, and acts.
+
+Audience:
+Learners, analysts, educators, researchers, and professionals.
+
+Quality expectations:
+Outputs should be clear, reviewable, source-aware, and cautious about unsupported claims.
+
+Boundaries:
+Do not treat AI output as final evidence. Do not include confidential information in prompts. Document assumptions and review steps.</code></pre>
+<p>This type of file can be reused when drafting chapters, reviewing outputs, designing prompts, or building examples.</p>
+<hr>
+</section>
+<section id="grounded-outputs-should-separate-claims" class="level2">
+<h2 class="anchored" data-anchor-id="grounded-outputs-should-separate-claims">Grounded Outputs Should Separate Claims</h2>
+<p>A grounded AI output should make it clear what kind of statement is being made.</p>
+<p>Useful categories include:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statement type</th>
+<th>Meaning</th>
+<th>Review need</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Source-based observation</td>
+<td>Directly supported by provided material</td>
+<td>Check against the source</td>
+</tr>
+<tr class="even">
+<td>Interpretation</td>
+<td>Human or AI explanation of what the observation may mean</td>
+<td>Review for logic and context</td>
+</tr>
+<tr class="odd">
+<td>Assumption</td>
+<td>Something not directly proven by the source</td>
+<td>Confirm or revise</td>
+</tr>
+<tr class="even">
+<td>Recommendation</td>
+<td>Suggested next action</td>
+<td>Review for feasibility and risk</td>
+</tr>
+<tr class="odd">
+<td>Uncertainty</td>
+<td>Something unclear or missing</td>
+<td>Investigate further</td>
+</tr>
+</tbody>
+</table>
+<p>This structure prevents a common AI failure: blending evidence, inference, and recommendation into one confident paragraph.</p>
+<hr>
+</section>
+<section id="grounding-and-citations" class="level2">
+<h2 class="anchored" data-anchor-id="grounding-and-citations">Grounding and Citations</h2>
+<p>Grounding does not always require formal citations.</p>
+<p>But it does require traceability.</p>
+<p>Traceability means the human can answer questions such as:</p>
+<ul>
+<li>What source was used?</li>
+<li>What data table supported the claim?</li>
+<li>What assumption was made?</li>
+<li>What was generated by AI?</li>
+<li>What was verified by a human?</li>
+<li>What still needs review?</li>
+</ul>
+<p>In public reports, academic writing, technical documentation, or high-stakes contexts, citations and source references become more important.</p>
+<p>In internal workflows, a clear decision log or source note may be enough.</p>
+<p>The principle is the same: important claims should be traceable.</p>
+<hr>
+</section>
+<section id="knowledge-grounding-and-retrieval" class="level2">
+<h2 class="anchored" data-anchor-id="knowledge-grounding-and-retrieval">Knowledge Grounding and Retrieval</h2>
+<p>Some AI systems use retrieval to bring relevant documents into the model context.</p>
+<p>This is often called retrieval-augmented generation.</p>
+<p>The idea is straightforward:</p>
+<pre class="text"><code>User asks a question
+        ↓
+System retrieves relevant source material
+        ↓
+AI generates an answer using that material
+        ↓
+Human reviews the answer and checks the sources</code></pre>
+<p>Retrieval can improve grounding, but it does not remove the need for review.</p>
+<p>The retrieved material may be incomplete, outdated, irrelevant, or misinterpreted.</p>
+<p>The system still needs human evaluation.</p>
+<hr>
+</section>
+<section id="common-grounding-mistakes" class="level2">
+<h2 class="anchored" data-anchor-id="common-grounding-mistakes">Common Grounding Mistakes</h2>
+<p>Several grounding mistakes appear often in AI workflows.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mistake</th>
+<th>Why it matters</th>
+<th>Better practice</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No source boundary</td>
+<td>AI may add unsupported material</td>
+<td>State what sources may be used</td>
+</tr>
+<tr class="even">
+<td>Too much context</td>
+<td>Important details may be buried</td>
+<td>Provide the most relevant context first</td>
+</tr>
+<tr class="odd">
+<td>Missing definitions</td>
+<td>AI may interpret terms differently</td>
+<td>Include a glossary or definitions</td>
+</tr>
+<tr class="even">
+<td>Unclear data columns</td>
+<td>AI may misread the table</td>
+<td>Explain column meanings</td>
+</tr>
+<tr class="odd">
+<td>No uncertainty handling</td>
+<td>Weak claims may appear final</td>
+<td>Ask AI to flag unclear points</td>
+</tr>
+<tr class="even">
+<td>No review trail</td>
+<td>Hard to audit later</td>
+<td>Keep prompts, outputs, and review notes</td>
+</tr>
+</tbody>
+</table>
+<p>Grounding is not only about adding more information.</p>
+<p>It is about adding the right information in a reviewable way.</p>
+<hr>
+</section>
+<section id="supporting-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-workflow">Supporting Workflow</h2>
+<p>This guide includes example scripts that create and summarize an AI task log.</p>
+<p>The task log acts as a simple grounding artifact because it records what AI was used for, what risk level was assigned, and whether review occurred.</p>
+<p>Run from the project root:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/01-create-example-ai-task-log.sh</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py <span class="dt">\</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  data/results</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/03-build-prompt-registry.py <span class="dt">\</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  data/results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Expected outputs:</p>
+<pre class="text"><code>data/example/ai-task-log.csv
+data/results/ai-evaluation-summary.csv
+data/results/prompt-registry.csv</code></pre>
+<p>These outputs are not meant to be a complete AI governance system.</p>
+<p>They are starter artifacts for documenting AI-assisted work.</p>
+<hr>
+</section>
+<section id="practical-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="practical-checklist">Practical Checklist</h2>
+<p>Before using AI with source material or project data, ask:</p>
+<ul>
+<li>What source or data should ground the output?</li>
+<li>What information is allowed?</li>
+<li>What information is missing?</li>
+<li>What claims must be separated from assumptions?</li>
+<li>What should the AI avoid adding?</li>
+<li>How will the human verify the output?</li>
+<li>Where will the prompt, source, output, and review decision be documented?</li>
+</ul>
+<p>These questions make grounding part of the workflow rather than an afterthought.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>Data and knowledge grounding connects AI work to the information that should shape the output.</p>
+<p>Grounding helps reduce unsupported claims, improves reviewability, and makes AI-assisted workflows more reproducible.</p>
+<p>In CDI AI Systems, grounding is part of responsible Human–AI–Human work.</p>
+<p>The human selects the relevant sources.</p>
+<p>AI assists with organization, extraction, summarization, drafting, or analysis.</p>
+<p>The human verifies, documents, and decides what can be used.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter focuses on evaluation and quality control.</p>
+<p>We will move from grounding AI outputs to judging whether those outputs are accurate, useful, safe, complete, and ready for human-approved use.</p>
 
 
 </section>

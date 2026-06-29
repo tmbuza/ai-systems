@@ -817,18 +817,205 @@
     "href": "05-data-and-knowledge-grounding.html",
     "title": "Data and Knowledge Grounding",
     "section": "",
-    "text": "Grounding Sources\nGrounding connects AI work to trusted data, documents, domain knowledge, or user-provided context.\nGrounded workflows reduce unsupported claims.\nThey also make outputs easier to review.\nThe stronger the grounding, the easier it is to evaluate the output.",
+    "text": "Chapter Purpose\nAI systems are most useful when they are connected to the right context.\nA prompt can ask a clear question.\nBut a clear question is not enough if the AI system does not have the information needed to answer well.\nWhen source material, data, definitions, prior decisions, and constraints are missing, the AI may rely on general patterns instead of project-specific evidence.\nThat can produce fluent but unsupported output.\nThis chapter introduces data and knowledge grounding as a core AI systems skill.\nGrounding means connecting AI work to the information that should shape the answer.\nIn a CDI workflow, grounding helps move AI use from casual assistance toward reproducible, reviewable, and defensible work.",
     "crumbs": [
       "Applied AI Workflows",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
     ]
   },
   {
-    "objectID": "05-data-and-knowledge-grounding.html#grounding-sources",
-    "href": "05-data-and-knowledge-grounding.html#grounding-sources",
+    "objectID": "05-data-and-knowledge-grounding.html#learning-outcomes",
+    "href": "05-data-and-knowledge-grounding.html#learning-outcomes",
     "title": "Data and Knowledge Grounding",
-    "section": "",
-    "text": "User-provided documents\nProject datasets\nPublished references\nStandard operating procedures\nInternal policy documents\nExpert review notes",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nBy the end of this chapter, you should be able to:\n\nExplain what grounding means in an AI workflow.\nDistinguish between general AI knowledge, user-provided context, project data, and authoritative sources.\nIdentify when an AI output is insufficiently grounded.\nDesign grounded prompts that separate source-based claims from interpretation.\nUse simple project files to organize AI-ready knowledge.\nApply the Human–AI–Human workflow to source review, evidence use, and documentation.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#what-grounding-means",
+    "href": "05-data-and-knowledge-grounding.html#what-grounding-means",
+    "title": "Data and Knowledge Grounding",
+    "section": "What Grounding Means",
+    "text": "What Grounding Means\nGrounding means linking an AI task to relevant evidence or context.\nIn practical work, grounding may include:\n\na dataset,\na table of results,\na report,\na protocol,\nmeeting notes,\na style guide,\na project decision log,\na reference document,\na glossary,\nor a trusted external source.\n\nThe purpose is simple.\nThe AI should not have to guess the project context.\nThe human supplies or identifies the information that matters.\nThen the AI assists within that context.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#the-humanaihuman-grounding-loop",
+    "href": "05-data-and-knowledge-grounding.html#the-humanaihuman-grounding-loop",
+    "title": "Data and Knowledge Grounding",
+    "section": "The Human–AI–Human Grounding Loop",
+    "text": "The Human–AI–Human Grounding Loop\nGrounding follows the Human–AI–Human workflow.\nHuman selects the relevant sources and context\n        ↓\nAI summarizes, extracts, compares, reorganizes, or drafts\n        ↓\nHuman verifies claims against the sources and decides what to use\nThe human role is especially important at the beginning and the end.\nAt the beginning, the human decides what counts as relevant source material.\nAt the end, the human checks whether the AI output is faithful to that material.\nAI can assist with evidence organization.\nIt should not silently replace evidence judgment.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#why-ungrounded-ai-outputs-are-risky",
+    "href": "05-data-and-knowledge-grounding.html#why-ungrounded-ai-outputs-are-risky",
+    "title": "Data and Knowledge Grounding",
+    "section": "Why Ungrounded AI Outputs Are Risky",
+    "text": "Why Ungrounded AI Outputs Are Risky\nAI-generated text can sound confident even when it is weakly supported.\nThis is one of the main reasons grounding matters.\nAn ungrounded AI output may:\n\ninvent details,\novergeneralize,\nmiss project-specific constraints,\nmix facts with assumptions,\ncite unclear evidence,\nor produce recommendations that do not fit the actual situation.\n\nIn low-risk brainstorming, this may be acceptable.\nIn analysis, reporting, education, governance, health, finance, or organizational decision-making, it is not enough.\nThe stronger the consequence of the output, the stronger the grounding and review process should be.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#types-of-grounding",
+    "href": "05-data-and-knowledge-grounding.html#types-of-grounding",
+    "title": "Data and Knowledge Grounding",
+    "section": "Types of Grounding",
+    "text": "Types of Grounding\nNot all grounding is the same.\nDifferent tasks require different forms of context.\n\n\n\n\n\n\n\n\nGrounding type\nWhat it provides\nExample\n\n\n\n\nTask grounding\nDefines the work\n“Extract action items from these meeting notes.”\n\n\nSource grounding\nLimits claims to provided material\n“Use only the attached report.”\n\n\nData grounding\nConnects output to structured data\n“Interpret this results table.”\n\n\nDomain grounding\nAdds subject-matter context\n“This is for a clinical data workflow.”\n\n\nDecision grounding\nConnects work to prior choices\n“Use the approved inclusion criteria.”\n\n\nStyle grounding\nAligns presentation\n“Write in CDI guide style.”\n\n\nGovernance grounding\nAdds rules and constraints\n“Do not include confidential information.”\n\n\n\nA strong AI workflow makes the grounding type explicit.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#general-knowledge-is-not-enough",
+    "href": "05-data-and-knowledge-grounding.html#general-knowledge-is-not-enough",
+    "title": "Data and Knowledge Grounding",
+    "section": "General Knowledge Is Not Enough",
+    "text": "General Knowledge Is Not Enough\nLarge AI models can provide useful general explanations.\nBut general knowledge is not the same as project knowledge.\nFor example, an AI tool may explain what evaluation means in machine learning.\nThat does not mean it knows:\n\nwhich dataset your project uses,\nwhich metric your team selected,\nwhich tradeoffs were accepted,\nwhich assumptions were documented,\nwhich audience will read the report,\nor which decisions depend on the output.\n\nGeneral AI knowledge can support understanding.\nProject-specific knowledge must come from the project.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#source-grounded-prompts",
+    "href": "05-data-and-knowledge-grounding.html#source-grounded-prompts",
+    "title": "Data and Knowledge Grounding",
+    "section": "Source-Grounded Prompts",
+    "text": "Source-Grounded Prompts\nA source-grounded prompt gives the AI a clear boundary.\nFor example:\nTask:\nSummarize the source text below into key decisions, open questions, and next steps.\n\nSource boundary:\nUse only the source text provided. Do not add external facts.\n\nOutput format:\nReturn three sections: Decisions, Open Questions, Next Steps.\n\nReview rule:\nIf a point is not clearly supported by the source text, place it under Open Questions instead of presenting it as a decision.\nThis prompt does not only ask for a summary.\nIt defines what evidence is allowed.\nIt also gives the AI a way to handle uncertainty.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#data-grounded-prompts",
+    "href": "05-data-and-knowledge-grounding.html#data-grounded-prompts",
+    "title": "Data and Knowledge Grounding",
+    "section": "Data-Grounded Prompts",
+    "text": "Data-Grounded Prompts\nData-grounded prompts are especially important in analytical workflows.\nThe AI should know what the table represents, what columns mean, and what it should avoid claiming.\nFor example:\nTask:\nReview the following AI evaluation summary table and identify quality patterns.\n\nData context:\nEach row represents an AI-assisted task. Columns include task_id, task_type, risk_level, output_quality_score, review_status, and reviewer_notes.\n\nConstraints:\nDo not make claims beyond the table. Do not treat a quality score as proof of correctness. Separate observations from recommendations.\n\nOutput format:\nReturn a table with columns: observation, supporting_field, possible_interpretation, recommended_human_review.\nThis helps keep the AI output connected to the actual data.\nIt also prevents the AI from presenting unsupported conclusions as facts.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#knowledge-grounding-with-project-files",
+    "href": "05-data-and-knowledge-grounding.html#knowledge-grounding-with-project-files",
+    "title": "Data and Knowledge Grounding",
+    "section": "Knowledge Grounding with Project Files",
+    "text": "Knowledge Grounding with Project Files\nA practical AI system often needs a small knowledge structure.\nThis does not need to be complex at the beginning.\nA simple project can include:\ndata/\n├── example/\n│   └── ai-task-log.csv\n├── input/\n│   └── project-context.md\n├── results/\n│   ├── ai-evaluation-summary.csv\n│   └── prompt-registry.csv\n└── reports/\n    └── ai-evaluation-summary.png\nThe goal is to make context reusable.\nInstead of rewriting the same background every time, the project can maintain stable files that describe the work.\nExamples include:\n\na project overview,\na glossary,\na task registry,\na prompt registry,\nan evaluation rubric,\nand a decision log.\n\nThese files become the memory of the workflow.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#example-project-context-file",
+    "href": "05-data-and-knowledge-grounding.html#example-project-context-file",
+    "title": "Data and Knowledge Grounding",
+    "section": "Example Project Context File",
+    "text": "Example Project Context File\nA simple project context file can help ground AI work.\nProject name:\nCDI AI Systems Guide\n\nPurpose:\nTeach learners how to design responsible, reproducible, human-led AI workflows.\n\nCore workflow:\nHuman defines the problem.\nAI assists with generation, reasoning, analysis, or automation.\nHuman evaluates, decides, documents, and acts.\n\nAudience:\nLearners, analysts, educators, researchers, and professionals.\n\nQuality expectations:\nOutputs should be clear, reviewable, source-aware, and cautious about unsupported claims.\n\nBoundaries:\nDo not treat AI output as final evidence. Do not include confidential information in prompts. Document assumptions and review steps.\nThis type of file can be reused when drafting chapters, reviewing outputs, designing prompts, or building examples.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#grounded-outputs-should-separate-claims",
+    "href": "05-data-and-knowledge-grounding.html#grounded-outputs-should-separate-claims",
+    "title": "Data and Knowledge Grounding",
+    "section": "Grounded Outputs Should Separate Claims",
+    "text": "Grounded Outputs Should Separate Claims\nA grounded AI output should make it clear what kind of statement is being made.\nUseful categories include:\n\n\n\n\n\n\n\n\nStatement type\nMeaning\nReview need\n\n\n\n\nSource-based observation\nDirectly supported by provided material\nCheck against the source\n\n\nInterpretation\nHuman or AI explanation of what the observation may mean\nReview for logic and context\n\n\nAssumption\nSomething not directly proven by the source\nConfirm or revise\n\n\nRecommendation\nSuggested next action\nReview for feasibility and risk\n\n\nUncertainty\nSomething unclear or missing\nInvestigate further\n\n\n\nThis structure prevents a common AI failure: blending evidence, inference, and recommendation into one confident paragraph.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#grounding-and-citations",
+    "href": "05-data-and-knowledge-grounding.html#grounding-and-citations",
+    "title": "Data and Knowledge Grounding",
+    "section": "Grounding and Citations",
+    "text": "Grounding and Citations\nGrounding does not always require formal citations.\nBut it does require traceability.\nTraceability means the human can answer questions such as:\n\nWhat source was used?\nWhat data table supported the claim?\nWhat assumption was made?\nWhat was generated by AI?\nWhat was verified by a human?\nWhat still needs review?\n\nIn public reports, academic writing, technical documentation, or high-stakes contexts, citations and source references become more important.\nIn internal workflows, a clear decision log or source note may be enough.\nThe principle is the same: important claims should be traceable.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#knowledge-grounding-and-retrieval",
+    "href": "05-data-and-knowledge-grounding.html#knowledge-grounding-and-retrieval",
+    "title": "Data and Knowledge Grounding",
+    "section": "Knowledge Grounding and Retrieval",
+    "text": "Knowledge Grounding and Retrieval\nSome AI systems use retrieval to bring relevant documents into the model context.\nThis is often called retrieval-augmented generation.\nThe idea is straightforward:\nUser asks a question\n        ↓\nSystem retrieves relevant source material\n        ↓\nAI generates an answer using that material\n        ↓\nHuman reviews the answer and checks the sources\nRetrieval can improve grounding, but it does not remove the need for review.\nThe retrieved material may be incomplete, outdated, irrelevant, or misinterpreted.\nThe system still needs human evaluation.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#common-grounding-mistakes",
+    "href": "05-data-and-knowledge-grounding.html#common-grounding-mistakes",
+    "title": "Data and Knowledge Grounding",
+    "section": "Common Grounding Mistakes",
+    "text": "Common Grounding Mistakes\nSeveral grounding mistakes appear often in AI workflows.\n\n\n\n\n\n\n\n\nMistake\nWhy it matters\nBetter practice\n\n\n\n\nNo source boundary\nAI may add unsupported material\nState what sources may be used\n\n\nToo much context\nImportant details may be buried\nProvide the most relevant context first\n\n\nMissing definitions\nAI may interpret terms differently\nInclude a glossary or definitions\n\n\nUnclear data columns\nAI may misread the table\nExplain column meanings\n\n\nNo uncertainty handling\nWeak claims may appear final\nAsk AI to flag unclear points\n\n\nNo review trail\nHard to audit later\nKeep prompts, outputs, and review notes\n\n\n\nGrounding is not only about adding more information.\nIt is about adding the right information in a reviewable way.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#supporting-workflow",
+    "href": "05-data-and-knowledge-grounding.html#supporting-workflow",
+    "title": "Data and Knowledge Grounding",
+    "section": "Supporting Workflow",
+    "text": "Supporting Workflow\nThis guide includes example scripts that create and summarize an AI task log.\nThe task log acts as a simple grounding artifact because it records what AI was used for, what risk level was assigned, and whether review occurred.\nRun from the project root:\nbash scripts/bash/01-create-example-ai-task-log.sh\n\npython scripts/python/02-evaluate-ai-output-quality.py \\\n  data/example/ai-task-log.csv \\\n  data/results\n\npython scripts/python/03-build-prompt-registry.py \\\n  data/example/ai-task-log.csv \\\n  data/results\nExpected outputs:\ndata/example/ai-task-log.csv\ndata/results/ai-evaluation-summary.csv\ndata/results/prompt-registry.csv\nThese outputs are not meant to be a complete AI governance system.\nThey are starter artifacts for documenting AI-assisted work.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#practical-checklist",
+    "href": "05-data-and-knowledge-grounding.html#practical-checklist",
+    "title": "Data and Knowledge Grounding",
+    "section": "Practical Checklist",
+    "text": "Practical Checklist\nBefore using AI with source material or project data, ask:\n\nWhat source or data should ground the output?\nWhat information is allowed?\nWhat information is missing?\nWhat claims must be separated from assumptions?\nWhat should the AI avoid adding?\nHow will the human verify the output?\nWhere will the prompt, source, output, and review decision be documented?\n\nThese questions make grounding part of the workflow rather than an afterthought.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#chapter-summary",
+    "href": "05-data-and-knowledge-grounding.html#chapter-summary",
+    "title": "Data and Knowledge Grounding",
+    "section": "Chapter Summary",
+    "text": "Chapter Summary\nData and knowledge grounding connects AI work to the information that should shape the output.\nGrounding helps reduce unsupported claims, improves reviewability, and makes AI-assisted workflows more reproducible.\nIn CDI AI Systems, grounding is part of responsible Human–AI–Human work.\nThe human selects the relevant sources.\nAI assists with organization, extraction, summarization, drafting, or analysis.\nThe human verifies, documents, and decides what can be used.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
+    ]
+  },
+  {
+    "objectID": "05-data-and-knowledge-grounding.html#looking-ahead",
+    "href": "05-data-and-knowledge-grounding.html#looking-ahead",
+    "title": "Data and Knowledge Grounding",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter focuses on evaluation and quality control.\nWe will move from grounding AI outputs to judging whether those outputs are accurate, useful, safe, complete, and ready for human-approved use.",
     "crumbs": [
       "Applied AI Workflows",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data and Knowledge Grounding</span>"
@@ -839,29 +1026,172 @@
     "href": "06-evaluation-and-quality-control.html",
     "title": "Evaluation and Quality Control",
     "section": "",
-    "text": "Example Evaluation Dimensions\nEvaluation turns AI use from guessing into a controlled workflow.\nThis guide starts with a simple task log and scoring system.",
+    "text": "Why Evaluation Matters\nAI systems are not complete when an answer is generated.\nThey are complete only when the output has been reviewed, tested, documented, and placed in the correct human decision context.\nThis is one of the most important differences between casual AI use and AI systems work.\nCasual AI use often stops at the first useful-looking answer.\nAI systems work asks a different question:\nCan this output be trusted for this purpose?\nThat question requires evaluation.\nAI tools can produce fluent answers that sound confident even when they are incomplete, unsupported, outdated, biased, or wrong.\nThis creates a serious workflow risk.\nThe problem is not only that AI can make mistakes.\nHumans can also make mistakes.\nThe deeper problem is that AI output can look polished before it has been verified.\nIn CDI-style workflows, evaluation is not optional. It is a required layer between AI assistance and human action.\nThe evaluation step protects the quality of the final decision.",
     "crumbs": [
       "Applied AI Workflows",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
     ]
   },
   {
-    "objectID": "06-evaluation-and-quality-control.html#example-evaluation-dimensions",
-    "href": "06-evaluation-and-quality-control.html#example-evaluation-dimensions",
+    "objectID": "06-evaluation-and-quality-control.html#why-evaluation-matters",
+    "href": "06-evaluation-and-quality-control.html#why-evaluation-matters",
     "title": "Evaluation and Quality Control",
     "section": "",
-    "text": "accuracy\ncompleteness\nclarity\nusefulness\nrisk level\nreview status",
+    "text": "Human defines the task\n        ↓\nAI generates or assists\n        ↓\nHuman evaluates the output\n        ↓\nHuman revises, documents, decides, or acts",
     "crumbs": [
       "Applied AI Workflows",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
     ]
   },
   {
-    "objectID": "06-evaluation-and-quality-control.html#supporting-script",
-    "href": "06-evaluation-and-quality-control.html#supporting-script",
+    "objectID": "06-evaluation-and-quality-control.html#evaluation-is-context-specific",
+    "href": "06-evaluation-and-quality-control.html#evaluation-is-context-specific",
     "title": "Evaluation and Quality Control",
-    "section": "Supporting Script",
-    "text": "Supporting Script\npython scripts/python/02-evaluate-ai-output-quality.py data/example/ai-task-log.csv data/results\nExpected output:\ndata/results/ai-evaluation-summary.csv",
+    "section": "Evaluation Is Context-Specific",
+    "text": "Evaluation Is Context-Specific\nThere is no single universal score that tells us whether an AI output is good.\nA useful output depends on the task.\nFor example, a good brainstorming answer may be:\n\nbroad,\ncreative,\nexploratory,\nand open-ended.\n\nA good clinical, legal, financial, or scientific answer must be:\n\ngrounded,\ncautious,\ntraceable,\ncurrent,\nand reviewed by appropriate human expertise.\n\nThe same AI model can be useful in both settings, but the evaluation standard must change.\nThat is why every AI workflow should define quality criteria before relying on output.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#common-evaluation-dimensions",
+    "href": "06-evaluation-and-quality-control.html#common-evaluation-dimensions",
+    "title": "Evaluation and Quality Control",
+    "section": "Common Evaluation Dimensions",
+    "text": "Common Evaluation Dimensions\nA practical AI evaluation workflow can begin with several dimensions.\n\n\n\n\n\n\n\nDimension\nEvaluation question\n\n\n\n\nAccuracy\nIs the output factually correct for the task?\n\n\nCompleteness\nDoes it answer all important parts of the request?\n\n\nRelevance\nDoes it stay focused on the user’s actual problem?\n\n\nGrounding\nIs the output supported by provided data, sources, or context?\n\n\nClarity\nIs the output understandable to the intended audience?\n\n\nSafety\nCould the output cause harm if used directly?\n\n\nBias\nDoes the output make unfair, unsupported, or stereotyping assumptions?\n\n\nReproducibility\nCan the workflow be repeated or audited later?\n\n\nActionability\nDoes the output support a clear next step?\n\n\n\nThese dimensions do not all have equal importance in every workflow.\nA writing assistant may emphasize clarity and tone.\nA data workflow may emphasize reproducibility, grounding, and traceability.\nA high-stakes decision workflow may emphasize safety, expert review, and documented limitations.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#a-simple-ai-output-review-checklist",
+    "href": "06-evaluation-and-quality-control.html#a-simple-ai-output-review-checklist",
+    "title": "Evaluation and Quality Control",
+    "section": "A Simple AI Output Review Checklist",
+    "text": "A Simple AI Output Review Checklist\nBefore using an AI-generated output, ask:\n\nWhat task was the AI asked to perform?\nWhat information did the AI use?\nWhat information was missing?\nWhat claims need verification?\nWhat parts are useful as-is?\nWhat parts require editing or correction?\nWhat risks would appear if this output were used directly?\nWho needs to review this before action?\nWhat should be documented?\nWhat should not be trusted without additional evidence?\n\nThis checklist turns evaluation into a habit.\nIt also reinforces the Human–AI–Human workflow.\nAI assists, but humans remain responsible for judgment, verification, and action.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#task-risk-and-evaluation-depth",
+    "href": "06-evaluation-and-quality-control.html#task-risk-and-evaluation-depth",
+    "title": "Evaluation and Quality Control",
+    "section": "Task Risk and Evaluation Depth",
+    "text": "Task Risk and Evaluation Depth\nNot every AI task requires the same level of review.\nLow-risk tasks may need light review.\nMedium-risk tasks need structured review.\nHigh-risk tasks need expert review, source verification, documentation, and clear accountability.\n\n\n\n\n\n\n\n\nTask risk\nExample\nEvaluation depth\n\n\n\n\nLow\nRewriting a non-sensitive paragraph\nCheck tone, clarity, and meaning\n\n\nMedium\nSummarizing meeting notes or project plans\nCheck completeness, omissions, and action items\n\n\nHigh\nMedical, legal, financial, employment, or public claims\nVerify sources, involve expertise, document uncertainty\n\n\nSystem-level\nAutomated workflows or repeated AI outputs\nEvaluate outputs over time and monitor failure patterns\n\n\n\nThe riskier the task, the more important the evaluation layer becomes.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#evaluation-as-a-workflow-not-a-feeling",
+    "href": "06-evaluation-and-quality-control.html#evaluation-as-a-workflow-not-a-feeling",
+    "title": "Evaluation and Quality Control",
+    "section": "Evaluation as a Workflow, Not a Feeling",
+    "text": "Evaluation as a Workflow, Not a Feeling\nA common mistake is to judge AI output based on whether it “looks good.”\nThat is not enough.\nA better approach is to make evaluation visible.\nFor example, an AI task log can record:\n\nthe task,\nthe prompt,\nthe context used,\nthe model or tool used,\nthe output type,\nthe human reviewer,\nquality scores,\nrevision notes,\nand final decision status.\n\nThis turns AI use into a documented workflow.\nThat documentation is especially important when AI becomes part of repeated work.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#example-ai-task-log",
+    "href": "06-evaluation-and-quality-control.html#example-ai-task-log",
+    "title": "Evaluation and Quality Control",
+    "section": "Example AI Task Log",
+    "text": "Example AI Task Log\nThe scaffolded guide includes a small example dataset for AI task evaluation.\nThe file is created by:\nbash scripts/bash/01-create-example-ai-task-log.sh\nThe expected output is:\ndata/example/ai-task-log.csv\nA simplified version of the task log may include columns like:\ntask_id,task_type,risk_level,prompt_version,output_reviewed,accuracy_score,clarity_score,grounding_score,human_decision\nThis does not evaluate the AI model in a laboratory sense.\nInstead, it evaluates the usefulness and reliability of AI outputs inside a human workflow.\nThat is the level of evaluation most applied AI users need first.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#supporting-script-evaluate-ai-output-quality",
+    "href": "06-evaluation-and-quality-control.html#supporting-script-evaluate-ai-output-quality",
+    "title": "Evaluation and Quality Control",
+    "section": "Supporting Script: Evaluate AI Output Quality",
+    "text": "Supporting Script: Evaluate AI Output Quality\nThe scaffold includes a Python script for summarizing evaluation scores.\nRun it with:\npython scripts/python/02-evaluate-ai-output-quality.py \\\n  data/example/ai-task-log.csv \\\n  data/results\nExpected output:\ndata/results/ai-evaluation-summary.csv\nThis script is intentionally simple.\nIt demonstrates how a project can move from informal AI review into a structured quality-control table.\nIn a larger AI system, this same idea can be extended to include:\n\nreviewer agreement,\ntask-level pass/fail criteria,\nsource checks,\nhallucination flags,\nfairness checks,\nand revision history.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#supporting-script-plot-evaluation-summary",
+    "href": "06-evaluation-and-quality-control.html#supporting-script-plot-evaluation-summary",
+    "title": "Evaluation and Quality Control",
+    "section": "Supporting Script: Plot Evaluation Summary",
+    "text": "Supporting Script: Plot Evaluation Summary\nThe scaffold also includes an R script for creating a visual summary.\nRun it with:\nRscript scripts/R/04-plot-evaluation-summary.R \\\n  data/results/ai-evaluation-summary.csv \\\n  data/reports\nExpected output:\ndata/reports/ai-evaluation-summary.png\nThe plot is not meant to prove that an AI system is safe or correct.\nIt is meant to make review patterns visible.\nVisibility is the beginning of quality control.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#evaluation-failure-modes",
+    "href": "06-evaluation-and-quality-control.html#evaluation-failure-modes",
+    "title": "Evaluation and Quality Control",
+    "section": "Evaluation Failure Modes",
+    "text": "Evaluation Failure Modes\nAI evaluation can fail in predictable ways.\n\n\n\n\n\n\n\nFailure mode\nWhat happens\n\n\n\n\nFluency bias\nA polished answer is mistaken for a correct answer\n\n\nConfirmation bias\nThe reviewer accepts outputs that match prior beliefs\n\n\nMissing context\nThe AI responds without important background information\n\n\nWeak grounding\nThe output makes claims that are not supported by sources or data\n\n\nUnclear task criteria\nNobody defined what a good output should look like\n\n\nNo review record\nThe final decision cannot be audited later\n\n\nAutomation drift\nA workflow works once but fails when repeated in new contexts\n\n\n\nThe goal of evaluation is not perfection.\nThe goal is controlled, visible, accountable improvement.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#human-review-is-not-a-formality",
+    "href": "06-evaluation-and-quality-control.html#human-review-is-not-a-formality",
+    "title": "Evaluation and Quality Control",
+    "section": "Human Review Is Not a Formality",
+    "text": "Human Review Is Not a Formality\nHuman review is not just a final glance.\nIt is an active decision step.\nA reviewer should be able to say:\n\nwhat was accepted,\nwhat was changed,\nwhat was rejected,\nwhat remains uncertain,\nand why the final output is suitable for its intended use.\n\nThis is especially important when AI output is used in reports, public communication, education, research, business decisions, or health-related contexts.\nHuman review is where responsibility re-enters the workflow.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#practical-evaluation-template",
+    "href": "06-evaluation-and-quality-control.html#practical-evaluation-template",
+    "title": "Evaluation and Quality Control",
+    "section": "Practical Evaluation Template",
+    "text": "Practical Evaluation Template\nA reusable AI output evaluation note can look like this:\nTask:\n\nAI tool or model used:\n\nInput context provided:\n\nOutput reviewed by:\n\nAccuracy notes:\n\nGrounding notes:\n\nClarity notes:\n\nSafety or risk concerns:\n\nRequired revisions:\n\nFinal decision:\n\nLimitations:\nThis can be used as a lightweight review record.\nFor higher-stakes work, the template should be expanded with source links, reviewer names, version numbers, and approval status.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#cdi-principle",
+    "href": "06-evaluation-and-quality-control.html#cdi-principle",
+    "title": "Evaluation and Quality Control",
+    "section": "CDI Principle",
+    "text": "CDI Principle\nA CDI AI workflow should not ask only:\nDid the AI produce an answer?\nIt should ask:\nWas the answer evaluated well enough for the decision it supports?\nThis principle keeps AI work connected to data, insight, and impact.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#chapter-summary",
+    "href": "06-evaluation-and-quality-control.html#chapter-summary",
+    "title": "Evaluation and Quality Control",
+    "section": "Chapter Summary",
+    "text": "Chapter Summary\nIn this chapter, we introduced AI evaluation and quality control as essential parts of AI systems work.\nWe distinguished casual output acceptance from structured review.\nWe defined common evaluation dimensions such as accuracy, completeness, grounding, clarity, safety, bias, reproducibility, and actionability.\nWe also introduced simple supporting scripts for summarizing and visualizing AI task evaluation records.\nMost importantly, we reinforced the Human–AI–Human workflow:\nHuman defines the task.\nAI assists.\nHuman evaluates, decides, documents, and acts.\nEvaluation is the bridge between AI output and responsible use.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
+    ]
+  },
+  {
+    "objectID": "06-evaluation-and-quality-control.html#looking-ahead",
+    "href": "06-evaluation-and-quality-control.html#looking-ahead",
+    "title": "Evaluation and Quality Control",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter moves from evaluation into human-in-the-loop workflows.\nWe will examine how to design AI-supported processes where humans remain involved at the right points: before the task, during review, during revision, and before final action.",
     "crumbs": [
       "Applied AI Workflows",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Evaluation and Quality Control</span>"
@@ -872,18 +1202,205 @@
     "href": "07-human-in-the-loop-workflows.html",
     "title": "Human-in-the-Loop Workflows",
     "section": "",
-    "text": "Review Points\nHuman-in-the-loop design defines where people review, approve, correct, or reject AI outputs.\nThis is especially important in education, research, health, finance, policy, and public communication.",
+    "text": "Learning Outcomes\nAI systems should not be designed as pipelines where humans disappear.\nThey should be designed as workflows where humans remain responsible for framing the problem, checking the output, making decisions, and documenting what was done.\nThis is especially important when AI is used for analysis, writing, decision support, automation, teaching, research, business operations, or public communication.\nAI can assist.\nAI can accelerate.\nAI can summarize, classify, draft, compare, suggest, organize, and automate.\nBut the human remains responsible for the meaning, quality, ethics, and consequences of the work.\nThat is the purpose of human-in-the-loop workflow design.\nBy the end of this chapter, you should be able to:",
     "crumbs": [
       "Applied AI Workflows",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
     ]
   },
   {
-    "objectID": "07-human-in-the-loop-workflows.html#review-points",
-    "href": "07-human-in-the-loop-workflows.html#review-points",
+    "objectID": "07-human-in-the-loop-workflows.html#learning-outcomes",
+    "href": "07-human-in-the-loop-workflows.html#learning-outcomes",
     "title": "Human-in-the-Loop Workflows",
     "section": "",
-    "text": "Before AI: Is the task appropriate?\nDuring AI: Is the context sufficient?\nAfter AI: Is the output correct and useful?\nBefore action: Has a human accepted responsibility?",
+    "text": "Explain why human review is central to responsible AI systems.\nIdentify where human judgment is needed in an AI workflow.\nDistinguish low-risk review from high-risk review.\nDesign a Human-AI-Human workflow for a real task.\nCreate checkpoints for quality, safety, accuracy, and accountability.\nDocument AI-assisted work in a way that is reviewable and reproducible.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#the-human-ai-human-workflow",
+    "href": "07-human-in-the-loop-workflows.html#the-human-ai-human-workflow",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "The Human-AI-Human Workflow",
+    "text": "The Human-AI-Human Workflow\nThe central model of this guide is the Human-AI-Human workflow.\nHuman defines the problem\n        ↓\nAI assists with generation, reasoning, analysis, or automation\n        ↓\nHuman evaluates, decides, documents, and acts\nThis model prevents AI from becoming an unreviewed black box.\nIt also prevents the human from using AI as a substitute for thinking.\nThe value of AI is strongest when human judgment and machine assistance are combined deliberately.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#why-human-review-matters",
+    "href": "07-human-in-the-loop-workflows.html#why-human-review-matters",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Why Human Review Matters",
+    "text": "Why Human Review Matters\nAI outputs can appear fluent even when they are incomplete, inaccurate, poorly grounded, or inappropriate for the task.\nHuman review matters because AI systems may:\n\nOmit important context.\nInvent unsupported details.\nMisinterpret the task.\nOvergeneralize from weak evidence.\nProduce confident but incorrect answers.\nMiss ethical, legal, cultural, or organizational constraints.\nGenerate outputs that sound polished but are not defensible.\n\nA responsible workflow does not ask, “Did AI produce something?”\nIt asks, “Has a human reviewed whether this output is useful, accurate, appropriate, and safe for its intended purpose?”",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#where-humans-belong-in-the-workflow",
+    "href": "07-human-in-the-loop-workflows.html#where-humans-belong-in-the-workflow",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Where Humans Belong in the Workflow",
+    "text": "Where Humans Belong in the Workflow\nHuman oversight is not only needed at the end.\nIt belongs throughout the workflow.\nProblem framing\n  Human decides what the task is and why it matters.\n\nContext preparation\n  Human selects the background information, data, constraints, and sources.\n\nAI assistance\n  AI generates, summarizes, analyzes, transforms, or proposes outputs.\n\nReview and evaluation\n  Human checks accuracy, relevance, grounding, completeness, tone, and risk.\n\nDecision and action\n  Human decides what to use, revise, reject, escalate, or document.\n\nDocumentation\n  Human records the task, prompt, source material, output status, and review outcome.\nThis structure turns AI use into a workflow rather than a one-off interaction.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#human-judgment-cannot-be-outsourced",
+    "href": "07-human-in-the-loop-workflows.html#human-judgment-cannot-be-outsourced",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Human Judgment Cannot Be Outsourced",
+    "text": "Human Judgment Cannot Be Outsourced\nAI can help produce options.\nIt can help compare alternatives.\nIt can help organize evidence.\nIt can help draft documentation.\nBut some responsibilities remain human responsibilities.\nThese include:\n\nDefining the purpose of the work.\nUnderstanding the audience.\nRecognizing sensitive context.\nInterpreting consequences.\nKnowing when the output is not good enough.\nDeciding whether a task should be automated.\nTaking responsibility for final action.\n\nA human-in-the-loop system is not weak because it requires review.\nIt is stronger because it makes responsibility explicit.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#review-depth-depends-on-risk",
+    "href": "07-human-in-the-loop-workflows.html#review-depth-depends-on-risk",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Review Depth Depends on Risk",
+    "text": "Review Depth Depends on Risk\nNot every AI output needs the same level of review.\nA brainstormed list of possible blog titles does not need the same review as a medical summary, legal memo, financial recommendation, hiring decision, or research interpretation.\nA practical AI system should classify tasks by risk.\nLow-risk task\n  Examples: brainstorming, formatting, rewriting, summarizing non-sensitive notes.\n  Review need: quick human review for usefulness and tone.\n\nModerate-risk task\n  Examples: analysis planning, educational materials, public communication, workflow design.\n  Review need: careful review for accuracy, completeness, and audience fit.\n\nHigh-risk task\n  Examples: clinical, legal, financial, employment, policy, safety, or sensitive personal decisions.\n  Review need: expert review, source verification, documentation, and possible non-AI decision control.\nThe higher the risk, the more structured the human checkpoint should be.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#a-human-review-checklist",
+    "href": "07-human-in-the-loop-workflows.html#a-human-review-checklist",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "A Human Review Checklist",
+    "text": "A Human Review Checklist\nA simple review checklist can prevent many AI workflow failures.\nAI Output Review Checklist\n\nTask clarity\n[ ] Does the output answer the actual question?\n[ ] Does it match the intended audience?\n[ ] Does it stay within the requested scope?\n\nGrounding\n[ ] Is the output based on the provided data, sources, or context?\n[ ] Are unsupported claims removed or flagged?\n[ ] Are citations or evidence included where needed?\n\nAccuracy\n[ ] Are key facts correct?\n[ ] Are numbers, names, dates, and definitions checked?\n[ ] Are assumptions clearly stated?\n\nCompleteness\n[ ] Are important limitations included?\n[ ] Are missing data or uncertainty noted?\n[ ] Are next steps clear?\n\nRisk and responsibility\n[ ] Could this output affect health, money, legal status, safety, employment, or reputation?\n[ ] Does it require expert review?\n[ ] Is a human clearly responsible for the final decision?\nThis checklist can be adapted for different CDI systems.\nIn a data science system, the review may focus on assumptions, metrics, and interpretation.\nIn a medical data system, the review may focus on privacy, clinical validity, and regulatory risk.\nIn an AI system, the review focuses on whether AI assistance has been used responsibly inside a human-led workflow.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#designing-human-checkpoints",
+    "href": "07-human-in-the-loop-workflows.html#designing-human-checkpoints",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Designing Human Checkpoints",
+    "text": "Designing Human Checkpoints\nA checkpoint is a deliberate moment where the workflow pauses for human review.\nGood checkpoints are specific.\nThey do not simply say, “review output.”\nThey say what to review, who reviews it, what evidence is needed, and what happens next.\nCheckpoint name:\n  Output quality review\n\nWhen it occurs:\n  After AI produces a draft or analysis summary\n\nReviewer:\n  Human task owner\n\nReview criteria:\n  Accuracy, completeness, grounding, tone, and risk level\n\nPossible outcomes:\n  Accept, revise, rerun with better context, escalate, or reject\n\nDocumentation:\n  Record review status, reviewer, date, and notes\nThis makes the workflow auditable.\nIt also makes it easier to improve over time.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#human-in-the-loop-workflow-template",
+    "href": "07-human-in-the-loop-workflows.html#human-in-the-loop-workflow-template",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Human-in-the-Loop Workflow Template",
+    "text": "Human-in-the-Loop Workflow Template\nThe following template can be reused when designing AI-assisted workflows.\nWorkflow name:\n\nPurpose:\n\nAudience or user:\n\nInput materials:\n\nAI role:\n\nHuman role before AI use:\n\nHuman role after AI use:\n\nReview criteria:\n\nRisk level:\n\nEscalation trigger:\n\nDocumentation required:\n\nFinal decision owner:\nThis template is useful before moving into automation.\nIf a workflow cannot be clearly described with this template, it is probably not ready for automation.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#example-ai-assisted-report-drafting",
+    "href": "07-human-in-the-loop-workflows.html#example-ai-assisted-report-drafting",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Example: AI-Assisted Report Drafting",
+    "text": "Example: AI-Assisted Report Drafting\nConsider a workflow where AI helps draft a short report from a structured results table.\nA weak workflow looks like this:\nUpload table → ask AI to write report → publish output\nThis is risky because there is no explicit review step.\nA stronger workflow looks like this:\nHuman defines report purpose\n        ↓\nHuman prepares results table and interpretation notes\n        ↓\nAI drafts structured report\n        ↓\nHuman checks claims against the table\n        ↓\nHuman revises interpretation and adds limitations\n        ↓\nHuman approves final report\n        ↓\nWorkflow records prompt, source table, output, and review status\nThe second workflow is slower than the first.\nBut it is more defensible, reusable, and trustworthy.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#example-ai-assisted-data-cleaning-suggestions",
+    "href": "07-human-in-the-loop-workflows.html#example-ai-assisted-data-cleaning-suggestions",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Example: AI-Assisted Data Cleaning Suggestions",
+    "text": "Example: AI-Assisted Data Cleaning Suggestions\nAI can help suggest data cleaning steps.\nBut it should not silently alter important data without review.\nA responsible workflow may look like this:\nHuman provides data dictionary and sample records\n        ↓\nAI identifies possible inconsistencies\n        ↓\nHuman reviews suggested cleaning rules\n        ↓\nScript applies approved rules\n        ↓\nHuman checks before-and-after summaries\n        ↓\nWorkflow saves cleaning log\nHere, AI is useful for pattern recognition and suggestion.\nThe human remains responsible for approving the rules.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#reviewable-outputs",
+    "href": "07-human-in-the-loop-workflows.html#reviewable-outputs",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Reviewable Outputs",
+    "text": "Reviewable Outputs\nAI workflows should produce outputs that can be reviewed.\nA reviewable output is clear enough for a human to inspect, question, and improve.\nExamples include:\n\nA table of extracted claims.\nA summary with source references.\nA draft with assumptions listed.\nA checklist with pass/fail decisions.\nA comparison table of options.\nA workflow log showing prompt, input, output, and review status.\n\nAvoid outputs that are too vague to inspect.\nFor example, “looks good” is not a reviewable result.\nA better review note is:\nReviewed for factual accuracy, audience fit, and completeness.\nTwo unsupported claims were removed.\nOne limitation section was added.\nApproved for use in internal training only.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#documentation-as-human-oversight",
+    "href": "07-human-in-the-loop-workflows.html#documentation-as-human-oversight",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Documentation as Human Oversight",
+    "text": "Documentation as Human Oversight\nDocumentation is part of human oversight.\nIf an AI-assisted output matters, the workflow should record what happened.\nAt minimum, useful documentation may include:\nTask:\nInput material:\nPrompt or prompt version:\nAI output location:\nReviewer:\nReview date:\nReview status:\nChanges made:\nLimitations:\nFinal decision:\nThis record does not need to be complicated.\nBut it should be clear enough that someone else can understand what was done.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#supporting-script-connection",
+    "href": "07-human-in-the-loop-workflows.html#supporting-script-connection",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Supporting Script Connection",
+    "text": "Supporting Script Connection\nThe task log created earlier in this guide can support human-in-the-loop documentation.\nFor example:\nbash scripts/bash/01-create-example-ai-task-log.sh\nThen evaluation summaries can be created with:\npython scripts/python/02-evaluate-ai-output-quality.py \\\n  data/example/ai-task-log.csv \\\n  data/results\nThese scripts do not replace human judgment.\nThey help organize review evidence so that human judgment becomes easier to document.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#common-failure-modes",
+    "href": "07-human-in-the-loop-workflows.html#common-failure-modes",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Common Failure Modes",
+    "text": "Common Failure Modes\nHuman-in-the-loop workflows often fail when the review step is vague or performative.\nCommon failure modes include:\nRubber-stamp review\n  Human approves output without checking it carefully.\n\nUnclear ownership\n  No one knows who is responsible for the final decision.\n\nNo escalation path\n  The reviewer finds a problem but does not know what to do next.\n\nNo documentation\n  The workflow produces output but leaves no record of prompt, input, review, or decision.\n\nReview too late\n  Human review happens after the output has already been used.\n\nAutomation too early\n  A task is automated before quality criteria and review checkpoints are defined.\nA good AI system anticipates these failures and designs around them.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#practical-rule",
+    "href": "07-human-in-the-loop-workflows.html#practical-rule",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Practical Rule",
+    "text": "Practical Rule\nBefore using AI output in real work, ask three questions:\nWho reviewed this?\n\nWhat did they check?\n\nWho is responsible for the final decision?\nIf those questions cannot be answered, the workflow is not yet ready for serious use.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#chapter-summary",
+    "href": "07-human-in-the-loop-workflows.html#chapter-summary",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Chapter Summary",
+    "text": "Chapter Summary\nHuman-in-the-loop design keeps AI systems responsible, reviewable, and aligned with human goals.\nThe goal is not to slow down AI use unnecessarily.\nThe goal is to place human judgment where it matters most.\nIn the CDI AI Systems framework, AI assistance sits inside a human-led workflow.\nHumans define the problem.\nAI assists.\nHumans evaluate, decide, document, and act.\nThat is the Human-AI-Human workflow in practice.",
+    "crumbs": [
+      "Applied AI Workflows",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "07-human-in-the-loop-workflows.html#looking-ahead",
+    "href": "07-human-in-the-loop-workflows.html#looking-ahead",
+    "title": "Human-in-the-Loop Workflows",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter introduces automation and agentic workflows.\nWe will build on the human-in-the-loop foundation by asking when AI-assisted tasks can be safely repeated, scripted, scheduled, or partially automated.\nThe key message will remain the same: automation should come after clear problem framing, grounding, evaluation, human review, and documented responsibility.",
     "crumbs": [
       "Applied AI Workflows",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Human-in-the-Loop Workflows</span>"
@@ -894,18 +1411,183 @@
     "href": "08-automation-and-agentic-workflows.html",
     "title": "Automation and Agentic Workflows",
     "section": "",
-    "text": "Safe Automation Pattern\nAutomation becomes useful when repeated tasks have clear inputs, outputs, and review rules.\nAgentic workflows add planning, tool use, and multi-step execution.\nThey should be introduced gradually.",
+    "text": "Learning Outcomes\nAutomation is often presented as the goal of AI work.\nIn practice, automation should not be the starting point.\nBefore a workflow is automated, the task must be understood. The inputs must be clear. The expected outputs must be defined. The risks must be known. The review points must be visible.\nThis chapter explains how to move from assisted AI use into structured automation and agentic workflows without losing human judgment, traceability, or accountability.\nThe CDI approach is simple:\nHuman-led workflows come first.\nAutomation comes after clarity.\nAgentic behavior comes only after evaluation.\nBy the end of this chapter, you should be able to:",
     "crumbs": [
       "Operational AI Systems",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
     ]
   },
   {
-    "objectID": "08-automation-and-agentic-workflows.html#safe-automation-pattern",
-    "href": "08-automation-and-agentic-workflows.html#safe-automation-pattern",
+    "objectID": "08-automation-and-agentic-workflows.html#learning-outcomes",
+    "href": "08-automation-and-agentic-workflows.html#learning-outcomes",
     "title": "Automation and Agentic Workflows",
     "section": "",
-    "text": "Start manual\n  -&gt; standardize the workflow\n  -&gt; add AI assistance\n  -&gt; add evaluation\n  -&gt; automate low-risk steps\n  -&gt; monitor outputs\n  -&gt; keep human override",
+    "text": "distinguish AI assistance, automation, and agentic workflows;\ndecide when a workflow is ready for automation;\nidentify risks introduced by multi-step AI systems;\ndesign human checkpoints into automated workflows;\ndocument AI workflows so they remain reviewable and reproducible;\nconnect agentic workflows back to the Human-AI-Human model.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#from-assistance-to-automation",
+    "href": "08-automation-and-agentic-workflows.html#from-assistance-to-automation",
+    "title": "Automation and Agentic Workflows",
+    "section": "From Assistance to Automation",
+    "text": "From Assistance to Automation\nMost AI use begins as assistance.\nA human asks a question, provides context, reviews the result, and decides what to do next.\nAutomation begins when repeated steps are turned into a reusable workflow.\nAgentic workflows go further. They allow AI-enabled tools to plan or execute multiple steps toward a goal, often using tools, memory, files, search, code, or external systems.\nThese are not the same thing.\n\n\n\n\n\n\n\n\n\nWorkflow type\nHuman role\nAI role\nRisk level\n\n\n\n\nAssisted AI use\nDirects each step\nResponds to one request at a time\nUsually lower\n\n\nAutomated AI workflow\nDefines and reviews workflow\nExecutes repeated steps\nMedium\n\n\nAgentic workflow\nSets goal and constraints\nPlans or acts across steps\nHigher\n\n\n\nThe more autonomy an AI workflow has, the more important evaluation, logging, and human oversight become.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#the-human-ai-human-model-still-applies",
+    "href": "08-automation-and-agentic-workflows.html#the-human-ai-human-model-still-applies",
+    "title": "Automation and Agentic Workflows",
+    "section": "The Human-AI-Human Model Still Applies",
+    "text": "The Human-AI-Human Model Still Applies\nAutomation does not remove the human.\nIt changes where the human appears in the workflow.\nHuman defines the goal, boundaries, and review criteria\n        ↓\nAI system performs one or more structured steps\n        ↓\nHuman reviews outputs, decisions, logs, and next actions\nThis is still the Human-AI-Human workflow.\nThe human may not manually perform every step, but the human remains responsible for problem framing, quality control, interpretation, and action.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#what-makes-a-workflow-automation-ready",
+    "href": "08-automation-and-agentic-workflows.html#what-makes-a-workflow-automation-ready",
+    "title": "Automation and Agentic Workflows",
+    "section": "What Makes a Workflow Automation-Ready?",
+    "text": "What Makes a Workflow Automation-Ready?\nA workflow is not ready for automation just because it is repetitive.\nIt is ready when the repeated task is stable enough to describe, test, and review.\nA workflow is automation-ready when:\n\nthe task has a clear purpose;\nthe input format is known;\nthe desired output is defined;\nthe evaluation criteria are explicit;\nfailure modes are known;\nhuman review points are included;\nlogs or artifacts are produced;\nsensitive information is handled safely.\n\nIf these conditions are missing, automation will usually multiply errors instead of reducing work.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#automation-readiness-checklist",
+    "href": "08-automation-and-agentic-workflows.html#automation-readiness-checklist",
+    "title": "Automation and Agentic Workflows",
+    "section": "Automation Readiness Checklist",
+    "text": "Automation Readiness Checklist\nBefore automating an AI workflow, ask:\n\n\n\n\n\n\n\nQuestion\nWhy it matters\n\n\n\n\nWhat problem is this workflow solving?\nPrevents automating vague tasks\n\n\nWhat inputs does it require?\nSupports reproducibility\n\n\nWhat output should it produce?\nMakes evaluation possible\n\n\nHow will quality be checked?\nPrevents unreviewed AI output\n\n\nWhat should happen when confidence is low?\nSupports safe escalation\n\n\nWhat must remain human-reviewed?\nPreserves accountability\n\n\nWhat will be logged?\nSupports traceability\n\n\nWhat data should not be sent to AI tools?\nProtects privacy and confidentiality\n\n\n\nThis checklist should be completed before moving from manual AI assistance to automation.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#a-simple-ai-automation-pattern",
+    "href": "08-automation-and-agentic-workflows.html#a-simple-ai-automation-pattern",
+    "title": "Automation and Agentic Workflows",
+    "section": "A Simple AI Automation Pattern",
+    "text": "A Simple AI Automation Pattern\nA basic AI automation workflow can be written as a sequence of controlled steps.\n1. Load task input\n2. Validate required fields\n3. Build prompt using approved template\n4. Generate AI-assisted output\n5. Evaluate output against criteria\n6. Save output and evaluation log\n7. Flag uncertain or high-risk cases for human review\n8. Produce a final reviewable report\nThis pattern is intentionally conservative.\nIt does not treat AI output as final by default.\nIt treats AI output as an intermediate artifact that must be evaluated, documented, and reviewed.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#example-non-executable-workflow-command",
+    "href": "08-automation-and-agentic-workflows.html#example-non-executable-workflow-command",
+    "title": "Automation and Agentic Workflows",
+    "section": "Example: Non-Executable Workflow Command",
+    "text": "Example: Non-Executable Workflow Command\nA project might include a workflow script that runs the example AI task log through evaluation and reporting steps.\nbash scripts/bash/01-create-example-ai-task-log.sh\n\npython scripts/python/02-evaluate-ai-output-quality.py \\\n  data/example/ai-task-log.csv \\\n  data/results\n\npython scripts/python/03-build-prompt-registry.py \\\n  data/example/ai-task-log.csv \\\n  data/results\n\nRscript scripts/R/04-plot-evaluation-summary.R \\\n  data/results/ai-evaluation-summary.csv \\\n  data/reports\nIn this guide, commands shown inside chapters are examples for the reader. They are not executable Quarto chunks.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#agentic-workflows",
+    "href": "08-automation-and-agentic-workflows.html#agentic-workflows",
+    "title": "Automation and Agentic Workflows",
+    "section": "Agentic Workflows",
+    "text": "Agentic Workflows\nAn agentic workflow is a workflow where an AI-enabled system can decide or coordinate multiple steps toward a goal.\nFor example, an agentic workflow might:\n\ninspect a folder of files;\nidentify which files need processing;\nsummarize each file;\ncompare summaries against a checklist;\nproduce a report;\nflag missing information;\nsuggest next actions.\n\nThis can be useful.\nIt can also be risky.\nAgentic workflows introduce uncertainty because the system may choose intermediate actions that were not individually requested by the human.\nFor this reason, agentic workflows need stricter boundaries than simple prompts.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#boundaries-for-agentic-workflows",
+    "href": "08-automation-and-agentic-workflows.html#boundaries-for-agentic-workflows",
+    "title": "Automation and Agentic Workflows",
+    "section": "Boundaries for Agentic Workflows",
+    "text": "Boundaries for Agentic Workflows\nAgentic workflows should have clear limits.\nThese limits include:\n\n\n\nBoundary\nExample\n\n\n\n\nTask boundary\nOnly summarize documents in a specified folder\n\n\nData boundary\nDo not use private or external data unless approved\n\n\nTool boundary\nUse only approved scripts or read-only tools\n\n\nTime boundary\nStop after a defined number of steps\n\n\nDecision boundary\nDo not make final decisions without human review\n\n\nOutput boundary\nProduce a report, not direct action\n\n\n\nThe goal is not to prevent useful automation.\nThe goal is to prevent uncontrolled automation.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#human-checkpoints",
+    "href": "08-automation-and-agentic-workflows.html#human-checkpoints",
+    "title": "Automation and Agentic Workflows",
+    "section": "Human Checkpoints",
+    "text": "Human Checkpoints\nEvery automated or agentic workflow should include checkpoints.\nA checkpoint is a place where the workflow pauses, logs, summarizes, or asks for human review.\nCommon checkpoints include:\n\nbefore sending information to an AI model;\nbefore using external tools;\nbefore modifying files;\nbefore sending emails or messages;\nbefore publishing reports;\nbefore making high-stakes recommendations;\nafter low-confidence or inconsistent outputs.\n\nThe higher the risk, the more checkpoints are needed.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#failure-modes-in-automated-ai-workflows",
+    "href": "08-automation-and-agentic-workflows.html#failure-modes-in-automated-ai-workflows",
+    "title": "Automation and Agentic Workflows",
+    "section": "Failure Modes in Automated AI Workflows",
+    "text": "Failure Modes in Automated AI Workflows\nAutomation can make AI failures harder to see.\nCommon failure modes include:\n\n\n\n\n\n\n\nFailure mode\nWhat happens\n\n\n\n\nSilent hallucination\nFalse information enters a report without review\n\n\nContext drift\nLater steps no longer match the original task\n\n\nOver-automation\nThe system acts where human judgment is needed\n\n\nTool misuse\nThe workflow calls the wrong script, file, or source\n\n\nPoor logging\nOutputs cannot be traced or audited\n\n\nPrivacy leakage\nSensitive data is sent where it should not go\n\n\nEvaluation gap\nOutputs are generated but never checked\n\n\n\nThese are system design problems, not only model problems.\nA better model does not replace a better workflow.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#documentation-for-ai-automation",
+    "href": "08-automation-and-agentic-workflows.html#documentation-for-ai-automation",
+    "title": "Automation and Agentic Workflows",
+    "section": "Documentation for AI Automation",
+    "text": "Documentation for AI Automation\nAn automated AI workflow should leave behind documentation.\nAt minimum, document:\n\nworkflow purpose;\ninputs;\nprompt template or instruction pattern;\ntools or scripts used;\noutputs created;\nevaluation criteria;\nhuman review points;\nknown limitations;\ndate and version.\n\nThis makes the workflow easier to reproduce, improve, and govern.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#mini-case-example",
+    "href": "08-automation-and-agentic-workflows.html#mini-case-example",
+    "title": "Automation and Agentic Workflows",
+    "section": "Mini Case Example",
+    "text": "Mini Case Example\nSuppose a team uses AI to draft weekly project updates.\nA weak workflow would be:\nAsk AI to write the update and send it.\nA stronger workflow would be:\n1. Human provides project notes and audience.\n2. AI drafts a structured update.\n3. AI checks the draft against a communication checklist.\n4. Human reviews accuracy, tone, and missing context.\n5. Human edits and sends the final message.\n6. The final version and checklist are saved for future improvement.\nThe second workflow is slower at first.\nBut it is safer, more reusable, and easier to improve.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#practical-design-rule",
+    "href": "08-automation-and-agentic-workflows.html#practical-design-rule",
+    "title": "Automation and Agentic Workflows",
+    "section": "Practical Design Rule",
+    "text": "Practical Design Rule\nDo not automate the AI response.\nAutomate the workflow around the AI response.\nThat means automating:\n\ninput preparation;\nprompt construction;\nfile organization;\nevaluation summaries;\nreview checklists;\nreporting artifacts;\nlogs and registries.\n\nThe human should still own interpretation, judgment, and final action.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#summary",
+    "href": "08-automation-and-agentic-workflows.html#summary",
+    "title": "Automation and Agentic Workflows",
+    "section": "Summary",
+    "text": "Summary\nAutomation is useful when a workflow is clear, repeated, and reviewable.\nAgentic workflows are more powerful, but they require stronger boundaries, logging, and human checkpoints.\nThe CDI approach does not treat automation as a replacement for human thinking.\nIt treats automation as a way to make responsible human-led workflows more consistent, scalable, and reproducible.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
+    ]
+  },
+  {
+    "objectID": "08-automation-and-agentic-workflows.html#looking-ahead",
+    "href": "08-automation-and-agentic-workflows.html#looking-ahead",
+    "title": "Automation and Agentic Workflows",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter moves from automation into AI-assisted analysis and reporting.\nWe will focus on how AI can support analytical writing, interpretation, summarization, and report generation while keeping outputs grounded, reviewable, and aligned with human judgment.",
     "crumbs": [
       "Operational AI Systems",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Automation and Agentic Workflows</span>"
@@ -916,18 +1598,172 @@
     "href": "09-ai-assisted-analysis-and-reporting.html",
     "title": "AI-Assisted Analysis and Reporting",
     "section": "",
-    "text": "Recommended Separation\nAI can help explain results, draft reports, create summaries, and convert technical outputs into audience-specific communication.\nHowever, the underlying analysis should remain reproducible.\nA CDI workflow keeps analysis outputs separate from AI-generated interpretation.",
+    "text": "Learning Outcomes\nAI can help people move from raw information to clearer analysis, better summaries, cleaner documentation, and more polished reports.\nBut AI-assisted analysis is not the same as AI-generated truth.\nAn AI tool can help organize evidence. It can suggest patterns. It can draft explanations. It can create first-pass summaries. It can help translate technical outputs into plain language.\nThe human remains responsible for checking the evidence, interpreting the results, deciding what claims are justified, and communicating uncertainty honestly.\nThis chapter explains how to use AI inside analytical and reporting workflows without weakening reproducibility, traceability, or scientific judgment.\nThe CDI position is simple:\nAI can assist analysis.\nAI can assist reporting.\nBut conclusions must remain evidence-led and human-reviewed.\nBy the end of this chapter, you should be able to:",
     "crumbs": [
       "Operational AI Systems",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
     ]
   },
   {
-    "objectID": "09-ai-assisted-analysis-and-reporting.html#recommended-separation",
-    "href": "09-ai-assisted-analysis-and-reporting.html#recommended-separation",
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#learning-outcomes",
+    "href": "09-ai-assisted-analysis-and-reporting.html#learning-outcomes",
     "title": "AI-Assisted Analysis and Reporting",
     "section": "",
-    "text": "Data analysis scripts\n  -&gt; tidy result tables\n  -&gt; visualizations\n  -&gt; AI-assisted explanation draft\n  -&gt; human review\n  -&gt; final report",
+    "text": "identify appropriate uses of AI in analysis and reporting;\ndistinguish evidence, interpretation, and communication;\ndesign an AI-assisted reporting workflow that remains human-led;\nuse structured inputs to improve AI-generated summaries;\nreview AI-assisted reports for unsupported claims;\nconnect analysis and reporting back to the Human-AI-Human workflow.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#why-ai-assisted-reporting-matters",
+    "href": "09-ai-assisted-analysis-and-reporting.html#why-ai-assisted-reporting-matters",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "Why AI-Assisted Reporting Matters",
+    "text": "Why AI-Assisted Reporting Matters\nMany analytical projects fail after the analysis is complete.\nThe results exist, but they are not communicated clearly.\nThe tables are correct, but the interpretation is weak.\nThe plots are useful, but the claims are too broad.\nThe report is written, but it does not explain what decisions the results support.\nAI can help with this translation layer.\nIt can help turn structured results into readable summaries. It can help create outlines. It can compare draft interpretations against source tables. It can help explain methods for different audiences.\nHowever, this only works well when the AI is grounded in the actual project outputs.\nAI should not invent an analysis.\nIt should help explain an analysis that already exists.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#the-human-ai-human-reporting-loop",
+    "href": "09-ai-assisted-analysis-and-reporting.html#the-human-ai-human-reporting-loop",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "The Human-AI-Human Reporting Loop",
+    "text": "The Human-AI-Human Reporting Loop\nAI-assisted reporting follows the same CDI pattern used throughout this guide.\nHuman prepares the evidence, question, audience, and reporting goal\n        ↓\nAI assists with structure, summary, explanation, or draft language\n        ↓\nHuman verifies evidence, revises claims, documents uncertainty, and approves the final report\nThe human starts with the analytical context.\nThe AI helps create a draft or supporting explanation.\nThe human reviews the output against the data and decides what can be said.\nThis matters because reporting is not only writing.\nReporting is interpretation.\nInterpretation requires accountability.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#analysis-interpretation-and-communication",
+    "href": "09-ai-assisted-analysis-and-reporting.html#analysis-interpretation-and-communication",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "Analysis, Interpretation, and Communication",
+    "text": "Analysis, Interpretation, and Communication\nAI-assisted reporting becomes safer when these three layers are separated.\n\n\n\n\n\n\n\n\n\nLayer\nMain question\nHuman responsibility\nAI support\n\n\n\n\nAnalysis\nWhat was computed?\nVerify data, methods, and outputs\nSummarize tables or workflow steps\n\n\nInterpretation\nWhat does it mean?\nDecide what claims are justified\nSuggest possible explanations or caveats\n\n\nCommunication\nHow should it be explained?\nMatch message to audience and context\nDraft summaries, outlines, and plain-language text\n\n\n\nProblems happen when AI skips directly from data to conclusion.\nA responsible workflow keeps the layers visible.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#appropriate-uses-of-ai-in-analysis-workflows",
+    "href": "09-ai-assisted-analysis-and-reporting.html#appropriate-uses-of-ai-in-analysis-workflows",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "Appropriate Uses of AI in Analysis Workflows",
+    "text": "Appropriate Uses of AI in Analysis Workflows\nAI can support analysis without replacing analytical judgment.\nUseful tasks include:\n\nsummarizing a results table;\nexplaining column meanings;\ndrafting an analysis plan;\nidentifying missing documentation;\nsuggesting quality-control checks;\nhelping interpret plots;\nturning technical outputs into narrative explanations;\ndrafting report sections from verified results;\ncreating reviewer checklists;\nrewriting technical text for a different audience.\n\nThese uses are strongest when the AI is given concrete inputs.\nFor example, a useful input might include:\n\nthe research or business question;\nthe analysis goal;\nthe dataset description;\nthe results table;\nthe plot or figure description;\nthe methods summary;\nthe intended audience;\nthe claims that are allowed;\nthe claims that are not allowed.\n\nThe more grounded the input, the more reviewable the output.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#risky-uses-of-ai-in-analysis-workflows",
+    "href": "09-ai-assisted-analysis-and-reporting.html#risky-uses-of-ai-in-analysis-workflows",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "Risky Uses of AI in Analysis Workflows",
+    "text": "Risky Uses of AI in Analysis Workflows\nSome uses require extra caution.\nAI should not be used carelessly to:\n\ninvent results that were not computed;\ngenerate citations without verification;\nmake causal claims from descriptive data;\nhide uncertainty;\nreplace statistical review;\ndecide clinical, legal, financial, or policy action without expert oversight;\nsummarize sensitive data without privacy safeguards;\nproduce final reports that no human has checked.\n\nAI can make unsupported claims sound polished.\nThat is why polish is not evidence.\nA well-written AI paragraph can still be wrong.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#a-cdi-pattern-for-ai-assisted-reports",
+    "href": "09-ai-assisted-analysis-and-reporting.html#a-cdi-pattern-for-ai-assisted-reports",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "A CDI Pattern for AI-Assisted Reports",
+    "text": "A CDI Pattern for AI-Assisted Reports\nA useful AI-assisted report should move from evidence to interpretation to action.\nQuestion\n  What is the report trying to answer?\n\nInputs\n  What data, tables, plots, notes, or documents were used?\n\nMethods\n  How were the outputs produced?\n\nResults\n  What was observed?\n\nInterpretation\n  What do the results suggest?\n\nLimitations\n  What should not be overclaimed?\n\nRecommended next steps\n  What should the human team do next?\nThis structure helps prevent the report from becoming a loose narrative.\nIt also helps reviewers check whether every claim is connected to evidence.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#example-turning-a-results-table-into-a-report-summary",
+    "href": "09-ai-assisted-analysis-and-reporting.html#example-turning-a-results-table-into-a-report-summary",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "Example: Turning a Results Table into a Report Summary",
+    "text": "Example: Turning a Results Table into a Report Summary\nSuppose an AI evaluation workflow creates this file:\ndata/results/ai-evaluation-summary.csv\nA human should inspect the file first.\ncat data/results/ai-evaluation-summary.csv\nThen the human can ask AI for a summary using a grounded prompt.\nYou are helping write a short analytical summary for a CDI AI Systems guide.\n\nUse only the results below.\nDo not invent additional results.\nDo not claim that the workflow is production-ready.\nSeparate observations, interpretation, and limitations.\n\nProject context:\nThis table summarizes example AI task evaluations across criteria such as clarity, grounding, completeness, risk level, and review status.\n\nAudience:\nLearners building responsible AI workflows.\n\nResults table:\n[paste table here]\n\nWrite:\n1. a short results summary,\n2. a brief interpretation,\n3. two limitations,\n4. two recommended next steps.\nThis prompt is safer than asking:\nWrite a report about my AI system.\nThe better prompt gives the AI context, boundaries, evidence, and reporting structure.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#reporting-from-plots-and-figures",
+    "href": "09-ai-assisted-analysis-and-reporting.html#reporting-from-plots-and-figures",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "Reporting from Plots and Figures",
+    "text": "Reporting from Plots and Figures\nAI can help describe a figure, but the human should verify the description.\nA good figure-summary prompt includes:\nFigure title:\nAI Evaluation Summary\n\nFigure source:\ndata/reports/ai-evaluation-summary.png\n\nData source:\ndata/results/ai-evaluation-summary.csv\n\nWhat the figure shows:\n[paste your own description]\n\nTask:\nWrite a concise figure caption and interpretation.\nSeparate what is directly visible from what is inferred.\nDo not make claims beyond the figure.\nThis avoids treating visual interpretation as automatic truth.\nThe human still checks the figure, the source data, and the written claim.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#ai-assisted-reporting-checklist",
+    "href": "09-ai-assisted-analysis-and-reporting.html#ai-assisted-reporting-checklist",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "AI-Assisted Reporting Checklist",
+    "text": "AI-Assisted Reporting Checklist\nBefore using AI to assist with reporting, ask:\n\nWhat evidence is the report based on?\nHas the evidence been checked?\nWhat is the intended audience?\nWhat decisions might the report influence?\nWhat claims are supported?\nWhat claims are not supported?\nAre uncertainty and limitations included?\nAre sensitive details protected?\nCan another person trace the report back to the inputs?\nHas a human reviewed the final version?\n\nA report that cannot be traced back to its evidence should not be treated as reliable.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#common-failure-modes",
+    "href": "09-ai-assisted-analysis-and-reporting.html#common-failure-modes",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "Common Failure Modes",
+    "text": "Common Failure Modes\nAI-assisted analysis and reporting can fail in predictable ways.\n\n\n\n\n\n\n\n\nFailure mode\nWhat happens\nPrevention\n\n\n\n\nUnsupported claim\nAI states something not shown in the data\nRequire evidence-linked summaries\n\n\nOvergeneralization\nA small example becomes a broad conclusion\nAdd scope and limitation statements\n\n\nMethod confusion\nAI mixes up tools, models, or data steps\nProvide a methods summary\n\n\nCitation weakness\nAI invents or misuses references\nVerify all references manually\n\n\nMissing uncertainty\nAI writes with too much confidence\nAsk for limitations and caveats\n\n\nAudience mismatch\nOutput is too technical or too vague\nDefine the intended audience\n\n\nPrivacy leakage\nSensitive information appears in outputs\nRemove or mask sensitive inputs\n\n\n\nThese are not reasons to avoid AI.\nThey are reasons to design the workflow properly.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#the-role-of-scripts-in-reporting",
+    "href": "09-ai-assisted-analysis-and-reporting.html#the-role-of-scripts-in-reporting",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "The Role of Scripts in Reporting",
+    "text": "The Role of Scripts in Reporting\nIn a CDI guide, AI-assisted reporting should connect to files generated by scripts.\nFor example, the scaffold includes scripts that create and summarize an example AI task log.\nbash scripts/bash/01-create-example-ai-task-log.sh\n\npython scripts/python/02-evaluate-ai-output-quality.py \\\n  data/example/ai-task-log.csv \\\n  data/results\n\npython scripts/python/03-build-prompt-registry.py \\\n  data/example/ai-task-log.csv \\\n  data/results\n\nRscript scripts/R/04-plot-evaluation-summary.R \\\n  data/results/ai-evaluation-summary.csv \\\n  data/reports\nThese commands produce structured outputs that can support reporting.\ndata/example/ai-task-log.csv\ndata/results/ai-evaluation-summary.csv\ndata/results/prompt-registry.csv\ndata/reports/ai-evaluation-summary.png\nThe key point is that AI should not be asked to report from memory.\nIt should report from traceable project outputs.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#a-reproducible-ai-reporting-workflow",
+    "href": "09-ai-assisted-analysis-and-reporting.html#a-reproducible-ai-reporting-workflow",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "A Reproducible AI Reporting Workflow",
+    "text": "A Reproducible AI Reporting Workflow\nA reproducible reporting workflow should make the path from input to report visible.\nProject question\n        ↓\nInput data, notes, prompts, or task logs\n        ↓\nScripted summaries and checks\n        ↓\nAI-assisted draft explanation\n        ↓\nHuman review against evidence\n        ↓\nFinal report with limitations and next steps\nThis pattern connects AI Systems to the broader CDI ecosystem.\nThe goal is not simply to write faster.\nThe goal is to write more clearly while preserving evidence, judgment, and accountability.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#key-takeaways",
+    "href": "09-ai-assisted-analysis-and-reporting.html#key-takeaways",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\nAI-assisted analysis and reporting are most useful when the evidence is already organized.\nAI can help summarize, structure, explain, and revise.\nIt should not replace data validation, statistical reasoning, domain expertise, or final human review.\nA responsible report separates results, interpretation, limitations, and next steps.\nThe Human-AI-Human workflow keeps the reporting process grounded: the human prepares the evidence, AI assists with drafting or explanation, and the human verifies and approves the final communication.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
+    ]
+  },
+  {
+    "objectID": "09-ai-assisted-analysis-and-reporting.html#looking-ahead",
+    "href": "09-ai-assisted-analysis-and-reporting.html#looking-ahead",
+    "title": "AI-Assisted Analysis and Reporting",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter moves from reporting into governance, risk, and documentation.\nWe will examine how AI workflows should be documented, reviewed, and managed so they remain responsible beyond a single use case.",
     "crumbs": [
       "Operational AI Systems",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>AI-Assisted Analysis and Reporting</span>"
@@ -938,18 +1774,150 @@
     "href": "10-governance-risk-and-documentation.html",
     "title": "Governance, Risk, and Documentation",
     "section": "",
-    "text": "Documentation Template\nGovernance defines what AI may do, what it may not do, who reviews outputs, and how risk is managed.\nDocumentation helps teams learn from previous AI use and avoid repeating mistakes.",
+    "text": "Why Governance Matters\nAI systems are not responsible simply because they use advanced tools.\nThey become responsible when humans define boundaries, document decisions, review outputs, manage risks, and remain accountable for how AI-supported work is used.\nThis chapter introduces governance, risk, and documentation as practical parts of AI systems design.\nThe goal is not to create bureaucracy.\nThe goal is to make AI-supported work clear, reviewable, reproducible, and safe enough for the context in which it will be used.\nAI tools can generate text, summarize documents, write code, classify information, draft reports, and support decisions.\nThat power creates value.\nIt also creates risk.\nAI-generated work can be:\nGovernance is the set of practices that prevents AI from becoming an uncontrolled black box inside a workflow.\nIn CDI terms, governance answers five questions:\nA workflow without governance may still be useful.\nBut it is not yet a dependable system.",
     "crumbs": [
       "Operational AI Systems",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
     ]
   },
   {
-    "objectID": "10-governance-risk-and-documentation.html#documentation-template",
-    "href": "10-governance-risk-and-documentation.html#documentation-template",
+    "objectID": "10-governance-risk-and-documentation.html#why-governance-matters",
+    "href": "10-governance-risk-and-documentation.html#why-governance-matters",
     "title": "Governance, Risk, and Documentation",
     "section": "",
-    "text": "Task name:\nPurpose:\nInput data or context:\nAI tool used:\nHuman reviewer:\nKnown limitations:\nRisk level:\nDecision made:",
+    "text": "inaccurate,\nincomplete,\nbiased,\noutdated,\npoorly grounded,\noverconfident,\ndifficult to trace,\nor used outside its proper context.\n\n\n\n\nWhat is the AI system allowed to do?\nWhat information is it allowed to use?\nWhat outputs can it produce?\nWho reviews those outputs?\nWho is accountable for the final decision?",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#governance-is-part-of-the-humanaihuman-workflow",
+    "href": "10-governance-risk-and-documentation.html#governance-is-part-of-the-humanaihuman-workflow",
+    "title": "Governance, Risk, and Documentation",
+    "section": "Governance Is Part of the Human–AI–Human Workflow",
+    "text": "Governance Is Part of the Human–AI–Human Workflow\nThe Human–AI–Human workflow remains the central pattern.\nHuman frames the task\n        ↓\nAI assists with generation, analysis, synthesis, or automation\n        ↓\nHuman reviews, decides, documents, and acts\nGovernance strengthens each part of that loop.\nAt the first human step, governance defines the task, boundary, data source, risk level, and intended use.\nAt the AI step, governance controls what context is provided, what tools are used, and what outputs are expected.\nAt the final human step, governance requires review, documentation, approval, and accountability.\nThe system is not complete when AI produces an answer.\nThe system is complete only when the output has been reviewed and its use has been documented.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#ai-risk-is-context-dependent",
+    "href": "10-governance-risk-and-documentation.html#ai-risk-is-context-dependent",
+    "title": "Governance, Risk, and Documentation",
+    "section": "AI Risk Is Context-Dependent",
+    "text": "AI Risk Is Context-Dependent\nThe same AI capability can be low risk in one setting and high risk in another.\nFor example, asking AI to rewrite a paragraph for clarity is usually low risk.\nAsking AI to summarize a medical record, recommend a clinical action, review a legal contract, or evaluate a person for an opportunity is much higher risk.\nRisk depends on:\n\nthe task,\nthe data,\nthe audience,\nthe possible harm,\nthe level of automation,\nthe review process,\nand the consequences of error.\n\nA CDI AI system should classify tasks before deciding how much review is needed.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#a-practical-ai-risk-scale",
+    "href": "10-governance-risk-and-documentation.html#a-practical-ai-risk-scale",
+    "title": "Governance, Risk, and Documentation",
+    "section": "A Practical AI Risk Scale",
+    "text": "A Practical AI Risk Scale\nA simple risk scale is useful for most applied workflows.\n\n\n\n\n\n\n\n\n\nRisk level\nDescription\nExample\nMinimum control\n\n\n\n\nLow\nErrors are unlikely to cause harm\nRewriting a non-sensitive paragraph\nHuman review before use\n\n\nModerate\nErrors may affect interpretation or communication\nSummarizing project findings\nSource checking and documented review\n\n\nHigh\nErrors may affect decisions, people, money, health, or compliance\nDrafting policy, clinical, legal, financial, or eligibility-related content\nExpert review and approval\n\n\nProhibited or restricted\nTask should not be delegated to AI without formal controls\nFully automated high-stakes decisions\nDo not automate without governance framework\n\n\n\nThis scale is not a legal or regulatory classification.\nIt is a practical design tool.\nThe higher the risk, the more documentation and human oversight the workflow needs.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#what-should-be-documented",
+    "href": "10-governance-risk-and-documentation.html#what-should-be-documented",
+    "title": "Governance, Risk, and Documentation",
+    "section": "What Should Be Documented",
+    "text": "What Should Be Documented\nAI systems become easier to trust when important choices are recorded.\nA lightweight AI workflow record should include:\n\ntask name,\npurpose,\nintended audience,\ninput data or source materials,\nprompt or instruction used,\nmodel or tool used,\noutput generated,\nknown limitations,\nreview criteria,\nreviewer,\ndecision made,\ndate,\nand final status.\n\nDocumentation does not need to be complicated.\nIt only needs to make the workflow understandable later.\nIf someone asks, “How was this output produced?” the system should be able to answer.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#the-ai-task-log",
+    "href": "10-governance-risk-and-documentation.html#the-ai-task-log",
+    "title": "Governance, Risk, and Documentation",
+    "section": "The AI Task Log",
+    "text": "The AI Task Log\nOne of the simplest documentation tools is an AI task log.\nAn AI task log records what AI was used for and how the output was reviewed.\nA basic task log may look like this:\ntask_id,task_name,risk_level,input_source,ai_role,human_review_required,review_status,final_use\nAIS-001,Rewrite guide introduction,low,chapter draft,editing,true,approved,published\nAIS-002,Summarize interview notes,moderate,meeting notes,summarization,true,needs revision,not used\nAIS-003,Draft policy recommendation,high,internal report,drafting,true,expert review required,not finalized\nThis guide includes an example task log workflow.\nbash scripts/bash/01-create-example-ai-task-log.sh\nThe task log can then be evaluated using the supporting Python script.\npython scripts/python/02-evaluate-ai-output-quality.py \\\n  data/example/ai-task-log.csv \\\n  data/results\nThe purpose of this script is not to replace human judgment.\nIt creates a simple summary that supports review and reporting.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#prompt-registries-as-governance-tools",
+    "href": "10-governance-risk-and-documentation.html#prompt-registries-as-governance-tools",
+    "title": "Governance, Risk, and Documentation",
+    "section": "Prompt Registries as Governance Tools",
+    "text": "Prompt Registries as Governance Tools\nA prompt registry records reusable prompts and their purpose.\nThis is useful when a team wants consistent AI-supported workflows.\nA prompt registry should document:\n\nprompt name,\ntask type,\nexpected input,\nexpected output,\nreview requirements,\nrisk level,\nversion,\nand owner.\n\nThis guide includes a supporting prompt registry script.\npython scripts/python/03-build-prompt-registry.py \\\n  data/example/ai-task-log.csv \\\n  data/results\nA prompt registry helps prevent hidden workflow drift.\nWhen prompts change, the workflow changes.\nWhen the workflow changes, the documentation should change too.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#governance-questions-before-automation",
+    "href": "10-governance-risk-and-documentation.html#governance-questions-before-automation",
+    "title": "Governance, Risk, and Documentation",
+    "section": "Governance Questions Before Automation",
+    "text": "Governance Questions Before Automation\nBefore any AI workflow is automated, the following questions should be answered:\n\nIs the task clearly defined?\nIs the input source known and appropriate?\nIs the output reviewable?\nIs the risk level documented?\nIs a human reviewer assigned?\nAre failure modes known?\nIs there a process for stopping or correcting the workflow?\nIs the final decision made by a human when needed?\n\nAutomation should not be used to avoid responsibility.\nAutomation should be used only when the workflow is already clear, bounded, and reviewable.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#common-governance-failure-modes",
+    "href": "10-governance-risk-and-documentation.html#common-governance-failure-modes",
+    "title": "Governance, Risk, and Documentation",
+    "section": "Common Governance Failure Modes",
+    "text": "Common Governance Failure Modes\nAI workflows often fail because governance is added too late.\nCommon failure modes include:\n\ntreating AI output as final,\nusing sensitive data without clear boundaries,\nfailing to record prompts or sources,\nautomating tasks before they are understood,\nnot assigning human accountability,\nignoring uncertainty,\nusing AI outputs outside their intended context,\nand publishing outputs without review.\n\nThese failures are usually not caused by one bad prompt.\nThey are caused by weak system design.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#responsible-documentation-is-a-design-habit",
+    "href": "10-governance-risk-and-documentation.html#responsible-documentation-is-a-design-habit",
+    "title": "Governance, Risk, and Documentation",
+    "section": "Responsible Documentation Is a Design Habit",
+    "text": "Responsible Documentation Is a Design Habit\nDocumentation should not be treated as an afterthought.\nIt is part of the workflow.\nA useful AI system leaves behind evidence of:\n\nwhat was asked,\nwhat was used,\nwhat was generated,\nwhat was checked,\nwhat was changed,\nwhat was approved,\nand what was finally used.\n\nThis evidence supports transparency, learning, improvement, and accountability.\nIn CDI guides, documentation is not separate from analysis.\nDocumentation is how analysis becomes a system.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#governance-checklist",
+    "href": "10-governance-risk-and-documentation.html#governance-checklist",
+    "title": "Governance, Risk, and Documentation",
+    "section": "Governance Checklist",
+    "text": "Governance Checklist\nBefore using AI output in a real workflow, check the following:\n\nThe task is clearly described.\nThe risk level is known.\nThe input sources are documented.\nSensitive information has been handled appropriately.\nThe prompt or instruction is recorded when needed.\nThe AI output has been reviewed by a human.\nImportant claims are checked against evidence.\nLimitations are stated.\nThe final decision-maker is clear.\nThe final use of the output is documented.\n\nIf several of these are missing, the workflow is not ready for operational use.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#chapter-summary",
+    "href": "10-governance-risk-and-documentation.html#chapter-summary",
+    "title": "Governance, Risk, and Documentation",
+    "section": "Chapter Summary",
+    "text": "Chapter Summary\nGovernance is what turns AI use into accountable AI systems.\nRisk classification helps determine how much review and documentation are needed.\nDocumentation creates traceability.\nPrompt registries and task logs make AI workflows easier to review, repeat, improve, and govern.\nThe Human–AI–Human workflow remains the core pattern: humans define the task, AI assists, and humans review, decide, document, and act.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
+    ]
+  },
+  {
+    "objectID": "10-governance-risk-and-documentation.html#looking-ahead",
+    "href": "10-governance-risk-and-documentation.html#looking-ahead",
+    "title": "Governance, Risk, and Documentation",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter brings the pieces together in an end-to-end case study.\nWe will move from isolated AI tasks into a complete workflow that includes task framing, prompt design, grounding, evaluation, review, documentation, and reporting.",
     "crumbs": [
       "Operational AI Systems",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Governance, Risk, and Documentation</span>"
@@ -960,18 +1928,194 @@
     "href": "11-end-to-end-case-study.html",
     "title": "End-to-End Case Study",
     "section": "",
-    "text": "Run the Case Study\nThis case study uses a simple AI task log.\nThe goal is not to depend on any specific AI provider.\nThe goal is to show how an AI workflow can be documented, evaluated, and improved.",
+    "text": "Purpose of This Chapter\nThis chapter brings the guide together through a complete AI Systems workflow.\nThe goal is not to show AI as a shortcut.\nThe goal is to show how AI can be placed inside a responsible, human-led system.\nIn earlier chapters, we developed the main components of AI Systems:\nThis chapter connects those parts into one reproducible case study.\nThe central workflow remains:\nThis is the Human–AI–Human workflow.",
     "crumbs": [
       "Operational AI Systems",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
     ]
   },
   {
-    "objectID": "11-end-to-end-case-study.html#run-the-case-study",
-    "href": "11-end-to-end-case-study.html#run-the-case-study",
+    "objectID": "11-end-to-end-case-study.html#purpose-of-this-chapter",
+    "href": "11-end-to-end-case-study.html#purpose-of-this-chapter",
     "title": "End-to-End Case Study",
     "section": "",
-    "text": "bash scripts/bash/01-create-example-ai-task-log.sh\npython scripts/python/02-evaluate-ai-output-quality.py data/example/ai-task-log.csv data/results\npython scripts/python/03-build-prompt-registry.py data/example/ai-task-log.csv data/results\nRscript scripts/R/04-plot-evaluation-summary.R data/results/ai-evaluation-summary.csv data/reports\nquarto render",
+    "text": "AI systems thinking\nAI literacy and responsible use\nproblem framing\nprompt and context design\ndata and knowledge grounding\nevaluation and quality control\nhuman-in-the-loop review\nautomation readiness\nreporting\ngovernance and documentation\n\n\n\nHuman frames the problem.\nAI assists with generation, reasoning, analysis, or automation.\nHuman evaluates, decides, documents, and acts.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#case-study-scenario",
+    "href": "11-end-to-end-case-study.html#case-study-scenario",
+    "title": "End-to-End Case Study",
+    "section": "Case Study Scenario",
+    "text": "Case Study Scenario\nImagine a small organization wants to use AI to help prepare a weekly insight brief.\nThe brief may summarize project updates, identify risks, suggest next steps, and produce a short communication for stakeholders.\nThis sounds simple.\nBut if handled casually, several problems can occur:\n\nthe AI may invent information\nsensitive information may be exposed\nunclear prompts may produce inconsistent results\noutputs may be copied without review\ndecisions may be made without traceability\nno one may know which sources were used\nthe workflow may become difficult to repeat\n\nAn AI Systems approach treats this as a workflow design problem, not only a prompting problem.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#the-end-to-end-ai-systems-workflow",
+    "href": "11-end-to-end-case-study.html#the-end-to-end-ai-systems-workflow",
+    "title": "End-to-End Case Study",
+    "section": "The End-to-End AI Systems Workflow",
+    "text": "The End-to-End AI Systems Workflow\nThe case study follows seven steps.\n1. Define the task\n2. Classify the risk\n3. Prepare context\n4. Design the prompt\n5. Generate the AI-assisted output\n6. Evaluate and review the output\n7. Document the decision and next action\nEach step creates an output that can be reviewed, reused, or improved.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#step-1-define-the-task",
+    "href": "11-end-to-end-case-study.html#step-1-define-the-task",
+    "title": "End-to-End Case Study",
+    "section": "Step 1: Define the Task",
+    "text": "Step 1: Define the Task\nThe human begins by defining the task clearly.\nA weak task definition might be:\nUse AI to summarize our work.\nA stronger task definition is:\nPrepare a weekly project insight brief for internal stakeholders.\nThe brief should summarize completed work, open issues, risks, and recommended next steps.\nThe output should be concise, evidence-based, and reviewed by a human before sharing.\nThe stronger version defines:\n\nthe purpose\nthe audience\nthe expected output\nthe evidence requirement\nthe human review requirement\n\nThis makes the workflow easier to evaluate.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#step-2-classify-the-risk",
+    "href": "11-end-to-end-case-study.html#step-2-classify-the-risk",
+    "title": "End-to-End Case Study",
+    "section": "Step 2: Classify the Risk",
+    "text": "Step 2: Classify the Risk\nBefore using AI, the task should be classified by risk.\nFor this case study, the weekly brief is a medium-risk task.\nIt is not a final medical, legal, financial, or hiring decision.\nBut it may influence planning, communication, and organizational priorities.\nThat means the output should not be accepted automatically.\nRisk level: Medium\nHuman review required: Yes\nSource grounding required: Yes\nAutomation allowed: Partial only\nFinal decision authority: Human\nThe purpose of risk classification is not to avoid AI.\nThe purpose is to decide what level of review is needed.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#step-3-prepare-context",
+    "href": "11-end-to-end-case-study.html#step-3-prepare-context",
+    "title": "End-to-End Case Study",
+    "section": "Step 3: Prepare Context",
+    "text": "Step 3: Prepare Context\nAI performs better when the task context is explicit.\nFor this case study, the human prepares a small context packet.\nProject name: AI Systems Guide\nAudience: CDI learners, analysts, researchers, and workflow builders\nReporting period: Current week\nPrimary goal: summarize progress and identify next steps\nAllowed sources: project notes, task logs, chapter drafts, and confirmed outputs\nNot allowed: inventing completed work, guessing private information, or making unsupported claims\nThis context can be stored as a reusable file.\nFor example:\nproject-context.md\nA context file helps make the workflow repeatable.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#step-4-design-the-prompt",
+    "href": "11-end-to-end-case-study.html#step-4-design-the-prompt",
+    "title": "End-to-End Case Study",
+    "section": "Step 4: Design the Prompt",
+    "text": "Step 4: Design the Prompt\nThe prompt should include the task, context, constraints, and expected output.\nA reusable prompt structure may look like this:\nRole:\nYou are assisting with a weekly project insight brief.\n\nTask:\nSummarize the project progress using only the provided context.\n\nContext:\n[Paste or attach project notes, task logs, or confirmed updates.]\n\nRules:\n- Do not invent completed work.\n- Separate confirmed progress from recommended next steps.\n- Flag uncertainty clearly.\n- Keep the tone professional and concise.\n- Produce a draft for human review, not a final decision.\n\nOutput format:\n1. Progress summary\n2. Key outputs\n3. Risks or blockers\n4. Recommended next steps\n5. Items needing human confirmation\nThis prompt is not only a message to an AI tool.\nIt is part of the workflow documentation.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#step-5-generate-the-ai-assisted-output",
+    "href": "11-end-to-end-case-study.html#step-5-generate-the-ai-assisted-output",
+    "title": "End-to-End Case Study",
+    "section": "Step 5: Generate the AI-Assisted Output",
+    "text": "Step 5: Generate the AI-Assisted Output\nThe AI output should be treated as a draft.\nThe human should not ask:\nIs the output polished?\nThe better question is:\nIs the output accurate, grounded, useful, and safe to act on?\nThe AI-generated draft may include:\n\na summary of completed work\na list of outputs\nunresolved issues\nrecommended next steps\nitems needing confirmation\n\nBut the draft remains provisional until reviewed.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#step-6-evaluate-and-review-the-output",
+    "href": "11-end-to-end-case-study.html#step-6-evaluate-and-review-the-output",
+    "title": "End-to-End Case Study",
+    "section": "Step 6: Evaluate and Review the Output",
+    "text": "Step 6: Evaluate and Review the Output\nThe evaluation step checks whether the output is usable.\nA simple review checklist may include:\nAccuracy:\nDoes the output match the provided evidence?\n\nCompleteness:\nDoes the output address the requested sections?\n\nGrounding:\nCan each important claim be traced to the context?\n\nClarity:\nIs the output understandable to the intended audience?\n\nSafety:\nDoes the output avoid exposing sensitive information or making unsupported claims?\n\nActionability:\nAre the next steps realistic and appropriate?\nThe human reviewer should edit, correct, or reject the output as needed.\nThis is where the second human step in Human–AI–Human becomes essential.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#step-7-document-the-decision-and-next-action",
+    "href": "11-end-to-end-case-study.html#step-7-document-the-decision-and-next-action",
+    "title": "End-to-End Case Study",
+    "section": "Step 7: Document the Decision and Next Action",
+    "text": "Step 7: Document the Decision and Next Action\nThe final step is documentation.\nThe organization should record:\n\nthe task\nthe prompt or prompt version\nthe context sources\nthe model or tool used, if relevant\nthe reviewer\nthe review outcome\nthe final action taken\n\nThis can be captured in a task log.\nTask ID: AI-BRIEF-001\nTask: Weekly project insight brief\nRisk level: Medium\nInput sources: project notes, chapter draft status, task log\nAI role: Drafting and organization\nHuman reviewer: Project lead\nReview result: Edited and approved\nFinal action: Shared with internal stakeholders\nDocumentation makes the workflow auditable and easier to improve.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#supporting-example-workflow",
+    "href": "11-end-to-end-case-study.html#supporting-example-workflow",
+    "title": "End-to-End Case Study",
+    "section": "Supporting Example Workflow",
+    "text": "Supporting Example Workflow\nThis guide includes example scripts that support the case study.\nCreate the example task log:\nbash scripts/bash/01-create-example-ai-task-log.sh\nEvaluate AI output quality:\npython scripts/python/02-evaluate-ai-output-quality.py \\\n  data/example/ai-task-log.csv \\\n  data/results\nBuild a prompt registry:\npython scripts/python/03-build-prompt-registry.py \\\n  data/example/ai-task-log.csv \\\n  data/results\nPlot the evaluation summary:\nRscript scripts/R/04-plot-evaluation-summary.R \\\n  data/results/ai-evaluation-summary.csv \\\n  data/reports\nThese scripts are intentionally simple.\nThey demonstrate the system logic:\nAI task log\n        ↓\nEvaluation summary\n        ↓\nPrompt registry\n        ↓\nReviewable report artifact\nThe point is not to automate judgment.\nThe point is to make AI-assisted work visible, reviewable, and reusable.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#expected-outputs",
+    "href": "11-end-to-end-case-study.html#expected-outputs",
+    "title": "End-to-End Case Study",
+    "section": "Expected Outputs",
+    "text": "Expected Outputs\nAfter running the supporting workflow, the project should contain outputs such as:\ndata/example/ai-task-log.csv\ndata/results/ai-evaluation-summary.csv\ndata/results/prompt-registry.csv\ndata/reports/ai-evaluation-summary.png\nThese outputs can be used in reporting, review, and governance.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#case-study-interpretation",
+    "href": "11-end-to-end-case-study.html#case-study-interpretation",
+    "title": "End-to-End Case Study",
+    "section": "Case Study Interpretation",
+    "text": "Case Study Interpretation\nThis case study shows that a responsible AI workflow is not built from a prompt alone.\nIt requires a system.\nThe system includes:\n\na clear human-defined problem\na known audience\nexplicit task boundaries\nprepared context\ngrounded prompting\nquality evaluation\nhuman review\ndocumentation\ncontrolled automation\n\nThis is what separates AI tool use from AI Systems.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#common-failure-modes",
+    "href": "11-end-to-end-case-study.html#common-failure-modes",
+    "title": "End-to-End Case Study",
+    "section": "Common Failure Modes",
+    "text": "Common Failure Modes\nCommon failures in end-to-end AI workflows include:\n\nstarting with a vague task\nskipping risk classification\nusing weak or missing context\nasking AI to make unsupported claims\ntreating AI output as final\nfailing to document the prompt\nfailing to document review decisions\nautomating before the workflow is stable\n\nMost failures are not model failures alone.\nThey are workflow design failures.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#practical-checklist",
+    "href": "11-end-to-end-case-study.html#practical-checklist",
+    "title": "End-to-End Case Study",
+    "section": "Practical Checklist",
+    "text": "Practical Checklist\nBefore using AI in a repeatable workflow, ask:\nHave we defined the task clearly?\nHave we identified the audience?\nHave we classified the risk?\nHave we prepared the context?\nHave we designed a reusable prompt?\nHave we defined evaluation criteria?\nHave we assigned human review responsibility?\nHave we documented the final decision?\nHave we decided what should and should not be automated?\nIf the answer is no, the workflow is not ready for operational use.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#key-takeaways",
+    "href": "11-end-to-end-case-study.html#key-takeaways",
+    "title": "End-to-End Case Study",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\nAn end-to-end AI Systems workflow begins with human problem framing and ends with human judgment.\nAI can assist with drafting, reasoning, analysis, summarization, and automation.\nBut responsible use requires grounding, evaluation, review, and documentation.\nThe Human–AI–Human workflow is not a slogan.\nIt is an operational design principle.",
+    "crumbs": [
+      "Operational AI Systems",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "11-end-to-end-case-study.html#looking-ahead",
+    "href": "11-end-to-end-case-study.html#looking-ahead",
+    "title": "End-to-End Case Study",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter focuses on career and workforce readiness.\nWe will move from workflow design into the practical skills people need to work effectively with AI systems: AI literacy, problem framing, evaluation, documentation, communication, and responsible automation.\nBy the end of the next chapter, AI will not only be treated as a tool to use, but as a capability to develop across roles, teams, and organizations.",
     "crumbs": [
       "Operational AI Systems",
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>End-to-End Case Study</span>"
@@ -982,18 +2126,194 @@
     "href": "12-career-and-workforce-readiness.html",
     "title": "Career and Workforce Readiness",
     "section": "",
-    "text": "Practical Career Capabilities\nAI readiness does not mean everyone must become an AI engineer.\nIt means learners and professionals should understand how to work with AI tools responsibly in their own domain.",
+    "text": "Purpose of This Chapter\nThis chapter connects AI Systems to career and workforce readiness.\nThe goal is not to encourage people to chase every new AI tool.\nThe goal is to help people build durable capabilities that remain useful as tools change.\nAI tools will continue to evolve.\nInterfaces will change.\nModels will improve.\nNew automation patterns will appear.\nBut the core professional skill remains the same:\nThat means knowing how to frame problems, prepare context, evaluate outputs, protect sensitive information, document decisions, and communicate results clearly.\nThis is the professional value of AI Systems.",
     "crumbs": [
       "Growth and Reference",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
     ]
   },
   {
-    "objectID": "12-career-and-workforce-readiness.html#practical-career-capabilities",
-    "href": "12-career-and-workforce-readiness.html#practical-career-capabilities",
+    "objectID": "12-career-and-workforce-readiness.html#purpose-of-this-chapter",
+    "href": "12-career-and-workforce-readiness.html#purpose-of-this-chapter",
     "title": "Career and Workforce Readiness",
     "section": "",
-    "text": "AI literacy\nproblem framing\nprompt and context design\nverification\nworkflow documentation\ncommunication\nethical judgment\ncontinuous learning",
+    "text": "Use AI inside a responsible human-led workflow.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#ai-readiness-is-more-than-prompting",
+    "href": "12-career-and-workforce-readiness.html#ai-readiness-is-more-than-prompting",
+    "title": "Career and Workforce Readiness",
+    "section": "AI Readiness Is More Than Prompting",
+    "text": "AI Readiness Is More Than Prompting\nMany people first encounter AI through prompting.\nPrompting is useful.\nBut prompting alone is not enough for professional work.\nA person may know how to ask an AI tool for an answer and still fail to build a reliable workflow.\nAI readiness requires several connected abilities.\nAI literacy\nProblem framing\nContext design\nData and knowledge grounding\nOutput evaluation\nHuman review\nDocumentation\nResponsible automation\nCommunication\nGovernance awareness\nThese abilities turn AI use from isolated experimentation into a reproducible system.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#the-workforce-shift",
+    "href": "12-career-and-workforce-readiness.html#the-workforce-shift",
+    "title": "Career and Workforce Readiness",
+    "section": "The Workforce Shift",
+    "text": "The Workforce Shift\nAI is changing work in three major ways.\nFirst, routine information tasks can be accelerated.\nExamples include summarizing documents, drafting first versions, organizing notes, extracting themes, preparing checklists, and creating structured outputs.\nSecond, analytical and communication workflows can become more interactive.\nPeople can use AI to explore ideas, test assumptions, compare options, critique drafts, and prepare explanations for different audiences.\nThird, some workflows can become partially automated.\nThis may include recurring reports, task classification, document review, quality checks, or workflow monitoring.\nThe important point is that AI does not remove the need for human judgment.\nIt changes where human judgment is most needed.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#the-human-role-becomes-more-important",
+    "href": "12-career-and-workforce-readiness.html#the-human-role-becomes-more-important",
+    "title": "Career and Workforce Readiness",
+    "section": "The Human Role Becomes More Important",
+    "text": "The Human Role Becomes More Important\nIn weak AI workflows, people use AI as if it were an authority.\nIn strong AI workflows, people use AI as part of a system that remains accountable to humans.\nThe Human–AI–Human workflow still applies.\nHuman defines the problem.\nAI assists with generation, reasoning, analysis, or automation.\nHuman evaluates, decides, documents, and acts.\nThis pattern is also a career readiness model.\nProfessionals who can use AI responsibly will not only ask better prompts.\nThey will also design better workflows.\nThey will know when AI is useful.\nThey will know when AI is risky.\nThey will know when human expertise, evidence, policy, or stakeholder review is required.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#core-ai-systems-competencies",
+    "href": "12-career-and-workforce-readiness.html#core-ai-systems-competencies",
+    "title": "Career and Workforce Readiness",
+    "section": "Core AI Systems Competencies",
+    "text": "Core AI Systems Competencies\nAI Systems readiness can be organized into practical competencies.\n\n\n\n\n\n\n\nCompetency\nWhat it means\n\n\n\n\nAI literacy\nUnderstand what AI can and cannot do\n\n\nProblem framing\nConvert vague needs into clear tasks\n\n\nContext design\nProvide useful background, constraints, and output expectations\n\n\nGrounding\nConnect AI outputs to data, documents, evidence, or known project context\n\n\nEvaluation\nCheck accuracy, completeness, relevance, and risk\n\n\nHuman review\nDecide what requires expert review before use\n\n\nDocumentation\nKeep records of prompts, assumptions, outputs, and decisions\n\n\nCommunication\nConvert outputs into clear messages for real audiences\n\n\nAutomation judgment\nKnow which tasks are safe to automate and which are not\n\n\nGovernance awareness\nUnderstand privacy, security, fairness, accountability, and traceability\n\n\n\nThese are transferable skills.\nThey apply across data science, research, healthcare, education, business, public service, and community work.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#skill-level-progression",
+    "href": "12-career-and-workforce-readiness.html#skill-level-progression",
+    "title": "Career and Workforce Readiness",
+    "section": "Skill Level Progression",
+    "text": "Skill Level Progression\nAI Systems learning can be viewed as a progression.\nLevel 1: Tool user\nLevel 2: Responsible AI user\nLevel 3: Workflow designer\nLevel 4: AI systems builder\nLevel 5: AI governance-aware leader\nEach level builds on the previous one.\nA tool user can ask AI for help.\nA responsible AI user understands privacy, limitations, and review needs.\nA workflow designer can structure repeatable Human–AI–Human workflows.\nAn AI systems builder can connect prompts, data, scripts, reports, evaluation, and documentation.\nA governance-aware leader can help teams decide how AI should be used responsibly.\nThe purpose of this guide is to move learners beyond Level 1.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#ai-skills-for-analysts-and-data-professionals",
+    "href": "12-career-and-workforce-readiness.html#ai-skills-for-analysts-and-data-professionals",
+    "title": "Career and Workforce Readiness",
+    "section": "AI Skills for Analysts and Data Professionals",
+    "text": "AI Skills for Analysts and Data Professionals\nFor analysts and data professionals, AI readiness does not replace data skills.\nIt strengthens them.\nAI can help with:\n\nclarifying analytical questions\ndrafting data dictionaries\nreviewing analysis plans\nsuggesting quality checks\nsummarizing results\nexplaining limitations\npreparing reports\ntranslating technical findings for nontechnical audiences\n\nBut AI should not replace the analyst’s responsibility to inspect data, validate results, understand methods, and communicate uncertainty.\nA strong AI-assisted analysis workflow should still produce defensible outputs.\ninput data\nanalysis logic\nquality checks\nresults table\ninterpretation\nreview notes\nfinal report\nThe analyst remains responsible for the claim.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#ai-skills-for-researchers-and-educators",
+    "href": "12-career-and-workforce-readiness.html#ai-skills-for-researchers-and-educators",
+    "title": "Career and Workforce Readiness",
+    "section": "AI Skills for Researchers and Educators",
+    "text": "AI Skills for Researchers and Educators\nFor researchers and educators, AI can support reading, synthesis, drafting, teaching, and feedback.\nUseful applications include:\n\nsummarizing literature notes\ncomparing concepts\ngenerating teaching examples\npreparing discussion questions\ndrafting outlines\nreviewing clarity\nconverting technical ideas into learner-friendly language\n\nBut responsible use requires care.\nResearch and education workflows must protect intellectual integrity.\nAI should not fabricate sources.\nAI should not replace critical reading.\nAI should not be used to hide weak understanding.\nIn a strong workflow, AI supports thinking, but humans remain responsible for learning, interpretation, and final communication.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#ai-skills-for-managers-and-teams",
+    "href": "12-career-and-workforce-readiness.html#ai-skills-for-managers-and-teams",
+    "title": "Career and Workforce Readiness",
+    "section": "AI Skills for Managers and Teams",
+    "text": "AI Skills for Managers and Teams\nFor managers and teams, the main AI skill is not only using AI personally.\nIt is creating conditions where AI can be used safely and productively.\nTeams need shared expectations.\nThese may include:\n\nwhich AI tools are allowed\nwhat information must not be entered into AI tools\nwhich tasks require review\nhow AI-assisted outputs should be documented\nwhen AI-generated content must be labeled or disclosed\nhow errors should be reported\nhow workflows should be improved over time\n\nWithout shared expectations, AI use becomes inconsistent and risky.\nWith shared expectations, AI can improve productivity while preserving accountability.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#building-a-personal-ai-systems-portfolio",
+    "href": "12-career-and-workforce-readiness.html#building-a-personal-ai-systems-portfolio",
+    "title": "Career and Workforce Readiness",
+    "section": "Building a Personal AI Systems Portfolio",
+    "text": "Building a Personal AI Systems Portfolio\nA useful way to demonstrate AI readiness is to build a small portfolio of responsible workflows.\nThis does not need to be complicated.\nA portfolio can include examples such as:\n\na prompt registry\nan AI task log\na before-and-after workflow improvement\na grounded summary workflow\nan evaluation checklist\na report generated from reviewed outputs\na governance note for a team use case\na documented Human–AI–Human workflow\n\nThe goal is to show that you can use AI responsibly and systematically.\nA strong portfolio does not only show outputs.\nIt shows process.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#example-portfolio-structure",
+    "href": "12-career-and-workforce-readiness.html#example-portfolio-structure",
+    "title": "Career and Workforce Readiness",
+    "section": "Example Portfolio Structure",
+    "text": "Example Portfolio Structure\nA simple AI Systems portfolio could use the following structure.\nai-systems-portfolio/\n├── README.md\n├── examples/\n│   ├── weekly-brief-workflow.md\n│   ├── grounded-summary-workflow.md\n│   └── ai-assisted-reporting-workflow.md\n├── prompts/\n│   └── prompt-registry.csv\n├── evaluation/\n│   └── ai-output-review-checklist.md\n├── governance/\n│   └── responsible-use-note.md\n└── reports/\n    └── example-reviewed-output.md\nThis type of portfolio communicates that the person understands AI as a system, not just as a chat interface.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#workforce-readiness-checklist",
+    "href": "12-career-and-workforce-readiness.html#workforce-readiness-checklist",
+    "title": "Career and Workforce Readiness",
+    "section": "Workforce Readiness Checklist",
+    "text": "Workforce Readiness Checklist\nBefore claiming AI readiness, a learner or team should be able to answer these questions.\nCan I define an AI task clearly?\nCan I identify whether the task is low, medium, or high risk?\nCan I decide what context the AI needs?\nCan I avoid entering sensitive or inappropriate information?\nCan I evaluate the output before using it?\nCan I identify unsupported claims?\nCan I document prompts, outputs, assumptions, and review decisions?\nCan I decide when human expert review is required?\nCan I explain the workflow to someone else?\nCan I improve the workflow after observing errors?\nThese questions are simple, but they are powerful.\nThey move AI use from casual experimentation toward responsible practice.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#common-career-mistakes-in-ai-adoption",
+    "href": "12-career-and-workforce-readiness.html#common-career-mistakes-in-ai-adoption",
+    "title": "Career and Workforce Readiness",
+    "section": "Common Career Mistakes in AI Adoption",
+    "text": "Common Career Mistakes in AI Adoption\nSeveral mistakes can slow professional growth with AI.\n\n\n\n\n\n\n\nMistake\nBetter practice\n\n\n\n\nLearning only tools\nLearn workflows and evaluation habits\n\n\nCopying AI output directly\nReview, revise, and document before use\n\n\nIgnoring risk\nClassify tasks before using AI\n\n\nTreating AI as always correct\nRequire evidence and human judgment\n\n\nAutomating too early\nStabilize the workflow first\n\n\nHiding AI use where disclosure is needed\nFollow organizational and ethical expectations\n\n\nUsing sensitive data casually\nProtect privacy and confidentiality\n\n\nProducing outputs without records\nMaintain task logs and prompt registries\n\n\n\nThese mistakes are not only technical.\nThey are professional practice issues.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#from-ai-user-to-ai-systems-designer",
+    "href": "12-career-and-workforce-readiness.html#from-ai-user-to-ai-systems-designer",
+    "title": "Career and Workforce Readiness",
+    "section": "From AI User to AI Systems Designer",
+    "text": "From AI User to AI Systems Designer\nThe professional shift can be summarized this way.\nAI user:\nI ask AI to help me complete a task.\n\nAI systems designer:\nI design a workflow where AI assists, humans remain accountable, and outputs can be reviewed, documented, and improved.\nThis distinction is central to the CDI approach.\nAI Systems is not about using AI everywhere.\nIt is about knowing how to place AI where it adds value and where human oversight remains clear.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#practical-exercise",
+    "href": "12-career-and-workforce-readiness.html#practical-exercise",
+    "title": "Career and Workforce Readiness",
+    "section": "Practical Exercise",
+    "text": "Practical Exercise\nChoose one recurring task from your own work or learning environment.\nExamples:\n\nwriting a weekly update\nsummarizing meeting notes\npreparing a learning plan\nreviewing a draft report\norganizing project risks\ntranslating technical results into plain language\n\nThen complete this template.\nTask name:\nPurpose:\nAudience:\nCurrent workflow:\nWhere AI could assist:\nRequired context:\nPotential risks:\nHuman review checkpoint:\nExpected output:\nDocumentation needed:\nDecision after review:\nThis exercise turns AI readiness into something practical.\nIt begins with one real workflow.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#chapter-summary",
+    "href": "12-career-and-workforce-readiness.html#chapter-summary",
+    "title": "Career and Workforce Readiness",
+    "section": "Chapter Summary",
+    "text": "Chapter Summary\nAI workforce readiness is not only about knowing which AI tools exist.\nIt is about building durable skills for responsible AI use.\nThe most important skills include problem framing, context design, grounding, evaluation, documentation, communication, and governance awareness.\nProfessionals who develop these skills can move beyond isolated AI use and begin designing responsible, reproducible, human-led AI workflows.\nThe Human–AI–Human workflow remains the foundation.\nHuman defines the problem.\nAI assists.\nHuman evaluates, decides, documents, and acts.\nThat is the career value of AI Systems.",
+    "crumbs": [
+      "Growth and Reference",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
+    ]
+  },
+  {
+    "objectID": "12-career-and-workforce-readiness.html#looking-ahead",
+    "href": "12-career-and-workforce-readiness.html#looking-ahead",
+    "title": "Career and Workforce Readiness",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe next chapter provides appendix materials and reusable reference templates.\nThese resources support the full AI Systems workflow, including problem framing, prompt design, evaluation, documentation, governance, and Human–AI–Human review.",
     "crumbs": [
       "Growth and Reference",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Career and Workforce Readiness</span>"
@@ -1004,32 +2324,197 @@
     "href": "999-appendix.html",
     "title": "Appendix",
     "section": "",
-    "text": "AI Task Log Columns",
+    "text": "Purpose of This Appendix\nThis appendix collects reusable structures from the guide.\nThe main chapters explain the reasoning behind AI Systems.\nThis appendix provides practical templates that can be copied into projects, team workflows, training programs, or documentation.\nThe goal is not to make AI use complicated.\nThe goal is to make AI use clear, reviewable, reproducible, and human-led.",
     "crumbs": [
       "Growth and Reference",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Appendix</span>"
+      "Appendix"
     ]
   },
   {
-    "objectID": "999-appendix.html#ai-task-log-columns",
-    "href": "999-appendix.html#ai-task-log-columns",
+    "objectID": "999-appendix.html#core-cdi-ai-systems-pattern",
+    "href": "999-appendix.html#core-cdi-ai-systems-pattern",
     "title": "Appendix",
-    "section": "",
-    "text": "task_id\ntask_type\naudience\nAI_role\ninput_context\nexpected_output\naccuracy_score\ncompleteness_score\nclarity_score\nrisk_level\nreview_status\nhuman_decision",
+    "section": "Core CDI AI Systems Pattern",
+    "text": "Core CDI AI Systems Pattern\nThe central workflow in this guide is the Human–AI–Human pattern.\nHuman defines the problem.\nAI assists with generation, reasoning, analysis, or automation.\nHuman evaluates, decides, documents, and acts.\nThis pattern applies whether the task is simple or advanced.\nIt applies to writing, analysis, coding, summarization, reporting, teaching, planning, automation, and decision support.\nAI Systems are not built by asking AI to do everything.\nThey are built by placing AI inside a responsible human workflow.",
     "crumbs": [
       "Growth and Reference",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Appendix</span>"
+      "Appendix"
     ]
   },
   {
-    "objectID": "999-appendix.html#minimal-project-commands",
-    "href": "999-appendix.html#minimal-project-commands",
+    "objectID": "999-appendix.html#ai-task-framing-template",
+    "href": "999-appendix.html#ai-task-framing-template",
     "title": "Appendix",
-    "section": "Minimal Project Commands",
-    "text": "Minimal Project Commands\nbash scripts/bash/00-check-environment.sh\nbash scripts/bash/01-create-example-ai-task-log.sh\npython scripts/python/02-evaluate-ai-output-quality.py data/example/ai-task-log.csv data/results\npython scripts/python/03-build-prompt-registry.py data/example/ai-task-log.csv data/results\nRscript scripts/R/04-plot-evaluation-summary.R data/results/ai-evaluation-summary.csv data/reports\nquarto render",
+    "section": "AI Task Framing Template",
+    "text": "AI Task Framing Template\nUse this template before asking AI to perform meaningful work.\nAI Task Framing Template\n\n1. Task name:\n\n2. Human goal:\n\n3. Intended audience:\n\n4. Context the AI should use:\n\n5. Context the AI should avoid:\n\n6. Input materials:\n\n7. Expected output format:\n\n8. Quality criteria:\n\n9. Risk level:\n   Low / Medium / High\n\n10. Human review required before use:\n   Yes / No\n\n11. Decision or action after review:\nA task is usually not ready for AI if the goal, audience, context, and review criteria are unclear.",
     "crumbs": [
       "Growth and Reference",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Appendix</span>"
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#ai-task-risk-levels",
+    "href": "999-appendix.html#ai-task-risk-levels",
+    "title": "Appendix",
+    "section": "AI Task Risk Levels",
+    "text": "AI Task Risk Levels\nNot every AI task carries the same risk.\nA quick risk classification helps decide how much review is needed.\n\n\n\n\n\n\n\n\n\nRisk level\nDescription\nExamples\nReview expectation\n\n\n\n\nLow\nLow-impact support task\nRewording, brainstorming, formatting, first-pass summaries\nLight human review\n\n\nMedium\nWork that may influence interpretation, planning, communication, or workflow design\nDrafting reports, summarizing evidence, generating code, preparing teaching materials\nCareful human review\n\n\nHigh\nWork that may influence health, legal, financial, safety, hiring, disciplinary, or other consequential decisions\nClinical recommendations, legal claims, financial advice, high-stakes automation\nExpert review, documentation, and governance\n\n\n\nAI output should not be treated as final in medium- or high-risk tasks.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#prompt-design-template",
+    "href": "999-appendix.html#prompt-design-template",
+    "title": "Appendix",
+    "section": "Prompt Design Template",
+    "text": "Prompt Design Template\nA reusable prompt should make the task, context, constraints, and output format explicit.\nPrompt Design Template\n\nRole:\nYou are helping with...\n\nTask:\nPlease produce...\n\nContext:\nUse the following information...\n\nConstraints:\nDo not assume...\nDo not invent...\nFlag uncertainty where needed...\n\nOutput format:\nReturn the result as...\n\nQuality criteria:\nThe output should be clear, accurate, grounded, concise, and reviewable.\n\nHuman review:\nHighlight anything that requires human checking before use.\nGood prompts do not remove the need for judgment.\nThey make judgment easier.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#context-design-checklist",
+    "href": "999-appendix.html#context-design-checklist",
+    "title": "Appendix",
+    "section": "Context Design Checklist",
+    "text": "Context Design Checklist\nBefore sending context into an AI workflow, check whether the context is appropriate.\nContext Design Checklist\n\n[ ] The task goal is clear.\n[ ] The audience is clear.\n[ ] The relevant source material is included.\n[ ] Irrelevant material has been removed.\n[ ] Sensitive information has been excluded or minimized.\n[ ] The AI is told what to prioritize.\n[ ] The AI is told what not to assume.\n[ ] The expected output format is clear.\n[ ] The review criteria are clear.\nPoor context often creates poor AI output, even when the prompt sounds polished.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#grounding-checklist",
+    "href": "999-appendix.html#grounding-checklist",
+    "title": "Appendix",
+    "section": "Grounding Checklist",
+    "text": "Grounding Checklist\nUse this checklist when AI output needs to be connected to data, documents, evidence, or project materials.\nGrounding Checklist\n\n[ ] What source material supports the output?\n[ ] Is the source material current enough for the task?\n[ ] Are important assumptions stated?\n[ ] Are claims traceable to evidence?\n[ ] Are uncertain points flagged?\n[ ] Are interpretations separated from facts?\n[ ] Are citations or references needed?\n[ ] Has a human checked the final output against the source material?\nGrounding is especially important for analysis, reporting, teaching, governance, and decision-support workflows.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#ai-output-evaluation-rubric",
+    "href": "999-appendix.html#ai-output-evaluation-rubric",
+    "title": "Appendix",
+    "section": "AI Output Evaluation Rubric",
+    "text": "AI Output Evaluation Rubric\nUse this rubric to review AI-generated outputs.\n\n\n\n\n\n\n\nCriterion\nReview question\n\n\n\n\nRelevance\nDoes the output answer the actual task?\n\n\nAccuracy\nAre the claims correct and supported?\n\n\nGrounding\nIs the output connected to the provided context or evidence?\n\n\nCompleteness\nAre important parts missing?\n\n\nClarity\nIs the output understandable to the intended audience?\n\n\nSafety\nCould the output create harm if used as written?\n\n\nActionability\nIs the next step clear?\n\n\nTraceability\nCan a reviewer understand how the output was produced and checked?\n\n\n\nA useful AI output is not only fluent.\nIt must be fit for purpose.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#human-review-checklist",
+    "href": "999-appendix.html#human-review-checklist",
+    "title": "Appendix",
+    "section": "Human Review Checklist",
+    "text": "Human Review Checklist\nUse this before sharing, publishing, acting on, or automating AI-assisted work.\nHuman Review Checklist\n\n[ ] I understand the task the AI was asked to perform.\n[ ] I reviewed the output for accuracy.\n[ ] I checked whether the output is grounded in appropriate context.\n[ ] I identified unsupported claims.\n[ ] I corrected misleading or unclear language.\n[ ] I checked for missing risks or limitations.\n[ ] I verified any important numbers, names, references, or claims.\n[ ] I decided whether the output is ready to use.\n[ ] I documented any important changes or concerns.\nHuman review is not a formality.\nIt is part of the system.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#prompt-registry-template",
+    "href": "999-appendix.html#prompt-registry-template",
+    "title": "Appendix",
+    "section": "Prompt Registry Template",
+    "text": "Prompt Registry Template\nA prompt registry helps teams reuse and improve prompts over time.\nPrompt Registry Template\n\nprompt_id:\n\nprompt_name:\n\nworkflow_stage:\n\nintended_user:\n\ninput_requirements:\n\nprompt_text:\n\nexpected_output:\n\nquality_criteria:\n\nrisk_level:\n\nreviewer:\n\nversion:\n\nlast_updated:\n\nnotes:\nA prompt registry turns informal AI use into a documented workflow asset.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#ai-task-log-template",
+    "href": "999-appendix.html#ai-task-log-template",
+    "title": "Appendix",
+    "section": "AI Task Log Template",
+    "text": "AI Task Log Template\nAn AI task log records what happened in an AI-supported workflow.\nAI Task Log Template\n\ntask_id:\n\ndate:\n\nuser_or_team:\n\ntask_name:\n\npurpose:\n\ntool_used:\n\ninput_context:\n\noutput_summary:\n\nrisk_level:\n\nhuman_review_status:\n\nissues_found:\n\nfinal_decision:\n\nfollow_up_action:\nTask logs are especially useful when AI output supports reports, analysis, automation, or decisions.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#automation-readiness-checklist",
+    "href": "999-appendix.html#automation-readiness-checklist",
+    "title": "Appendix",
+    "section": "Automation Readiness Checklist",
+    "text": "Automation Readiness Checklist\nA workflow should not be automated simply because it can be automated.\nUse this checklist before turning an AI task into a repeatable or agentic workflow.\nAutomation Readiness Checklist\n\n[ ] The task is repeated often enough to justify automation.\n[ ] The inputs are predictable.\n[ ] The expected outputs are clear.\n[ ] The quality criteria are defined.\n[ ] Failure modes are known.\n[ ] Human review checkpoints are included.\n[ ] Sensitive information is handled safely.\n[ ] Logs or records are produced.\n[ ] There is a clear owner for maintaining the workflow.\n[ ] The workflow can be stopped, corrected, or rolled back.\nAutomation without review can scale mistakes.\nResponsible automation scales reliable practice.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#governance-documentation-template",
+    "href": "999-appendix.html#governance-documentation-template",
+    "title": "Appendix",
+    "section": "Governance Documentation Template",
+    "text": "Governance Documentation Template\nAI governance does not need to begin with heavy bureaucracy.\nIt can begin with clear documentation.\nAI Governance Documentation Template\n\nWorkflow name:\n\nWorkflow owner:\n\nPurpose:\n\nUsers:\n\nAI tools used:\n\nData or context used:\n\nRisk level:\n\nHuman review checkpoint:\n\nKnown limitations:\n\nPrivacy considerations:\n\nOutput use restrictions:\n\nApproval or review process:\n\nUpdate schedule:\n\nIncident or issue process:\nGovernance should make responsible AI use easier, not harder.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#example-project-structure",
+    "href": "999-appendix.html#example-project-structure",
+    "title": "Appendix",
+    "section": "Example Project Structure",
+    "text": "Example Project Structure\nA small AI Systems project may use a structure like this:\nai-systems-project/\n├── README.md\n├── prompts/\n│   ├── prompt-registry.csv\n│   └── templates/\n├── data/\n│   ├── input/\n│   ├── example/\n│   └── results/\n├── reports/\n├── scripts/\n│   ├── bash/\n│   ├── python/\n│   └── R/\n├── documentation/\n│   ├── task-log.csv\n│   ├── governance-notes.md\n│   └── review-checklist.md\n└── outputs/\nThe exact structure can change.\nThe important principle is that prompts, inputs, outputs, reviews, and decisions should be traceable.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#supporting-scripts-in-this-guide",
+    "href": "999-appendix.html#supporting-scripts-in-this-guide",
+    "title": "Appendix",
+    "section": "Supporting Scripts in This Guide",
+    "text": "Supporting Scripts in This Guide\nThe scaffolded guide includes scripts that demonstrate how AI workflow documentation can be made reproducible.\nbash scripts/bash/00-check-environment.sh\nbash scripts/bash/01-create-example-ai-task-log.sh\n\npython scripts/python/02-evaluate-ai-output-quality.py \\\n  data/example/ai-task-log.csv \\\n  data/results\n\npython scripts/python/03-build-prompt-registry.py \\\n  data/example/ai-task-log.csv \\\n  data/results\n\nRscript scripts/R/04-plot-evaluation-summary.R \\\n  data/results/ai-evaluation-summary.csv \\\n  data/reports\nThese scripts are examples.\nThey show how AI-related work can be logged, summarized, reviewed, and reported.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#cdi-ai-systems-learning-path",
+    "href": "999-appendix.html#cdi-ai-systems-learning-path",
+    "title": "Appendix",
+    "section": "CDI AI Systems Learning Path",
+    "text": "CDI AI Systems Learning Path\nThe guide follows this learning sequence:\nAI systems thinking\nAI literacy and responsible use\nProblem framing\nPrompt and context design\nData and knowledge grounding\nEvaluation and quality control\nHuman-in-the-loop workflows\nAutomation and agentic workflows\nAI-assisted analysis and reporting\nGovernance, risk, and documentation\nEnd-to-end case study\nCareer and workforce readiness\nThe sequence moves from thinking to practice, then from practice to systems.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#glossary",
+    "href": "999-appendix.html#glossary",
+    "title": "Appendix",
+    "section": "Glossary",
+    "text": "Glossary\nAI system\nA human-led workflow that uses AI tools, context, review, documentation, and governance to support a defined task or outcome.\nHuman–AI–Human workflow\nA workflow in which humans frame the problem, AI assists, and humans evaluate, decide, document, and act.\nPrompt\nAn instruction or set of instructions given to an AI system.\nContext\nThe background information, data, examples, constraints, or documents provided to guide AI output.\nGrounding\nConnecting AI output to source material, data, evidence, or documented context.\nEvaluation\nThe process of checking whether AI output is accurate, useful, safe, and fit for purpose.\nHuman-in-the-loop\nA workflow design where humans review, approve, correct, or decide at important points.\nAutomation\nA repeatable workflow where some steps are executed automatically.\nAgentic workflow\nA workflow where AI is given more autonomy to plan or execute steps within defined boundaries.\nGovernance\nThe rules, roles, documentation, review processes, and accountability structures used to manage AI responsibly.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
+    ]
+  },
+  {
+    "objectID": "999-appendix.html#looking-ahead",
+    "href": "999-appendix.html#looking-ahead",
+    "title": "Appendix",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThe references chapter lists selected sources that support responsible AI use, human-centered AI systems, AI evaluation, and governance.\nThose references are not the end of the learning path.\nThey provide a foundation for continuing to build AI systems that are useful, responsible, and human-led.",
+    "crumbs": [
+      "Growth and Reference",
+      "Appendix"
     ]
   },
   {
@@ -1037,10 +2522,54 @@
     "href": "999-references.html",
     "title": "References",
     "section": "",
-    "text": "ID: AI-999R\nType: References\nAudience: All readers\nTheme: AI systems should be connected to documented sources\n\n\nReferences will be expanded as the guide matures.",
+    "text": "Core Reference Themes\nThis page collects the references used across the AI Systems guide.\nThe guide is intentionally practical. It focuses on how people can design, evaluate, document, and govern AI-supported work. The references therefore include sources on AI risk management, trustworthy AI, human-centered AI, prompt and workflow design, evaluation, and responsible deployment.\nReferences are managed through the project bibliography file:\nWhen adding citations to chapters, use Quarto citation syntax:\nThe rendered references will appear below when the bibliography file contains matching entries.\nThe most important reference areas for this guide are:",
     "crumbs": [
       "Growth and Reference",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>References</span>"
+      "References"
+    ]
+  },
+  {
+    "objectID": "999-references.html#core-reference-themes",
+    "href": "999-references.html#core-reference-themes",
+    "title": "References",
+    "section": "",
+    "text": "AI risk management and governance\ntrustworthy and responsible AI\nhuman-centered AI\nhuman oversight and accountability\nmodel and system documentation\nAI evaluation and quality control\nAI literacy and workforce readiness",
+    "crumbs": [
+      "Growth and Reference",
+      "References"
+    ]
+  },
+  {
+    "objectID": "999-references.html#suggested-citation-use",
+    "href": "999-references.html#suggested-citation-use",
+    "title": "References",
+    "section": "Suggested Citation Use",
+    "text": "Suggested Citation Use\nUse references where a chapter makes claims about:\n\nrisk management frameworks\ngovernance practices\ntransparency and documentation\nhuman oversight\nevaluation methods\nresponsible AI principles\nsocial, organizational, or workforce implications\n\nAvoid over-citing basic workflow instructions. Cite sources where they support concepts, principles, standards, or claims that readers may want to verify.",
+    "crumbs": [
+      "Growth and Reference",
+      "References"
+    ]
+  },
+  {
+    "objectID": "999-references.html#references",
+    "href": "999-references.html#references",
+    "title": "References",
+    "section": "References",
+    "text": "References",
+    "crumbs": [
+      "Growth and Reference",
+      "References"
+    ]
+  },
+  {
+    "objectID": "999-references.html#looking-ahead",
+    "href": "999-references.html#looking-ahead",
+    "title": "References",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nThis completes the scaffolded AI Systems guide.\nThe guide now has a complete structure for moving from AI literacy into problem framing, prompt and context design, grounding, evaluation, human review, automation, governance, reporting, and workforce readiness.\nFrom here, the next step is refinement: improving examples, strengthening citations, testing all scripts, and preparing the repository for public release through GitHub Pages.",
+    "crumbs": [
+      "Growth and Reference",
+      "References"
     ]
   }
 ]

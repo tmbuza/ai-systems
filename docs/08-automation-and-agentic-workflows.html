@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -223,12 +258,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -243,7 +280,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#safe-automation-pattern" id="toc-safe-automation-pattern" class="nav-link active" data-scroll-target="#safe-automation-pattern">Safe Automation Pattern</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link active" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#from-assistance-to-automation" id="toc-from-assistance-to-automation" class="nav-link" data-scroll-target="#from-assistance-to-automation">From Assistance to Automation</a></li>
+  <li><a href="#the-human-ai-human-model-still-applies" id="toc-the-human-ai-human-model-still-applies" class="nav-link" data-scroll-target="#the-human-ai-human-model-still-applies">The Human-AI-Human Model Still Applies</a></li>
+  <li><a href="#what-makes-a-workflow-automation-ready" id="toc-what-makes-a-workflow-automation-ready" class="nav-link" data-scroll-target="#what-makes-a-workflow-automation-ready">What Makes a Workflow Automation-Ready?</a></li>
+  <li><a href="#automation-readiness-checklist" id="toc-automation-readiness-checklist" class="nav-link" data-scroll-target="#automation-readiness-checklist">Automation Readiness Checklist</a></li>
+  <li><a href="#a-simple-ai-automation-pattern" id="toc-a-simple-ai-automation-pattern" class="nav-link" data-scroll-target="#a-simple-ai-automation-pattern">A Simple AI Automation Pattern</a></li>
+  <li><a href="#example-non-executable-workflow-command" id="toc-example-non-executable-workflow-command" class="nav-link" data-scroll-target="#example-non-executable-workflow-command">Example: Non-Executable Workflow Command</a></li>
+  <li><a href="#agentic-workflows" id="toc-agentic-workflows" class="nav-link" data-scroll-target="#agentic-workflows">Agentic Workflows</a></li>
+  <li><a href="#boundaries-for-agentic-workflows" id="toc-boundaries-for-agentic-workflows" class="nav-link" data-scroll-target="#boundaries-for-agentic-workflows">Boundaries for Agentic Workflows</a></li>
+  <li><a href="#human-checkpoints" id="toc-human-checkpoints" class="nav-link" data-scroll-target="#human-checkpoints">Human Checkpoints</a></li>
+  <li><a href="#failure-modes-in-automated-ai-workflows" id="toc-failure-modes-in-automated-ai-workflows" class="nav-link" data-scroll-target="#failure-modes-in-automated-ai-workflows">Failure Modes in Automated AI Workflows</a></li>
+  <li><a href="#documentation-for-ai-automation" id="toc-documentation-for-ai-automation" class="nav-link" data-scroll-target="#documentation-for-ai-automation">Documentation for AI Automation</a></li>
+  <li><a href="#mini-case-example" id="toc-mini-case-example" class="nav-link" data-scroll-target="#mini-case-example">Mini Case Example</a></li>
+  <li><a href="#practical-design-rule" id="toc-practical-design-rule" class="nav-link" data-scroll-target="#practical-design-rule">Practical Design Rule</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
@@ -252,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-automation-and-agentic-workflows.html">Operational AI Systems</a></li><li class="breadcrumb-item"><a href="./08-automation-and-agentic-workflows.html"><span class="chapter-title">Automation and Agentic Workflows</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="automation-agentic" class="quarto-section-identifier"><span class="chapter-title">Automation and Agentic Workflows</span></span></h1>
+<h1 class="title"><span class="chapter-title">Automation and Agentic Workflows</span></h1>
 </div>
 
 
@@ -277,24 +329,389 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-008</li>
-<li><strong>Type:</strong> Advanced Chapter</li>
-<li><strong>Audience:</strong> Builders and workflow designers</li>
-<li><strong>Theme:</strong> Automation requires boundaries, monitoring, and fallback plans</li>
+<li><strong>ID:</strong> AI-08</li>
+<li><strong>Type:</strong> Systems Guide</li>
+<li><strong>Audience:</strong> AI users, analysts, educators, builders, and workflow designers</li>
+<li><strong>Theme:</strong> AI automation should begin only after the human-led workflow is clear, reviewable, and safe</li>
 </ul>
 </div>
-<p>Automation becomes useful when repeated tasks have clear inputs, outputs, and review rules.</p>
-<p>Agentic workflows add planning, tool use, and multi-step execution.</p>
-<p>They should be introduced gradually.</p>
-<section id="safe-automation-pattern" class="level2">
-<h2 class="anchored" data-anchor-id="safe-automation-pattern">Safe Automation Pattern</h2>
-<pre class="text"><code>Start manual
-  -&gt; standardize the workflow
-  -&gt; add AI assistance
-  -&gt; add evaluation
-  -&gt; automate low-risk steps
-  -&gt; monitor outputs
-  -&gt; keep human override</code></pre>
+<p>Automation is often presented as the goal of AI work.</p>
+<p>In practice, automation should not be the starting point.</p>
+<p>Before a workflow is automated, the task must be understood. The inputs must be clear. The expected outputs must be defined. The risks must be known. The review points must be visible.</p>
+<p>This chapter explains how to move from assisted AI use into structured automation and agentic workflows without losing human judgment, traceability, or accountability.</p>
+<p>The CDI approach is simple:</p>
+<p>Human-led workflows come first.</p>
+<p>Automation comes after clarity.</p>
+<p>Agentic behavior comes only after evaluation.</p>
+<hr>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this chapter, you should be able to:</p>
+<ul>
+<li>distinguish AI assistance, automation, and agentic workflows;</li>
+<li>decide when a workflow is ready for automation;</li>
+<li>identify risks introduced by multi-step AI systems;</li>
+<li>design human checkpoints into automated workflows;</li>
+<li>document AI workflows so they remain reviewable and reproducible;</li>
+<li>connect agentic workflows back to the Human-AI-Human model.</li>
+</ul>
+<hr>
+</section>
+<section id="from-assistance-to-automation" class="level2">
+<h2 class="anchored" data-anchor-id="from-assistance-to-automation">From Assistance to Automation</h2>
+<p>Most AI use begins as assistance.</p>
+<p>A human asks a question, provides context, reviews the result, and decides what to do next.</p>
+<p>Automation begins when repeated steps are turned into a reusable workflow.</p>
+<p>Agentic workflows go further. They allow AI-enabled tools to plan or execute multiple steps toward a goal, often using tools, memory, files, search, code, or external systems.</p>
+<p>These are not the same thing.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Workflow type</th>
+<th>Human role</th>
+<th>AI role</th>
+<th>Risk level</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Assisted AI use</td>
+<td>Directs each step</td>
+<td>Responds to one request at a time</td>
+<td>Usually lower</td>
+</tr>
+<tr class="even">
+<td>Automated AI workflow</td>
+<td>Defines and reviews workflow</td>
+<td>Executes repeated steps</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>Agentic workflow</td>
+<td>Sets goal and constraints</td>
+<td>Plans or acts across steps</td>
+<td>Higher</td>
+</tr>
+</tbody>
+</table>
+<p>The more autonomy an AI workflow has, the more important evaluation, logging, and human oversight become.</p>
+<hr>
+</section>
+<section id="the-human-ai-human-model-still-applies" class="level2">
+<h2 class="anchored" data-anchor-id="the-human-ai-human-model-still-applies">The Human-AI-Human Model Still Applies</h2>
+<p>Automation does not remove the human.</p>
+<p>It changes where the human appears in the workflow.</p>
+<pre class="text"><code>Human defines the goal, boundaries, and review criteria
+        ↓
+AI system performs one or more structured steps
+        ↓
+Human reviews outputs, decisions, logs, and next actions</code></pre>
+<p>This is still the Human-AI-Human workflow.</p>
+<p>The human may not manually perform every step, but the human remains responsible for problem framing, quality control, interpretation, and action.</p>
+<hr>
+</section>
+<section id="what-makes-a-workflow-automation-ready" class="level2">
+<h2 class="anchored" data-anchor-id="what-makes-a-workflow-automation-ready">What Makes a Workflow Automation-Ready?</h2>
+<p>A workflow is not ready for automation just because it is repetitive.</p>
+<p>It is ready when the repeated task is stable enough to describe, test, and review.</p>
+<p>A workflow is automation-ready when:</p>
+<ul>
+<li>the task has a clear purpose;</li>
+<li>the input format is known;</li>
+<li>the desired output is defined;</li>
+<li>the evaluation criteria are explicit;</li>
+<li>failure modes are known;</li>
+<li>human review points are included;</li>
+<li>logs or artifacts are produced;</li>
+<li>sensitive information is handled safely.</li>
+</ul>
+<p>If these conditions are missing, automation will usually multiply errors instead of reducing work.</p>
+<hr>
+</section>
+<section id="automation-readiness-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="automation-readiness-checklist">Automation Readiness Checklist</h2>
+<p>Before automating an AI workflow, ask:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What problem is this workflow solving?</td>
+<td>Prevents automating vague tasks</td>
+</tr>
+<tr class="even">
+<td>What inputs does it require?</td>
+<td>Supports reproducibility</td>
+</tr>
+<tr class="odd">
+<td>What output should it produce?</td>
+<td>Makes evaluation possible</td>
+</tr>
+<tr class="even">
+<td>How will quality be checked?</td>
+<td>Prevents unreviewed AI output</td>
+</tr>
+<tr class="odd">
+<td>What should happen when confidence is low?</td>
+<td>Supports safe escalation</td>
+</tr>
+<tr class="even">
+<td>What must remain human-reviewed?</td>
+<td>Preserves accountability</td>
+</tr>
+<tr class="odd">
+<td>What will be logged?</td>
+<td>Supports traceability</td>
+</tr>
+<tr class="even">
+<td>What data should not be sent to AI tools?</td>
+<td>Protects privacy and confidentiality</td>
+</tr>
+</tbody>
+</table>
+<p>This checklist should be completed before moving from manual AI assistance to automation.</p>
+<hr>
+</section>
+<section id="a-simple-ai-automation-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-ai-automation-pattern">A Simple AI Automation Pattern</h2>
+<p>A basic AI automation workflow can be written as a sequence of controlled steps.</p>
+<pre class="text"><code>1. Load task input
+2. Validate required fields
+3. Build prompt using approved template
+4. Generate AI-assisted output
+5. Evaluate output against criteria
+6. Save output and evaluation log
+7. Flag uncertain or high-risk cases for human review
+8. Produce a final reviewable report</code></pre>
+<p>This pattern is intentionally conservative.</p>
+<p>It does not treat AI output as final by default.</p>
+<p>It treats AI output as an intermediate artifact that must be evaluated, documented, and reviewed.</p>
+<hr>
+</section>
+<section id="example-non-executable-workflow-command" class="level2">
+<h2 class="anchored" data-anchor-id="example-non-executable-workflow-command">Example: Non-Executable Workflow Command</h2>
+<p>A project might include a workflow script that runs the example AI task log through evaluation and reporting steps.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/01-create-example-ai-task-log.sh</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py <span class="dt">\</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  data/results</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/03-build-prompt-registry.py <span class="dt">\</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  data/results</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> scripts/R/04-plot-evaluation-summary.R <span class="dt">\</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  data/results/ai-evaluation-summary.csv <span class="dt">\</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  data/reports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this guide, commands shown inside chapters are examples for the reader. They are not executable Quarto chunks.</p>
+<hr>
+</section>
+<section id="agentic-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="agentic-workflows">Agentic Workflows</h2>
+<p>An agentic workflow is a workflow where an AI-enabled system can decide or coordinate multiple steps toward a goal.</p>
+<p>For example, an agentic workflow might:</p>
+<ul>
+<li>inspect a folder of files;</li>
+<li>identify which files need processing;</li>
+<li>summarize each file;</li>
+<li>compare summaries against a checklist;</li>
+<li>produce a report;</li>
+<li>flag missing information;</li>
+<li>suggest next actions.</li>
+</ul>
+<p>This can be useful.</p>
+<p>It can also be risky.</p>
+<p>Agentic workflows introduce uncertainty because the system may choose intermediate actions that were not individually requested by the human.</p>
+<p>For this reason, agentic workflows need stricter boundaries than simple prompts.</p>
+<hr>
+</section>
+<section id="boundaries-for-agentic-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="boundaries-for-agentic-workflows">Boundaries for Agentic Workflows</h2>
+<p>Agentic workflows should have clear limits.</p>
+<p>These limits include:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Boundary</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Task boundary</td>
+<td>Only summarize documents in a specified folder</td>
+</tr>
+<tr class="even">
+<td>Data boundary</td>
+<td>Do not use private or external data unless approved</td>
+</tr>
+<tr class="odd">
+<td>Tool boundary</td>
+<td>Use only approved scripts or read-only tools</td>
+</tr>
+<tr class="even">
+<td>Time boundary</td>
+<td>Stop after a defined number of steps</td>
+</tr>
+<tr class="odd">
+<td>Decision boundary</td>
+<td>Do not make final decisions without human review</td>
+</tr>
+<tr class="even">
+<td>Output boundary</td>
+<td>Produce a report, not direct action</td>
+</tr>
+</tbody>
+</table>
+<p>The goal is not to prevent useful automation.</p>
+<p>The goal is to prevent uncontrolled automation.</p>
+<hr>
+</section>
+<section id="human-checkpoints" class="level2">
+<h2 class="anchored" data-anchor-id="human-checkpoints">Human Checkpoints</h2>
+<p>Every automated or agentic workflow should include checkpoints.</p>
+<p>A checkpoint is a place where the workflow pauses, logs, summarizes, or asks for human review.</p>
+<p>Common checkpoints include:</p>
+<ul>
+<li>before sending information to an AI model;</li>
+<li>before using external tools;</li>
+<li>before modifying files;</li>
+<li>before sending emails or messages;</li>
+<li>before publishing reports;</li>
+<li>before making high-stakes recommendations;</li>
+<li>after low-confidence or inconsistent outputs.</li>
+</ul>
+<p>The higher the risk, the more checkpoints are needed.</p>
+<hr>
+</section>
+<section id="failure-modes-in-automated-ai-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="failure-modes-in-automated-ai-workflows">Failure Modes in Automated AI Workflows</h2>
+<p>Automation can make AI failures harder to see.</p>
+<p>Common failure modes include:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Failure mode</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Silent hallucination</td>
+<td>False information enters a report without review</td>
+</tr>
+<tr class="even">
+<td>Context drift</td>
+<td>Later steps no longer match the original task</td>
+</tr>
+<tr class="odd">
+<td>Over-automation</td>
+<td>The system acts where human judgment is needed</td>
+</tr>
+<tr class="even">
+<td>Tool misuse</td>
+<td>The workflow calls the wrong script, file, or source</td>
+</tr>
+<tr class="odd">
+<td>Poor logging</td>
+<td>Outputs cannot be traced or audited</td>
+</tr>
+<tr class="even">
+<td>Privacy leakage</td>
+<td>Sensitive data is sent where it should not go</td>
+</tr>
+<tr class="odd">
+<td>Evaluation gap</td>
+<td>Outputs are generated but never checked</td>
+</tr>
+</tbody>
+</table>
+<p>These are system design problems, not only model problems.</p>
+<p>A better model does not replace a better workflow.</p>
+<hr>
+</section>
+<section id="documentation-for-ai-automation" class="level2">
+<h2 class="anchored" data-anchor-id="documentation-for-ai-automation">Documentation for AI Automation</h2>
+<p>An automated AI workflow should leave behind documentation.</p>
+<p>At minimum, document:</p>
+<ul>
+<li>workflow purpose;</li>
+<li>inputs;</li>
+<li>prompt template or instruction pattern;</li>
+<li>tools or scripts used;</li>
+<li>outputs created;</li>
+<li>evaluation criteria;</li>
+<li>human review points;</li>
+<li>known limitations;</li>
+<li>date and version.</li>
+</ul>
+<p>This makes the workflow easier to reproduce, improve, and govern.</p>
+<hr>
+</section>
+<section id="mini-case-example" class="level2">
+<h2 class="anchored" data-anchor-id="mini-case-example">Mini Case Example</h2>
+<p>Suppose a team uses AI to draft weekly project updates.</p>
+<p>A weak workflow would be:</p>
+<pre class="text"><code>Ask AI to write the update and send it.</code></pre>
+<p>A stronger workflow would be:</p>
+<pre class="text"><code>1. Human provides project notes and audience.
+2. AI drafts a structured update.
+3. AI checks the draft against a communication checklist.
+4. Human reviews accuracy, tone, and missing context.
+5. Human edits and sends the final message.
+6. The final version and checklist are saved for future improvement.</code></pre>
+<p>The second workflow is slower at first.</p>
+<p>But it is safer, more reusable, and easier to improve.</p>
+<hr>
+</section>
+<section id="practical-design-rule" class="level2">
+<h2 class="anchored" data-anchor-id="practical-design-rule">Practical Design Rule</h2>
+<p>Do not automate the AI response.</p>
+<p>Automate the workflow around the AI response.</p>
+<p>That means automating:</p>
+<ul>
+<li>input preparation;</li>
+<li>prompt construction;</li>
+<li>file organization;</li>
+<li>evaluation summaries;</li>
+<li>review checklists;</li>
+<li>reporting artifacts;</li>
+<li>logs and registries.</li>
+</ul>
+<p>The human should still own interpretation, judgment, and final action.</p>
+<hr>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Automation is useful when a workflow is clear, repeated, and reviewable.</p>
+<p>Agentic workflows are more powerful, but they require stronger boundaries, logging, and human checkpoints.</p>
+<p>The CDI approach does not treat automation as a replacement for human thinking.</p>
+<p>It treats automation as a way to make responsible human-led workflows more consistent, scalable, and reproducible.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter moves from automation into AI-assisted analysis and reporting.</p>
+<p>We will focus on how AI can support analytical writing, interpretation, summarization, and report generation while keeping outputs grounded, reviewable, and aligned with human judgment.</p>
 
 
 </section>

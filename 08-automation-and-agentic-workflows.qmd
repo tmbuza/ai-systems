@@ -1,28 +1,340 @@
-# Automation and Agentic Workflows {#automation-agentic}
+# Automation and Agentic Workflows
 
 :::cdi-message
-- **ID:** AI-008
-- **Type:** Advanced Chapter
-- **Audience:** Builders and workflow designers
-- **Theme:** Automation requires boundaries, monitoring, and fallback plans
+- **ID:** AI-08
+- **Type:** Systems Guide
+- **Audience:** AI users, analysts, educators, builders, and workflow designers
+- **Theme:** AI automation should begin only after the human-led workflow is clear, reviewable, and safe
 :::
 
+Automation is often presented as the goal of AI work.
 
-Automation becomes useful when repeated tasks have clear inputs, outputs, and review rules.
+In practice, automation should not be the starting point.
 
-Agentic workflows add planning, tool use, and multi-step execution.
+Before a workflow is automated, the task must be understood. The inputs must be clear. The expected outputs must be defined. The risks must be known. The review points must be visible.
 
-They should be introduced gradually.
+This chapter explains how to move from assisted AI use into structured automation and agentic workflows without losing human judgment, traceability, or accountability.
 
-## Safe Automation Pattern
+The CDI approach is simple:
+
+Human-led workflows come first.
+
+Automation comes after clarity.
+
+Agentic behavior comes only after evaluation.
+
+---
+
+## Learning Outcomes
+
+By the end of this chapter, you should be able to:
+
+- distinguish AI assistance, automation, and agentic workflows;
+- decide when a workflow is ready for automation;
+- identify risks introduced by multi-step AI systems;
+- design human checkpoints into automated workflows;
+- document AI workflows so they remain reviewable and reproducible;
+- connect agentic workflows back to the Human-AI-Human model.
+
+---
+
+## From Assistance to Automation
+
+Most AI use begins as assistance.
+
+A human asks a question, provides context, reviews the result, and decides what to do next.
+
+Automation begins when repeated steps are turned into a reusable workflow.
+
+Agentic workflows go further. They allow AI-enabled tools to plan or execute multiple steps toward a goal, often using tools, memory, files, search, code, or external systems.
+
+These are not the same thing.
+
+| Workflow type | Human role | AI role | Risk level |
+|---|---|---|---|
+| Assisted AI use | Directs each step | Responds to one request at a time | Usually lower |
+| Automated AI workflow | Defines and reviews workflow | Executes repeated steps | Medium |
+| Agentic workflow | Sets goal and constraints | Plans or acts across steps | Higher |
+
+The more autonomy an AI workflow has, the more important evaluation, logging, and human oversight become.
+
+---
+
+## The Human-AI-Human Model Still Applies
+
+Automation does not remove the human.
+
+It changes where the human appears in the workflow.
 
 ```text
-Start manual
-  -> standardize the workflow
-  -> add AI assistance
-  -> add evaluation
-  -> automate low-risk steps
-  -> monitor outputs
-  -> keep human override
+Human defines the goal, boundaries, and review criteria
+        ↓
+AI system performs one or more structured steps
+        ↓
+Human reviews outputs, decisions, logs, and next actions
 ```
 
+This is still the Human-AI-Human workflow.
+
+The human may not manually perform every step, but the human remains responsible for problem framing, quality control, interpretation, and action.
+
+---
+
+## What Makes a Workflow Automation-Ready?
+
+A workflow is not ready for automation just because it is repetitive.
+
+It is ready when the repeated task is stable enough to describe, test, and review.
+
+A workflow is automation-ready when:
+
+- the task has a clear purpose;
+- the input format is known;
+- the desired output is defined;
+- the evaluation criteria are explicit;
+- failure modes are known;
+- human review points are included;
+- logs or artifacts are produced;
+- sensitive information is handled safely.
+
+If these conditions are missing, automation will usually multiply errors instead of reducing work.
+
+---
+
+## Automation Readiness Checklist
+
+Before automating an AI workflow, ask:
+
+| Question | Why it matters |
+|---|---|
+| What problem is this workflow solving? | Prevents automating vague tasks |
+| What inputs does it require? | Supports reproducibility |
+| What output should it produce? | Makes evaluation possible |
+| How will quality be checked? | Prevents unreviewed AI output |
+| What should happen when confidence is low? | Supports safe escalation |
+| What must remain human-reviewed? | Preserves accountability |
+| What will be logged? | Supports traceability |
+| What data should not be sent to AI tools? | Protects privacy and confidentiality |
+
+This checklist should be completed before moving from manual AI assistance to automation.
+
+---
+
+## A Simple AI Automation Pattern
+
+A basic AI automation workflow can be written as a sequence of controlled steps.
+
+```text
+1. Load task input
+2. Validate required fields
+3. Build prompt using approved template
+4. Generate AI-assisted output
+5. Evaluate output against criteria
+6. Save output and evaluation log
+7. Flag uncertain or high-risk cases for human review
+8. Produce a final reviewable report
+```
+
+This pattern is intentionally conservative.
+
+It does not treat AI output as final by default.
+
+It treats AI output as an intermediate artifact that must be evaluated, documented, and reviewed.
+
+---
+
+## Example: Non-Executable Workflow Command
+
+A project might include a workflow script that runs the example AI task log through evaluation and reporting steps.
+
+```bash
+bash scripts/bash/01-create-example-ai-task-log.sh
+
+python scripts/python/02-evaluate-ai-output-quality.py \
+  data/example/ai-task-log.csv \
+  data/results
+
+python scripts/python/03-build-prompt-registry.py \
+  data/example/ai-task-log.csv \
+  data/results
+
+Rscript scripts/R/04-plot-evaluation-summary.R \
+  data/results/ai-evaluation-summary.csv \
+  data/reports
+```
+
+In this guide, commands shown inside chapters are examples for the reader. They are not executable Quarto chunks.
+
+---
+
+## Agentic Workflows
+
+An agentic workflow is a workflow where an AI-enabled system can decide or coordinate multiple steps toward a goal.
+
+For example, an agentic workflow might:
+
+- inspect a folder of files;
+- identify which files need processing;
+- summarize each file;
+- compare summaries against a checklist;
+- produce a report;
+- flag missing information;
+- suggest next actions.
+
+This can be useful.
+
+It can also be risky.
+
+Agentic workflows introduce uncertainty because the system may choose intermediate actions that were not individually requested by the human.
+
+For this reason, agentic workflows need stricter boundaries than simple prompts.
+
+---
+
+## Boundaries for Agentic Workflows
+
+Agentic workflows should have clear limits.
+
+These limits include:
+
+| Boundary | Example |
+|---|---|
+| Task boundary | Only summarize documents in a specified folder |
+| Data boundary | Do not use private or external data unless approved |
+| Tool boundary | Use only approved scripts or read-only tools |
+| Time boundary | Stop after a defined number of steps |
+| Decision boundary | Do not make final decisions without human review |
+| Output boundary | Produce a report, not direct action |
+
+The goal is not to prevent useful automation.
+
+The goal is to prevent uncontrolled automation.
+
+---
+
+## Human Checkpoints
+
+Every automated or agentic workflow should include checkpoints.
+
+A checkpoint is a place where the workflow pauses, logs, summarizes, or asks for human review.
+
+Common checkpoints include:
+
+- before sending information to an AI model;
+- before using external tools;
+- before modifying files;
+- before sending emails or messages;
+- before publishing reports;
+- before making high-stakes recommendations;
+- after low-confidence or inconsistent outputs.
+
+The higher the risk, the more checkpoints are needed.
+
+---
+
+## Failure Modes in Automated AI Workflows
+
+Automation can make AI failures harder to see.
+
+Common failure modes include:
+
+| Failure mode | What happens |
+|---|---|
+| Silent hallucination | False information enters a report without review |
+| Context drift | Later steps no longer match the original task |
+| Over-automation | The system acts where human judgment is needed |
+| Tool misuse | The workflow calls the wrong script, file, or source |
+| Poor logging | Outputs cannot be traced or audited |
+| Privacy leakage | Sensitive data is sent where it should not go |
+| Evaluation gap | Outputs are generated but never checked |
+
+These are system design problems, not only model problems.
+
+A better model does not replace a better workflow.
+
+---
+
+## Documentation for AI Automation
+
+An automated AI workflow should leave behind documentation.
+
+At minimum, document:
+
+- workflow purpose;
+- inputs;
+- prompt template or instruction pattern;
+- tools or scripts used;
+- outputs created;
+- evaluation criteria;
+- human review points;
+- known limitations;
+- date and version.
+
+This makes the workflow easier to reproduce, improve, and govern.
+
+---
+
+## Mini Case Example
+
+Suppose a team uses AI to draft weekly project updates.
+
+A weak workflow would be:
+
+```text
+Ask AI to write the update and send it.
+```
+
+A stronger workflow would be:
+
+```text
+1. Human provides project notes and audience.
+2. AI drafts a structured update.
+3. AI checks the draft against a communication checklist.
+4. Human reviews accuracy, tone, and missing context.
+5. Human edits and sends the final message.
+6. The final version and checklist are saved for future improvement.
+```
+
+The second workflow is slower at first.
+
+But it is safer, more reusable, and easier to improve.
+
+---
+
+## Practical Design Rule
+
+Do not automate the AI response.
+
+Automate the workflow around the AI response.
+
+That means automating:
+
+- input preparation;
+- prompt construction;
+- file organization;
+- evaluation summaries;
+- review checklists;
+- reporting artifacts;
+- logs and registries.
+
+The human should still own interpretation, judgment, and final action.
+
+---
+
+## Summary
+
+Automation is useful when a workflow is clear, repeated, and reviewable.
+
+Agentic workflows are more powerful, but they require stronger boundaries, logging, and human checkpoints.
+
+The CDI approach does not treat automation as a replacement for human thinking.
+
+It treats automation as a way to make responsible human-led workflows more consistent, scalable, and reproducible.
+
+---
+
+## Looking Ahead
+
+The next chapter moves from automation into AI-assisted analysis and reporting.
+
+We will focus on how AI can support analytical writing, interpretation, summarization, and report generation while keeping outputs grounded, reviewable, and aligned with human judgment.

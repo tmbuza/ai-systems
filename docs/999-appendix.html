@@ -119,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-career-and-workforce-readiness.html">Growth and Reference</a></li><li class="breadcrumb-item"><a href="./999-appendix.html"><span class="chapter-title">Appendix</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-career-and-workforce-readiness.html">Growth and Reference</a></li><li class="breadcrumb-item"><a href="./999-appendix.html">Appendix</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -258,12 +258,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Appendix</span></a>
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Appendix</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -278,17 +280,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ai-task-log-columns" id="toc-ai-task-log-columns" class="nav-link active" data-scroll-target="#ai-task-log-columns">AI Task Log Columns</a></li>
-  <li><a href="#minimal-project-commands" id="toc-minimal-project-commands" class="nav-link" data-scroll-target="#minimal-project-commands">Minimal Project Commands</a></li>
+  <li><a href="#purpose-of-this-appendix" id="toc-purpose-of-this-appendix" class="nav-link active" data-scroll-target="#purpose-of-this-appendix">Purpose of This Appendix</a></li>
+  <li><a href="#core-cdi-ai-systems-pattern" id="toc-core-cdi-ai-systems-pattern" class="nav-link" data-scroll-target="#core-cdi-ai-systems-pattern">Core CDI AI Systems Pattern</a></li>
+  <li><a href="#ai-task-framing-template" id="toc-ai-task-framing-template" class="nav-link" data-scroll-target="#ai-task-framing-template">AI Task Framing Template</a></li>
+  <li><a href="#ai-task-risk-levels" id="toc-ai-task-risk-levels" class="nav-link" data-scroll-target="#ai-task-risk-levels">AI Task Risk Levels</a></li>
+  <li><a href="#prompt-design-template" id="toc-prompt-design-template" class="nav-link" data-scroll-target="#prompt-design-template">Prompt Design Template</a></li>
+  <li><a href="#context-design-checklist" id="toc-context-design-checklist" class="nav-link" data-scroll-target="#context-design-checklist">Context Design Checklist</a></li>
+  <li><a href="#grounding-checklist" id="toc-grounding-checklist" class="nav-link" data-scroll-target="#grounding-checklist">Grounding Checklist</a></li>
+  <li><a href="#ai-output-evaluation-rubric" id="toc-ai-output-evaluation-rubric" class="nav-link" data-scroll-target="#ai-output-evaluation-rubric">AI Output Evaluation Rubric</a></li>
+  <li><a href="#human-review-checklist" id="toc-human-review-checklist" class="nav-link" data-scroll-target="#human-review-checklist">Human Review Checklist</a></li>
+  <li><a href="#prompt-registry-template" id="toc-prompt-registry-template" class="nav-link" data-scroll-target="#prompt-registry-template">Prompt Registry Template</a></li>
+  <li><a href="#ai-task-log-template" id="toc-ai-task-log-template" class="nav-link" data-scroll-target="#ai-task-log-template">AI Task Log Template</a></li>
+  <li><a href="#automation-readiness-checklist" id="toc-automation-readiness-checklist" class="nav-link" data-scroll-target="#automation-readiness-checklist">Automation Readiness Checklist</a></li>
+  <li><a href="#governance-documentation-template" id="toc-governance-documentation-template" class="nav-link" data-scroll-target="#governance-documentation-template">Governance Documentation Template</a></li>
+  <li><a href="#example-project-structure" id="toc-example-project-structure" class="nav-link" data-scroll-target="#example-project-structure">Example Project Structure</a></li>
+  <li><a href="#supporting-scripts-in-this-guide" id="toc-supporting-scripts-in-this-guide" class="nav-link" data-scroll-target="#supporting-scripts-in-this-guide">Supporting Scripts in This Guide</a></li>
+  <li><a href="#cdi-ai-systems-learning-path" id="toc-cdi-ai-systems-learning-path" class="nav-link" data-scroll-target="#cdi-ai-systems-learning-path">CDI AI Systems Learning Path</a></li>
+  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-career-and-workforce-readiness.html">Growth and Reference</a></li><li class="breadcrumb-item"><a href="./999-appendix.html"><span class="chapter-title">Appendix</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-career-and-workforce-readiness.html">Growth and Reference</a></li><li class="breadcrumb-item"><a href="./999-appendix.html">Appendix</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="appendix" class="quarto-section-identifier"><span class="chapter-title">Appendix</span></span></h1>
+<h1 class="title">Appendix</h1>
 </div>
 
 
@@ -313,35 +331,458 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999A</li>
-<li><strong>Type:</strong> Appendix</li>
-<li><strong>Audience:</strong> Learners and instructors</li>
-<li><strong>Theme:</strong> Reusable templates support repeatable AI workflows</li>
+<li><strong>ID:</strong> AI-999</li>
+<li><strong>Type:</strong> Reference</li>
+<li><strong>Audience:</strong> Learners, analysts, educators, managers, and AI workflow designers</li>
+<li><strong>Theme:</strong> Reusable templates, checklists, and reference structures for responsible AI systems</li>
 </ul>
 </div>
-<section id="ai-task-log-columns" class="level2">
-<h2 class="anchored" data-anchor-id="ai-task-log-columns">AI Task Log Columns</h2>
-<pre class="text"><code>task_id
-task_type
-audience
-AI_role
-input_context
-expected_output
-accuracy_score
-completeness_score
-clarity_score
-risk_level
-review_status
-human_decision</code></pre>
+<section id="purpose-of-this-appendix" class="level2">
+<h2 class="anchored" data-anchor-id="purpose-of-this-appendix">Purpose of This Appendix</h2>
+<p>This appendix collects reusable structures from the guide.</p>
+<p>The main chapters explain the reasoning behind AI Systems.</p>
+<p>This appendix provides practical templates that can be copied into projects, team workflows, training programs, or documentation.</p>
+<p>The goal is not to make AI use complicated.</p>
+<p>The goal is to make AI use clear, reviewable, reproducible, and human-led.</p>
+<hr>
 </section>
-<section id="minimal-project-commands" class="level2">
-<h2 class="anchored" data-anchor-id="minimal-project-commands">Minimal Project Commands</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/00-check-environment.sh</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/01-create-example-ai-task-log.sh</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py data/example/ai-task-log.csv data/results</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/03-build-prompt-registry.py data/example/ai-task-log.csv data/results</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> scripts/R/04-plot-evaluation-summary.R data/results/ai-evaluation-summary.csv data/reports</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="core-cdi-ai-systems-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="core-cdi-ai-systems-pattern">Core CDI AI Systems Pattern</h2>
+<p>The central workflow in this guide is the Human–AI–Human pattern.</p>
+<pre class="text"><code>Human defines the problem.
+AI assists with generation, reasoning, analysis, or automation.
+Human evaluates, decides, documents, and acts.</code></pre>
+<p>This pattern applies whether the task is simple or advanced.</p>
+<p>It applies to writing, analysis, coding, summarization, reporting, teaching, planning, automation, and decision support.</p>
+<p>AI Systems are not built by asking AI to do everything.</p>
+<p>They are built by placing AI inside a responsible human workflow.</p>
+<hr>
+</section>
+<section id="ai-task-framing-template" class="level2">
+<h2 class="anchored" data-anchor-id="ai-task-framing-template">AI Task Framing Template</h2>
+<p>Use this template before asking AI to perform meaningful work.</p>
+<pre class="text"><code>AI Task Framing Template
+
+1. Task name:
+
+2. Human goal:
+
+3. Intended audience:
+
+4. Context the AI should use:
+
+5. Context the AI should avoid:
+
+6. Input materials:
+
+7. Expected output format:
+
+8. Quality criteria:
+
+9. Risk level:
+   Low / Medium / High
+
+10. Human review required before use:
+   Yes / No
+
+11. Decision or action after review:</code></pre>
+<p>A task is usually not ready for AI if the goal, audience, context, and review criteria are unclear.</p>
+<hr>
+</section>
+<section id="ai-task-risk-levels" class="level2">
+<h2 class="anchored" data-anchor-id="ai-task-risk-levels">AI Task Risk Levels</h2>
+<p>Not every AI task carries the same risk.</p>
+<p>A quick risk classification helps decide how much review is needed.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk level</th>
+<th>Description</th>
+<th>Examples</th>
+<th>Review expectation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low</td>
+<td>Low-impact support task</td>
+<td>Rewording, brainstorming, formatting, first-pass summaries</td>
+<td>Light human review</td>
+</tr>
+<tr class="even">
+<td>Medium</td>
+<td>Work that may influence interpretation, planning, communication, or workflow design</td>
+<td>Drafting reports, summarizing evidence, generating code, preparing teaching materials</td>
+<td>Careful human review</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>Work that may influence health, legal, financial, safety, hiring, disciplinary, or other consequential decisions</td>
+<td>Clinical recommendations, legal claims, financial advice, high-stakes automation</td>
+<td>Expert review, documentation, and governance</td>
+</tr>
+</tbody>
+</table>
+<p>AI output should not be treated as final in medium- or high-risk tasks.</p>
+<hr>
+</section>
+<section id="prompt-design-template" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-design-template">Prompt Design Template</h2>
+<p>A reusable prompt should make the task, context, constraints, and output format explicit.</p>
+<pre class="text"><code>Prompt Design Template
+
+Role:
+You are helping with...
+
+Task:
+Please produce...
+
+Context:
+Use the following information...
+
+Constraints:
+Do not assume...
+Do not invent...
+Flag uncertainty where needed...
+
+Output format:
+Return the result as...
+
+Quality criteria:
+The output should be clear, accurate, grounded, concise, and reviewable.
+
+Human review:
+Highlight anything that requires human checking before use.</code></pre>
+<p>Good prompts do not remove the need for judgment.</p>
+<p>They make judgment easier.</p>
+<hr>
+</section>
+<section id="context-design-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="context-design-checklist">Context Design Checklist</h2>
+<p>Before sending context into an AI workflow, check whether the context is appropriate.</p>
+<pre class="text"><code>Context Design Checklist
+
+[ ] The task goal is clear.
+[ ] The audience is clear.
+[ ] The relevant source material is included.
+[ ] Irrelevant material has been removed.
+[ ] Sensitive information has been excluded or minimized.
+[ ] The AI is told what to prioritize.
+[ ] The AI is told what not to assume.
+[ ] The expected output format is clear.
+[ ] The review criteria are clear.</code></pre>
+<p>Poor context often creates poor AI output, even when the prompt sounds polished.</p>
+<hr>
+</section>
+<section id="grounding-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="grounding-checklist">Grounding Checklist</h2>
+<p>Use this checklist when AI output needs to be connected to data, documents, evidence, or project materials.</p>
+<pre class="text"><code>Grounding Checklist
+
+[ ] What source material supports the output?
+[ ] Is the source material current enough for the task?
+[ ] Are important assumptions stated?
+[ ] Are claims traceable to evidence?
+[ ] Are uncertain points flagged?
+[ ] Are interpretations separated from facts?
+[ ] Are citations or references needed?
+[ ] Has a human checked the final output against the source material?</code></pre>
+<p>Grounding is especially important for analysis, reporting, teaching, governance, and decision-support workflows.</p>
+<hr>
+</section>
+<section id="ai-output-evaluation-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="ai-output-evaluation-rubric">AI Output Evaluation Rubric</h2>
+<p>Use this rubric to review AI-generated outputs.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Review question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Relevance</td>
+<td>Does the output answer the actual task?</td>
+</tr>
+<tr class="even">
+<td>Accuracy</td>
+<td>Are the claims correct and supported?</td>
+</tr>
+<tr class="odd">
+<td>Grounding</td>
+<td>Is the output connected to the provided context or evidence?</td>
+</tr>
+<tr class="even">
+<td>Completeness</td>
+<td>Are important parts missing?</td>
+</tr>
+<tr class="odd">
+<td>Clarity</td>
+<td>Is the output understandable to the intended audience?</td>
+</tr>
+<tr class="even">
+<td>Safety</td>
+<td>Could the output create harm if used as written?</td>
+</tr>
+<tr class="odd">
+<td>Actionability</td>
+<td>Is the next step clear?</td>
+</tr>
+<tr class="even">
+<td>Traceability</td>
+<td>Can a reviewer understand how the output was produced and checked?</td>
+</tr>
+</tbody>
+</table>
+<p>A useful AI output is not only fluent.</p>
+<p>It must be fit for purpose.</p>
+<hr>
+</section>
+<section id="human-review-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="human-review-checklist">Human Review Checklist</h2>
+<p>Use this before sharing, publishing, acting on, or automating AI-assisted work.</p>
+<pre class="text"><code>Human Review Checklist
+
+[ ] I understand the task the AI was asked to perform.
+[ ] I reviewed the output for accuracy.
+[ ] I checked whether the output is grounded in appropriate context.
+[ ] I identified unsupported claims.
+[ ] I corrected misleading or unclear language.
+[ ] I checked for missing risks or limitations.
+[ ] I verified any important numbers, names, references, or claims.
+[ ] I decided whether the output is ready to use.
+[ ] I documented any important changes or concerns.</code></pre>
+<p>Human review is not a formality.</p>
+<p>It is part of the system.</p>
+<hr>
+</section>
+<section id="prompt-registry-template" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-registry-template">Prompt Registry Template</h2>
+<p>A prompt registry helps teams reuse and improve prompts over time.</p>
+<pre class="text"><code>Prompt Registry Template
+
+prompt_id:
+
+prompt_name:
+
+workflow_stage:
+
+intended_user:
+
+input_requirements:
+
+prompt_text:
+
+expected_output:
+
+quality_criteria:
+
+risk_level:
+
+reviewer:
+
+version:
+
+last_updated:
+
+notes:</code></pre>
+<p>A prompt registry turns informal AI use into a documented workflow asset.</p>
+<hr>
+</section>
+<section id="ai-task-log-template" class="level2">
+<h2 class="anchored" data-anchor-id="ai-task-log-template">AI Task Log Template</h2>
+<p>An AI task log records what happened in an AI-supported workflow.</p>
+<pre class="text"><code>AI Task Log Template
+
+task_id:
+
+date:
+
+user_or_team:
+
+task_name:
+
+purpose:
+
+tool_used:
+
+input_context:
+
+output_summary:
+
+risk_level:
+
+human_review_status:
+
+issues_found:
+
+final_decision:
+
+follow_up_action:</code></pre>
+<p>Task logs are especially useful when AI output supports reports, analysis, automation, or decisions.</p>
+<hr>
+</section>
+<section id="automation-readiness-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="automation-readiness-checklist">Automation Readiness Checklist</h2>
+<p>A workflow should not be automated simply because it can be automated.</p>
+<p>Use this checklist before turning an AI task into a repeatable or agentic workflow.</p>
+<pre class="text"><code>Automation Readiness Checklist
+
+[ ] The task is repeated often enough to justify automation.
+[ ] The inputs are predictable.
+[ ] The expected outputs are clear.
+[ ] The quality criteria are defined.
+[ ] Failure modes are known.
+[ ] Human review checkpoints are included.
+[ ] Sensitive information is handled safely.
+[ ] Logs or records are produced.
+[ ] There is a clear owner for maintaining the workflow.
+[ ] The workflow can be stopped, corrected, or rolled back.</code></pre>
+<p>Automation without review can scale mistakes.</p>
+<p>Responsible automation scales reliable practice.</p>
+<hr>
+</section>
+<section id="governance-documentation-template" class="level2">
+<h2 class="anchored" data-anchor-id="governance-documentation-template">Governance Documentation Template</h2>
+<p>AI governance does not need to begin with heavy bureaucracy.</p>
+<p>It can begin with clear documentation.</p>
+<pre class="text"><code>AI Governance Documentation Template
+
+Workflow name:
+
+Workflow owner:
+
+Purpose:
+
+Users:
+
+AI tools used:
+
+Data or context used:
+
+Risk level:
+
+Human review checkpoint:
+
+Known limitations:
+
+Privacy considerations:
+
+Output use restrictions:
+
+Approval or review process:
+
+Update schedule:
+
+Incident or issue process:</code></pre>
+<p>Governance should make responsible AI use easier, not harder.</p>
+<hr>
+</section>
+<section id="example-project-structure" class="level2">
+<h2 class="anchored" data-anchor-id="example-project-structure">Example Project Structure</h2>
+<p>A small AI Systems project may use a structure like this:</p>
+<pre class="text"><code>ai-systems-project/
+├── README.md
+├── prompts/
+│   ├── prompt-registry.csv
+│   └── templates/
+├── data/
+│   ├── input/
+│   ├── example/
+│   └── results/
+├── reports/
+├── scripts/
+│   ├── bash/
+│   ├── python/
+│   └── R/
+├── documentation/
+│   ├── task-log.csv
+│   ├── governance-notes.md
+│   └── review-checklist.md
+└── outputs/</code></pre>
+<p>The exact structure can change.</p>
+<p>The important principle is that prompts, inputs, outputs, reviews, and decisions should be traceable.</p>
+<hr>
+</section>
+<section id="supporting-scripts-in-this-guide" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-scripts-in-this-guide">Supporting Scripts in This Guide</h2>
+<p>The scaffolded guide includes scripts that demonstrate how AI workflow documentation can be made reproducible.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/00-check-environment.sh</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/01-create-example-ai-task-log.sh</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py <span class="dt">\</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  data/results</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/03-build-prompt-registry.py <span class="dt">\</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  data/results</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> scripts/R/04-plot-evaluation-summary.R <span class="dt">\</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  data/results/ai-evaluation-summary.csv <span class="dt">\</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  data/reports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These scripts are examples.</p>
+<p>They show how AI-related work can be logged, summarized, reviewed, and reported.</p>
+<hr>
+</section>
+<section id="cdi-ai-systems-learning-path" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-ai-systems-learning-path">CDI AI Systems Learning Path</h2>
+<p>The guide follows this learning sequence:</p>
+<pre class="text"><code>AI systems thinking
+AI literacy and responsible use
+Problem framing
+Prompt and context design
+Data and knowledge grounding
+Evaluation and quality control
+Human-in-the-loop workflows
+Automation and agentic workflows
+AI-assisted analysis and reporting
+Governance, risk, and documentation
+End-to-end case study
+Career and workforce readiness</code></pre>
+<p>The sequence moves from thinking to practice, then from practice to systems.</p>
+<hr>
+</section>
+<section id="glossary" class="level2">
+<h2 class="anchored" data-anchor-id="glossary">Glossary</h2>
+<p><strong>AI system</strong><br>
+A human-led workflow that uses AI tools, context, review, documentation, and governance to support a defined task or outcome.</p>
+<p><strong>Human–AI–Human workflow</strong><br>
+A workflow in which humans frame the problem, AI assists, and humans evaluate, decide, document, and act.</p>
+<p><strong>Prompt</strong><br>
+An instruction or set of instructions given to an AI system.</p>
+<p><strong>Context</strong><br>
+The background information, data, examples, constraints, or documents provided to guide AI output.</p>
+<p><strong>Grounding</strong><br>
+Connecting AI output to source material, data, evidence, or documented context.</p>
+<p><strong>Evaluation</strong><br>
+The process of checking whether AI output is accurate, useful, safe, and fit for purpose.</p>
+<p><strong>Human-in-the-loop</strong><br>
+A workflow design where humans review, approve, correct, or decide at important points.</p>
+<p><strong>Automation</strong><br>
+A repeatable workflow where some steps are executed automatically.</p>
+<p><strong>Agentic workflow</strong><br>
+A workflow where AI is given more autonomy to plan or execute steps within defined boundaries.</p>
+<p><strong>Governance</strong><br>
+The rules, roles, documentation, review processes, and accountability structures used to manage AI responsibly.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The references chapter lists selected sources that support responsible AI use, human-centered AI systems, AI evaluation, and governance.</p>
+<p>Those references are not the end of the learning path.</p>
+<p>They provide a foundation for continuing to build AI systems that are useful, responsible, and human-led.</p>
 
 
 </section>
@@ -756,7 +1197,7 @@ human_decision</code></pre>
   </div>
   <div class="nav-page nav-page-next">
       <a href="./999-references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text"><span class="chapter-title">References</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

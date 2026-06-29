@@ -258,12 +258,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -278,8 +280,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#example-evaluation-dimensions" id="toc-example-evaluation-dimensions" class="nav-link active" data-scroll-target="#example-evaluation-dimensions">Example Evaluation Dimensions</a></li>
-  <li><a href="#supporting-script" id="toc-supporting-script" class="nav-link" data-scroll-target="#supporting-script">Supporting Script</a></li>
+  <li><a href="#why-evaluation-matters" id="toc-why-evaluation-matters" class="nav-link active" data-scroll-target="#why-evaluation-matters">Why Evaluation Matters</a></li>
+  <li><a href="#evaluation-is-context-specific" id="toc-evaluation-is-context-specific" class="nav-link" data-scroll-target="#evaluation-is-context-specific">Evaluation Is Context-Specific</a></li>
+  <li><a href="#common-evaluation-dimensions" id="toc-common-evaluation-dimensions" class="nav-link" data-scroll-target="#common-evaluation-dimensions">Common Evaluation Dimensions</a></li>
+  <li><a href="#a-simple-ai-output-review-checklist" id="toc-a-simple-ai-output-review-checklist" class="nav-link" data-scroll-target="#a-simple-ai-output-review-checklist">A Simple AI Output Review Checklist</a></li>
+  <li><a href="#task-risk-and-evaluation-depth" id="toc-task-risk-and-evaluation-depth" class="nav-link" data-scroll-target="#task-risk-and-evaluation-depth">Task Risk and Evaluation Depth</a></li>
+  <li><a href="#evaluation-as-a-workflow-not-a-feeling" id="toc-evaluation-as-a-workflow-not-a-feeling" class="nav-link" data-scroll-target="#evaluation-as-a-workflow-not-a-feeling">Evaluation as a Workflow, Not a Feeling</a></li>
+  <li><a href="#example-ai-task-log" id="toc-example-ai-task-log" class="nav-link" data-scroll-target="#example-ai-task-log">Example AI Task Log</a></li>
+  <li><a href="#supporting-script-evaluate-ai-output-quality" id="toc-supporting-script-evaluate-ai-output-quality" class="nav-link" data-scroll-target="#supporting-script-evaluate-ai-output-quality">Supporting Script: Evaluate AI Output Quality</a></li>
+  <li><a href="#supporting-script-plot-evaluation-summary" id="toc-supporting-script-plot-evaluation-summary" class="nav-link" data-scroll-target="#supporting-script-plot-evaluation-summary">Supporting Script: Plot Evaluation Summary</a></li>
+  <li><a href="#evaluation-failure-modes" id="toc-evaluation-failure-modes" class="nav-link" data-scroll-target="#evaluation-failure-modes">Evaluation Failure Modes</a></li>
+  <li><a href="#human-review-is-not-a-formality" id="toc-human-review-is-not-a-formality" class="nav-link" data-scroll-target="#human-review-is-not-a-formality">Human Review Is Not a Formality</a></li>
+  <li><a href="#practical-evaluation-template" id="toc-practical-evaluation-template" class="nav-link" data-scroll-target="#practical-evaluation-template">Practical Evaluation Template</a></li>
+  <li><a href="#cdi-principle" id="toc-cdi-principle" class="nav-link" data-scroll-target="#cdi-principle">CDI Principle</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
@@ -288,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-prompt-and-context-design.html">Applied AI Workflows</a></li><li class="breadcrumb-item"><a href="./06-evaluation-and-quality-control.html"><span class="chapter-title">Evaluation and Quality Control</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="evaluation-qc" class="quarto-section-identifier"><span class="chapter-title">Evaluation and Quality Control</span></span></h1>
+<h1 class="title"><span id="evaluation-and-quality-control" class="quarto-section-identifier"><span class="chapter-title">Evaluation and Quality Control</span></span></h1>
 </div>
 
 
@@ -314,27 +329,374 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cdi-message">
 <ul>
 <li><strong>ID:</strong> AI-006</li>
-<li><strong>Type:</strong> Methods Chapter</li>
-<li><strong>Audience:</strong> Analysts and teams building reliable workflows</li>
-<li><strong>Theme:</strong> AI outputs need explicit quality checks</li>
+<li><strong>Type:</strong> Systems Guide</li>
+<li><strong>Audience:</strong> AI users, analysts, educators, researchers, managers, and workflow designers</li>
+<li><strong>Theme:</strong> AI outputs must be evaluated before they are trusted or used</li>
 </ul>
 </div>
-<p>Evaluation turns AI use from guessing into a controlled workflow.</p>
-<p>This guide starts with a simple task log and scoring system.</p>
-<section id="example-evaluation-dimensions" class="level2">
-<h2 class="anchored" data-anchor-id="example-evaluation-dimensions">Example Evaluation Dimensions</h2>
-<pre class="text"><code>accuracy
-completeness
-clarity
-usefulness
-risk level
-review status</code></pre>
+<p>AI systems are not complete when an answer is generated.</p>
+<p>They are complete only when the output has been reviewed, tested, documented, and placed in the correct human decision context.</p>
+<p>This is one of the most important differences between casual AI use and AI systems work.</p>
+<p>Casual AI use often stops at the first useful-looking answer.</p>
+<p>AI systems work asks a different question:</p>
+<p>Can this output be trusted for this purpose?</p>
+<p>That question requires evaluation.</p>
+<hr>
+<section id="why-evaluation-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-evaluation-matters">Why Evaluation Matters</h2>
+<p>AI tools can produce fluent answers that sound confident even when they are incomplete, unsupported, outdated, biased, or wrong.</p>
+<p>This creates a serious workflow risk.</p>
+<p>The problem is not only that AI can make mistakes.</p>
+<p>Humans can also make mistakes.</p>
+<p>The deeper problem is that AI output can look polished before it has been verified.</p>
+<p>In CDI-style workflows, evaluation is not optional. It is a required layer between AI assistance and human action.</p>
+<pre class="text"><code>Human defines the task
+        ↓
+AI generates or assists
+        ↓
+Human evaluates the output
+        ↓
+Human revises, documents, decides, or acts</code></pre>
+<p>The evaluation step protects the quality of the final decision.</p>
+<hr>
 </section>
-<section id="supporting-script" class="level2">
-<h2 class="anchored" data-anchor-id="supporting-script">Supporting Script</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py data/example/ai-task-log.csv data/results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="evaluation-is-context-specific" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-is-context-specific">Evaluation Is Context-Specific</h2>
+<p>There is no single universal score that tells us whether an AI output is good.</p>
+<p>A useful output depends on the task.</p>
+<p>For example, a good brainstorming answer may be:</p>
+<ul>
+<li>broad,</li>
+<li>creative,</li>
+<li>exploratory,</li>
+<li>and open-ended.</li>
+</ul>
+<p>A good clinical, legal, financial, or scientific answer must be:</p>
+<ul>
+<li>grounded,</li>
+<li>cautious,</li>
+<li>traceable,</li>
+<li>current,</li>
+<li>and reviewed by appropriate human expertise.</li>
+</ul>
+<p>The same AI model can be useful in both settings, but the evaluation standard must change.</p>
+<p>That is why every AI workflow should define quality criteria before relying on output.</p>
+<hr>
+</section>
+<section id="common-evaluation-dimensions" class="level2">
+<h2 class="anchored" data-anchor-id="common-evaluation-dimensions">Common Evaluation Dimensions</h2>
+<p>A practical AI evaluation workflow can begin with several dimensions.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Evaluation question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Accuracy</td>
+<td>Is the output factually correct for the task?</td>
+</tr>
+<tr class="even">
+<td>Completeness</td>
+<td>Does it answer all important parts of the request?</td>
+</tr>
+<tr class="odd">
+<td>Relevance</td>
+<td>Does it stay focused on the user’s actual problem?</td>
+</tr>
+<tr class="even">
+<td>Grounding</td>
+<td>Is the output supported by provided data, sources, or context?</td>
+</tr>
+<tr class="odd">
+<td>Clarity</td>
+<td>Is the output understandable to the intended audience?</td>
+</tr>
+<tr class="even">
+<td>Safety</td>
+<td>Could the output cause harm if used directly?</td>
+</tr>
+<tr class="odd">
+<td>Bias</td>
+<td>Does the output make unfair, unsupported, or stereotyping assumptions?</td>
+</tr>
+<tr class="even">
+<td>Reproducibility</td>
+<td>Can the workflow be repeated or audited later?</td>
+</tr>
+<tr class="odd">
+<td>Actionability</td>
+<td>Does the output support a clear next step?</td>
+</tr>
+</tbody>
+</table>
+<p>These dimensions do not all have equal importance in every workflow.</p>
+<p>A writing assistant may emphasize clarity and tone.</p>
+<p>A data workflow may emphasize reproducibility, grounding, and traceability.</p>
+<p>A high-stakes decision workflow may emphasize safety, expert review, and documented limitations.</p>
+<hr>
+</section>
+<section id="a-simple-ai-output-review-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-ai-output-review-checklist">A Simple AI Output Review Checklist</h2>
+<p>Before using an AI-generated output, ask:</p>
+<ol type="1">
+<li>What task was the AI asked to perform?</li>
+<li>What information did the AI use?</li>
+<li>What information was missing?</li>
+<li>What claims need verification?</li>
+<li>What parts are useful as-is?</li>
+<li>What parts require editing or correction?</li>
+<li>What risks would appear if this output were used directly?</li>
+<li>Who needs to review this before action?</li>
+<li>What should be documented?</li>
+<li>What should not be trusted without additional evidence?</li>
+</ol>
+<p>This checklist turns evaluation into a habit.</p>
+<p>It also reinforces the Human–AI–Human workflow.</p>
+<p>AI assists, but humans remain responsible for judgment, verification, and action.</p>
+<hr>
+</section>
+<section id="task-risk-and-evaluation-depth" class="level2">
+<h2 class="anchored" data-anchor-id="task-risk-and-evaluation-depth">Task Risk and Evaluation Depth</h2>
+<p>Not every AI task requires the same level of review.</p>
+<p>Low-risk tasks may need light review.</p>
+<p>Medium-risk tasks need structured review.</p>
+<p>High-risk tasks need expert review, source verification, documentation, and clear accountability.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task risk</th>
+<th>Example</th>
+<th>Evaluation depth</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low</td>
+<td>Rewriting a non-sensitive paragraph</td>
+<td>Check tone, clarity, and meaning</td>
+</tr>
+<tr class="even">
+<td>Medium</td>
+<td>Summarizing meeting notes or project plans</td>
+<td>Check completeness, omissions, and action items</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>Medical, legal, financial, employment, or public claims</td>
+<td>Verify sources, involve expertise, document uncertainty</td>
+</tr>
+<tr class="even">
+<td>System-level</td>
+<td>Automated workflows or repeated AI outputs</td>
+<td>Evaluate outputs over time and monitor failure patterns</td>
+</tr>
+</tbody>
+</table>
+<p>The riskier the task, the more important the evaluation layer becomes.</p>
+<hr>
+</section>
+<section id="evaluation-as-a-workflow-not-a-feeling" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-as-a-workflow-not-a-feeling">Evaluation as a Workflow, Not a Feeling</h2>
+<p>A common mistake is to judge AI output based on whether it “looks good.”</p>
+<p>That is not enough.</p>
+<p>A better approach is to make evaluation visible.</p>
+<p>For example, an AI task log can record:</p>
+<ul>
+<li>the task,</li>
+<li>the prompt,</li>
+<li>the context used,</li>
+<li>the model or tool used,</li>
+<li>the output type,</li>
+<li>the human reviewer,</li>
+<li>quality scores,</li>
+<li>revision notes,</li>
+<li>and final decision status.</li>
+</ul>
+<p>This turns AI use into a documented workflow.</p>
+<p>That documentation is especially important when AI becomes part of repeated work.</p>
+<hr>
+</section>
+<section id="example-ai-task-log" class="level2">
+<h2 class="anchored" data-anchor-id="example-ai-task-log">Example AI Task Log</h2>
+<p>The scaffolded guide includes a small example dataset for AI task evaluation.</p>
+<p>The file is created by:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/01-create-example-ai-task-log.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The expected output is:</p>
+<pre class="text"><code>data/example/ai-task-log.csv</code></pre>
+<p>A simplified version of the task log may include columns like:</p>
+<pre class="text"><code>task_id,task_type,risk_level,prompt_version,output_reviewed,accuracy_score,clarity_score,grounding_score,human_decision</code></pre>
+<p>This does not evaluate the AI model in a laboratory sense.</p>
+<p>Instead, it evaluates the usefulness and reliability of AI outputs inside a human workflow.</p>
+<p>That is the level of evaluation most applied AI users need first.</p>
+<hr>
+</section>
+<section id="supporting-script-evaluate-ai-output-quality" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-script-evaluate-ai-output-quality">Supporting Script: Evaluate AI Output Quality</h2>
+<p>The scaffold includes a Python script for summarizing evaluation scores.</p>
+<p>Run it with:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py <span class="dt">\</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  data/results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Expected output:</p>
 <pre class="text"><code>data/results/ai-evaluation-summary.csv</code></pre>
+<p>This script is intentionally simple.</p>
+<p>It demonstrates how a project can move from informal AI review into a structured quality-control table.</p>
+<p>In a larger AI system, this same idea can be extended to include:</p>
+<ul>
+<li>reviewer agreement,</li>
+<li>task-level pass/fail criteria,</li>
+<li>source checks,</li>
+<li>hallucination flags,</li>
+<li>fairness checks,</li>
+<li>and revision history.</li>
+</ul>
+<hr>
+</section>
+<section id="supporting-script-plot-evaluation-summary" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-script-plot-evaluation-summary">Supporting Script: Plot Evaluation Summary</h2>
+<p>The scaffold also includes an R script for creating a visual summary.</p>
+<p>Run it with:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> scripts/R/04-plot-evaluation-summary.R <span class="dt">\</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  data/results/ai-evaluation-summary.csv <span class="dt">\</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  data/reports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Expected output:</p>
+<pre class="text"><code>data/reports/ai-evaluation-summary.png</code></pre>
+<p>The plot is not meant to prove that an AI system is safe or correct.</p>
+<p>It is meant to make review patterns visible.</p>
+<p>Visibility is the beginning of quality control.</p>
+<hr>
+</section>
+<section id="evaluation-failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-failure-modes">Evaluation Failure Modes</h2>
+<p>AI evaluation can fail in predictable ways.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Failure mode</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fluency bias</td>
+<td>A polished answer is mistaken for a correct answer</td>
+</tr>
+<tr class="even">
+<td>Confirmation bias</td>
+<td>The reviewer accepts outputs that match prior beliefs</td>
+</tr>
+<tr class="odd">
+<td>Missing context</td>
+<td>The AI responds without important background information</td>
+</tr>
+<tr class="even">
+<td>Weak grounding</td>
+<td>The output makes claims that are not supported by sources or data</td>
+</tr>
+<tr class="odd">
+<td>Unclear task criteria</td>
+<td>Nobody defined what a good output should look like</td>
+</tr>
+<tr class="even">
+<td>No review record</td>
+<td>The final decision cannot be audited later</td>
+</tr>
+<tr class="odd">
+<td>Automation drift</td>
+<td>A workflow works once but fails when repeated in new contexts</td>
+</tr>
+</tbody>
+</table>
+<p>The goal of evaluation is not perfection.</p>
+<p>The goal is controlled, visible, accountable improvement.</p>
+<hr>
+</section>
+<section id="human-review-is-not-a-formality" class="level2">
+<h2 class="anchored" data-anchor-id="human-review-is-not-a-formality">Human Review Is Not a Formality</h2>
+<p>Human review is not just a final glance.</p>
+<p>It is an active decision step.</p>
+<p>A reviewer should be able to say:</p>
+<ul>
+<li>what was accepted,</li>
+<li>what was changed,</li>
+<li>what was rejected,</li>
+<li>what remains uncertain,</li>
+<li>and why the final output is suitable for its intended use.</li>
+</ul>
+<p>This is especially important when AI output is used in reports, public communication, education, research, business decisions, or health-related contexts.</p>
+<p>Human review is where responsibility re-enters the workflow.</p>
+<hr>
+</section>
+<section id="practical-evaluation-template" class="level2">
+<h2 class="anchored" data-anchor-id="practical-evaluation-template">Practical Evaluation Template</h2>
+<p>A reusable AI output evaluation note can look like this:</p>
+<pre class="text"><code>Task:
+
+AI tool or model used:
+
+Input context provided:
+
+Output reviewed by:
+
+Accuracy notes:
+
+Grounding notes:
+
+Clarity notes:
+
+Safety or risk concerns:
+
+Required revisions:
+
+Final decision:
+
+Limitations:</code></pre>
+<p>This can be used as a lightweight review record.</p>
+<p>For higher-stakes work, the template should be expanded with source links, reviewer names, version numbers, and approval status.</p>
+<hr>
+</section>
+<section id="cdi-principle" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-principle">CDI Principle</h2>
+<p>A CDI AI workflow should not ask only:</p>
+<p>Did the AI produce an answer?</p>
+<p>It should ask:</p>
+<p>Was the answer evaluated well enough for the decision it supports?</p>
+<p>This principle keeps AI work connected to data, insight, and impact.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>In this chapter, we introduced AI evaluation and quality control as essential parts of AI systems work.</p>
+<p>We distinguished casual output acceptance from structured review.</p>
+<p>We defined common evaluation dimensions such as accuracy, completeness, grounding, clarity, safety, bias, reproducibility, and actionability.</p>
+<p>We also introduced simple supporting scripts for summarizing and visualizing AI task evaluation records.</p>
+<p>Most importantly, we reinforced the Human–AI–Human workflow:</p>
+<pre class="text"><code>Human defines the task.
+AI assists.
+Human evaluates, decides, documents, and acts.</code></pre>
+<p>Evaluation is the bridge between AI output and responsible use.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter moves from evaluation into human-in-the-loop workflows.</p>
+<p>We will examine how to design AI-supported processes where humans remain involved at the right points: before the task, during review, during revision, and before final action.</p>
 
 
 </section>

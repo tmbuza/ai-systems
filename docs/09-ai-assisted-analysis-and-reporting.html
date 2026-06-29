@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -223,12 +258,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -243,7 +280,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#recommended-separation" id="toc-recommended-separation" class="nav-link active" data-scroll-target="#recommended-separation">Recommended Separation</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link active" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#why-ai-assisted-reporting-matters" id="toc-why-ai-assisted-reporting-matters" class="nav-link" data-scroll-target="#why-ai-assisted-reporting-matters">Why AI-Assisted Reporting Matters</a></li>
+  <li><a href="#the-human-ai-human-reporting-loop" id="toc-the-human-ai-human-reporting-loop" class="nav-link" data-scroll-target="#the-human-ai-human-reporting-loop">The Human-AI-Human Reporting Loop</a></li>
+  <li><a href="#analysis-interpretation-and-communication" id="toc-analysis-interpretation-and-communication" class="nav-link" data-scroll-target="#analysis-interpretation-and-communication">Analysis, Interpretation, and Communication</a></li>
+  <li><a href="#appropriate-uses-of-ai-in-analysis-workflows" id="toc-appropriate-uses-of-ai-in-analysis-workflows" class="nav-link" data-scroll-target="#appropriate-uses-of-ai-in-analysis-workflows">Appropriate Uses of AI in Analysis Workflows</a></li>
+  <li><a href="#risky-uses-of-ai-in-analysis-workflows" id="toc-risky-uses-of-ai-in-analysis-workflows" class="nav-link" data-scroll-target="#risky-uses-of-ai-in-analysis-workflows">Risky Uses of AI in Analysis Workflows</a></li>
+  <li><a href="#a-cdi-pattern-for-ai-assisted-reports" id="toc-a-cdi-pattern-for-ai-assisted-reports" class="nav-link" data-scroll-target="#a-cdi-pattern-for-ai-assisted-reports">A CDI Pattern for AI-Assisted Reports</a></li>
+  <li><a href="#example-turning-a-results-table-into-a-report-summary" id="toc-example-turning-a-results-table-into-a-report-summary" class="nav-link" data-scroll-target="#example-turning-a-results-table-into-a-report-summary">Example: Turning a Results Table into a Report Summary</a></li>
+  <li><a href="#reporting-from-plots-and-figures" id="toc-reporting-from-plots-and-figures" class="nav-link" data-scroll-target="#reporting-from-plots-and-figures">Reporting from Plots and Figures</a></li>
+  <li><a href="#ai-assisted-reporting-checklist" id="toc-ai-assisted-reporting-checklist" class="nav-link" data-scroll-target="#ai-assisted-reporting-checklist">AI-Assisted Reporting Checklist</a></li>
+  <li><a href="#common-failure-modes" id="toc-common-failure-modes" class="nav-link" data-scroll-target="#common-failure-modes">Common Failure Modes</a></li>
+  <li><a href="#the-role-of-scripts-in-reporting" id="toc-the-role-of-scripts-in-reporting" class="nav-link" data-scroll-target="#the-role-of-scripts-in-reporting">The Role of Scripts in Reporting</a></li>
+  <li><a href="#a-reproducible-ai-reporting-workflow" id="toc-a-reproducible-ai-reporting-workflow" class="nav-link" data-scroll-target="#a-reproducible-ai-reporting-workflow">A Reproducible AI Reporting Workflow</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
@@ -252,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-automation-and-agentic-workflows.html">Operational AI Systems</a></li><li class="breadcrumb-item"><a href="./09-ai-assisted-analysis-and-reporting.html"><span class="chapter-title">AI-Assisted Analysis and Reporting</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="ai-analysis-reporting" class="quarto-section-identifier"><span class="chapter-title">AI-Assisted Analysis and Reporting</span></span></h1>
+<h1 class="title"><span class="chapter-title">AI-Assisted Analysis and Reporting</span></h1>
 </div>
 
 
@@ -277,23 +328,377 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-009</li>
-<li><strong>Type:</strong> Applied Chapter</li>
-<li><strong>Audience:</strong> Data analysts and report writers</li>
-<li><strong>Theme:</strong> AI can accelerate analysis communication when results remain reproducible</li>
+<li><strong>ID:</strong> AI-09</li>
+<li><strong>Type:</strong> Systems Guide</li>
+<li><strong>Audience:</strong> Analysts, researchers, educators, students, technical teams, and workflow designers</li>
+<li><strong>Theme:</strong> AI can support analysis and reporting, but human judgment must remain responsible for interpretation, evidence, and claims</li>
 </ul>
 </div>
-<p>AI can help explain results, draft reports, create summaries, and convert technical outputs into audience-specific communication.</p>
-<p>However, the underlying analysis should remain reproducible.</p>
-<p>A CDI workflow keeps analysis outputs separate from AI-generated interpretation.</p>
-<section id="recommended-separation" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-separation">Recommended Separation</h2>
-<pre class="text"><code>Data analysis scripts
-  -&gt; tidy result tables
-  -&gt; visualizations
-  -&gt; AI-assisted explanation draft
-  -&gt; human review
-  -&gt; final report</code></pre>
+<p>AI can help people move from raw information to clearer analysis, better summaries, cleaner documentation, and more polished reports.</p>
+<p>But AI-assisted analysis is not the same as AI-generated truth.</p>
+<p>An AI tool can help organize evidence. It can suggest patterns. It can draft explanations. It can create first-pass summaries. It can help translate technical outputs into plain language.</p>
+<p>The human remains responsible for checking the evidence, interpreting the results, deciding what claims are justified, and communicating uncertainty honestly.</p>
+<p>This chapter explains how to use AI inside analytical and reporting workflows without weakening reproducibility, traceability, or scientific judgment.</p>
+<p>The CDI position is simple:</p>
+<p>AI can assist analysis.</p>
+<p>AI can assist reporting.</p>
+<p>But conclusions must remain evidence-led and human-reviewed.</p>
+<hr>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this chapter, you should be able to:</p>
+<ul>
+<li>identify appropriate uses of AI in analysis and reporting;</li>
+<li>distinguish evidence, interpretation, and communication;</li>
+<li>design an AI-assisted reporting workflow that remains human-led;</li>
+<li>use structured inputs to improve AI-generated summaries;</li>
+<li>review AI-assisted reports for unsupported claims;</li>
+<li>connect analysis and reporting back to the Human-AI-Human workflow.</li>
+</ul>
+<hr>
+</section>
+<section id="why-ai-assisted-reporting-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-ai-assisted-reporting-matters">Why AI-Assisted Reporting Matters</h2>
+<p>Many analytical projects fail after the analysis is complete.</p>
+<p>The results exist, but they are not communicated clearly.</p>
+<p>The tables are correct, but the interpretation is weak.</p>
+<p>The plots are useful, but the claims are too broad.</p>
+<p>The report is written, but it does not explain what decisions the results support.</p>
+<p>AI can help with this translation layer.</p>
+<p>It can help turn structured results into readable summaries. It can help create outlines. It can compare draft interpretations against source tables. It can help explain methods for different audiences.</p>
+<p>However, this only works well when the AI is grounded in the actual project outputs.</p>
+<p>AI should not invent an analysis.</p>
+<p>It should help explain an analysis that already exists.</p>
+<hr>
+</section>
+<section id="the-human-ai-human-reporting-loop" class="level2">
+<h2 class="anchored" data-anchor-id="the-human-ai-human-reporting-loop">The Human-AI-Human Reporting Loop</h2>
+<p>AI-assisted reporting follows the same CDI pattern used throughout this guide.</p>
+<pre class="text"><code>Human prepares the evidence, question, audience, and reporting goal
+        ↓
+AI assists with structure, summary, explanation, or draft language
+        ↓
+Human verifies evidence, revises claims, documents uncertainty, and approves the final report</code></pre>
+<p>The human starts with the analytical context.</p>
+<p>The AI helps create a draft or supporting explanation.</p>
+<p>The human reviews the output against the data and decides what can be said.</p>
+<p>This matters because reporting is not only writing.</p>
+<p>Reporting is interpretation.</p>
+<p>Interpretation requires accountability.</p>
+<hr>
+</section>
+<section id="analysis-interpretation-and-communication" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-interpretation-and-communication">Analysis, Interpretation, and Communication</h2>
+<p>AI-assisted reporting becomes safer when these three layers are separated.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Main question</th>
+<th>Human responsibility</th>
+<th>AI support</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Analysis</td>
+<td>What was computed?</td>
+<td>Verify data, methods, and outputs</td>
+<td>Summarize tables or workflow steps</td>
+</tr>
+<tr class="even">
+<td>Interpretation</td>
+<td>What does it mean?</td>
+<td>Decide what claims are justified</td>
+<td>Suggest possible explanations or caveats</td>
+</tr>
+<tr class="odd">
+<td>Communication</td>
+<td>How should it be explained?</td>
+<td>Match message to audience and context</td>
+<td>Draft summaries, outlines, and plain-language text</td>
+</tr>
+</tbody>
+</table>
+<p>Problems happen when AI skips directly from data to conclusion.</p>
+<p>A responsible workflow keeps the layers visible.</p>
+<hr>
+</section>
+<section id="appropriate-uses-of-ai-in-analysis-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="appropriate-uses-of-ai-in-analysis-workflows">Appropriate Uses of AI in Analysis Workflows</h2>
+<p>AI can support analysis without replacing analytical judgment.</p>
+<p>Useful tasks include:</p>
+<ul>
+<li>summarizing a results table;</li>
+<li>explaining column meanings;</li>
+<li>drafting an analysis plan;</li>
+<li>identifying missing documentation;</li>
+<li>suggesting quality-control checks;</li>
+<li>helping interpret plots;</li>
+<li>turning technical outputs into narrative explanations;</li>
+<li>drafting report sections from verified results;</li>
+<li>creating reviewer checklists;</li>
+<li>rewriting technical text for a different audience.</li>
+</ul>
+<p>These uses are strongest when the AI is given concrete inputs.</p>
+<p>For example, a useful input might include:</p>
+<ul>
+<li>the research or business question;</li>
+<li>the analysis goal;</li>
+<li>the dataset description;</li>
+<li>the results table;</li>
+<li>the plot or figure description;</li>
+<li>the methods summary;</li>
+<li>the intended audience;</li>
+<li>the claims that are allowed;</li>
+<li>the claims that are not allowed.</li>
+</ul>
+<p>The more grounded the input, the more reviewable the output.</p>
+<hr>
+</section>
+<section id="risky-uses-of-ai-in-analysis-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="risky-uses-of-ai-in-analysis-workflows">Risky Uses of AI in Analysis Workflows</h2>
+<p>Some uses require extra caution.</p>
+<p>AI should not be used carelessly to:</p>
+<ul>
+<li>invent results that were not computed;</li>
+<li>generate citations without verification;</li>
+<li>make causal claims from descriptive data;</li>
+<li>hide uncertainty;</li>
+<li>replace statistical review;</li>
+<li>decide clinical, legal, financial, or policy action without expert oversight;</li>
+<li>summarize sensitive data without privacy safeguards;</li>
+<li>produce final reports that no human has checked.</li>
+</ul>
+<p>AI can make unsupported claims sound polished.</p>
+<p>That is why polish is not evidence.</p>
+<p>A well-written AI paragraph can still be wrong.</p>
+<hr>
+</section>
+<section id="a-cdi-pattern-for-ai-assisted-reports" class="level2">
+<h2 class="anchored" data-anchor-id="a-cdi-pattern-for-ai-assisted-reports">A CDI Pattern for AI-Assisted Reports</h2>
+<p>A useful AI-assisted report should move from evidence to interpretation to action.</p>
+<pre class="text"><code>Question
+  What is the report trying to answer?
+
+Inputs
+  What data, tables, plots, notes, or documents were used?
+
+Methods
+  How were the outputs produced?
+
+Results
+  What was observed?
+
+Interpretation
+  What do the results suggest?
+
+Limitations
+  What should not be overclaimed?
+
+Recommended next steps
+  What should the human team do next?</code></pre>
+<p>This structure helps prevent the report from becoming a loose narrative.</p>
+<p>It also helps reviewers check whether every claim is connected to evidence.</p>
+<hr>
+</section>
+<section id="example-turning-a-results-table-into-a-report-summary" class="level2">
+<h2 class="anchored" data-anchor-id="example-turning-a-results-table-into-a-report-summary">Example: Turning a Results Table into a Report Summary</h2>
+<p>Suppose an AI evaluation workflow creates this file:</p>
+<pre class="text"><code>data/results/ai-evaluation-summary.csv</code></pre>
+<p>A human should inspect the file first.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> data/results/ai-evaluation-summary.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then the human can ask AI for a summary using a grounded prompt.</p>
+<pre class="text"><code>You are helping write a short analytical summary for a CDI AI Systems guide.
+
+Use only the results below.
+Do not invent additional results.
+Do not claim that the workflow is production-ready.
+Separate observations, interpretation, and limitations.
+
+Project context:
+This table summarizes example AI task evaluations across criteria such as clarity, grounding, completeness, risk level, and review status.
+
+Audience:
+Learners building responsible AI workflows.
+
+Results table:
+[paste table here]
+
+Write:
+1. a short results summary,
+2. a brief interpretation,
+3. two limitations,
+4. two recommended next steps.</code></pre>
+<p>This prompt is safer than asking:</p>
+<pre class="text"><code>Write a report about my AI system.</code></pre>
+<p>The better prompt gives the AI context, boundaries, evidence, and reporting structure.</p>
+<hr>
+</section>
+<section id="reporting-from-plots-and-figures" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-from-plots-and-figures">Reporting from Plots and Figures</h2>
+<p>AI can help describe a figure, but the human should verify the description.</p>
+<p>A good figure-summary prompt includes:</p>
+<pre class="text"><code>Figure title:
+AI Evaluation Summary
+
+Figure source:
+data/reports/ai-evaluation-summary.png
+
+Data source:
+data/results/ai-evaluation-summary.csv
+
+What the figure shows:
+[paste your own description]
+
+Task:
+Write a concise figure caption and interpretation.
+Separate what is directly visible from what is inferred.
+Do not make claims beyond the figure.</code></pre>
+<p>This avoids treating visual interpretation as automatic truth.</p>
+<p>The human still checks the figure, the source data, and the written claim.</p>
+<hr>
+</section>
+<section id="ai-assisted-reporting-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="ai-assisted-reporting-checklist">AI-Assisted Reporting Checklist</h2>
+<p>Before using AI to assist with reporting, ask:</p>
+<ul>
+<li>What evidence is the report based on?</li>
+<li>Has the evidence been checked?</li>
+<li>What is the intended audience?</li>
+<li>What decisions might the report influence?</li>
+<li>What claims are supported?</li>
+<li>What claims are not supported?</li>
+<li>Are uncertainty and limitations included?</li>
+<li>Are sensitive details protected?</li>
+<li>Can another person trace the report back to the inputs?</li>
+<li>Has a human reviewed the final version?</li>
+</ul>
+<p>A report that cannot be traced back to its evidence should not be treated as reliable.</p>
+<hr>
+</section>
+<section id="common-failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="common-failure-modes">Common Failure Modes</h2>
+<p>AI-assisted analysis and reporting can fail in predictable ways.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Failure mode</th>
+<th>What happens</th>
+<th>Prevention</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unsupported claim</td>
+<td>AI states something not shown in the data</td>
+<td>Require evidence-linked summaries</td>
+</tr>
+<tr class="even">
+<td>Overgeneralization</td>
+<td>A small example becomes a broad conclusion</td>
+<td>Add scope and limitation statements</td>
+</tr>
+<tr class="odd">
+<td>Method confusion</td>
+<td>AI mixes up tools, models, or data steps</td>
+<td>Provide a methods summary</td>
+</tr>
+<tr class="even">
+<td>Citation weakness</td>
+<td>AI invents or misuses references</td>
+<td>Verify all references manually</td>
+</tr>
+<tr class="odd">
+<td>Missing uncertainty</td>
+<td>AI writes with too much confidence</td>
+<td>Ask for limitations and caveats</td>
+</tr>
+<tr class="even">
+<td>Audience mismatch</td>
+<td>Output is too technical or too vague</td>
+<td>Define the intended audience</td>
+</tr>
+<tr class="odd">
+<td>Privacy leakage</td>
+<td>Sensitive information appears in outputs</td>
+<td>Remove or mask sensitive inputs</td>
+</tr>
+</tbody>
+</table>
+<p>These are not reasons to avoid AI.</p>
+<p>They are reasons to design the workflow properly.</p>
+<hr>
+</section>
+<section id="the-role-of-scripts-in-reporting" class="level2">
+<h2 class="anchored" data-anchor-id="the-role-of-scripts-in-reporting">The Role of Scripts in Reporting</h2>
+<p>In a CDI guide, AI-assisted reporting should connect to files generated by scripts.</p>
+<p>For example, the scaffold includes scripts that create and summarize an example AI task log.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/01-create-example-ai-task-log.sh</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py <span class="dt">\</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  data/results</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/03-build-prompt-registry.py <span class="dt">\</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  data/results</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> scripts/R/04-plot-evaluation-summary.R <span class="dt">\</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  data/results/ai-evaluation-summary.csv <span class="dt">\</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  data/reports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These commands produce structured outputs that can support reporting.</p>
+<pre class="text"><code>data/example/ai-task-log.csv
+data/results/ai-evaluation-summary.csv
+data/results/prompt-registry.csv
+data/reports/ai-evaluation-summary.png</code></pre>
+<p>The key point is that AI should not be asked to report from memory.</p>
+<p>It should report from traceable project outputs.</p>
+<hr>
+</section>
+<section id="a-reproducible-ai-reporting-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="a-reproducible-ai-reporting-workflow">A Reproducible AI Reporting Workflow</h2>
+<p>A reproducible reporting workflow should make the path from input to report visible.</p>
+<pre class="text"><code>Project question
+        ↓
+Input data, notes, prompts, or task logs
+        ↓
+Scripted summaries and checks
+        ↓
+AI-assisted draft explanation
+        ↓
+Human review against evidence
+        ↓
+Final report with limitations and next steps</code></pre>
+<p>This pattern connects AI Systems to the broader CDI ecosystem.</p>
+<p>The goal is not simply to write faster.</p>
+<p>The goal is to write more clearly while preserving evidence, judgment, and accountability.</p>
+<hr>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<p>AI-assisted analysis and reporting are most useful when the evidence is already organized.</p>
+<p>AI can help summarize, structure, explain, and revise.</p>
+<p>It should not replace data validation, statistical reasoning, domain expertise, or final human review.</p>
+<p>A responsible report separates results, interpretation, limitations, and next steps.</p>
+<p>The Human-AI-Human workflow keeps the reporting process grounded: the human prepares the evidence, AI assists with drafting or explanation, and the human verifies and approves the final communication.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter moves from reporting into governance, risk, and documentation.</p>
+<p>We will examine how AI workflows should be documented, reviewed, and managed so they remain responsible beyond a single use case.</p>
 
 
 </section>

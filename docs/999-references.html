@@ -102,7 +102,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-career-and-workforce-readiness.html">Growth and Reference</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-career-and-workforce-readiness.html">Growth and Reference</a></li><li class="breadcrumb-item"><a href="./999-references.html">References</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -241,12 +241,14 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -256,15 +258,24 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#core-reference-themes" id="toc-core-reference-themes" class="nav-link active" data-scroll-target="#core-reference-themes">Core Reference Themes</a></li>
+  <li><a href="#suggested-citation-use" id="toc-suggested-citation-use" class="nav-link" data-scroll-target="#suggested-citation-use">Suggested Citation Use</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-career-and-workforce-readiness.html">Growth and Reference</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-career-and-workforce-readiness.html">Growth and Reference</a></li><li class="breadcrumb-item"><a href="./999-references.html">References</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title">References</h1>
 </div>
 
 
@@ -290,17 +301,59 @@ div.csl-indent {
 <div class="cdi-message">
 <ul>
 <li><strong>ID:</strong> AI-999R</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> All readers</li>
-<li><strong>Theme:</strong> AI systems should be connected to documented sources</li>
+<li><strong>Type:</strong> Reference</li>
+<li><strong>Audience:</strong> AI practitioners, analysts, educators, managers, and system builders</li>
+<li><strong>Theme:</strong> Responsible AI systems require traceable sources, reusable language, and documented assumptions</li>
 </ul>
 </div>
-<p>References will be expanded as the guide matures.</p>
+<p>This page collects the references used across the <strong>AI Systems</strong> guide.</p>
+<p>The guide is intentionally practical. It focuses on how people can design, evaluate, document, and govern AI-supported work. The references therefore include sources on AI risk management, trustworthy AI, human-centered AI, prompt and workflow design, evaluation, and responsible deployment.</p>
+<p>References are managed through the project bibliography file:</p>
+<pre class="text"><code>library/references.bib</code></pre>
+<p>When adding citations to chapters, use Quarto citation syntax:</p>
+<pre class="text"><code>AI systems should be evaluated in relation to task risk, user context, and potential downstream impact [@nist2023airmf].</code></pre>
+<p>The rendered references will appear below when the bibliography file contains matching entries.</p>
+<section id="core-reference-themes" class="level2">
+<h2 class="anchored" data-anchor-id="core-reference-themes">Core Reference Themes</h2>
+<p>The most important reference areas for this guide are:</p>
+<ul>
+<li>AI risk management and governance</li>
+<li>trustworthy and responsible AI</li>
+<li>human-centered AI</li>
+<li>human oversight and accountability</li>
+<li>model and system documentation</li>
+<li>AI evaluation and quality control</li>
+<li>AI literacy and workforce readiness</li>
+</ul>
+</section>
+<section id="suggested-citation-use" class="level2">
+<h2 class="anchored" data-anchor-id="suggested-citation-use">Suggested Citation Use</h2>
+<p>Use references where a chapter makes claims about:</p>
+<ul>
+<li>risk management frameworks</li>
+<li>governance practices</li>
+<li>transparency and documentation</li>
+<li>human oversight</li>
+<li>evaluation methods</li>
+<li>responsible AI principles</li>
+<li>social, organizational, or workforce implications</li>
+</ul>
+<p>Avoid over-citing basic workflow instructions. Cite sources where they support concepts, principles, standards, or claims that readers may want to verify.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
 <div id="refs" role="list" style="display: none">
 
 </div>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>This completes the scaffolded <strong>AI Systems</strong> guide.</p>
+<p>The guide now has a complete structure for moving from AI literacy into problem framing, prompt and context design, grounding, evaluation, human review, automation, governance, reporting, and workforce readiness.</p>
+<p>From here, the next step is refinement: improving examples, strengthening citations, testing all scripts, and preparing the repository for public release through GitHub Pages.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -707,7 +760,7 @@ div.csl-indent {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Appendix</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

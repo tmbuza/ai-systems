@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -223,12 +258,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -243,7 +280,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#documentation-template" id="toc-documentation-template" class="nav-link active" data-scroll-target="#documentation-template">Documentation Template</a></li>
+  <li><a href="#why-governance-matters" id="toc-why-governance-matters" class="nav-link active" data-scroll-target="#why-governance-matters">Why Governance Matters</a></li>
+  <li><a href="#governance-is-part-of-the-humanaihuman-workflow" id="toc-governance-is-part-of-the-humanaihuman-workflow" class="nav-link" data-scroll-target="#governance-is-part-of-the-humanaihuman-workflow">Governance Is Part of the Human–AI–Human Workflow</a></li>
+  <li><a href="#ai-risk-is-context-dependent" id="toc-ai-risk-is-context-dependent" class="nav-link" data-scroll-target="#ai-risk-is-context-dependent">AI Risk Is Context-Dependent</a></li>
+  <li><a href="#a-practical-ai-risk-scale" id="toc-a-practical-ai-risk-scale" class="nav-link" data-scroll-target="#a-practical-ai-risk-scale">A Practical AI Risk Scale</a></li>
+  <li><a href="#what-should-be-documented" id="toc-what-should-be-documented" class="nav-link" data-scroll-target="#what-should-be-documented">What Should Be Documented</a></li>
+  <li><a href="#the-ai-task-log" id="toc-the-ai-task-log" class="nav-link" data-scroll-target="#the-ai-task-log">The AI Task Log</a></li>
+  <li><a href="#prompt-registries-as-governance-tools" id="toc-prompt-registries-as-governance-tools" class="nav-link" data-scroll-target="#prompt-registries-as-governance-tools">Prompt Registries as Governance Tools</a></li>
+  <li><a href="#governance-questions-before-automation" id="toc-governance-questions-before-automation" class="nav-link" data-scroll-target="#governance-questions-before-automation">Governance Questions Before Automation</a></li>
+  <li><a href="#common-governance-failure-modes" id="toc-common-governance-failure-modes" class="nav-link" data-scroll-target="#common-governance-failure-modes">Common Governance Failure Modes</a></li>
+  <li><a href="#responsible-documentation-is-a-design-habit" id="toc-responsible-documentation-is-a-design-habit" class="nav-link" data-scroll-target="#responsible-documentation-is-a-design-habit">Responsible Documentation Is a Design Habit</a></li>
+  <li><a href="#governance-checklist" id="toc-governance-checklist" class="nav-link" data-scroll-target="#governance-checklist">Governance Checklist</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
@@ -252,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-automation-and-agentic-workflows.html">Operational AI Systems</a></li><li class="breadcrumb-item"><a href="./10-governance-risk-and-documentation.html"><span class="chapter-title">Governance, Risk, and Documentation</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="governance-risk" class="quarto-section-identifier"><span class="chapter-title">Governance, Risk, and Documentation</span></span></h1>
+<h1 class="title"><span class="chapter-title">Governance, Risk, and Documentation</span></h1>
 </div>
 
 
@@ -277,24 +326,283 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-010</li>
-<li><strong>Type:</strong> Governance Chapter</li>
-<li><strong>Audience:</strong> Leaders, educators, analysts, and teams</li>
-<li><strong>Theme:</strong> AI systems need documented boundaries</li>
+<li><strong>ID:</strong> AIS-010</li>
+<li><strong>Type:</strong> System Guide Chapter</li>
+<li><strong>Audience:</strong> AI users, analysts, educators, workflow designers, team leads, and decision-makers</li>
+<li><strong>Theme:</strong> Responsible AI systems require governance, risk awareness, and documentation</li>
 </ul>
 </div>
-<p>Governance defines what AI may do, what it may not do, who reviews outputs, and how risk is managed.</p>
-<p>Documentation helps teams learn from previous AI use and avoid repeating mistakes.</p>
-<section id="documentation-template" class="level2">
-<h2 class="anchored" data-anchor-id="documentation-template">Documentation Template</h2>
-<pre class="text"><code>Task name:
-Purpose:
-Input data or context:
-AI tool used:
-Human reviewer:
-Known limitations:
-Risk level:
-Decision made:</code></pre>
+<p>AI systems are not responsible simply because they use advanced tools.</p>
+<p>They become responsible when humans define boundaries, document decisions, review outputs, manage risks, and remain accountable for how AI-supported work is used.</p>
+<p>This chapter introduces governance, risk, and documentation as practical parts of AI systems design.</p>
+<p>The goal is not to create bureaucracy.</p>
+<p>The goal is to make AI-supported work clear, reviewable, reproducible, and safe enough for the context in which it will be used.</p>
+<hr>
+<section id="why-governance-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-governance-matters">Why Governance Matters</h2>
+<p>AI tools can generate text, summarize documents, write code, classify information, draft reports, and support decisions.</p>
+<p>That power creates value.</p>
+<p>It also creates risk.</p>
+<p>AI-generated work can be:</p>
+<ul>
+<li>inaccurate,</li>
+<li>incomplete,</li>
+<li>biased,</li>
+<li>outdated,</li>
+<li>poorly grounded,</li>
+<li>overconfident,</li>
+<li>difficult to trace,</li>
+<li>or used outside its proper context.</li>
+</ul>
+<p>Governance is the set of practices that prevents AI from becoming an uncontrolled black box inside a workflow.</p>
+<p>In CDI terms, governance answers five questions:</p>
+<ol type="1">
+<li>What is the AI system allowed to do?</li>
+<li>What information is it allowed to use?</li>
+<li>What outputs can it produce?</li>
+<li>Who reviews those outputs?</li>
+<li>Who is accountable for the final decision?</li>
+</ol>
+<p>A workflow without governance may still be useful.</p>
+<p>But it is not yet a dependable system.</p>
+<hr>
+</section>
+<section id="governance-is-part-of-the-humanaihuman-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="governance-is-part-of-the-humanaihuman-workflow">Governance Is Part of the Human–AI–Human Workflow</h2>
+<p>The Human–AI–Human workflow remains the central pattern.</p>
+<pre class="text"><code>Human frames the task
+        ↓
+AI assists with generation, analysis, synthesis, or automation
+        ↓
+Human reviews, decides, documents, and acts</code></pre>
+<p>Governance strengthens each part of that loop.</p>
+<p>At the first human step, governance defines the task, boundary, data source, risk level, and intended use.</p>
+<p>At the AI step, governance controls what context is provided, what tools are used, and what outputs are expected.</p>
+<p>At the final human step, governance requires review, documentation, approval, and accountability.</p>
+<p>The system is not complete when AI produces an answer.</p>
+<p>The system is complete only when the output has been reviewed and its use has been documented.</p>
+<hr>
+</section>
+<section id="ai-risk-is-context-dependent" class="level2">
+<h2 class="anchored" data-anchor-id="ai-risk-is-context-dependent">AI Risk Is Context-Dependent</h2>
+<p>The same AI capability can be low risk in one setting and high risk in another.</p>
+<p>For example, asking AI to rewrite a paragraph for clarity is usually low risk.</p>
+<p>Asking AI to summarize a medical record, recommend a clinical action, review a legal contract, or evaluate a person for an opportunity is much higher risk.</p>
+<p>Risk depends on:</p>
+<ul>
+<li>the task,</li>
+<li>the data,</li>
+<li>the audience,</li>
+<li>the possible harm,</li>
+<li>the level of automation,</li>
+<li>the review process,</li>
+<li>and the consequences of error.</li>
+</ul>
+<p>A CDI AI system should classify tasks before deciding how much review is needed.</p>
+<hr>
+</section>
+<section id="a-practical-ai-risk-scale" class="level2">
+<h2 class="anchored" data-anchor-id="a-practical-ai-risk-scale">A Practical AI Risk Scale</h2>
+<p>A simple risk scale is useful for most applied workflows.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk level</th>
+<th>Description</th>
+<th>Example</th>
+<th>Minimum control</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low</td>
+<td>Errors are unlikely to cause harm</td>
+<td>Rewriting a non-sensitive paragraph</td>
+<td>Human review before use</td>
+</tr>
+<tr class="even">
+<td>Moderate</td>
+<td>Errors may affect interpretation or communication</td>
+<td>Summarizing project findings</td>
+<td>Source checking and documented review</td>
+</tr>
+<tr class="odd">
+<td>High</td>
+<td>Errors may affect decisions, people, money, health, or compliance</td>
+<td>Drafting policy, clinical, legal, financial, or eligibility-related content</td>
+<td>Expert review and approval</td>
+</tr>
+<tr class="even">
+<td>Prohibited or restricted</td>
+<td>Task should not be delegated to AI without formal controls</td>
+<td>Fully automated high-stakes decisions</td>
+<td>Do not automate without governance framework</td>
+</tr>
+</tbody>
+</table>
+<p>This scale is not a legal or regulatory classification.</p>
+<p>It is a practical design tool.</p>
+<p>The higher the risk, the more documentation and human oversight the workflow needs.</p>
+<hr>
+</section>
+<section id="what-should-be-documented" class="level2">
+<h2 class="anchored" data-anchor-id="what-should-be-documented">What Should Be Documented</h2>
+<p>AI systems become easier to trust when important choices are recorded.</p>
+<p>A lightweight AI workflow record should include:</p>
+<ul>
+<li>task name,</li>
+<li>purpose,</li>
+<li>intended audience,</li>
+<li>input data or source materials,</li>
+<li>prompt or instruction used,</li>
+<li>model or tool used,</li>
+<li>output generated,</li>
+<li>known limitations,</li>
+<li>review criteria,</li>
+<li>reviewer,</li>
+<li>decision made,</li>
+<li>date,</li>
+<li>and final status.</li>
+</ul>
+<p>Documentation does not need to be complicated.</p>
+<p>It only needs to make the workflow understandable later.</p>
+<p>If someone asks, “How was this output produced?” the system should be able to answer.</p>
+<hr>
+</section>
+<section id="the-ai-task-log" class="level2">
+<h2 class="anchored" data-anchor-id="the-ai-task-log">The AI Task Log</h2>
+<p>One of the simplest documentation tools is an AI task log.</p>
+<p>An AI task log records what AI was used for and how the output was reviewed.</p>
+<p>A basic task log may look like this:</p>
+<pre class="text"><code>task_id,task_name,risk_level,input_source,ai_role,human_review_required,review_status,final_use
+AIS-001,Rewrite guide introduction,low,chapter draft,editing,true,approved,published
+AIS-002,Summarize interview notes,moderate,meeting notes,summarization,true,needs revision,not used
+AIS-003,Draft policy recommendation,high,internal report,drafting,true,expert review required,not finalized</code></pre>
+<p>This guide includes an example task log workflow.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/01-create-example-ai-task-log.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The task log can then be evaluated using the supporting Python script.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py <span class="dt">\</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  data/results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The purpose of this script is not to replace human judgment.</p>
+<p>It creates a simple summary that supports review and reporting.</p>
+<hr>
+</section>
+<section id="prompt-registries-as-governance-tools" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-registries-as-governance-tools">Prompt Registries as Governance Tools</h2>
+<p>A prompt registry records reusable prompts and their purpose.</p>
+<p>This is useful when a team wants consistent AI-supported workflows.</p>
+<p>A prompt registry should document:</p>
+<ul>
+<li>prompt name,</li>
+<li>task type,</li>
+<li>expected input,</li>
+<li>expected output,</li>
+<li>review requirements,</li>
+<li>risk level,</li>
+<li>version,</li>
+<li>and owner.</li>
+</ul>
+<p>This guide includes a supporting prompt registry script.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/03-build-prompt-registry.py <span class="dt">\</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  data/results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A prompt registry helps prevent hidden workflow drift.</p>
+<p>When prompts change, the workflow changes.</p>
+<p>When the workflow changes, the documentation should change too.</p>
+<hr>
+</section>
+<section id="governance-questions-before-automation" class="level2">
+<h2 class="anchored" data-anchor-id="governance-questions-before-automation">Governance Questions Before Automation</h2>
+<p>Before any AI workflow is automated, the following questions should be answered:</p>
+<ol type="1">
+<li>Is the task clearly defined?</li>
+<li>Is the input source known and appropriate?</li>
+<li>Is the output reviewable?</li>
+<li>Is the risk level documented?</li>
+<li>Is a human reviewer assigned?</li>
+<li>Are failure modes known?</li>
+<li>Is there a process for stopping or correcting the workflow?</li>
+<li>Is the final decision made by a human when needed?</li>
+</ol>
+<p>Automation should not be used to avoid responsibility.</p>
+<p>Automation should be used only when the workflow is already clear, bounded, and reviewable.</p>
+<hr>
+</section>
+<section id="common-governance-failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="common-governance-failure-modes">Common Governance Failure Modes</h2>
+<p>AI workflows often fail because governance is added too late.</p>
+<p>Common failure modes include:</p>
+<ul>
+<li>treating AI output as final,</li>
+<li>using sensitive data without clear boundaries,</li>
+<li>failing to record prompts or sources,</li>
+<li>automating tasks before they are understood,</li>
+<li>not assigning human accountability,</li>
+<li>ignoring uncertainty,</li>
+<li>using AI outputs outside their intended context,</li>
+<li>and publishing outputs without review.</li>
+</ul>
+<p>These failures are usually not caused by one bad prompt.</p>
+<p>They are caused by weak system design.</p>
+<hr>
+</section>
+<section id="responsible-documentation-is-a-design-habit" class="level2">
+<h2 class="anchored" data-anchor-id="responsible-documentation-is-a-design-habit">Responsible Documentation Is a Design Habit</h2>
+<p>Documentation should not be treated as an afterthought.</p>
+<p>It is part of the workflow.</p>
+<p>A useful AI system leaves behind evidence of:</p>
+<ul>
+<li>what was asked,</li>
+<li>what was used,</li>
+<li>what was generated,</li>
+<li>what was checked,</li>
+<li>what was changed,</li>
+<li>what was approved,</li>
+<li>and what was finally used.</li>
+</ul>
+<p>This evidence supports transparency, learning, improvement, and accountability.</p>
+<p>In CDI guides, documentation is not separate from analysis.</p>
+<p>Documentation is how analysis becomes a system.</p>
+<hr>
+</section>
+<section id="governance-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="governance-checklist">Governance Checklist</h2>
+<p>Before using AI output in a real workflow, check the following:</p>
+<ul>
+<li>The task is clearly described.</li>
+<li>The risk level is known.</li>
+<li>The input sources are documented.</li>
+<li>Sensitive information has been handled appropriately.</li>
+<li>The prompt or instruction is recorded when needed.</li>
+<li>The AI output has been reviewed by a human.</li>
+<li>Important claims are checked against evidence.</li>
+<li>Limitations are stated.</li>
+<li>The final decision-maker is clear.</li>
+<li>The final use of the output is documented.</li>
+</ul>
+<p>If several of these are missing, the workflow is not ready for operational use.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>Governance is what turns AI use into accountable AI systems.</p>
+<p>Risk classification helps determine how much review and documentation are needed.</p>
+<p>Documentation creates traceability.</p>
+<p>Prompt registries and task logs make AI workflows easier to review, repeat, improve, and govern.</p>
+<p>The Human–AI–Human workflow remains the core pattern: humans define the task, AI assists, and humans review, decide, document, and act.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter brings the pieces together in an end-to-end case study.</p>
+<p>We will move from isolated AI tasks into a complete workflow that includes task framing, prompt design, grounding, evaluation, review, documentation, and reporting.</p>
 
 
 </section>

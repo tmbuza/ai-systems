@@ -258,12 +258,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -278,7 +280,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#run-the-case-study" id="toc-run-the-case-study" class="nav-link active" data-scroll-target="#run-the-case-study">Run the Case Study</a></li>
+  <li><a href="#purpose-of-this-chapter" id="toc-purpose-of-this-chapter" class="nav-link active" data-scroll-target="#purpose-of-this-chapter">Purpose of This Chapter</a></li>
+  <li><a href="#case-study-scenario" id="toc-case-study-scenario" class="nav-link" data-scroll-target="#case-study-scenario">Case Study Scenario</a></li>
+  <li><a href="#the-end-to-end-ai-systems-workflow" id="toc-the-end-to-end-ai-systems-workflow" class="nav-link" data-scroll-target="#the-end-to-end-ai-systems-workflow">The End-to-End AI Systems Workflow</a></li>
+  <li><a href="#step-1-define-the-task" id="toc-step-1-define-the-task" class="nav-link" data-scroll-target="#step-1-define-the-task">Step 1: Define the Task</a></li>
+  <li><a href="#step-2-classify-the-risk" id="toc-step-2-classify-the-risk" class="nav-link" data-scroll-target="#step-2-classify-the-risk">Step 2: Classify the Risk</a></li>
+  <li><a href="#step-3-prepare-context" id="toc-step-3-prepare-context" class="nav-link" data-scroll-target="#step-3-prepare-context">Step 3: Prepare Context</a></li>
+  <li><a href="#step-4-design-the-prompt" id="toc-step-4-design-the-prompt" class="nav-link" data-scroll-target="#step-4-design-the-prompt">Step 4: Design the Prompt</a></li>
+  <li><a href="#step-5-generate-the-ai-assisted-output" id="toc-step-5-generate-the-ai-assisted-output" class="nav-link" data-scroll-target="#step-5-generate-the-ai-assisted-output">Step 5: Generate the AI-Assisted Output</a></li>
+  <li><a href="#step-6-evaluate-and-review-the-output" id="toc-step-6-evaluate-and-review-the-output" class="nav-link" data-scroll-target="#step-6-evaluate-and-review-the-output">Step 6: Evaluate and Review the Output</a></li>
+  <li><a href="#step-7-document-the-decision-and-next-action" id="toc-step-7-document-the-decision-and-next-action" class="nav-link" data-scroll-target="#step-7-document-the-decision-and-next-action">Step 7: Document the Decision and Next Action</a></li>
+  <li><a href="#supporting-example-workflow" id="toc-supporting-example-workflow" class="nav-link" data-scroll-target="#supporting-example-workflow">Supporting Example Workflow</a></li>
+  <li><a href="#expected-outputs" id="toc-expected-outputs" class="nav-link" data-scroll-target="#expected-outputs">Expected Outputs</a></li>
+  <li><a href="#case-study-interpretation" id="toc-case-study-interpretation" class="nav-link" data-scroll-target="#case-study-interpretation">Case Study Interpretation</a></li>
+  <li><a href="#common-failure-modes" id="toc-common-failure-modes" class="nav-link" data-scroll-target="#common-failure-modes">Common Failure Modes</a></li>
+  <li><a href="#practical-checklist" id="toc-practical-checklist" class="nav-link" data-scroll-target="#practical-checklist">Practical Checklist</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
@@ -287,7 +305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-automation-and-agentic-workflows.html">Operational AI Systems</a></li><li class="breadcrumb-item"><a href="./11-end-to-end-case-study.html"><span class="chapter-title">End-to-End Case Study</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="case-study" class="quarto-section-identifier"><span class="chapter-title">End-to-End Case Study</span></span></h1>
+<h1 class="title"><span class="chapter-title">End-to-End Case Study</span></h1>
 </div>
 
 
@@ -312,22 +330,324 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-011</li>
-<li><strong>Type:</strong> Case Study</li>
-<li><strong>Audience:</strong> Learners ready to combine the workflow</li>
-<li><strong>Theme:</strong> A complete AI system connects framing, prompting, evaluation, and reporting</li>
+<li><strong>ID:</strong> AI-SYS-011</li>
+<li><strong>Type:</strong> Core Guide Chapter</li>
+<li><strong>Audience:</strong> AI users, analysts, educators, researchers, managers, and workflow designers</li>
+<li><strong>Theme:</strong> Responsible AI systems are built by connecting problem framing, context, grounding, evaluation, human review, and documentation</li>
 </ul>
 </div>
-<p>This case study uses a simple AI task log.</p>
-<p>The goal is not to depend on any specific AI provider.</p>
-<p>The goal is to show how an AI workflow can be documented, evaluated, and improved.</p>
-<section id="run-the-case-study" class="level2">
-<h2 class="anchored" data-anchor-id="run-the-case-study">Run the Case Study</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/01-create-example-ai-task-log.sh</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py data/example/ai-task-log.csv data/results</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/03-build-prompt-registry.py data/example/ai-task-log.csv data/results</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> scripts/R/04-plot-evaluation-summary.R data/results/ai-evaluation-summary.csv data/reports</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="purpose-of-this-chapter" class="level2">
+<h2 class="anchored" data-anchor-id="purpose-of-this-chapter">Purpose of This Chapter</h2>
+<p>This chapter brings the guide together through a complete AI Systems workflow.</p>
+<p>The goal is not to show AI as a shortcut.</p>
+<p>The goal is to show how AI can be placed inside a responsible, human-led system.</p>
+<p>In earlier chapters, we developed the main components of AI Systems:</p>
+<ul>
+<li>AI systems thinking</li>
+<li>AI literacy and responsible use</li>
+<li>problem framing</li>
+<li>prompt and context design</li>
+<li>data and knowledge grounding</li>
+<li>evaluation and quality control</li>
+<li>human-in-the-loop review</li>
+<li>automation readiness</li>
+<li>reporting</li>
+<li>governance and documentation</li>
+</ul>
+<p>This chapter connects those parts into one reproducible case study.</p>
+<p>The central workflow remains:</p>
+<pre class="text"><code>Human frames the problem.
+AI assists with generation, reasoning, analysis, or automation.
+Human evaluates, decides, documents, and acts.</code></pre>
+<p>This is the Human–AI–Human workflow.</p>
+<hr>
+</section>
+<section id="case-study-scenario" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-scenario">Case Study Scenario</h2>
+<p>Imagine a small organization wants to use AI to help prepare a weekly insight brief.</p>
+<p>The brief may summarize project updates, identify risks, suggest next steps, and produce a short communication for stakeholders.</p>
+<p>This sounds simple.</p>
+<p>But if handled casually, several problems can occur:</p>
+<ul>
+<li>the AI may invent information</li>
+<li>sensitive information may be exposed</li>
+<li>unclear prompts may produce inconsistent results</li>
+<li>outputs may be copied without review</li>
+<li>decisions may be made without traceability</li>
+<li>no one may know which sources were used</li>
+<li>the workflow may become difficult to repeat</li>
+</ul>
+<p>An AI Systems approach treats this as a workflow design problem, not only a prompting problem.</p>
+<hr>
+</section>
+<section id="the-end-to-end-ai-systems-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-end-to-end-ai-systems-workflow">The End-to-End AI Systems Workflow</h2>
+<p>The case study follows seven steps.</p>
+<pre class="text"><code>1. Define the task
+2. Classify the risk
+3. Prepare context
+4. Design the prompt
+5. Generate the AI-assisted output
+6. Evaluate and review the output
+7. Document the decision and next action</code></pre>
+<p>Each step creates an output that can be reviewed, reused, or improved.</p>
+<hr>
+</section>
+<section id="step-1-define-the-task" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-define-the-task">Step 1: Define the Task</h2>
+<p>The human begins by defining the task clearly.</p>
+<p>A weak task definition might be:</p>
+<pre class="text"><code>Use AI to summarize our work.</code></pre>
+<p>A stronger task definition is:</p>
+<pre class="text"><code>Prepare a weekly project insight brief for internal stakeholders.
+The brief should summarize completed work, open issues, risks, and recommended next steps.
+The output should be concise, evidence-based, and reviewed by a human before sharing.</code></pre>
+<p>The stronger version defines:</p>
+<ul>
+<li>the purpose</li>
+<li>the audience</li>
+<li>the expected output</li>
+<li>the evidence requirement</li>
+<li>the human review requirement</li>
+</ul>
+<p>This makes the workflow easier to evaluate.</p>
+<hr>
+</section>
+<section id="step-2-classify-the-risk" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-classify-the-risk">Step 2: Classify the Risk</h2>
+<p>Before using AI, the task should be classified by risk.</p>
+<p>For this case study, the weekly brief is a medium-risk task.</p>
+<p>It is not a final medical, legal, financial, or hiring decision.</p>
+<p>But it may influence planning, communication, and organizational priorities.</p>
+<p>That means the output should not be accepted automatically.</p>
+<pre class="text"><code>Risk level: Medium
+Human review required: Yes
+Source grounding required: Yes
+Automation allowed: Partial only
+Final decision authority: Human</code></pre>
+<p>The purpose of risk classification is not to avoid AI.</p>
+<p>The purpose is to decide what level of review is needed.</p>
+<hr>
+</section>
+<section id="step-3-prepare-context" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-prepare-context">Step 3: Prepare Context</h2>
+<p>AI performs better when the task context is explicit.</p>
+<p>For this case study, the human prepares a small context packet.</p>
+<pre class="text"><code>Project name: AI Systems Guide
+Audience: CDI learners, analysts, researchers, and workflow builders
+Reporting period: Current week
+Primary goal: summarize progress and identify next steps
+Allowed sources: project notes, task logs, chapter drafts, and confirmed outputs
+Not allowed: inventing completed work, guessing private information, or making unsupported claims</code></pre>
+<p>This context can be stored as a reusable file.</p>
+<p>For example:</p>
+<pre class="text"><code>project-context.md</code></pre>
+<p>A context file helps make the workflow repeatable.</p>
+<hr>
+</section>
+<section id="step-4-design-the-prompt" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-design-the-prompt">Step 4: Design the Prompt</h2>
+<p>The prompt should include the task, context, constraints, and expected output.</p>
+<p>A reusable prompt structure may look like this:</p>
+<pre class="text"><code>Role:
+You are assisting with a weekly project insight brief.
+
+Task:
+Summarize the project progress using only the provided context.
+
+Context:
+[Paste or attach project notes, task logs, or confirmed updates.]
+
+Rules:
+- Do not invent completed work.
+- Separate confirmed progress from recommended next steps.
+- Flag uncertainty clearly.
+- Keep the tone professional and concise.
+- Produce a draft for human review, not a final decision.
+
+Output format:
+1. Progress summary
+2. Key outputs
+3. Risks or blockers
+4. Recommended next steps
+5. Items needing human confirmation</code></pre>
+<p>This prompt is not only a message to an AI tool.</p>
+<p>It is part of the workflow documentation.</p>
+<hr>
+</section>
+<section id="step-5-generate-the-ai-assisted-output" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-generate-the-ai-assisted-output">Step 5: Generate the AI-Assisted Output</h2>
+<p>The AI output should be treated as a draft.</p>
+<p>The human should not ask:</p>
+<pre class="text"><code>Is the output polished?</code></pre>
+<p>The better question is:</p>
+<pre class="text"><code>Is the output accurate, grounded, useful, and safe to act on?</code></pre>
+<p>The AI-generated draft may include:</p>
+<ul>
+<li>a summary of completed work</li>
+<li>a list of outputs</li>
+<li>unresolved issues</li>
+<li>recommended next steps</li>
+<li>items needing confirmation</li>
+</ul>
+<p>But the draft remains provisional until reviewed.</p>
+<hr>
+</section>
+<section id="step-6-evaluate-and-review-the-output" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-evaluate-and-review-the-output">Step 6: Evaluate and Review the Output</h2>
+<p>The evaluation step checks whether the output is usable.</p>
+<p>A simple review checklist may include:</p>
+<pre class="text"><code>Accuracy:
+Does the output match the provided evidence?
+
+Completeness:
+Does the output address the requested sections?
+
+Grounding:
+Can each important claim be traced to the context?
+
+Clarity:
+Is the output understandable to the intended audience?
+
+Safety:
+Does the output avoid exposing sensitive information or making unsupported claims?
+
+Actionability:
+Are the next steps realistic and appropriate?</code></pre>
+<p>The human reviewer should edit, correct, or reject the output as needed.</p>
+<p>This is where the second human step in Human–AI–Human becomes essential.</p>
+<hr>
+</section>
+<section id="step-7-document-the-decision-and-next-action" class="level2">
+<h2 class="anchored" data-anchor-id="step-7-document-the-decision-and-next-action">Step 7: Document the Decision and Next Action</h2>
+<p>The final step is documentation.</p>
+<p>The organization should record:</p>
+<ul>
+<li>the task</li>
+<li>the prompt or prompt version</li>
+<li>the context sources</li>
+<li>the model or tool used, if relevant</li>
+<li>the reviewer</li>
+<li>the review outcome</li>
+<li>the final action taken</li>
+</ul>
+<p>This can be captured in a task log.</p>
+<pre class="text"><code>Task ID: AI-BRIEF-001
+Task: Weekly project insight brief
+Risk level: Medium
+Input sources: project notes, chapter draft status, task log
+AI role: Drafting and organization
+Human reviewer: Project lead
+Review result: Edited and approved
+Final action: Shared with internal stakeholders</code></pre>
+<p>Documentation makes the workflow auditable and easier to improve.</p>
+<hr>
+</section>
+<section id="supporting-example-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-example-workflow">Supporting Example Workflow</h2>
+<p>This guide includes example scripts that support the case study.</p>
+<p>Create the example task log:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/01-create-example-ai-task-log.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Evaluate AI output quality:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py <span class="dt">\</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  data/results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Build a prompt registry:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/03-build-prompt-registry.py <span class="dt">\</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  data/results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Plot the evaluation summary:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> scripts/R/04-plot-evaluation-summary.R <span class="dt">\</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  data/results/ai-evaluation-summary.csv <span class="dt">\</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  data/reports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These scripts are intentionally simple.</p>
+<p>They demonstrate the system logic:</p>
+<pre class="text"><code>AI task log
+        ↓
+Evaluation summary
+        ↓
+Prompt registry
+        ↓
+Reviewable report artifact</code></pre>
+<p>The point is not to automate judgment.</p>
+<p>The point is to make AI-assisted work visible, reviewable, and reusable.</p>
+<hr>
+</section>
+<section id="expected-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="expected-outputs">Expected Outputs</h2>
+<p>After running the supporting workflow, the project should contain outputs such as:</p>
+<pre class="text"><code>data/example/ai-task-log.csv
+data/results/ai-evaluation-summary.csv
+data/results/prompt-registry.csv
+data/reports/ai-evaluation-summary.png</code></pre>
+<p>These outputs can be used in reporting, review, and governance.</p>
+<hr>
+</section>
+<section id="case-study-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-interpretation">Case Study Interpretation</h2>
+<p>This case study shows that a responsible AI workflow is not built from a prompt alone.</p>
+<p>It requires a system.</p>
+<p>The system includes:</p>
+<ul>
+<li>a clear human-defined problem</li>
+<li>a known audience</li>
+<li>explicit task boundaries</li>
+<li>prepared context</li>
+<li>grounded prompting</li>
+<li>quality evaluation</li>
+<li>human review</li>
+<li>documentation</li>
+<li>controlled automation</li>
+</ul>
+<p>This is what separates AI tool use from AI Systems.</p>
+<hr>
+</section>
+<section id="common-failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="common-failure-modes">Common Failure Modes</h2>
+<p>Common failures in end-to-end AI workflows include:</p>
+<ul>
+<li>starting with a vague task</li>
+<li>skipping risk classification</li>
+<li>using weak or missing context</li>
+<li>asking AI to make unsupported claims</li>
+<li>treating AI output as final</li>
+<li>failing to document the prompt</li>
+<li>failing to document review decisions</li>
+<li>automating before the workflow is stable</li>
+</ul>
+<p>Most failures are not model failures alone.</p>
+<p>They are workflow design failures.</p>
+<hr>
+</section>
+<section id="practical-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="practical-checklist">Practical Checklist</h2>
+<p>Before using AI in a repeatable workflow, ask:</p>
+<pre class="text"><code>Have we defined the task clearly?
+Have we identified the audience?
+Have we classified the risk?
+Have we prepared the context?
+Have we designed a reusable prompt?
+Have we defined evaluation criteria?
+Have we assigned human review responsibility?
+Have we documented the final decision?
+Have we decided what should and should not be automated?</code></pre>
+<p>If the answer is no, the workflow is not ready for operational use.</p>
+<hr>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<p>An end-to-end AI Systems workflow begins with human problem framing and ends with human judgment.</p>
+<p>AI can assist with drafting, reasoning, analysis, summarization, and automation.</p>
+<p>But responsible use requires grounding, evaluation, review, and documentation.</p>
+<p>The Human–AI–Human workflow is not a slogan.</p>
+<p>It is an operational design principle.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter focuses on career and workforce readiness.</p>
+<p>We will move from workflow design into the practical skills people need to work effectively with AI systems: AI literacy, problem framing, evaluation, documentation, communication, and responsible automation.</p>
+<p>By the end of the next chapter, AI will not only be treated as a tool to use, but as a capability to develop across roles, teams, and organizations.</p>
 
 
 </section>

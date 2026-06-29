@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -223,12 +258,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendix</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -243,7 +280,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#review-points" id="toc-review-points" class="nav-link active" data-scroll-target="#review-points">Review Points</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link active" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#the-human-ai-human-workflow" id="toc-the-human-ai-human-workflow" class="nav-link" data-scroll-target="#the-human-ai-human-workflow">The Human-AI-Human Workflow</a></li>
+  <li><a href="#why-human-review-matters" id="toc-why-human-review-matters" class="nav-link" data-scroll-target="#why-human-review-matters">Why Human Review Matters</a></li>
+  <li><a href="#where-humans-belong-in-the-workflow" id="toc-where-humans-belong-in-the-workflow" class="nav-link" data-scroll-target="#where-humans-belong-in-the-workflow">Where Humans Belong in the Workflow</a></li>
+  <li><a href="#human-judgment-cannot-be-outsourced" id="toc-human-judgment-cannot-be-outsourced" class="nav-link" data-scroll-target="#human-judgment-cannot-be-outsourced">Human Judgment Cannot Be Outsourced</a></li>
+  <li><a href="#review-depth-depends-on-risk" id="toc-review-depth-depends-on-risk" class="nav-link" data-scroll-target="#review-depth-depends-on-risk">Review Depth Depends on Risk</a></li>
+  <li><a href="#a-human-review-checklist" id="toc-a-human-review-checklist" class="nav-link" data-scroll-target="#a-human-review-checklist">A Human Review Checklist</a></li>
+  <li><a href="#designing-human-checkpoints" id="toc-designing-human-checkpoints" class="nav-link" data-scroll-target="#designing-human-checkpoints">Designing Human Checkpoints</a></li>
+  <li><a href="#human-in-the-loop-workflow-template" id="toc-human-in-the-loop-workflow-template" class="nav-link" data-scroll-target="#human-in-the-loop-workflow-template">Human-in-the-Loop Workflow Template</a></li>
+  <li><a href="#example-ai-assisted-report-drafting" id="toc-example-ai-assisted-report-drafting" class="nav-link" data-scroll-target="#example-ai-assisted-report-drafting">Example: AI-Assisted Report Drafting</a></li>
+  <li><a href="#example-ai-assisted-data-cleaning-suggestions" id="toc-example-ai-assisted-data-cleaning-suggestions" class="nav-link" data-scroll-target="#example-ai-assisted-data-cleaning-suggestions">Example: AI-Assisted Data Cleaning Suggestions</a></li>
+  <li><a href="#reviewable-outputs" id="toc-reviewable-outputs" class="nav-link" data-scroll-target="#reviewable-outputs">Reviewable Outputs</a></li>
+  <li><a href="#documentation-as-human-oversight" id="toc-documentation-as-human-oversight" class="nav-link" data-scroll-target="#documentation-as-human-oversight">Documentation as Human Oversight</a></li>
+  <li><a href="#supporting-script-connection" id="toc-supporting-script-connection" class="nav-link" data-scroll-target="#supporting-script-connection">Supporting Script Connection</a></li>
+  <li><a href="#common-failure-modes" id="toc-common-failure-modes" class="nav-link" data-scroll-target="#common-failure-modes">Common Failure Modes</a></li>
+  <li><a href="#practical-rule" id="toc-practical-rule" class="nav-link" data-scroll-target="#practical-rule">Practical Rule</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
@@ -252,7 +306,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-prompt-and-context-design.html">Applied AI Workflows</a></li><li class="breadcrumb-item"><a href="./07-human-in-the-loop-workflows.html"><span class="chapter-title">Human-in-the-Loop Workflows</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="human-in-loop" class="quarto-section-identifier"><span class="chapter-title">Human-in-the-Loop Workflows</span></span></h1>
+<h1 class="title"><span id="human-in-the-loop-workflows" class="quarto-section-identifier"><span class="chapter-title">Human-in-the-Loop Workflows</span></span></h1>
 </div>
 
 
@@ -278,19 +332,369 @@ ul.task-list li input[type="checkbox"] {
 <div class="cdi-message">
 <ul>
 <li><strong>ID:</strong> AI-007</li>
-<li><strong>Type:</strong> Workflow Chapter</li>
-<li><strong>Audience:</strong> Teams using AI for consequential work</li>
-<li><strong>Theme:</strong> AI should assist judgment, not replace accountability</li>
+<li><strong>Type:</strong> Core Chapter</li>
+<li><strong>Audience:</strong> AI users, analysts, educators, managers, and workflow designers</li>
+<li><strong>Theme:</strong> Responsible AI systems keep humans in the loop for judgment, review, accountability, and action</li>
 </ul>
 </div>
-<p>Human-in-the-loop design defines where people review, approve, correct, or reject AI outputs.</p>
-<p>This is especially important in education, research, health, finance, policy, and public communication.</p>
-<section id="review-points" class="level2">
-<h2 class="anchored" data-anchor-id="review-points">Review Points</h2>
-<pre class="text"><code>Before AI: Is the task appropriate?
-During AI: Is the context sufficient?
-After AI: Is the output correct and useful?
-Before action: Has a human accepted responsibility?</code></pre>
+<p>AI systems should not be designed as pipelines where humans disappear.</p>
+<p>They should be designed as workflows where humans remain responsible for framing the problem, checking the output, making decisions, and documenting what was done.</p>
+<p>This is especially important when AI is used for analysis, writing, decision support, automation, teaching, research, business operations, or public communication.</p>
+<p>AI can assist.</p>
+<p>AI can accelerate.</p>
+<p>AI can summarize, classify, draft, compare, suggest, organize, and automate.</p>
+<p>But the human remains responsible for the meaning, quality, ethics, and consequences of the work.</p>
+<p>That is the purpose of human-in-the-loop workflow design.</p>
+<hr>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this chapter, you should be able to:</p>
+<ul>
+<li>Explain why human review is central to responsible AI systems.</li>
+<li>Identify where human judgment is needed in an AI workflow.</li>
+<li>Distinguish low-risk review from high-risk review.</li>
+<li>Design a Human-AI-Human workflow for a real task.</li>
+<li>Create checkpoints for quality, safety, accuracy, and accountability.</li>
+<li>Document AI-assisted work in a way that is reviewable and reproducible.</li>
+</ul>
+<hr>
+</section>
+<section id="the-human-ai-human-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-human-ai-human-workflow">The Human-AI-Human Workflow</h2>
+<p>The central model of this guide is the Human-AI-Human workflow.</p>
+<pre class="text"><code>Human defines the problem
+        ↓
+AI assists with generation, reasoning, analysis, or automation
+        ↓
+Human evaluates, decides, documents, and acts</code></pre>
+<p>This model prevents AI from becoming an unreviewed black box.</p>
+<p>It also prevents the human from using AI as a substitute for thinking.</p>
+<p>The value of AI is strongest when human judgment and machine assistance are combined deliberately.</p>
+<hr>
+</section>
+<section id="why-human-review-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-human-review-matters">Why Human Review Matters</h2>
+<p>AI outputs can appear fluent even when they are incomplete, inaccurate, poorly grounded, or inappropriate for the task.</p>
+<p>Human review matters because AI systems may:</p>
+<ul>
+<li>Omit important context.</li>
+<li>Invent unsupported details.</li>
+<li>Misinterpret the task.</li>
+<li>Overgeneralize from weak evidence.</li>
+<li>Produce confident but incorrect answers.</li>
+<li>Miss ethical, legal, cultural, or organizational constraints.</li>
+<li>Generate outputs that sound polished but are not defensible.</li>
+</ul>
+<p>A responsible workflow does not ask, “Did AI produce something?”</p>
+<p>It asks, “Has a human reviewed whether this output is useful, accurate, appropriate, and safe for its intended purpose?”</p>
+<hr>
+</section>
+<section id="where-humans-belong-in-the-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="where-humans-belong-in-the-workflow">Where Humans Belong in the Workflow</h2>
+<p>Human oversight is not only needed at the end.</p>
+<p>It belongs throughout the workflow.</p>
+<pre class="text"><code>Problem framing
+  Human decides what the task is and why it matters.
+
+Context preparation
+  Human selects the background information, data, constraints, and sources.
+
+AI assistance
+  AI generates, summarizes, analyzes, transforms, or proposes outputs.
+
+Review and evaluation
+  Human checks accuracy, relevance, grounding, completeness, tone, and risk.
+
+Decision and action
+  Human decides what to use, revise, reject, escalate, or document.
+
+Documentation
+  Human records the task, prompt, source material, output status, and review outcome.</code></pre>
+<p>This structure turns AI use into a workflow rather than a one-off interaction.</p>
+<hr>
+</section>
+<section id="human-judgment-cannot-be-outsourced" class="level2">
+<h2 class="anchored" data-anchor-id="human-judgment-cannot-be-outsourced">Human Judgment Cannot Be Outsourced</h2>
+<p>AI can help produce options.</p>
+<p>It can help compare alternatives.</p>
+<p>It can help organize evidence.</p>
+<p>It can help draft documentation.</p>
+<p>But some responsibilities remain human responsibilities.</p>
+<p>These include:</p>
+<ul>
+<li>Defining the purpose of the work.</li>
+<li>Understanding the audience.</li>
+<li>Recognizing sensitive context.</li>
+<li>Interpreting consequences.</li>
+<li>Knowing when the output is not good enough.</li>
+<li>Deciding whether a task should be automated.</li>
+<li>Taking responsibility for final action.</li>
+</ul>
+<p>A human-in-the-loop system is not weak because it requires review.</p>
+<p>It is stronger because it makes responsibility explicit.</p>
+<hr>
+</section>
+<section id="review-depth-depends-on-risk" class="level2">
+<h2 class="anchored" data-anchor-id="review-depth-depends-on-risk">Review Depth Depends on Risk</h2>
+<p>Not every AI output needs the same level of review.</p>
+<p>A brainstormed list of possible blog titles does not need the same review as a medical summary, legal memo, financial recommendation, hiring decision, or research interpretation.</p>
+<p>A practical AI system should classify tasks by risk.</p>
+<pre class="text"><code>Low-risk task
+  Examples: brainstorming, formatting, rewriting, summarizing non-sensitive notes.
+  Review need: quick human review for usefulness and tone.
+
+Moderate-risk task
+  Examples: analysis planning, educational materials, public communication, workflow design.
+  Review need: careful review for accuracy, completeness, and audience fit.
+
+High-risk task
+  Examples: clinical, legal, financial, employment, policy, safety, or sensitive personal decisions.
+  Review need: expert review, source verification, documentation, and possible non-AI decision control.</code></pre>
+<p>The higher the risk, the more structured the human checkpoint should be.</p>
+<hr>
+</section>
+<section id="a-human-review-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="a-human-review-checklist">A Human Review Checklist</h2>
+<p>A simple review checklist can prevent many AI workflow failures.</p>
+<pre class="text"><code>AI Output Review Checklist
+
+Task clarity
+[ ] Does the output answer the actual question?
+[ ] Does it match the intended audience?
+[ ] Does it stay within the requested scope?
+
+Grounding
+[ ] Is the output based on the provided data, sources, or context?
+[ ] Are unsupported claims removed or flagged?
+[ ] Are citations or evidence included where needed?
+
+Accuracy
+[ ] Are key facts correct?
+[ ] Are numbers, names, dates, and definitions checked?
+[ ] Are assumptions clearly stated?
+
+Completeness
+[ ] Are important limitations included?
+[ ] Are missing data or uncertainty noted?
+[ ] Are next steps clear?
+
+Risk and responsibility
+[ ] Could this output affect health, money, legal status, safety, employment, or reputation?
+[ ] Does it require expert review?
+[ ] Is a human clearly responsible for the final decision?</code></pre>
+<p>This checklist can be adapted for different CDI systems.</p>
+<p>In a data science system, the review may focus on assumptions, metrics, and interpretation.</p>
+<p>In a medical data system, the review may focus on privacy, clinical validity, and regulatory risk.</p>
+<p>In an AI system, the review focuses on whether AI assistance has been used responsibly inside a human-led workflow.</p>
+<hr>
+</section>
+<section id="designing-human-checkpoints" class="level2">
+<h2 class="anchored" data-anchor-id="designing-human-checkpoints">Designing Human Checkpoints</h2>
+<p>A checkpoint is a deliberate moment where the workflow pauses for human review.</p>
+<p>Good checkpoints are specific.</p>
+<p>They do not simply say, “review output.”</p>
+<p>They say what to review, who reviews it, what evidence is needed, and what happens next.</p>
+<pre class="text"><code>Checkpoint name:
+  Output quality review
+
+When it occurs:
+  After AI produces a draft or analysis summary
+
+Reviewer:
+  Human task owner
+
+Review criteria:
+  Accuracy, completeness, grounding, tone, and risk level
+
+Possible outcomes:
+  Accept, revise, rerun with better context, escalate, or reject
+
+Documentation:
+  Record review status, reviewer, date, and notes</code></pre>
+<p>This makes the workflow auditable.</p>
+<p>It also makes it easier to improve over time.</p>
+<hr>
+</section>
+<section id="human-in-the-loop-workflow-template" class="level2">
+<h2 class="anchored" data-anchor-id="human-in-the-loop-workflow-template">Human-in-the-Loop Workflow Template</h2>
+<p>The following template can be reused when designing AI-assisted workflows.</p>
+<pre class="text"><code>Workflow name:
+
+Purpose:
+
+Audience or user:
+
+Input materials:
+
+AI role:
+
+Human role before AI use:
+
+Human role after AI use:
+
+Review criteria:
+
+Risk level:
+
+Escalation trigger:
+
+Documentation required:
+
+Final decision owner:</code></pre>
+<p>This template is useful before moving into automation.</p>
+<p>If a workflow cannot be clearly described with this template, it is probably not ready for automation.</p>
+<hr>
+</section>
+<section id="example-ai-assisted-report-drafting" class="level2">
+<h2 class="anchored" data-anchor-id="example-ai-assisted-report-drafting">Example: AI-Assisted Report Drafting</h2>
+<p>Consider a workflow where AI helps draft a short report from a structured results table.</p>
+<p>A weak workflow looks like this:</p>
+<pre class="text"><code>Upload table → ask AI to write report → publish output</code></pre>
+<p>This is risky because there is no explicit review step.</p>
+<p>A stronger workflow looks like this:</p>
+<pre class="text"><code>Human defines report purpose
+        ↓
+Human prepares results table and interpretation notes
+        ↓
+AI drafts structured report
+        ↓
+Human checks claims against the table
+        ↓
+Human revises interpretation and adds limitations
+        ↓
+Human approves final report
+        ↓
+Workflow records prompt, source table, output, and review status</code></pre>
+<p>The second workflow is slower than the first.</p>
+<p>But it is more defensible, reusable, and trustworthy.</p>
+<hr>
+</section>
+<section id="example-ai-assisted-data-cleaning-suggestions" class="level2">
+<h2 class="anchored" data-anchor-id="example-ai-assisted-data-cleaning-suggestions">Example: AI-Assisted Data Cleaning Suggestions</h2>
+<p>AI can help suggest data cleaning steps.</p>
+<p>But it should not silently alter important data without review.</p>
+<p>A responsible workflow may look like this:</p>
+<pre class="text"><code>Human provides data dictionary and sample records
+        ↓
+AI identifies possible inconsistencies
+        ↓
+Human reviews suggested cleaning rules
+        ↓
+Script applies approved rules
+        ↓
+Human checks before-and-after summaries
+        ↓
+Workflow saves cleaning log</code></pre>
+<p>Here, AI is useful for pattern recognition and suggestion.</p>
+<p>The human remains responsible for approving the rules.</p>
+<hr>
+</section>
+<section id="reviewable-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="reviewable-outputs">Reviewable Outputs</h2>
+<p>AI workflows should produce outputs that can be reviewed.</p>
+<p>A reviewable output is clear enough for a human to inspect, question, and improve.</p>
+<p>Examples include:</p>
+<ul>
+<li>A table of extracted claims.</li>
+<li>A summary with source references.</li>
+<li>A draft with assumptions listed.</li>
+<li>A checklist with pass/fail decisions.</li>
+<li>A comparison table of options.</li>
+<li>A workflow log showing prompt, input, output, and review status.</li>
+</ul>
+<p>Avoid outputs that are too vague to inspect.</p>
+<p>For example, “looks good” is not a reviewable result.</p>
+<p>A better review note is:</p>
+<pre class="text"><code>Reviewed for factual accuracy, audience fit, and completeness.
+Two unsupported claims were removed.
+One limitation section was added.
+Approved for use in internal training only.</code></pre>
+<hr>
+</section>
+<section id="documentation-as-human-oversight" class="level2">
+<h2 class="anchored" data-anchor-id="documentation-as-human-oversight">Documentation as Human Oversight</h2>
+<p>Documentation is part of human oversight.</p>
+<p>If an AI-assisted output matters, the workflow should record what happened.</p>
+<p>At minimum, useful documentation may include:</p>
+<pre class="text"><code>Task:
+Input material:
+Prompt or prompt version:
+AI output location:
+Reviewer:
+Review date:
+Review status:
+Changes made:
+Limitations:
+Final decision:</code></pre>
+<p>This record does not need to be complicated.</p>
+<p>But it should be clear enough that someone else can understand what was done.</p>
+<hr>
+</section>
+<section id="supporting-script-connection" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-script-connection">Supporting Script Connection</h2>
+<p>The task log created earlier in this guide can support human-in-the-loop documentation.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/01-create-example-ai-task-log.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then evaluation summaries can be created with:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py <span class="dt">\</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  data/results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These scripts do not replace human judgment.</p>
+<p>They help organize review evidence so that human judgment becomes easier to document.</p>
+<hr>
+</section>
+<section id="common-failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="common-failure-modes">Common Failure Modes</h2>
+<p>Human-in-the-loop workflows often fail when the review step is vague or performative.</p>
+<p>Common failure modes include:</p>
+<pre class="text"><code>Rubber-stamp review
+  Human approves output without checking it carefully.
+
+Unclear ownership
+  No one knows who is responsible for the final decision.
+
+No escalation path
+  The reviewer finds a problem but does not know what to do next.
+
+No documentation
+  The workflow produces output but leaves no record of prompt, input, review, or decision.
+
+Review too late
+  Human review happens after the output has already been used.
+
+Automation too early
+  A task is automated before quality criteria and review checkpoints are defined.</code></pre>
+<p>A good AI system anticipates these failures and designs around them.</p>
+<hr>
+</section>
+<section id="practical-rule" class="level2">
+<h2 class="anchored" data-anchor-id="practical-rule">Practical Rule</h2>
+<p>Before using AI output in real work, ask three questions:</p>
+<pre class="text"><code>Who reviewed this?
+
+What did they check?
+
+Who is responsible for the final decision?</code></pre>
+<p>If those questions cannot be answered, the workflow is not yet ready for serious use.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>Human-in-the-loop design keeps AI systems responsible, reviewable, and aligned with human goals.</p>
+<p>The goal is not to slow down AI use unnecessarily.</p>
+<p>The goal is to place human judgment where it matters most.</p>
+<p>In the CDI AI Systems framework, AI assistance sits inside a human-led workflow.</p>
+<p>Humans define the problem.</p>
+<p>AI assists.</p>
+<p>Humans evaluate, decide, document, and act.</p>
+<p>That is the Human-AI-Human workflow in practice.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter introduces automation and agentic workflows.</p>
+<p>We will build on the human-in-the-loop foundation by asking when AI-assisted tasks can be safely repeated, scripted, scheduled, or partially automated.</p>
+<p>The key message will remain the same: automation should come after clear problem framing, grounding, evaluation, human review, and documented responsibility.</p>
 
 
 </section>

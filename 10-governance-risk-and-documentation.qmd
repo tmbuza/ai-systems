@@ -1,27 +1,321 @@
-# Governance, Risk, and Documentation {#governance-risk}
+# Governance, Risk, and Documentation
 
 :::cdi-message
-- **ID:** AI-010
-- **Type:** Governance Chapter
-- **Audience:** Leaders, educators, analysts, and teams
-- **Theme:** AI systems need documented boundaries
+- **ID:** AIS-010
+- **Type:** System Guide Chapter
+- **Audience:** AI users, analysts, educators, workflow designers, team leads, and decision-makers
+- **Theme:** Responsible AI systems require governance, risk awareness, and documentation
 :::
 
+AI systems are not responsible simply because they use advanced tools.
 
-Governance defines what AI may do, what it may not do, who reviews outputs, and how risk is managed.
+They become responsible when humans define boundaries, document decisions, review outputs, manage risks, and remain accountable for how AI-supported work is used.
 
-Documentation helps teams learn from previous AI use and avoid repeating mistakes.
+This chapter introduces governance, risk, and documentation as practical parts of AI systems design.
 
-## Documentation Template
+The goal is not to create bureaucracy.
+
+The goal is to make AI-supported work clear, reviewable, reproducible, and safe enough for the context in which it will be used.
+
+---
+
+## Why Governance Matters
+
+AI tools can generate text, summarize documents, write code, classify information, draft reports, and support decisions.
+
+That power creates value.
+
+It also creates risk.
+
+AI-generated work can be:
+
+- inaccurate,
+- incomplete,
+- biased,
+- outdated,
+- poorly grounded,
+- overconfident,
+- difficult to trace,
+- or used outside its proper context.
+
+Governance is the set of practices that prevents AI from becoming an uncontrolled black box inside a workflow.
+
+In CDI terms, governance answers five questions:
+
+1. What is the AI system allowed to do?
+2. What information is it allowed to use?
+3. What outputs can it produce?
+4. Who reviews those outputs?
+5. Who is accountable for the final decision?
+
+A workflow without governance may still be useful.
+
+But it is not yet a dependable system.
+
+---
+
+## Governance Is Part of the Human--AI--Human Workflow
+
+The Human--AI--Human workflow remains the central pattern.
 
 ```text
-Task name:
-Purpose:
-Input data or context:
-AI tool used:
-Human reviewer:
-Known limitations:
-Risk level:
-Decision made:
+Human frames the task
+        ↓
+AI assists with generation, analysis, synthesis, or automation
+        ↓
+Human reviews, decides, documents, and acts
 ```
 
+Governance strengthens each part of that loop.
+
+At the first human step, governance defines the task, boundary, data source, risk level, and intended use.
+
+At the AI step, governance controls what context is provided, what tools are used, and what outputs are expected.
+
+At the final human step, governance requires review, documentation, approval, and accountability.
+
+The system is not complete when AI produces an answer.
+
+The system is complete only when the output has been reviewed and its use has been documented.
+
+---
+
+## AI Risk Is Context-Dependent
+
+The same AI capability can be low risk in one setting and high risk in another.
+
+For example, asking AI to rewrite a paragraph for clarity is usually low risk.
+
+Asking AI to summarize a medical record, recommend a clinical action, review a legal contract, or evaluate a person for an opportunity is much higher risk.
+
+Risk depends on:
+
+- the task,
+- the data,
+- the audience,
+- the possible harm,
+- the level of automation,
+- the review process,
+- and the consequences of error.
+
+A CDI AI system should classify tasks before deciding how much review is needed.
+
+---
+
+## A Practical AI Risk Scale
+
+A simple risk scale is useful for most applied workflows.
+
+| Risk level | Description | Example | Minimum control |
+|---|---|---|---|
+| Low | Errors are unlikely to cause harm | Rewriting a non-sensitive paragraph | Human review before use |
+| Moderate | Errors may affect interpretation or communication | Summarizing project findings | Source checking and documented review |
+| High | Errors may affect decisions, people, money, health, or compliance | Drafting policy, clinical, legal, financial, or eligibility-related content | Expert review and approval |
+| Prohibited or restricted | Task should not be delegated to AI without formal controls | Fully automated high-stakes decisions | Do not automate without governance framework |
+
+This scale is not a legal or regulatory classification.
+
+It is a practical design tool.
+
+The higher the risk, the more documentation and human oversight the workflow needs.
+
+---
+
+## What Should Be Documented
+
+AI systems become easier to trust when important choices are recorded.
+
+A lightweight AI workflow record should include:
+
+- task name,
+- purpose,
+- intended audience,
+- input data or source materials,
+- prompt or instruction used,
+- model or tool used,
+- output generated,
+- known limitations,
+- review criteria,
+- reviewer,
+- decision made,
+- date,
+- and final status.
+
+Documentation does not need to be complicated.
+
+It only needs to make the workflow understandable later.
+
+If someone asks, "How was this output produced?" the system should be able to answer.
+
+---
+
+## The AI Task Log
+
+One of the simplest documentation tools is an AI task log.
+
+An AI task log records what AI was used for and how the output was reviewed.
+
+A basic task log may look like this:
+
+```text
+task_id,task_name,risk_level,input_source,ai_role,human_review_required,review_status,final_use
+AIS-001,Rewrite guide introduction,low,chapter draft,editing,true,approved,published
+AIS-002,Summarize interview notes,moderate,meeting notes,summarization,true,needs revision,not used
+AIS-003,Draft policy recommendation,high,internal report,drafting,true,expert review required,not finalized
+```
+
+This guide includes an example task log workflow.
+
+```bash
+bash scripts/bash/01-create-example-ai-task-log.sh
+```
+
+The task log can then be evaluated using the supporting Python script.
+
+```bash
+python scripts/python/02-evaluate-ai-output-quality.py \
+  data/example/ai-task-log.csv \
+  data/results
+```
+
+The purpose of this script is not to replace human judgment.
+
+It creates a simple summary that supports review and reporting.
+
+---
+
+## Prompt Registries as Governance Tools
+
+A prompt registry records reusable prompts and their purpose.
+
+This is useful when a team wants consistent AI-supported workflows.
+
+A prompt registry should document:
+
+- prompt name,
+- task type,
+- expected input,
+- expected output,
+- review requirements,
+- risk level,
+- version,
+- and owner.
+
+This guide includes a supporting prompt registry script.
+
+```bash
+python scripts/python/03-build-prompt-registry.py \
+  data/example/ai-task-log.csv \
+  data/results
+```
+
+A prompt registry helps prevent hidden workflow drift.
+
+When prompts change, the workflow changes.
+
+When the workflow changes, the documentation should change too.
+
+---
+
+## Governance Questions Before Automation
+
+Before any AI workflow is automated, the following questions should be answered:
+
+1. Is the task clearly defined?
+2. Is the input source known and appropriate?
+3. Is the output reviewable?
+4. Is the risk level documented?
+5. Is a human reviewer assigned?
+6. Are failure modes known?
+7. Is there a process for stopping or correcting the workflow?
+8. Is the final decision made by a human when needed?
+
+Automation should not be used to avoid responsibility.
+
+Automation should be used only when the workflow is already clear, bounded, and reviewable.
+
+---
+
+## Common Governance Failure Modes
+
+AI workflows often fail because governance is added too late.
+
+Common failure modes include:
+
+- treating AI output as final,
+- using sensitive data without clear boundaries,
+- failing to record prompts or sources,
+- automating tasks before they are understood,
+- not assigning human accountability,
+- ignoring uncertainty,
+- using AI outputs outside their intended context,
+- and publishing outputs without review.
+
+These failures are usually not caused by one bad prompt.
+
+They are caused by weak system design.
+
+---
+
+## Responsible Documentation Is a Design Habit
+
+Documentation should not be treated as an afterthought.
+
+It is part of the workflow.
+
+A useful AI system leaves behind evidence of:
+
+- what was asked,
+- what was used,
+- what was generated,
+- what was checked,
+- what was changed,
+- what was approved,
+- and what was finally used.
+
+This evidence supports transparency, learning, improvement, and accountability.
+
+In CDI guides, documentation is not separate from analysis.
+
+Documentation is how analysis becomes a system.
+
+---
+
+## Governance Checklist
+
+Before using AI output in a real workflow, check the following:
+
+- The task is clearly described.
+- The risk level is known.
+- The input sources are documented.
+- Sensitive information has been handled appropriately.
+- The prompt or instruction is recorded when needed.
+- The AI output has been reviewed by a human.
+- Important claims are checked against evidence.
+- Limitations are stated.
+- The final decision-maker is clear.
+- The final use of the output is documented.
+
+If several of these are missing, the workflow is not ready for operational use.
+
+---
+
+## Chapter Summary
+
+Governance is what turns AI use into accountable AI systems.
+
+Risk classification helps determine how much review and documentation are needed.
+
+Documentation creates traceability.
+
+Prompt registries and task logs make AI workflows easier to review, repeat, improve, and govern.
+
+The Human--AI--Human workflow remains the core pattern: humans define the task, AI assists, and humans review, decide, document, and act.
+
+---
+
+## Looking Ahead
+
+The next chapter brings the pieces together in an end-to-end case study.
+
+We will move from isolated AI tasks into a complete workflow that includes task framing, prompt design, grounding, evaluation, review, documentation, and reporting.

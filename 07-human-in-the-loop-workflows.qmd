@@ -1,23 +1,497 @@
-# Human-in-the-Loop Workflows {#human-in-loop}
+# Human-in-the-Loop Workflows {#human-in-the-loop-workflows}
 
 :::cdi-message
 - **ID:** AI-007
-- **Type:** Workflow Chapter
-- **Audience:** Teams using AI for consequential work
-- **Theme:** AI should assist judgment, not replace accountability
+- **Type:** Core Chapter
+- **Audience:** AI users, analysts, educators, managers, and workflow designers
+- **Theme:** Responsible AI systems keep humans in the loop for judgment, review, accountability, and action
 :::
 
+AI systems should not be designed as pipelines where humans disappear.
 
-Human-in-the-loop design defines where people review, approve, correct, or reject AI outputs.
+They should be designed as workflows where humans remain responsible for framing the problem, checking the output, making decisions, and documenting what was done.
 
-This is especially important in education, research, health, finance, policy, and public communication.
+This is especially important when AI is used for analysis, writing, decision support, automation, teaching, research, business operations, or public communication.
 
-## Review Points
+AI can assist.
+
+AI can accelerate.
+
+AI can summarize, classify, draft, compare, suggest, organize, and automate.
+
+But the human remains responsible for the meaning, quality, ethics, and consequences of the work.
+
+That is the purpose of human-in-the-loop workflow design.
+
+---
+
+## Learning Outcomes
+
+By the end of this chapter, you should be able to:
+
+- Explain why human review is central to responsible AI systems.
+- Identify where human judgment is needed in an AI workflow.
+- Distinguish low-risk review from high-risk review.
+- Design a Human-AI-Human workflow for a real task.
+- Create checkpoints for quality, safety, accuracy, and accountability.
+- Document AI-assisted work in a way that is reviewable and reproducible.
+
+---
+
+## The Human-AI-Human Workflow
+
+The central model of this guide is the Human-AI-Human workflow.
 
 ```text
-Before AI: Is the task appropriate?
-During AI: Is the context sufficient?
-After AI: Is the output correct and useful?
-Before action: Has a human accepted responsibility?
+Human defines the problem
+        ↓
+AI assists with generation, reasoning, analysis, or automation
+        ↓
+Human evaluates, decides, documents, and acts
 ```
 
+This model prevents AI from becoming an unreviewed black box.
+
+It also prevents the human from using AI as a substitute for thinking.
+
+The value of AI is strongest when human judgment and machine assistance are combined deliberately.
+
+---
+
+## Why Human Review Matters
+
+AI outputs can appear fluent even when they are incomplete, inaccurate, poorly grounded, or inappropriate for the task.
+
+Human review matters because AI systems may:
+
+- Omit important context.
+- Invent unsupported details.
+- Misinterpret the task.
+- Overgeneralize from weak evidence.
+- Produce confident but incorrect answers.
+- Miss ethical, legal, cultural, or organizational constraints.
+- Generate outputs that sound polished but are not defensible.
+
+A responsible workflow does not ask, “Did AI produce something?”
+
+It asks, “Has a human reviewed whether this output is useful, accurate, appropriate, and safe for its intended purpose?”
+
+---
+
+## Where Humans Belong in the Workflow
+
+Human oversight is not only needed at the end.
+
+It belongs throughout the workflow.
+
+```text
+Problem framing
+  Human decides what the task is and why it matters.
+
+Context preparation
+  Human selects the background information, data, constraints, and sources.
+
+AI assistance
+  AI generates, summarizes, analyzes, transforms, or proposes outputs.
+
+Review and evaluation
+  Human checks accuracy, relevance, grounding, completeness, tone, and risk.
+
+Decision and action
+  Human decides what to use, revise, reject, escalate, or document.
+
+Documentation
+  Human records the task, prompt, source material, output status, and review outcome.
+```
+
+This structure turns AI use into a workflow rather than a one-off interaction.
+
+---
+
+## Human Judgment Cannot Be Outsourced
+
+AI can help produce options.
+
+It can help compare alternatives.
+
+It can help organize evidence.
+
+It can help draft documentation.
+
+But some responsibilities remain human responsibilities.
+
+These include:
+
+- Defining the purpose of the work.
+- Understanding the audience.
+- Recognizing sensitive context.
+- Interpreting consequences.
+- Knowing when the output is not good enough.
+- Deciding whether a task should be automated.
+- Taking responsibility for final action.
+
+A human-in-the-loop system is not weak because it requires review.
+
+It is stronger because it makes responsibility explicit.
+
+---
+
+## Review Depth Depends on Risk
+
+Not every AI output needs the same level of review.
+
+A brainstormed list of possible blog titles does not need the same review as a medical summary, legal memo, financial recommendation, hiring decision, or research interpretation.
+
+A practical AI system should classify tasks by risk.
+
+```text
+Low-risk task
+  Examples: brainstorming, formatting, rewriting, summarizing non-sensitive notes.
+  Review need: quick human review for usefulness and tone.
+
+Moderate-risk task
+  Examples: analysis planning, educational materials, public communication, workflow design.
+  Review need: careful review for accuracy, completeness, and audience fit.
+
+High-risk task
+  Examples: clinical, legal, financial, employment, policy, safety, or sensitive personal decisions.
+  Review need: expert review, source verification, documentation, and possible non-AI decision control.
+```
+
+The higher the risk, the more structured the human checkpoint should be.
+
+---
+
+## A Human Review Checklist
+
+A simple review checklist can prevent many AI workflow failures.
+
+```text
+AI Output Review Checklist
+
+Task clarity
+[ ] Does the output answer the actual question?
+[ ] Does it match the intended audience?
+[ ] Does it stay within the requested scope?
+
+Grounding
+[ ] Is the output based on the provided data, sources, or context?
+[ ] Are unsupported claims removed or flagged?
+[ ] Are citations or evidence included where needed?
+
+Accuracy
+[ ] Are key facts correct?
+[ ] Are numbers, names, dates, and definitions checked?
+[ ] Are assumptions clearly stated?
+
+Completeness
+[ ] Are important limitations included?
+[ ] Are missing data or uncertainty noted?
+[ ] Are next steps clear?
+
+Risk and responsibility
+[ ] Could this output affect health, money, legal status, safety, employment, or reputation?
+[ ] Does it require expert review?
+[ ] Is a human clearly responsible for the final decision?
+```
+
+This checklist can be adapted for different CDI systems.
+
+In a data science system, the review may focus on assumptions, metrics, and interpretation.
+
+In a medical data system, the review may focus on privacy, clinical validity, and regulatory risk.
+
+In an AI system, the review focuses on whether AI assistance has been used responsibly inside a human-led workflow.
+
+---
+
+## Designing Human Checkpoints
+
+A checkpoint is a deliberate moment where the workflow pauses for human review.
+
+Good checkpoints are specific.
+
+They do not simply say, “review output.”
+
+They say what to review, who reviews it, what evidence is needed, and what happens next.
+
+```text
+Checkpoint name:
+  Output quality review
+
+When it occurs:
+  After AI produces a draft or analysis summary
+
+Reviewer:
+  Human task owner
+
+Review criteria:
+  Accuracy, completeness, grounding, tone, and risk level
+
+Possible outcomes:
+  Accept, revise, rerun with better context, escalate, or reject
+
+Documentation:
+  Record review status, reviewer, date, and notes
+```
+
+This makes the workflow auditable.
+
+It also makes it easier to improve over time.
+
+---
+
+## Human-in-the-Loop Workflow Template
+
+The following template can be reused when designing AI-assisted workflows.
+
+```text
+Workflow name:
+
+Purpose:
+
+Audience or user:
+
+Input materials:
+
+AI role:
+
+Human role before AI use:
+
+Human role after AI use:
+
+Review criteria:
+
+Risk level:
+
+Escalation trigger:
+
+Documentation required:
+
+Final decision owner:
+```
+
+This template is useful before moving into automation.
+
+If a workflow cannot be clearly described with this template, it is probably not ready for automation.
+
+---
+
+## Example: AI-Assisted Report Drafting
+
+Consider a workflow where AI helps draft a short report from a structured results table.
+
+A weak workflow looks like this:
+
+```text
+Upload table → ask AI to write report → publish output
+```
+
+This is risky because there is no explicit review step.
+
+A stronger workflow looks like this:
+
+```text
+Human defines report purpose
+        ↓
+Human prepares results table and interpretation notes
+        ↓
+AI drafts structured report
+        ↓
+Human checks claims against the table
+        ↓
+Human revises interpretation and adds limitations
+        ↓
+Human approves final report
+        ↓
+Workflow records prompt, source table, output, and review status
+```
+
+The second workflow is slower than the first.
+
+But it is more defensible, reusable, and trustworthy.
+
+---
+
+## Example: AI-Assisted Data Cleaning Suggestions
+
+AI can help suggest data cleaning steps.
+
+But it should not silently alter important data without review.
+
+A responsible workflow may look like this:
+
+```text
+Human provides data dictionary and sample records
+        ↓
+AI identifies possible inconsistencies
+        ↓
+Human reviews suggested cleaning rules
+        ↓
+Script applies approved rules
+        ↓
+Human checks before-and-after summaries
+        ↓
+Workflow saves cleaning log
+```
+
+Here, AI is useful for pattern recognition and suggestion.
+
+The human remains responsible for approving the rules.
+
+---
+
+## Reviewable Outputs
+
+AI workflows should produce outputs that can be reviewed.
+
+A reviewable output is clear enough for a human to inspect, question, and improve.
+
+Examples include:
+
+- A table of extracted claims.
+- A summary with source references.
+- A draft with assumptions listed.
+- A checklist with pass/fail decisions.
+- A comparison table of options.
+- A workflow log showing prompt, input, output, and review status.
+
+Avoid outputs that are too vague to inspect.
+
+For example, “looks good” is not a reviewable result.
+
+A better review note is:
+
+```text
+Reviewed for factual accuracy, audience fit, and completeness.
+Two unsupported claims were removed.
+One limitation section was added.
+Approved for use in internal training only.
+```
+
+---
+
+## Documentation as Human Oversight
+
+Documentation is part of human oversight.
+
+If an AI-assisted output matters, the workflow should record what happened.
+
+At minimum, useful documentation may include:
+
+```text
+Task:
+Input material:
+Prompt or prompt version:
+AI output location:
+Reviewer:
+Review date:
+Review status:
+Changes made:
+Limitations:
+Final decision:
+```
+
+This record does not need to be complicated.
+
+But it should be clear enough that someone else can understand what was done.
+
+---
+
+## Supporting Script Connection
+
+The task log created earlier in this guide can support human-in-the-loop documentation.
+
+For example:
+
+```bash
+bash scripts/bash/01-create-example-ai-task-log.sh
+```
+
+Then evaluation summaries can be created with:
+
+```bash
+python scripts/python/02-evaluate-ai-output-quality.py \
+  data/example/ai-task-log.csv \
+  data/results
+```
+
+These scripts do not replace human judgment.
+
+They help organize review evidence so that human judgment becomes easier to document.
+
+---
+
+## Common Failure Modes
+
+Human-in-the-loop workflows often fail when the review step is vague or performative.
+
+Common failure modes include:
+
+```text
+Rubber-stamp review
+  Human approves output without checking it carefully.
+
+Unclear ownership
+  No one knows who is responsible for the final decision.
+
+No escalation path
+  The reviewer finds a problem but does not know what to do next.
+
+No documentation
+  The workflow produces output but leaves no record of prompt, input, review, or decision.
+
+Review too late
+  Human review happens after the output has already been used.
+
+Automation too early
+  A task is automated before quality criteria and review checkpoints are defined.
+```
+
+A good AI system anticipates these failures and designs around them.
+
+---
+
+## Practical Rule
+
+Before using AI output in real work, ask three questions:
+
+```text
+Who reviewed this?
+
+What did they check?
+
+Who is responsible for the final decision?
+```
+
+If those questions cannot be answered, the workflow is not yet ready for serious use.
+
+---
+
+## Chapter Summary
+
+Human-in-the-loop design keeps AI systems responsible, reviewable, and aligned with human goals.
+
+The goal is not to slow down AI use unnecessarily.
+
+The goal is to place human judgment where it matters most.
+
+In the CDI AI Systems framework, AI assistance sits inside a human-led workflow.
+
+Humans define the problem.
+
+AI assists.
+
+Humans evaluate, decide, document, and act.
+
+That is the Human-AI-Human workflow in practice.
+
+---
+
+## Looking Ahead
+
+The next chapter introduces automation and agentic workflows.
+
+We will build on the human-in-the-loop foundation by asking when AI-assisted tasks can be safely repeated, scripted, scheduled, or partially automated.
+
+The key message will remain the same: automation should come after clear problem framing, grounding, evaluation, human review, and documented responsibility.
