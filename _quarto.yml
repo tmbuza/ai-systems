@@ -8,32 +8,45 @@ date-format: "MMM YYYY"
 
 book:
   title: "AI Systems"
-  subtitle: "From AI Literacy to Applied Intelligent Workflows"
+  subtitle: "From AI Foundations to Reusable Agents and Applied Workflows"
   author: "Teresia Mrema Buza | Complex Data Insights"
 
   chapters:
     - index.qmd
-    - part: "Foundation"
+
+    - part: "Part I: AI Foundations"
       chapters:
-        - 00-preface-and-overview.qmd
-        - 01-ai-systems-thinking.qmd
-        - 02-ai-literacy-and-responsible-use.qmd
-        - 03-problem-framing-for-ai.qmd
-    - part: "Applied AI Workflows"
+        - 00-preface.qmd
+        - 01-ai-system-overview.qmd
+        - 02-thinking-with-ai.qmd
+        - 03-human-ai-human-framework.qmd
+        - 04-prompting-as-system-design.qmd
+
+    - part: "Part II: AI Systems"
       chapters:
-        - 04-prompt-and-context-design.qmd
-        - 05-data-and-knowledge-grounding.qmd
-        - 06-evaluation-and-quality-control.qmd
-        - 07-human-in-the-loop-workflows.qmd
-    - part: "Operational AI Systems"
+        - 05-ai-workflow-design.qmd
+        - 06-context-and-knowledge-systems.qmd
+        - 07-ai-output-evaluation.qmd
+        - 08-ai-safety-boundaries-and-human-judgment.qmd
+        - 09-ai-operating-system-for-work.qmd
+
+    - part: "Part III: Reusable AI Agent Template"
       chapters:
-        - 08-automation-and-agentic-workflows.qmd
-        - 09-ai-assisted-analysis-and-reporting.qmd
-        - 10-governance-risk-and-documentation.qmd
-        - 11-end-to-end-case-study.qmd
-    - part: "Growth and Reference"
+        - 10-agent-purpose-and-scope.qmd
+        - 11-agent-inputs-context-and-memory.qmd
+        - 12-agent-workflow-and-decision-logic.qmd
+        - 13-agent-output-standards-and-review.qmd
+        - 14-agent-improvement-and-maintenance.qmd
+
+    - part: "Part IV: Applied AI Agents"
       chapters:
-        - 12-career-and-workforce-readiness.qmd
+        - 15-research-and-learning-agent.qmd
+        - 16-career-and-portfolio-agent.qmd
+        - 17-data-analysis-support-agent.qmd
+        - 18-communication-and-reporting-agent.qmd
+
+    - part: "Appendices"
+      chapters:
         - 999-appendix.qmd
         - 999-references.qmd
 
@@ -48,6 +61,7 @@ format:
     link-external-icon: true
     css: assets/css/cdi.css
     code-fold: true
+    theme: cosmo
     mermaid:
       theme: forest
 

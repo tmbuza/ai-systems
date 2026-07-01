@@ -1,0 +1,756 @@
+# Agent Workflow and Decision Logic {#agent-workflow-and-decision-logic}
+
+:::cdi-message
+- **ID:** AI-012
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, professionals, and teams designing reusable AI agents
+- **Theme:** A reusable AI agent needs clear workflow logic, decision rules, review gates, and human escalation points
+:::
+
+An AI agent is not only a prompt.
+
+A prompt may ask for one output.
+
+An agent needs a workflow.
+
+The workflow explains what the agent does first, what it checks, how it decides what to do next, what it produces, when it should stop, and when a human should review or intervene.
+
+Without workflow logic, an agent becomes unpredictable.
+
+It may produce useful outputs sometimes, but the process is difficult to repeat, inspect, improve, or teach.
+
+A reusable agent should therefore be designed as a small operating system for a specific task.
+
+It needs inputs.
+
+It needs steps.
+
+It needs rules.
+
+It needs review points.
+
+It needs output standards.
+
+It needs boundaries.
+
+This chapter explains how to design that workflow and decision logic.
+
+---
+
+## From Prompt to Workflow
+
+A single prompt usually follows a simple pattern.
+
+```text
+User request
+  ↓
+AI response
+```
+
+That is useful for quick tasks.
+
+But reusable agents need a more structured pattern.
+
+```text
+Task request
+  ↓
+Input check
+  ↓
+Context review
+  ↓
+Workflow steps
+  ↓
+Decision logic
+  ↓
+Draft output
+  ↓
+Quality review
+  ↓
+Final output or escalation
+```
+
+The difference is important.
+
+A prompt focuses on asking.
+
+A workflow focuses on working.
+
+The workflow gives the agent a repeatable process that can be explained to another person.
+
+---
+
+## Why Decision Logic Matters
+
+Decision logic tells the agent how to respond when the task is not simple.
+
+For example, an agent may need to decide:
+
+- whether the request is clear enough,
+- whether enough context has been provided,
+- whether the task is low-risk or high-risk,
+- whether a source should be checked,
+- whether an output should be brief or detailed,
+- whether the work can proceed or should be escalated,
+- whether the final output is ready or needs revision.
+
+These decisions should not be left entirely to chance.
+
+A strong agent has explicit rules for common situations.
+
+The rules do not remove judgment.
+
+They make judgment more consistent.
+
+---
+
+## The Basic Agent Workflow
+
+A reusable agent can begin with five core stages.
+
+```text
+1. Understand the task
+2. Check the available context
+3. Execute the workflow
+4. Review the output
+5. Deliver or escalate
+```
+
+Each stage has a purpose.
+
+The first stage prevents the agent from solving the wrong problem.
+
+The second stage prevents the agent from inventing missing information.
+
+The third stage performs the work.
+
+The fourth stage checks the quality and risk of the output.
+
+The fifth stage decides what should happen next.
+
+This is the minimum workflow structure for a responsible agent.
+
+---
+
+## Stage 1: Understand the Task
+
+The agent should first identify what kind of task it is handling.
+
+A task may involve:
+
+- summarizing information,
+- drafting communication,
+- reviewing a document,
+- planning a workflow,
+- generating code,
+- analyzing data,
+- comparing options,
+- preparing a report,
+- creating a teaching resource,
+- or supporting a decision.
+
+The agent should also identify the intended user and use case.
+
+A summary for a student is different from a summary for a policy memo.
+
+A code review for learning is different from a code review for production.
+
+A career plan for a beginner is different from a portfolio strategy for an experienced professional.
+
+Understanding the task means understanding both the action and the context.
+
+---
+
+## Stage 2: Check the Available Context
+
+Before doing the work, the agent should check whether it has enough context.
+
+Useful context may include:
+
+- the goal,
+- the audience,
+- the input material,
+- the expected output format,
+- the tone or style,
+- the deadline or use case,
+- the quality standard,
+- the risk level,
+- and any constraints.
+
+The agent should not treat missing context as permission to invent.
+
+It should either make a reasonable assumption and state it, use a safe default, or ask for clarification when the missing information is essential.
+
+The agent should also recognize when context is outdated, uncertain, incomplete, or outside its competence.
+
+---
+
+## Stage 3: Execute the Workflow
+
+Execution is where the agent performs the task.
+
+But execution should still be structured.
+
+A research agent may follow this workflow:
+
+```text
+Define the question
+  ↓
+Identify useful sources
+  ↓
+Extract key points
+  ↓
+Compare findings
+  ↓
+Summarize with citations
+  ↓
+Flag uncertainty
+```
+
+A writing agent may follow this workflow:
+
+```text
+Identify purpose and audience
+  ↓
+Draft the message
+  ↓
+Improve clarity and tone
+  ↓
+Check completeness
+  ↓
+Return a send-ready version
+```
+
+A data analysis support agent may follow this workflow:
+
+```text
+Clarify the analytical question
+  ↓
+Inspect the data structure
+  ↓
+Suggest analysis steps
+  ↓
+Generate reproducible code
+  ↓
+Check assumptions and limitations
+  ↓
+Support interpretation
+```
+
+The workflow should match the agent purpose.
+
+A generic process is not enough.
+
+The agent should have a process designed for its task family.
+
+---
+
+## Stage 4: Review the Output
+
+Every reusable agent needs a review stage.
+
+The review stage asks whether the output is ready to use.
+
+A simple review checklist may include:
+
+```text
+Is the output aligned with the task?
+Is the output complete enough for the use case?
+Is the output clear?
+Is the output grounded in the provided context?
+Are assumptions visible?
+Are risks or limitations stated?
+Does a human need to verify anything before use?
+```
+
+This review stage is especially important for AI systems because outputs can sound confident even when they are incomplete or wrong.
+
+The review step protects the user, the learner, the organization, and the credibility of the work.
+
+---
+
+## Stage 5: Deliver or Escalate
+
+The final stage is not always delivery.
+
+Sometimes the correct action is escalation.
+
+The agent may need to stop and involve a human when:
+
+- the request is high-risk,
+- the context is insufficient,
+- the task requires professional judgment,
+- the result could affect health, legal, financial, academic, employment, or safety outcomes,
+- the output depends on facts that must be verified,
+- or the user is asking for something outside the agent boundary.
+
+Escalation is not failure.
+
+Escalation is part of responsible system design.
+
+A well-designed agent knows when not to continue alone.
+
+---
+
+## Workflow Logic as a Decision Tree
+
+Decision logic can be represented as a simple decision tree.
+
+```text
+Start
+  ↓
+Is the task within scope?
+  ├── No → Decline or redirect
+  └── Yes
+        ↓
+Is the context sufficient?
+  ├── No → Ask, assume carefully, or provide partial support
+  └── Yes
+        ↓
+Is the task high-risk?
+  ├── Yes → Add stronger review, caution, or escalation
+  └── No
+        ↓
+Produce draft output
+        ↓
+Does the output meet the standard?
+  ├── No → Revise or flag limitations
+  └── Yes → Deliver
+```
+
+This type of decision tree helps the agent behave consistently.
+
+It also helps the designer explain the agent to learners, colleagues, or reviewers.
+
+---
+
+## A Reusable Agent Workflow Template
+
+A practical agent workflow can be documented using this template.
+
+```text
+Agent name:
+
+Purpose:
+
+Primary users:
+
+Supported tasks:
+
+Unsupported tasks:
+
+Required inputs:
+
+Optional context:
+
+Workflow steps:
+1.
+2.
+3.
+4.
+5.
+
+Decision rules:
+- If ... then ...
+- If ... then ...
+- If ... then ...
+
+Review checklist:
+- 
+- 
+- 
+
+Escalation triggers:
+- 
+- 
+- 
+
+Output format:
+
+Human review requirement:
+```
+
+This template turns an agent idea into a usable design document.
+
+It also makes the agent easier to improve over time.
+
+---
+
+## Example: Research and Learning Agent
+
+A research and learning agent may be designed like this.
+
+```text
+Agent name:
+Research and Learning Agent
+
+Purpose:
+Help learners understand a topic, compare sources, summarize key ideas, and identify gaps.
+
+Primary users:
+Students, researchers, mentors, educators, and self-directed learners.
+
+Supported tasks:
+- Explain a concept
+- Summarize provided material
+- Compare ideas
+- Generate study questions
+- Build a learning plan
+
+Unsupported tasks:
+- Fabricating citations
+- Replacing expert review
+- Making unsupported claims
+- Completing dishonest academic work
+
+Required inputs:
+- Topic or question
+- Learner level
+- Purpose of learning
+
+Optional context:
+- Course notes
+- Articles
+- Dataset descriptions
+- Existing draft
+
+Workflow steps:
+1. Identify the learning goal.
+2. Check the learner level and available context.
+3. Explain the topic in clear language.
+4. Provide examples or analogies.
+5. Suggest review questions or next steps.
+6. Flag uncertainty or areas needing verification.
+
+Decision rules:
+- If the topic is unfamiliar or current, use reliable sources or ask for source material.
+- If the learner is a beginner, reduce jargon and add examples.
+- If the output may be used academically, encourage citation and independent understanding.
+
+Review checklist:
+- Is the explanation accurate?
+- Is it appropriate for the learner level?
+- Are limitations visible?
+- Is the learner encouraged to think, not just copy?
+
+Escalation triggers:
+- Medical, legal, financial, or safety-critical interpretation
+- Unsupported claims from weak sources
+- Requests to bypass learning or assessment rules
+
+Output format:
+Clear explanation, key points, example, reflection questions, and suggested next step.
+
+Human review requirement:
+Learner or mentor reviews before use in formal work.
+```
+
+This example shows that the agent is not only a response generator.
+
+It has purpose, boundaries, steps, rules, and review logic.
+
+---
+
+## Example: Communication and Reporting Agent
+
+A communication and reporting agent may have a different workflow.
+
+```text
+Agent name:
+Communication and Reporting Agent
+
+Purpose:
+Support clear, audience-aware communication for reports, emails, summaries, proposals, and professional updates.
+
+Primary users:
+Professionals, analysts, researchers, mentors, and project teams.
+
+Supported tasks:
+- Draft emails
+- Improve clarity
+- Summarize findings
+- Prepare report sections
+- Adjust tone for audience
+
+Unsupported tasks:
+- Misleading communication
+- Hiding uncertainty
+- Inventing results
+- Sending messages without human review where review is required
+
+Required inputs:
+- Message goal
+- Audience
+- Key points
+- Desired tone
+
+Optional context:
+- Previous draft
+- Data summary
+- Report outline
+- Organizational style
+
+Workflow steps:
+1. Identify purpose and audience.
+2. Extract the key message.
+3. Organize the content logically.
+4. Draft in the requested tone.
+5. Review for clarity, accuracy, and completeness.
+6. Return send-ready text or a revision.
+
+Decision rules:
+- If the message is sensitive, use careful and respectful language.
+- If evidence is missing, avoid overstating claims.
+- If the message is formal, keep structure and tone professional.
+
+Review checklist:
+- Is the message clear?
+- Is the tone appropriate?
+- Are claims supported?
+- Is anything missing before sending?
+
+Escalation triggers:
+- Conflict, HR, legal, medical, or financial matters
+- Public statements on behalf of an organization
+- High-impact decisions
+
+Output format:
+Ready-to-use draft with optional notes.
+
+Human review requirement:
+Sender reviews before sending.
+```
+
+The workflow is similar in structure but different in content.
+
+That is the point.
+
+Reusable agent design should use a common architecture while adapting to the task.
+
+---
+
+## Decision Rules Should Be Simple
+
+Decision rules do not need to be complicated.
+
+They should be clear enough to guide behavior.
+
+Useful decision rules often follow this pattern:
+
+```text
+If the task is outside scope, redirect.
+If context is missing but not essential, state the assumption.
+If context is missing and essential, ask for it or provide only partial support.
+If the topic is high-risk, include caution and recommend human expert review.
+If the output is based on provided material, stay close to that material.
+If the user needs a reusable output, return a clean finished version.
+```
+
+Simple rules are easier to teach, inspect, and improve.
+
+Complex rules may be needed later, but the first version of an agent should usually begin with clear basics.
+
+---
+
+## Review Gates
+
+A review gate is a point in the workflow where the agent or human checks whether it is safe and useful to continue.
+
+Common review gates include:
+
+```text
+Input review
+Context review
+Risk review
+Draft review
+Final human review
+```
+
+Each gate answers a different question.
+
+The input review asks whether the task is understood.
+
+The context review asks whether enough information is available.
+
+The risk review asks whether the task requires special caution.
+
+The draft review asks whether the output meets the quality standard.
+
+The final human review asks whether the output is ready for use in the real world.
+
+Review gates are important because they prevent the agent from rushing from request to output without inspection.
+
+---
+
+## Escalation Logic
+
+Escalation logic defines when the agent should stop, warn, redirect, or involve a human.
+
+Escalation may be needed when a task is:
+
+- high-stakes,
+- uncertain,
+- sensitive,
+- outside the agent scope,
+- dependent on unavailable information,
+- or likely to create harm if handled poorly.
+
+A reusable agent should document these conditions.
+
+For example:
+
+```text
+Escalate when:
+- The user asks for medical diagnosis or treatment.
+- The user asks for legal advice about a real case.
+- The user asks for financial decisions involving real money.
+- The user asks to misrepresent evidence.
+- The user asks for unsupported claims.
+- The user provides incomplete data but expects a final decision.
+```
+
+Escalation keeps the system honest.
+
+It reminds the user that AI assistance does not remove human responsibility.
+
+---
+
+## Human-in-the-Loop Design
+
+A reusable agent should make the role of the human explicit.
+
+The human may act as:
+
+- task owner,
+- context provider,
+- reviewer,
+- decision-maker,
+- editor,
+- domain expert,
+- ethical supervisor,
+- or final approver.
+
+The agent should not hide this role.
+
+Instead, the workflow should show where human judgment enters.
+
+```text
+Human defines the task
+  ↓
+Agent processes and drafts
+  ↓
+Human reviews and decides
+```
+
+This is the Human–AI–Human model applied to agent design.
+
+---
+
+## Common Workflow Design Mistakes
+
+A weak agent workflow often has one or more of these problems.
+
+```text
+No clear purpose
+No task boundary
+No input requirements
+No decision rules
+No review stage
+No escalation logic
+No output standard
+No human responsibility
+```
+
+These weaknesses make the agent harder to trust.
+
+They also make it harder to improve.
+
+When an agent produces a poor result, the designer cannot easily tell whether the problem came from the input, the prompt, the context, the workflow, the decision rule, or the review process.
+
+A documented workflow makes improvement possible.
+
+---
+
+## Lightweight Workflow Documentation
+
+The agent workflow does not need to become a long manual.
+
+A lightweight version can be enough.
+
+```text
+Agent:
+Task:
+Inputs needed:
+Steps:
+Decision rules:
+Review checks:
+Escalation triggers:
+Final output:
+```
+
+For small learning agents, this may be sufficient.
+
+For high-stakes or team-facing agents, the documentation should be more detailed.
+
+The level of documentation should match the risk and importance of the task.
+
+---
+
+## Practical Exercise
+
+Choose one AI agent you would like to create.
+
+It may be for research, learning, career development, data analysis, reporting, teaching, mentoring, or project management.
+
+Complete this workflow draft.
+
+```text
+Agent name:
+
+What problem does this agent help solve?
+
+Who will use it?
+
+What inputs does it need?
+
+What should it do first?
+
+What should it do second?
+
+What should it check before producing the final output?
+
+When should it stop or escalate?
+
+What should the final output look like?
+
+What should the human review before using the output?
+```
+
+This exercise turns an agent idea into an operational design.
+
+---
+
+## Key Takeaways
+
+A reusable AI agent needs more than a good prompt.
+
+It needs a workflow.
+
+It needs decision logic.
+
+It needs review gates.
+
+It needs escalation rules.
+
+It needs human responsibility built into the process.
+
+The workflow does not need to be complicated, but it must be visible.
+
+A visible workflow can be taught, tested, improved, reused, and trusted more than an invisible one.
+
+## Looking Ahead
+
+The next chapter focuses on agent output standards and review.
+
+Once the workflow is defined, the agent still needs clear standards for what a good output looks like.
+
+That includes structure, clarity, completeness, evidence, limitations, formatting, and human approval before real-world use.

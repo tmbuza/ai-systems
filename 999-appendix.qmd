@@ -1,488 +1,437 @@
-# Appendix {-}
+# Appendix {#appendix}
 
 :::cdi-message
 - **ID:** AI-999
-- **Type:** Reference
-- **Audience:** Learners, analysts, educators, managers, and AI workflow designers
-- **Theme:** Reusable templates, checklists, and reference structures for responsible AI systems
+- **Type:** Appendix
+- **Audience:** Learners, analysts, researchers, educators, data scientists, mentors, and professionals building responsible AI-enabled workflows
+- **Theme:** AI systems become easier to teach, repeat, review, and improve when they use clear templates, checklists, and documentation standards
 :::
 
-## Purpose of This Appendix
+This appendix provides reusable reference materials for the **AI Systems** guide.
 
-This appendix collects reusable structures from the guide.
+The main chapters explain the ideas.
 
-The main chapters explain the reasoning behind AI Systems.
+This appendix turns those ideas into practical tools.
 
-This appendix provides practical templates that can be copied into projects, team workflows, training programs, or documentation.
-
-The goal is not to make AI use complicated.
-
-The goal is to make AI use clear, reviewable, reproducible, and human-led.
+Use these templates to design AI workflows, review AI outputs, document AI use, and build reusable AI agents that remain human-led.
 
 ---
 
-## Core CDI AI Systems Pattern
+## Appendix A: Human--AI--Human Workflow Checklist
 
-The central workflow in this guide is the Human–AI–Human pattern.
+Use this checklist before relying on an AI-supported output.
 
 ```text
-Human defines the problem.
-AI assists with generation, reasoning, analysis, or automation.
-Human evaluates, decides, documents, and acts.
+Human--AI--Human Workflow Checklist
+
+1. Human framing
+   [ ] The problem or question is clearly stated.
+   [ ] The intended audience is known.
+   [ ] The purpose of the output is clear.
+   [ ] The risk level of the task is understood.
+
+2. Context and grounding
+   [ ] Relevant background information has been provided.
+   [ ] Key data, documents, examples, or references have been included where needed.
+   [ ] Important constraints are stated.
+   [ ] Unavailable information is acknowledged.
+
+3. AI assistance
+   [ ] The AI task is specific.
+   [ ] The expected output format is clear.
+   [ ] The AI is not being asked to make final human decisions.
+   [ ] Sensitive, private, or unsafe information is handled carefully.
+
+4. Human evaluation
+   [ ] The output has been checked for correctness.
+   [ ] The output has been checked for completeness.
+   [ ] The output has been checked for bias, risk, or misleading claims.
+   [ ] Claims have been verified where needed.
+
+5. Human decision and documentation
+   [ ] The final decision remains human-led.
+   [ ] AI use has been documented where appropriate.
+   [ ] Limitations are communicated honestly.
+   [ ] The output is saved, revised, or rejected based on review.
 ```
-
-This pattern applies whether the task is simple or advanced.
-
-It applies to writing, analysis, coding, summarization, reporting, teaching, planning, automation, and decision support.
-
-AI Systems are not built by asking AI to do everything.
-
-They are built by placing AI inside a responsible human workflow.
 
 ---
 
-## AI Task Framing Template
+## Appendix B: AI Task Framing Template
 
-Use this template before asking AI to perform meaningful work.
+Use this template before starting an AI-supported task.
 
 ```text
 AI Task Framing Template
 
-1. Task name:
+Task title:
 
-2. Human goal:
+Purpose:
 
-3. Intended audience:
+Who will use the output?
 
-4. Context the AI should use:
+What decision, action, or learning goal should this support?
 
-5. Context the AI should avoid:
+Background context:
 
-6. Input materials:
+Input materials provided:
 
-7. Expected output format:
+Constraints:
 
-8. Quality criteria:
+Expected output format:
 
-9. Risk level:
-   Low / Medium / High
+Quality criteria:
 
-10. Human review required before use:
-   Yes / No
+Known risks:
 
-11. Decision or action after review:
+What the AI should not do:
+
+Human review steps:
+
+Final owner of the decision:
 ```
 
-A task is usually not ready for AI if the goal, audience, context, and review criteria are unclear.
+A task that is poorly framed usually produces weak output.
+
+A task that is clearly framed gives the AI system a better chance of producing something useful and reviewable.
 
 ---
 
-## AI Task Risk Levels
+## Appendix C: Prompt Design Template
 
-Not every AI task carries the same risk.
+A good prompt is not only a question.
 
-A quick risk classification helps decide how much review is needed.
-
-| Risk level | Description | Examples | Review expectation |
-|---|---|---|---|
-| Low | Low-impact support task | Rewording, brainstorming, formatting, first-pass summaries | Light human review |
-| Medium | Work that may influence interpretation, planning, communication, or workflow design | Drafting reports, summarizing evidence, generating code, preparing teaching materials | Careful human review |
-| High | Work that may influence health, legal, financial, safety, hiring, disciplinary, or other consequential decisions | Clinical recommendations, legal claims, financial advice, high-stakes automation | Expert review, documentation, and governance |
-
-AI output should not be treated as final in medium- or high-risk tasks.
-
----
-
-## Prompt Design Template
-
-A reusable prompt should make the task, context, constraints, and output format explicit.
+It is a small workflow specification.
 
 ```text
 Prompt Design Template
 
 Role:
-You are helping with...
+Act as ...
 
-Task:
-Please produce...
+Goal:
+Help me ...
 
 Context:
-Use the following information...
+Here is the situation ...
+
+Inputs:
+Use the following information ...
 
 Constraints:
-Do not assume...
-Do not invent...
-Flag uncertainty where needed...
+Do not ...
+Prioritize ...
+Assume ...
+
+Process:
+First ...
+Then ...
+Finally ...
 
 Output format:
-Return the result as...
+Return the answer as ...
 
-Quality criteria:
-The output should be clear, accurate, grounded, concise, and reviewable.
+Review requirement:
+Before finalizing, check for ...
+```
+
+This structure helps move prompting away from guessing and toward system design.
+
+---
+
+## Appendix D: Context Package Template
+
+Context packages are useful when AI needs to work with documents, data, examples, or project-specific information.
+
+```text
+Context Package Template
+
+Project name:
+
+Task:
+
+Relevant background:
+
+Audience:
+
+Source material included:
+
+Important definitions:
+
+Important examples:
+
+Data notes:
+
+Style or formatting requirements:
+
+Things to avoid:
+
+Uncertainties:
+
+Expected output:
+```
+
+A context package should help the AI stay grounded.
+
+It should also help the human reviewer understand what the output was based on.
+
+---
+
+## Appendix E: AI Output Evaluation Rubric
+
+Use this rubric to review AI outputs before using them.
+
+| Criterion | Low quality | Acceptable | Strong |
+|---|---|---|---|
+| Correctness | Contains clear errors or unsupported claims | Mostly correct but needs review | Accurate, checked, and well-supported |
+| Relevance | Does not answer the task | Partly answers the task | Directly addresses the task |
+| Completeness | Missing important pieces | Covers the basics | Covers key details without unnecessary excess |
+| Clarity | Confusing or poorly structured | Understandable | Clear, organized, and easy to use |
+| Evidence | No grounding or unclear sources | Some grounding | Claims are traceable to appropriate evidence |
+| Risk awareness | Ignores possible harm or limitations | Mentions some limitations | Clearly identifies limits, uncertainty, and risk |
+| Human usability | Hard to act on | Usable with edits | Ready for human review and adaptation |
+
+The goal is not to make every AI output perfect.
+
+The goal is to decide whether the output is safe, useful, and appropriate for the task.
+
+---
+
+## Appendix F: AI Use Documentation Template
+
+Use this when documenting AI support in learning, research, analysis, writing, or professional work.
+
+```text
+AI Use Documentation Template
+
+Project or task:
+
+AI tool used:
+
+Date of use:
+
+Purpose of AI support:
+
+Input materials provided to AI:
+
+Type of output generated:
+
+Human review performed:
+
+Corrections or changes made by human reviewer:
+
+Limitations identified:
+
+Final decision owner:
+
+Notes for reproducibility:
+```
+
+Documentation does not have to be complicated.
+
+It should make the workflow understandable and defensible.
+
+---
+
+## Appendix G: Reusable AI Agent Specification Template
+
+Use this template to define a reusable AI agent before building or using it.
+
+```text
+Reusable AI Agent Specification
+
+Agent name:
+
+Agent purpose:
+
+Primary users:
+
+Supported tasks:
+
+Tasks outside scope:
+
+Required inputs:
+
+Optional inputs:
+
+Context sources:
+
+Memory rules:
+
+Workflow steps:
+
+Decision logic:
+
+Escalation conditions:
+
+Output formats:
+
+Review requirements:
+
+Quality standards:
+
+Safety boundaries:
+
+Maintenance owner:
+
+Version:
+
+Last reviewed:
+```
+
+An agent without scope can become unreliable.
+
+An agent with clear scope can become a repeatable workflow component.
+
+---
+
+## Appendix H: Agent Output Review Checklist
+
+Before accepting an agent output, review it against this checklist.
+
+```text
+Agent Output Review Checklist
+
+[ ] The output matches the agent purpose.
+[ ] The output stays within the agent scope.
+[ ] The output uses the provided context appropriately.
+[ ] The output does not invent unsupported information.
+[ ] The output follows the required format.
+[ ] The output is understandable to the intended audience.
+[ ] The output identifies uncertainty where needed.
+[ ] The output avoids unsafe or inappropriate recommendations.
+[ ] The output is ready for human editing, approval, or rejection.
+[ ] The final human decision is documented.
+```
+
+Agent review is not a sign of failure.
+
+It is part of responsible agent design.
+
+---
+
+## Appendix I: AI Workflow Log Template
+
+A workflow log helps teams and learners track how AI was used.
+
+```text
+AI Workflow Log
+
+Date:
+
+Task:
+
+Human owner:
+
+AI role:
+
+Inputs used:
+
+Prompt or workflow summary:
+
+Output received:
+
+Review findings:
+
+Changes made:
+
+Final outcome:
+
+Lessons learned:
+```
+
+Over time, workflow logs help improve prompts, templates, review standards, and agent behavior.
+
+---
+
+## Appendix J: Risk Level Guide
+
+Not all AI tasks carry the same level of risk.
+
+Use this simple guide to decide how much review is needed.
+
+| Risk level | Examples | Review requirement |
+|---|---|---|
+| Low | Brainstorming titles, outlining notes, summarizing personal study ideas | Light human review |
+| Medium | Drafting reports, interpreting non-sensitive data, preparing public communication | Careful review and editing |
+| High | Medical, legal, financial, employment, academic grading, safety-critical, or sensitive personal decisions | Expert review, source verification, and strong human oversight |
+
+High-risk tasks should never be treated as fully automated AI tasks.
+
+They require human expertise, documentation, and careful judgment.
+
+---
+
+## Appendix K: Example Human-Led AI Workflow
+
+The following example shows how a responsible AI workflow can be documented.
+
+```text
+Task:
+Prepare a short explanation of a data analysis result for a non-technical audience.
+
+Human framing:
+The analyst identifies the result, audience, purpose, and limitations.
+
+Context provided:
+Clean summary table, chart, project goal, and notes about what the analysis can and cannot claim.
+
+AI assistance:
+The AI drafts a plain-language explanation.
 
 Human review:
-Highlight anything that requires human checking before use.
+The analyst checks whether the explanation matches the data, removes overclaims, and adds limitations.
+
+Final output:
+A revised explanation that can be shared in a report.
+
+Documentation:
+The analyst records that AI was used for drafting language, not for generating the statistical result or final interpretation.
 ```
 
-Good prompts do not remove the need for judgment.
-
-They make judgment easier.
+This pattern can be adapted to research, learning, communication, coding, mentoring, and portfolio development.
 
 ---
 
-## Context Design Checklist
+## Appendix L: CDI AI Systems Principle Summary
 
-Before sending context into an AI workflow, check whether the context is appropriate.
+The AI Systems guide is built around a few core principles.
 
 ```text
-Context Design Checklist
-
-[ ] The task goal is clear.
-[ ] The audience is clear.
-[ ] The relevant source material is included.
-[ ] Irrelevant material has been removed.
-[ ] Sensitive information has been excluded or minimized.
-[ ] The AI is told what to prioritize.
-[ ] The AI is told what not to assume.
-[ ] The expected output format is clear.
-[ ] The review criteria are clear.
+1. AI should assist human thinking, not replace human responsibility.
+2. AI work should begin with a clear human-framed problem.
+3. Context improves output quality.
+4. Grounding improves reliability.
+5. Evaluation is part of the system, not an afterthought.
+6. High-risk work requires stronger review.
+7. Reusable agents need clear purpose, scope, inputs, outputs, and maintenance.
+8. AI-supported work should be documented when it influences decisions or public outputs.
+9. Human judgment remains central.
+10. Responsible AI practice is learned through repeatable workflows.
 ```
 
-Poor context often creates poor AI output, even when the prompt sounds polished.
-
----
-
-## Grounding Checklist
-
-Use this checklist when AI output needs to be connected to data, documents, evidence, or project materials.
+These principles connect all four parts of the guide:
 
 ```text
-Grounding Checklist
-
-[ ] What source material supports the output?
-[ ] Is the source material current enough for the task?
-[ ] Are important assumptions stated?
-[ ] Are claims traceable to evidence?
-[ ] Are uncertain points flagged?
-[ ] Are interpretations separated from facts?
-[ ] Are citations or references needed?
-[ ] Has a human checked the final output against the source material?
+AI Foundations
+        ↓
+AI Systems
+        ↓
+Reusable AI Agent Template
+        ↓
+Applied AI Agents
 ```
 
-Grounding is especially important for analysis, reporting, teaching, governance, and decision-support workflows.
-
 ---
 
-## AI Output Evaluation Rubric
+## Closing Note
 
-Use this rubric to review AI-generated outputs.
+Appendices are not just extra material.
 
-| Criterion | Review question |
-|---|---|
-| Relevance | Does the output answer the actual task? |
-| Accuracy | Are the claims correct and supported? |
-| Grounding | Is the output connected to the provided context or evidence? |
-| Completeness | Are important parts missing? |
-| Clarity | Is the output understandable to the intended audience? |
-| Safety | Could the output create harm if used as written? |
-| Actionability | Is the next step clear? |
-| Traceability | Can a reviewer understand how the output was produced and checked? |
+In a systems guide, they are part of the operating infrastructure.
 
-A useful AI output is not only fluent.
+They help learners and teams move from ideas to repeatable practice.
 
-It must be fit for purpose.
+Use these templates, adapt them, improve them, and keep them connected to human judgment.
 
----
-
-## Human Review Checklist
-
-Use this before sharing, publishing, acting on, or automating AI-assisted work.
-
-```text
-Human Review Checklist
-
-[ ] I understand the task the AI was asked to perform.
-[ ] I reviewed the output for accuracy.
-[ ] I checked whether the output is grounded in appropriate context.
-[ ] I identified unsupported claims.
-[ ] I corrected misleading or unclear language.
-[ ] I checked for missing risks or limitations.
-[ ] I verified any important numbers, names, references, or claims.
-[ ] I decided whether the output is ready to use.
-[ ] I documented any important changes or concerns.
-```
-
-Human review is not a formality.
-
-It is part of the system.
-
----
-
-## Prompt Registry Template
-
-A prompt registry helps teams reuse and improve prompts over time.
-
-```text
-Prompt Registry Template
-
-prompt_id:
-
-prompt_name:
-
-workflow_stage:
-
-intended_user:
-
-input_requirements:
-
-prompt_text:
-
-expected_output:
-
-quality_criteria:
-
-risk_level:
-
-reviewer:
-
-version:
-
-last_updated:
-
-notes:
-```
-
-A prompt registry turns informal AI use into a documented workflow asset.
-
----
-
-## AI Task Log Template
-
-An AI task log records what happened in an AI-supported workflow.
-
-```text
-AI Task Log Template
-
-task_id:
-
-date:
-
-user_or_team:
-
-task_name:
-
-purpose:
-
-tool_used:
-
-input_context:
-
-output_summary:
-
-risk_level:
-
-human_review_status:
-
-issues_found:
-
-final_decision:
-
-follow_up_action:
-```
-
-Task logs are especially useful when AI output supports reports, analysis, automation, or decisions.
-
----
-
-## Automation Readiness Checklist
-
-A workflow should not be automated simply because it can be automated.
-
-Use this checklist before turning an AI task into a repeatable or agentic workflow.
-
-```text
-Automation Readiness Checklist
-
-[ ] The task is repeated often enough to justify automation.
-[ ] The inputs are predictable.
-[ ] The expected outputs are clear.
-[ ] The quality criteria are defined.
-[ ] Failure modes are known.
-[ ] Human review checkpoints are included.
-[ ] Sensitive information is handled safely.
-[ ] Logs or records are produced.
-[ ] There is a clear owner for maintaining the workflow.
-[ ] The workflow can be stopped, corrected, or rolled back.
-```
-
-Automation without review can scale mistakes.
-
-Responsible automation scales reliable practice.
-
----
-
-## Governance Documentation Template
-
-AI governance does not need to begin with heavy bureaucracy.
-
-It can begin with clear documentation.
-
-```text
-AI Governance Documentation Template
-
-Workflow name:
-
-Workflow owner:
-
-Purpose:
-
-Users:
-
-AI tools used:
-
-Data or context used:
-
-Risk level:
-
-Human review checkpoint:
-
-Known limitations:
-
-Privacy considerations:
-
-Output use restrictions:
-
-Approval or review process:
-
-Update schedule:
-
-Incident or issue process:
-```
-
-Governance should make responsible AI use easier, not harder.
-
----
-
-## Example Project Structure
-
-A small AI Systems project may use a structure like this:
-
-```text
-ai-systems-project/
-├── README.md
-├── prompts/
-│   ├── prompt-registry.csv
-│   └── templates/
-├── data/
-│   ├── input/
-│   ├── example/
-│   └── results/
-├── reports/
-├── scripts/
-│   ├── bash/
-│   ├── python/
-│   └── R/
-├── documentation/
-│   ├── task-log.csv
-│   ├── governance-notes.md
-│   └── review-checklist.md
-└── outputs/
-```
-
-The exact structure can change.
-
-The important principle is that prompts, inputs, outputs, reviews, and decisions should be traceable.
-
----
-
-## Supporting Scripts in This Guide
-
-The scaffolded guide includes scripts that demonstrate how AI workflow documentation can be made reproducible.
-
-```bash
-bash scripts/bash/00-check-environment.sh
-bash scripts/bash/01-create-example-ai-task-log.sh
-
-python scripts/python/02-evaluate-ai-output-quality.py \
-  data/example/ai-task-log.csv \
-  data/results
-
-python scripts/python/03-build-prompt-registry.py \
-  data/example/ai-task-log.csv \
-  data/results
-
-Rscript scripts/R/04-plot-evaluation-summary.R \
-  data/results/ai-evaluation-summary.csv \
-  data/reports
-```
-
-These scripts are examples.
-
-They show how AI-related work can be logged, summarized, reviewed, and reported.
-
----
-
-## CDI AI Systems Learning Path
-
-The guide follows this learning sequence:
-
-```text
-AI systems thinking
-AI literacy and responsible use
-Problem framing
-Prompt and context design
-Data and knowledge grounding
-Evaluation and quality control
-Human-in-the-loop workflows
-Automation and agentic workflows
-AI-assisted analysis and reporting
-Governance, risk, and documentation
-End-to-end case study
-Career and workforce readiness
-```
-
-The sequence moves from thinking to practice, then from practice to systems.
-
----
-
-## Glossary
-
-**AI system**  
-A human-led workflow that uses AI tools, context, review, documentation, and governance to support a defined task or outcome.
-
-**Human–AI–Human workflow**  
-A workflow in which humans frame the problem, AI assists, and humans evaluate, decide, document, and act.
-
-**Prompt**  
-An instruction or set of instructions given to an AI system.
-
-**Context**  
-The background information, data, examples, constraints, or documents provided to guide AI output.
-
-**Grounding**  
-Connecting AI output to source material, data, evidence, or documented context.
-
-**Evaluation**  
-The process of checking whether AI output is accurate, useful, safe, and fit for purpose.
-
-**Human-in-the-loop**  
-A workflow design where humans review, approve, correct, or decide at important points.
-
-**Automation**  
-A repeatable workflow where some steps are executed automatically.
-
-**Agentic workflow**  
-A workflow where AI is given more autonomy to plan or execute steps within defined boundaries.
-
-**Governance**  
-The rules, roles, documentation, review processes, and accountability structures used to manage AI responsibly.
-
----
-
-## Looking Ahead
-
-The references chapter lists selected sources that support responsible AI use, human-centered AI systems, AI evaluation, and governance.
-
-Those references are not the end of the learning path.
-
-They provide a foundation for continuing to build AI systems that are useful, responsible, and human-led.
+The next section provides references and source material for further reading.

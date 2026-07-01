@@ -1,65 +1,94 @@
-# References {-}
+# References {#references}
 
 :::cdi-message
-- **ID:** AI-999R
-- **Type:** Reference
-- **Audience:** AI practitioners, analysts, educators, managers, and system builders
-- **Theme:** Responsible AI systems require traceable sources, reusable language, and documented assumptions
+- **ID:** AI-999-REF
+- **Type:** References
+- **Audience:** Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly
+- **Theme:** Responsible AI systems should be grounded in documented sources, standards, and reusable references
 :::
 
-This page collects the references used across the **AI Systems** guide.
+This page collects the references used throughout the **AI Systems** guide.
 
-The guide is intentionally practical. It focuses on how people can design, evaluate, document, and govern AI-supported work. The references therefore include sources on AI risk management, trustworthy AI, human-centered AI, prompt and workflow design, evaluation, and responsible deployment.
-
-References are managed through the project bibliography file:
+The guide uses a bibliography file stored at:
 
 ```text
 library/references.bib
 ```
 
-When adding citations to chapters, use Quarto citation syntax:
+Quarto automatically uses this file because it is declared in `_quarto.yml`:
 
-```text
-AI systems should be evaluated in relation to task risk, user context, and potential downstream impact [@nist2023airmf].
+```yaml
+bibliography: library/references.bib
 ```
 
-The rendered references will appear below when the bibliography file contains matching entries.
+---
 
-## Core Reference Themes
+## How References Are Used in This Guide
 
-The most important reference areas for this guide are:
+References support the guide in four main ways.
 
-- AI risk management and governance
-- trustworthy and responsible AI
-- human-centered AI
-- human oversight and accountability
-- model and system documentation
-- AI evaluation and quality control
-- AI literacy and workforce readiness
+First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.
 
-## Suggested Citation Use
+Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.
 
-Use references where a chapter makes claims about:
+Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.
 
-- risk management frameworks
-- governance practices
-- transparency and documentation
-- human oversight
-- evaluation methods
-- responsible AI principles
-- social, organizational, or workforce implications
+Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.
 
-Avoid over-citing basic workflow instructions. Cite sources where they support concepts, principles, standards, or claims that readers may want to verify.
+---
 
-## References
+## Suggested Reference Categories
+
+The bibliography for this guide may include sources related to:
+
+- artificial intelligence foundations,
+- human-centered AI,
+- responsible AI,
+- AI evaluation,
+- human-in-the-loop systems,
+- automation and decision support,
+- AI literacy and education,
+- prompt design and context engineering,
+- data governance,
+- algorithmic accountability,
+- AI safety,
+- reproducible workflows,
+- documentation practices,
+- and professional AI use.
+
+---
+
+## Adding a New Reference
+
+To add a new source, place a BibTeX entry inside:
+
+```text
+library/references.bib
+```
+
+A simple example is:
+
+```bibtex
+@book{example2026,
+  title     = {Example Title},
+  author    = {Author, Firstname},
+  year      = {2026},
+  publisher = {Example Publisher}
+}
+```
+
+Then cite it inside any chapter using:
+
+```text
+[@example2026]
+```
+
+Quarto will collect cited sources and display them on the references page.
+
+---
+
+## Reference List
 
 ::: {#refs}
 :::
 
-## Looking Ahead
-
-This completes the scaffolded **AI Systems** guide.
-
-The guide now has a complete structure for moving from AI literacy into problem framing, prompt and context design, grounding, evaluation, human review, automation, governance, reporting, and workforce readiness.
-
-From here, the next step is refinement: improving examples, strengthening citations, testing all scripts, and preparing the repository for public release through GitHub Pages.

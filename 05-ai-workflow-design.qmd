@@ -1,0 +1,611 @@
+# AI Workflow Design {#ai-workflow-design}
+
+:::cdi-message
+- **ID:** AI-005
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows
+- **Theme:** AI work becomes reliable when it is designed as a repeatable workflow, not handled as isolated prompts
+:::
+
+AI becomes more useful when it is part of a workflow.
+
+A single prompt can produce a helpful answer.
+
+But a workflow can produce a repeatable process.
+
+That difference matters.
+
+A prompt asks AI to do something.
+
+A workflow defines why the task is being done, what information is needed, how the task should proceed, how the output will be checked, and what human decision follows.
+
+This chapter introduces AI workflow design as the bridge between AI foundations and operational AI systems.
+
+---
+
+## From Prompting to Workflow Design
+
+Prompting is important, but prompting alone is not enough.
+
+A strong prompt may still fail if the task is poorly framed, the context is incomplete, the expected output is unclear, or the review process is missing.
+
+AI workflow design asks a broader question:
+
+> What repeatable process should guide this AI-supported task from human intention to human decision?
+
+The workflow includes the prompt, but it also includes the surrounding structure.
+
+```text
+Human goal
+  ↓
+Task definition
+  ↓
+Context package
+  ↓
+AI-assisted step
+  ↓
+Output review
+  ↓
+Revision or escalation
+  ↓
+Human decision
+  ↓
+Documentation
+```
+
+The prompt sits inside this system.
+
+It is not the whole system.
+
+---
+
+## Why AI Workflows Matter
+
+AI tools can make work faster.
+
+But speed without structure can create new risks.
+
+A person may accept an answer too quickly.
+
+A team may reuse an output without checking it.
+
+A learner may depend on AI without understanding the reasoning.
+
+A report may include confident claims that are not supported by evidence.
+
+Workflow design reduces these risks by making the process visible.
+
+A good AI workflow helps answer questions such as:
+
+- What task are we asking AI to support?
+- What information does AI need?
+- What should AI not do?
+- What output format is expected?
+- How will the result be checked?
+- Who makes the final decision?
+- What should be documented?
+
+These questions turn AI from a casual assistant into part of a responsible working system.
+
+---
+
+## The Core AI Workflow Pattern
+
+Most AI workflows can begin with a simple pattern.
+
+```text
+Define
+  ↓
+Prepare
+  ↓
+Generate
+  ↓
+Evaluate
+  ↓
+Improve
+  ↓
+Use
+  ↓
+Document
+```
+
+Each step has a purpose.
+
+### Define
+
+The human defines the task.
+
+This includes the goal, audience, constraints, and desired outcome.
+
+A weak definition creates unstable AI output.
+
+A strong definition gives the AI system direction.
+
+### Prepare
+
+The human prepares the context.
+
+This may include notes, data, documents, code, examples, prior decisions, style requirements, or evaluation criteria.
+
+AI output improves when the input context is clear and relevant.
+
+### Generate
+
+The AI assists with producing a draft, summary, analysis, plan, code, explanation, comparison, or structured output.
+
+At this stage, the output should be treated as provisional.
+
+It is a candidate output, not a final answer.
+
+### Evaluate
+
+The human evaluates the AI output.
+
+Evaluation may check accuracy, completeness, clarity, relevance, evidence, tone, safety, privacy, bias, and practical usefulness.
+
+This is where human responsibility becomes visible.
+
+### Improve
+
+The workflow may require revision.
+
+The human may ask AI to correct gaps, compare alternatives, simplify language, add citations, restructure the output, or explain uncertainty.
+
+Improvement is not just editing.
+
+It is quality control.
+
+### Use
+
+The human decides how to use the output.
+
+This may mean publishing, sending, applying, coding, teaching, analyzing, or rejecting the output.
+
+The decision remains human-led.
+
+### Document
+
+The workflow records what was done.
+
+Documentation may include the task goal, source materials, prompt version, model/tool used, review notes, limitations, and final decision.
+
+Documentation makes the workflow easier to repeat, audit, improve, and teach.
+
+---
+
+## Workflow Design as a Table
+
+A practical AI workflow can be documented using a simple table.
+
+| Workflow layer | Guiding question | Example |
+|---|---|---|
+| Goal | What are we trying to accomplish? | Summarize interview notes into key themes |
+| Input | What materials are provided? | Transcript, research question, coding framework |
+| Constraints | What limits apply? | Do not invent quotes; preserve participant meaning |
+| AI task | What should AI do? | Group responses into themes and draft a summary |
+| Output format | What should the result look like? | Table with theme, evidence, and interpretation |
+| Review | How will quality be checked? | Compare against transcript and mark unsupported claims |
+| Human decision | What will the human decide? | Accept, revise, or reject each theme |
+| Documentation | What should be recorded? | Prompt, source file, review notes, final version |
+
+This table is simple enough for learners and structured enough for professional teams.
+
+---
+
+## Example: Weak AI Use Versus Workflow-Based AI Use
+
+A weak AI interaction might look like this:
+
+```text
+Summarize this report.
+```
+
+That prompt may produce a useful summary.
+
+But it does not define the audience, purpose, level of detail, evidence expectations, or review process.
+
+A workflow-based version is stronger:
+
+```text
+Goal:
+Summarize this report for a non-technical program manager.
+
+Context:
+The manager needs to understand the main findings, risks, and recommended next steps.
+
+Task:
+Create a structured summary with four sections:
+1. Main findings
+2. Supporting evidence
+3. Limitations
+4. Recommended next steps
+
+Constraints:
+Do not add claims that are not supported by the report.
+Use plain language.
+Flag uncertainty clearly.
+
+Review criteria:
+After the summary, list any claims that require human verification.
+```
+
+The second version is not only a better prompt.
+
+It is a better workflow.
+
+It defines the task environment around the AI interaction.
+
+---
+
+## AI Workflow Roles
+
+An AI workflow should clarify the role of both the human and the AI system.
+
+| Role | Responsibility |
+|---|---|
+| Human | Frames the problem, provides context, sets constraints, reviews output, makes decisions |
+| AI | Assists with generation, organization, comparison, analysis, drafting, or automation |
+| Human reviewer | Checks quality, risk, evidence, and suitability |
+| Documentation layer | Records the process, decisions, limitations, and outputs |
+
+In small projects, one person may play all human roles.
+
+In team settings, the roles may be separated.
+
+For example, one person may prepare the context package, another may review the output, and another may approve the final use.
+
+---
+
+## Designing Inputs
+
+An AI workflow is only as strong as its inputs.
+
+Before asking AI to help, the human should prepare the task materials.
+
+Useful inputs may include:
+
+- the problem statement,
+- the audience,
+- background notes,
+- source documents,
+- data tables,
+- code snippets,
+- examples of preferred output,
+- definitions,
+- constraints,
+- evaluation criteria,
+- and known limitations.
+
+The goal is not to overload the AI system with information.
+
+The goal is to provide the right context for the task.
+
+Good input design reduces ambiguity.
+
+---
+
+## Designing Outputs
+
+AI workflows should also define outputs clearly.
+
+A vague output request creates inconsistent results.
+
+A clear output design makes the work easier to review and reuse.
+
+Useful output specifications include:
+
+- format,
+- length,
+- tone,
+- sections,
+- table structure,
+- required fields,
+- citation expectations,
+- uncertainty labels,
+- and review notes.
+
+For example, instead of asking for “ideas,” ask for a structured table:
+
+```text
+Return a table with the following columns:
+- idea
+- purpose
+- required input
+- expected output
+- risk or limitation
+- human review step
+```
+
+Structured outputs are easier to compare, revise, document, and convert into downstream work.
+
+---
+
+## Evaluation Points in a Workflow
+
+Evaluation should not happen only at the end.
+
+Strong workflows include review points throughout the process.
+
+```text
+Before AI use:
+Check that the task is appropriate for AI support.
+
+During AI use:
+Check whether the output follows the task and constraints.
+
+After AI use:
+Check accuracy, evidence, risk, and usefulness.
+
+Before final use:
+Confirm that the human decision is documented.
+```
+
+This protects the workflow from common problems such as unsupported claims, missing context, overconfident language, privacy risks, and poor fit for the intended audience.
+
+---
+
+## Workflow Failure Modes
+
+AI workflows can fail in predictable ways.
+
+| Failure mode | What happens | Prevention |
+|---|---|---|
+| Unclear goal | Output is broad or unfocused | Define the task and audience first |
+| Missing context | Output is shallow or inaccurate | Provide relevant source material |
+| Weak constraints | Output ignores important limits | State boundaries explicitly |
+| No review step | Errors pass into final work | Add human evaluation checkpoints |
+| No documentation | Workflow cannot be repeated | Save prompts, inputs, outputs, and decisions |
+| Over-automation | Humans stop checking the work | Keep human approval in the loop |
+
+These failure modes are not signs that AI is useless.
+
+They are signs that the workflow needs better design.
+
+---
+
+## Lightweight AI Workflow Template
+
+The following template can be reused for many AI-supported tasks.
+
+```text
+AI Workflow Template
+
+1. Task name:
+
+2. Human goal:
+
+3. Intended audience:
+
+4. Input materials:
+
+5. Context AI should use:
+
+6. Context AI should not assume:
+
+7. AI task:
+
+8. Required output format:
+
+9. Quality criteria:
+
+10. Risk or sensitivity level:
+
+11. Human review step:
+
+12. Final decision:
+
+13. Documentation notes:
+```
+
+This template is intentionally simple.
+
+It can be used by students, researchers, analysts, educators, and teams.
+
+Later chapters will extend this pattern into context systems, output evaluation, safety boundaries, operating systems, and reusable agent templates.
+
+---
+
+## Example: AI Workflow for Literature Reading
+
+A researcher may use AI to support reading a paper.
+
+A weak workflow would be:
+
+```text
+Explain this paper.
+```
+
+A stronger workflow would be:
+
+```text
+Task name:
+Research paper reading support
+
+Human goal:
+Understand the paper's research question, methods, findings, limitations, and relevance to my project.
+
+Input materials:
+Paper text, abstract, methods section, results section, and my research question.
+
+AI task:
+Summarize the paper using only the provided material.
+
+Required output format:
+Return five sections:
+1. Research question
+2. Data and methods
+3. Main findings
+4. Limitations
+5. Relevance to my project
+
+Quality criteria:
+Do not invent information.
+Separate what the paper says from your interpretation.
+Flag anything that requires human verification.
+
+Human review step:
+Compare the summary with the abstract, methods, and results before using it.
+```
+
+This workflow makes AI useful without giving it authority over the final interpretation.
+
+---
+
+## Example: AI Workflow for Data Analysis Support
+
+An analyst may use AI to support a coding or analysis task.
+
+The workflow should protect against hidden errors.
+
+```text
+Task name:
+Data analysis support
+
+Human goal:
+Write code to clean a small dataset and produce a summary table.
+
+Input materials:
+Column names, sample rows, desired output table, and known data issues.
+
+AI task:
+Suggest code and explain each step.
+
+Required output format:
+Return code first, followed by a short explanation and a list of assumptions.
+
+Quality criteria:
+Code must not overwrite raw data.
+Code must save outputs to a clear results directory.
+Code must include basic checks for missing values and column names.
+
+Human review step:
+Run the code on a copy of the data and inspect outputs before using them.
+```
+
+The AI may help write code, but the human remains responsible for testing it.
+
+---
+
+## Example: AI Workflow for Communication
+
+A professional may use AI to draft a message.
+
+The workflow should protect tone, accuracy, and relationship context.
+
+```text
+Task name:
+Professional message drafting
+
+Human goal:
+Write a respectful follow-up message.
+
+Input materials:
+Relationship context, purpose of the message, desired tone, and key points.
+
+AI task:
+Draft a concise message that sounds warm and professional.
+
+Required output format:
+Return one polished version and one shorter version.
+
+Quality criteria:
+Do not overpromise.
+Do not sound demanding.
+Keep the message human and direct.
+
+Human review step:
+Read aloud, adjust personal details, and send only after confirming the meaning.
+```
+
+AI can support communication, but it should not erase the human voice.
+
+---
+
+## Mermaid View of an AI Workflow
+
+```{mermaid}
+flowchart TD
+    A[Human goal] --> B[Task definition]
+    B --> C[Context package]
+    C --> D[Prompt or workflow instruction]
+    D --> E[AI-assisted output]
+    E --> F[Human review]
+    F --> G{Acceptable?}
+    G -- No --> H[Revise prompt, context, or task]
+    H --> D
+    G -- Yes --> I[Human decision]
+    I --> J[Documentation]
+    J --> K[Use or share output]
+```
+
+This diagram shows why AI workflow design is not a single-pass activity.
+
+Review and revision are part of the system.
+
+---
+
+## A Practical Checklist
+
+Before using AI in a workflow, ask:
+
+- Is the task appropriate for AI support?
+- Have I defined the goal and audience?
+- Have I provided enough context?
+- Have I stated what AI should not assume?
+- Have I defined the expected output format?
+- Have I included a human review step?
+- Have I considered risk, privacy, bias, and safety?
+- Have I documented the process well enough to repeat it?
+
+This checklist is simple, but it changes the quality of AI work.
+
+It slows the user down just enough to prevent careless automation.
+
+---
+
+## Connection to the AI Systems Guide
+
+This chapter begins Part II of the guide.
+
+Part I introduced the foundations of AI thinking, prompting, and the Human–AI–Human model.
+
+Part II now turns those ideas into operational workflows.
+
+The next chapters will examine:
+
+```text
+AI workflow design
+  ↓
+Context and knowledge systems
+  ↓
+AI output evaluation
+  ↓
+Safety boundaries and human judgment
+  ↓
+AI operating system for work
+```
+
+Together, these chapters prepare the reader to design reusable AI agents in Part III.
+
+---
+
+## Closing Reflection
+
+AI workflow design is not about making AI more complicated.
+
+It is about making AI use more responsible.
+
+A workflow gives structure to the relationship between human intention, AI assistance, human review, and final action.
+
+When AI is used without a workflow, the user may get speed but lose control.
+
+When AI is used inside a clear workflow, the user gains support while preserving judgment.
+
+That is the purpose of AI Systems.
+
+## Looking Ahead
+
+The next chapter focuses on context and knowledge systems.
+
+It explains how to prepare the information AI needs, how to organize reusable context, and how to reduce the risk of shallow or unsupported outputs.
+

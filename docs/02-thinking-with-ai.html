@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>Thinking with AI – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./03-human-ai-human-framework.html" rel="next">
+<link href="./01-ai-system-overview.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Part I: AI Foundations</a></li><li class="breadcrumb-item"><a href="./02-thinking-with-ai.html"><span class="chapter-title">Thinking with AI</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -188,7 +135,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-thinking-with-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Thinking with AI</span></a>
+  <a href="./02-thinking-with-ai.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Thinking with AI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,28 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#from-ai-use-to-ai-thinking" id="toc-from-ai-use-to-ai-thinking" class="nav-link active" data-scroll-target="#from-ai-use-to-ai-thinking">From AI Use to AI Thinking</a></li>
+  <li><a href="#the-role-of-ai-in-human-thinking" id="toc-the-role-of-ai-in-human-thinking" class="nav-link" data-scroll-target="#the-role-of-ai-in-human-thinking">The Role of AI in Human Thinking</a></li>
+  <li><a href="#asking-better-questions" id="toc-asking-better-questions" class="nav-link" data-scroll-target="#asking-better-questions">Asking Better Questions</a></li>
+  <li><a href="#using-ai-to-explore-ideas" id="toc-using-ai-to-explore-ideas" class="nav-link" data-scroll-target="#using-ai-to-explore-ideas">Using AI to Explore Ideas</a></li>
+  <li><a href="#using-ai-to-challenge-assumptions" id="toc-using-ai-to-challenge-assumptions" class="nav-link" data-scroll-target="#using-ai-to-challenge-assumptions">Using AI to Challenge Assumptions</a></li>
+  <li><a href="#using-ai-to-improve-explanations" id="toc-using-ai-to-improve-explanations" class="nav-link" data-scroll-target="#using-ai-to-improve-explanations">Using AI to Improve Explanations</a></li>
+  <li><a href="#reflection-before-decision" id="toc-reflection-before-decision" class="nav-link" data-scroll-target="#reflection-before-decision">Reflection Before Decision</a></li>
+  <li><a href="#the-thinking-with-ai-loop" id="toc-the-thinking-with-ai-loop" class="nav-link" data-scroll-target="#the-thinking-with-ai-loop">The Thinking with AI Loop</a></li>
+  <li><a href="#common-thinking-risks" id="toc-common-thinking-risks" class="nav-link" data-scroll-target="#common-thinking-risks">Common Thinking Risks</a></li>
+  <li><a href="#a-practical-thinking-template" id="toc-a-practical-thinking-template" class="nav-link" data-scroll-target="#a-practical-thinking-template">A Practical Thinking Template</a></li>
+  <li><a href="#example-turning-a-weak-prompt-into-a-thinking-workflow" id="toc-example-turning-a-weak-prompt-into-a-thinking-workflow" class="nav-link" data-scroll-target="#example-turning-a-weak-prompt-into-a-thinking-workflow">Example: Turning a Weak Prompt into a Thinking Workflow</a></li>
+  <li><a href="#connection-to-the-humanaihuman-framework" id="toc-connection-to-the-humanaihuman-framework" class="nav-link" data-scroll-target="#connection-to-the-humanaihuman-framework">Connection to the Human–AI–Human Framework</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Part I: AI Foundations</a></li><li class="breadcrumb-item"><a href="./02-thinking-with-ai.html"><span class="chapter-title">Thinking with AI</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="thinking-with-ai" class="quarto-section-identifier"><span class="chapter-title">Thinking with AI</span></span></h1>
 </div>
 
 
@@ -374,69 +330,327 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-002</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> Thinking with AI means using AI to strengthen human reasoning, not replace it</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>AI can produce text, code, summaries, ideas, explanations, and plans.</p>
+<p>But the most important question is not only what AI can produce.</p>
+<p>The more important question is how AI changes the way a person thinks.</p>
+<p>When used casually, AI can become a shortcut.</p>
+<p>When used carefully, AI can become a thinking partner.</p>
+<p>This chapter introduces <strong>Thinking with AI</strong> as a foundation for AI Systems.</p>
+<p>Thinking with AI is not about handing responsibility to a machine.</p>
+<p>It is about using AI to improve questioning, reasoning, reflection, communication, and decision-making while keeping the human in charge.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
-<hr>
-</section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="from-ai-use-to-ai-thinking" class="level2">
+<h2 class="anchored" data-anchor-id="from-ai-use-to-ai-thinking">From AI Use to AI Thinking</h2>
+<p>A person can use AI to answer a question quickly.</p>
+<p>That is useful.</p>
+<p>But AI Systems requires a deeper habit.</p>
+<p>The learner should ask:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>What problem am I trying to understand?</li>
+<li>What do I already know?</li>
+<li>What context does the AI need?</li>
+<li>What assumptions might be hidden?</li>
+<li>What output would be useful?</li>
+<li>How will I evaluate the response?</li>
+<li>What decision remains mine?</li>
 </ul>
+<p>This shift changes AI from a response generator into a reasoning support system.</p>
+<pre class="text"><code>Casual AI use
+  ↓
+Ask a question
+  ↓
+Receive an answer
+  ↓
+Use or ignore the answer</code></pre>
+<p>Thinking with AI is more structured.</p>
+<pre class="text"><code>Thinking with AI
+  ↓
+Frame the question
+  ↓
+Provide context
+  ↓
+Explore possibilities
+  ↓
+Challenge assumptions
+  ↓
+Evaluate the output
+  ↓
+Decide what to keep, revise, or reject</code></pre>
+<p>The difference is not the tool.</p>
+<p>The difference is the workflow.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="the-role-of-ai-in-human-thinking" class="level2">
+<h2 class="anchored" data-anchor-id="the-role-of-ai-in-human-thinking">The Role of AI in Human Thinking</h2>
+<p>AI can support thinking in several ways.</p>
+<p>It can help a learner organize ideas.</p>
+<p>It can help a researcher compare interpretations.</p>
+<p>It can help a data scientist explain results.</p>
+<p>It can help a professional draft, review, or simplify communication.</p>
+<p>It can help a mentor turn rough knowledge into structured guidance.</p>
+<p>But AI should not be treated as the final authority.</p>
+<p>AI is strongest when it supports human reasoning.</p>
+<p>It is weakest when it replaces human review.</p>
+<p>A responsible thinking workflow keeps the human active at every stage.</p>
+<pre class="text"><code>Human curiosity
+  ↓
+AI-assisted exploration
+  ↓
+Human evaluation
+  ↓
+Improved understanding</code></pre>
+<p>This is why Thinking with AI belongs inside the broader AI Systems guide.</p>
+<p>It teaches the mental habits needed before building workflows, agents, or applied systems.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="asking-better-questions" class="level2">
+<h2 class="anchored" data-anchor-id="asking-better-questions">Asking Better Questions</h2>
+<p>AI often reflects the quality of the question it receives.</p>
+<p>A vague question usually produces a vague answer.</p>
+<p>A better question gives the AI direction.</p>
+<p>For example:</p>
+<pre class="text"><code>Weak question:
+Explain AI.
 
-</div>
+Stronger question:
+Explain AI to a beginner who understands basic data analysis but has not studied machine learning. Focus on how AI supports human workflows, and include risks of overreliance.</code></pre>
+<p>The stronger question provides:</p>
+<ul>
+<li>audience,</li>
+<li>background,</li>
+<li>focus,</li>
+<li>purpose,</li>
+<li>and constraints.</li>
+</ul>
+<p>Good AI thinking begins before the prompt is written.</p>
+<p>The human first clarifies the purpose of the task.</p>
+<hr>
+</section>
+<section id="using-ai-to-explore-ideas" class="level2">
+<h2 class="anchored" data-anchor-id="using-ai-to-explore-ideas">Using AI to Explore Ideas</h2>
+<p>AI can help generate possibilities quickly.</p>
+<p>This is useful during early thinking.</p>
+<p>A learner can ask AI to propose examples.</p>
+<p>A researcher can ask AI to list possible interpretations.</p>
+<p>A professional can ask AI to compare communication approaches.</p>
+<p>A team can ask AI to surface risks, missing steps, or alternative workflows.</p>
+<p>However, exploration is not the same as conclusion.</p>
+<p>Ideas generated by AI should be treated as candidates.</p>
+<p>They need review.</p>
+<p>They need selection.</p>
+<p>They may need evidence.</p>
+<p>A simple exploration pattern is:</p>
+<pre class="text"><code>Generate possibilities
+  ↓
+Group related ideas
+  ↓
+Remove weak or irrelevant ideas
+  ↓
+Test the strongest ideas against evidence and context
+  ↓
+Decide what to use</code></pre>
+<p>This keeps creativity connected to judgment.</p>
+<hr>
+</section>
+<section id="using-ai-to-challenge-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="using-ai-to-challenge-assumptions">Using AI to Challenge Assumptions</h2>
+<p>One of the strongest uses of AI is not asking it to agree.</p>
+<p>It is asking it to challenge the current view.</p>
+<p>For example:</p>
+<pre class="text"><code>Review this plan and identify assumptions that may be weak, missing, or risky.</code></pre>
+<p>Or:</p>
+<pre class="text"><code>Act as a reviewer. What would make this conclusion less defensible?</code></pre>
+<p>Or:</p>
+<pre class="text"><code>What alternative explanations should I consider before accepting this interpretation?</code></pre>
+<p>This kind of AI use improves reasoning because it introduces friction.</p>
+<p>It slows down premature certainty.</p>
+<p>It helps the human notice gaps.</p>
+<p>In AI Systems, this becomes part of quality control.</p>
+<p>The goal is not to make AI oppositional.</p>
+<p>The goal is to make thinking more complete.</p>
+<hr>
+</section>
+<section id="using-ai-to-improve-explanations" class="level2">
+<h2 class="anchored" data-anchor-id="using-ai-to-improve-explanations">Using AI to Improve Explanations</h2>
+<p>AI can help turn complex ideas into clearer explanations.</p>
+<p>This is especially useful in education, reporting, mentoring, and interdisciplinary work.</p>
+<p>A person can ask AI to:</p>
+<ul>
+<li>simplify a technical concept,</li>
+<li>compare two explanation styles,</li>
+<li>identify unclear parts of a draft,</li>
+<li>suggest a better structure,</li>
+<li>or adapt language for a specific audience.</li>
+</ul>
+<p>For example:</p>
+<pre class="text"><code>Rewrite this explanation for a non-technical audience while preserving the main meaning and avoiding overclaiming.</code></pre>
+<p>But the human must still check whether the simplified version remains accurate.</p>
+<p>Clarity should not remove precision.</p>
+<p>Good AI-assisted explanation keeps three things together:</p>
+<pre class="text"><code>Accuracy
+  +
+Clarity
+  +
+Audience fit</code></pre>
+<hr>
+</section>
+<section id="reflection-before-decision" class="level2">
+<h2 class="anchored" data-anchor-id="reflection-before-decision">Reflection Before Decision</h2>
+<p>AI can help a person think before acting.</p>
+<p>Before making a decision, the human can ask:</p>
+<pre class="text"><code>What are the strongest reasons for this option?
+What are the strongest reasons against it?
+What information is still missing?
+What risks should be documented?
+What would change the decision?</code></pre>
+<p>This creates a more careful decision workflow.</p>
+<p>AI does not decide.</p>
+<p>AI helps structure the reflection that supports the human decision.</p>
+<p>This is especially important in high-impact settings such as education, research, analysis, health-related communication, policy, finance, hiring, and public-facing reporting.</p>
+<p>The more important the decision, the stronger the review process should be.</p>
+<hr>
+</section>
+<section id="the-thinking-with-ai-loop" class="level2">
+<h2 class="anchored" data-anchor-id="the-thinking-with-ai-loop">The Thinking with AI Loop</h2>
+<p>Thinking with AI can be summarized as a loop.</p>
+<pre class="text"><code>Question
+  ↓
+Context
+  ↓
+AI response
+  ↓
+Human review
+  ↓
+Revision
+  ↓
+Decision or next question</code></pre>
+<p>This loop can repeat many times.</p>
+<p>Each round should improve the work.</p>
+<p>A weak loop only asks for more output.</p>
+<p>A strong loop improves the question, improves the context, improves the criteria, and improves the decision.</p>
+<pre class="text"><code>Weak loop:
+More output, more output, more output
+
+Strong loop:
+Better framing, better evidence, better review, better decision</code></pre>
+<p>This distinction matters because AI can produce endless content.</p>
+<p>The system must guide that content toward purpose and quality.</p>
+<hr>
+</section>
+<section id="common-thinking-risks" class="level2">
+<h2 class="anchored" data-anchor-id="common-thinking-risks">Common Thinking Risks</h2>
+<p>Thinking with AI also introduces risks.</p>
+<p>The most common risks include:</p>
+<ul>
+<li>accepting fluent answers too quickly,</li>
+<li>using AI before understanding the problem,</li>
+<li>asking vague questions and trusting vague outputs,</li>
+<li>copying AI text without review,</li>
+<li>allowing AI to flatten nuance,</li>
+<li>confusing confidence with correctness,</li>
+<li>and failing to document how AI was used.</li>
+</ul>
+<p>These risks do not mean AI should be avoided.</p>
+<p>They mean AI should be used with discipline.</p>
+<p>A responsible learner should pause and ask:</p>
+<pre class="text"><code>Do I understand this output?
+Can I verify it?
+Does it fit the context?
+What might be missing?
+What should I change before using it?</code></pre>
+<hr>
+</section>
+<section id="a-practical-thinking-template" class="level2">
+<h2 class="anchored" data-anchor-id="a-practical-thinking-template">A Practical Thinking Template</h2>
+<p>The following template can be used before asking AI for help.</p>
+<pre class="text"><code>Task:
+What am I trying to do?
+
+Context:
+What information does the AI need?
+
+Audience:
+Who is the output for?
+
+Constraints:
+What should the AI avoid or respect?
+
+Expected output:
+What format would be useful?
+
+Review criteria:
+How will I judge whether the output is good enough?
+
+Human decision:
+What final decision remains mine?</code></pre>
+<p>This template turns a prompt into a small system.</p>
+<p>It also prepares the learner for later chapters on prompt design, context systems, evaluation, and reusable agents.</p>
+<hr>
+</section>
+<section id="example-turning-a-weak-prompt-into-a-thinking-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="example-turning-a-weak-prompt-into-a-thinking-workflow">Example: Turning a Weak Prompt into a Thinking Workflow</h2>
+<p>A weak prompt might be:</p>
+<pre class="text"><code>Write about data science careers.</code></pre>
+<p>A stronger Thinking with AI workflow would be:</p>
+<pre class="text"><code>I am preparing a short learning guide for beginners interested in data science careers.
+
+Audience:
+Students and early-career professionals.
+
+Task:
+Explain what data science careers involve and how learners can prepare.
+
+Constraints:
+Do not make unrealistic promises. Emphasize skills, projects, communication, and continuous learning.
+
+Output:
+Create a structured explanation with short sections and practical examples.
+
+Review criteria:
+The response should be clear, realistic, encouraging, and suitable for learners.</code></pre>
+<p>The stronger version does not simply ask for content.</p>
+<p>It frames the situation.</p>
+<p>It defines the audience.</p>
+<p>It sets boundaries.</p>
+<p>It gives quality criteria.</p>
+<p>That is the beginning of AI systems thinking.</p>
+<hr>
+</section>
+<section id="connection-to-the-humanaihuman-framework" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-the-humanaihuman-framework">Connection to the Human–AI–Human Framework</h2>
+<p>Thinking with AI leads directly into the Human–AI–Human framework.</p>
+<pre class="text"><code>Human frames the task
+  ↓
+AI assists the thinking process
+  ↓
+Human evaluates and decides</code></pre>
+<p>This pattern appears throughout the rest of the guide.</p>
+<p>It applies to learning.</p>
+<p>It applies to writing.</p>
+<p>It applies to research.</p>
+<p>It applies to data analysis.</p>
+<p>It applies to agents.</p>
+<p>It applies to professional workflows.</p>
+<p>The human remains responsible for framing, judgment, documentation, and action.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>Thinking with AI means using AI to strengthen human reasoning.</p>
+<p>It is not passive AI use.</p>
+<p>It is an active workflow where the human frames the question, provides context, explores possibilities, challenges assumptions, evaluates the output, and decides what to do next.</p>
+<p>The core lesson is simple:</p>
+<blockquote class="blockquote">
+<p>AI can assist thinking, but it should not replace responsibility.</p>
+</blockquote>
+<p>This chapter established the reasoning foundation for the rest of the guide.</p>
+<p>The next chapter formalizes this foundation through the <strong>Human–AI–Human framework</strong>.</p>
 
 
 </section>
@@ -845,11 +1059,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./01-ai-system-overview.html" class="pagination-link" aria-label="AI System Overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">AI System Overview</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./03-human-ai-human-framework.html" class="pagination-link" aria-label="Human--AI--Human Framework">
+        <span class="nav-page-text"><span class="chapter-title">Human–AI–Human Framework</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

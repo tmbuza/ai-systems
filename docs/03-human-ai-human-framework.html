@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>Human–AI–Human Framework – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./04-prompting-as-system-design.html" rel="next">
+<link href="./02-thinking-with-ai.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Part I: AI Foundations</a></li><li class="breadcrumb-item"><a href="./03-human-ai-human-framework.html"><span class="chapter-title">Human–AI–Human Framework</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -193,7 +140,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-human-ai-human-framework.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Human–AI–Human Framework</span></a>
+  <a href="./03-human-ai-human-framework.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Human–AI–Human Framework</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,42 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#why-the-framework-matters" id="toc-why-the-framework-matters" class="nav-link active" data-scroll-target="#why-the-framework-matters">Why the Framework Matters</a></li>
+  <li><a href="#the-three-core-stages" id="toc-the-three-core-stages" class="nav-link" data-scroll-target="#the-three-core-stages">The Three Core Stages</a>
+  <ul class="collapse">
+  <li><a href="#stage-1-human-framing" id="toc-stage-1-human-framing" class="nav-link" data-scroll-target="#stage-1-human-framing">Stage 1: Human Framing</a></li>
+  <li><a href="#stage-2-ai-assistance" id="toc-stage-2-ai-assistance" class="nav-link" data-scroll-target="#stage-2-ai-assistance">Stage 2: AI Assistance</a></li>
+  <li><a href="#stage-3-human-review-and-decision" id="toc-stage-3-human-review-and-decision" class="nav-link" data-scroll-target="#stage-3-human-review-and-decision">Stage 3: Human Review and Decision</a></li>
+  </ul></li>
+  <li><a href="#humanaihuman-as-a-feedback-loop" id="toc-humanaihuman-as-a-feedback-loop" class="nav-link" data-scroll-target="#humanaihuman-as-a-feedback-loop">Human–AI–Human as a Feedback Loop</a></li>
+  <li><a href="#a-practical-example" id="toc-a-practical-example" class="nav-link" data-scroll-target="#a-practical-example">A Practical Example</a>
+  <ul class="collapse">
+  <li><a href="#human-framing" id="toc-human-framing" class="nav-link" data-scroll-target="#human-framing">Human framing</a></li>
+  <li><a href="#ai-assistance" id="toc-ai-assistance" class="nav-link" data-scroll-target="#ai-assistance">AI assistance</a></li>
+  <li><a href="#human-review-and-decision" id="toc-human-review-and-decision" class="nav-link" data-scroll-target="#human-review-and-decision">Human review and decision</a></li>
+  </ul></li>
+  <li><a href="#the-role-of-context" id="toc-the-role-of-context" class="nav-link" data-scroll-target="#the-role-of-context">The Role of Context</a></li>
+  <li><a href="#human-judgment-cannot-be-outsourced" id="toc-human-judgment-cannot-be-outsourced" class="nav-link" data-scroll-target="#human-judgment-cannot-be-outsourced">Human Judgment Cannot Be Outsourced</a></li>
+  <li><a href="#common-failure-patterns" id="toc-common-failure-patterns" class="nav-link" data-scroll-target="#common-failure-patterns">Common Failure Patterns</a>
+  <ul class="collapse">
+  <li><a href="#failure-pattern-1-tool-first-thinking" id="toc-failure-pattern-1-tool-first-thinking" class="nav-link" data-scroll-target="#failure-pattern-1-tool-first-thinking">Failure Pattern 1: Tool-First Thinking</a></li>
+  <li><a href="#failure-pattern-2-prompt-without-context" id="toc-failure-pattern-2-prompt-without-context" class="nav-link" data-scroll-target="#failure-pattern-2-prompt-without-context">Failure Pattern 2: Prompt Without Context</a></li>
+  <li><a href="#failure-pattern-3-output-without-evaluation" id="toc-failure-pattern-3-output-without-evaluation" class="nav-link" data-scroll-target="#failure-pattern-3-output-without-evaluation">Failure Pattern 3: Output Without Evaluation</a></li>
+  <li><a href="#failure-pattern-4-automation-without-responsibility" id="toc-failure-pattern-4-automation-without-responsibility" class="nav-link" data-scroll-target="#failure-pattern-4-automation-without-responsibility">Failure Pattern 4: Automation Without Responsibility</a></li>
+  </ul></li>
+  <li><a href="#humanaihuman-checklist" id="toc-humanaihuman-checklist" class="nav-link" data-scroll-target="#humanaihuman-checklist">Human–AI–Human Checklist</a></li>
+  <li><a href="#how-this-framework-supports-agents" id="toc-how-this-framework-supports-agents" class="nav-link" data-scroll-target="#how-this-framework-supports-agents">How This Framework Supports Agents</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Part I: AI Foundations</a></li><li class="breadcrumb-item"><a href="./03-human-ai-human-framework.html"><span class="chapter-title">Human–AI–Human Framework</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="human-ai-human-framework" class="quarto-section-identifier"><span class="chapter-title">Human–AI–Human Framework</span></span></h1>
 </div>
 
 
@@ -374,69 +344,307 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-003</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI-supported workflows</li>
+<li><strong>Theme:</strong> Responsible AI work begins with human framing and ends with human judgment</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>AI systems should not begin with a tool.</p>
+<p>They should begin with a human purpose.</p>
+<p>A person identifies a problem, defines the context, clarifies the expected output, and decides what kind of support is needed.</p>
+<p>AI may then assist with generation, reasoning, summarization, coding, analysis, critique, or workflow acceleration.</p>
+<p>But the work does not end with the AI output.</p>
+<p>A human must review the result, check the evidence, evaluate risk, revise the output, document the process, and decide what action to take.</p>
+<p>This is the <strong>Human–AI–Human</strong> framework.</p>
+<pre class="text"><code>Human frames the work
+        ↓
+AI assists with the task
+        ↓
+Human evaluates and acts</code></pre>
+<p>The framework is simple, but it changes how AI is used.</p>
+<p>It moves AI from a replacement mindset to a support-system mindset.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
+<section id="why-the-framework-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-the-framework-matters">Why the Framework Matters</h2>
+<p>AI outputs can sound confident even when they are incomplete, outdated, biased, unsupported, or wrong.</p>
+<p>This means a responsible workflow cannot treat AI output as the final answer.</p>
+<p>The Human–AI–Human framework protects the quality of the work by keeping human responsibility at both ends of the process.</p>
+<p>The first human step gives the AI direction.</p>
+<p>The final human step gives the work accountability.</p>
+<p>Without the first step, AI may respond to a vague or poorly framed task.</p>
+<p>Without the final step, AI output may be accepted without inspection.</p>
+<p>A strong AI system needs both.</p>
 <hr>
 </section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="the-three-core-stages" class="level2">
+<h2 class="anchored" data-anchor-id="the-three-core-stages">The Three Core Stages</h2>
+<p>The framework has three core stages.</p>
+<pre class="text"><code>1. Human framing
+2. AI assistance
+3. Human review and decision</code></pre>
+<p>Each stage has a different role.</p>
+<section id="stage-1-human-framing" class="level3">
+<h3 class="anchored" data-anchor-id="stage-1-human-framing">Stage 1: Human Framing</h3>
+<p>Human framing defines the work before AI is used.</p>
+<p>This stage answers questions such as:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>What problem are we trying to solve?</li>
+<li>Why does the problem matter?</li>
+<li>Who is the audience?</li>
+<li>What context does the AI need?</li>
+<li>What constraints must be respected?</li>
+<li>What kind of output is expected?</li>
+<li>What risks should be considered?</li>
+<li>What evidence or data should guide the response?</li>
 </ul>
+<p>Good framing reduces confusion.</p>
+<p>It helps the AI produce a more useful response.</p>
+<p>It also helps the human evaluate whether the response is appropriate.</p>
+<p>A weak frame might say:</p>
+<pre class="text"><code>Write something about AI.</code></pre>
+<p>A stronger frame might say:</p>
+<pre class="text"><code>Draft a short explanation for undergraduate learners showing why AI outputs need human review. Use simple language, include one practical example, and avoid presenting AI as always correct.</code></pre>
+<p>The second version gives the AI a purpose, audience, scope, style, and safety boundary.</p>
+<p>That is system design.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="stage-2-ai-assistance" class="level3">
+<h3 class="anchored" data-anchor-id="stage-2-ai-assistance">Stage 2: AI Assistance</h3>
+<p>AI assistance is the middle of the workflow.</p>
+<p>In this stage, AI may help by:</p>
+<ul>
+<li>generating a first draft,</li>
+<li>summarizing long material,</li>
+<li>comparing options,</li>
+<li>explaining a concept,</li>
+<li>creating code,</li>
+<li>checking logic,</li>
+<li>organizing ideas,</li>
+<li>transforming notes into a structured output,</li>
+<li>identifying possible gaps,</li>
+<li>or proposing next steps.</li>
+</ul>
+<p>AI is useful because it can accelerate work.</p>
+<p>But acceleration is not the same as correctness.</p>
+<p>The AI output should be treated as a candidate output, not the final authority.</p>
+<p>A responsible user asks:</p>
+<pre class="text"><code>What did the AI help produce?
+What assumptions appear in the output?
+What information may be missing?
+What needs verification?
+What should not be accepted without review?</code></pre>
+<p>The goal is not to distrust everything.</p>
+<p>The goal is to inspect the work before using it.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
-
-</div>
+<section id="stage-3-human-review-and-decision" class="level3">
+<h3 class="anchored" data-anchor-id="stage-3-human-review-and-decision">Stage 3: Human Review and Decision</h3>
+<p>Human review turns AI output into responsible work.</p>
+<p>This stage may include:</p>
+<ul>
+<li>checking factual accuracy,</li>
+<li>comparing the output with source materials,</li>
+<li>reviewing calculations or code,</li>
+<li>testing whether the output fits the audience,</li>
+<li>identifying unsupported claims,</li>
+<li>checking for privacy or safety concerns,</li>
+<li>revising unclear language,</li>
+<li>documenting AI involvement,</li>
+<li>and deciding whether the output is ready to use.</li>
+</ul>
+<p>The final decision belongs to the human.</p>
+<p>AI can support the process, but the human remains responsible for what is submitted, published, shared, taught, or acted upon.</p>
+<p>This is especially important in education, research, data analysis, health, finance, policy, legal work, and professional communication.</p>
+<hr>
+</section>
+</section>
+<section id="humanaihuman-as-a-feedback-loop" class="level2">
+<h2 class="anchored" data-anchor-id="humanaihuman-as-a-feedback-loop">Human–AI–Human as a Feedback Loop</h2>
+<p>The framework is not always a single pass.</p>
+<p>Most useful AI work happens through iteration.</p>
+<pre class="text"><code>Human frames task
+        ↓
+AI produces draft or analysis
+        ↓
+Human reviews output
+        ↓
+Human refines prompt, context, or constraints
+        ↓
+AI improves output
+        ↓
+Human evaluates and decides</code></pre>
+<p>This loop makes AI work stronger.</p>
+<p>The human does not simply ask once and accept the answer.</p>
+<p>The human guides the system, learns from the output, improves the context, and reviews again.</p>
+<p>In this sense, AI becomes part of a learning and decision-support workflow.</p>
+<hr>
+</section>
+<section id="a-practical-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-practical-example">A Practical Example</h2>
+<p>Consider a learner who wants to write a short reflection on data ethics.</p>
+<p>A casual AI-use approach might be:</p>
+<pre class="text"><code>Write a reflection on data ethics.</code></pre>
+<p>The AI may produce a fluent answer.</p>
+<p>But the learner may not understand the reasoning behind it.</p>
+<p>They may submit an output that does not reflect their own experience.</p>
+<p>They may also miss important issues such as consent, privacy, bias, or accountability.</p>
+<p>A Human–AI–Human approach is different.</p>
+<section id="human-framing" class="level3">
+<h3 class="anchored" data-anchor-id="human-framing">Human framing</h3>
+<p>The learner first defines the task:</p>
+<pre class="text"><code>I need to write a 500-word reflection for a class on data ethics. The reflection should connect privacy, consent, and bias to a real-world example. I want help organizing my own ideas, not a final essay.</code></pre>
+</section>
+<section id="ai-assistance" class="level3">
+<h3 class="anchored" data-anchor-id="ai-assistance">AI assistance</h3>
+<p>The AI can help by producing:</p>
+<pre class="text"><code>- a possible outline,
+- guiding questions,
+- examples of ethical issues,
+- and suggestions for improving clarity.</code></pre>
+</section>
+<section id="human-review-and-decision" class="level3">
+<h3 class="anchored" data-anchor-id="human-review-and-decision">Human review and decision</h3>
+<p>The learner then:</p>
+<pre class="text"><code>- chooses the example,
+- writes in their own voice,
+- checks the course requirements,
+- removes unsupported claims,
+- and submits work they understand and can defend.</code></pre>
+<p>The AI supports the learner.</p>
+<p>It does not replace the learner.</p>
+<hr>
+</section>
+</section>
+<section id="the-role-of-context" class="level2">
+<h2 class="anchored" data-anchor-id="the-role-of-context">The Role of Context</h2>
+<p>The Human–AI–Human framework depends heavily on context.</p>
+<p>AI systems do not automatically know the full situation.</p>
+<p>The human must decide what context to provide.</p>
+<p>Useful context may include:</p>
+<ul>
+<li>the problem statement,</li>
+<li>the audience,</li>
+<li>the purpose,</li>
+<li>relevant data,</li>
+<li>documents or notes,</li>
+<li>definitions,</li>
+<li>examples,</li>
+<li>constraints,</li>
+<li>output format,</li>
+<li>quality criteria,</li>
+<li>and known risks.</li>
+</ul>
+<p>The better the context, the more useful the AI assistance can become.</p>
+<p>But context also creates responsibility.</p>
+<p>Sensitive information should not be shared casually.</p>
+<p>Private data, confidential documents, student records, patient information, business secrets, or personal identifiers require careful handling.</p>
+<p>Responsible AI use requires both context and boundaries.</p>
+<hr>
+</section>
+<section id="human-judgment-cannot-be-outsourced" class="level2">
+<h2 class="anchored" data-anchor-id="human-judgment-cannot-be-outsourced">Human Judgment Cannot Be Outsourced</h2>
+<p>AI can assist with reasoning.</p>
+<p>But it does not carry human accountability.</p>
+<p>It does not know the full consequences of a decision.</p>
+<p>It does not replace professional responsibility.</p>
+<p>It cannot fully understand local context, lived experience, institutional requirements, ethical obligations, or stakeholder impact unless those are carefully represented and still reviewed by a human.</p>
+<p>For that reason, the Human–AI–Human framework keeps judgment where it belongs.</p>
+<pre class="text"><code>AI may assist with the work.
+Human judgment remains responsible for the work.</code></pre>
+<p>This distinction is central to the entire AI Systems guide.</p>
+<hr>
+</section>
+<section id="common-failure-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="common-failure-patterns">Common Failure Patterns</h2>
+<p>The Human–AI–Human framework helps prevent several common failure patterns.</p>
+<section id="failure-pattern-1-tool-first-thinking" class="level3">
+<h3 class="anchored" data-anchor-id="failure-pattern-1-tool-first-thinking">Failure Pattern 1: Tool-First Thinking</h3>
+<p>Tool-first thinking begins with:</p>
+<pre class="text"><code>Which AI tool should I use?</code></pre>
+<p>System-first thinking begins with:</p>
+<pre class="text"><code>What problem am I trying to solve, and what kind of support is appropriate?</code></pre>
+<p>The second question is stronger.</p>
+<p>It prevents the tool from defining the work.</p>
+<hr>
+</section>
+<section id="failure-pattern-2-prompt-without-context" class="level3">
+<h3 class="anchored" data-anchor-id="failure-pattern-2-prompt-without-context">Failure Pattern 2: Prompt Without Context</h3>
+<p>A prompt without context often produces generic output.</p>
+<p>Generic output may sound useful but fail the actual task.</p>
+<p>A stronger workflow provides enough context for the AI to respond to the real situation.</p>
+<hr>
+</section>
+<section id="failure-pattern-3-output-without-evaluation" class="level3">
+<h3 class="anchored" data-anchor-id="failure-pattern-3-output-without-evaluation">Failure Pattern 3: Output Without Evaluation</h3>
+<p>AI output should not be treated as complete simply because it is fluent.</p>
+<p>Evaluation is part of the workflow, not an optional final step.</p>
+<p>The human must ask whether the output is correct, relevant, complete, clear, and safe to use.</p>
+<hr>
+</section>
+<section id="failure-pattern-4-automation-without-responsibility" class="level3">
+<h3 class="anchored" data-anchor-id="failure-pattern-4-automation-without-responsibility">Failure Pattern 4: Automation Without Responsibility</h3>
+<p>Automation can save time.</p>
+<p>But automation without review can scale errors.</p>
+<p>The more an AI-supported workflow affects people, decisions, data, or public communication, the more important the review layer becomes.</p>
+<hr>
+</section>
+</section>
+<section id="humanaihuman-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="humanaihuman-checklist">Human–AI–Human Checklist</h2>
+<p>Before using AI, ask:</p>
+<pre class="text"><code>Have I defined the problem clearly?
+Have I identified the audience and purpose?
+Have I provided enough context?
+Have I set constraints and boundaries?
+Have I stated the expected output format?</code></pre>
+<p>After receiving AI output, ask:</p>
+<pre class="text"><code>Is the output accurate?
+Is it relevant to the task?
+Is anything missing?
+Are any claims unsupported?
+Does it respect the audience and context?
+Does it introduce privacy, bias, safety, or ethical concerns?
+What must I revise before using it?
+How should AI involvement be documented?</code></pre>
+<p>This checklist turns AI use into a reviewable workflow.</p>
+<hr>
+</section>
+<section id="how-this-framework-supports-agents" class="level2">
+<h2 class="anchored" data-anchor-id="how-this-framework-supports-agents">How This Framework Supports Agents</h2>
+<p>Later in the guide, we will design reusable AI agents.</p>
+<p>An agent is not only a prompt.</p>
+<p>An agent is a structured workflow with a purpose, inputs, context, decision logic, output standards, review expectations, and improvement process.</p>
+<p>The Human–AI–Human framework becomes the safety and quality backbone for those agents.</p>
+<pre class="text"><code>Human defines agent purpose
+        ↓
+Agent assists within defined scope
+        ↓
+Human reviews output and improves the system</code></pre>
+<p>This prevents agents from becoming uncontrolled black boxes.</p>
+<p>It keeps them connected to human goals, human review, and human accountability.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>The Human–AI–Human framework is the core operating model for responsible AI systems.</p>
+<p>It begins with human framing.</p>
+<p>It uses AI as an assistant inside a defined workflow.</p>
+<p>It ends with human review, decision-making, documentation, and accountability.</p>
+<p>The framework can be used by learners, professionals, educators, researchers, analysts, and teams.</p>
+<p>It also prepares the foundation for reusable AI agent design.</p>
+<p>The central message is:</p>
+<blockquote class="blockquote">
+<p>AI should support human thinking and action, not remove human responsibility.</p>
+</blockquote>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter moves from the Human–AI–Human framework into prompt design.</p>
+<p>We will treat prompting not as a trick, but as a form of system design.</p>
+<p>A strong prompt defines purpose, context, constraints, output format, review criteria, and boundaries.</p>
+<p>That is where responsible AI workflows begin to become reproducible.</p>
 
 
 </section>
@@ -845,11 +1053,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./02-thinking-with-ai.html" class="pagination-link" aria-label="Thinking with AI">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Thinking with AI</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./04-prompting-as-system-design.html" class="pagination-link" aria-label="Prompting as System Design">
+        <span class="nav-page-text"><span class="chapter-title">Prompting as System Design</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

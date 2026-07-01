@@ -1,0 +1,570 @@
+# Communication and Reporting Agent {#communication-and-reporting-agent}
+
+:::cdi-message
+- **ID:** AI-018
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, mentors, and professionals using AI to communicate work clearly and responsibly
+- **Theme:** AI can support communication and reporting, but the message, evidence, tone, and responsibility must remain human-led
+:::
+
+Communication is one of the most common ways people use AI.
+
+They ask AI to draft emails.
+
+They ask AI to summarize documents.
+
+They ask AI to rewrite reports.
+
+They ask AI to turn technical notes into plain language.
+
+They ask AI to prepare presentations, announcements, captions, and explanations.
+
+This is useful.
+
+But communication is not only writing.
+
+Communication carries meaning, evidence, audience expectations, professional judgment, and responsibility.
+
+A communication and reporting agent should therefore not be treated as a tool for producing polished words only.
+
+It should be treated as a system for helping humans communicate clearly, honestly, and appropriately.
+
+---
+
+## Purpose of a Communication and Reporting Agent
+
+A communication and reporting agent helps transform information into useful messages for specific audiences.
+
+Its purpose is to support:
+
+- clearer writing,
+- better structure,
+- appropriate tone,
+- audience adaptation,
+- transparent reporting,
+- evidence-based summaries,
+- and reusable communication workflows.
+
+The agent can assist with many communication tasks, including:
+
+- drafting emails,
+- rewriting messages,
+- summarizing findings,
+- preparing reports,
+- converting technical language into plain language,
+- generating slide outlines,
+- preparing public updates,
+- writing learner feedback,
+- and creating project documentation.
+
+However, the agent should not decide what should be communicated without human oversight.
+
+It should not invent evidence.
+
+It should not exaggerate results.
+
+It should not remove uncertainty.
+
+It should not make claims that the human cannot defend.
+
+The agent supports communication.
+
+The human owns the message.
+
+---
+
+## Where the Agent Fits in the Human--AI--Human Workflow
+
+The communication and reporting agent follows the same Human--AI--Human model used throughout this guide.
+
+```text
+Human defines the communication purpose
+        ↓
+Human provides audience, context, evidence, and constraints
+        ↓
+AI drafts, rewrites, summarizes, structures, or adapts the message
+        ↓
+Human reviews accuracy, tone, completeness, and risk
+        ↓
+Human approves, edits, sends, publishes, or archives the final output
+```
+
+The workflow begins with human intent and ends with human approval.
+
+This is important because communication can affect trust.
+
+A technically correct message can still be inappropriate for the audience.
+
+A polished report can still overstate the evidence.
+
+A friendly email can still create the wrong expectation.
+
+A summary can omit important limitations.
+
+For that reason, the agent must be designed with review built in from the beginning.
+
+---
+
+## Common Use Cases
+
+A communication and reporting agent can support many recurring professional tasks.
+
+### Email and Message Drafting
+
+The agent can help draft:
+
+- professional emails,
+- follow-up messages,
+- reminders,
+- announcements,
+- thank-you notes,
+- mentorship messages,
+- project updates,
+- and stakeholder responses.
+
+For these tasks, the agent needs the relationship, purpose, tone, and required action.
+
+A good input might include:
+
+```text
+Audience: A student mentee
+Purpose: Congratulate them for creating a GitHub account
+Tone: Warm, encouraging, simple, mentor-like
+Must include: Keep learning, keep building, portfolio mindset
+Avoid: Too much technical language
+Signature: Teresia Mrema Buza, Mentor, JIONGEZE Youth Skills Mentorship, Founder, Complex Data Insights
+```
+
+This gives the agent enough structure to produce a useful draft.
+
+The human still reviews whether the message sounds genuine and appropriate.
+
+### Research and Analysis Summaries
+
+The agent can help turn long notes into:
+
+- executive summaries,
+- literature summaries,
+- finding summaries,
+- methods summaries,
+- interpretation notes,
+- and limitation statements.
+
+For these tasks, the agent must be grounded in source material.
+
+It should not summarize from memory when evidence is required.
+
+A useful instruction is:
+
+```text
+Use only the notes provided below.
+Do not add claims that are not supported by the notes.
+Separate findings, limitations, and next steps.
+Mark any unclear point as needing human review.
+```
+
+This keeps the output closer to the available evidence.
+
+### Reports and Documentation
+
+The agent can help prepare structured reports from project outputs.
+
+For example:
+
+```text
+Inputs:
+- analysis summary table
+- methods notes
+- interpretation notes
+- figures
+- audience description
+
+Outputs:
+- report title
+- short background
+- methods summary
+- key findings
+- limitations
+- recommendations
+- appendix checklist
+```
+
+This is especially useful in data science, omics, clinical data, career, and AI systems projects.
+
+The agent helps organize the report.
+
+The human verifies the claims.
+
+### Public Communication
+
+The agent can help convert internal work into public-facing communication such as:
+
+- LinkedIn posts,
+- website descriptions,
+- repository descriptions,
+- README introductions,
+- project announcements,
+- learning reflections,
+- and program updates.
+
+Public communication requires extra care.
+
+The agent should avoid overclaiming.
+
+It should respect privacy.
+
+It should avoid presenting early work as finished evidence.
+
+It should make the purpose of the work clear.
+
+---
+
+## Required Inputs
+
+A communication and reporting agent works best when the human provides clear input.
+
+The minimum input package should include:
+
+```text
+Communication purpose:
+Audience:
+Relationship to audience:
+Main message:
+Evidence or source material:
+Required details:
+Tone:
+Length:
+Format:
+Things to avoid:
+Review criteria:
+```
+
+Without these inputs, the agent may produce generic writing.
+
+Generic writing can sound polished but fail the real task.
+
+For example, a message to a student should not sound like a corporate press release.
+
+A scientific report should not sound like a marketing caption.
+
+A professional update should not overstate uncertain results.
+
+A communication agent must adapt to the situation.
+
+---
+
+## Communication Context Package
+
+For repeatable communication tasks, it helps to create a context package.
+
+A context package contains the stable information that the agent needs repeatedly.
+
+For example:
+
+```text
+Brand or organization:
+Complex Data Insights
+
+Communication style:
+Clear, practical, professional, human-led, educational
+
+Common audiences:
+Learners, researchers, analysts, educators, mentors, professionals
+
+Preferred principles:
+- Evidence before claims
+- Human responsibility before automation
+- Clarity before complexity
+- Reproducibility before speed
+- Respectful and encouraging tone
+
+Signature style:
+Teresia Mrema Buza | Complex Data Insights
+```
+
+This package can be reused across reports, emails, guides, and announcements.
+
+It helps the agent maintain consistency.
+
+However, the context package should not replace task-specific instructions.
+
+Each communication task still needs its own audience, purpose, and evidence.
+
+---
+
+## Output Standards
+
+A communication and reporting agent should produce outputs that are:
+
+- accurate,
+- clear,
+- audience-aware,
+- appropriately toned,
+- evidence-based,
+- complete enough for the purpose,
+- transparent about uncertainty,
+- and ready for human review.
+
+The output should also match the requested format.
+
+For example, if the user asks for an email, the output should look like an email.
+
+If the user asks for a report section, the output should read like a report section.
+
+If the user asks for a summary, the output should not become a long essay.
+
+If the user asks for a public caption, the output should be concise and readable.
+
+Format is part of quality.
+
+---
+
+## Review Checklist
+
+Before sending, publishing, or submitting AI-assisted communication, the human should review the output.
+
+A practical checklist is:
+
+```text
+Accuracy:
+Does every factual claim match the available evidence?
+
+Audience:
+Is the language appropriate for the reader?
+
+Tone:
+Does it sound respectful, professional, and human?
+
+Completeness:
+Does it include the required information?
+
+Privacy:
+Does it avoid exposing sensitive or unnecessary details?
+
+Uncertainty:
+Does it avoid overstating confidence?
+
+Action:
+Is it clear what the reader should know, do, or decide?
+
+Ownership:
+Would I be comfortable signing, sending, publishing, or defending this?
+```
+
+The final question is the most important.
+
+If the human would not be comfortable owning the message, the message is not ready.
+
+---
+
+## Reporting Agent Workflow
+
+A reusable reporting agent can follow this workflow.
+
+```text
+1. Receive the reporting purpose
+2. Identify the audience
+3. Review the supplied evidence
+4. Separate facts, interpretations, limitations, and recommendations
+5. Draft the report structure
+6. Generate the first draft
+7. Flag unsupported claims or missing information
+8. Apply tone and format requirements
+9. Produce a review checklist
+10. Wait for human approval before final use
+```
+
+This workflow makes reporting more reliable.
+
+It also prevents the agent from jumping too quickly into polished writing before the evidence is understood.
+
+---
+
+## Example Agent Specification
+
+A reusable communication and reporting agent can be described like this:
+
+```text
+Agent name:
+Communication and Reporting Agent
+
+Purpose:
+Help transform human-provided notes, evidence, and instructions into clear communication outputs.
+
+Primary users:
+Learners, researchers, analysts, mentors, educators, and professionals.
+
+Supported outputs:
+Emails, summaries, reports, announcements, README sections, social posts, slide outlines, and documentation drafts.
+
+Required inputs:
+Audience, purpose, source material, tone, length, format, required details, and review criteria.
+
+Boundaries:
+Do not invent facts.
+Do not exaggerate findings.
+Do not remove important uncertainty.
+Do not publish or send without human approval.
+Do not expose private or sensitive information unnecessarily.
+
+Review requirements:
+Human must check accuracy, tone, completeness, privacy, and actionability before use.
+```
+
+This specification makes the agent easier to reuse and improve.
+
+---
+
+## Example Prompt Template
+
+A practical prompt template is:
+
+```text
+You are helping me prepare a communication output.
+
+Purpose:
+[Explain why this message or report is needed]
+
+Audience:
+[Describe who will read it]
+
+Context:
+[Provide background information]
+
+Source material:
+[Paste notes, findings, tables, messages, or draft text]
+
+Required content:
+[List details that must be included]
+
+Tone:
+[Professional, warm, concise, encouraging, formal, plain-language, etc.]
+
+Format:
+[Email, report section, summary, README, announcement, slide outline, etc.]
+
+Constraints:
+[Length, words to avoid, privacy concerns, claims not to make]
+
+Review task:
+Before giving the final draft, flag any missing information, unsupported claims, or risk areas.
+Then provide a clean draft for human review.
+```
+
+This template supports both writing and review.
+
+It reminds the agent that communication quality depends on evidence, audience, and responsibility.
+
+---
+
+## Risks and Failure Modes
+
+Communication agents can fail in several ways.
+
+They may produce writing that is too generic.
+
+They may make the message sound less human.
+
+They may overstate results.
+
+They may remove important limitations.
+
+They may invent details.
+
+They may use a tone that does not fit the relationship.
+
+They may expose information that should remain private.
+
+They may make a draft sound final before it has been reviewed.
+
+These failures are not only writing problems.
+
+They are system problems.
+
+The solution is to design the workflow with grounding, constraints, and review.
+
+---
+
+## Human Judgment in Communication
+
+Human judgment is especially important in communication because people respond not only to information, but also to tone, timing, relationship, and trust.
+
+An AI system may help write a message.
+
+It cannot fully understand the relationship behind the message.
+
+It may help summarize a report.
+
+It cannot take responsibility for how the report is used.
+
+It may help polish a public statement.
+
+It cannot know every social, professional, or ethical implication.
+
+For that reason, communication should always return to human responsibility.
+
+The human decides what is true.
+
+The human decides what is appropriate.
+
+The human decides what should be sent.
+
+The human decides what should be published.
+
+---
+
+## Connection to the Full AI Systems Guide
+
+This chapter completes the applied agent section of the guide.
+
+The full guide has moved through four layers:
+
+```text
+AI Foundations
+        ↓
+AI Systems
+        ↓
+Reusable AI Agent Template
+        ↓
+Applied AI Agents
+```
+
+The communication and reporting agent brings these ideas together.
+
+It uses foundations because communication must remain human-led.
+
+It uses systems thinking because communication work has inputs, workflows, outputs, review points, and risks.
+
+It uses reusable agent design because communication tasks often repeat.
+
+It becomes applied because real people need real messages, reports, summaries, and documentation.
+
+---
+
+## Chapter Summary
+
+A communication and reporting agent helps humans turn information into clear, audience-aware outputs.
+
+It can support emails, reports, summaries, announcements, public posts, documentation, and presentations.
+
+Its value is not only speed.
+
+Its value is structure, clarity, consistency, and review support.
+
+However, the agent must not invent evidence, exaggerate findings, or replace human approval.
+
+Responsible communication remains grounded in human judgment.
+
+The final message should always be something the human is willing to own.
+
+---
+
+## Looking Ahead
+
+The main chapters of the AI Systems guide are now complete.
+
+The next section moves into appendices and references.
+
+The appendix can provide reusable templates, checklists, agent specification formats, evaluation rubrics, and workflow examples.
+
+The references section can document the sources and broader ideas that support responsible, human-led AI systems.

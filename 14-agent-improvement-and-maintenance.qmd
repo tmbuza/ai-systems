@@ -1,0 +1,530 @@
+# Agent Improvement and Maintenance {#agent-improvement-and-maintenance}
+
+:::cdi-message
+- **ID:** AI-014
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows
+- **Theme:** Reusable AI agents must be maintained as living systems, not treated as finished prompts
+:::
+
+An AI agent is not finished when it produces its first useful output.
+
+That is only the beginning.
+
+A reusable agent becomes valuable when it can be trusted across repeated use.
+
+To reach that point, the agent must be reviewed, tested, corrected, documented, versioned, and improved over time.
+
+Without maintenance, an agent slowly becomes unreliable.
+
+The work changes.
+
+The user needs change.
+
+The available tools change.
+
+The risks change.
+
+The quality expectations change.
+
+A responsible AI system therefore treats agent improvement as part of the workflow, not as an afterthought.
+
+---
+
+## Why Agent Maintenance Matters
+
+A prompt can be written once.
+
+A reusable agent must be maintained.
+
+This difference matters because agents are used repeatedly for important work.
+
+They may help with research, learning, analysis, communication, planning, reporting, or decision support.
+
+When an agent is reused, small weaknesses can become repeated weaknesses.
+
+A vague instruction may produce inconsistent outputs.
+
+A missing review step may allow errors to pass unnoticed.
+
+An outdated context file may create misleading recommendations.
+
+An unclear boundary may cause the agent to act beyond its intended scope.
+
+Maintenance protects the system from this drift.
+
+It helps the agent remain useful, aligned, and safe.
+
+---
+
+## Agent Maintenance as a Lifecycle
+
+A reusable agent should move through a lifecycle.
+
+```text
+Design
+  ↓
+Test
+  ↓
+Use
+  ↓
+Review
+  ↓
+Improve
+  ↓
+Version
+  ↓
+Reuse or Retire
+```
+
+This lifecycle keeps the agent connected to real work.
+
+The agent is not judged only by how well it sounds.
+
+It is judged by how well it supports the intended task over time.
+
+---
+
+## The Agent Maintenance Question
+
+The central maintenance question is:
+
+> Is this agent still fit for its purpose?
+
+That question should be asked repeatedly.
+
+It should be asked after errors.
+
+It should be asked after repeated use.
+
+It should be asked when the workflow changes.
+
+It should be asked when new risks appear.
+
+It should be asked before the agent is shared with others.
+
+A reusable agent is not maintained only when something breaks.
+
+It is maintained so that problems are noticed early.
+
+---
+
+## What Can Go Wrong Over Time
+
+Agents can degrade in several ways.
+
+Some problems are obvious.
+
+Others are subtle.
+
+Common maintenance issues include:
+
+- unclear task boundaries,
+- outdated context,
+- weak output standards,
+- missing review steps,
+- inconsistent tone or structure,
+- poor handling of edge cases,
+- repeated factual errors,
+- overconfident language,
+- unnecessary complexity,
+- privacy or safety concerns,
+- and misalignment with current user needs.
+
+These problems do not always appear in the first test.
+
+They often appear after repeated use.
+
+That is why maintenance needs evidence from real workflows.
+
+---
+
+## Maintenance Inputs
+
+Agent improvement should be based on evidence, not only preference.
+
+Useful maintenance inputs include:
+
+```text
+User feedback
+  ↓
+Output review notes
+  ↓
+Error logs
+  ↓
+Examples of good outputs
+  ↓
+Examples of weak outputs
+  ↓
+Updated source material
+  ↓
+Changed workflow requirements
+  ↓
+New safety or governance concerns
+```
+
+These inputs help the maintainer understand what should change.
+
+Without evidence, agent improvement becomes guesswork.
+
+---
+
+## Keep an Agent Change Log
+
+Every reusable agent should have a simple change log.
+
+The change log records what changed and why.
+
+A lightweight format is enough.
+
+```text
+Agent name:
+Agent version:
+Date updated:
+Updated by:
+Reason for update:
+What changed:
+What was tested:
+Known limitations:
+Next review date:
+```
+
+This makes the agent easier to audit.
+
+It also helps future users understand why the current version exists.
+
+---
+
+## Versioning Agents
+
+Versioning helps prevent confusion.
+
+When an agent changes meaningfully, the version should change.
+
+A simple versioning pattern is:
+
+```text
+v0.1  Draft agent
+v0.2  Tested with example tasks
+v1.0  Ready for routine use
+v1.1  Minor improvement
+v2.0  Major redesign or scope change
+```
+
+Not every small wording change requires a major version.
+
+But important changes should be visible.
+
+Important changes include:
+
+- changing the agent purpose,
+- changing the output standard,
+- changing the review workflow,
+- adding or removing tools,
+- changing memory or context behavior,
+- changing safety boundaries,
+- and adapting the agent for a new audience.
+
+Versioning is a practical way to keep agent work transparent.
+
+---
+
+## Testing an Updated Agent
+
+An updated agent should be tested before it is used for important work.
+
+Testing does not need to be complicated.
+
+The maintainer can use a small set of example tasks.
+
+```text
+Test 1: Normal task
+Test 2: Ambiguous task
+Test 3: Missing context task
+Test 4: High-risk or sensitive task
+Test 5: Out-of-scope task
+```
+
+The goal is not perfection.
+
+The goal is to check whether the agent behaves responsibly in common and difficult situations.
+
+---
+
+## Evaluation Criteria for Agent Updates
+
+After updating an agent, review the output against clear criteria.
+
+```text
+Purpose alignment: Does the agent stay within its role?
+Context use: Does it use the provided information correctly?
+Output quality: Is the response complete, clear, and usable?
+Risk handling: Does it recognize uncertainty and limits?
+Review readiness: Is the output easy for a human to evaluate?
+Consistency: Does it follow the expected structure repeatedly?
+```
+
+These criteria connect agent maintenance to the evaluation practices introduced earlier in the guide.
+
+A good agent is not only creative or fast.
+
+A good agent is also reviewable.
+
+---
+
+## Improving the Agent Prompt
+
+Many agent improvements begin with the prompt.
+
+Prompt improvements may include:
+
+- clarifying the agent role,
+- narrowing the scope,
+- adding stronger input requirements,
+- defining the output structure,
+- adding review checkpoints,
+- requiring uncertainty statements,
+- adding escalation rules,
+- and including examples of acceptable outputs.
+
+A weak agent prompt often tries to do too much.
+
+A strong agent prompt usually makes the task smaller, clearer, and easier to review.
+
+---
+
+## Improving the Context System
+
+Sometimes the problem is not the agent prompt.
+
+The problem is the context system.
+
+The agent may need better supporting material.
+
+This can include:
+
+```text
+Updated reference documents
+Examples of strong outputs
+Examples of weak outputs
+Definitions and terminology
+Audience guidance
+Brand or style guidance
+Data dictionaries
+Review rubrics
+Safety boundaries
+```
+
+Context maintenance is especially important when the agent supports work that changes over time.
+
+For example, a career agent may need updated portfolio standards.
+
+A research agent may need updated literature search rules.
+
+A reporting agent may need current communication templates.
+
+A data analysis support agent may need updated project conventions.
+
+The agent can only use the context it has access to.
+
+Outdated context creates outdated assistance.
+
+---
+
+## Improving the Review Process
+
+Some agent failures happen because the review process is weak.
+
+The agent may produce useful drafts, but the human review step may be unclear.
+
+A stronger review process can include:
+
+```text
+Required human approval before publication
+Checklist-based review
+Fact-checking step
+Source verification step
+Privacy review
+Tone and audience review
+Decision log
+Final sign-off
+```
+
+The goal is not to slow down every task.
+
+The goal is to match the review level to the risk level.
+
+Low-risk drafts may need light review.
+
+High-impact decisions need stronger review.
+
+---
+
+## When to Retire an Agent
+
+Not every agent should be maintained forever.
+
+Some agents should be retired.
+
+An agent may need to be retired when:
+
+- the task no longer exists,
+- the workflow has changed completely,
+- the agent repeatedly produces poor outputs,
+- the agent creates unacceptable risk,
+- the context system cannot be maintained,
+- a better workflow has replaced it,
+- or the agent is no longer aligned with the intended audience.
+
+Retiring an agent is not failure.
+
+It is part of responsible system management.
+
+A retired agent can still teach useful lessons.
+
+Its change log, examples, and review notes can help design a better replacement.
+
+---
+
+## Agent Maintenance Checklist
+
+Before continuing to use an agent, review it against this checklist.
+
+```text
+[ ] The agent purpose is still clear.
+[ ] The agent scope is still appropriate.
+[ ] The input requirements are documented.
+[ ] The context materials are current.
+[ ] The output format is still useful.
+[ ] The review criteria are clear.
+[ ] The safety boundaries are documented.
+[ ] Recent errors have been reviewed.
+[ ] Improvements have been tested.
+[ ] The agent version has been updated.
+[ ] Known limitations are recorded.
+[ ] The next review point is defined.
+```
+
+This checklist makes maintenance practical.
+
+It turns agent improvement into a repeatable habit.
+
+---
+
+## A Simple Agent Review Table
+
+A small review table can help teams track agent performance.
+
+```text
+| Date | Agent | Version | Task | Result | Issue Found | Action Taken | Reviewer |
+|------|-------|---------|------|--------|-------------|--------------|----------|
+|      |       |         |      |        |             |              |          |
+```
+
+This table does not need to be complicated.
+
+Its purpose is to create a memory of how the agent performs over time.
+
+Without this memory, the same problems may be rediscovered again and again.
+
+---
+
+## Human Responsibility in Agent Maintenance
+
+Agent maintenance is a human responsibility.
+
+The agent can help summarize feedback.
+
+It can help identify patterns.
+
+It can help suggest improvements.
+
+It can help draft updated instructions.
+
+But the final decision about whether the agent is safe, useful, and appropriate belongs to people.
+
+This follows the Human–AI–Human pattern.
+
+```text
+Human reviews agent performance
+        ↓
+AI assists with analysis and improvement ideas
+        ↓
+Human updates, approves, or retires the agent
+```
+
+The agent should not be the only judge of its own reliability.
+
+---
+
+## Common Mistakes
+
+A common mistake is to treat a successful first output as proof that the agent works.
+
+One good output is not enough.
+
+Another mistake is to keep adding instructions without simplifying the workflow.
+
+More instructions do not always produce a better agent.
+
+Sometimes the better solution is to split one large agent into smaller agents.
+
+Another mistake is to ignore weak outputs because the agent is usually helpful.
+
+Helpful agents can still create serious errors.
+
+The final mistake is to forget that the work context changes.
+
+An agent that was useful last year may need revision today.
+
+---
+
+## CDI Agent Maintenance Principle
+
+In Complex Data Insights, agent maintenance follows one principle:
+
+> A reusable AI agent should become more trustworthy with use, not more mysterious.
+
+This means the agent should become easier to understand.
+
+Its purpose should become clearer.
+
+Its limitations should become better documented.
+
+Its review process should become stronger.
+
+Its outputs should become more consistent.
+
+Its risks should become easier to manage.
+
+Maintenance is what turns an agent from a clever assistant into a dependable workflow component.
+
+---
+
+## Chapter Summary
+
+This chapter completed the reusable AI agent template section.
+
+The key ideas are:
+
+- reusable agents must be maintained over time,
+- maintenance should be based on evidence from real use,
+- agents need change logs and versioning,
+- updated agents should be tested before important use,
+- prompts, context, outputs, and review processes can all be improved,
+- some agents should be retired when they are no longer fit for purpose,
+- and humans remain responsible for approving agent changes.
+
+A reusable agent is not a finished object.
+
+It is a living workflow system.
+
+---
+
+## Looking Ahead
+
+The next part of the guide moves from reusable agent design into applied AI agents.
+
+We begin with a research and learning agent.
+
+That chapter shows how the reusable agent template can support reading, synthesis, learning plans, question generation, and study workflows while keeping human judgment at the center.

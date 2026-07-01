@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>AI System Overview – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,26 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +65,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./02-thinking-with-ai.html" rel="next">
+<link href="./00-preface.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -123,6 +105,10 @@ div.csl-indent {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<meta name="mermaid-theme" content="forest">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="assets/css/cdi.css">
@@ -137,7 +123,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Part I: AI Foundations</a></li><li class="breadcrumb-item"><a href="./01-ai-system-overview.html"><span class="chapter-title">AI System Overview</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -183,7 +169,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-ai-system-overview.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI System Overview</span></a>
+  <a href="./01-ai-system-overview.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">AI System Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +308,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +323,31 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#from-ai-use-to-ai-systems" id="toc-from-ai-use-to-ai-systems" class="nav-link active" data-scroll-target="#from-ai-use-to-ai-systems">From AI Use to AI Systems</a></li>
+  <li><a href="#what-is-an-ai-system" id="toc-what-is-an-ai-system" class="nav-link" data-scroll-target="#what-is-an-ai-system">What Is an AI System?</a></li>
+  <li><a href="#the-core-ai-systems-pattern" id="toc-the-core-ai-systems-pattern" class="nav-link" data-scroll-target="#the-core-ai-systems-pattern">The Core AI Systems Pattern</a></li>
+  <li><a href="#the-humanaihuman-loop" id="toc-the-humanaihuman-loop" class="nav-link" data-scroll-target="#the-humanaihuman-loop">The Human–AI–Human Loop</a></li>
+  <li><a href="#ai-systems-architecture" id="toc-ai-systems-architecture" class="nav-link" data-scroll-target="#ai-systems-architecture">AI Systems Architecture</a></li>
+  <li><a href="#part-i-ai-foundations" id="toc-part-i-ai-foundations" class="nav-link" data-scroll-target="#part-i-ai-foundations">Part I: AI Foundations</a></li>
+  <li><a href="#part-ii-ai-systems" id="toc-part-ii-ai-systems" class="nav-link" data-scroll-target="#part-ii-ai-systems">Part II: AI Systems</a></li>
+  <li><a href="#part-iii-reusable-ai-agent-template" id="toc-part-iii-reusable-ai-agent-template" class="nav-link" data-scroll-target="#part-iii-reusable-ai-agent-template">Part III: Reusable AI Agent Template</a></li>
+  <li><a href="#part-iv-applied-ai-agents" id="toc-part-iv-applied-ai-agents" class="nav-link" data-scroll-target="#part-iv-applied-ai-agents">Part IV: Applied AI Agents</a></li>
+  <li><a href="#why-systems-thinking-matters" id="toc-why-systems-thinking-matters" class="nav-link" data-scroll-target="#why-systems-thinking-matters">Why Systems Thinking Matters</a></li>
+  <li><a href="#a-simple-ai-workflow-example" id="toc-a-simple-ai-workflow-example" class="nav-link" data-scroll-target="#a-simple-ai-workflow-example">A Simple AI Workflow Example</a></li>
+  <li><a href="#a-simple-agent-example" id="toc-a-simple-agent-example" class="nav-link" data-scroll-target="#a-simple-agent-example">A Simple Agent Example</a></li>
+  <li><a href="#what-makes-an-ai-system-responsible" id="toc-what-makes-an-ai-system-responsible" class="nav-link" data-scroll-target="#what-makes-an-ai-system-responsible">What Makes an AI System Responsible?</a></li>
+  <li><a href="#what-makes-an-ai-system-reproducible" id="toc-what-makes-an-ai-system-reproducible" class="nav-link" data-scroll-target="#what-makes-an-ai-system-reproducible">What Makes an AI System Reproducible?</a></li>
+  <li><a href="#cdi-positioning" id="toc-cdi-positioning" class="nav-link" data-scroll-target="#cdi-positioning">CDI Positioning</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Part I: AI Foundations</a></li><li class="breadcrumb-item"><a href="./01-ai-system-overview.html"><span class="chapter-title">AI System Overview</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="ai-system-overview" class="quarto-section-identifier"><span class="chapter-title">AI System Overview</span></span></h1>
 </div>
 
 
@@ -374,69 +372,383 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-001</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, mentors, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> AI becomes more useful when it is designed as a human-led system with clear purpose, context, evaluation, and documentation</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>AI is often introduced as a tool.</p>
+<p>A chatbot.</p>
+<p>A writing assistant.</p>
+<p>A coding helper.</p>
+<p>A summarizer.</p>
+<p>A search companion.</p>
+<p>A productivity shortcut.</p>
+<p>These uses are real and valuable.</p>
+<p>But they are only the beginning.</p>
+<p>An <strong>AI system</strong> is not defined by the tool alone.</p>
+<p>It is defined by how people frame the work, provide context, guide the interaction, evaluate the output, document the process, and decide what to do next.</p>
+<p>This chapter introduces the overall AI Systems framework used throughout this guide.</p>
+<p>The purpose is to move from isolated AI use toward structured, responsible, reusable, and applied AI workflows.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
+<section id="from-ai-use-to-ai-systems" class="level2">
+<h2 class="anchored" data-anchor-id="from-ai-use-to-ai-systems">From AI Use to AI Systems</h2>
+<p>Casual AI use usually begins with a single request.</p>
+<pre class="text"><code>Ask AI a question
+        ↓
+Receive an answer
+        ↓
+Use or ignore the answer</code></pre>
+<p>This can be helpful, especially for brainstorming, drafting, summarizing, or explaining a concept.</p>
+<p>But casual AI use has limits.</p>
+<p>The task may be unclear.</p>
+<p>The context may be incomplete.</p>
+<p>The output may sound confident but contain errors.</p>
+<p>The reasoning may not match the real situation.</p>
+<p>The final decision may be made without enough review.</p>
+<p>A system-based approach adds structure.</p>
+<pre class="text"><code>Define the problem
+        ↓
+Provide context
+        ↓
+Design the AI interaction
+        ↓
+Generate or analyze output
+        ↓
+Evaluate the output
+        ↓
+Make a human decision
+        ↓
+Document the workflow</code></pre>
+<p>This shift is the foundation of the guide.</p>
+<p>The goal is not simply to use AI more often.</p>
+<p>The goal is to use AI more responsibly, more reproducibly, and more effectively.</p>
 <hr>
 </section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="what-is-an-ai-system" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-an-ai-system">What Is an AI System?</h2>
+<p>In this guide, an AI system is a human-led workflow that uses AI to support thinking, analysis, creation, communication, automation, or decision support.</p>
+<p>An AI system includes:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>a clear purpose,</li>
+<li>a defined task or workflow,</li>
+<li>relevant context,</li>
+<li>appropriate AI assistance,</li>
+<li>human review,</li>
+<li>quality checks,</li>
+<li>documentation,</li>
+<li>and a final human decision or action.</li>
 </ul>
+<p>The AI model is only one part of the system.</p>
+<p>The surrounding workflow determines whether the AI output becomes useful, risky, confusing, reproducible, or trustworthy.</p>
+<p>A weak AI system may produce polished but unreliable work.</p>
+<p>A strong AI system makes the work easier to inspect, improve, explain, and defend.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="the-core-ai-systems-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-ai-systems-pattern">The Core AI Systems Pattern</h2>
+<p>The core pattern used throughout this guide is:</p>
+<pre class="text"><code>Problem
+  ↓
+Context
+  ↓
+AI Assistance
+  ↓
+Evaluation
+  ↓
+Human Decision
+  ↓
+Documentation</code></pre>
+<p>Each layer has a role.</p>
+<p>The <strong>problem</strong> defines what the work is trying to accomplish.</p>
+<p>The <strong>context</strong> gives the AI relevant background, constraints, examples, data, documents, or standards.</p>
+<p>The <strong>AI assistance</strong> supports generation, reasoning, coding, summarization, classification, transformation, review, or planning.</p>
+<p>The <strong>evaluation</strong> checks whether the output is correct, useful, complete, appropriate, and safe.</p>
+<p>The <strong>human decision</strong> determines what is accepted, revised, rejected, shared, implemented, or escalated.</p>
+<p>The <strong>documentation</strong> records enough information for the workflow to be reviewed, repeated, improved, or taught.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="the-humanaihuman-loop" class="level2">
+<h2 class="anchored" data-anchor-id="the-humanaihuman-loop">The Human–AI–Human Loop</h2>
+<p>AI Systems uses a Human–AI–Human model.</p>
+<pre class="text"><code>Human frames the task
+        ↓
+AI assists with the work
+        ↓
+Human evaluates and decides</code></pre>
+<p>This loop protects the role of human judgment.</p>
+<p>It also makes AI easier to use responsibly.</p>
+<p>The human begins the workflow by identifying the real need.</p>
+<p>The AI contributes support in the middle.</p>
+<p>The human closes the loop by reviewing the result and deciding what should happen next.</p>
+<p>This is important because AI outputs can be fluent without being true.</p>
+<p>They can be structured without being complete.</p>
+<p>They can be helpful without being sufficient.</p>
+<p>They can be fast without being appropriate.</p>
+<p>The Human–AI–Human loop keeps responsibility visible.</p>
+<hr>
+</section>
+<section id="ai-systems-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="ai-systems-architecture">AI Systems Architecture</h2>
+<p>The full guide is organized around four connected layers.</p>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>flowchart TD</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    A[Part I: AI Foundations]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    B[Part II: AI Systems]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    C[Part III: Reusable AI Agent Template]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    D[Part IV: Applied AI Agents]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    A --&gt; B</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    B --&gt; C</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    C --&gt; D</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
 
+    A[Part I: AI Foundations]
+    B[Part II: AI Systems]
+    C[Part III: Reusable AI Agent Template]
+    D[Part IV: Applied AI Agents]
+
+    A --&gt; B
+    B --&gt; C
+    C --&gt; D
+</pre>
 </div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>The four parts are sequential, but they also work as a reusable reference system.</p>
+<p>Part I builds the mindset.</p>
+<p>Part II builds the workflow.</p>
+<p>Part III builds the reusable agent template.</p>
+<p>Part IV applies the template to real professional tasks.</p>
+<hr>
+</section>
+<section id="part-i-ai-foundations" class="level2">
+<h2 class="anchored" data-anchor-id="part-i-ai-foundations">Part I: AI Foundations</h2>
+<p>The first part introduces the foundations needed before designing AI workflows.</p>
+<p>It includes:</p>
+<pre class="text"><code>00-preface.qmd
+01-ai-system-overview.qmd
+02-thinking-with-ai.qmd
+03-human-ai-human-framework.qmd
+04-prompting-as-system-design.qmd</code></pre>
+<p>This part answers the question:</p>
+<blockquote class="blockquote">
+<p>How should we think about AI before we build with it?</p>
+</blockquote>
+<p>The emphasis is on AI as a thinking partner, workflow assistant, and decision-support component.</p>
+<p>The foundation is not tool-centered.</p>
+<p>It is human-centered.</p>
+<hr>
+</section>
+<section id="part-ii-ai-systems" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii-ai-systems">Part II: AI Systems</h2>
+<p>The second part moves from foundations into workflow design.</p>
+<p>It includes:</p>
+<pre class="text"><code>05-ai-workflow-design.qmd
+06-context-and-knowledge-systems.qmd
+07-ai-output-evaluation.qmd
+08-ai-safety-boundaries-and-human-judgment.qmd
+09-ai-operating-system-for-work.qmd</code></pre>
+<p>This part answers the question:</p>
+<blockquote class="blockquote">
+<p>How do we design AI-supported workflows that can be repeated, reviewed, and improved?</p>
+</blockquote>
+<p>The emphasis is on structure.</p>
+<p>AI work becomes stronger when it includes clear workflow steps, reusable context, evaluation criteria, safety boundaries, and documentation habits.</p>
+<hr>
+</section>
+<section id="part-iii-reusable-ai-agent-template" class="level2">
+<h2 class="anchored" data-anchor-id="part-iii-reusable-ai-agent-template">Part III: Reusable AI Agent Template</h2>
+<p>The third part turns the AI workflow into a reusable agent template.</p>
+<p>It includes:</p>
+<pre class="text"><code>10-agent-purpose-and-scope.qmd
+11-agent-inputs-context-and-memory.qmd
+12-agent-workflow-and-decision-logic.qmd
+13-agent-output-standards-and-review.qmd
+14-agent-improvement-and-maintenance.qmd</code></pre>
+<p>This part answers the question:</p>
+<blockquote class="blockquote">
+<p>How can we design AI agents that have clear purpose, inputs, logic, output standards, and review processes?</p>
+</blockquote>
+<p>In this guide, an AI agent does not mean uncontrolled automation.</p>
+<p>An agent is treated as a structured assistant with a defined role, boundaries, workflow, and review process.</p>
+<p>The reusable template helps learners design agents that can support real work without hiding responsibility.</p>
+<hr>
+</section>
+<section id="part-iv-applied-ai-agents" class="level2">
+<h2 class="anchored" data-anchor-id="part-iv-applied-ai-agents">Part IV: Applied AI Agents</h2>
+<p>The fourth part applies the reusable agent template to practical work.</p>
+<p>It includes:</p>
+<pre class="text"><code>15-research-and-learning-agent.qmd
+16-career-and-portfolio-agent.qmd
+17-data-analysis-support-agent.qmd
+18-communication-and-reporting-agent.qmd</code></pre>
+<p>This part answers the question:</p>
+<blockquote class="blockquote">
+<p>How can reusable AI agents support learning, career growth, data work, communication, and reporting?</p>
+</blockquote>
+<p>The applied agents are examples, not fixed limits.</p>
+<p>They show how the same system pattern can be adapted across domains.</p>
+<p>A research agent, a career agent, a data analysis agent, and a reporting agent may appear different on the surface.</p>
+<p>But they all depend on the same core structure:</p>
+<pre class="text"><code>Purpose
+  ↓
+Inputs
+  ↓
+Context
+  ↓
+Workflow
+  ↓
+Output
+  ↓
+Review
+  ↓
+Improvement</code></pre>
+<hr>
+</section>
+<section id="why-systems-thinking-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-systems-thinking-matters">Why Systems Thinking Matters</h2>
+<p>Systems thinking matters because AI work is rarely only about the AI model.</p>
+<p>The quality of AI-supported work depends on the full environment around the model.</p>
+<p>This includes:</p>
+<ul>
+<li>the person using the system,</li>
+<li>the problem being addressed,</li>
+<li>the available evidence,</li>
+<li>the prompt or instruction design,</li>
+<li>the quality of the input materials,</li>
+<li>the evaluation process,</li>
+<li>the risk level of the task,</li>
+<li>the communication context,</li>
+<li>and the final human decision.</li>
+</ul>
+<p>When these parts are disconnected, AI work becomes fragile.</p>
+<p>When these parts are connected, AI becomes easier to use responsibly.</p>
+<hr>
+</section>
+<section id="a-simple-ai-workflow-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-ai-workflow-example">A Simple AI Workflow Example</h2>
+<p>Consider a learner using AI to summarize a research article.</p>
+<p>A weak workflow might be:</p>
+<pre class="text"><code>Paste article title
+Ask for summary
+Accept the answer</code></pre>
+<p>A stronger workflow would be:</p>
+<pre class="text"><code>Define the purpose of the summary
+        ↓
+Provide the article text or abstract
+        ↓
+Ask for claims, evidence, limitations, and unanswered questions
+        ↓
+Compare the AI summary with the source
+        ↓
+Revise errors or missing points
+        ↓
+Document how AI was used</code></pre>
+<p>The second workflow is slower than a single prompt, but it is more reliable.</p>
+<p>It makes the work easier to inspect and improve.</p>
+<p>It also teaches the learner how to think with AI instead of simply receiving AI output.</p>
+<hr>
+</section>
+<section id="a-simple-agent-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-agent-example">A Simple Agent Example</h2>
+<p>An AI agent can be understood as a reusable workflow assistant.</p>
+<p>For example, a research and learning agent may have this structure:</p>
+<pre class="text"><code>Role:
+Support structured reading and synthesis
+
+Inputs:
+Research question, article, notes, or topic
+
+Workflow:
+Summarize, extract claims, identify evidence, list limitations, suggest next questions
+
+Output:
+Structured learning brief
+
+Review:
+Human checks source alignment and corrects errors</code></pre>
+<p>This is not magic.</p>
+<p>It is a reusable work pattern.</p>
+<p>The value comes from defining the agent clearly enough that it can be used, reviewed, improved, and adapted.</p>
+<hr>
+</section>
+<section id="what-makes-an-ai-system-responsible" class="level2">
+<h2 class="anchored" data-anchor-id="what-makes-an-ai-system-responsible">What Makes an AI System Responsible?</h2>
+<p>A responsible AI system does not rely on AI output alone.</p>
+<p>It includes human judgment at important points.</p>
+<p>It identifies when the task is high risk.</p>
+<p>It checks outputs against evidence.</p>
+<p>It documents assumptions and limitations.</p>
+<p>It protects sensitive information.</p>
+<p>It avoids overstating certainty.</p>
+<p>It makes clear who is responsible for the final decision.</p>
+<p>In practical terms, responsibility is not only an ethical idea.</p>
+<p>It is also a workflow design requirement.</p>
+<hr>
+</section>
+<section id="what-makes-an-ai-system-reproducible" class="level2">
+<h2 class="anchored" data-anchor-id="what-makes-an-ai-system-reproducible">What Makes an AI System Reproducible?</h2>
+<p>A reproducible AI system is one where the workflow can be repeated or reviewed with reasonable clarity.</p>
+<p>This does not mean every AI response will be identical.</p>
+<p>AI outputs may vary.</p>
+<p>But the process can still be documented.</p>
+<p>A reproducible AI workflow records:</p>
+<ul>
+<li>the task goal,</li>
+<li>the input materials,</li>
+<li>the prompt or instruction pattern,</li>
+<li>the model or tool used where relevant,</li>
+<li>the evaluation criteria,</li>
+<li>the human review decision,</li>
+<li>and the final output or action.</li>
+</ul>
+<p>This makes AI-supported work easier to teach, audit, improve, and communicate.</p>
+<hr>
+</section>
+<section id="cdi-positioning" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-positioning">CDI Positioning</h2>
+<p>Within Complex Data Insights, AI Systems sits beside other CDI systems such as data science, omics, clinical data, career development, and systematic dataset discovery.</p>
+<p>The role of AI Systems is not to replace those domains.</p>
+<p>It supports them.</p>
+<p>AI can help with reading, planning, coding, summarizing, documenting, communication, and workflow design.</p>
+<p>But domain knowledge still matters.</p>
+<p>Data quality still matters.</p>
+<p>Statistical reasoning still matters.</p>
+<p>Ethics still matters.</p>
+<p>Human judgment still matters.</p>
+<p>AI Systems therefore functions as a cross-cutting layer across the CDI ecosystem.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>An AI system is more than a prompt or a tool.</p>
+<p>It is a human-led workflow that connects purpose, context, AI assistance, evaluation, decision-making, and documentation.</p>
+<p>This guide is organized into four parts:</p>
+<pre class="text"><code>Part I: AI Foundations
+        ↓
+Part II: AI Systems
+        ↓
+Part III: Reusable AI Agent Template
+        ↓
+Part IV: Applied AI Agents</code></pre>
+<p>The core message is simple:</p>
+<blockquote class="blockquote">
+<p>AI becomes more useful when it is framed, grounded, evaluated, documented, and kept human-led.</p>
+</blockquote>
+<p>The next chapter focuses on <strong>Thinking with AI</strong>.</p>
+<p>It introduces the reasoning habits that make AI more useful as a partner in learning, analysis, explanation, reflection, and decision support.</p>
 
 
 </section>
@@ -845,11 +1157,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./00-preface.html" class="pagination-link" aria-label="Preface and Overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Preface and Overview</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./02-thinking-with-ai.html" class="pagination-link" aria-label="Thinking with AI">
+        <span class="nav-page-text"><span class="chapter-title">Thinking with AI</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

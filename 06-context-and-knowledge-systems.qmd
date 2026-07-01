@@ -1,0 +1,443 @@
+# Context and Knowledge Systems {#context-and-knowledge-systems}
+
+:::cdi-message
+- **ID:** AI-006
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows
+- **Theme:** AI systems become more useful when they are grounded in clear context, trusted knowledge, and explicit boundaries
+:::
+
+AI does not work with meaning in the same way a person does.
+
+It responds to the information it receives, the patterns it has learned, the instructions it is given, and the context available during the task.
+
+This means that context is not a small detail.
+
+Context is part of the system.
+
+A weak AI workflow often begins with a vague request.
+
+A stronger AI workflow begins with a context package.
+
+That package may include the goal, audience, source material, examples, constraints, definitions, data tables, style expectations, quality criteria, and review instructions.
+
+When context is missing, AI may fill the gap with assumptions.
+
+When context is structured, AI can become more focused, useful, and easier to evaluate.
+
+---
+
+## Why Context Matters
+
+A prompt is not only a question.
+
+It is a container for the task.
+
+The same AI tool can produce very different outputs depending on what the user provides.
+
+Compare these two requests:
+
+```text
+Explain this result.
+```
+
+and:
+
+```text
+Explain this differential abundance result for a learner audience.
+Use the table below.
+Focus on biological interpretation, not statistical formulas.
+Mention uncertainty and avoid claiming causality.
+End with three follow-up checks.
+```
+
+The second request is stronger because it gives the system direction.
+
+It defines the task, the audience, the source of evidence, the level of explanation, the limits of interpretation, and the expected structure of the output.
+
+This is the difference between asking AI to guess and asking AI to work inside a designed system.
+
+---
+
+## Context as a System Layer
+
+In the AI Systems architecture, context sits between the human problem and the AI response.
+
+```text
+Human problem
+  ↓
+Context package
+  ↓
+AI assistance
+  ↓
+Human review
+  ↓
+Documented output
+```
+
+The context package helps translate a human need into a task the AI system can assist with.
+
+It reduces ambiguity.
+
+It improves relevance.
+
+It makes evaluation easier.
+
+It also makes the workflow more reproducible because another person can inspect what information was given to the AI.
+
+---
+
+## Types of Context
+
+Context can come in many forms.
+
+A responsible AI workflow does not treat all context as equal.
+
+Some context defines the task.
+
+Some context provides evidence.
+
+Some context sets limits.
+
+Some context controls the output format.
+
+A useful way to organize context is:
+
+```text
+Task context
+Audience context
+Domain context
+Evidence context
+Format context
+Constraint context
+Review context
+```
+
+Each type answers a different question.
+
+| Context type | Question it answers | Example |
+|---|---|---|
+| Task context | What should be done? | Summarize, classify, compare, draft, critique, analyze |
+| Audience context | Who is this for? | Beginner learner, research team, manager, public audience |
+| Domain context | What field or setting matters? | Career development, omics analysis, public health, education |
+| Evidence context | What source material should be used? | Dataset, notes, article, result table, transcript, code |
+| Format context | What should the output look like? | Table, report section, checklist, email, teaching explanation |
+| Constraint context | What should be avoided or limited? | Do not invent sources, do not overclaim, use simple language |
+| Review context | How should quality be checked? | Flag uncertainty, list assumptions, identify missing information |
+
+When these parts are missing, the output may still sound polished.
+
+But polished output is not the same as reliable output.
+
+---
+
+## Knowledge Grounding
+
+Knowledge grounding means connecting AI work to trusted source material.
+
+Grounding may include:
+
+- documents,
+- datasets,
+- tables,
+- code,
+- notes,
+- project files,
+- references,
+- examples,
+- policies,
+- rubrics,
+- or domain-specific definitions.
+
+Grounding helps reduce unsupported claims.
+
+It also helps the human reviewer trace where an output came from.
+
+In a learning setting, grounding might mean asking AI to explain only from a provided lesson.
+
+In a research setting, grounding might mean asking AI to summarize only from supplied papers or extracted notes.
+
+In a data workflow, grounding might mean asking AI to interpret only the columns and results in a provided table.
+
+In a professional setting, grounding might mean asking AI to draft a message using only approved organizational facts.
+
+The goal is not to make AI perfect.
+
+The goal is to make the workflow more inspectable.
+
+---
+
+## The Context Package
+
+A context package is a reusable bundle of information prepared before asking AI to assist.
+
+It can be simple or detailed.
+
+For a small task, it may be a paragraph.
+
+For a larger workflow, it may include multiple files, examples, rules, and evaluation criteria.
+
+A simple context package can follow this pattern:
+
+```text
+Goal:
+What should the AI help produce?
+
+Audience:
+Who will read or use the output?
+
+Source material:
+What information should the AI rely on?
+
+Constraints:
+What should the AI avoid?
+
+Output format:
+What structure should the answer follow?
+
+Review criteria:
+How will the output be checked?
+```
+
+This structure turns context into a repeatable part of the workflow.
+
+It also helps learners understand that good AI work starts before the prompt is written.
+
+---
+
+## Example: Weak Context Versus Strong Context
+
+A weak AI request might look like this:
+
+```text
+Write something about AI in education.
+```
+
+This request is broad.
+
+The audience is unclear.
+
+The purpose is unclear.
+
+The level of detail is unclear.
+
+The output format is unclear.
+
+A stronger version would be:
+
+```text
+Goal:
+Draft a short section for a beginner-friendly guide on responsible AI use in education.
+
+Audience:
+Secondary school students and early college learners.
+
+Source material:
+Use the Human–AI–Human model: human frames the problem, AI assists, human evaluates and decides.
+
+Constraints:
+Do not present AI as a replacement for learning. Avoid technical jargon. Include one caution about copying AI output without review.
+
+Output format:
+Use 4 short paragraphs and end with a practical checklist.
+
+Review criteria:
+The output should be clear, honest, learner-friendly, and human-led.
+```
+
+This does not guarantee a perfect response.
+
+But it gives the AI system a better working environment.
+
+It also gives the human reviewer a clearer basis for judging quality.
+
+---
+
+## Context and Reproducibility
+
+Reproducibility is not only about code.
+
+AI-assisted work also needs reproducible context.
+
+If a person cannot see what information was given to AI, it becomes difficult to understand the output.
+
+For important work, a context record should include:
+
+```text
+Task name
+Date
+Purpose
+Source materials used
+Prompt or instruction used
+AI output summary
+Human review notes
+Final decision or action
+Limitations
+```
+
+This does not need to be complicated.
+
+A simple task log can be enough for teaching, mentoring, or project documentation.
+
+The important point is that AI use should not disappear into a black box.
+
+---
+
+## Context Boundaries
+
+Context can improve AI work, but it also introduces responsibility.
+
+Not all information should be placed into an AI tool.
+
+Before sharing context, the human user should ask:
+
+```text
+Does this contain private information?
+Does this contain sensitive personal data?
+Does this include confidential organizational material?
+Does the task require permission before sharing this content?
+Can the information be anonymized or summarized instead?
+```
+
+A responsible AI system protects people, organizations, and communities.
+
+Sometimes the best context is not the full raw material.
+
+It may be a cleaned summary, anonymized table, synthetic example, or approved excerpt.
+
+---
+
+## Context Drift
+
+Context drift happens when the task begins with one purpose but the AI output moves into another direction.
+
+For example, a user may ask for a cautious interpretation, but the AI output may become too confident.
+
+A user may provide a small dataset, but the AI may imply broader conclusions.
+
+A user may ask for a teaching explanation, but the AI may produce technical language.
+
+Context drift is common when the review criteria are weak.
+
+To reduce context drift, include reminders such as:
+
+```text
+Stay within the supplied material.
+Do not infer beyond the evidence.
+Flag uncertainty clearly.
+Use the audience level specified above.
+Return assumptions separately.
+```
+
+These instructions make the review process easier.
+
+They also remind the human that evaluation is part of the workflow.
+
+---
+
+## Context in CDI System Guides
+
+Across Complex Data Insights guides, context is a recurring system layer.
+
+In a data acquisition workflow, context may include the research question, accession list, metadata, and inclusion criteria.
+
+In a microbiome workflow, context may include sample metadata, sequencing design, taxonomic table, and biological question.
+
+In a proteomics workflow, context may include differential abundance results, protein identifiers, comparison design, and pathway evidence.
+
+In a career system, context may include skills, goals, evidence, portfolio artifacts, and opportunity requirements.
+
+In AI Systems, context connects all of these.
+
+AI becomes more useful when it understands the task environment.
+
+But the human remains responsible for choosing, checking, and documenting that environment.
+
+---
+
+## A Practical Context Template
+
+The following template can be copied into an AI workflow.
+
+```text
+AI Task Context Package
+
+1. Task title:
+
+2. Purpose:
+
+3. Audience:
+
+4. Source material:
+
+5. Key definitions:
+
+6. Required output:
+
+7. Constraints:
+
+8. Quality checks:
+
+9. Known limitations:
+
+10. Human review decision:
+```
+
+This template is intentionally simple.
+
+It can be used by learners, researchers, professionals, mentors, and teams.
+
+The template reminds users that AI assistance should be framed before it is used and reviewed after it produces output.
+
+---
+
+## Common Mistakes
+
+Several mistakes weaken AI context systems.
+
+One mistake is giving too little context and expecting a precise answer.
+
+Another mistake is giving too much unorganized material and expecting the AI to infer the task.
+
+A third mistake is mixing evidence, instructions, and opinions without labeling them.
+
+A fourth mistake is failing to tell the AI what not to do.
+
+A fifth mistake is using AI output without checking whether it stayed within the supplied context.
+
+A strong context system avoids these problems by separating purpose, evidence, constraints, and review.
+
+---
+
+## Chapter Reflection
+
+Before using AI for an important task, ask:
+
+```text
+What does the AI need to know?
+What should the AI rely on?
+What should the AI ignore?
+What should the AI avoid claiming?
+What format will make the output easiest to review?
+How will a human check the final result?
+```
+
+These questions turn context into a design practice.
+
+They also keep AI work aligned with the Human–AI–Human model.
+
+---
+
+## Key Takeaways
+
+Context is not extra information added after the task.
+
+Context is a core part of the AI system.
+
+A strong context package includes the goal, audience, source material, constraints, output format, and review criteria.
+
+Knowledge grounding makes AI outputs easier to inspect and evaluate.
+
+Responsible context design also protects privacy, confidentiality, and human judgment.
+
+The next chapter focuses on evaluating AI outputs so that generated responses can be checked before they are used, shared, or acted upon.

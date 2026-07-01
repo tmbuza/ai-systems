@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>AI Workflow Design – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,26 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +65,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./06-context-and-knowledge-systems.html" rel="next">
+<link href="./04-prompting-as-system-design.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -123,6 +105,10 @@ div.csl-indent {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<meta name="mermaid-theme" content="forest">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="assets/css/cdi.css">
@@ -137,7 +123,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html">Part II: AI Systems</a></li><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html"><span class="chapter-title">AI Workflow Design</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -214,7 +200,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-ai-workflow-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Workflow Design</span></a>
+  <a href="./05-ai-workflow-design.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">AI Workflow Design</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +308,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +323,43 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#from-prompting-to-workflow-design" id="toc-from-prompting-to-workflow-design" class="nav-link active" data-scroll-target="#from-prompting-to-workflow-design">From Prompting to Workflow Design</a></li>
+  <li><a href="#why-ai-workflows-matter" id="toc-why-ai-workflows-matter" class="nav-link" data-scroll-target="#why-ai-workflows-matter">Why AI Workflows Matter</a></li>
+  <li><a href="#the-core-ai-workflow-pattern" id="toc-the-core-ai-workflow-pattern" class="nav-link" data-scroll-target="#the-core-ai-workflow-pattern">The Core AI Workflow Pattern</a>
+  <ul class="collapse">
+  <li><a href="#define" id="toc-define" class="nav-link" data-scroll-target="#define">Define</a></li>
+  <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a></li>
+  <li><a href="#generate" id="toc-generate" class="nav-link" data-scroll-target="#generate">Generate</a></li>
+  <li><a href="#evaluate" id="toc-evaluate" class="nav-link" data-scroll-target="#evaluate">Evaluate</a></li>
+  <li><a href="#improve" id="toc-improve" class="nav-link" data-scroll-target="#improve">Improve</a></li>
+  <li><a href="#use" id="toc-use" class="nav-link" data-scroll-target="#use">Use</a></li>
+  <li><a href="#document" id="toc-document" class="nav-link" data-scroll-target="#document">Document</a></li>
+  </ul></li>
+  <li><a href="#workflow-design-as-a-table" id="toc-workflow-design-as-a-table" class="nav-link" data-scroll-target="#workflow-design-as-a-table">Workflow Design as a Table</a></li>
+  <li><a href="#example-weak-ai-use-versus-workflow-based-ai-use" id="toc-example-weak-ai-use-versus-workflow-based-ai-use" class="nav-link" data-scroll-target="#example-weak-ai-use-versus-workflow-based-ai-use">Example: Weak AI Use Versus Workflow-Based AI Use</a></li>
+  <li><a href="#ai-workflow-roles" id="toc-ai-workflow-roles" class="nav-link" data-scroll-target="#ai-workflow-roles">AI Workflow Roles</a></li>
+  <li><a href="#designing-inputs" id="toc-designing-inputs" class="nav-link" data-scroll-target="#designing-inputs">Designing Inputs</a></li>
+  <li><a href="#designing-outputs" id="toc-designing-outputs" class="nav-link" data-scroll-target="#designing-outputs">Designing Outputs</a></li>
+  <li><a href="#evaluation-points-in-a-workflow" id="toc-evaluation-points-in-a-workflow" class="nav-link" data-scroll-target="#evaluation-points-in-a-workflow">Evaluation Points in a Workflow</a></li>
+  <li><a href="#workflow-failure-modes" id="toc-workflow-failure-modes" class="nav-link" data-scroll-target="#workflow-failure-modes">Workflow Failure Modes</a></li>
+  <li><a href="#lightweight-ai-workflow-template" id="toc-lightweight-ai-workflow-template" class="nav-link" data-scroll-target="#lightweight-ai-workflow-template">Lightweight AI Workflow Template</a></li>
+  <li><a href="#example-ai-workflow-for-literature-reading" id="toc-example-ai-workflow-for-literature-reading" class="nav-link" data-scroll-target="#example-ai-workflow-for-literature-reading">Example: AI Workflow for Literature Reading</a></li>
+  <li><a href="#example-ai-workflow-for-data-analysis-support" id="toc-example-ai-workflow-for-data-analysis-support" class="nav-link" data-scroll-target="#example-ai-workflow-for-data-analysis-support">Example: AI Workflow for Data Analysis Support</a></li>
+  <li><a href="#example-ai-workflow-for-communication" id="toc-example-ai-workflow-for-communication" class="nav-link" data-scroll-target="#example-ai-workflow-for-communication">Example: AI Workflow for Communication</a></li>
+  <li><a href="#mermaid-view-of-an-ai-workflow" id="toc-mermaid-view-of-an-ai-workflow" class="nav-link" data-scroll-target="#mermaid-view-of-an-ai-workflow">Mermaid View of an AI Workflow</a></li>
+  <li><a href="#a-practical-checklist" id="toc-a-practical-checklist" class="nav-link" data-scroll-target="#a-practical-checklist">A Practical Checklist</a></li>
+  <li><a href="#connection-to-the-ai-systems-guide" id="toc-connection-to-the-ai-systems-guide" class="nav-link" data-scroll-target="#connection-to-the-ai-systems-guide">Connection to the AI Systems Guide</a></li>
+  <li><a href="#closing-reflection" id="toc-closing-reflection" class="nav-link" data-scroll-target="#closing-reflection">Closing Reflection</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html">Part II: AI Systems</a></li><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html"><span class="chapter-title">AI Workflow Design</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="ai-workflow-design" class="quarto-section-identifier"><span class="chapter-title">AI Workflow Design</span></span></h1>
 </div>
 
 
@@ -374,69 +384,608 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-005</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> AI work becomes reliable when it is designed as a repeatable workflow, not handled as isolated prompts</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>AI becomes more useful when it is part of a workflow.</p>
+<p>A single prompt can produce a helpful answer.</p>
+<p>But a workflow can produce a repeatable process.</p>
+<p>That difference matters.</p>
+<p>A prompt asks AI to do something.</p>
+<p>A workflow defines why the task is being done, what information is needed, how the task should proceed, how the output will be checked, and what human decision follows.</p>
+<p>This chapter introduces AI workflow design as the bridge between AI foundations and operational AI systems.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
+<section id="from-prompting-to-workflow-design" class="level2">
+<h2 class="anchored" data-anchor-id="from-prompting-to-workflow-design">From Prompting to Workflow Design</h2>
+<p>Prompting is important, but prompting alone is not enough.</p>
+<p>A strong prompt may still fail if the task is poorly framed, the context is incomplete, the expected output is unclear, or the review process is missing.</p>
+<p>AI workflow design asks a broader question:</p>
+<blockquote class="blockquote">
+<p>What repeatable process should guide this AI-supported task from human intention to human decision?</p>
+</blockquote>
+<p>The workflow includes the prompt, but it also includes the surrounding structure.</p>
+<pre class="text"><code>Human goal
+  ↓
+Task definition
+  ↓
+Context package
+  ↓
+AI-assisted step
+  ↓
+Output review
+  ↓
+Revision or escalation
+  ↓
+Human decision
+  ↓
+Documentation</code></pre>
+<p>The prompt sits inside this system.</p>
+<p>It is not the whole system.</p>
 <hr>
 </section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="why-ai-workflows-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-ai-workflows-matter">Why AI Workflows Matter</h2>
+<p>AI tools can make work faster.</p>
+<p>But speed without structure can create new risks.</p>
+<p>A person may accept an answer too quickly.</p>
+<p>A team may reuse an output without checking it.</p>
+<p>A learner may depend on AI without understanding the reasoning.</p>
+<p>A report may include confident claims that are not supported by evidence.</p>
+<p>Workflow design reduces these risks by making the process visible.</p>
+<p>A good AI workflow helps answer questions such as:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>What task are we asking AI to support?</li>
+<li>What information does AI need?</li>
+<li>What should AI not do?</li>
+<li>What output format is expected?</li>
+<li>How will the result be checked?</li>
+<li>Who makes the final decision?</li>
+<li>What should be documented?</li>
 </ul>
+<p>These questions turn AI from a casual assistant into part of a responsible working system.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="the-core-ai-workflow-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-ai-workflow-pattern">The Core AI Workflow Pattern</h2>
+<p>Most AI workflows can begin with a simple pattern.</p>
+<pre class="text"><code>Define
+  ↓
+Prepare
+  ↓
+Generate
+  ↓
+Evaluate
+  ↓
+Improve
+  ↓
+Use
+  ↓
+Document</code></pre>
+<p>Each step has a purpose.</p>
+<section id="define" class="level3">
+<h3 class="anchored" data-anchor-id="define">Define</h3>
+<p>The human defines the task.</p>
+<p>This includes the goal, audience, constraints, and desired outcome.</p>
+<p>A weak definition creates unstable AI output.</p>
+<p>A strong definition gives the AI system direction.</p>
+</section>
+<section id="prepare" class="level3">
+<h3 class="anchored" data-anchor-id="prepare">Prepare</h3>
+<p>The human prepares the context.</p>
+<p>This may include notes, data, documents, code, examples, prior decisions, style requirements, or evaluation criteria.</p>
+<p>AI output improves when the input context is clear and relevant.</p>
+</section>
+<section id="generate" class="level3">
+<h3 class="anchored" data-anchor-id="generate">Generate</h3>
+<p>The AI assists with producing a draft, summary, analysis, plan, code, explanation, comparison, or structured output.</p>
+<p>At this stage, the output should be treated as provisional.</p>
+<p>It is a candidate output, not a final answer.</p>
+</section>
+<section id="evaluate" class="level3">
+<h3 class="anchored" data-anchor-id="evaluate">Evaluate</h3>
+<p>The human evaluates the AI output.</p>
+<p>Evaluation may check accuracy, completeness, clarity, relevance, evidence, tone, safety, privacy, bias, and practical usefulness.</p>
+<p>This is where human responsibility becomes visible.</p>
+</section>
+<section id="improve" class="level3">
+<h3 class="anchored" data-anchor-id="improve">Improve</h3>
+<p>The workflow may require revision.</p>
+<p>The human may ask AI to correct gaps, compare alternatives, simplify language, add citations, restructure the output, or explain uncertainty.</p>
+<p>Improvement is not just editing.</p>
+<p>It is quality control.</p>
+</section>
+<section id="use" class="level3">
+<h3 class="anchored" data-anchor-id="use">Use</h3>
+<p>The human decides how to use the output.</p>
+<p>This may mean publishing, sending, applying, coding, teaching, analyzing, or rejecting the output.</p>
+<p>The decision remains human-led.</p>
+</section>
+<section id="document" class="level3">
+<h3 class="anchored" data-anchor-id="document">Document</h3>
+<p>The workflow records what was done.</p>
+<p>Documentation may include the task goal, source materials, prompt version, model/tool used, review notes, limitations, and final decision.</p>
+<p>Documentation makes the workflow easier to repeat, audit, improve, and teach.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+</section>
+<section id="workflow-design-as-a-table" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-design-as-a-table">Workflow Design as a Table</h2>
+<p>A practical AI workflow can be documented using a simple table.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Workflow layer</th>
+<th>Guiding question</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Goal</td>
+<td>What are we trying to accomplish?</td>
+<td>Summarize interview notes into key themes</td>
+</tr>
+<tr class="even">
+<td>Input</td>
+<td>What materials are provided?</td>
+<td>Transcript, research question, coding framework</td>
+</tr>
+<tr class="odd">
+<td>Constraints</td>
+<td>What limits apply?</td>
+<td>Do not invent quotes; preserve participant meaning</td>
+</tr>
+<tr class="even">
+<td>AI task</td>
+<td>What should AI do?</td>
+<td>Group responses into themes and draft a summary</td>
+</tr>
+<tr class="odd">
+<td>Output format</td>
+<td>What should the result look like?</td>
+<td>Table with theme, evidence, and interpretation</td>
+</tr>
+<tr class="even">
+<td>Review</td>
+<td>How will quality be checked?</td>
+<td>Compare against transcript and mark unsupported claims</td>
+</tr>
+<tr class="odd">
+<td>Human decision</td>
+<td>What will the human decide?</td>
+<td>Accept, revise, or reject each theme</td>
+</tr>
+<tr class="even">
+<td>Documentation</td>
+<td>What should be recorded?</td>
+<td>Prompt, source file, review notes, final version</td>
+</tr>
+</tbody>
+</table>
+<p>This table is simple enough for learners and structured enough for professional teams.</p>
+<hr>
+</section>
+<section id="example-weak-ai-use-versus-workflow-based-ai-use" class="level2">
+<h2 class="anchored" data-anchor-id="example-weak-ai-use-versus-workflow-based-ai-use">Example: Weak AI Use Versus Workflow-Based AI Use</h2>
+<p>A weak AI interaction might look like this:</p>
+<pre class="text"><code>Summarize this report.</code></pre>
+<p>That prompt may produce a useful summary.</p>
+<p>But it does not define the audience, purpose, level of detail, evidence expectations, or review process.</p>
+<p>A workflow-based version is stronger:</p>
+<pre class="text"><code>Goal:
+Summarize this report for a non-technical program manager.
 
+Context:
+The manager needs to understand the main findings, risks, and recommended next steps.
+
+Task:
+Create a structured summary with four sections:
+1. Main findings
+2. Supporting evidence
+3. Limitations
+4. Recommended next steps
+
+Constraints:
+Do not add claims that are not supported by the report.
+Use plain language.
+Flag uncertainty clearly.
+
+Review criteria:
+After the summary, list any claims that require human verification.</code></pre>
+<p>The second version is not only a better prompt.</p>
+<p>It is a better workflow.</p>
+<p>It defines the task environment around the AI interaction.</p>
+<hr>
+</section>
+<section id="ai-workflow-roles" class="level2">
+<h2 class="anchored" data-anchor-id="ai-workflow-roles">AI Workflow Roles</h2>
+<p>An AI workflow should clarify the role of both the human and the AI system.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Role</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Human</td>
+<td>Frames the problem, provides context, sets constraints, reviews output, makes decisions</td>
+</tr>
+<tr class="even">
+<td>AI</td>
+<td>Assists with generation, organization, comparison, analysis, drafting, or automation</td>
+</tr>
+<tr class="odd">
+<td>Human reviewer</td>
+<td>Checks quality, risk, evidence, and suitability</td>
+</tr>
+<tr class="even">
+<td>Documentation layer</td>
+<td>Records the process, decisions, limitations, and outputs</td>
+</tr>
+</tbody>
+</table>
+<p>In small projects, one person may play all human roles.</p>
+<p>In team settings, the roles may be separated.</p>
+<p>For example, one person may prepare the context package, another may review the output, and another may approve the final use.</p>
+<hr>
+</section>
+<section id="designing-inputs" class="level2">
+<h2 class="anchored" data-anchor-id="designing-inputs">Designing Inputs</h2>
+<p>An AI workflow is only as strong as its inputs.</p>
+<p>Before asking AI to help, the human should prepare the task materials.</p>
+<p>Useful inputs may include:</p>
+<ul>
+<li>the problem statement,</li>
+<li>the audience,</li>
+<li>background notes,</li>
+<li>source documents,</li>
+<li>data tables,</li>
+<li>code snippets,</li>
+<li>examples of preferred output,</li>
+<li>definitions,</li>
+<li>constraints,</li>
+<li>evaluation criteria,</li>
+<li>and known limitations.</li>
+</ul>
+<p>The goal is not to overload the AI system with information.</p>
+<p>The goal is to provide the right context for the task.</p>
+<p>Good input design reduces ambiguity.</p>
+<hr>
+</section>
+<section id="designing-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="designing-outputs">Designing Outputs</h2>
+<p>AI workflows should also define outputs clearly.</p>
+<p>A vague output request creates inconsistent results.</p>
+<p>A clear output design makes the work easier to review and reuse.</p>
+<p>Useful output specifications include:</p>
+<ul>
+<li>format,</li>
+<li>length,</li>
+<li>tone,</li>
+<li>sections,</li>
+<li>table structure,</li>
+<li>required fields,</li>
+<li>citation expectations,</li>
+<li>uncertainty labels,</li>
+<li>and review notes.</li>
+</ul>
+<p>For example, instead of asking for “ideas,” ask for a structured table:</p>
+<pre class="text"><code>Return a table with the following columns:
+- idea
+- purpose
+- required input
+- expected output
+- risk or limitation
+- human review step</code></pre>
+<p>Structured outputs are easier to compare, revise, document, and convert into downstream work.</p>
+<hr>
+</section>
+<section id="evaluation-points-in-a-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-points-in-a-workflow">Evaluation Points in a Workflow</h2>
+<p>Evaluation should not happen only at the end.</p>
+<p>Strong workflows include review points throughout the process.</p>
+<pre class="text"><code>Before AI use:
+Check that the task is appropriate for AI support.
+
+During AI use:
+Check whether the output follows the task and constraints.
+
+After AI use:
+Check accuracy, evidence, risk, and usefulness.
+
+Before final use:
+Confirm that the human decision is documented.</code></pre>
+<p>This protects the workflow from common problems such as unsupported claims, missing context, overconfident language, privacy risks, and poor fit for the intended audience.</p>
+<hr>
+</section>
+<section id="workflow-failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-failure-modes">Workflow Failure Modes</h2>
+<p>AI workflows can fail in predictable ways.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Failure mode</th>
+<th>What happens</th>
+<th>Prevention</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unclear goal</td>
+<td>Output is broad or unfocused</td>
+<td>Define the task and audience first</td>
+</tr>
+<tr class="even">
+<td>Missing context</td>
+<td>Output is shallow or inaccurate</td>
+<td>Provide relevant source material</td>
+</tr>
+<tr class="odd">
+<td>Weak constraints</td>
+<td>Output ignores important limits</td>
+<td>State boundaries explicitly</td>
+</tr>
+<tr class="even">
+<td>No review step</td>
+<td>Errors pass into final work</td>
+<td>Add human evaluation checkpoints</td>
+</tr>
+<tr class="odd">
+<td>No documentation</td>
+<td>Workflow cannot be repeated</td>
+<td>Save prompts, inputs, outputs, and decisions</td>
+</tr>
+<tr class="even">
+<td>Over-automation</td>
+<td>Humans stop checking the work</td>
+<td>Keep human approval in the loop</td>
+</tr>
+</tbody>
+</table>
+<p>These failure modes are not signs that AI is useless.</p>
+<p>They are signs that the workflow needs better design.</p>
+<hr>
+</section>
+<section id="lightweight-ai-workflow-template" class="level2">
+<h2 class="anchored" data-anchor-id="lightweight-ai-workflow-template">Lightweight AI Workflow Template</h2>
+<p>The following template can be reused for many AI-supported tasks.</p>
+<pre class="text"><code>AI Workflow Template
+
+1. Task name:
+
+2. Human goal:
+
+3. Intended audience:
+
+4. Input materials:
+
+5. Context AI should use:
+
+6. Context AI should not assume:
+
+7. AI task:
+
+8. Required output format:
+
+9. Quality criteria:
+
+10. Risk or sensitivity level:
+
+11. Human review step:
+
+12. Final decision:
+
+13. Documentation notes:</code></pre>
+<p>This template is intentionally simple.</p>
+<p>It can be used by students, researchers, analysts, educators, and teams.</p>
+<p>Later chapters will extend this pattern into context systems, output evaluation, safety boundaries, operating systems, and reusable agent templates.</p>
+<hr>
+</section>
+<section id="example-ai-workflow-for-literature-reading" class="level2">
+<h2 class="anchored" data-anchor-id="example-ai-workflow-for-literature-reading">Example: AI Workflow for Literature Reading</h2>
+<p>A researcher may use AI to support reading a paper.</p>
+<p>A weak workflow would be:</p>
+<pre class="text"><code>Explain this paper.</code></pre>
+<p>A stronger workflow would be:</p>
+<pre class="text"><code>Task name:
+Research paper reading support
+
+Human goal:
+Understand the paper's research question, methods, findings, limitations, and relevance to my project.
+
+Input materials:
+Paper text, abstract, methods section, results section, and my research question.
+
+AI task:
+Summarize the paper using only the provided material.
+
+Required output format:
+Return five sections:
+1. Research question
+2. Data and methods
+3. Main findings
+4. Limitations
+5. Relevance to my project
+
+Quality criteria:
+Do not invent information.
+Separate what the paper says from your interpretation.
+Flag anything that requires human verification.
+
+Human review step:
+Compare the summary with the abstract, methods, and results before using it.</code></pre>
+<p>This workflow makes AI useful without giving it authority over the final interpretation.</p>
+<hr>
+</section>
+<section id="example-ai-workflow-for-data-analysis-support" class="level2">
+<h2 class="anchored" data-anchor-id="example-ai-workflow-for-data-analysis-support">Example: AI Workflow for Data Analysis Support</h2>
+<p>An analyst may use AI to support a coding or analysis task.</p>
+<p>The workflow should protect against hidden errors.</p>
+<pre class="text"><code>Task name:
+Data analysis support
+
+Human goal:
+Write code to clean a small dataset and produce a summary table.
+
+Input materials:
+Column names, sample rows, desired output table, and known data issues.
+
+AI task:
+Suggest code and explain each step.
+
+Required output format:
+Return code first, followed by a short explanation and a list of assumptions.
+
+Quality criteria:
+Code must not overwrite raw data.
+Code must save outputs to a clear results directory.
+Code must include basic checks for missing values and column names.
+
+Human review step:
+Run the code on a copy of the data and inspect outputs before using them.</code></pre>
+<p>The AI may help write code, but the human remains responsible for testing it.</p>
+<hr>
+</section>
+<section id="example-ai-workflow-for-communication" class="level2">
+<h2 class="anchored" data-anchor-id="example-ai-workflow-for-communication">Example: AI Workflow for Communication</h2>
+<p>A professional may use AI to draft a message.</p>
+<p>The workflow should protect tone, accuracy, and relationship context.</p>
+<pre class="text"><code>Task name:
+Professional message drafting
+
+Human goal:
+Write a respectful follow-up message.
+
+Input materials:
+Relationship context, purpose of the message, desired tone, and key points.
+
+AI task:
+Draft a concise message that sounds warm and professional.
+
+Required output format:
+Return one polished version and one shorter version.
+
+Quality criteria:
+Do not overpromise.
+Do not sound demanding.
+Keep the message human and direct.
+
+Human review step:
+Read aloud, adjust personal details, and send only after confirming the meaning.</code></pre>
+<p>AI can support communication, but it should not erase the human voice.</p>
+<hr>
+</section>
+<section id="mermaid-view-of-an-ai-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="mermaid-view-of-an-ai-workflow">Mermaid View of an AI Workflow</h2>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>flowchart TD</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    A[Human goal] --&gt; B[Task definition]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    B --&gt; C[Context package]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    C --&gt; D[Prompt or workflow instruction]</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    D --&gt; E[AI-assisted output]</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    E --&gt; F[Human review]</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    F --&gt; G{Acceptable?}</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    G -- No --&gt; H[Revise prompt, context, or task]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    H --&gt; D</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    G -- Yes --&gt; I[Human decision]</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    I --&gt; J[Documentation]</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    J --&gt; K[Use or share output]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A[Human goal] --&gt; B[Task definition]
+    B --&gt; C[Context package]
+    C --&gt; D[Prompt or workflow instruction]
+    D --&gt; E[AI-assisted output]
+    E --&gt; F[Human review]
+    F --&gt; G{Acceptable?}
+    G -- No --&gt; H[Revise prompt, context, or task]
+    H --&gt; D
+    G -- Yes --&gt; I[Human decision]
+    I --&gt; J[Documentation]
+    J --&gt; K[Use or share output]
+</pre>
 </div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>This diagram shows why AI workflow design is not a single-pass activity.</p>
+<p>Review and revision are part of the system.</p>
+<hr>
+</section>
+<section id="a-practical-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="a-practical-checklist">A Practical Checklist</h2>
+<p>Before using AI in a workflow, ask:</p>
+<ul>
+<li>Is the task appropriate for AI support?</li>
+<li>Have I defined the goal and audience?</li>
+<li>Have I provided enough context?</li>
+<li>Have I stated what AI should not assume?</li>
+<li>Have I defined the expected output format?</li>
+<li>Have I included a human review step?</li>
+<li>Have I considered risk, privacy, bias, and safety?</li>
+<li>Have I documented the process well enough to repeat it?</li>
+</ul>
+<p>This checklist is simple, but it changes the quality of AI work.</p>
+<p>It slows the user down just enough to prevent careless automation.</p>
+<hr>
+</section>
+<section id="connection-to-the-ai-systems-guide" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-the-ai-systems-guide">Connection to the AI Systems Guide</h2>
+<p>This chapter begins Part II of the guide.</p>
+<p>Part I introduced the foundations of AI thinking, prompting, and the Human–AI–Human model.</p>
+<p>Part II now turns those ideas into operational workflows.</p>
+<p>The next chapters will examine:</p>
+<pre class="text"><code>AI workflow design
+  ↓
+Context and knowledge systems
+  ↓
+AI output evaluation
+  ↓
+Safety boundaries and human judgment
+  ↓
+AI operating system for work</code></pre>
+<p>Together, these chapters prepare the reader to design reusable AI agents in Part III.</p>
+<hr>
+</section>
+<section id="closing-reflection" class="level2">
+<h2 class="anchored" data-anchor-id="closing-reflection">Closing Reflection</h2>
+<p>AI workflow design is not about making AI more complicated.</p>
+<p>It is about making AI use more responsible.</p>
+<p>A workflow gives structure to the relationship between human intention, AI assistance, human review, and final action.</p>
+<p>When AI is used without a workflow, the user may get speed but lose control.</p>
+<p>When AI is used inside a clear workflow, the user gains support while preserving judgment.</p>
+<p>That is the purpose of AI Systems.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter focuses on context and knowledge systems.</p>
+<p>It explains how to prepare the information AI needs, how to organize reusable context, and how to reduce the risk of shallow or unsupported outputs.</p>
 
 
 </section>
@@ -845,11 +1394,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./04-prompting-as-system-design.html" class="pagination-link" aria-label="Prompting as System Design">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Prompting as System Design</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./06-context-and-knowledge-systems.html" class="pagination-link" aria-label="Context and Knowledge Systems">
+        <span class="nav-page-text"><span class="chapter-title">Context and Knowledge Systems</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

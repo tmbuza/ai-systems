@@ -1,0 +1,483 @@
+# Career and Portfolio Agent {#career-and-portfolio-agent}
+
+:::cdi-message
+- **ID:** AI-016
+- **Type:** System Guide
+- **Audience:** Learners, professionals, mentors, educators, career coaches, and people building evidence-based portfolios
+- **Theme:** A career and portfolio agent should help people connect skills, evidence, communication, and opportunity without replacing human judgment
+:::
+
+Career development is not only about finding a job.
+
+It is about building direction, skills, proof, visibility, confidence, and readiness for real opportunities.
+
+AI can support this process when it is used carefully.
+
+A career and portfolio agent can help a learner or professional organize their skills, identify gaps, plan projects, improve written communication, prepare for interviews, and turn scattered experience into a coherent portfolio.
+
+But career decisions remain human decisions.
+
+The agent can suggest.
+
+The human must evaluate.
+
+The agent can help structure evidence.
+
+The human must decide what is true, ethical, appropriate, and aligned with their goals.
+
+---
+
+## Purpose of a Career and Portfolio Agent
+
+The purpose of a career and portfolio agent is to help a person move from unclear experience to visible professional evidence.
+
+It supports questions such as:
+
+- What skills do I already have?
+- What skills do I need to build next?
+- What projects can show my ability?
+- How can I explain my work clearly?
+- How can I prepare for interviews, applications, mentorship, or career transitions?
+- How can I keep my portfolio honest, useful, and up to date?
+
+The agent does not invent experience.
+
+It does not exaggerate qualifications.
+
+It does not make career promises.
+
+It helps the person organize, communicate, and improve what is real.
+
+---
+
+## Human--AI--Human Career Workflow
+
+A responsible career agent follows the same Human--AI--Human pattern used throughout this guide.
+
+```text
+Human provides goals, background, constraints, and real evidence
+        ↓
+AI helps organize, question, draft, compare, plan, and improve
+        ↓
+Human verifies accuracy, selects direction, edits language, and acts
+```
+
+The first human step is especially important.
+
+The agent cannot responsibly support a career pathway if the person does not provide truthful information about their current skills, education, experience, interests, constraints, and available time.
+
+The final human step is equally important.
+
+The person must check that any portfolio statement, CV bullet, cover letter, biography, or project description is accurate.
+
+---
+
+## Core Inputs
+
+A career and portfolio agent works best when the inputs are structured.
+
+Useful inputs include:
+
+- current education or training background,
+- work or volunteer experience,
+- technical and non-technical skills,
+- completed projects,
+- unfinished project ideas,
+- GitHub repositories or portfolio links,
+- writing samples,
+- certificates or course completions,
+- target roles or opportunity areas,
+- time available for learning,
+- preferred working style,
+- language and communication needs,
+- constraints such as device access, internet access, cost, location, or schedule.
+
+These inputs should be treated as career context, not as material for exaggeration.
+
+A career agent should help the person build from where they are.
+
+---
+
+## Core Outputs
+
+The agent may produce several kinds of outputs.
+
+Examples include:
+
+- skills inventory,
+- gap analysis,
+- learning plan,
+- portfolio project plan,
+- GitHub repository description,
+- project README draft,
+- CV or resume bullet suggestions,
+- professional bio,
+- LinkedIn profile draft,
+- mentorship reflection,
+- interview preparation questions,
+- application checklist,
+- weekly career development plan.
+
+Each output should be reviewed before use.
+
+Career documents affect reputation and opportunity.
+
+They must be accurate, respectful, and appropriate for the context.
+
+---
+
+## Career Agent System Map
+
+A career and portfolio agent can be viewed as a system that connects personal background to visible professional evidence.
+
+```text
+Background
+  ↓
+Skills Inventory
+  ↓
+Gap Identification
+  ↓
+Learning Plan
+  ↓
+Portfolio Project
+  ↓
+Evidence and Documentation
+  ↓
+Communication Materials
+  ↓
+Opportunity Preparation
+  ↓
+Human Review and Action
+```
+
+This system is not a shortcut around learning.
+
+It is a structure for making learning visible.
+
+---
+
+## Skills Inventory
+
+The agent should begin by helping the person describe their current skills clearly.
+
+A useful skills inventory separates:
+
+- technical skills,
+- analytical skills,
+- communication skills,
+- teamwork and leadership skills,
+- domain knowledge,
+- tools and platforms,
+- evidence for each skill.
+
+The most important part is evidence.
+
+A skill is stronger when it is connected to proof.
+
+```text
+Skill: Data visualization
+Evidence: Created a chart showing monthly attendance trends using R and ggplot2
+Current level: Beginner to intermediate
+Next step: Improve labeling, interpretation, and reproducibility
+```
+
+The agent should encourage honest self-assessment.
+
+It should not label someone as advanced simply because they have used a tool once.
+
+---
+
+## Gap Analysis
+
+After skills are listed, the agent can compare the current profile with a target direction.
+
+For example:
+
+```text
+Target direction: Junior data analyst
+Current strengths: Excel, basic Python, communication, report writing
+Gaps: SQL, dashboard design, reproducible project structure, portfolio examples
+Suggested next step: Build one small data cleaning and reporting project
+```
+
+A good gap analysis is specific.
+
+A weak gap analysis says:
+
+```text
+Learn more AI and data science.
+```
+
+A stronger gap analysis says:
+
+```text
+Practice reading CSV files, cleaning missing values, summarizing results, and explaining findings in a short report.
+```
+
+Specific gaps lead to practical learning plans.
+
+---
+
+## Portfolio Project Planning
+
+A career and portfolio agent should help convert learning goals into projects.
+
+A project is useful when it produces evidence.
+
+A portfolio project should usually include:
+
+- a clear question,
+- a small dataset or realistic example,
+- a reproducible workflow,
+- readable code or steps,
+- outputs such as tables, figures, reports, or summaries,
+- an explanation of what was learned,
+- limitations and next steps.
+
+For beginners, the project does not need to be large.
+
+It needs to be understandable and complete.
+
+```text
+Mini-project: Student Study Planner
+Goal: Help O-Level students organize weekly study time
+Evidence: README, sample timetable, simple web page, screenshots, reflection
+Skills shown: planning, communication, GitHub, basic digital publishing
+```
+
+The agent can help shape the project, but the learner should do the work.
+
+---
+
+## Portfolio Evidence Standard
+
+A portfolio agent should evaluate whether the evidence is strong enough to show.
+
+A simple evidence standard is:
+
+```text
+Claim
+  ↓
+Proof
+  ↓
+Explanation
+  ↓
+Reflection
+```
+
+For example:
+
+```text
+Claim: I can organize a learning resource for students.
+Proof: Morgan Study Hub GitHub repository
+Explanation: The project provides study guidance and planning support for O-Level learners
+Reflection: The next improvement is to add clearer navigation and more subject-specific resources
+```
+
+This helps the person avoid empty claims.
+
+It also helps mentors and reviewers understand the value of the work.
+
+---
+
+## Communication Support
+
+The agent can help turn evidence into communication.
+
+This may include:
+
+- shorter project descriptions,
+- clearer README files,
+- professional bios,
+- application statements,
+- email drafts,
+- mentoring messages,
+- presentation notes,
+- interview answers.
+
+However, the agent should preserve the person's real voice and truth.
+
+The goal is not to sound artificial.
+
+The goal is to communicate clearly.
+
+A useful communication workflow is:
+
+```text
+Human provides real information
+        ↓
+AI drafts a clearer version
+        ↓
+Human edits for truth, tone, and personal voice
+        ↓
+Final message is sent or published by the human
+```
+
+---
+
+## Example Agent Prompt
+
+A reusable career and portfolio agent can begin with a prompt like this:
+
+```text
+You are a Career and Portfolio Agent.
+
+Your role is to help the user organize real skills, projects, evidence, and career goals into clear, honest, and practical career development outputs.
+
+Do not invent experience, certificates, achievements, employers, education, or technical ability.
+
+For every career claim, ask for or identify supporting evidence.
+
+Help the user:
+1. list current skills,
+2. connect skills to proof,
+3. identify realistic gaps,
+4. plan portfolio projects,
+5. improve communication materials,
+6. prepare for opportunities,
+7. document next steps.
+
+Use the Human--AI--Human model.
+The user makes final decisions.
+```
+
+This prompt defines the agent's purpose and boundaries.
+
+It also protects against one of the biggest career AI risks: exaggeration.
+
+---
+
+## Review Checklist
+
+Before using any career output produced with AI support, the human reviewer should ask:
+
+```text
+Is this true?
+Is this specific?
+Is this supported by evidence?
+Is the tone appropriate?
+Does it sound like the person?
+Does it avoid exaggeration?
+Does it match the opportunity or audience?
+Does it include limitations where needed?
+Is the final decision still human-led?
+```
+
+This checklist should be used for CVs, bios, LinkedIn profiles, emails, project descriptions, and application materials.
+
+---
+
+## Risks and Boundaries
+
+Career agents can create harm if used carelessly.
+
+Common risks include:
+
+- inventing experience,
+- overstating technical skill,
+- copying generic career language,
+- producing applications that do not reflect the person,
+- hiding gaps instead of planning to improve them,
+- encouraging unrealistic career decisions,
+- exposing private personal information,
+- making biased assumptions about ability or opportunity.
+
+A responsible career agent should be grounded in real evidence and should avoid making promises.
+
+It may suggest options.
+
+It should not guarantee outcomes.
+
+---
+
+## Mentor Use
+
+Mentors can use a career and portfolio agent to support learners more systematically.
+
+For example, a mentor may use the agent to help a learner:
+
+- describe a new GitHub project,
+- write a short reflection,
+- prepare a project card,
+- identify the next skill to practice,
+- turn a small achievement into portfolio evidence,
+- prepare a respectful email or introduction.
+
+The mentor still provides human encouragement, correction, and judgment.
+
+The agent supports structure.
+
+The mentor supports growth.
+
+---
+
+## Relationship to the Career System
+
+This chapter connects directly to the broader Career System.
+
+The Career System moves from skills to practice, evidence, communication, opportunity, performance, and sustainable growth.
+
+The career and portfolio agent supports this movement by helping the person organize and review each stage.
+
+```text
+Skills
+  ↓
+Practice
+  ↓
+Evidence
+  ↓
+Portfolio
+  ↓
+Communication
+  ↓
+Opportunity Preparation
+  ↓
+Human Decision and Growth
+```
+
+The agent is not the career system itself.
+
+It is a support layer inside the system.
+
+---
+
+## Practical Mini-Workflow
+
+A simple weekly career agent workflow may look like this:
+
+```text
+Monday: Review current skill goal
+Tuesday: Work on one small project task
+Wednesday: Document progress
+Thursday: Improve README, portfolio note, or reflection
+Friday: Review evidence and choose next step
+Weekend: Rest, reflect, or share progress if appropriate
+```
+
+This keeps career development active without making it overwhelming.
+
+Small repeated actions create stronger portfolios than occasional large efforts.
+
+---
+
+## Chapter Summary
+
+A career and portfolio agent helps people organize skills, projects, evidence, and communication.
+
+It should be honest, evidence-based, and human-led.
+
+Its strongest role is not to invent a career story.
+
+Its role is to help a person see, build, document, and communicate the real work they are doing.
+
+A responsible career agent supports confidence without exaggeration.
+
+It supports opportunity without false promises.
+
+It supports growth by connecting learning to visible evidence.
+
+## Looking Ahead
+
+The next chapter applies the agent template to data analysis support.
+
+We will look at how AI can help with data questions, code planning, result interpretation, reporting, and review while keeping analysis reproducible and human-verified.

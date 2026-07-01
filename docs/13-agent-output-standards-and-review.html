@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>Agent Output Standards and Review – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./14-agent-improvement-and-maintenance.html" rel="next">
+<link href="./12-agent-workflow-and-decision-logic.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html">Part III: Reusable AI Agent Template</a></li><li class="breadcrumb-item"><a href="./13-agent-output-standards-and-review.html"><span class="chapter-title">Agent Output Standards and Review</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -265,7 +212,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13-agent-output-standards-and-review.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Output Standards and Review</span></a>
+  <a href="./13-agent-output-standards-and-review.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Agent Output Standards and Review</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,34 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#why-output-standards-matter" id="toc-why-output-standards-matter" class="nav-link active" data-scroll-target="#why-output-standards-matter">Why Output Standards Matter</a></li>
+  <li><a href="#from-output-to-deliverable" id="toc-from-output-to-deliverable" class="nav-link" data-scroll-target="#from-output-to-deliverable">From Output to Deliverable</a></li>
+  <li><a href="#common-agent-output-types" id="toc-common-agent-output-types" class="nav-link" data-scroll-target="#common-agent-output-types">Common Agent Output Types</a></li>
+  <li><a href="#minimum-output-standard" id="toc-minimum-output-standard" class="nav-link" data-scroll-target="#minimum-output-standard">Minimum Output Standard</a></li>
+  <li><a href="#output-format-as-a-control-mechanism" id="toc-output-format-as-a-control-mechanism" class="nav-link" data-scroll-target="#output-format-as-a-control-mechanism">Output Format as a Control Mechanism</a></li>
+  <li><a href="#designing-an-output-specification" id="toc-designing-an-output-specification" class="nav-link" data-scroll-target="#designing-an-output-specification">Designing an Output Specification</a></li>
+  <li><a href="#acceptance-criteria" id="toc-acceptance-criteria" class="nav-link" data-scroll-target="#acceptance-criteria">Acceptance Criteria</a></li>
+  <li><a href="#review-levels" id="toc-review-levels" class="nav-link" data-scroll-target="#review-levels">Review Levels</a></li>
+  <li><a href="#human-review-checklist" id="toc-human-review-checklist" class="nav-link" data-scroll-target="#human-review-checklist">Human Review Checklist</a></li>
+  <li><a href="#ready-revise-or-reject" id="toc-ready-revise-or-reject" class="nav-link" data-scroll-target="#ready-revise-or-reject">Ready, Revise, or Reject</a></li>
+  <li><a href="#example-reviewing-a-communication-agent-output" id="toc-example-reviewing-a-communication-agent-output" class="nav-link" data-scroll-target="#example-reviewing-a-communication-agent-output">Example: Reviewing a Communication Agent Output</a></li>
+  <li><a href="#example-reviewing-a-data-support-agent-output" id="toc-example-reviewing-a-data-support-agent-output" class="nav-link" data-scroll-target="#example-reviewing-a-data-support-agent-output">Example: Reviewing a Data Support Agent Output</a></li>
+  <li><a href="#output-standards-for-teaching-and-mentorship" id="toc-output-standards-for-teaching-and-mentorship" class="nav-link" data-scroll-target="#output-standards-for-teaching-and-mentorship">Output Standards for Teaching and Mentorship</a></li>
+  <li><a href="#documentation-of-agent-outputs" id="toc-documentation-of-agent-outputs" class="nav-link" data-scroll-target="#documentation-of-agent-outputs">Documentation of Agent Outputs</a></li>
+  <li><a href="#common-output-failures" id="toc-common-output-failures" class="nav-link" data-scroll-target="#common-output-failures">Common Output Failures</a></li>
+  <li><a href="#agent-output-standard-template" id="toc-agent-output-standard-template" class="nav-link" data-scroll-target="#agent-output-standard-template">Agent Output Standard Template</a></li>
+  <li><a href="#cdi-practice-pattern" id="toc-cdi-practice-pattern" class="nav-link" data-scroll-target="#cdi-practice-pattern">CDI Practice Pattern</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html">Part III: Reusable AI Agent Template</a></li><li class="breadcrumb-item"><a href="./13-agent-output-standards-and-review.html"><span class="chapter-title">Agent Output Standards and Review</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="agent-output-standards-and-review" class="quarto-section-identifier"><span class="chapter-title">Agent Output Standards and Review</span></span></h1>
 </div>
 
 
@@ -374,69 +336,468 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-013</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams designing reusable AI agents</li>
+<li><strong>Theme:</strong> Reusable agents need clear output standards and human review before their work can be trusted</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>An AI agent is only useful if its outputs can be understood, checked, reused, and improved.</p>
+<p>A prompt may produce a helpful answer once.</p>
+<p>An agent must produce outputs that are consistent enough to support repeated work.</p>
+<p>That means the agent needs standards.</p>
+<p>It needs to know what kind of output is expected, what structure to follow, what evidence to include, what uncertainty to show, what assumptions to document, and when the output should be reviewed by a human.</p>
+<p>Without output standards, an agent becomes unpredictable.</p>
+<p>With output standards, an agent becomes easier to evaluate, teach, maintain, and trust.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
-<hr>
-</section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="why-output-standards-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-output-standards-matter">Why Output Standards Matter</h2>
+<p>AI outputs can look polished even when they are incomplete or incorrect.</p>
+<p>They may use confident language.</p>
+<p>They may organize information well.</p>
+<p>They may sound professional.</p>
+<p>But presentation quality is not the same as reliability.</p>
+<p>A reusable agent should not be judged only by whether its answer sounds good.</p>
+<p>It should be judged by whether the output meets the standard required for the task.</p>
+<p>Good output standards help answer questions such as:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>Did the agent answer the actual task?</li>
+<li>Did it use the required context?</li>
+<li>Did it separate facts from assumptions?</li>
+<li>Did it identify uncertainty?</li>
+<li>Did it provide the requested format?</li>
+<li>Did it avoid unsupported claims?</li>
+<li>Did it stay within safety and scope boundaries?</li>
+<li>Is the output ready to use, or does it require revision?</li>
 </ul>
+<p>The standard makes review easier because the reviewer knows what to check.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="from-output-to-deliverable" class="level2">
+<h2 class="anchored" data-anchor-id="from-output-to-deliverable">From Output to Deliverable</h2>
+<p>An agent output is not always the final deliverable.</p>
+<p>Sometimes the output is a draft.</p>
+<p>Sometimes it is a summary.</p>
+<p>Sometimes it is a table.</p>
+<p>Sometimes it is a recommendation.</p>
+<p>Sometimes it is code.</p>
+<p>Sometimes it is a checklist, plan, or report section.</p>
+<p>The first question is therefore:</p>
+<pre class="text"><code>What kind of output should this agent produce?</code></pre>
+<p>The second question is:</p>
+<pre class="text"><code>What must be true before this output can be used?</code></pre>
+<p>These two questions separate casual AI generation from agent-based workflow design.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="common-agent-output-types" class="level2">
+<h2 class="anchored" data-anchor-id="common-agent-output-types">Common Agent Output Types</h2>
+<p>Reusable agents can produce many kinds of outputs.</p>
+<p>Examples include:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Agent type</th>
+<th>Typical output</th>
+<th>Review focus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Research agent</td>
+<td>Reading summary, source table, evidence map</td>
+<td>Accuracy, citation quality, relevance</td>
+</tr>
+<tr class="even">
+<td>Learning agent</td>
+<td>Explanation, quiz, study plan, reflection prompts</td>
+<td>Clarity, level, correctness</td>
+</tr>
+<tr class="odd">
+<td>Career agent</td>
+<td>Portfolio plan, CV feedback, project description</td>
+<td>Fit, honesty, evidence, tone</td>
+</tr>
+<tr class="even">
+<td>Data support agent</td>
+<td>Analysis plan, code review, interpretation draft</td>
+<td>Reproducibility, statistical caution, assumptions</td>
+</tr>
+<tr class="odd">
+<td>Communication agent</td>
+<td>Email, report section, announcement, presentation notes</td>
+<td>Tone, audience fit, completeness</td>
+</tr>
+<tr class="even">
+<td>Decision-support agent</td>
+<td>Options, trade-offs, recommendation framework</td>
+<td>Risk, evidence, uncertainty, human judgment</td>
+</tr>
+</tbody>
+</table>
+<p>The output standard should match the agent type.</p>
+<p>A communication agent needs tone and audience standards.</p>
+<p>A data support agent needs reproducibility and limitation standards.</p>
+<p>A research agent needs evidence and source standards.</p>
+<p>A career agent needs honesty and relevance standards.</p>
+<hr>
+</section>
+<section id="minimum-output-standard" class="level2">
+<h2 class="anchored" data-anchor-id="minimum-output-standard">Minimum Output Standard</h2>
+<p>Every reusable agent should have a minimum output standard.</p>
+<p>At a basic level, the output should include:</p>
+<ol type="1">
+<li><strong>Task response</strong> — the direct answer or deliverable requested.</li>
+<li><strong>Reasoning support</strong> — the explanation, evidence, or logic behind the output.</li>
+<li><strong>Assumptions</strong> — any missing information the agent had to infer.</li>
+<li><strong>Limitations</strong> — what the output does not prove or cover.</li>
+<li><strong>Review status</strong> — whether the output is ready, needs human review, or requires more information.</li>
+</ol>
+<p>This does not mean every agent output must be long.</p>
+<p>A short email draft may not need a long explanation.</p>
+<p>But the agent design should still make clear what counts as acceptable output.</p>
+<hr>
+</section>
+<section id="output-format-as-a-control-mechanism" class="level2">
+<h2 class="anchored" data-anchor-id="output-format-as-a-control-mechanism">Output Format as a Control Mechanism</h2>
+<p>Output format is not only about appearance.</p>
+<p>It is a control mechanism.</p>
+<p>A clear format reduces ambiguity.</p>
+<p>It makes comparison easier.</p>
+<p>It helps reviewers find missing parts.</p>
+<p>It also makes outputs easier to reuse in reports, spreadsheets, repositories, learning materials, or decision documents.</p>
+<p>For example, instead of asking an agent:</p>
+<pre class="text"><code>Review this response.</code></pre>
+<p>A stronger instruction is:</p>
+<pre class="text"><code>Review this response using the following structure:
 
-</div>
+1. Main strengths
+2. Missing information
+3. Unsupported claims
+4. Suggested revisions
+5. Final readiness status: Ready / Needs revision / Not ready</code></pre>
+<p>The second version gives the agent a standard.</p>
+<p>It also gives the human reviewer a structure for checking the response.</p>
+<hr>
+</section>
+<section id="designing-an-output-specification" class="level2">
+<h2 class="anchored" data-anchor-id="designing-an-output-specification">Designing an Output Specification</h2>
+<p>An output specification defines what the agent should produce.</p>
+<p>A simple specification can include:</p>
+<pre class="text"><code>Agent name:
+Output purpose:
+Audience:
+Required sections:
+Required evidence:
+Required format:
+Tone or style:
+Length range:
+Review criteria:
+Escalation rules:</code></pre>
+<p>For example:</p>
+<pre class="text"><code>Agent name: Research Summary Agent
+Output purpose: Summarize selected documents for human review
+Audience: Researcher or analyst
+Required sections: Question, key findings, evidence table, uncertainty, next steps
+Required evidence: Source title, date, and short relevance note
+Required format: Markdown with one summary table
+Tone or style: Clear, cautious, non-promotional
+Length range: 600–900 words
+Review criteria: Accuracy, source relevance, completeness, uncertainty
+Escalation rules: Flag conflicting evidence or missing sources</code></pre>
+<p>This kind of specification turns the agent from a loose assistant into a workflow component.</p>
+<hr>
+</section>
+<section id="acceptance-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="acceptance-criteria">Acceptance Criteria</h2>
+<p>Acceptance criteria define what must be true before an output is considered usable.</p>
+<p>They should be specific enough for a human reviewer to apply.</p>
+<p>Examples:</p>
+<pre class="text"><code>The output is acceptable if:
+- it answers the requested question directly,
+- it uses the provided context,
+- it does not invent unsupported facts,
+- it identifies assumptions,
+- it includes limitations,
+- it follows the requested structure,
+- it is appropriate for the intended audience,
+- and it clearly states whether human review is still needed.</code></pre>
+<p>Acceptance criteria are especially important when agents support repeated work.</p>
+<p>They prevent the agent from drifting into attractive but unreliable outputs.</p>
+<hr>
+</section>
+<section id="review-levels" class="level2">
+<h2 class="anchored" data-anchor-id="review-levels">Review Levels</h2>
+<p>Not all outputs require the same level of review.</p>
+<p>A reusable AI system should define review levels based on risk.</p>
+<pre class="text"><code>Low-risk output
+  ↓
+Light review
+
+Medium-risk output
+  ↓
+Structured review
+
+High-risk output
+  ↓
+Expert review or no autonomous use</code></pre>
+<p>Low-risk outputs may include brainstorming, formatting help, or internal learning notes.</p>
+<p>Medium-risk outputs may include public communication, project plans, summaries, or draft reports.</p>
+<p>High-risk outputs may involve health, legal, financial, safety, employment, governance, or sensitive personal decisions.</p>
+<p>The higher the risk, the stronger the human review must be.</p>
+<hr>
+</section>
+<section id="human-review-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="human-review-checklist">Human Review Checklist</h2>
+<p>A practical agent review checklist can include:</p>
+<pre class="text"><code>Output review checklist
+
+[ ] The output answers the actual task.
+[ ] The output follows the required format.
+[ ] The output uses the provided context correctly.
+[ ] The output avoids unsupported claims.
+[ ] The output separates facts from assumptions.
+[ ] The output identifies uncertainty or limitations.
+[ ] The output is appropriate for the audience.
+[ ] The output stays within the agent scope.
+[ ] The output does not create privacy, safety, or ethical concerns.
+[ ] The final human decision is documented.</code></pre>
+<p>The checklist does not need to be complicated.</p>
+<p>It needs to be used consistently.</p>
+<hr>
+</section>
+<section id="ready-revise-or-reject" class="level2">
+<h2 class="anchored" data-anchor-id="ready-revise-or-reject">Ready, Revise, or Reject</h2>
+<p>A simple review status helps make decisions visible.</p>
+<p>Every important agent output can be classified as:</p>
+<pre class="text"><code>Ready</code></pre>
+<p>The output meets the standard and can be used after normal human approval.</p>
+<pre class="text"><code>Revise</code></pre>
+<p>The output is useful but needs correction, clarification, evidence, restructuring, or tone adjustment.</p>
+<pre class="text"><code>Reject</code></pre>
+<p>The output is misleading, unsafe, unsupported, outside scope, or not useful for the task.</p>
+<p>This three-part status system is simple enough for learners and teams to adopt.</p>
+<p>It also supports documentation.</p>
+<hr>
+</section>
+<section id="example-reviewing-a-communication-agent-output" class="level2">
+<h2 class="anchored" data-anchor-id="example-reviewing-a-communication-agent-output">Example: Reviewing a Communication Agent Output</h2>
+<p>Suppose a communication agent drafts an email for a mentor to send to a student.</p>
+<p>The output standard may require the message to be:</p>
+<ul>
+<li>encouraging,</li>
+<li>age-appropriate,</li>
+<li>clear,</li>
+<li>not too long,</li>
+<li>respectful,</li>
+<li>and aligned with the mentor’s voice.</li>
+</ul>
+<p>The review checklist may ask:</p>
+<pre class="text"><code>[ ] Is the student addressed respectfully?
+[ ] Is the message encouraging without exaggeration?
+[ ] Is the language simple enough for the audience?
+[ ] Is the purpose clear?
+[ ] Is the ending appropriate?
+[ ] Does the message avoid unnecessary pressure?</code></pre>
+<p>The agent may produce the draft.</p>
+<p>But the mentor remains responsible for approving the final message.</p>
+<hr>
+</section>
+<section id="example-reviewing-a-data-support-agent-output" class="level2">
+<h2 class="anchored" data-anchor-id="example-reviewing-a-data-support-agent-output">Example: Reviewing a Data Support Agent Output</h2>
+<p>Suppose a data support agent reviews an analysis plan.</p>
+<p>The output standard may require the agent to identify:</p>
+<ul>
+<li>the analysis question,</li>
+<li>the expected data inputs,</li>
+<li>the proposed method,</li>
+<li>assumptions,</li>
+<li>possible limitations,</li>
+<li>reproducibility concerns,</li>
+<li>and suggested checks.</li>
+</ul>
+<p>The review checklist may ask:</p>
+<pre class="text"><code>[ ] Is the analysis question clear?
+[ ] Are the required data inputs listed?
+[ ] Are assumptions stated?
+[ ] Are limitations acknowledged?
+[ ] Are quality-control checks included?
+[ ] Is the interpretation cautious?
+[ ] Is the final decision left to the analyst?</code></pre>
+<p>This keeps the agent in a support role.</p>
+<p>It does not allow the agent to replace the analyst’s responsibility.</p>
+<hr>
+</section>
+<section id="output-standards-for-teaching-and-mentorship" class="level2">
+<h2 class="anchored" data-anchor-id="output-standards-for-teaching-and-mentorship">Output Standards for Teaching and Mentorship</h2>
+<p>In learning environments, output standards also teach discipline.</p>
+<p>Learners should not only ask AI for answers.</p>
+<p>They should learn how to judge whether an answer is usable.</p>
+<p>A teaching-oriented AI agent can require learners to review outputs using questions such as:</p>
+<pre class="text"><code>What did the AI get right?
+What might be missing?
+What needs evidence?
+What should be checked by a human?
+What did I learn from this output?
+What will I change before using it?</code></pre>
+<p>This builds AI literacy.</p>
+<p>It also protects learners from becoming passive users of generated text.</p>
+<hr>
+</section>
+<section id="documentation-of-agent-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="documentation-of-agent-outputs">Documentation of Agent Outputs</h2>
+<p>Reusable agents should leave a small documentation trail.</p>
+<p>This does not need to be complex.</p>
+<p>A simple log can record:</p>
+<pre class="text"><code>Date
+Agent name
+Task
+Input source
+Output type
+Reviewer
+Review status
+Main revision needed
+Final decision</code></pre>
+<p>For example:</p>
+<pre class="text"><code>2026-07-01 | Research Summary Agent | Summarize three articles | Uploaded PDFs | Evidence summary | TMB | Revise | Add missing limitations | Revised before use</code></pre>
+<p>This kind of record supports accountability.</p>
+<p>It also helps improve the agent over time.</p>
+<hr>
+</section>
+<section id="common-output-failures" class="level2">
+<h2 class="anchored" data-anchor-id="common-output-failures">Common Output Failures</h2>
+<p>Common output failures include:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Failure</th>
+<th>What it looks like</th>
+<th>How to respond</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Format drift</td>
+<td>The output ignores the required structure</td>
+<td>Strengthen the output template</td>
+</tr>
+<tr class="even">
+<td>Overconfidence</td>
+<td>The output sounds certain without evidence</td>
+<td>Require uncertainty and limitations</td>
+</tr>
+<tr class="odd">
+<td>Missing context</td>
+<td>The output does not use supplied materials</td>
+<td>Improve input and context checks</td>
+</tr>
+<tr class="even">
+<td>Hallucinated facts</td>
+<td>The output invents details</td>
+<td>Add source requirements and review</td>
+</tr>
+<tr class="odd">
+<td>Weak audience fit</td>
+<td>The tone or complexity is wrong</td>
+<td>Define audience and style clearly</td>
+</tr>
+<tr class="even">
+<td>Scope creep</td>
+<td>The agent performs tasks outside its role</td>
+<td>Add boundaries and escalation rules</td>
+</tr>
+<tr class="odd">
+<td>No decision trail</td>
+<td>The output gives no review status</td>
+<td>Require Ready / Revise / Reject</td>
+</tr>
+</tbody>
+</table>
+<p>These failures are not only model problems.</p>
+<p>They are system design problems.</p>
+<p>Better standards reduce the chance of repeated failure.</p>
+<hr>
+</section>
+<section id="agent-output-standard-template" class="level2">
+<h2 class="anchored" data-anchor-id="agent-output-standard-template">Agent Output Standard Template</h2>
+<p>The following template can be reused when designing an agent.</p>
+<pre class="text"><code># Agent Output Standard
+
+Agent name:
+Primary task:
+Output type:
+Audience:
+
+Required output structure:
+1.
+2.
+3.
+
+Required evidence or context:
+-
+-
+
+Required limitations section:
+Yes / No
+
+Required assumptions section:
+Yes / No
+
+Review checklist:
+[ ]
+[ ]
+[ ]
+
+Readiness status:
+Ready / Revise / Reject
+
+Escalation rule:
+When should this output require expert or supervisor review?</code></pre>
+<p>This template can be adapted for research, writing, data analysis, learning, career development, or reporting agents.</p>
+<hr>
+</section>
+<section id="cdi-practice-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-practice-pattern">CDI Practice Pattern</h2>
+<p>In the CDI approach, an agent output is not considered complete simply because it was generated.</p>
+<p>It becomes complete only after it passes through human review.</p>
+<pre class="text"><code>Agent produces output
+        ↓
+Output is checked against standards
+        ↓
+Human reviewer accepts, revises, or rejects
+        ↓
+Final output is documented and used responsibly</code></pre>
+<p>This pattern keeps AI work practical and accountable.</p>
+<p>It also keeps the Human–AI–Human model visible.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>Reusable agents need output standards.</p>
+<p>A good output standard defines the expected structure, evidence, tone, limitations, assumptions, and review criteria.</p>
+<p>Human review should be matched to risk.</p>
+<p>Low-risk outputs may need light review.</p>
+<p>Medium-risk outputs need structured review.</p>
+<p>High-risk outputs require expert judgment or should not be delegated to an agent.</p>
+<p>The goal is not to slow down AI use.</p>
+<p>The goal is to make AI-supported work reliable enough to repeat, teach, improve, and share.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter focuses on agent improvement and maintenance.</p>
+<p>Once an agent has a clear purpose, inputs, workflow logic, and output standard, it still needs to be monitored.</p>
+<p>Agents should be revised when tasks change, when outputs drift, when reviewers find recurring errors, or when new standards are needed.</p>
+<p>A reusable agent is therefore not a one-time prompt.</p>
+<p>It is a maintained workflow component.</p>
 
 
 </section>
@@ -845,11 +1206,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./12-agent-workflow-and-decision-logic.html" class="pagination-link" aria-label="Agent Workflow and Decision Logic">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Agent Workflow and Decision Logic</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./14-agent-improvement-and-maintenance.html" class="pagination-link" aria-label="Agent Improvement and Maintenance">
+        <span class="nav-page-text"><span class="chapter-title">Agent Improvement and Maintenance</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

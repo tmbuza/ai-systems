@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>Agent Workflow and Decision Logic – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./13-agent-output-standards-and-review.html" rel="next">
+<link href="./11-agent-inputs-context-and-memory.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html">Part III: Reusable AI Agent Template</a></li><li class="breadcrumb-item"><a href="./12-agent-workflow-and-decision-logic.html"><span class="chapter-title">Agent Workflow and Decision Logic</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -260,7 +207,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./12-agent-workflow-and-decision-logic.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Workflow and Decision Logic</span></a>
+  <a href="./12-agent-workflow-and-decision-logic.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Agent Workflow and Decision Logic</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,36 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#from-prompt-to-workflow" id="toc-from-prompt-to-workflow" class="nav-link active" data-scroll-target="#from-prompt-to-workflow">From Prompt to Workflow</a></li>
+  <li><a href="#why-decision-logic-matters" id="toc-why-decision-logic-matters" class="nav-link" data-scroll-target="#why-decision-logic-matters">Why Decision Logic Matters</a></li>
+  <li><a href="#the-basic-agent-workflow" id="toc-the-basic-agent-workflow" class="nav-link" data-scroll-target="#the-basic-agent-workflow">The Basic Agent Workflow</a></li>
+  <li><a href="#stage-1-understand-the-task" id="toc-stage-1-understand-the-task" class="nav-link" data-scroll-target="#stage-1-understand-the-task">Stage 1: Understand the Task</a></li>
+  <li><a href="#stage-2-check-the-available-context" id="toc-stage-2-check-the-available-context" class="nav-link" data-scroll-target="#stage-2-check-the-available-context">Stage 2: Check the Available Context</a></li>
+  <li><a href="#stage-3-execute-the-workflow" id="toc-stage-3-execute-the-workflow" class="nav-link" data-scroll-target="#stage-3-execute-the-workflow">Stage 3: Execute the Workflow</a></li>
+  <li><a href="#stage-4-review-the-output" id="toc-stage-4-review-the-output" class="nav-link" data-scroll-target="#stage-4-review-the-output">Stage 4: Review the Output</a></li>
+  <li><a href="#stage-5-deliver-or-escalate" id="toc-stage-5-deliver-or-escalate" class="nav-link" data-scroll-target="#stage-5-deliver-or-escalate">Stage 5: Deliver or Escalate</a></li>
+  <li><a href="#workflow-logic-as-a-decision-tree" id="toc-workflow-logic-as-a-decision-tree" class="nav-link" data-scroll-target="#workflow-logic-as-a-decision-tree">Workflow Logic as a Decision Tree</a></li>
+  <li><a href="#a-reusable-agent-workflow-template" id="toc-a-reusable-agent-workflow-template" class="nav-link" data-scroll-target="#a-reusable-agent-workflow-template">A Reusable Agent Workflow Template</a></li>
+  <li><a href="#example-research-and-learning-agent" id="toc-example-research-and-learning-agent" class="nav-link" data-scroll-target="#example-research-and-learning-agent">Example: Research and Learning Agent</a></li>
+  <li><a href="#example-communication-and-reporting-agent" id="toc-example-communication-and-reporting-agent" class="nav-link" data-scroll-target="#example-communication-and-reporting-agent">Example: Communication and Reporting Agent</a></li>
+  <li><a href="#decision-rules-should-be-simple" id="toc-decision-rules-should-be-simple" class="nav-link" data-scroll-target="#decision-rules-should-be-simple">Decision Rules Should Be Simple</a></li>
+  <li><a href="#review-gates" id="toc-review-gates" class="nav-link" data-scroll-target="#review-gates">Review Gates</a></li>
+  <li><a href="#escalation-logic" id="toc-escalation-logic" class="nav-link" data-scroll-target="#escalation-logic">Escalation Logic</a></li>
+  <li><a href="#human-in-the-loop-design" id="toc-human-in-the-loop-design" class="nav-link" data-scroll-target="#human-in-the-loop-design">Human-in-the-Loop Design</a></li>
+  <li><a href="#common-workflow-design-mistakes" id="toc-common-workflow-design-mistakes" class="nav-link" data-scroll-target="#common-workflow-design-mistakes">Common Workflow Design Mistakes</a></li>
+  <li><a href="#lightweight-workflow-documentation" id="toc-lightweight-workflow-documentation" class="nav-link" data-scroll-target="#lightweight-workflow-documentation">Lightweight Workflow Documentation</a></li>
+  <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical Exercise</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html">Part III: Reusable AI Agent Template</a></li><li class="breadcrumb-item"><a href="./12-agent-workflow-and-decision-logic.html"><span class="chapter-title">Agent Workflow and Decision Logic</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="agent-workflow-and-decision-logic" class="quarto-section-identifier"><span class="chapter-title">Agent Workflow and Decision Logic</span></span></h1>
 </div>
 
 
@@ -374,69 +338,583 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-012</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams designing reusable AI agents</li>
+<li><strong>Theme:</strong> A reusable AI agent needs clear workflow logic, decision rules, review gates, and human escalation points</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>An AI agent is not only a prompt.</p>
+<p>A prompt may ask for one output.</p>
+<p>An agent needs a workflow.</p>
+<p>The workflow explains what the agent does first, what it checks, how it decides what to do next, what it produces, when it should stop, and when a human should review or intervene.</p>
+<p>Without workflow logic, an agent becomes unpredictable.</p>
+<p>It may produce useful outputs sometimes, but the process is difficult to repeat, inspect, improve, or teach.</p>
+<p>A reusable agent should therefore be designed as a small operating system for a specific task.</p>
+<p>It needs inputs.</p>
+<p>It needs steps.</p>
+<p>It needs rules.</p>
+<p>It needs review points.</p>
+<p>It needs output standards.</p>
+<p>It needs boundaries.</p>
+<p>This chapter explains how to design that workflow and decision logic.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
+<section id="from-prompt-to-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="from-prompt-to-workflow">From Prompt to Workflow</h2>
+<p>A single prompt usually follows a simple pattern.</p>
+<pre class="text"><code>User request
+  ↓
+AI response</code></pre>
+<p>That is useful for quick tasks.</p>
+<p>But reusable agents need a more structured pattern.</p>
+<pre class="text"><code>Task request
+  ↓
+Input check
+  ↓
+Context review
+  ↓
+Workflow steps
+  ↓
+Decision logic
+  ↓
+Draft output
+  ↓
+Quality review
+  ↓
+Final output or escalation</code></pre>
+<p>The difference is important.</p>
+<p>A prompt focuses on asking.</p>
+<p>A workflow focuses on working.</p>
+<p>The workflow gives the agent a repeatable process that can be explained to another person.</p>
 <hr>
 </section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="why-decision-logic-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-decision-logic-matters">Why Decision Logic Matters</h2>
+<p>Decision logic tells the agent how to respond when the task is not simple.</p>
+<p>For example, an agent may need to decide:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>whether the request is clear enough,</li>
+<li>whether enough context has been provided,</li>
+<li>whether the task is low-risk or high-risk,</li>
+<li>whether a source should be checked,</li>
+<li>whether an output should be brief or detailed,</li>
+<li>whether the work can proceed or should be escalated,</li>
+<li>whether the final output is ready or needs revision.</li>
 </ul>
+<p>These decisions should not be left entirely to chance.</p>
+<p>A strong agent has explicit rules for common situations.</p>
+<p>The rules do not remove judgment.</p>
+<p>They make judgment more consistent.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="the-basic-agent-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-basic-agent-workflow">The Basic Agent Workflow</h2>
+<p>A reusable agent can begin with five core stages.</p>
+<pre class="text"><code>1. Understand the task
+2. Check the available context
+3. Execute the workflow
+4. Review the output
+5. Deliver or escalate</code></pre>
+<p>Each stage has a purpose.</p>
+<p>The first stage prevents the agent from solving the wrong problem.</p>
+<p>The second stage prevents the agent from inventing missing information.</p>
+<p>The third stage performs the work.</p>
+<p>The fourth stage checks the quality and risk of the output.</p>
+<p>The fifth stage decides what should happen next.</p>
+<p>This is the minimum workflow structure for a responsible agent.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="stage-1-understand-the-task" class="level2">
+<h2 class="anchored" data-anchor-id="stage-1-understand-the-task">Stage 1: Understand the Task</h2>
+<p>The agent should first identify what kind of task it is handling.</p>
+<p>A task may involve:</p>
+<ul>
+<li>summarizing information,</li>
+<li>drafting communication,</li>
+<li>reviewing a document,</li>
+<li>planning a workflow,</li>
+<li>generating code,</li>
+<li>analyzing data,</li>
+<li>comparing options,</li>
+<li>preparing a report,</li>
+<li>creating a teaching resource,</li>
+<li>or supporting a decision.</li>
+</ul>
+<p>The agent should also identify the intended user and use case.</p>
+<p>A summary for a student is different from a summary for a policy memo.</p>
+<p>A code review for learning is different from a code review for production.</p>
+<p>A career plan for a beginner is different from a portfolio strategy for an experienced professional.</p>
+<p>Understanding the task means understanding both the action and the context.</p>
+<hr>
+</section>
+<section id="stage-2-check-the-available-context" class="level2">
+<h2 class="anchored" data-anchor-id="stage-2-check-the-available-context">Stage 2: Check the Available Context</h2>
+<p>Before doing the work, the agent should check whether it has enough context.</p>
+<p>Useful context may include:</p>
+<ul>
+<li>the goal,</li>
+<li>the audience,</li>
+<li>the input material,</li>
+<li>the expected output format,</li>
+<li>the tone or style,</li>
+<li>the deadline or use case,</li>
+<li>the quality standard,</li>
+<li>the risk level,</li>
+<li>and any constraints.</li>
+</ul>
+<p>The agent should not treat missing context as permission to invent.</p>
+<p>It should either make a reasonable assumption and state it, use a safe default, or ask for clarification when the missing information is essential.</p>
+<p>The agent should also recognize when context is outdated, uncertain, incomplete, or outside its competence.</p>
+<hr>
+</section>
+<section id="stage-3-execute-the-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="stage-3-execute-the-workflow">Stage 3: Execute the Workflow</h2>
+<p>Execution is where the agent performs the task.</p>
+<p>But execution should still be structured.</p>
+<p>A research agent may follow this workflow:</p>
+<pre class="text"><code>Define the question
+  ↓
+Identify useful sources
+  ↓
+Extract key points
+  ↓
+Compare findings
+  ↓
+Summarize with citations
+  ↓
+Flag uncertainty</code></pre>
+<p>A writing agent may follow this workflow:</p>
+<pre class="text"><code>Identify purpose and audience
+  ↓
+Draft the message
+  ↓
+Improve clarity and tone
+  ↓
+Check completeness
+  ↓
+Return a send-ready version</code></pre>
+<p>A data analysis support agent may follow this workflow:</p>
+<pre class="text"><code>Clarify the analytical question
+  ↓
+Inspect the data structure
+  ↓
+Suggest analysis steps
+  ↓
+Generate reproducible code
+  ↓
+Check assumptions and limitations
+  ↓
+Support interpretation</code></pre>
+<p>The workflow should match the agent purpose.</p>
+<p>A generic process is not enough.</p>
+<p>The agent should have a process designed for its task family.</p>
+<hr>
+</section>
+<section id="stage-4-review-the-output" class="level2">
+<h2 class="anchored" data-anchor-id="stage-4-review-the-output">Stage 4: Review the Output</h2>
+<p>Every reusable agent needs a review stage.</p>
+<p>The review stage asks whether the output is ready to use.</p>
+<p>A simple review checklist may include:</p>
+<pre class="text"><code>Is the output aligned with the task?
+Is the output complete enough for the use case?
+Is the output clear?
+Is the output grounded in the provided context?
+Are assumptions visible?
+Are risks or limitations stated?
+Does a human need to verify anything before use?</code></pre>
+<p>This review stage is especially important for AI systems because outputs can sound confident even when they are incomplete or wrong.</p>
+<p>The review step protects the user, the learner, the organization, and the credibility of the work.</p>
+<hr>
+</section>
+<section id="stage-5-deliver-or-escalate" class="level2">
+<h2 class="anchored" data-anchor-id="stage-5-deliver-or-escalate">Stage 5: Deliver or Escalate</h2>
+<p>The final stage is not always delivery.</p>
+<p>Sometimes the correct action is escalation.</p>
+<p>The agent may need to stop and involve a human when:</p>
+<ul>
+<li>the request is high-risk,</li>
+<li>the context is insufficient,</li>
+<li>the task requires professional judgment,</li>
+<li>the result could affect health, legal, financial, academic, employment, or safety outcomes,</li>
+<li>the output depends on facts that must be verified,</li>
+<li>or the user is asking for something outside the agent boundary.</li>
+</ul>
+<p>Escalation is not failure.</p>
+<p>Escalation is part of responsible system design.</p>
+<p>A well-designed agent knows when not to continue alone.</p>
+<hr>
+</section>
+<section id="workflow-logic-as-a-decision-tree" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-logic-as-a-decision-tree">Workflow Logic as a Decision Tree</h2>
+<p>Decision logic can be represented as a simple decision tree.</p>
+<pre class="text"><code>Start
+  ↓
+Is the task within scope?
+  ├── No → Decline or redirect
+  └── Yes
+        ↓
+Is the context sufficient?
+  ├── No → Ask, assume carefully, or provide partial support
+  └── Yes
+        ↓
+Is the task high-risk?
+  ├── Yes → Add stronger review, caution, or escalation
+  └── No
+        ↓
+Produce draft output
+        ↓
+Does the output meet the standard?
+  ├── No → Revise or flag limitations
+  └── Yes → Deliver</code></pre>
+<p>This type of decision tree helps the agent behave consistently.</p>
+<p>It also helps the designer explain the agent to learners, colleagues, or reviewers.</p>
+<hr>
+</section>
+<section id="a-reusable-agent-workflow-template" class="level2">
+<h2 class="anchored" data-anchor-id="a-reusable-agent-workflow-template">A Reusable Agent Workflow Template</h2>
+<p>A practical agent workflow can be documented using this template.</p>
+<pre class="text"><code>Agent name:
 
-</div>
+Purpose:
+
+Primary users:
+
+Supported tasks:
+
+Unsupported tasks:
+
+Required inputs:
+
+Optional context:
+
+Workflow steps:
+1.
+2.
+3.
+4.
+5.
+
+Decision rules:
+- If ... then ...
+- If ... then ...
+- If ... then ...
+
+Review checklist:
+- 
+- 
+- 
+
+Escalation triggers:
+- 
+- 
+- 
+
+Output format:
+
+Human review requirement:</code></pre>
+<p>This template turns an agent idea into a usable design document.</p>
+<p>It also makes the agent easier to improve over time.</p>
+<hr>
+</section>
+<section id="example-research-and-learning-agent" class="level2">
+<h2 class="anchored" data-anchor-id="example-research-and-learning-agent">Example: Research and Learning Agent</h2>
+<p>A research and learning agent may be designed like this.</p>
+<pre class="text"><code>Agent name:
+Research and Learning Agent
+
+Purpose:
+Help learners understand a topic, compare sources, summarize key ideas, and identify gaps.
+
+Primary users:
+Students, researchers, mentors, educators, and self-directed learners.
+
+Supported tasks:
+- Explain a concept
+- Summarize provided material
+- Compare ideas
+- Generate study questions
+- Build a learning plan
+
+Unsupported tasks:
+- Fabricating citations
+- Replacing expert review
+- Making unsupported claims
+- Completing dishonest academic work
+
+Required inputs:
+- Topic or question
+- Learner level
+- Purpose of learning
+
+Optional context:
+- Course notes
+- Articles
+- Dataset descriptions
+- Existing draft
+
+Workflow steps:
+1. Identify the learning goal.
+2. Check the learner level and available context.
+3. Explain the topic in clear language.
+4. Provide examples or analogies.
+5. Suggest review questions or next steps.
+6. Flag uncertainty or areas needing verification.
+
+Decision rules:
+- If the topic is unfamiliar or current, use reliable sources or ask for source material.
+- If the learner is a beginner, reduce jargon and add examples.
+- If the output may be used academically, encourage citation and independent understanding.
+
+Review checklist:
+- Is the explanation accurate?
+- Is it appropriate for the learner level?
+- Are limitations visible?
+- Is the learner encouraged to think, not just copy?
+
+Escalation triggers:
+- Medical, legal, financial, or safety-critical interpretation
+- Unsupported claims from weak sources
+- Requests to bypass learning or assessment rules
+
+Output format:
+Clear explanation, key points, example, reflection questions, and suggested next step.
+
+Human review requirement:
+Learner or mentor reviews before use in formal work.</code></pre>
+<p>This example shows that the agent is not only a response generator.</p>
+<p>It has purpose, boundaries, steps, rules, and review logic.</p>
+<hr>
+</section>
+<section id="example-communication-and-reporting-agent" class="level2">
+<h2 class="anchored" data-anchor-id="example-communication-and-reporting-agent">Example: Communication and Reporting Agent</h2>
+<p>A communication and reporting agent may have a different workflow.</p>
+<pre class="text"><code>Agent name:
+Communication and Reporting Agent
+
+Purpose:
+Support clear, audience-aware communication for reports, emails, summaries, proposals, and professional updates.
+
+Primary users:
+Professionals, analysts, researchers, mentors, and project teams.
+
+Supported tasks:
+- Draft emails
+- Improve clarity
+- Summarize findings
+- Prepare report sections
+- Adjust tone for audience
+
+Unsupported tasks:
+- Misleading communication
+- Hiding uncertainty
+- Inventing results
+- Sending messages without human review where review is required
+
+Required inputs:
+- Message goal
+- Audience
+- Key points
+- Desired tone
+
+Optional context:
+- Previous draft
+- Data summary
+- Report outline
+- Organizational style
+
+Workflow steps:
+1. Identify purpose and audience.
+2. Extract the key message.
+3. Organize the content logically.
+4. Draft in the requested tone.
+5. Review for clarity, accuracy, and completeness.
+6. Return send-ready text or a revision.
+
+Decision rules:
+- If the message is sensitive, use careful and respectful language.
+- If evidence is missing, avoid overstating claims.
+- If the message is formal, keep structure and tone professional.
+
+Review checklist:
+- Is the message clear?
+- Is the tone appropriate?
+- Are claims supported?
+- Is anything missing before sending?
+
+Escalation triggers:
+- Conflict, HR, legal, medical, or financial matters
+- Public statements on behalf of an organization
+- High-impact decisions
+
+Output format:
+Ready-to-use draft with optional notes.
+
+Human review requirement:
+Sender reviews before sending.</code></pre>
+<p>The workflow is similar in structure but different in content.</p>
+<p>That is the point.</p>
+<p>Reusable agent design should use a common architecture while adapting to the task.</p>
+<hr>
+</section>
+<section id="decision-rules-should-be-simple" class="level2">
+<h2 class="anchored" data-anchor-id="decision-rules-should-be-simple">Decision Rules Should Be Simple</h2>
+<p>Decision rules do not need to be complicated.</p>
+<p>They should be clear enough to guide behavior.</p>
+<p>Useful decision rules often follow this pattern:</p>
+<pre class="text"><code>If the task is outside scope, redirect.
+If context is missing but not essential, state the assumption.
+If context is missing and essential, ask for it or provide only partial support.
+If the topic is high-risk, include caution and recommend human expert review.
+If the output is based on provided material, stay close to that material.
+If the user needs a reusable output, return a clean finished version.</code></pre>
+<p>Simple rules are easier to teach, inspect, and improve.</p>
+<p>Complex rules may be needed later, but the first version of an agent should usually begin with clear basics.</p>
+<hr>
+</section>
+<section id="review-gates" class="level2">
+<h2 class="anchored" data-anchor-id="review-gates">Review Gates</h2>
+<p>A review gate is a point in the workflow where the agent or human checks whether it is safe and useful to continue.</p>
+<p>Common review gates include:</p>
+<pre class="text"><code>Input review
+Context review
+Risk review
+Draft review
+Final human review</code></pre>
+<p>Each gate answers a different question.</p>
+<p>The input review asks whether the task is understood.</p>
+<p>The context review asks whether enough information is available.</p>
+<p>The risk review asks whether the task requires special caution.</p>
+<p>The draft review asks whether the output meets the quality standard.</p>
+<p>The final human review asks whether the output is ready for use in the real world.</p>
+<p>Review gates are important because they prevent the agent from rushing from request to output without inspection.</p>
+<hr>
+</section>
+<section id="escalation-logic" class="level2">
+<h2 class="anchored" data-anchor-id="escalation-logic">Escalation Logic</h2>
+<p>Escalation logic defines when the agent should stop, warn, redirect, or involve a human.</p>
+<p>Escalation may be needed when a task is:</p>
+<ul>
+<li>high-stakes,</li>
+<li>uncertain,</li>
+<li>sensitive,</li>
+<li>outside the agent scope,</li>
+<li>dependent on unavailable information,</li>
+<li>or likely to create harm if handled poorly.</li>
+</ul>
+<p>A reusable agent should document these conditions.</p>
+<p>For example:</p>
+<pre class="text"><code>Escalate when:
+- The user asks for medical diagnosis or treatment.
+- The user asks for legal advice about a real case.
+- The user asks for financial decisions involving real money.
+- The user asks to misrepresent evidence.
+- The user asks for unsupported claims.
+- The user provides incomplete data but expects a final decision.</code></pre>
+<p>Escalation keeps the system honest.</p>
+<p>It reminds the user that AI assistance does not remove human responsibility.</p>
+<hr>
+</section>
+<section id="human-in-the-loop-design" class="level2">
+<h2 class="anchored" data-anchor-id="human-in-the-loop-design">Human-in-the-Loop Design</h2>
+<p>A reusable agent should make the role of the human explicit.</p>
+<p>The human may act as:</p>
+<ul>
+<li>task owner,</li>
+<li>context provider,</li>
+<li>reviewer,</li>
+<li>decision-maker,</li>
+<li>editor,</li>
+<li>domain expert,</li>
+<li>ethical supervisor,</li>
+<li>or final approver.</li>
+</ul>
+<p>The agent should not hide this role.</p>
+<p>Instead, the workflow should show where human judgment enters.</p>
+<pre class="text"><code>Human defines the task
+  ↓
+Agent processes and drafts
+  ↓
+Human reviews and decides</code></pre>
+<p>This is the Human–AI–Human model applied to agent design.</p>
+<hr>
+</section>
+<section id="common-workflow-design-mistakes" class="level2">
+<h2 class="anchored" data-anchor-id="common-workflow-design-mistakes">Common Workflow Design Mistakes</h2>
+<p>A weak agent workflow often has one or more of these problems.</p>
+<pre class="text"><code>No clear purpose
+No task boundary
+No input requirements
+No decision rules
+No review stage
+No escalation logic
+No output standard
+No human responsibility</code></pre>
+<p>These weaknesses make the agent harder to trust.</p>
+<p>They also make it harder to improve.</p>
+<p>When an agent produces a poor result, the designer cannot easily tell whether the problem came from the input, the prompt, the context, the workflow, the decision rule, or the review process.</p>
+<p>A documented workflow makes improvement possible.</p>
+<hr>
+</section>
+<section id="lightweight-workflow-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="lightweight-workflow-documentation">Lightweight Workflow Documentation</h2>
+<p>The agent workflow does not need to become a long manual.</p>
+<p>A lightweight version can be enough.</p>
+<pre class="text"><code>Agent:
+Task:
+Inputs needed:
+Steps:
+Decision rules:
+Review checks:
+Escalation triggers:
+Final output:</code></pre>
+<p>For small learning agents, this may be sufficient.</p>
+<p>For high-stakes or team-facing agents, the documentation should be more detailed.</p>
+<p>The level of documentation should match the risk and importance of the task.</p>
+<hr>
+</section>
+<section id="practical-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise">Practical Exercise</h2>
+<p>Choose one AI agent you would like to create.</p>
+<p>It may be for research, learning, career development, data analysis, reporting, teaching, mentoring, or project management.</p>
+<p>Complete this workflow draft.</p>
+<pre class="text"><code>Agent name:
+
+What problem does this agent help solve?
+
+Who will use it?
+
+What inputs does it need?
+
+What should it do first?
+
+What should it do second?
+
+What should it check before producing the final output?
+
+When should it stop or escalate?
+
+What should the final output look like?
+
+What should the human review before using the output?</code></pre>
+<p>This exercise turns an agent idea into an operational design.</p>
+<hr>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<p>A reusable AI agent needs more than a good prompt.</p>
+<p>It needs a workflow.</p>
+<p>It needs decision logic.</p>
+<p>It needs review gates.</p>
+<p>It needs escalation rules.</p>
+<p>It needs human responsibility built into the process.</p>
+<p>The workflow does not need to be complicated, but it must be visible.</p>
+<p>A visible workflow can be taught, tested, improved, reused, and trusted more than an invisible one.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter focuses on agent output standards and review.</p>
+<p>Once the workflow is defined, the agent still needs clear standards for what a good output looks like.</p>
+<p>That includes structure, clarity, completeness, evidence, limitations, formatting, and human approval before real-world use.</p>
 
 
 </section>
@@ -845,11 +1323,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./11-agent-inputs-context-and-memory.html" class="pagination-link" aria-label="Agent Inputs, Context, and Memory">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Agent Inputs, Context, and Memory</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./13-agent-output-standards-and-review.html" class="pagination-link" aria-label="Agent Output Standards and Review">
+        <span class="nav-page-text"><span class="chapter-title">Agent Output Standards and Review</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

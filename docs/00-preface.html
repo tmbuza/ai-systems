@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>Preface and Overview – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,26 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +65,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./01-ai-system-overview.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +119,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Part I: AI Foundations</a></li><li class="breadcrumb-item"><a href="./00-preface.html"><span class="chapter-title">Preface and Overview</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -178,7 +160,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface and Overview</span></a>
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Preface and Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +304,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +319,36 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#why-this-guide-exists" id="toc-why-this-guide-exists" class="nav-link active" data-scroll-target="#why-this-guide-exists">Why This Guide Exists</a></li>
+  <li><a href="#the-core-philosophy" id="toc-the-core-philosophy" class="nav-link" data-scroll-target="#the-core-philosophy">The Core Philosophy</a></li>
+  <li><a href="#relationship-to-thinking-with-ai" id="toc-relationship-to-thinking-with-ai" class="nav-link" data-scroll-target="#relationship-to-thinking-with-ai">Relationship to Thinking with AI</a></li>
+  <li><a href="#who-this-guide-is-for" id="toc-who-this-guide-is-for" class="nav-link" data-scroll-target="#who-this-guide-is-for">Who This Guide Is For</a></li>
+  <li><a href="#what-this-guide-is-not" id="toc-what-this-guide-is-not" class="nav-link" data-scroll-target="#what-this-guide-is-not">What This Guide Is Not</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#the-ai-systems-architecture" id="toc-the-ai-systems-architecture" class="nav-link" data-scroll-target="#the-ai-systems-architecture">The AI Systems Architecture</a></li>
+  <li><a href="#guide-structure" id="toc-guide-structure" class="nav-link" data-scroll-target="#guide-structure">Guide Structure</a>
+  <ul class="collapse">
+  <li><a href="#part-i-ai-foundations" id="toc-part-i-ai-foundations" class="nav-link" data-scroll-target="#part-i-ai-foundations">Part I: AI Foundations</a></li>
+  <li><a href="#part-ii-ai-systems" id="toc-part-ii-ai-systems" class="nav-link" data-scroll-target="#part-ii-ai-systems">Part II: AI Systems</a></li>
+  <li><a href="#part-iii-reusable-ai-agent-template" id="toc-part-iii-reusable-ai-agent-template" class="nav-link" data-scroll-target="#part-iii-reusable-ai-agent-template">Part III: Reusable AI Agent Template</a></li>
+  <li><a href="#part-iv-applied-ai-agents" id="toc-part-iv-applied-ai-agents" class="nav-link" data-scroll-target="#part-iv-applied-ai-agents">Part IV: Applied AI Agents</a></li>
+  <li><a href="#appendices" id="toc-appendices" class="nav-link" data-scroll-target="#appendices">Appendices</a></li>
+  </ul></li>
+  <li><a href="#reproducible-project-layout" id="toc-reproducible-project-layout" class="nav-link" data-scroll-target="#reproducible-project-layout">Reproducible Project Layout</a></li>
+  <li><a href="#supporting-scripts" id="toc-supporting-scripts" class="nav-link" data-scroll-target="#supporting-scripts">Supporting Scripts</a></li>
+  <li><a href="#publication-workflow" id="toc-publication-workflow" class="nav-link" data-scroll-target="#publication-workflow">Publication Workflow</a></li>
+  <li><a href="#how-to-read-this-guide" id="toc-how-to-read-this-guide" class="nav-link" data-scroll-target="#how-to-read-this-guide">How to Read This Guide</a></li>
+  <li><a href="#closing-note" id="toc-closing-note" class="nav-link" data-scroll-target="#closing-note">Closing Note</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Part I: AI Foundations</a></li><li class="breadcrumb-item"><a href="./00-preface.html"><span class="chapter-title">Preface and Overview</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="preface" class="quarto-section-identifier"><span class="chapter-title">Preface and Overview</span></span></h1>
 </div>
 
 
@@ -374,69 +373,313 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-000</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> AI should be treated as a human-led system, not a magic tool</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>AI is now part of everyday learning, research, analysis, writing, coding, decision-making, and professional work.</p>
+<p>But using AI is not the same as building an AI system.</p>
+<p>A person can ask a chatbot a question and get an answer.</p>
+<p>That is AI use.</p>
+<p>A person can design a workflow where the problem is clearly framed, the context is provided, the output is evaluated, the limitations are documented, and the final decision remains human-led.</p>
+<p>That is an AI system.</p>
+<p>This guide is about the second path.</p>
+<p>It teaches AI as a practical system for responsible, reproducible, and impactful work.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
+<section id="why-this-guide-exists" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-guide-exists">Why This Guide Exists</h2>
+<p>Many people learn AI through tools.</p>
+<p>They learn prompts.</p>
+<p>They learn apps.</p>
+<p>They learn shortcuts.</p>
+<p>That is useful, but incomplete.</p>
+<p>Tools change quickly. Workflows, reasoning habits, evaluation practices, and documentation standards last longer.</p>
+<p>The purpose of this guide is to help learners move beyond casual AI use into structured AI practice.</p>
+<p>The goal is not to make AI mysterious.</p>
+<p>The goal is to make AI usable, inspectable, teachable, and accountable.</p>
+<p>In Complex Data Insights, AI is treated as part of a broader data and decision ecosystem.</p>
+<p>AI can support discovery, analysis, communication, automation, and learning. But it must remain connected to human judgment, evidence, context, and responsibility.</p>
 <hr>
 </section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="the-core-philosophy" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-philosophy">The Core Philosophy</h2>
+<p>The central philosophy of this guide is simple:</p>
+<blockquote class="blockquote">
+<p>AI should assist human thinking, not replace human responsibility.</p>
+</blockquote>
+<p>This guide uses a <strong>Human–AI–Human</strong> model.</p>
+<pre class="text"><code>Human frames the problem
+        ↓
+AI assists with generation, reasoning, analysis, or automation
+        ↓
+Human evaluates, decides, documents, and acts</code></pre>
+<p>The workflow begins with a human question and ends with a human decision.</p>
+<p>AI sits in the middle as an assistant, accelerator, analyst, reviewer, coder, summarizer, or workflow component.</p>
+<p>This framing is important because AI outputs can be fluent without being correct. They can be useful without being complete. They can be impressive without being reliable.</p>
+<p>A responsible AI system must therefore include evaluation, review, and documentation from the beginning.</p>
+<hr>
+</section>
+<section id="relationship-to-thinking-with-ai" class="level2">
+<h2 class="anchored" data-anchor-id="relationship-to-thinking-with-ai">Relationship to Thinking with AI</h2>
+<p>This guide connects naturally to the earlier <strong>Thinking with AI</strong> idea, but it is not the same thing.</p>
+<p><strong>Thinking with AI</strong> focuses on reasoning habits:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>asking better questions,</li>
+<li>exploring ideas,</li>
+<li>challenging assumptions,</li>
+<li>improving explanations,</li>
+<li>reflecting before deciding,</li>
+<li>and using AI to strengthen human thinking.</li>
 </ul>
+<p><strong>AI Systems</strong> is broader and more operational.</p>
+<p>It asks how AI-supported work can be designed, evaluated, repeated, documented, governed, and shared.</p>
+<p>The relationship can be viewed as:</p>
+<pre class="text"><code>Thinking with AI
+        ↓
+Human–AI–Human reasoning loop
+        ↓
+AI Systems
+        ↓
+Reusable agents, applied workflows, evaluation, governance, and impact</code></pre>
+<p>Thinking with AI is therefore a foundation inside AI Systems.</p>
+<p>AI Systems extends that foundation into real workflows.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="who-this-guide-is-for" class="level2">
+<h2 class="anchored" data-anchor-id="who-this-guide-is-for">Who This Guide Is For</h2>
+<p>This guide is for people who want to use AI seriously and responsibly.</p>
+<p>It is especially useful for:</p>
+<ul>
+<li>students learning how to work with AI without becoming dependent on it,</li>
+<li>researchers using AI to support reading, synthesis, coding, analysis, or writing,</li>
+<li>data scientists building reproducible AI-assisted workflows,</li>
+<li>educators designing AI-aware learning activities,</li>
+<li>professionals using AI to improve productivity and communication,</li>
+<li>mentors training learners for an AI-enabled workplace,</li>
+<li>and teams that need governance, documentation, and quality control.</li>
+</ul>
+<p>The guide does not assume that the reader is an AI engineer.</p>
+<p>It does assume that the reader wants to think carefully, work reproducibly, and communicate limitations honestly.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
-
-</div>
+<section id="what-this-guide-is-not" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-guide-is-not">What This Guide Is Not</h2>
+<p>This guide is not a collection of prompt tricks.</p>
+<p>It is not a list of AI tools.</p>
+<p>It is not a promise that AI can solve every problem.</p>
+<p>It is not a replacement for domain expertise, statistical reasoning, data science, ethics, or human judgment.</p>
+<p>Instead, it is a system-level guide for using AI in a structured way.</p>
+<p>The focus is on workflows that can be explained, repeated, evaluated, improved, and responsibly shared.</p>
+<hr>
+</section>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of this guide, the learner should be able to:</p>
+<ol type="1">
+<li>Explain AI as part of a broader human-led system.</li>
+<li>Distinguish casual AI use from structured AI workflows.</li>
+<li>Frame AI tasks with clear goals, context, constraints, and expected outputs.</li>
+<li>Design prompts and context packages that improve output quality.</li>
+<li>Use grounding materials such as data, documents, code, examples, and references.</li>
+<li>Evaluate AI outputs for correctness, relevance, completeness, clarity, and risk.</li>
+<li>Build human-in-the-loop review workflows.</li>
+<li>Document AI use transparently.</li>
+<li>Identify governance, privacy, bias, and safety concerns.</li>
+<li>Design reusable AI agent templates with clear scope, inputs, workflow logic, and review standards.</li>
+<li>Apply AI agents to research, learning, career development, data analysis support, communication, and reporting.</li>
+<li>Communicate AI-supported outputs without overstating certainty.</li>
+<li>Prepare learners and professionals for responsible AI-enabled careers.</li>
+</ol>
+<hr>
+</section>
+<section id="the-ai-systems-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="the-ai-systems-architecture">The AI Systems Architecture</h2>
+<p>This guide organizes AI work into a layered system.</p>
+<pre class="text"><code>Problem
+  ↓
+Context
+  ↓
+Data and Knowledge
+  ↓
+Prompt or Workflow Design
+  ↓
+AI Assistance
+  ↓
+Evaluation
+  ↓
+Human Decision
+  ↓
+Documentation and Impact</code></pre>
+<p>Each layer matters.</p>
+<p>A weak problem statement produces unclear outputs.</p>
+<p>Poor context produces shallow responses.</p>
+<p>Ungrounded AI work increases the risk of error.</p>
+<p>No evaluation makes outputs difficult to trust.</p>
+<p>No documentation makes the workflow difficult to repeat or defend.</p>
+<p>A strong AI system connects all of these layers.</p>
+<hr>
+</section>
+<section id="guide-structure" class="level2">
+<h2 class="anchored" data-anchor-id="guide-structure">Guide Structure</h2>
+<p>The guide is organized into four major parts.</p>
+<pre class="text"><code>Part I: AI Foundations
+        ↓
+Part II: AI Systems
+        ↓
+Part III: Reusable AI Agent Template
+        ↓
+Part IV: Applied AI Agents</code></pre>
+<p>This structure moves from understanding AI, to designing AI-supported systems, to creating reusable agents, to applying those agents in real work.</p>
+<section id="part-i-ai-foundations" class="level3">
+<h3 class="anchored" data-anchor-id="part-i-ai-foundations">Part I: AI Foundations</h3>
+<p>The foundation chapters introduce the core ideas needed before building AI-supported workflows.</p>
+<p>This part covers AI systems thinking, Thinking with AI, the Human–AI–Human framework, and prompting as system design.</p>
+<p>The purpose of this part is to establish the mindset: AI should be used deliberately, with clear human judgment before and after AI assistance.</p>
+</section>
+<section id="part-ii-ai-systems" class="level3">
+<h3 class="anchored" data-anchor-id="part-ii-ai-systems">Part II: AI Systems</h3>
+<p>The systems chapters show how AI-supported work can be designed, evaluated, and governed.</p>
+<p>This part covers workflow design, context and knowledge systems, output evaluation, safety boundaries, human judgment, and an AI operating system for work.</p>
+<p>The purpose of this part is to move from individual AI interactions into repeatable work systems.</p>
+</section>
+<section id="part-iii-reusable-ai-agent-template" class="level3">
+<h3 class="anchored" data-anchor-id="part-iii-reusable-ai-agent-template">Part III: Reusable AI Agent Template</h3>
+<p>The reusable agent chapters define a practical template for designing AI agents.</p>
+<p>This part covers agent purpose and scope, inputs, context, memory, workflow logic, decision logic, output standards, review practices, improvement, and maintenance.</p>
+<p>The purpose of this part is to make agent design reusable instead of ad hoc.</p>
+</section>
+<section id="part-iv-applied-ai-agents" class="level3">
+<h3 class="anchored" data-anchor-id="part-iv-applied-ai-agents">Part IV: Applied AI Agents</h3>
+<p>The applied agent chapters show how the reusable template can support real work.</p>
+<p>This part covers research and learning agents, career and portfolio agents, data analysis support agents, and communication and reporting agents.</p>
+<p>The purpose of this part is to demonstrate how AI agents can support practical workflows while remaining human-led, evaluated, and documented.</p>
+</section>
+<section id="appendices" class="level3">
+<h3 class="anchored" data-anchor-id="appendices">Appendices</h3>
+<p>The appendices provide supporting templates, checklists, references, and reusable materials.</p>
+<p>They are designed to make the guide easier to apply in learning programs, professional workflows, and future CDI systems.</p>
+<hr>
+</section>
+</section>
+<section id="reproducible-project-layout" class="level2">
+<h2 class="anchored" data-anchor-id="reproducible-project-layout">Reproducible Project Layout</h2>
+<p>This guide is designed as a publishable Quarto book from the beginning.</p>
+<p>A typical project layout is:</p>
+<pre class="text"><code>ai-systems/
+├── index.qmd
+├── 00-preface.qmd
+├── 01-ai-system-overview.qmd
+├── 02-thinking-with-ai.qmd
+├── 03-human-ai-human-framework.qmd
+├── 04-prompting-as-system-design.qmd
+├── 05-ai-workflow-design.qmd
+├── 06-context-and-knowledge-systems.qmd
+├── 07-ai-output-evaluation.qmd
+├── 08-ai-safety-boundaries-and-human-judgment.qmd
+├── 09-ai-operating-system-for-work.qmd
+├── 10-agent-purpose-and-scope.qmd
+├── 11-agent-inputs-context-and-memory.qmd
+├── 12-agent-workflow-and-decision-logic.qmd
+├── 13-agent-output-standards-and-review.qmd
+├── 14-agent-improvement-and-maintenance.qmd
+├── 15-research-and-learning-agent.qmd
+├── 16-career-and-portfolio-agent.qmd
+├── 17-data-analysis-support-agent.qmd
+├── 18-communication-and-reporting-agent.qmd
+├── 999-appendix.qmd
+├── 999-references.qmd
+├── assets/
+├── data/
+├── scripts/
+├── library/
+├── docs/
+├── _quarto.yml
+└── README.md</code></pre>
+<p>The project is intended to support both learning and publication.</p>
+<p>The <code>qmd</code> files explain the concepts.</p>
+<p>The scripts create small reproducible examples.</p>
+<p>The <code>data/</code> directory stores example inputs and outputs.</p>
+<p>The <code>docs/</code> directory stores the rendered website for GitHub Pages.</p>
+<hr>
+</section>
+<section id="supporting-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-scripts">Supporting Scripts</h2>
+<p>The scaffold can include small scripts to demonstrate AI systems practice without requiring live API keys.</p>
+<p>The first example workflow creates a simple AI task log, evaluates the quality of AI-supported outputs, builds a prompt registry, and plots an evaluation summary.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/00-check-environment.sh</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/01-create-example-ai-task-log.sh</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/02-evaluate-ai-output-quality.py <span class="dt">\</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  data/results</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/python/03-build-prompt-registry.py <span class="dt">\</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  data/example/ai-task-log.csv <span class="dt">\</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  data/results</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> scripts/R/04-plot-evaluation-summary.R <span class="dt">\</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  data/results/ai-evaluation-summary.csv <span class="dt">\</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  data/reports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Expected outputs include:</p>
+<pre class="text"><code>data/example/ai-task-log.csv
+data/results/ai-evaluation-summary.csv
+data/results/prompt-registry.csv
+data/reports/ai-evaluation-summary.png</code></pre>
+<p>These examples are intentionally lightweight.</p>
+<p>They teach the structure of responsible AI workflows without forcing learners to use paid APIs or expose secret keys.</p>
+<hr>
+</section>
+<section id="publication-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="publication-workflow">Publication Workflow</h2>
+<p>The guide is designed to render locally and publish through GitHub Pages.</p>
+<p>To render the site:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Expected output:</p>
+<pre class="text"><code>docs/index.html</code></pre>
+<p>A typical Git workflow is:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add AI Systems guide content"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The repository can then publish the rendered <code>docs/</code> output using the configured GitHub Pages workflow.</p>
+<hr>
+</section>
+<section id="how-to-read-this-guide" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-read-this-guide">How to Read This Guide</h2>
+<p>This guide can be read sequentially, but it is also designed as a reference.</p>
+<p>Readers who are new to AI should begin with Part I.</p>
+<p>Readers who already use AI regularly may want to focus on Part II, especially evaluation, human review, safety boundaries, and documentation.</p>
+<p>Readers designing reusable AI agents should focus on Part III.</p>
+<p>Readers applying AI agents to practical work should focus on Part IV.</p>
+<p>The most important idea is repeated throughout the guide:</p>
+<blockquote class="blockquote">
+<p>AI work becomes stronger when it is framed, grounded, evaluated, documented, and kept human-led.</p>
+</blockquote>
+<hr>
+</section>
+<section id="closing-note" class="level2">
+<h2 class="anchored" data-anchor-id="closing-note">Closing Note</h2>
+<p>AI systems are not only technical systems.</p>
+<p>They are learning systems.</p>
+<p>They are communication systems.</p>
+<p>They are decision-support systems.</p>
+<p>They are professional systems.</p>
+<p>They affect how people think, work, teach, analyze, and act.</p>
+<p>For that reason, AI should be approached with both curiosity and discipline.</p>
+<p>This guide begins from that balance.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter introduces the AI Systems overview.</p>
+<p>From there, the guide moves step by step from AI foundations into workflow design, context systems, evaluation, safety boundaries, reusable agent templates, applied agents, and responsible professional use.</p>
+<p>By the end of this guide, you should be able to move beyond isolated AI use and begin designing responsible, reproducible, human-led AI workflows.</p>
+<p>The central pattern throughout the guide is the Human–AI–Human workflow:</p>
+<p>Human defines the problem.</p>
+<p>AI assists with generation, reasoning, analysis, or automation.</p>
+<p>Human evaluates, decides, documents, and acts.</p>
 
 
 </section>
@@ -845,11 +1088,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="index.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">index.html</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./01-ai-system-overview.html" class="pagination-link" aria-label="AI System Overview">
+        <span class="nav-page-text"><span class="chapter-title">AI System Overview</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

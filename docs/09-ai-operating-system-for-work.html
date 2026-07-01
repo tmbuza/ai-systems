@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>AI Operating System for Work – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./10-agent-purpose-and-scope.html" rel="next">
+<link href="./08-ai-safety-boundaries-and-human-judgment.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html">Part II: AI Systems</a></li><li class="breadcrumb-item"><a href="./09-ai-operating-system-for-work.html"><span class="chapter-title">AI Operating System for Work</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -234,7 +181,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-ai-operating-system-for-work.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Operating System for Work</span></a>
+  <a href="./09-ai-operating-system-for-work.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">AI Operating System for Work</span></a>
   </div>
 </li>
       </ul>
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,31 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#from-tool-use-to-operating-system" id="toc-from-tool-use-to-operating-system" class="nav-link active" data-scroll-target="#from-tool-use-to-operating-system">From Tool Use to Operating System</a></li>
+  <li><a href="#what-an-ai-operating-system-includes" id="toc-what-an-ai-operating-system-includes" class="nav-link" data-scroll-target="#what-an-ai-operating-system-includes">What an AI Operating System Includes</a></li>
+  <li><a href="#work-domains" id="toc-work-domains" class="nav-link" data-scroll-target="#work-domains">Work Domains</a></li>
+  <li><a href="#reusable-workflows" id="toc-reusable-workflows" class="nav-link" data-scroll-target="#reusable-workflows">Reusable Workflows</a></li>
+  <li><a href="#context-libraries" id="toc-context-libraries" class="nav-link" data-scroll-target="#context-libraries">Context Libraries</a></li>
+  <li><a href="#prompt-and-workflow-registry" id="toc-prompt-and-workflow-registry" class="nav-link" data-scroll-target="#prompt-and-workflow-registry">Prompt and Workflow Registry</a></li>
+  <li><a href="#evaluation-standards" id="toc-evaluation-standards" class="nav-link" data-scroll-target="#evaluation-standards">Evaluation Standards</a></li>
+  <li><a href="#documentation-and-decision-records" id="toc-documentation-and-decision-records" class="nav-link" data-scroll-target="#documentation-and-decision-records">Documentation and Decision Records</a></li>
+  <li><a href="#personal-ai-operating-system" id="toc-personal-ai-operating-system" class="nav-link" data-scroll-target="#personal-ai-operating-system">Personal AI Operating System</a></li>
+  <li><a href="#team-ai-operating-system" id="toc-team-ai-operating-system" class="nav-link" data-scroll-target="#team-ai-operating-system">Team AI Operating System</a></li>
+  <li><a href="#the-ai-work-dashboard" id="toc-the-ai-work-dashboard" class="nav-link" data-scroll-target="#the-ai-work-dashboard">The AI Work Dashboard</a></li>
+  <li><a href="#common-failure-modes" id="toc-common-failure-modes" class="nav-link" data-scroll-target="#common-failure-modes">Common Failure Modes</a></li>
+  <li><a href="#a-simple-starter-template" id="toc-a-simple-starter-template" class="nav-link" data-scroll-target="#a-simple-starter-template">A Simple Starter Template</a></li>
+  <li><a href="#connection-to-reusable-ai-agents" id="toc-connection-to-reusable-ai-agents" class="nav-link" data-scroll-target="#connection-to-reusable-ai-agents">Connection to Reusable AI Agents</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html">Part II: AI Systems</a></li><li class="breadcrumb-item"><a href="./09-ai-operating-system-for-work.html"><span class="chapter-title">AI Operating System for Work</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="ai-operating-system-for-work" class="quarto-section-identifier"><span class="chapter-title">AI Operating System for Work</span></span></h1>
 </div>
 
 
@@ -374,69 +333,572 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-009</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> AI becomes more useful when it is organized as a repeatable operating system for daily work</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>AI becomes powerful when it moves beyond isolated tasks.</p>
+<p>A person may use AI to draft a message.</p>
+<p>A researcher may use AI to summarize a paper.</p>
+<p>An analyst may use AI to explain code.</p>
+<p>A teacher may use AI to create an activity.</p>
+<p>Each of these uses can be helpful.</p>
+<p>But if every AI interaction starts from zero, the work remains scattered.</p>
+<p>An <strong>AI operating system for work</strong> creates structure around repeated AI-supported activities.</p>
+<p>It defines what AI is used for, what context is required, how outputs are reviewed, where decisions are documented, and how improvements are captured over time.</p>
+<p>The purpose is not to automate everything.</p>
+<p>The purpose is to make AI-supported work more consistent, responsible, and reusable.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
+<section id="from-tool-use-to-operating-system" class="level2">
+<h2 class="anchored" data-anchor-id="from-tool-use-to-operating-system">From Tool Use to Operating System</h2>
+<p>Casual AI use often looks like this:</p>
+<pre class="text"><code>Open AI tool
+  ↓
+Ask a question
+  ↓
+Use or discard the answer
+  ↓
+Move on</code></pre>
+<p>This may be useful for quick support.</p>
+<p>But it does not create memory, standards, repeatability, or accountability.</p>
+<p>A work operating system looks different.</p>
+<pre class="text"><code>Define recurring work area
+  ↓
+Prepare context and examples
+  ↓
+Use a reusable workflow
+  ↓
+Evaluate the output
+  ↓
+Document the decision
+  ↓
+Improve the workflow</code></pre>
+<p>The difference is structure.</p>
+<p>The AI tool is no longer treated as a separate magic box.</p>
+<p>It becomes one component inside a broader human-led work system.</p>
 <hr>
 </section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="what-an-ai-operating-system-includes" class="level2">
+<h2 class="anchored" data-anchor-id="what-an-ai-operating-system-includes">What an AI Operating System Includes</h2>
+<p>An AI operating system does not need to be complicated.</p>
+<p>At minimum, it includes five parts.</p>
+<pre class="text"><code>Work domains
+  ↓
+Reusable prompts and workflows
+  ↓
+Context libraries
+  ↓
+Evaluation and review standards
+  ↓
+Documentation and improvement records</code></pre>
+<p>Each part answers a practical question.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>System Part</th>
+<th>Question It Answers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Work domains</td>
+<td>Where do we use AI repeatedly?</td>
+</tr>
+<tr class="even">
+<td>Reusable prompts and workflows</td>
+<td>How do we perform the work consistently?</td>
+</tr>
+<tr class="odd">
+<td>Context libraries</td>
+<td>What materials does AI need to work well?</td>
+</tr>
+<tr class="even">
+<td>Evaluation standards</td>
+<td>How do we judge output quality?</td>
+</tr>
+<tr class="odd">
+<td>Documentation records</td>
+<td>What was done, decided, changed, or improved?</td>
+</tr>
+</tbody>
+</table>
+<p>This makes AI use easier to inspect.</p>
+<p>It also helps learners and teams avoid starting from blank prompts every time.</p>
+<hr>
+</section>
+<section id="work-domains" class="level2">
+<h2 class="anchored" data-anchor-id="work-domains">Work Domains</h2>
+<p>The first step is to identify the areas where AI can support repeated work.</p>
+<p>Examples include:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>learning and study support,</li>
+<li>research reading and synthesis,</li>
+<li>data analysis planning,</li>
+<li>code review and explanation,</li>
+<li>report writing,</li>
+<li>communication drafting,</li>
+<li>teaching material preparation,</li>
+<li>project planning,</li>
+<li>career and portfolio development,</li>
+<li>documentation and quality review.</li>
 </ul>
+<p>Each domain should have a clear purpose.</p>
+<p>For example, instead of saying:</p>
+<pre class="text"><code>Use AI for research.</code></pre>
+<p>A stronger work-domain statement is:</p>
+<pre class="text"><code>Use AI to help summarize research papers, compare findings, identify limitations, and prepare human-reviewed synthesis notes.</code></pre>
+<p>The second version is clearer because it defines the work and preserves human review.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="reusable-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="reusable-workflows">Reusable Workflows</h2>
+<p>A workflow is a repeatable sequence of steps.</p>
+<p>For AI-supported work, a workflow should show where the human acts, where AI assists, and where review happens.</p>
+<p>Example:</p>
+<pre class="text"><code>Human selects task
+  ↓
+Human prepares context
+  ↓
+AI generates draft or analysis
+  ↓
+Human checks against source materials
+  ↓
+Human revises and documents decision</code></pre>
+<p>This structure can apply to many tasks.</p>
+<p>For example, a research synthesis workflow may include:</p>
+<ol type="1">
+<li>collect source papers,</li>
+<li>extract key questions,</li>
+<li>ask AI to summarize each source,</li>
+<li>verify summaries against the original text,</li>
+<li>compare themes across sources,</li>
+<li>write a human-reviewed synthesis,</li>
+<li>document limitations.</li>
+</ol>
+<p>The workflow matters because the prompt alone is not enough.</p>
+<p>The quality of AI work depends on the full process around the prompt.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="context-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="context-libraries">Context Libraries</h2>
+<p>Context is the material that helps AI produce more relevant and grounded outputs.</p>
+<p>A context library may include:</p>
+<ul>
+<li>project descriptions,</li>
+<li>audience definitions,</li>
+<li>style guides,</li>
+<li>terminology lists,</li>
+<li>previous examples,</li>
+<li>datasets,</li>
+<li>code snippets,</li>
+<li>rubrics,</li>
+<li>decision criteria,</li>
+<li>source documents,</li>
+<li>chapter outlines,</li>
+<li>templates.</li>
+</ul>
+<p>A strong AI operating system does not depend only on memory or improvisation.</p>
+<p>It stores reusable context in a place where the user or team can find it again.</p>
+<p>Example structure:</p>
+<pre class="text"><code>context/
+├── audience-notes.md
+├── writing-style-guide.md
+├── project-description.md
+├── evaluation-rubric.md
+├── prompt-patterns.md
+└── examples/</code></pre>
+<p>The goal is not to overload AI with everything.</p>
+<p>The goal is to provide the right context for the specific task.</p>
+<hr>
+</section>
+<section id="prompt-and-workflow-registry" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-and-workflow-registry">Prompt and Workflow Registry</h2>
+<p>A prompt registry stores reusable prompts and workflows.</p>
+<p>It helps the user avoid reinventing the same task repeatedly.</p>
+<p>A simple registry can be a table.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Prompt Name</th>
+<th>Purpose</th>
+<th>Inputs Needed</th>
+<th>Output Expected</th>
+<th>Review Required</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Research summary</td>
+<td>Summarize one source</td>
+<td>Paper text or notes</td>
+<td>Structured summary</td>
+<td>Check against source</td>
+</tr>
+<tr class="even">
+<td>Report review</td>
+<td>Improve clarity</td>
+<td>Draft report</td>
+<td>Suggested edits</td>
+<td>Human approval</td>
+</tr>
+<tr class="odd">
+<td>Code explanation</td>
+<td>Explain code logic</td>
+<td>Code snippet</td>
+<td>Step-by-step explanation</td>
+<td>Test code separately</td>
+</tr>
+<tr class="even">
+<td>Portfolio helper</td>
+<td>Turn project into portfolio evidence</td>
+<td>Project notes</td>
+<td>Portfolio bullet points</td>
+<td>Verify claims</td>
+</tr>
+</tbody>
+</table>
+<p>The registry should grow slowly.</p>
+<p>Only prompts that are useful enough to reuse should be stored.</p>
+<p>A registry is strongest when it includes review instructions, not only generation instructions.</p>
+<hr>
+</section>
+<section id="evaluation-standards" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-standards">Evaluation Standards</h2>
+<p>An AI operating system must include evaluation.</p>
+<p>Without evaluation, AI-supported work becomes difficult to trust.</p>
+<p>Basic evaluation questions include:</p>
+<ul>
+<li>Is the output correct?</li>
+<li>Is it grounded in the provided context?</li>
+<li>Is it complete enough for the task?</li>
+<li>Is it clear for the intended audience?</li>
+<li>Does it overstate certainty?</li>
+<li>Does it introduce unsupported claims?</li>
+<li>Does it require expert review?</li>
+<li>Does it create privacy, safety, legal, ethical, or professional risk?</li>
+</ul>
+<p>A simple evaluation rubric may look like this:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Review Question</th>
+<th>Rating</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Correctness</td>
+<td>Does the output match known facts or source material?</td>
+<td>1–5</td>
+</tr>
+<tr class="even">
+<td>Relevance</td>
+<td>Does it answer the actual task?</td>
+<td>1–5</td>
+</tr>
+<tr class="odd">
+<td>Completeness</td>
+<td>What important parts are missing?</td>
+<td>1–5</td>
+</tr>
+<tr class="even">
+<td>Clarity</td>
+<td>Is it understandable for the audience?</td>
+<td>1–5</td>
+</tr>
+<tr class="odd">
+<td>Risk</td>
+<td>Does it require extra review before use?</td>
+<td>Low / Medium / High</td>
+</tr>
+</tbody>
+</table>
+<p>Evaluation does not need to be complicated for every task.</p>
+<p>But high-impact tasks require more careful review.</p>
+<hr>
+</section>
+<section id="documentation-and-decision-records" class="level2">
+<h2 class="anchored" data-anchor-id="documentation-and-decision-records">Documentation and Decision Records</h2>
+<p>AI-supported work should leave a trace when the work matters.</p>
+<p>Documentation may include:</p>
+<ul>
+<li>task purpose,</li>
+<li>context used,</li>
+<li>prompt or workflow used,</li>
+<li>output summary,</li>
+<li>human edits made,</li>
+<li>decision taken,</li>
+<li>limitations,</li>
+<li>reviewer,</li>
+<li>date.</li>
+</ul>
+<p>This is especially important for research, analysis, policy, education, clinical, legal, financial, or public-facing work.</p>
+<p>A simple decision record can be written like this:</p>
+<pre class="text"><code>Task: Prepare summary of three articles on AI-assisted learning
+Context used: Article notes, audience description, chapter outline
+AI role: Generated first-pass comparison table
+Human review: Checked claims against source notes and revised wording
+Decision: Use revised synthesis in draft chapter
+Limitations: Not a systematic review; sources were selected for teaching purposes</code></pre>
+<p>Documentation protects the user from presenting AI output as if it were automatically authoritative.</p>
+<p>It also makes the work easier to improve later.</p>
+<hr>
+</section>
+<section id="personal-ai-operating-system" class="level2">
+<h2 class="anchored" data-anchor-id="personal-ai-operating-system">Personal AI Operating System</h2>
+<p>For an individual learner or professional, a personal AI operating system may be simple.</p>
+<pre class="text"><code>Daily work areas
+  ↓
+Reusable prompts
+  ↓
+Saved context notes
+  ↓
+Output review checklist
+  ↓
+Weekly improvement notes</code></pre>
+<p>Example:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Area</th>
+<th>AI Support</th>
+<th>Human Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Learning</td>
+<td>Explain concepts, generate practice questions</td>
+<td>Verify understanding and apply independently</td>
+</tr>
+<tr class="even">
+<td>Writing</td>
+<td>Draft, revise, simplify, structure</td>
+<td>Check accuracy, tone, and final meaning</td>
+</tr>
+<tr class="odd">
+<td>Coding</td>
+<td>Explain errors, suggest approaches</td>
+<td>Test, debug, and understand code</td>
+</tr>
+<tr class="even">
+<td>Research</td>
+<td>Summarize and compare sources</td>
+<td>Read sources and verify claims</td>
+</tr>
+<tr class="odd">
+<td>Career</td>
+<td>Improve portfolio and communication</td>
+<td>Ensure claims are truthful and evidence-based</td>
+</tr>
+</tbody>
+</table>
+<p>This kind of operating system helps users become more intentional.</p>
+<p>AI becomes a support structure for better work habits, not a substitute for learning or judgment.</p>
+<hr>
+</section>
+<section id="team-ai-operating-system" class="level2">
+<h2 class="anchored" data-anchor-id="team-ai-operating-system">Team AI Operating System</h2>
+<p>Teams need more shared standards.</p>
+<p>A team AI operating system may include:</p>
+<ul>
+<li>approved use cases,</li>
+<li>restricted use cases,</li>
+<li>data privacy rules,</li>
+<li>shared prompt registry,</li>
+<li>review workflows,</li>
+<li>documentation standards,</li>
+<li>escalation paths,</li>
+<li>training materials,</li>
+<li>periodic workflow review.</li>
+</ul>
+<p>A team should be clear about what AI can and cannot be used for.</p>
+<p>For example:</p>
+<pre class="text"><code>Allowed:
+- drafting internal summaries,
+- improving clarity of non-sensitive text,
+- generating checklist drafts,
+- brainstorming training activities.
 
-</div>
+Restricted:
+- entering confidential data into unapproved tools,
+- making final decisions without review,
+- generating public claims without verification,
+- using AI for high-stakes advice without expert oversight.</code></pre>
+<p>This prevents confusion.</p>
+<p>It also protects learners, staff, clients, and communities.</p>
+<hr>
+</section>
+<section id="the-ai-work-dashboard" class="level2">
+<h2 class="anchored" data-anchor-id="the-ai-work-dashboard">The AI Work Dashboard</h2>
+<p>A practical AI operating system may use a simple dashboard or tracker.</p>
+<p>This can be a spreadsheet, markdown file, database, or project board.</p>
+<p>Useful columns include:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Date</td>
+<td>When the AI-supported task was done</td>
+</tr>
+<tr class="even">
+<td>Task</td>
+<td>What was being attempted</td>
+</tr>
+<tr class="odd">
+<td>Domain</td>
+<td>Learning, research, writing, coding, analysis, communication, etc.</td>
+</tr>
+<tr class="even">
+<td>Input context</td>
+<td>What materials were provided</td>
+</tr>
+<tr class="odd">
+<td>AI role</td>
+<td>Drafting, summarizing, reviewing, coding, reasoning, planning</td>
+</tr>
+<tr class="even">
+<td>Output</td>
+<td>What was produced</td>
+</tr>
+<tr class="odd">
+<td>Review status</td>
+<td>Not reviewed, reviewed, revised, approved</td>
+</tr>
+<tr class="even">
+<td>Risk level</td>
+<td>Low, medium, high</td>
+</tr>
+<tr class="odd">
+<td>Notes</td>
+<td>Limitations or improvements</td>
+</tr>
+</tbody>
+</table>
+<p>The dashboard does not need to track every small interaction.</p>
+<p>It is most useful for repeated, important, or public-facing work.</p>
+<hr>
+</section>
+<section id="common-failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="common-failure-modes">Common Failure Modes</h2>
+<p>AI operating systems fail when they become too vague or too heavy.</p>
+<p>Common problems include:</p>
+<ul>
+<li>saving too many prompts without knowing which ones work,</li>
+<li>using AI without context,</li>
+<li>skipping review because the output sounds fluent,</li>
+<li>documenting everything so heavily that people stop using the system,</li>
+<li>treating AI as a decision-maker instead of a support tool,</li>
+<li>copying outputs into public work without verification,</li>
+<li>failing to update workflows when tasks change.</li>
+</ul>
+<p>The solution is balance.</p>
+<p>The system should be structured enough to create quality, but light enough to use consistently.</p>
+<hr>
+</section>
+<section id="a-simple-starter-template" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-starter-template">A Simple Starter Template</h2>
+<p>A beginner can start with one reusable template.</p>
+<pre class="text"><code>AI Work Template
+
+1. Task
+What am I trying to accomplish?
+
+2. Context
+What information should AI use?
+
+3. Constraints
+What should AI avoid or respect?
+
+4. Output
+What format do I need?
+
+5. Review
+How will I check the result?
+
+6. Decision
+What will I do with the reviewed output?
+
+7. Documentation
+What needs to be recorded?</code></pre>
+<p>This template can be used before building more advanced agents.</p>
+<p>It prepares the user to think in systems.</p>
+<hr>
+</section>
+<section id="connection-to-reusable-ai-agents" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-reusable-ai-agents">Connection to Reusable AI Agents</h2>
+<p>This chapter closes Part II of the guide.</p>
+<p>So far, the guide has introduced:</p>
+<pre class="text"><code>AI foundations
+  ↓
+Human–AI–Human thinking
+  ↓
+Prompting as system design
+  ↓
+AI workflow design
+  ↓
+Context and knowledge systems
+  ↓
+Output evaluation
+  ↓
+Safety boundaries and judgment
+  ↓
+AI operating system for work</code></pre>
+<p>The next part moves from workflows to reusable agent templates.</p>
+<p>An agent is not only a prompt.</p>
+<p>An agent needs purpose, scope, inputs, context, workflow logic, output standards, review steps, and improvement practices.</p>
+<p>That is why the AI operating system comes first.</p>
+<p>The operating system provides the environment where reusable agents can work responsibly.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>An AI operating system organizes repeated AI-supported work.</p>
+<p>It helps users move from isolated prompting to structured practice.</p>
+<p>A useful AI operating system includes work domains, reusable workflows, context libraries, evaluation standards, documentation records, and improvement habits.</p>
+<p>For individuals, it supports learning, writing, research, coding, communication, and career growth.</p>
+<p>For teams, it supports shared standards, governance, privacy, review, and accountability.</p>
+<p>The goal is not to make AI complicated.</p>
+<p>The goal is to make AI-supported work clear, reusable, reviewable, and human-led.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter begins Part III: <strong>Reusable AI Agent Template</strong>.</p>
+<p>It introduces agent purpose and scope.</p>
+<p>Before building any reusable AI agent, the user must define what the agent is for, what it is not for, who it serves, what inputs it accepts, what outputs it produces, and where human review is required.</p>
 
 
 </section>
@@ -845,11 +1307,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./08-ai-safety-boundaries-and-human-judgment.html" class="pagination-link" aria-label="AI Safety Boundaries and Human Judgment">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">AI Safety Boundaries and Human Judgment</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./10-agent-purpose-and-scope.html" class="pagination-link" aria-label="Agent Purpose and Scope">
+        <span class="nav-page-text"><span class="chapter-title">Agent Purpose and Scope</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

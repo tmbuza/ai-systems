@@ -1,0 +1,588 @@
+# AI Output Evaluation {#ai-output-evaluation}
+
+:::cdi-message
+- **ID:** AI-007
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows
+- **Theme:** AI outputs must be evaluated before they are trusted, shared, or used for decisions
+:::
+
+AI systems do not become reliable because the output sounds confident.
+
+They become reliable because the output is evaluated.
+
+A fluent answer can still be wrong.
+
+A well-written summary can still omit important evidence.
+
+A useful draft can still need human judgment.
+
+A generated analysis can still contain assumptions, errors, unsupported claims, or missing context.
+
+For this reason, evaluation is not a final decoration in an AI workflow.
+
+Evaluation is part of the system itself.
+
+---
+
+## Why Evaluation Matters
+
+AI can produce outputs that look complete even when they are incomplete.
+
+It can produce explanations that sound logical even when the reasoning is weak.
+
+It can produce code that appears correct but fails when tested.
+
+It can summarize documents while missing important limitations.
+
+It can generate recommendations without fully understanding the human, organizational, ethical, or technical context.
+
+This creates a central rule for AI Systems:
+
+> AI output should be reviewed before it becomes human action.
+
+The purpose of evaluation is not to reject AI.
+
+The purpose is to make AI-supported work usable, inspectable, and responsible.
+
+---
+
+## Evaluation in the Human–AI–Human Loop
+
+The Human–AI–Human framework depends on evaluation.
+
+```text
+Human frames the task
+        ↓
+AI generates an output
+        ↓
+Human evaluates the output
+        ↓
+Human revises, accepts, rejects, or escalates
+        ↓
+Human documents the final decision
+```
+
+Without evaluation, the workflow becomes:
+
+```text
+Human asks
+        ↓
+AI answers
+        ↓
+Human accepts
+```
+
+That is not a responsible AI system.
+
+It is unreviewed automation.
+
+In a strong AI system, the human does not only ask the question.
+
+The human also checks whether the answer is good enough for the intended use.
+
+---
+
+## What Should Be Evaluated
+
+AI outputs should be evaluated across several dimensions.
+
+The exact criteria depend on the task, but most workflows should check at least the following:
+
+```text
+Correctness
+  Is the output factually or technically accurate?
+
+Relevance
+  Does the output answer the actual task?
+
+Completeness
+  Are important parts missing?
+
+Clarity
+  Is the output understandable and well organized?
+
+Evidence
+  Are claims supported by data, documents, code, or references?
+
+Limitations
+  Are uncertainty, assumptions, and risks clearly stated?
+
+Actionability
+  Can the output be used safely and appropriately?
+```
+
+These dimensions help the reviewer move beyond a vague question such as:
+
+```text
+Does this look good?
+```
+
+Instead, the reviewer can ask:
+
+```text
+Is this correct?
+Is it relevant?
+Is it complete?
+Is it supported?
+Is it safe to use?
+What still needs human judgment?
+```
+
+---
+
+## Evaluation Is Context-Dependent
+
+Not all AI outputs need the same level of review.
+
+A brainstorming list may only need a light review.
+
+A public report needs stronger review.
+
+A data analysis needs code, data, and result verification.
+
+A medical, legal, financial, or policy-related output needs expert review and careful limitation statements.
+
+A learning exercise should be checked for understanding, not only for a finished answer.
+
+The level of evaluation should match the risk of the task.
+
+```text
+Low-risk task
+  ↓
+Light review
+
+Medium-risk task
+  ↓
+Structured review
+
+High-risk task
+  ↓
+Expert review, evidence checking, documentation, and approval
+```
+
+The more an AI output affects decisions, people, resources, health, money, reputation, or public communication, the stronger the evaluation should be.
+
+---
+
+## A Simple AI Output Evaluation Checklist
+
+A practical evaluation checklist can be used in almost any AI-assisted workflow.
+
+```text
+AI Output Evaluation Checklist
+
+Task alignment
+[ ] Does the output answer the original task?
+[ ] Did the AI follow the requested format and constraints?
+
+Content quality
+[ ] Are the main claims correct?
+[ ] Are important details missing?
+[ ] Are unclear parts explained well?
+
+Evidence and grounding
+[ ] Is the output grounded in the provided context?
+[ ] Are sources, data, examples, or assumptions clear?
+[ ] Are unsupported claims removed or flagged?
+
+Risk and responsibility
+[ ] Could this output mislead someone?
+[ ] Does it require expert review?
+[ ] Are limitations and uncertainties documented?
+
+Final decision
+[ ] Accept as is
+[ ] Revise before use
+[ ] Ask AI for improvement
+[ ] Escalate to a human expert
+[ ] Reject the output
+```
+
+This checklist can be adapted for writing, research, analysis, coding, teaching, reporting, and decision support.
+
+---
+
+## Evaluation Rubric
+
+For repeatable workflows, a rubric is often better than a checklist.
+
+A rubric gives a score or category for each evaluation dimension.
+
+```text
+Score 3: Strong
+The output is accurate, relevant, complete, clear, and ready for use with minor or no edits.
+
+Score 2: Usable with revision
+The output is mostly useful but needs correction, clarification, evidence, or restructuring.
+
+Score 1: Weak
+The output has major gaps, unclear claims, unsupported reasoning, or significant risk.
+
+Score 0: Not usable
+The output is incorrect, irrelevant, unsafe, misleading, or unsuitable for the task.
+```
+
+A simple rubric may look like this:
+
+```text
+Dimension       Score     Notes
+Correctness     0-3       Are the claims accurate?
+Relevance       0-3       Does it answer the task?
+Completeness    0-3       Are key parts included?
+Clarity         0-3       Is it understandable?
+Evidence        0-3       Is it grounded and supported?
+Risk            0-3       Is it safe for the intended use?
+```
+
+The purpose of the score is not perfection.
+
+The purpose is consistency.
+
+If several people review AI outputs, a rubric helps them apply similar standards.
+
+---
+
+## Evaluating AI-Written Text
+
+AI-written text should not only be checked for grammar.
+
+It should be checked for purpose, truth, tone, audience, and accountability.
+
+A strong review asks:
+
+```text
+Audience
+Who will read this?
+
+Purpose
+What is the text supposed to achieve?
+
+Accuracy
+Are the claims true or supported?
+
+Tone
+Does the tone fit the audience and situation?
+
+Completeness
+What important information is missing?
+
+Ownership
+Can a human stand behind this message?
+```
+
+For professional communication, the final question is especially important.
+
+If the text will be sent, published, or signed by a person, that person must be able to take responsibility for it.
+
+AI may help draft the message.
+
+The human owns the message.
+
+---
+
+## Evaluating AI Summaries
+
+Summaries are one of the most common AI use cases.
+
+They are also easy to trust too quickly.
+
+A summary should be evaluated against the original material.
+
+```text
+Summary evaluation questions
+
+[ ] Does the summary reflect the original source accurately?
+[ ] Does it preserve the main argument or message?
+[ ] Does it avoid adding claims that were not in the source?
+[ ] Does it identify important limitations or uncertainty?
+[ ] Does it distinguish major points from minor details?
+[ ] Does it keep the appropriate level of detail for the audience?
+```
+
+A summary that is beautifully written but not faithful to the source is not a good AI output.
+
+For research, policy, medicine, law, education, and reporting, faithfulness matters more than elegance.
+
+---
+
+## Evaluating AI-Assisted Analysis
+
+AI-assisted analysis requires stronger review because errors can travel from code into conclusions.
+
+The reviewer should check:
+
+```text
+Data
+Is the correct dataset being used?
+Are the variables understood correctly?
+Are missing values handled appropriately?
+
+Code
+Does the code run?
+Are the methods appropriate?
+Are assumptions visible?
+
+Results
+Do the results match the code?
+Are tables and plots labeled correctly?
+Are interpretations supported by the outputs?
+
+Claims
+Do the conclusions go beyond the evidence?
+Are limitations clearly stated?
+```
+
+In data work, the output is not only the written answer.
+
+The output includes code, tables, plots, assumptions, and interpretations.
+
+All of these need review.
+
+---
+
+## Evaluating AI-Generated Code
+
+AI-generated code should be treated as a draft.
+
+It may be useful.
+
+It may also contain hidden errors.
+
+Code evaluation should include:
+
+```text
+Run the code
+Does it execute without errors?
+
+Read the code
+Is the logic understandable?
+
+Test the code
+Does it behave correctly on expected inputs?
+
+Stress the code
+What happens with missing, unusual, or invalid inputs?
+
+Review dependencies
+Are the packages appropriate and available?
+
+Check outputs
+Are the generated files, plots, or results correct?
+```
+
+A good AI system does not copy code blindly.
+
+It tests code before using it.
+
+---
+
+## Evaluation Prompts
+
+AI can also help with evaluation, but it should not be the only evaluator.
+
+Useful evaluation prompts include:
+
+```text
+Review this output against the original task.
+Identify any missing information, unsupported claims, unclear assumptions, or risks.
+Do not rewrite yet. First provide an evaluation table.
+```
+
+```text
+Compare this summary with the source text.
+List any claims in the summary that are not supported by the source.
+Then list important source points that were omitted.
+```
+
+```text
+Review this code for correctness, clarity, reproducibility, and possible failure points.
+Suggest tests that would help verify the code.
+```
+
+```text
+Evaluate this response using the following rubric:
+Correctness, relevance, completeness, clarity, evidence, and risk.
+Score each dimension from 0 to 3 and explain the score briefly.
+```
+
+These prompts make AI a reviewer, but the final review remains human-led.
+
+---
+
+## Evaluation Records
+
+In reproducible AI Systems, evaluation should leave a record.
+
+A simple evaluation record may include:
+
+```text
+Task ID
+Date
+Human reviewer
+AI tool or model used
+Input materials
+Output reviewed
+Evaluation criteria
+Major issues found
+Revision decision
+Final status
+```
+
+This record does not need to be complicated.
+
+The goal is to make the workflow inspectable.
+
+If the output is later questioned, improved, reused, or taught, the evaluation record helps explain what happened.
+
+---
+
+## Example Evaluation Table
+
+A lightweight evaluation table might look like this:
+
+```text
+output_id,task_type,correctness,relevance,completeness,clarity,evidence,risk,decision
+AI-001,summary,3,3,2,3,2,2,revise
+AI-002,email_draft,3,3,3,3,2,3,accept
+AI-003,data_interpretation,2,3,2,2,1,1,escalate
+AI-004,code_generation,2,3,2,2,2,2,test_before_use
+```
+
+The values are simple, but the habit is important.
+
+The team is no longer saying:
+
+```text
+The AI gave us an answer.
+```
+
+The team is saying:
+
+```text
+The AI produced an output.
+We evaluated it.
+We found these issues.
+We made this decision.
+```
+
+That is a system.
+
+---
+
+## From Evaluation to Improvement
+
+Evaluation should lead to improvement.
+
+When an output is weak, the next step is not always to discard it.
+
+The reviewer may decide to:
+
+```text
+Revise the prompt
+Add better context
+Provide examples
+Ask for a different output structure
+Use a stronger source document
+Break the task into smaller steps
+Ask for uncertainty and limitations
+Request citations or evidence links
+Move the task to a human expert
+```
+
+Evaluation therefore improves both the current output and the future workflow.
+
+Over time, repeated evaluation helps build better prompts, better templates, better review standards, and better AI operating practices.
+
+---
+
+## Common Evaluation Mistakes
+
+Several mistakes weaken AI workflows.
+
+```text
+Mistake 1: Evaluating only the writing style
+A polished output may still be wrong.
+
+Mistake 2: Checking only the final answer
+The reasoning, assumptions, and evidence also matter.
+
+Mistake 3: Ignoring the original task
+An output can be good in general but wrong for the actual request.
+
+Mistake 4: Using AI as the only reviewer
+AI can help review, but human judgment remains necessary.
+
+Mistake 5: Failing to document revisions
+Undocumented changes make the workflow hard to audit or repeat.
+```
+
+Avoiding these mistakes makes AI-supported work stronger and more trustworthy.
+
+---
+
+## Practical Exercise
+
+Choose one AI-generated output from your own work.
+
+It may be:
+
+- a summary,
+- an email draft,
+- a report section,
+- a code snippet,
+- a data interpretation,
+- a lesson plan,
+- or a research explanation.
+
+Evaluate it using this table:
+
+```text
+Dimension       Score 0-3     Notes
+Correctness
+Relevance
+Completeness
+Clarity
+Evidence
+Risk
+```
+
+Then answer:
+
+```text
+What should be accepted?
+What should be revised?
+What should be checked against a source?
+What should be reviewed by a human expert?
+What should be documented before use?
+```
+
+This exercise turns AI use into AI systems practice.
+
+---
+
+## Key Takeaways
+
+AI outputs should not be trusted only because they are fluent.
+
+Evaluation is a core layer of responsible AI Systems.
+
+The level of evaluation should match the risk and importance of the task.
+
+Checklists and rubrics help make evaluation repeatable.
+
+AI can assist with evaluation, but human judgment remains responsible for the final decision.
+
+A strong AI workflow records what was reviewed, what was changed, and why the final output was accepted, revised, escalated, or rejected.
+
+---
+
+## Looking Ahead
+
+The next chapter focuses on safety boundaries and human judgment.
+
+Evaluation asks whether an AI output is good enough.
+
+Safety asks whether the task, output, or decision requires stronger limits, expert review, privacy protection, or refusal.
+
+Together, evaluation and safety help keep AI Systems responsible, human-led, and suitable for real work.

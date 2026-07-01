@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>Agent Improvement and Maintenance – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./15-research-and-learning-agent.html" rel="next">
+<link href="./13-agent-output-standards-and-review.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html">Part III: Reusable AI Agent Template</a></li><li class="breadcrumb-item"><a href="./14-agent-improvement-and-maintenance.html"><span class="chapter-title">Agent Improvement and Maintenance</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -270,7 +217,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14-agent-improvement-and-maintenance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Improvement and Maintenance</span></a>
+  <a href="./14-agent-improvement-and-maintenance.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Agent Improvement and Maintenance</span></a>
   </div>
 </li>
       </ul>
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,35 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#why-agent-maintenance-matters" id="toc-why-agent-maintenance-matters" class="nav-link active" data-scroll-target="#why-agent-maintenance-matters">Why Agent Maintenance Matters</a></li>
+  <li><a href="#agent-maintenance-as-a-lifecycle" id="toc-agent-maintenance-as-a-lifecycle" class="nav-link" data-scroll-target="#agent-maintenance-as-a-lifecycle">Agent Maintenance as a Lifecycle</a></li>
+  <li><a href="#the-agent-maintenance-question" id="toc-the-agent-maintenance-question" class="nav-link" data-scroll-target="#the-agent-maintenance-question">The Agent Maintenance Question</a></li>
+  <li><a href="#what-can-go-wrong-over-time" id="toc-what-can-go-wrong-over-time" class="nav-link" data-scroll-target="#what-can-go-wrong-over-time">What Can Go Wrong Over Time</a></li>
+  <li><a href="#maintenance-inputs" id="toc-maintenance-inputs" class="nav-link" data-scroll-target="#maintenance-inputs">Maintenance Inputs</a></li>
+  <li><a href="#keep-an-agent-change-log" id="toc-keep-an-agent-change-log" class="nav-link" data-scroll-target="#keep-an-agent-change-log">Keep an Agent Change Log</a></li>
+  <li><a href="#versioning-agents" id="toc-versioning-agents" class="nav-link" data-scroll-target="#versioning-agents">Versioning Agents</a></li>
+  <li><a href="#testing-an-updated-agent" id="toc-testing-an-updated-agent" class="nav-link" data-scroll-target="#testing-an-updated-agent">Testing an Updated Agent</a></li>
+  <li><a href="#evaluation-criteria-for-agent-updates" id="toc-evaluation-criteria-for-agent-updates" class="nav-link" data-scroll-target="#evaluation-criteria-for-agent-updates">Evaluation Criteria for Agent Updates</a></li>
+  <li><a href="#improving-the-agent-prompt" id="toc-improving-the-agent-prompt" class="nav-link" data-scroll-target="#improving-the-agent-prompt">Improving the Agent Prompt</a></li>
+  <li><a href="#improving-the-context-system" id="toc-improving-the-context-system" class="nav-link" data-scroll-target="#improving-the-context-system">Improving the Context System</a></li>
+  <li><a href="#improving-the-review-process" id="toc-improving-the-review-process" class="nav-link" data-scroll-target="#improving-the-review-process">Improving the Review Process</a></li>
+  <li><a href="#when-to-retire-an-agent" id="toc-when-to-retire-an-agent" class="nav-link" data-scroll-target="#when-to-retire-an-agent">When to Retire an Agent</a></li>
+  <li><a href="#agent-maintenance-checklist" id="toc-agent-maintenance-checklist" class="nav-link" data-scroll-target="#agent-maintenance-checklist">Agent Maintenance Checklist</a></li>
+  <li><a href="#a-simple-agent-review-table" id="toc-a-simple-agent-review-table" class="nav-link" data-scroll-target="#a-simple-agent-review-table">A Simple Agent Review Table</a></li>
+  <li><a href="#human-responsibility-in-agent-maintenance" id="toc-human-responsibility-in-agent-maintenance" class="nav-link" data-scroll-target="#human-responsibility-in-agent-maintenance">Human Responsibility in Agent Maintenance</a></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">Common Mistakes</a></li>
+  <li><a href="#cdi-agent-maintenance-principle" id="toc-cdi-agent-maintenance-principle" class="nav-link" data-scroll-target="#cdi-agent-maintenance-principle">CDI Agent Maintenance Principle</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html">Part III: Reusable AI Agent Template</a></li><li class="breadcrumb-item"><a href="./14-agent-improvement-and-maintenance.html"><span class="chapter-title">Agent Improvement and Maintenance</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="agent-improvement-and-maintenance" class="quarto-section-identifier"><span class="chapter-title">Agent Improvement and Maintenance</span></span></h1>
 </div>
 
 
@@ -374,69 +337,372 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-014</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> Reusable AI agents must be maintained as living systems, not treated as finished prompts</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>An AI agent is not finished when it produces its first useful output.</p>
+<p>That is only the beginning.</p>
+<p>A reusable agent becomes valuable when it can be trusted across repeated use.</p>
+<p>To reach that point, the agent must be reviewed, tested, corrected, documented, versioned, and improved over time.</p>
+<p>Without maintenance, an agent slowly becomes unreliable.</p>
+<p>The work changes.</p>
+<p>The user needs change.</p>
+<p>The available tools change.</p>
+<p>The risks change.</p>
+<p>The quality expectations change.</p>
+<p>A responsible AI system therefore treats agent improvement as part of the workflow, not as an afterthought.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
+<section id="why-agent-maintenance-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-agent-maintenance-matters">Why Agent Maintenance Matters</h2>
+<p>A prompt can be written once.</p>
+<p>A reusable agent must be maintained.</p>
+<p>This difference matters because agents are used repeatedly for important work.</p>
+<p>They may help with research, learning, analysis, communication, planning, reporting, or decision support.</p>
+<p>When an agent is reused, small weaknesses can become repeated weaknesses.</p>
+<p>A vague instruction may produce inconsistent outputs.</p>
+<p>A missing review step may allow errors to pass unnoticed.</p>
+<p>An outdated context file may create misleading recommendations.</p>
+<p>An unclear boundary may cause the agent to act beyond its intended scope.</p>
+<p>Maintenance protects the system from this drift.</p>
+<p>It helps the agent remain useful, aligned, and safe.</p>
 <hr>
 </section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="agent-maintenance-as-a-lifecycle" class="level2">
+<h2 class="anchored" data-anchor-id="agent-maintenance-as-a-lifecycle">Agent Maintenance as a Lifecycle</h2>
+<p>A reusable agent should move through a lifecycle.</p>
+<pre class="text"><code>Design
+  ↓
+Test
+  ↓
+Use
+  ↓
+Review
+  ↓
+Improve
+  ↓
+Version
+  ↓
+Reuse or Retire</code></pre>
+<p>This lifecycle keeps the agent connected to real work.</p>
+<p>The agent is not judged only by how well it sounds.</p>
+<p>It is judged by how well it supports the intended task over time.</p>
+<hr>
+</section>
+<section id="the-agent-maintenance-question" class="level2">
+<h2 class="anchored" data-anchor-id="the-agent-maintenance-question">The Agent Maintenance Question</h2>
+<p>The central maintenance question is:</p>
+<blockquote class="blockquote">
+<p>Is this agent still fit for its purpose?</p>
+</blockquote>
+<p>That question should be asked repeatedly.</p>
+<p>It should be asked after errors.</p>
+<p>It should be asked after repeated use.</p>
+<p>It should be asked when the workflow changes.</p>
+<p>It should be asked when new risks appear.</p>
+<p>It should be asked before the agent is shared with others.</p>
+<p>A reusable agent is not maintained only when something breaks.</p>
+<p>It is maintained so that problems are noticed early.</p>
+<hr>
+</section>
+<section id="what-can-go-wrong-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="what-can-go-wrong-over-time">What Can Go Wrong Over Time</h2>
+<p>Agents can degrade in several ways.</p>
+<p>Some problems are obvious.</p>
+<p>Others are subtle.</p>
+<p>Common maintenance issues include:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>unclear task boundaries,</li>
+<li>outdated context,</li>
+<li>weak output standards,</li>
+<li>missing review steps,</li>
+<li>inconsistent tone or structure,</li>
+<li>poor handling of edge cases,</li>
+<li>repeated factual errors,</li>
+<li>overconfident language,</li>
+<li>unnecessary complexity,</li>
+<li>privacy or safety concerns,</li>
+<li>and misalignment with current user needs.</li>
 </ul>
+<p>These problems do not always appear in the first test.</p>
+<p>They often appear after repeated use.</p>
+<p>That is why maintenance needs evidence from real workflows.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="maintenance-inputs" class="level2">
+<h2 class="anchored" data-anchor-id="maintenance-inputs">Maintenance Inputs</h2>
+<p>Agent improvement should be based on evidence, not only preference.</p>
+<p>Useful maintenance inputs include:</p>
+<pre class="text"><code>User feedback
+  ↓
+Output review notes
+  ↓
+Error logs
+  ↓
+Examples of good outputs
+  ↓
+Examples of weak outputs
+  ↓
+Updated source material
+  ↓
+Changed workflow requirements
+  ↓
+New safety or governance concerns</code></pre>
+<p>These inputs help the maintainer understand what should change.</p>
+<p>Without evidence, agent improvement becomes guesswork.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
-
-</div>
+<section id="keep-an-agent-change-log" class="level2">
+<h2 class="anchored" data-anchor-id="keep-an-agent-change-log">Keep an Agent Change Log</h2>
+<p>Every reusable agent should have a simple change log.</p>
+<p>The change log records what changed and why.</p>
+<p>A lightweight format is enough.</p>
+<pre class="text"><code>Agent name:
+Agent version:
+Date updated:
+Updated by:
+Reason for update:
+What changed:
+What was tested:
+Known limitations:
+Next review date:</code></pre>
+<p>This makes the agent easier to audit.</p>
+<p>It also helps future users understand why the current version exists.</p>
+<hr>
+</section>
+<section id="versioning-agents" class="level2">
+<h2 class="anchored" data-anchor-id="versioning-agents">Versioning Agents</h2>
+<p>Versioning helps prevent confusion.</p>
+<p>When an agent changes meaningfully, the version should change.</p>
+<p>A simple versioning pattern is:</p>
+<pre class="text"><code>v0.1  Draft agent
+v0.2  Tested with example tasks
+v1.0  Ready for routine use
+v1.1  Minor improvement
+v2.0  Major redesign or scope change</code></pre>
+<p>Not every small wording change requires a major version.</p>
+<p>But important changes should be visible.</p>
+<p>Important changes include:</p>
+<ul>
+<li>changing the agent purpose,</li>
+<li>changing the output standard,</li>
+<li>changing the review workflow,</li>
+<li>adding or removing tools,</li>
+<li>changing memory or context behavior,</li>
+<li>changing safety boundaries,</li>
+<li>and adapting the agent for a new audience.</li>
+</ul>
+<p>Versioning is a practical way to keep agent work transparent.</p>
+<hr>
+</section>
+<section id="testing-an-updated-agent" class="level2">
+<h2 class="anchored" data-anchor-id="testing-an-updated-agent">Testing an Updated Agent</h2>
+<p>An updated agent should be tested before it is used for important work.</p>
+<p>Testing does not need to be complicated.</p>
+<p>The maintainer can use a small set of example tasks.</p>
+<pre class="text"><code>Test 1: Normal task
+Test 2: Ambiguous task
+Test 3: Missing context task
+Test 4: High-risk or sensitive task
+Test 5: Out-of-scope task</code></pre>
+<p>The goal is not perfection.</p>
+<p>The goal is to check whether the agent behaves responsibly in common and difficult situations.</p>
+<hr>
+</section>
+<section id="evaluation-criteria-for-agent-updates" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-criteria-for-agent-updates">Evaluation Criteria for Agent Updates</h2>
+<p>After updating an agent, review the output against clear criteria.</p>
+<pre class="text"><code>Purpose alignment: Does the agent stay within its role?
+Context use: Does it use the provided information correctly?
+Output quality: Is the response complete, clear, and usable?
+Risk handling: Does it recognize uncertainty and limits?
+Review readiness: Is the output easy for a human to evaluate?
+Consistency: Does it follow the expected structure repeatedly?</code></pre>
+<p>These criteria connect agent maintenance to the evaluation practices introduced earlier in the guide.</p>
+<p>A good agent is not only creative or fast.</p>
+<p>A good agent is also reviewable.</p>
+<hr>
+</section>
+<section id="improving-the-agent-prompt" class="level2">
+<h2 class="anchored" data-anchor-id="improving-the-agent-prompt">Improving the Agent Prompt</h2>
+<p>Many agent improvements begin with the prompt.</p>
+<p>Prompt improvements may include:</p>
+<ul>
+<li>clarifying the agent role,</li>
+<li>narrowing the scope,</li>
+<li>adding stronger input requirements,</li>
+<li>defining the output structure,</li>
+<li>adding review checkpoints,</li>
+<li>requiring uncertainty statements,</li>
+<li>adding escalation rules,</li>
+<li>and including examples of acceptable outputs.</li>
+</ul>
+<p>A weak agent prompt often tries to do too much.</p>
+<p>A strong agent prompt usually makes the task smaller, clearer, and easier to review.</p>
+<hr>
+</section>
+<section id="improving-the-context-system" class="level2">
+<h2 class="anchored" data-anchor-id="improving-the-context-system">Improving the Context System</h2>
+<p>Sometimes the problem is not the agent prompt.</p>
+<p>The problem is the context system.</p>
+<p>The agent may need better supporting material.</p>
+<p>This can include:</p>
+<pre class="text"><code>Updated reference documents
+Examples of strong outputs
+Examples of weak outputs
+Definitions and terminology
+Audience guidance
+Brand or style guidance
+Data dictionaries
+Review rubrics
+Safety boundaries</code></pre>
+<p>Context maintenance is especially important when the agent supports work that changes over time.</p>
+<p>For example, a career agent may need updated portfolio standards.</p>
+<p>A research agent may need updated literature search rules.</p>
+<p>A reporting agent may need current communication templates.</p>
+<p>A data analysis support agent may need updated project conventions.</p>
+<p>The agent can only use the context it has access to.</p>
+<p>Outdated context creates outdated assistance.</p>
+<hr>
+</section>
+<section id="improving-the-review-process" class="level2">
+<h2 class="anchored" data-anchor-id="improving-the-review-process">Improving the Review Process</h2>
+<p>Some agent failures happen because the review process is weak.</p>
+<p>The agent may produce useful drafts, but the human review step may be unclear.</p>
+<p>A stronger review process can include:</p>
+<pre class="text"><code>Required human approval before publication
+Checklist-based review
+Fact-checking step
+Source verification step
+Privacy review
+Tone and audience review
+Decision log
+Final sign-off</code></pre>
+<p>The goal is not to slow down every task.</p>
+<p>The goal is to match the review level to the risk level.</p>
+<p>Low-risk drafts may need light review.</p>
+<p>High-impact decisions need stronger review.</p>
+<hr>
+</section>
+<section id="when-to-retire-an-agent" class="level2">
+<h2 class="anchored" data-anchor-id="when-to-retire-an-agent">When to Retire an Agent</h2>
+<p>Not every agent should be maintained forever.</p>
+<p>Some agents should be retired.</p>
+<p>An agent may need to be retired when:</p>
+<ul>
+<li>the task no longer exists,</li>
+<li>the workflow has changed completely,</li>
+<li>the agent repeatedly produces poor outputs,</li>
+<li>the agent creates unacceptable risk,</li>
+<li>the context system cannot be maintained,</li>
+<li>a better workflow has replaced it,</li>
+<li>or the agent is no longer aligned with the intended audience.</li>
+</ul>
+<p>Retiring an agent is not failure.</p>
+<p>It is part of responsible system management.</p>
+<p>A retired agent can still teach useful lessons.</p>
+<p>Its change log, examples, and review notes can help design a better replacement.</p>
+<hr>
+</section>
+<section id="agent-maintenance-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="agent-maintenance-checklist">Agent Maintenance Checklist</h2>
+<p>Before continuing to use an agent, review it against this checklist.</p>
+<pre class="text"><code>[ ] The agent purpose is still clear.
+[ ] The agent scope is still appropriate.
+[ ] The input requirements are documented.
+[ ] The context materials are current.
+[ ] The output format is still useful.
+[ ] The review criteria are clear.
+[ ] The safety boundaries are documented.
+[ ] Recent errors have been reviewed.
+[ ] Improvements have been tested.
+[ ] The agent version has been updated.
+[ ] Known limitations are recorded.
+[ ] The next review point is defined.</code></pre>
+<p>This checklist makes maintenance practical.</p>
+<p>It turns agent improvement into a repeatable habit.</p>
+<hr>
+</section>
+<section id="a-simple-agent-review-table" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-agent-review-table">A Simple Agent Review Table</h2>
+<p>A small review table can help teams track agent performance.</p>
+<pre class="text"><code>| Date | Agent | Version | Task | Result | Issue Found | Action Taken | Reviewer |
+|------|-------|---------|------|--------|-------------|--------------|----------|
+|      |       |         |      |        |             |              |          |</code></pre>
+<p>This table does not need to be complicated.</p>
+<p>Its purpose is to create a memory of how the agent performs over time.</p>
+<p>Without this memory, the same problems may be rediscovered again and again.</p>
+<hr>
+</section>
+<section id="human-responsibility-in-agent-maintenance" class="level2">
+<h2 class="anchored" data-anchor-id="human-responsibility-in-agent-maintenance">Human Responsibility in Agent Maintenance</h2>
+<p>Agent maintenance is a human responsibility.</p>
+<p>The agent can help summarize feedback.</p>
+<p>It can help identify patterns.</p>
+<p>It can help suggest improvements.</p>
+<p>It can help draft updated instructions.</p>
+<p>But the final decision about whether the agent is safe, useful, and appropriate belongs to people.</p>
+<p>This follows the Human–AI–Human pattern.</p>
+<pre class="text"><code>Human reviews agent performance
+        ↓
+AI assists with analysis and improvement ideas
+        ↓
+Human updates, approves, or retires the agent</code></pre>
+<p>The agent should not be the only judge of its own reliability.</p>
+<hr>
+</section>
+<section id="common-mistakes" class="level2">
+<h2 class="anchored" data-anchor-id="common-mistakes">Common Mistakes</h2>
+<p>A common mistake is to treat a successful first output as proof that the agent works.</p>
+<p>One good output is not enough.</p>
+<p>Another mistake is to keep adding instructions without simplifying the workflow.</p>
+<p>More instructions do not always produce a better agent.</p>
+<p>Sometimes the better solution is to split one large agent into smaller agents.</p>
+<p>Another mistake is to ignore weak outputs because the agent is usually helpful.</p>
+<p>Helpful agents can still create serious errors.</p>
+<p>The final mistake is to forget that the work context changes.</p>
+<p>An agent that was useful last year may need revision today.</p>
+<hr>
+</section>
+<section id="cdi-agent-maintenance-principle" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-agent-maintenance-principle">CDI Agent Maintenance Principle</h2>
+<p>In Complex Data Insights, agent maintenance follows one principle:</p>
+<blockquote class="blockquote">
+<p>A reusable AI agent should become more trustworthy with use, not more mysterious.</p>
+</blockquote>
+<p>This means the agent should become easier to understand.</p>
+<p>Its purpose should become clearer.</p>
+<p>Its limitations should become better documented.</p>
+<p>Its review process should become stronger.</p>
+<p>Its outputs should become more consistent.</p>
+<p>Its risks should become easier to manage.</p>
+<p>Maintenance is what turns an agent from a clever assistant into a dependable workflow component.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>This chapter completed the reusable AI agent template section.</p>
+<p>The key ideas are:</p>
+<ul>
+<li>reusable agents must be maintained over time,</li>
+<li>maintenance should be based on evidence from real use,</li>
+<li>agents need change logs and versioning,</li>
+<li>updated agents should be tested before important use,</li>
+<li>prompts, context, outputs, and review processes can all be improved,</li>
+<li>some agents should be retired when they are no longer fit for purpose,</li>
+<li>and humans remain responsible for approving agent changes.</li>
+</ul>
+<p>A reusable agent is not a finished object.</p>
+<p>It is a living workflow system.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next part of the guide moves from reusable agent design into applied AI agents.</p>
+<p>We begin with a research and learning agent.</p>
+<p>That chapter shows how the reusable agent template can support reading, synthesis, learning plans, question generation, and study workflows while keeping human judgment at the center.</p>
 
 
 </section>
@@ -845,11 +1111,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./13-agent-output-standards-and-review.html" class="pagination-link" aria-label="Agent Output Standards and Review">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Agent Output Standards and Review</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./15-research-and-learning-agent.html" class="pagination-link" aria-label="Research and Learning Agent">
+        <span class="nav-page-text"><span class="chapter-title">Research and Learning Agent</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>AI Output Evaluation – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./08-ai-safety-boundaries-and-human-judgment.html" rel="next">
+<link href="./06-context-and-knowledge-systems.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html">Part II: AI Systems</a></li><li class="breadcrumb-item"><a href="./07-ai-output-evaluation.html"><span class="chapter-title">AI Output Evaluation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -224,7 +171,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-ai-output-evaluation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Output Evaluation</span></a>
+  <a href="./07-ai-output-evaluation.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">AI Output Evaluation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,33 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#why-evaluation-matters" id="toc-why-evaluation-matters" class="nav-link active" data-scroll-target="#why-evaluation-matters">Why Evaluation Matters</a></li>
+  <li><a href="#evaluation-in-the-humanaihuman-loop" id="toc-evaluation-in-the-humanaihuman-loop" class="nav-link" data-scroll-target="#evaluation-in-the-humanaihuman-loop">Evaluation in the Human–AI–Human Loop</a></li>
+  <li><a href="#what-should-be-evaluated" id="toc-what-should-be-evaluated" class="nav-link" data-scroll-target="#what-should-be-evaluated">What Should Be Evaluated</a></li>
+  <li><a href="#evaluation-is-context-dependent" id="toc-evaluation-is-context-dependent" class="nav-link" data-scroll-target="#evaluation-is-context-dependent">Evaluation Is Context-Dependent</a></li>
+  <li><a href="#a-simple-ai-output-evaluation-checklist" id="toc-a-simple-ai-output-evaluation-checklist" class="nav-link" data-scroll-target="#a-simple-ai-output-evaluation-checklist">A Simple AI Output Evaluation Checklist</a></li>
+  <li><a href="#evaluation-rubric" id="toc-evaluation-rubric" class="nav-link" data-scroll-target="#evaluation-rubric">Evaluation Rubric</a></li>
+  <li><a href="#evaluating-ai-written-text" id="toc-evaluating-ai-written-text" class="nav-link" data-scroll-target="#evaluating-ai-written-text">Evaluating AI-Written Text</a></li>
+  <li><a href="#evaluating-ai-summaries" id="toc-evaluating-ai-summaries" class="nav-link" data-scroll-target="#evaluating-ai-summaries">Evaluating AI Summaries</a></li>
+  <li><a href="#evaluating-ai-assisted-analysis" id="toc-evaluating-ai-assisted-analysis" class="nav-link" data-scroll-target="#evaluating-ai-assisted-analysis">Evaluating AI-Assisted Analysis</a></li>
+  <li><a href="#evaluating-ai-generated-code" id="toc-evaluating-ai-generated-code" class="nav-link" data-scroll-target="#evaluating-ai-generated-code">Evaluating AI-Generated Code</a></li>
+  <li><a href="#evaluation-prompts" id="toc-evaluation-prompts" class="nav-link" data-scroll-target="#evaluation-prompts">Evaluation Prompts</a></li>
+  <li><a href="#evaluation-records" id="toc-evaluation-records" class="nav-link" data-scroll-target="#evaluation-records">Evaluation Records</a></li>
+  <li><a href="#example-evaluation-table" id="toc-example-evaluation-table" class="nav-link" data-scroll-target="#example-evaluation-table">Example Evaluation Table</a></li>
+  <li><a href="#from-evaluation-to-improvement" id="toc-from-evaluation-to-improvement" class="nav-link" data-scroll-target="#from-evaluation-to-improvement">From Evaluation to Improvement</a></li>
+  <li><a href="#common-evaluation-mistakes" id="toc-common-evaluation-mistakes" class="nav-link" data-scroll-target="#common-evaluation-mistakes">Common Evaluation Mistakes</a></li>
+  <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical Exercise</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html">Part II: AI Systems</a></li><li class="breadcrumb-item"><a href="./07-ai-output-evaluation.html"><span class="chapter-title">AI Output Evaluation</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="ai-output-evaluation" class="quarto-section-identifier"><span class="chapter-title">AI Output Evaluation</span></span></h1>
 </div>
 
 
@@ -374,69 +335,418 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-007</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> AI outputs must be evaluated before they are trusted, shared, or used for decisions</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>AI systems do not become reliable because the output sounds confident.</p>
+<p>They become reliable because the output is evaluated.</p>
+<p>A fluent answer can still be wrong.</p>
+<p>A well-written summary can still omit important evidence.</p>
+<p>A useful draft can still need human judgment.</p>
+<p>A generated analysis can still contain assumptions, errors, unsupported claims, or missing context.</p>
+<p>For this reason, evaluation is not a final decoration in an AI workflow.</p>
+<p>Evaluation is part of the system itself.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
-<hr>
-</section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
-<ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
-</ul>
+<section id="why-evaluation-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-evaluation-matters">Why Evaluation Matters</h2>
+<p>AI can produce outputs that look complete even when they are incomplete.</p>
+<p>It can produce explanations that sound logical even when the reasoning is weak.</p>
+<p>It can produce code that appears correct but fails when tested.</p>
+<p>It can summarize documents while missing important limitations.</p>
+<p>It can generate recommendations without fully understanding the human, organizational, ethical, or technical context.</p>
+<p>This creates a central rule for AI Systems:</p>
+<blockquote class="blockquote">
+<p>AI output should be reviewed before it becomes human action.</p>
+</blockquote>
+<p>The purpose of evaluation is not to reject AI.</p>
+<p>The purpose is to make AI-supported work usable, inspectable, and responsible.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="evaluation-in-the-humanaihuman-loop" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-in-the-humanaihuman-loop">Evaluation in the Human–AI–Human Loop</h2>
+<p>The Human–AI–Human framework depends on evaluation.</p>
+<pre class="text"><code>Human frames the task
+        ↓
+AI generates an output
+        ↓
+Human evaluates the output
+        ↓
+Human revises, accepts, rejects, or escalates
+        ↓
+Human documents the final decision</code></pre>
+<p>Without evaluation, the workflow becomes:</p>
+<pre class="text"><code>Human asks
+        ↓
+AI answers
+        ↓
+Human accepts</code></pre>
+<p>That is not a responsible AI system.</p>
+<p>It is unreviewed automation.</p>
+<p>In a strong AI system, the human does not only ask the question.</p>
+<p>The human also checks whether the answer is good enough for the intended use.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="what-should-be-evaluated" class="level2">
+<h2 class="anchored" data-anchor-id="what-should-be-evaluated">What Should Be Evaluated</h2>
+<p>AI outputs should be evaluated across several dimensions.</p>
+<p>The exact criteria depend on the task, but most workflows should check at least the following:</p>
+<pre class="text"><code>Correctness
+  Is the output factually or technically accurate?
 
-</div>
+Relevance
+  Does the output answer the actual task?
+
+Completeness
+  Are important parts missing?
+
+Clarity
+  Is the output understandable and well organized?
+
+Evidence
+  Are claims supported by data, documents, code, or references?
+
+Limitations
+  Are uncertainty, assumptions, and risks clearly stated?
+
+Actionability
+  Can the output be used safely and appropriately?</code></pre>
+<p>These dimensions help the reviewer move beyond a vague question such as:</p>
+<pre class="text"><code>Does this look good?</code></pre>
+<p>Instead, the reviewer can ask:</p>
+<pre class="text"><code>Is this correct?
+Is it relevant?
+Is it complete?
+Is it supported?
+Is it safe to use?
+What still needs human judgment?</code></pre>
+<hr>
+</section>
+<section id="evaluation-is-context-dependent" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-is-context-dependent">Evaluation Is Context-Dependent</h2>
+<p>Not all AI outputs need the same level of review.</p>
+<p>A brainstorming list may only need a light review.</p>
+<p>A public report needs stronger review.</p>
+<p>A data analysis needs code, data, and result verification.</p>
+<p>A medical, legal, financial, or policy-related output needs expert review and careful limitation statements.</p>
+<p>A learning exercise should be checked for understanding, not only for a finished answer.</p>
+<p>The level of evaluation should match the risk of the task.</p>
+<pre class="text"><code>Low-risk task
+  ↓
+Light review
+
+Medium-risk task
+  ↓
+Structured review
+
+High-risk task
+  ↓
+Expert review, evidence checking, documentation, and approval</code></pre>
+<p>The more an AI output affects decisions, people, resources, health, money, reputation, or public communication, the stronger the evaluation should be.</p>
+<hr>
+</section>
+<section id="a-simple-ai-output-evaluation-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-ai-output-evaluation-checklist">A Simple AI Output Evaluation Checklist</h2>
+<p>A practical evaluation checklist can be used in almost any AI-assisted workflow.</p>
+<pre class="text"><code>AI Output Evaluation Checklist
+
+Task alignment
+[ ] Does the output answer the original task?
+[ ] Did the AI follow the requested format and constraints?
+
+Content quality
+[ ] Are the main claims correct?
+[ ] Are important details missing?
+[ ] Are unclear parts explained well?
+
+Evidence and grounding
+[ ] Is the output grounded in the provided context?
+[ ] Are sources, data, examples, or assumptions clear?
+[ ] Are unsupported claims removed or flagged?
+
+Risk and responsibility
+[ ] Could this output mislead someone?
+[ ] Does it require expert review?
+[ ] Are limitations and uncertainties documented?
+
+Final decision
+[ ] Accept as is
+[ ] Revise before use
+[ ] Ask AI for improvement
+[ ] Escalate to a human expert
+[ ] Reject the output</code></pre>
+<p>This checklist can be adapted for writing, research, analysis, coding, teaching, reporting, and decision support.</p>
+<hr>
+</section>
+<section id="evaluation-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-rubric">Evaluation Rubric</h2>
+<p>For repeatable workflows, a rubric is often better than a checklist.</p>
+<p>A rubric gives a score or category for each evaluation dimension.</p>
+<pre class="text"><code>Score 3: Strong
+The output is accurate, relevant, complete, clear, and ready for use with minor or no edits.
+
+Score 2: Usable with revision
+The output is mostly useful but needs correction, clarification, evidence, or restructuring.
+
+Score 1: Weak
+The output has major gaps, unclear claims, unsupported reasoning, or significant risk.
+
+Score 0: Not usable
+The output is incorrect, irrelevant, unsafe, misleading, or unsuitable for the task.</code></pre>
+<p>A simple rubric may look like this:</p>
+<pre class="text"><code>Dimension       Score     Notes
+Correctness     0-3       Are the claims accurate?
+Relevance       0-3       Does it answer the task?
+Completeness    0-3       Are key parts included?
+Clarity         0-3       Is it understandable?
+Evidence        0-3       Is it grounded and supported?
+Risk            0-3       Is it safe for the intended use?</code></pre>
+<p>The purpose of the score is not perfection.</p>
+<p>The purpose is consistency.</p>
+<p>If several people review AI outputs, a rubric helps them apply similar standards.</p>
+<hr>
+</section>
+<section id="evaluating-ai-written-text" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-ai-written-text">Evaluating AI-Written Text</h2>
+<p>AI-written text should not only be checked for grammar.</p>
+<p>It should be checked for purpose, truth, tone, audience, and accountability.</p>
+<p>A strong review asks:</p>
+<pre class="text"><code>Audience
+Who will read this?
+
+Purpose
+What is the text supposed to achieve?
+
+Accuracy
+Are the claims true or supported?
+
+Tone
+Does the tone fit the audience and situation?
+
+Completeness
+What important information is missing?
+
+Ownership
+Can a human stand behind this message?</code></pre>
+<p>For professional communication, the final question is especially important.</p>
+<p>If the text will be sent, published, or signed by a person, that person must be able to take responsibility for it.</p>
+<p>AI may help draft the message.</p>
+<p>The human owns the message.</p>
+<hr>
+</section>
+<section id="evaluating-ai-summaries" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-ai-summaries">Evaluating AI Summaries</h2>
+<p>Summaries are one of the most common AI use cases.</p>
+<p>They are also easy to trust too quickly.</p>
+<p>A summary should be evaluated against the original material.</p>
+<pre class="text"><code>Summary evaluation questions
+
+[ ] Does the summary reflect the original source accurately?
+[ ] Does it preserve the main argument or message?
+[ ] Does it avoid adding claims that were not in the source?
+[ ] Does it identify important limitations or uncertainty?
+[ ] Does it distinguish major points from minor details?
+[ ] Does it keep the appropriate level of detail for the audience?</code></pre>
+<p>A summary that is beautifully written but not faithful to the source is not a good AI output.</p>
+<p>For research, policy, medicine, law, education, and reporting, faithfulness matters more than elegance.</p>
+<hr>
+</section>
+<section id="evaluating-ai-assisted-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-ai-assisted-analysis">Evaluating AI-Assisted Analysis</h2>
+<p>AI-assisted analysis requires stronger review because errors can travel from code into conclusions.</p>
+<p>The reviewer should check:</p>
+<pre class="text"><code>Data
+Is the correct dataset being used?
+Are the variables understood correctly?
+Are missing values handled appropriately?
+
+Code
+Does the code run?
+Are the methods appropriate?
+Are assumptions visible?
+
+Results
+Do the results match the code?
+Are tables and plots labeled correctly?
+Are interpretations supported by the outputs?
+
+Claims
+Do the conclusions go beyond the evidence?
+Are limitations clearly stated?</code></pre>
+<p>In data work, the output is not only the written answer.</p>
+<p>The output includes code, tables, plots, assumptions, and interpretations.</p>
+<p>All of these need review.</p>
+<hr>
+</section>
+<section id="evaluating-ai-generated-code" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-ai-generated-code">Evaluating AI-Generated Code</h2>
+<p>AI-generated code should be treated as a draft.</p>
+<p>It may be useful.</p>
+<p>It may also contain hidden errors.</p>
+<p>Code evaluation should include:</p>
+<pre class="text"><code>Run the code
+Does it execute without errors?
+
+Read the code
+Is the logic understandable?
+
+Test the code
+Does it behave correctly on expected inputs?
+
+Stress the code
+What happens with missing, unusual, or invalid inputs?
+
+Review dependencies
+Are the packages appropriate and available?
+
+Check outputs
+Are the generated files, plots, or results correct?</code></pre>
+<p>A good AI system does not copy code blindly.</p>
+<p>It tests code before using it.</p>
+<hr>
+</section>
+<section id="evaluation-prompts" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-prompts">Evaluation Prompts</h2>
+<p>AI can also help with evaluation, but it should not be the only evaluator.</p>
+<p>Useful evaluation prompts include:</p>
+<pre class="text"><code>Review this output against the original task.
+Identify any missing information, unsupported claims, unclear assumptions, or risks.
+Do not rewrite yet. First provide an evaluation table.</code></pre>
+<pre class="text"><code>Compare this summary with the source text.
+List any claims in the summary that are not supported by the source.
+Then list important source points that were omitted.</code></pre>
+<pre class="text"><code>Review this code for correctness, clarity, reproducibility, and possible failure points.
+Suggest tests that would help verify the code.</code></pre>
+<pre class="text"><code>Evaluate this response using the following rubric:
+Correctness, relevance, completeness, clarity, evidence, and risk.
+Score each dimension from 0 to 3 and explain the score briefly.</code></pre>
+<p>These prompts make AI a reviewer, but the final review remains human-led.</p>
+<hr>
+</section>
+<section id="evaluation-records" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-records">Evaluation Records</h2>
+<p>In reproducible AI Systems, evaluation should leave a record.</p>
+<p>A simple evaluation record may include:</p>
+<pre class="text"><code>Task ID
+Date
+Human reviewer
+AI tool or model used
+Input materials
+Output reviewed
+Evaluation criteria
+Major issues found
+Revision decision
+Final status</code></pre>
+<p>This record does not need to be complicated.</p>
+<p>The goal is to make the workflow inspectable.</p>
+<p>If the output is later questioned, improved, reused, or taught, the evaluation record helps explain what happened.</p>
+<hr>
+</section>
+<section id="example-evaluation-table" class="level2">
+<h2 class="anchored" data-anchor-id="example-evaluation-table">Example Evaluation Table</h2>
+<p>A lightweight evaluation table might look like this:</p>
+<pre class="text"><code>output_id,task_type,correctness,relevance,completeness,clarity,evidence,risk,decision
+AI-001,summary,3,3,2,3,2,2,revise
+AI-002,email_draft,3,3,3,3,2,3,accept
+AI-003,data_interpretation,2,3,2,2,1,1,escalate
+AI-004,code_generation,2,3,2,2,2,2,test_before_use</code></pre>
+<p>The values are simple, but the habit is important.</p>
+<p>The team is no longer saying:</p>
+<pre class="text"><code>The AI gave us an answer.</code></pre>
+<p>The team is saying:</p>
+<pre class="text"><code>The AI produced an output.
+We evaluated it.
+We found these issues.
+We made this decision.</code></pre>
+<p>That is a system.</p>
+<hr>
+</section>
+<section id="from-evaluation-to-improvement" class="level2">
+<h2 class="anchored" data-anchor-id="from-evaluation-to-improvement">From Evaluation to Improvement</h2>
+<p>Evaluation should lead to improvement.</p>
+<p>When an output is weak, the next step is not always to discard it.</p>
+<p>The reviewer may decide to:</p>
+<pre class="text"><code>Revise the prompt
+Add better context
+Provide examples
+Ask for a different output structure
+Use a stronger source document
+Break the task into smaller steps
+Ask for uncertainty and limitations
+Request citations or evidence links
+Move the task to a human expert</code></pre>
+<p>Evaluation therefore improves both the current output and the future workflow.</p>
+<p>Over time, repeated evaluation helps build better prompts, better templates, better review standards, and better AI operating practices.</p>
+<hr>
+</section>
+<section id="common-evaluation-mistakes" class="level2">
+<h2 class="anchored" data-anchor-id="common-evaluation-mistakes">Common Evaluation Mistakes</h2>
+<p>Several mistakes weaken AI workflows.</p>
+<pre class="text"><code>Mistake 1: Evaluating only the writing style
+A polished output may still be wrong.
+
+Mistake 2: Checking only the final answer
+The reasoning, assumptions, and evidence also matter.
+
+Mistake 3: Ignoring the original task
+An output can be good in general but wrong for the actual request.
+
+Mistake 4: Using AI as the only reviewer
+AI can help review, but human judgment remains necessary.
+
+Mistake 5: Failing to document revisions
+Undocumented changes make the workflow hard to audit or repeat.</code></pre>
+<p>Avoiding these mistakes makes AI-supported work stronger and more trustworthy.</p>
+<hr>
+</section>
+<section id="practical-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise">Practical Exercise</h2>
+<p>Choose one AI-generated output from your own work.</p>
+<p>It may be:</p>
+<ul>
+<li>a summary,</li>
+<li>an email draft,</li>
+<li>a report section,</li>
+<li>a code snippet,</li>
+<li>a data interpretation,</li>
+<li>a lesson plan,</li>
+<li>or a research explanation.</li>
+</ul>
+<p>Evaluate it using this table:</p>
+<pre class="text"><code>Dimension       Score 0-3     Notes
+Correctness
+Relevance
+Completeness
+Clarity
+Evidence
+Risk</code></pre>
+<p>Then answer:</p>
+<pre class="text"><code>What should be accepted?
+What should be revised?
+What should be checked against a source?
+What should be reviewed by a human expert?
+What should be documented before use?</code></pre>
+<p>This exercise turns AI use into AI systems practice.</p>
+<hr>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<p>AI outputs should not be trusted only because they are fluent.</p>
+<p>Evaluation is a core layer of responsible AI Systems.</p>
+<p>The level of evaluation should match the risk and importance of the task.</p>
+<p>Checklists and rubrics help make evaluation repeatable.</p>
+<p>AI can assist with evaluation, but human judgment remains responsible for the final decision.</p>
+<p>A strong AI workflow records what was reviewed, what was changed, and why the final output was accepted, revised, escalated, or rejected.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter focuses on safety boundaries and human judgment.</p>
+<p>Evaluation asks whether an AI output is good enough.</p>
+<p>Safety asks whether the task, output, or decision requires stronger limits, expert review, privacy protection, or refusal.</p>
+<p>Together, evaluation and safety help keep AI Systems responsible, human-led, and suitable for real work.</p>
 
 
 </section>
@@ -845,11 +1155,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./06-context-and-knowledge-systems.html" class="pagination-link" aria-label="Context and Knowledge Systems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Context and Knowledge Systems</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./08-ai-safety-boundaries-and-human-judgment.html" class="pagination-link" aria-label="AI Safety Boundaries and Human Judgment">
+        <span class="nav-page-text"><span class="chapter-title">AI Safety Boundaries and Human Judgment</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

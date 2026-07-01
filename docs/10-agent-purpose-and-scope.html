@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>Agent Purpose and Scope – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,26 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +65,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./11-agent-inputs-context-and-memory.html" rel="next">
+<link href="./09-ai-operating-system-for-work.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -123,6 +105,10 @@ div.csl-indent {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<meta name="mermaid-theme" content="forest">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="assets/css/cdi.css">
@@ -137,7 +123,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html">Part III: Reusable AI Agent Template</a></li><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html"><span class="chapter-title">Agent Purpose and Scope</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -250,7 +236,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-agent-purpose-and-scope.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Purpose and Scope</span></a>
+  <a href="./10-agent-purpose-and-scope.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Agent Purpose and Scope</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +308,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +323,32 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#from-ai-workflow-to-ai-agent" id="toc-from-ai-workflow-to-ai-agent" class="nav-link active" data-scroll-target="#from-ai-workflow-to-ai-agent">From AI Workflow to AI Agent</a></li>
+  <li><a href="#what-an-ai-agent-means-in-this-guide" id="toc-what-an-ai-agent-means-in-this-guide" class="nav-link" data-scroll-target="#what-an-ai-agent-means-in-this-guide">What an AI Agent Means in This Guide</a></li>
+  <li><a href="#the-human-led-agent-model" id="toc-the-human-led-agent-model" class="nav-link" data-scroll-target="#the-human-led-agent-model">The Human-Led Agent Model</a></li>
+  <li><a href="#why-purpose-comes-first" id="toc-why-purpose-comes-first" class="nav-link" data-scroll-target="#why-purpose-comes-first">Why Purpose Comes First</a></li>
+  <li><a href="#a-purpose-statement-template" id="toc-a-purpose-statement-template" class="nav-link" data-scroll-target="#a-purpose-statement-template">A Purpose Statement Template</a></li>
+  <li><a href="#defining-agent-scope" id="toc-defining-agent-scope" class="nav-link" data-scroll-target="#defining-agent-scope">Defining Agent Scope</a></li>
+  <li><a href="#in-scope-and-out-of-scope-work" id="toc-in-scope-and-out-of-scope-work" class="nav-link" data-scroll-target="#in-scope-and-out-of-scope-work">In-Scope and Out-of-Scope Work</a></li>
+  <li><a href="#agent-scope-card" id="toc-agent-scope-card" class="nav-link" data-scroll-target="#agent-scope-card">Agent Scope Card</a></li>
+  <li><a href="#example-learning-support-agent" id="toc-example-learning-support-agent" class="nav-link" data-scroll-target="#example-learning-support-agent">Example: Learning Support Agent</a></li>
+  <li><a href="#example-data-analysis-support-agent" id="toc-example-data-analysis-support-agent" class="nav-link" data-scroll-target="#example-data-analysis-support-agent">Example: Data Analysis Support Agent</a></li>
+  <li><a href="#scope-drift" id="toc-scope-drift" class="nav-link" data-scroll-target="#scope-drift">Scope Drift</a></li>
+  <li><a href="#the-minimum-useful-agent" id="toc-the-minimum-useful-agent" class="nav-link" data-scroll-target="#the-minimum-useful-agent">The Minimum Useful Agent</a></li>
+  <li><a href="#agent-naming" id="toc-agent-naming" class="nav-link" data-scroll-target="#agent-naming">Agent Naming</a></li>
+  <li><a href="#agent-purpose-checklist" id="toc-agent-purpose-checklist" class="nav-link" data-scroll-target="#agent-purpose-checklist">Agent Purpose Checklist</a></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">Common Mistakes</a></li>
+  <li><a href="#cdi-agent-design-principle" id="toc-cdi-agent-design-principle" class="nav-link" data-scroll-target="#cdi-agent-design-principle">CDI Agent Design Principle</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html">Part III: Reusable AI Agent Template</a></li><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html"><span class="chapter-title">Agent Purpose and Scope</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="agent-purpose-and-scope" class="quarto-section-identifier"><span class="chapter-title">Agent Purpose and Scope</span></span></h1>
 </div>
 
 
@@ -374,69 +373,460 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-010</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams designing reusable AI-assisted workflows</li>
+<li><strong>Theme:</strong> A useful AI agent begins with a clear purpose, a defined scope, and human responsibility</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>An AI agent should not begin with a tool.</p>
+<p>It should begin with a purpose.</p>
+<p>Before deciding what model to use, what prompt to write, what files to provide, or what workflow to automate, the designer must answer a simpler question:</p>
+<blockquote class="blockquote">
+<p>What work should this agent help a human do better?</p>
+</blockquote>
+<p>This chapter begins Part III of the guide: <strong>Reusable AI Agent Template</strong>.</p>
+<p>The goal is not to build mysterious autonomous systems.</p>
+<p>The goal is to design reusable, inspectable, human-led AI assistants that support real work.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
-<hr>
-</section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
-<ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
-</ul>
-<hr>
-</section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="from-ai-workflow-to-ai-agent" class="level2">
+<h2 class="anchored" data-anchor-id="from-ai-workflow-to-ai-agent">From AI Workflow to AI Agent</h2>
+<p>In earlier chapters, we designed AI workflows.</p>
+<p>A workflow is a sequence of steps.</p>
+<p>An agent is a reusable workflow with a defined role.</p>
+<p>A simple AI workflow might look like this:</p>
+<pre class="text"><code>User provides a task
+  ↓
+AI generates a draft
+  ↓
+Human reviews the draft
+  ↓
+Human revises, approves, or rejects the output</code></pre>
+<p>An AI agent adds structure.</p>
+<p>It has a purpose, boundaries, expected inputs, operating rules, output standards, review steps, and improvement practices.</p>
+<pre class="text"><code>Agent purpose
+  ↓
+Required inputs
+  ↓
+Context and knowledge
+  ↓
+Workflow steps
+  ↓
+Decision logic
+  ↓
+Output format
+  ↓
+Human review
+  ↓
+Improvement loop</code></pre>
+<p>The difference is discipline.</p>
+<p>A prompt may help once.</p>
+<p>An agent should help repeatedly.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="what-an-ai-agent-means-in-this-guide" class="level2">
+<h2 class="anchored" data-anchor-id="what-an-ai-agent-means-in-this-guide">What an AI Agent Means in This Guide</h2>
+<p>In this guide, an AI agent means:</p>
+<blockquote class="blockquote">
+<p>A reusable AI-supported workflow designed to perform a defined role under human direction, using clear inputs, boundaries, review rules, and output standards.</p>
+</blockquote>
+<p>This definition is intentionally practical.</p>
+<p>It does not require advanced software engineering.</p>
+<p>It does not require full automation.</p>
+<p>It does not require the agent to act independently.</p>
+<p>An agent can be as simple as a structured assistant for reviewing writing, organizing research notes, preparing a learning plan, analyzing a table, or drafting a report.</p>
+<p>What makes it an agent is not complexity.</p>
+<p>What makes it an agent is repeatable responsibility.</p>
+<hr>
+</section>
+<section id="the-human-led-agent-model" class="level2">
+<h2 class="anchored" data-anchor-id="the-human-led-agent-model">The Human-Led Agent Model</h2>
+<p>A responsible AI agent remains inside the Human–AI–Human model.</p>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>flowchart TD</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    A[Human defines purpose]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    B[Human provides context and inputs]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    C[AI agent performs a defined workflow]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    D[AI agent produces a structured output]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    E[Human evaluates the output]</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    F[Human decides, documents, and acts]</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    G[Human improves the agent if needed]</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    A --&gt; B</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    B --&gt; C</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    C --&gt; D</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    D --&gt; E</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    E --&gt; F</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    E --&gt; G</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    G --&gt; A</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
 
+    A[Human defines purpose]
+    B[Human provides context and inputs]
+    C[AI agent performs a defined workflow]
+    D[AI agent produces a structured output]
+    E[Human evaluates the output]
+    F[Human decides, documents, and acts]
+    G[Human improves the agent if needed]
+
+    A --&gt; B
+    B --&gt; C
+    C --&gt; D
+    D --&gt; E
+    E --&gt; F
+    E --&gt; G
+    G --&gt; A
+</pre>
 </div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>The agent supports the work.</p>
+<p>It does not own the work.</p>
+<p>The agent may summarize, classify, draft, compare, explain, transform, check, or suggest.</p>
+<p>The human remains responsible for deciding whether the output is correct, appropriate, ethical, and useful.</p>
+<hr>
+</section>
+<section id="why-purpose-comes-first" class="level2">
+<h2 class="anchored" data-anchor-id="why-purpose-comes-first">Why Purpose Comes First</h2>
+<p>Many AI workflows fail because the purpose is vague.</p>
+<p>The user says:</p>
+<pre class="text"><code>Help me with this.</code></pre>
+<p>But the system does not know what kind of help is needed.</p>
+<p>Should it summarize?</p>
+<p>Should it critique?</p>
+<p>Should it rewrite?</p>
+<p>Should it extract key points?</p>
+<p>Should it generate code?</p>
+<p>Should it identify risks?</p>
+<p>Should it ask clarifying questions?</p>
+<p>Should it produce a final answer?</p>
+<p>Without purpose, the AI may produce something fluent but misaligned.</p>
+<p>A good agent begins with a clear purpose statement.</p>
+<pre class="text"><code>This agent helps learners turn rough study notes into clear revision summaries while preserving the original meaning and highlighting concepts that need human review.</code></pre>
+<p>That statement already defines the work better than a generic instruction.</p>
+<p>It tells us:</p>
+<ul>
+<li>who the agent serves,</li>
+<li>what input it works with,</li>
+<li>what output it should produce,</li>
+<li>and where human review remains necessary.</li>
+</ul>
+<hr>
+</section>
+<section id="a-purpose-statement-template" class="level2">
+<h2 class="anchored" data-anchor-id="a-purpose-statement-template">A Purpose Statement Template</h2>
+<p>Every reusable agent should have a short purpose statement.</p>
+<p>A useful template is:</p>
+<pre class="text"><code>This agent helps [user/audience] to [main task] using [inputs/context] so that [intended outcome], while [important boundary or human review rule].</code></pre>
+<p>Examples:</p>
+<pre class="text"><code>This agent helps students convert class notes into exam revision summaries using their own notes and syllabus topics so that they can study more systematically, while reminding them to verify uncertain points with their teacher or textbook.</code></pre>
+<pre class="text"><code>This agent helps researchers screen article abstracts using predefined inclusion and exclusion criteria so that early-stage literature review is more consistent, while keeping final inclusion decisions under human review.</code></pre>
+<pre class="text"><code>This agent helps analysts review a results table using column definitions and project context so that findings can be interpreted more clearly, while avoiding claims that are not supported by the data.</code></pre>
+<p>A strong purpose statement reduces confusion before the agent is used.</p>
+<hr>
+</section>
+<section id="defining-agent-scope" class="level2">
+<h2 class="anchored" data-anchor-id="defining-agent-scope">Defining Agent Scope</h2>
+<p>Purpose explains why the agent exists.</p>
+<p>Scope explains what the agent is allowed to do.</p>
+<p>Scope should define:</p>
+<ol type="1">
+<li>the agent’s role,</li>
+<li>the tasks it can perform,</li>
+<li>the tasks it should not perform,</li>
+<li>the inputs it requires,</li>
+<li>the outputs it should produce,</li>
+<li>the risks that require human review,</li>
+<li>and the situations where the agent should stop or escalate.</li>
+</ol>
+<p>Scope protects both the user and the system.</p>
+<p>An agent with no scope can easily drift into unsafe, low-quality, or misleading output.</p>
+<hr>
+</section>
+<section id="in-scope-and-out-of-scope-work" class="level2">
+<h2 class="anchored" data-anchor-id="in-scope-and-out-of-scope-work">In-Scope and Out-of-Scope Work</h2>
+<p>A reusable agent should include an explicit in-scope and out-of-scope section.</p>
+<p>For example, a <strong>Research and Learning Agent</strong> may be in scope for:</p>
+<pre class="text"><code>- summarizing user-provided learning materials,
+- creating study questions,
+- explaining concepts at different levels,
+- comparing definitions,
+- identifying unclear points,
+- and suggesting a revision plan.</code></pre>
+<p>The same agent may be out of scope for:</p>
+<pre class="text"><code>- inventing citations,
+- completing graded assignments dishonestly,
+- making final academic claims without evidence,
+- replacing teacher feedback,
+- or presenting uncertain information as verified fact.</code></pre>
+<p>The out-of-scope section is not a weakness.</p>
+<p>It is part of responsible design.</p>
+<p>A trustworthy agent knows its limits.</p>
+<hr>
+</section>
+<section id="agent-scope-card" class="level2">
+<h2 class="anchored" data-anchor-id="agent-scope-card">Agent Scope Card</h2>
+<p>A simple scope card can be used before building any agent.</p>
+<pre class="text"><code>Agent name:
+Primary audience:
+Main purpose:
+Main tasks:
+Required inputs:
+Expected outputs:
+In-scope work:
+Out-of-scope work:
+Human review required when:
+Escalation or stop conditions:
+Documentation needed:</code></pre>
+<p>This card turns an idea into a design object.</p>
+<p>Instead of saying, “Let us build an AI agent,” the designer can say:</p>
+<blockquote class="blockquote">
+<p>Let us define what this agent is responsible for, what it needs, what it produces, and where human judgment enters.</p>
+</blockquote>
+<hr>
+</section>
+<section id="example-learning-support-agent" class="level2">
+<h2 class="anchored" data-anchor-id="example-learning-support-agent">Example: Learning Support Agent</h2>
+<p>A learning support agent might be defined as follows.</p>
+<pre class="text"><code>Agent name:
+Learning Support Agent
+
+Primary audience:
+Students, mentors, and self-directed learners
+
+Main purpose:
+Help learners understand, organize, and review learning materials.
+
+Main tasks:
+Summarize notes, explain concepts, generate practice questions, and identify unclear points.
+
+Required inputs:
+Topic, learner level, notes or source material, learning goal, and any constraints.
+
+Expected outputs:
+Clear explanation, revision summary, practice questions, and review checklist.
+
+In-scope work:
+Learning support, explanation, study planning, and self-assessment prompts.
+
+Out-of-scope work:
+Dishonest assignment completion, unsupported factual claims, and replacing teacher or expert judgment.
+
+Human review required when:
+The output affects grades, public communication, decisions, or sensitive topics.
+
+Escalation or stop conditions:
+The agent should stop when the task asks for deception, unsupported claims, or expert-only advice.
+
+Documentation needed:
+Record input materials, prompt version, output date, and human review notes.</code></pre>
+<p>This is not yet a full agent.</p>
+<p>It is the agent’s foundation.</p>
+<hr>
+</section>
+<section id="example-data-analysis-support-agent" class="level2">
+<h2 class="anchored" data-anchor-id="example-data-analysis-support-agent">Example: Data Analysis Support Agent</h2>
+<p>A data analysis support agent requires tighter boundaries.</p>
+<pre class="text"><code>Agent name:
+Data Analysis Support Agent
+
+Primary audience:
+Analysts, students, researchers, and data science learners
+
+Main purpose:
+Help users inspect data, plan analysis steps, interpret outputs, and communicate findings carefully.
+
+Main tasks:
+Review column names, suggest cleaning steps, explain model outputs, draft interpretation notes, and identify limitations.
+
+Required inputs:
+Dataset description, column definitions, analysis goal, code or output tables, and known limitations.
+
+Expected outputs:
+Analysis plan, quality checks, interpretation notes, caveats, and suggested next steps.
+
+In-scope work:
+Explanation, review, planning, documentation, and reproducibility support.
+
+Out-of-scope work:
+Making unsupported causal claims, hiding uncertainty, fabricating results, or replacing statistical review.
+
+Human review required when:
+Results will be used for publication, policy, clinical work, financial decisions, or public reporting.
+
+Escalation or stop conditions:
+The agent should stop when data are missing, definitions are unclear, or the user requests claims beyond the evidence.
+
+Documentation needed:
+Record dataset version, analysis goal, assumptions, checks performed, and final human decision.</code></pre>
+<p>This agent can be useful.</p>
+<p>But only because its role is limited, documented, and reviewable.</p>
+<hr>
+</section>
+<section id="scope-drift" class="level2">
+<h2 class="anchored" data-anchor-id="scope-drift">Scope Drift</h2>
+<p>Scope drift happens when an agent gradually starts doing work it was not designed to do.</p>
+<p>For example:</p>
+<pre class="text"><code>A study support agent becomes an assignment-writing agent.
+A writing review agent becomes a fact-invention agent.
+A data interpretation agent becomes a decision-making authority.
+A research assistant becomes a citation generator without verification.</code></pre>
+<p>Scope drift is dangerous because it may feel natural.</p>
+<p>The agent produces confident output.</p>
+<p>The user becomes comfortable.</p>
+<p>The boundaries become loose.</p>
+<p>To prevent scope drift, every agent should include review questions:</p>
+<pre class="text"><code>Is this task still within the agent's defined purpose?
+Are the required inputs available?
+Is the requested output appropriate?
+Does this task require expert or human approval?
+Could this output cause harm if wrong?</code></pre>
+<p>If the answer raises concern, the agent should slow down, request better context, or escalate to human review.</p>
+<hr>
+</section>
+<section id="the-minimum-useful-agent" class="level2">
+<h2 class="anchored" data-anchor-id="the-minimum-useful-agent">The Minimum Useful Agent</h2>
+<p>An AI agent does not need to be large.</p>
+<p>A minimum useful agent needs only five elements:</p>
+<pre class="text"><code>Purpose
+Inputs
+Workflow
+Output standard
+Human review rule</code></pre>
+<p>These five elements are enough to move from a casual prompt to a reusable system.</p>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    A[Purpose]</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    B[Inputs]</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    C[Workflow]</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    D[Output Standard]</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    E[Human Review Rule]</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    A --&gt; B</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    B --&gt; C</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    C --&gt; D</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    D --&gt; E</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+
+    A[Purpose]
+    B[Inputs]
+    C[Workflow]
+    D[Output Standard]
+    E[Human Review Rule]
+
+    A --&gt; B
+    B --&gt; C
+    C --&gt; D
+    D --&gt; E
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>A more advanced agent may also include memory rules, tool use, evaluation rubrics, logs, versioning, and maintenance procedures.</p>
+<p>But the minimum should always be present.</p>
+<hr>
+</section>
+<section id="agent-naming" class="level2">
+<h2 class="anchored" data-anchor-id="agent-naming">Agent Naming</h2>
+<p>A good agent name should describe the work clearly.</p>
+<p>Weak names are vague:</p>
+<pre class="text"><code>AI Helper
+Smart Bot
+Productivity Assistant
+Research AI</code></pre>
+<p>Stronger names are role-specific:</p>
+<pre class="text"><code>Research and Learning Agent
+Career and Portfolio Agent
+Data Analysis Support Agent
+Communication and Reporting Agent</code></pre>
+<p>The name should help the user understand what the agent is for.</p>
+<p>It should not exaggerate what the agent can do.</p>
+<hr>
+</section>
+<section id="agent-purpose-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="agent-purpose-checklist">Agent Purpose Checklist</h2>
+<p>Before building an agent, ask:</p>
+<pre class="text"><code>What human problem does this agent support?
+Who is the intended user?
+What inputs does the agent need?
+What should the agent produce?
+What should the agent avoid doing?
+What decisions must remain human-led?
+What risks appear if the output is wrong?
+How will the output be reviewed?
+How will the agent be improved over time?</code></pre>
+<p>If these questions cannot be answered, the agent is not ready for reuse.</p>
+<hr>
+</section>
+<section id="common-mistakes" class="level2">
+<h2 class="anchored" data-anchor-id="common-mistakes">Common Mistakes</h2>
+<p>A common mistake is building an agent around a tool instead of a task.</p>
+<pre class="text"><code>Weak approach:
+Let us build a chatbot.
+
+Stronger approach:
+Let us build a research screening assistant that helps compare abstracts against predefined inclusion criteria.</code></pre>
+<p>Another mistake is making the agent too broad.</p>
+<pre class="text"><code>Weak approach:
+This agent helps with everything related to work.
+
+Stronger approach:
+This agent helps draft and review weekly project updates using a fixed reporting structure.</code></pre>
+<p>A third mistake is hiding human review.</p>
+<pre class="text"><code>Weak approach:
+The agent gives the answer.
+
+Stronger approach:
+The agent provides a structured draft for human review and final approval.</code></pre>
+<p>Good agents are not necessarily more powerful.</p>
+<p>They are more disciplined.</p>
+<hr>
+</section>
+<section id="cdi-agent-design-principle" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-agent-design-principle">CDI Agent Design Principle</h2>
+<p>In Complex Data Insights, agents should follow one principle:</p>
+<blockquote class="blockquote">
+<p>Build agents that make human work clearer, more consistent, more reviewable, and more responsible.</p>
+</blockquote>
+<p>That means an agent should support:</p>
+<pre class="text"><code>clarity,
+reproducibility,
+documentation,
+evaluation,
+human judgment,
+and responsible action.</code></pre>
+<p>An agent that produces fast but unreviewed output is not enough.</p>
+<p>An agent that helps the user think, check, explain, and improve is more valuable.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>An AI agent should begin with purpose and scope.</p>
+<p>A responsible agent has a defined role, expected inputs, workflow steps, output standards, review rules, and boundaries.</p>
+<p>In this guide, an AI agent is not treated as an autonomous replacement for human work.</p>
+<p>It is treated as a reusable, human-led workflow component.</p>
+<p>A useful agent should help people work more clearly, consistently, and responsibly.</p>
+<p>The next chapter builds on this foundation by defining the inputs, context, and memory rules that make an agent usable across repeated tasks.</p>
 
 
 </section>
@@ -845,11 +1235,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./09-ai-operating-system-for-work.html" class="pagination-link" aria-label="AI Operating System for Work">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">AI Operating System for Work</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./11-agent-inputs-context-and-memory.html" class="pagination-link" aria-label="Agent Inputs, Context, and Memory">
+        <span class="nav-page-text"><span class="chapter-title">Agent Inputs, Context, and Memory</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

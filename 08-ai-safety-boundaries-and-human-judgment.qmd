@@ -1,0 +1,475 @@
+# AI Safety Boundaries and Human Judgment {#ai-safety-boundaries-and-human-judgment}
+
+:::cdi-message
+- **ID:** AI-008
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows
+- **Theme:** AI systems need clear safety boundaries because fluent outputs still require human judgment
+:::
+
+AI can support many kinds of work.
+
+It can summarize documents, draft text, explain concepts, write code, analyze tables, generate ideas, and help organize decisions.
+
+But AI support does not remove human responsibility.
+
+A safe AI system must define what AI is allowed to do, what it is not allowed to do, when human review is required, and when the work should stop or be escalated.
+
+Safety is not only about avoiding harmful outputs.
+
+It is also about protecting quality, privacy, fairness, trust, and accountability.
+
+---
+
+## Why Safety Boundaries Matter
+
+AI systems can produce outputs that look complete even when they are incomplete.
+
+They can sound confident even when they are uncertain.
+
+They can generate plausible explanations without enough evidence.
+
+They can miss context that a human expert would recognize immediately.
+
+They can also be misused when people delegate too much judgment to the system.
+
+For this reason, every AI workflow should include boundaries.
+
+A boundary is a clear rule about what the system can do safely and where human judgment must take over.
+
+```text
+AI assistance
+  ↓
+Boundary check
+  ↓
+Human review
+  ↓
+Decision or escalation
+```
+
+Without boundaries, AI use becomes risky because the user may not know where assistance ends and responsibility begins.
+
+---
+
+## The Core Safety Principle
+
+The core safety principle in this guide is simple:
+
+> AI may assist the work, but humans remain responsible for decisions, consequences, and communication.
+
+This principle protects both the user and the people affected by the output.
+
+It also keeps AI inside the Human–AI–Human workflow.
+
+```text
+Human frames the task
+        ↓
+AI assists within defined limits
+        ↓
+Human evaluates, decides, documents, and acts
+```
+
+The final decision should not be transferred to AI when the outcome affects people, resources, rights, health, safety, money, careers, education, or public communication.
+
+---
+
+## Common Risk Areas
+
+AI systems do not carry the same level of risk in every situation.
+
+Some tasks are low risk.
+
+Some tasks require careful review.
+
+Some tasks should never be handled by AI alone.
+
+Common risk areas include:
+
+- factual accuracy,
+- privacy and confidentiality,
+- legal or policy compliance,
+- health and safety,
+- financial decisions,
+- bias and unfair treatment,
+- academic integrity,
+- professional accountability,
+- security and misuse,
+- and reputational harm.
+
+A responsible workflow identifies these risks before the AI output is used.
+
+---
+
+## Low-Risk, Medium-Risk, and High-Risk AI Tasks
+
+A practical AI system can classify tasks by risk level.
+
+This does not need to be complicated.
+
+The goal is to help the user decide how much review is required.
+
+| Risk level | Example tasks | Required control |
+|---|---|---|
+| Low risk | brainstorming, outline generation, rewriting a non-sensitive paragraph, explaining a general concept | light human review |
+| Medium risk | summarizing reports, drafting professional communication, reviewing code, analyzing non-sensitive data | structured review and source checking |
+| High risk | medical, legal, financial, safety, hiring, disciplinary, policy, or sensitive personal decisions | expert review, documentation, and possible escalation |
+
+AI can still support high-risk work in limited ways, such as organizing questions, summarizing provided material, or preparing a checklist.
+
+But it should not become the final decision-maker.
+
+---
+
+## Safety Boundary Questions
+
+Before using AI output, ask:
+
+1. What decision or action could this output influence?
+2. Who could be affected if the output is wrong?
+3. What evidence supports the output?
+4. What information is missing?
+5. Does the task involve sensitive, private, regulated, or high-stakes content?
+6. Does this require expert judgment?
+7. How will the final output be reviewed and documented?
+
+These questions turn safety into a repeatable habit.
+
+They help prevent overconfidence.
+
+They also create a record of responsible use.
+
+---
+
+## Human Judgment Checkpoints
+
+Human judgment should appear at several points in an AI workflow.
+
+```text
+Task framing
+  ↓
+Context selection
+  ↓
+AI generation
+  ↓
+Output evaluation
+  ↓
+Risk review
+  ↓
+Final decision
+  ↓
+Documentation
+```
+
+Each checkpoint has a purpose.
+
+During task framing, the human decides whether AI is appropriate.
+
+During context selection, the human decides what materials can be safely shared.
+
+During output evaluation, the human checks accuracy, relevance, completeness, and tone.
+
+During risk review, the human checks whether the output could cause harm or mislead others.
+
+During final decision-making, the human accepts responsibility for the action taken.
+
+---
+
+## Privacy and Confidentiality Boundaries
+
+AI workflows often involve documents, data, emails, notes, transcripts, code, or reports.
+
+Before using AI with any material, ask whether the content includes sensitive information.
+
+Sensitive information may include:
+
+- personal identifiers,
+- medical or health information,
+- financial information,
+- private student or employee records,
+- confidential research data,
+- internal business strategy,
+- unpublished manuscripts,
+- passwords, tokens, or API keys,
+- and any information the user does not have permission to share.
+
+A safe workflow should avoid pasting sensitive information into AI tools unless the tool, policy, consent, and data handling arrangement are appropriate.
+
+When possible, remove identifiers, summarize instead of copying, or use approved internal systems.
+
+---
+
+## Accuracy Boundaries
+
+AI can generate convincing statements that still need verification.
+
+Accuracy boundaries define when evidence is required.
+
+For factual work, the workflow should ask:
+
+- Is the claim supported by a source?
+- Is the source current enough?
+- Is the source credible for this topic?
+- Is the AI summarizing provided material or generating from memory?
+- Are there conflicting sources?
+- Does the result need domain expert review?
+
+For research, analysis, medicine, law, finance, policy, education, or public communication, unsupported AI claims should not be treated as final.
+
+The output should be checked against trusted sources, data, or expert judgment.
+
+---
+
+## Bias and Fairness Boundaries
+
+AI systems can reproduce bias from training data, user prompts, missing context, or poor evaluation.
+
+This matters especially when AI output affects people.
+
+Examples include:
+
+- evaluating students,
+- screening job applicants,
+- writing performance reviews,
+- describing communities,
+- analyzing social or health data,
+- recommending services,
+- or making decisions about eligibility, risk, or opportunity.
+
+A fairness boundary asks whether the AI output treats people respectfully, avoids stereotypes, and uses relevant evidence rather than assumptions.
+
+If the output influences a real decision about people, it needs careful human review.
+
+---
+
+## Safety Boundaries for Learners
+
+Learners need AI boundaries because AI can help them learn or help them avoid learning.
+
+A healthy learning workflow uses AI to:
+
+- explain difficult ideas,
+- generate practice questions,
+- give feedback,
+- compare approaches,
+- suggest study plans,
+- and help revise work after the learner has tried.
+
+A weak learning workflow uses AI to replace the learner's thinking.
+
+The boundary is not simply whether AI was used.
+
+The boundary is whether the learner remains active.
+
+```text
+Learner attempts
+  ↓
+AI supports
+  ↓
+Learner explains back
+  ↓
+Human or mentor reviews
+```
+
+This keeps AI as a learning partner rather than a shortcut around learning.
+
+---
+
+## Safety Boundaries for Professional Work
+
+Professional AI use requires accountability.
+
+When AI supports professional work, the user should be able to explain:
+
+- what AI was used for,
+- what materials were provided,
+- what output was produced,
+- what was changed by the human,
+- what checks were performed,
+- and who approved the final version.
+
+This is especially important for reports, recommendations, analyses, policies, public content, client work, and team decisions.
+
+Professional AI systems should not hide AI use when transparency is expected.
+
+They should also avoid overstating certainty.
+
+---
+
+## The Escalation Rule
+
+Some AI outputs should not be used immediately.
+
+They should be escalated.
+
+Escalation means passing the output to a qualified person, trusted process, or higher level of review before action is taken.
+
+Escalation is needed when:
+
+- the output affects health, safety, money, legal rights, employment, education, or public trust,
+- the user is uncertain about the accuracy,
+- the output conflicts with known evidence,
+- the data is sensitive or confidential,
+- the situation involves vulnerable people,
+- or the consequences of error are serious.
+
+Escalation is not a failure.
+
+It is part of responsible system design.
+
+---
+
+## A Practical AI Safety Checklist
+
+Use this checklist before finalizing AI-supported work.
+
+```text
+AI Safety Checklist
+
+[ ] The task is appropriate for AI support.
+[ ] Sensitive information was protected.
+[ ] The output was checked for factual accuracy.
+[ ] The output was checked against the provided context.
+[ ] Unsupported claims were removed or verified.
+[ ] Possible bias or unfair framing was reviewed.
+[ ] The level of risk was identified.
+[ ] High-risk outputs were escalated for expert review.
+[ ] The human user made the final decision.
+[ ] AI use was documented where appropriate.
+```
+
+This checklist can be adapted for education, research, data analysis, communication, and organizational workflows.
+
+---
+
+## Mini Example: AI-Supported Health Information
+
+A learner asks AI:
+
+```text
+My child has a serious symptom. What medicine should I give?
+```
+
+This is a high-risk task because it involves health, a child, and possible harm if the advice is wrong.
+
+A safe AI system should not act as a doctor.
+
+A better workflow is:
+
+```text
+Identify the seriousness of the symptom
+  ↓
+Encourage urgent medical care when warning signs appear
+  ↓
+Help the user prepare questions and observations for a clinician
+  ↓
+Avoid prescribing medicine without examination
+```
+
+In this case, AI can help organize information, but the medical decision must move to qualified care.
+
+The boundary protects the user from false confidence.
+
+---
+
+## Mini Example: AI-Supported Report Writing
+
+A researcher uses AI to draft a report section.
+
+This is often a medium-risk task.
+
+The safe workflow is:
+
+```text
+Researcher provides notes and data summary
+  ↓
+AI drafts a structured section
+  ↓
+Researcher checks claims against sources and results
+  ↓
+Researcher revises interpretation
+  ↓
+Final report documents methods and limitations
+```
+
+AI can help with structure and clarity.
+
+But the researcher remains responsible for evidence, interpretation, and final claims.
+
+---
+
+## Safety Documentation
+
+A responsible AI workflow should leave a small record.
+
+The record does not need to be long.
+
+It should answer:
+
+```text
+What was the AI used for?
+What input or context was provided?
+What risks were considered?
+What checks were performed?
+What was changed by the human?
+Who approved or finalized the output?
+```
+
+This makes the workflow easier to audit, improve, teach, and defend.
+
+It also supports transparency when AI is used in professional or educational settings.
+
+---
+
+## CDI Practice Pattern
+
+In Complex Data Insights workflows, AI safety should be treated as part of the system architecture.
+
+```text
+Problem framing
+  ↓
+Context design
+  ↓
+AI assistance
+  ↓
+Evaluation
+  ↓
+Safety boundary check
+  ↓
+Human judgment
+  ↓
+Documentation
+```
+
+This pattern reinforces the main philosophy of the guide.
+
+AI is useful because it can assist work.
+
+AI is safe when human judgment remains active.
+
+AI is trustworthy when outputs are evaluated, boundaries are respected, and decisions are documented.
+
+---
+
+## Chapter Summary
+
+AI safety is not only a technical issue.
+
+It is a workflow issue.
+
+A responsible AI system defines what AI can do, what it cannot do, when review is needed, and when escalation is required.
+
+Safety boundaries protect people, decisions, data, and trust.
+
+They also make AI workflows more teachable, reproducible, and professional.
+
+The key lesson is this:
+
+> The stronger the consequence of an AI-supported output, the stronger the human review must be.
+
+---
+
+## Looking Ahead
+
+The next chapter introduces the idea of an AI operating system for work.
+
+It shows how prompts, context, evaluation, safety, documentation, and human review can be connected into a practical work system that supports repeated AI-enabled tasks.

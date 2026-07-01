@@ -1,0 +1,572 @@
+# Agent Purpose and Scope {#agent-purpose-and-scope}
+
+:::cdi-message
+- **ID:** AI-010
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, professionals, and teams designing reusable AI-assisted workflows
+- **Theme:** A useful AI agent begins with a clear purpose, a defined scope, and human responsibility
+:::
+
+An AI agent should not begin with a tool.
+
+It should begin with a purpose.
+
+Before deciding what model to use, what prompt to write, what files to provide, or what workflow to automate, the designer must answer a simpler question:
+
+> What work should this agent help a human do better?
+
+This chapter begins Part III of the guide: **Reusable AI Agent Template**.
+
+The goal is not to build mysterious autonomous systems.
+
+The goal is to design reusable, inspectable, human-led AI assistants that support real work.
+
+---
+
+## From AI Workflow to AI Agent
+
+In earlier chapters, we designed AI workflows.
+
+A workflow is a sequence of steps.
+
+An agent is a reusable workflow with a defined role.
+
+A simple AI workflow might look like this:
+
+```text
+User provides a task
+  ↓
+AI generates a draft
+  ↓
+Human reviews the draft
+  ↓
+Human revises, approves, or rejects the output
+```
+
+An AI agent adds structure.
+
+It has a purpose, boundaries, expected inputs, operating rules, output standards, review steps, and improvement practices.
+
+```text
+Agent purpose
+  ↓
+Required inputs
+  ↓
+Context and knowledge
+  ↓
+Workflow steps
+  ↓
+Decision logic
+  ↓
+Output format
+  ↓
+Human review
+  ↓
+Improvement loop
+```
+
+The difference is discipline.
+
+A prompt may help once.
+
+An agent should help repeatedly.
+
+---
+
+## What an AI Agent Means in This Guide
+
+In this guide, an AI agent means:
+
+> A reusable AI-supported workflow designed to perform a defined role under human direction, using clear inputs, boundaries, review rules, and output standards.
+
+This definition is intentionally practical.
+
+It does not require advanced software engineering.
+
+It does not require full automation.
+
+It does not require the agent to act independently.
+
+An agent can be as simple as a structured assistant for reviewing writing, organizing research notes, preparing a learning plan, analyzing a table, or drafting a report.
+
+What makes it an agent is not complexity.
+
+What makes it an agent is repeatable responsibility.
+
+---
+
+## The Human-Led Agent Model
+
+A responsible AI agent remains inside the Human–AI–Human model.
+
+```{mermaid}
+flowchart TD
+
+    A[Human defines purpose]
+    B[Human provides context and inputs]
+    C[AI agent performs a defined workflow]
+    D[AI agent produces a structured output]
+    E[Human evaluates the output]
+    F[Human decides, documents, and acts]
+    G[Human improves the agent if needed]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    E --> G
+    G --> A
+```
+
+The agent supports the work.
+
+It does not own the work.
+
+The agent may summarize, classify, draft, compare, explain, transform, check, or suggest.
+
+The human remains responsible for deciding whether the output is correct, appropriate, ethical, and useful.
+
+---
+
+## Why Purpose Comes First
+
+Many AI workflows fail because the purpose is vague.
+
+The user says:
+
+```text
+Help me with this.
+```
+
+But the system does not know what kind of help is needed.
+
+Should it summarize?
+
+Should it critique?
+
+Should it rewrite?
+
+Should it extract key points?
+
+Should it generate code?
+
+Should it identify risks?
+
+Should it ask clarifying questions?
+
+Should it produce a final answer?
+
+Without purpose, the AI may produce something fluent but misaligned.
+
+A good agent begins with a clear purpose statement.
+
+```text
+This agent helps learners turn rough study notes into clear revision summaries while preserving the original meaning and highlighting concepts that need human review.
+```
+
+That statement already defines the work better than a generic instruction.
+
+It tells us:
+
+- who the agent serves,
+- what input it works with,
+- what output it should produce,
+- and where human review remains necessary.
+
+---
+
+## A Purpose Statement Template
+
+Every reusable agent should have a short purpose statement.
+
+A useful template is:
+
+```text
+This agent helps [user/audience] to [main task] using [inputs/context] so that [intended outcome], while [important boundary or human review rule].
+```
+
+Examples:
+
+```text
+This agent helps students convert class notes into exam revision summaries using their own notes and syllabus topics so that they can study more systematically, while reminding them to verify uncertain points with their teacher or textbook.
+```
+
+```text
+This agent helps researchers screen article abstracts using predefined inclusion and exclusion criteria so that early-stage literature review is more consistent, while keeping final inclusion decisions under human review.
+```
+
+```text
+This agent helps analysts review a results table using column definitions and project context so that findings can be interpreted more clearly, while avoiding claims that are not supported by the data.
+```
+
+A strong purpose statement reduces confusion before the agent is used.
+
+---
+
+## Defining Agent Scope
+
+Purpose explains why the agent exists.
+
+Scope explains what the agent is allowed to do.
+
+Scope should define:
+
+1. the agent's role,
+2. the tasks it can perform,
+3. the tasks it should not perform,
+4. the inputs it requires,
+5. the outputs it should produce,
+6. the risks that require human review,
+7. and the situations where the agent should stop or escalate.
+
+Scope protects both the user and the system.
+
+An agent with no scope can easily drift into unsafe, low-quality, or misleading output.
+
+---
+
+## In-Scope and Out-of-Scope Work
+
+A reusable agent should include an explicit in-scope and out-of-scope section.
+
+For example, a **Research and Learning Agent** may be in scope for:
+
+```text
+- summarizing user-provided learning materials,
+- creating study questions,
+- explaining concepts at different levels,
+- comparing definitions,
+- identifying unclear points,
+- and suggesting a revision plan.
+```
+
+The same agent may be out of scope for:
+
+```text
+- inventing citations,
+- completing graded assignments dishonestly,
+- making final academic claims without evidence,
+- replacing teacher feedback,
+- or presenting uncertain information as verified fact.
+```
+
+The out-of-scope section is not a weakness.
+
+It is part of responsible design.
+
+A trustworthy agent knows its limits.
+
+---
+
+## Agent Scope Card
+
+A simple scope card can be used before building any agent.
+
+```text
+Agent name:
+Primary audience:
+Main purpose:
+Main tasks:
+Required inputs:
+Expected outputs:
+In-scope work:
+Out-of-scope work:
+Human review required when:
+Escalation or stop conditions:
+Documentation needed:
+```
+
+This card turns an idea into a design object.
+
+Instead of saying, "Let us build an AI agent," the designer can say:
+
+> Let us define what this agent is responsible for, what it needs, what it produces, and where human judgment enters.
+
+---
+
+## Example: Learning Support Agent
+
+A learning support agent might be defined as follows.
+
+```text
+Agent name:
+Learning Support Agent
+
+Primary audience:
+Students, mentors, and self-directed learners
+
+Main purpose:
+Help learners understand, organize, and review learning materials.
+
+Main tasks:
+Summarize notes, explain concepts, generate practice questions, and identify unclear points.
+
+Required inputs:
+Topic, learner level, notes or source material, learning goal, and any constraints.
+
+Expected outputs:
+Clear explanation, revision summary, practice questions, and review checklist.
+
+In-scope work:
+Learning support, explanation, study planning, and self-assessment prompts.
+
+Out-of-scope work:
+Dishonest assignment completion, unsupported factual claims, and replacing teacher or expert judgment.
+
+Human review required when:
+The output affects grades, public communication, decisions, or sensitive topics.
+
+Escalation or stop conditions:
+The agent should stop when the task asks for deception, unsupported claims, or expert-only advice.
+
+Documentation needed:
+Record input materials, prompt version, output date, and human review notes.
+```
+
+This is not yet a full agent.
+
+It is the agent's foundation.
+
+---
+
+## Example: Data Analysis Support Agent
+
+A data analysis support agent requires tighter boundaries.
+
+```text
+Agent name:
+Data Analysis Support Agent
+
+Primary audience:
+Analysts, students, researchers, and data science learners
+
+Main purpose:
+Help users inspect data, plan analysis steps, interpret outputs, and communicate findings carefully.
+
+Main tasks:
+Review column names, suggest cleaning steps, explain model outputs, draft interpretation notes, and identify limitations.
+
+Required inputs:
+Dataset description, column definitions, analysis goal, code or output tables, and known limitations.
+
+Expected outputs:
+Analysis plan, quality checks, interpretation notes, caveats, and suggested next steps.
+
+In-scope work:
+Explanation, review, planning, documentation, and reproducibility support.
+
+Out-of-scope work:
+Making unsupported causal claims, hiding uncertainty, fabricating results, or replacing statistical review.
+
+Human review required when:
+Results will be used for publication, policy, clinical work, financial decisions, or public reporting.
+
+Escalation or stop conditions:
+The agent should stop when data are missing, definitions are unclear, or the user requests claims beyond the evidence.
+
+Documentation needed:
+Record dataset version, analysis goal, assumptions, checks performed, and final human decision.
+```
+
+This agent can be useful.
+
+But only because its role is limited, documented, and reviewable.
+
+---
+
+## Scope Drift
+
+Scope drift happens when an agent gradually starts doing work it was not designed to do.
+
+For example:
+
+```text
+A study support agent becomes an assignment-writing agent.
+A writing review agent becomes a fact-invention agent.
+A data interpretation agent becomes a decision-making authority.
+A research assistant becomes a citation generator without verification.
+```
+
+Scope drift is dangerous because it may feel natural.
+
+The agent produces confident output.
+
+The user becomes comfortable.
+
+The boundaries become loose.
+
+To prevent scope drift, every agent should include review questions:
+
+```text
+Is this task still within the agent's defined purpose?
+Are the required inputs available?
+Is the requested output appropriate?
+Does this task require expert or human approval?
+Could this output cause harm if wrong?
+```
+
+If the answer raises concern, the agent should slow down, request better context, or escalate to human review.
+
+---
+
+## The Minimum Useful Agent
+
+An AI agent does not need to be large.
+
+A minimum useful agent needs only five elements:
+
+```text
+Purpose
+Inputs
+Workflow
+Output standard
+Human review rule
+```
+
+These five elements are enough to move from a casual prompt to a reusable system.
+
+```{mermaid}
+flowchart LR
+
+    A[Purpose]
+    B[Inputs]
+    C[Workflow]
+    D[Output Standard]
+    E[Human Review Rule]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+```
+
+A more advanced agent may also include memory rules, tool use, evaluation rubrics, logs, versioning, and maintenance procedures.
+
+But the minimum should always be present.
+
+---
+
+## Agent Naming
+
+A good agent name should describe the work clearly.
+
+Weak names are vague:
+
+```text
+AI Helper
+Smart Bot
+Productivity Assistant
+Research AI
+```
+
+Stronger names are role-specific:
+
+```text
+Research and Learning Agent
+Career and Portfolio Agent
+Data Analysis Support Agent
+Communication and Reporting Agent
+```
+
+The name should help the user understand what the agent is for.
+
+It should not exaggerate what the agent can do.
+
+---
+
+## Agent Purpose Checklist
+
+Before building an agent, ask:
+
+```text
+What human problem does this agent support?
+Who is the intended user?
+What inputs does the agent need?
+What should the agent produce?
+What should the agent avoid doing?
+What decisions must remain human-led?
+What risks appear if the output is wrong?
+How will the output be reviewed?
+How will the agent be improved over time?
+```
+
+If these questions cannot be answered, the agent is not ready for reuse.
+
+---
+
+## Common Mistakes
+
+A common mistake is building an agent around a tool instead of a task.
+
+```text
+Weak approach:
+Let us build a chatbot.
+
+Stronger approach:
+Let us build a research screening assistant that helps compare abstracts against predefined inclusion criteria.
+```
+
+Another mistake is making the agent too broad.
+
+```text
+Weak approach:
+This agent helps with everything related to work.
+
+Stronger approach:
+This agent helps draft and review weekly project updates using a fixed reporting structure.
+```
+
+A third mistake is hiding human review.
+
+```text
+Weak approach:
+The agent gives the answer.
+
+Stronger approach:
+The agent provides a structured draft for human review and final approval.
+```
+
+Good agents are not necessarily more powerful.
+
+They are more disciplined.
+
+---
+
+## CDI Agent Design Principle
+
+In Complex Data Insights, agents should follow one principle:
+
+> Build agents that make human work clearer, more consistent, more reviewable, and more responsible.
+
+That means an agent should support:
+
+```text
+clarity,
+reproducibility,
+documentation,
+evaluation,
+human judgment,
+and responsible action.
+```
+
+An agent that produces fast but unreviewed output is not enough.
+
+An agent that helps the user think, check, explain, and improve is more valuable.
+
+---
+
+## Chapter Summary
+
+An AI agent should begin with purpose and scope.
+
+A responsible agent has a defined role, expected inputs, workflow steps, output standards, review rules, and boundaries.
+
+In this guide, an AI agent is not treated as an autonomous replacement for human work.
+
+It is treated as a reusable, human-led workflow component.
+
+A useful agent should help people work more clearly, consistently, and responsibly.
+
+The next chapter builds on this foundation by defining the inputs, context, and memory rules that make an agent usable across repeated tasks.
+

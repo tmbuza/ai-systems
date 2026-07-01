@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>Context and Knowledge Systems – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./07-ai-output-evaluation.html" rel="next">
+<link href="./05-ai-workflow-design.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html">Part II: AI Systems</a></li><li class="breadcrumb-item"><a href="./06-context-and-knowledge-systems.html"><span class="chapter-title">Context and Knowledge Systems</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -219,7 +166,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-context-and-knowledge-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Context and Knowledge Systems</span></a>
+  <a href="./06-context-and-knowledge-systems.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Context and Knowledge Systems</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,29 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#why-context-matters" id="toc-why-context-matters" class="nav-link active" data-scroll-target="#why-context-matters">Why Context Matters</a></li>
+  <li><a href="#context-as-a-system-layer" id="toc-context-as-a-system-layer" class="nav-link" data-scroll-target="#context-as-a-system-layer">Context as a System Layer</a></li>
+  <li><a href="#types-of-context" id="toc-types-of-context" class="nav-link" data-scroll-target="#types-of-context">Types of Context</a></li>
+  <li><a href="#knowledge-grounding" id="toc-knowledge-grounding" class="nav-link" data-scroll-target="#knowledge-grounding">Knowledge Grounding</a></li>
+  <li><a href="#the-context-package" id="toc-the-context-package" class="nav-link" data-scroll-target="#the-context-package">The Context Package</a></li>
+  <li><a href="#example-weak-context-versus-strong-context" id="toc-example-weak-context-versus-strong-context" class="nav-link" data-scroll-target="#example-weak-context-versus-strong-context">Example: Weak Context Versus Strong Context</a></li>
+  <li><a href="#context-and-reproducibility" id="toc-context-and-reproducibility" class="nav-link" data-scroll-target="#context-and-reproducibility">Context and Reproducibility</a></li>
+  <li><a href="#context-boundaries" id="toc-context-boundaries" class="nav-link" data-scroll-target="#context-boundaries">Context Boundaries</a></li>
+  <li><a href="#context-drift" id="toc-context-drift" class="nav-link" data-scroll-target="#context-drift">Context Drift</a></li>
+  <li><a href="#context-in-cdi-system-guides" id="toc-context-in-cdi-system-guides" class="nav-link" data-scroll-target="#context-in-cdi-system-guides">Context in CDI System Guides</a></li>
+  <li><a href="#a-practical-context-template" id="toc-a-practical-context-template" class="nav-link" data-scroll-target="#a-practical-context-template">A Practical Context Template</a></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">Common Mistakes</a></li>
+  <li><a href="#chapter-reflection" id="toc-chapter-reflection" class="nav-link" data-scroll-target="#chapter-reflection">Chapter Reflection</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html">Part II: AI Systems</a></li><li class="breadcrumb-item"><a href="./06-context-and-knowledge-systems.html"><span class="chapter-title">Context and Knowledge Systems</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="context-and-knowledge-systems" class="quarto-section-identifier"><span class="chapter-title">Context and Knowledge Systems</span></span></h1>
 </div>
 
 
@@ -374,69 +331,343 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-006</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> AI systems become more useful when they are grounded in clear context, trusted knowledge, and explicit boundaries</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>AI does not work with meaning in the same way a person does.</p>
+<p>It responds to the information it receives, the patterns it has learned, the instructions it is given, and the context available during the task.</p>
+<p>This means that context is not a small detail.</p>
+<p>Context is part of the system.</p>
+<p>A weak AI workflow often begins with a vague request.</p>
+<p>A stronger AI workflow begins with a context package.</p>
+<p>That package may include the goal, audience, source material, examples, constraints, definitions, data tables, style expectations, quality criteria, and review instructions.</p>
+<p>When context is missing, AI may fill the gap with assumptions.</p>
+<p>When context is structured, AI can become more focused, useful, and easier to evaluate.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
+<section id="why-context-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-context-matters">Why Context Matters</h2>
+<p>A prompt is not only a question.</p>
+<p>It is a container for the task.</p>
+<p>The same AI tool can produce very different outputs depending on what the user provides.</p>
+<p>Compare these two requests:</p>
+<pre class="text"><code>Explain this result.</code></pre>
+<p>and:</p>
+<pre class="text"><code>Explain this differential abundance result for a learner audience.
+Use the table below.
+Focus on biological interpretation, not statistical formulas.
+Mention uncertainty and avoid claiming causality.
+End with three follow-up checks.</code></pre>
+<p>The second request is stronger because it gives the system direction.</p>
+<p>It defines the task, the audience, the source of evidence, the level of explanation, the limits of interpretation, and the expected structure of the output.</p>
+<p>This is the difference between asking AI to guess and asking AI to work inside a designed system.</p>
 <hr>
 </section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="context-as-a-system-layer" class="level2">
+<h2 class="anchored" data-anchor-id="context-as-a-system-layer">Context as a System Layer</h2>
+<p>In the AI Systems architecture, context sits between the human problem and the AI response.</p>
+<pre class="text"><code>Human problem
+  ↓
+Context package
+  ↓
+AI assistance
+  ↓
+Human review
+  ↓
+Documented output</code></pre>
+<p>The context package helps translate a human need into a task the AI system can assist with.</p>
+<p>It reduces ambiguity.</p>
+<p>It improves relevance.</p>
+<p>It makes evaluation easier.</p>
+<p>It also makes the workflow more reproducible because another person can inspect what information was given to the AI.</p>
+<hr>
+</section>
+<section id="types-of-context" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-context">Types of Context</h2>
+<p>Context can come in many forms.</p>
+<p>A responsible AI workflow does not treat all context as equal.</p>
+<p>Some context defines the task.</p>
+<p>Some context provides evidence.</p>
+<p>Some context sets limits.</p>
+<p>Some context controls the output format.</p>
+<p>A useful way to organize context is:</p>
+<pre class="text"><code>Task context
+Audience context
+Domain context
+Evidence context
+Format context
+Constraint context
+Review context</code></pre>
+<p>Each type answers a different question.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Context type</th>
+<th>Question it answers</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Task context</td>
+<td>What should be done?</td>
+<td>Summarize, classify, compare, draft, critique, analyze</td>
+</tr>
+<tr class="even">
+<td>Audience context</td>
+<td>Who is this for?</td>
+<td>Beginner learner, research team, manager, public audience</td>
+</tr>
+<tr class="odd">
+<td>Domain context</td>
+<td>What field or setting matters?</td>
+<td>Career development, omics analysis, public health, education</td>
+</tr>
+<tr class="even">
+<td>Evidence context</td>
+<td>What source material should be used?</td>
+<td>Dataset, notes, article, result table, transcript, code</td>
+</tr>
+<tr class="odd">
+<td>Format context</td>
+<td>What should the output look like?</td>
+<td>Table, report section, checklist, email, teaching explanation</td>
+</tr>
+<tr class="even">
+<td>Constraint context</td>
+<td>What should be avoided or limited?</td>
+<td>Do not invent sources, do not overclaim, use simple language</td>
+</tr>
+<tr class="odd">
+<td>Review context</td>
+<td>How should quality be checked?</td>
+<td>Flag uncertainty, list assumptions, identify missing information</td>
+</tr>
+</tbody>
+</table>
+<p>When these parts are missing, the output may still sound polished.</p>
+<p>But polished output is not the same as reliable output.</p>
+<hr>
+</section>
+<section id="knowledge-grounding" class="level2">
+<h2 class="anchored" data-anchor-id="knowledge-grounding">Knowledge Grounding</h2>
+<p>Knowledge grounding means connecting AI work to trusted source material.</p>
+<p>Grounding may include:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>documents,</li>
+<li>datasets,</li>
+<li>tables,</li>
+<li>code,</li>
+<li>notes,</li>
+<li>project files,</li>
+<li>references,</li>
+<li>examples,</li>
+<li>policies,</li>
+<li>rubrics,</li>
+<li>or domain-specific definitions.</li>
 </ul>
+<p>Grounding helps reduce unsupported claims.</p>
+<p>It also helps the human reviewer trace where an output came from.</p>
+<p>In a learning setting, grounding might mean asking AI to explain only from a provided lesson.</p>
+<p>In a research setting, grounding might mean asking AI to summarize only from supplied papers or extracted notes.</p>
+<p>In a data workflow, grounding might mean asking AI to interpret only the columns and results in a provided table.</p>
+<p>In a professional setting, grounding might mean asking AI to draft a message using only approved organizational facts.</p>
+<p>The goal is not to make AI perfect.</p>
+<p>The goal is to make the workflow more inspectable.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
-<hr>
-</section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="the-context-package" class="level2">
+<h2 class="anchored" data-anchor-id="the-context-package">The Context Package</h2>
+<p>A context package is a reusable bundle of information prepared before asking AI to assist.</p>
+<p>It can be simple or detailed.</p>
+<p>For a small task, it may be a paragraph.</p>
+<p>For a larger workflow, it may include multiple files, examples, rules, and evaluation criteria.</p>
+<p>A simple context package can follow this pattern:</p>
+<pre class="text"><code>Goal:
+What should the AI help produce?
 
-</div>
+Audience:
+Who will read or use the output?
+
+Source material:
+What information should the AI rely on?
+
+Constraints:
+What should the AI avoid?
+
+Output format:
+What structure should the answer follow?
+
+Review criteria:
+How will the output be checked?</code></pre>
+<p>This structure turns context into a repeatable part of the workflow.</p>
+<p>It also helps learners understand that good AI work starts before the prompt is written.</p>
+<hr>
+</section>
+<section id="example-weak-context-versus-strong-context" class="level2">
+<h2 class="anchored" data-anchor-id="example-weak-context-versus-strong-context">Example: Weak Context Versus Strong Context</h2>
+<p>A weak AI request might look like this:</p>
+<pre class="text"><code>Write something about AI in education.</code></pre>
+<p>This request is broad.</p>
+<p>The audience is unclear.</p>
+<p>The purpose is unclear.</p>
+<p>The level of detail is unclear.</p>
+<p>The output format is unclear.</p>
+<p>A stronger version would be:</p>
+<pre class="text"><code>Goal:
+Draft a short section for a beginner-friendly guide on responsible AI use in education.
+
+Audience:
+Secondary school students and early college learners.
+
+Source material:
+Use the Human–AI–Human model: human frames the problem, AI assists, human evaluates and decides.
+
+Constraints:
+Do not present AI as a replacement for learning. Avoid technical jargon. Include one caution about copying AI output without review.
+
+Output format:
+Use 4 short paragraphs and end with a practical checklist.
+
+Review criteria:
+The output should be clear, honest, learner-friendly, and human-led.</code></pre>
+<p>This does not guarantee a perfect response.</p>
+<p>But it gives the AI system a better working environment.</p>
+<p>It also gives the human reviewer a clearer basis for judging quality.</p>
+<hr>
+</section>
+<section id="context-and-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="context-and-reproducibility">Context and Reproducibility</h2>
+<p>Reproducibility is not only about code.</p>
+<p>AI-assisted work also needs reproducible context.</p>
+<p>If a person cannot see what information was given to AI, it becomes difficult to understand the output.</p>
+<p>For important work, a context record should include:</p>
+<pre class="text"><code>Task name
+Date
+Purpose
+Source materials used
+Prompt or instruction used
+AI output summary
+Human review notes
+Final decision or action
+Limitations</code></pre>
+<p>This does not need to be complicated.</p>
+<p>A simple task log can be enough for teaching, mentoring, or project documentation.</p>
+<p>The important point is that AI use should not disappear into a black box.</p>
+<hr>
+</section>
+<section id="context-boundaries" class="level2">
+<h2 class="anchored" data-anchor-id="context-boundaries">Context Boundaries</h2>
+<p>Context can improve AI work, but it also introduces responsibility.</p>
+<p>Not all information should be placed into an AI tool.</p>
+<p>Before sharing context, the human user should ask:</p>
+<pre class="text"><code>Does this contain private information?
+Does this contain sensitive personal data?
+Does this include confidential organizational material?
+Does the task require permission before sharing this content?
+Can the information be anonymized or summarized instead?</code></pre>
+<p>A responsible AI system protects people, organizations, and communities.</p>
+<p>Sometimes the best context is not the full raw material.</p>
+<p>It may be a cleaned summary, anonymized table, synthetic example, or approved excerpt.</p>
+<hr>
+</section>
+<section id="context-drift" class="level2">
+<h2 class="anchored" data-anchor-id="context-drift">Context Drift</h2>
+<p>Context drift happens when the task begins with one purpose but the AI output moves into another direction.</p>
+<p>For example, a user may ask for a cautious interpretation, but the AI output may become too confident.</p>
+<p>A user may provide a small dataset, but the AI may imply broader conclusions.</p>
+<p>A user may ask for a teaching explanation, but the AI may produce technical language.</p>
+<p>Context drift is common when the review criteria are weak.</p>
+<p>To reduce context drift, include reminders such as:</p>
+<pre class="text"><code>Stay within the supplied material.
+Do not infer beyond the evidence.
+Flag uncertainty clearly.
+Use the audience level specified above.
+Return assumptions separately.</code></pre>
+<p>These instructions make the review process easier.</p>
+<p>They also remind the human that evaluation is part of the workflow.</p>
+<hr>
+</section>
+<section id="context-in-cdi-system-guides" class="level2">
+<h2 class="anchored" data-anchor-id="context-in-cdi-system-guides">Context in CDI System Guides</h2>
+<p>Across Complex Data Insights guides, context is a recurring system layer.</p>
+<p>In a data acquisition workflow, context may include the research question, accession list, metadata, and inclusion criteria.</p>
+<p>In a microbiome workflow, context may include sample metadata, sequencing design, taxonomic table, and biological question.</p>
+<p>In a proteomics workflow, context may include differential abundance results, protein identifiers, comparison design, and pathway evidence.</p>
+<p>In a career system, context may include skills, goals, evidence, portfolio artifacts, and opportunity requirements.</p>
+<p>In AI Systems, context connects all of these.</p>
+<p>AI becomes more useful when it understands the task environment.</p>
+<p>But the human remains responsible for choosing, checking, and documenting that environment.</p>
+<hr>
+</section>
+<section id="a-practical-context-template" class="level2">
+<h2 class="anchored" data-anchor-id="a-practical-context-template">A Practical Context Template</h2>
+<p>The following template can be copied into an AI workflow.</p>
+<pre class="text"><code>AI Task Context Package
+
+1. Task title:
+
+2. Purpose:
+
+3. Audience:
+
+4. Source material:
+
+5. Key definitions:
+
+6. Required output:
+
+7. Constraints:
+
+8. Quality checks:
+
+9. Known limitations:
+
+10. Human review decision:</code></pre>
+<p>This template is intentionally simple.</p>
+<p>It can be used by learners, researchers, professionals, mentors, and teams.</p>
+<p>The template reminds users that AI assistance should be framed before it is used and reviewed after it produces output.</p>
+<hr>
+</section>
+<section id="common-mistakes" class="level2">
+<h2 class="anchored" data-anchor-id="common-mistakes">Common Mistakes</h2>
+<p>Several mistakes weaken AI context systems.</p>
+<p>One mistake is giving too little context and expecting a precise answer.</p>
+<p>Another mistake is giving too much unorganized material and expecting the AI to infer the task.</p>
+<p>A third mistake is mixing evidence, instructions, and opinions without labeling them.</p>
+<p>A fourth mistake is failing to tell the AI what not to do.</p>
+<p>A fifth mistake is using AI output without checking whether it stayed within the supplied context.</p>
+<p>A strong context system avoids these problems by separating purpose, evidence, constraints, and review.</p>
+<hr>
+</section>
+<section id="chapter-reflection" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-reflection">Chapter Reflection</h2>
+<p>Before using AI for an important task, ask:</p>
+<pre class="text"><code>What does the AI need to know?
+What should the AI rely on?
+What should the AI ignore?
+What should the AI avoid claiming?
+What format will make the output easiest to review?
+How will a human check the final result?</code></pre>
+<p>These questions turn context into a design practice.</p>
+<p>They also keep AI work aligned with the Human–AI–Human model.</p>
+<hr>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<p>Context is not extra information added after the task.</p>
+<p>Context is a core part of the AI system.</p>
+<p>A strong context package includes the goal, audience, source material, constraints, output format, and review criteria.</p>
+<p>Knowledge grounding makes AI outputs easier to inspect and evaluate.</p>
+<p>Responsible context design also protects privacy, confidentiality, and human judgment.</p>
+<p>The next chapter focuses on evaluating AI outputs so that generated responses can be checked before they are used, shared, or acted upon.</p>
 
 
 </section>
@@ -845,11 +1076,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./05-ai-workflow-design.html" class="pagination-link" aria-label="AI Workflow Design">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">AI Workflow Design</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./07-ai-output-evaluation.html" class="pagination-link" aria-label="AI Output Evaluation">
+        <span class="nav-page-text"><span class="chapter-title">AI Output Evaluation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -1,0 +1,557 @@
+# Agent Output Standards and Review {#agent-output-standards-and-review}
+
+:::cdi-message
+- **ID:** AI-013
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, professionals, and teams designing reusable AI agents
+- **Theme:** Reusable agents need clear output standards and human review before their work can be trusted
+:::
+
+An AI agent is only useful if its outputs can be understood, checked, reused, and improved.
+
+A prompt may produce a helpful answer once.
+
+An agent must produce outputs that are consistent enough to support repeated work.
+
+That means the agent needs standards.
+
+It needs to know what kind of output is expected, what structure to follow, what evidence to include, what uncertainty to show, what assumptions to document, and when the output should be reviewed by a human.
+
+Without output standards, an agent becomes unpredictable.
+
+With output standards, an agent becomes easier to evaluate, teach, maintain, and trust.
+
+---
+
+## Why Output Standards Matter
+
+AI outputs can look polished even when they are incomplete or incorrect.
+
+They may use confident language.
+
+They may organize information well.
+
+They may sound professional.
+
+But presentation quality is not the same as reliability.
+
+A reusable agent should not be judged only by whether its answer sounds good.
+
+It should be judged by whether the output meets the standard required for the task.
+
+Good output standards help answer questions such as:
+
+- Did the agent answer the actual task?
+- Did it use the required context?
+- Did it separate facts from assumptions?
+- Did it identify uncertainty?
+- Did it provide the requested format?
+- Did it avoid unsupported claims?
+- Did it stay within safety and scope boundaries?
+- Is the output ready to use, or does it require revision?
+
+The standard makes review easier because the reviewer knows what to check.
+
+---
+
+## From Output to Deliverable
+
+An agent output is not always the final deliverable.
+
+Sometimes the output is a draft.
+
+Sometimes it is a summary.
+
+Sometimes it is a table.
+
+Sometimes it is a recommendation.
+
+Sometimes it is code.
+
+Sometimes it is a checklist, plan, or report section.
+
+The first question is therefore:
+
+```text
+What kind of output should this agent produce?
+```
+
+The second question is:
+
+```text
+What must be true before this output can be used?
+```
+
+These two questions separate casual AI generation from agent-based workflow design.
+
+---
+
+## Common Agent Output Types
+
+Reusable agents can produce many kinds of outputs.
+
+Examples include:
+
+| Agent type | Typical output | Review focus |
+|---|---|---|
+| Research agent | Reading summary, source table, evidence map | Accuracy, citation quality, relevance |
+| Learning agent | Explanation, quiz, study plan, reflection prompts | Clarity, level, correctness |
+| Career agent | Portfolio plan, CV feedback, project description | Fit, honesty, evidence, tone |
+| Data support agent | Analysis plan, code review, interpretation draft | Reproducibility, statistical caution, assumptions |
+| Communication agent | Email, report section, announcement, presentation notes | Tone, audience fit, completeness |
+| Decision-support agent | Options, trade-offs, recommendation framework | Risk, evidence, uncertainty, human judgment |
+
+The output standard should match the agent type.
+
+A communication agent needs tone and audience standards.
+
+A data support agent needs reproducibility and limitation standards.
+
+A research agent needs evidence and source standards.
+
+A career agent needs honesty and relevance standards.
+
+---
+
+## Minimum Output Standard
+
+Every reusable agent should have a minimum output standard.
+
+At a basic level, the output should include:
+
+1. **Task response** — the direct answer or deliverable requested.
+2. **Reasoning support** — the explanation, evidence, or logic behind the output.
+3. **Assumptions** — any missing information the agent had to infer.
+4. **Limitations** — what the output does not prove or cover.
+5. **Review status** — whether the output is ready, needs human review, or requires more information.
+
+This does not mean every agent output must be long.
+
+A short email draft may not need a long explanation.
+
+But the agent design should still make clear what counts as acceptable output.
+
+---
+
+## Output Format as a Control Mechanism
+
+Output format is not only about appearance.
+
+It is a control mechanism.
+
+A clear format reduces ambiguity.
+
+It makes comparison easier.
+
+It helps reviewers find missing parts.
+
+It also makes outputs easier to reuse in reports, spreadsheets, repositories, learning materials, or decision documents.
+
+For example, instead of asking an agent:
+
+```text
+Review this response.
+```
+
+A stronger instruction is:
+
+```text
+Review this response using the following structure:
+
+1. Main strengths
+2. Missing information
+3. Unsupported claims
+4. Suggested revisions
+5. Final readiness status: Ready / Needs revision / Not ready
+```
+
+The second version gives the agent a standard.
+
+It also gives the human reviewer a structure for checking the response.
+
+---
+
+## Designing an Output Specification
+
+An output specification defines what the agent should produce.
+
+A simple specification can include:
+
+```text
+Agent name:
+Output purpose:
+Audience:
+Required sections:
+Required evidence:
+Required format:
+Tone or style:
+Length range:
+Review criteria:
+Escalation rules:
+```
+
+For example:
+
+```text
+Agent name: Research Summary Agent
+Output purpose: Summarize selected documents for human review
+Audience: Researcher or analyst
+Required sections: Question, key findings, evidence table, uncertainty, next steps
+Required evidence: Source title, date, and short relevance note
+Required format: Markdown with one summary table
+Tone or style: Clear, cautious, non-promotional
+Length range: 600–900 words
+Review criteria: Accuracy, source relevance, completeness, uncertainty
+Escalation rules: Flag conflicting evidence or missing sources
+```
+
+This kind of specification turns the agent from a loose assistant into a workflow component.
+
+---
+
+## Acceptance Criteria
+
+Acceptance criteria define what must be true before an output is considered usable.
+
+They should be specific enough for a human reviewer to apply.
+
+Examples:
+
+```text
+The output is acceptable if:
+- it answers the requested question directly,
+- it uses the provided context,
+- it does not invent unsupported facts,
+- it identifies assumptions,
+- it includes limitations,
+- it follows the requested structure,
+- it is appropriate for the intended audience,
+- and it clearly states whether human review is still needed.
+```
+
+Acceptance criteria are especially important when agents support repeated work.
+
+They prevent the agent from drifting into attractive but unreliable outputs.
+
+---
+
+## Review Levels
+
+Not all outputs require the same level of review.
+
+A reusable AI system should define review levels based on risk.
+
+```text
+Low-risk output
+  ↓
+Light review
+
+Medium-risk output
+  ↓
+Structured review
+
+High-risk output
+  ↓
+Expert review or no autonomous use
+```
+
+Low-risk outputs may include brainstorming, formatting help, or internal learning notes.
+
+Medium-risk outputs may include public communication, project plans, summaries, or draft reports.
+
+High-risk outputs may involve health, legal, financial, safety, employment, governance, or sensitive personal decisions.
+
+The higher the risk, the stronger the human review must be.
+
+---
+
+## Human Review Checklist
+
+A practical agent review checklist can include:
+
+```text
+Output review checklist
+
+[ ] The output answers the actual task.
+[ ] The output follows the required format.
+[ ] The output uses the provided context correctly.
+[ ] The output avoids unsupported claims.
+[ ] The output separates facts from assumptions.
+[ ] The output identifies uncertainty or limitations.
+[ ] The output is appropriate for the audience.
+[ ] The output stays within the agent scope.
+[ ] The output does not create privacy, safety, or ethical concerns.
+[ ] The final human decision is documented.
+```
+
+The checklist does not need to be complicated.
+
+It needs to be used consistently.
+
+---
+
+## Ready, Revise, or Reject
+
+A simple review status helps make decisions visible.
+
+Every important agent output can be classified as:
+
+```text
+Ready
+```
+
+The output meets the standard and can be used after normal human approval.
+
+```text
+Revise
+```
+
+The output is useful but needs correction, clarification, evidence, restructuring, or tone adjustment.
+
+```text
+Reject
+```
+
+The output is misleading, unsafe, unsupported, outside scope, or not useful for the task.
+
+This three-part status system is simple enough for learners and teams to adopt.
+
+It also supports documentation.
+
+---
+
+## Example: Reviewing a Communication Agent Output
+
+Suppose a communication agent drafts an email for a mentor to send to a student.
+
+The output standard may require the message to be:
+
+- encouraging,
+- age-appropriate,
+- clear,
+- not too long,
+- respectful,
+- and aligned with the mentor's voice.
+
+The review checklist may ask:
+
+```text
+[ ] Is the student addressed respectfully?
+[ ] Is the message encouraging without exaggeration?
+[ ] Is the language simple enough for the audience?
+[ ] Is the purpose clear?
+[ ] Is the ending appropriate?
+[ ] Does the message avoid unnecessary pressure?
+```
+
+The agent may produce the draft.
+
+But the mentor remains responsible for approving the final message.
+
+---
+
+## Example: Reviewing a Data Support Agent Output
+
+Suppose a data support agent reviews an analysis plan.
+
+The output standard may require the agent to identify:
+
+- the analysis question,
+- the expected data inputs,
+- the proposed method,
+- assumptions,
+- possible limitations,
+- reproducibility concerns,
+- and suggested checks.
+
+The review checklist may ask:
+
+```text
+[ ] Is the analysis question clear?
+[ ] Are the required data inputs listed?
+[ ] Are assumptions stated?
+[ ] Are limitations acknowledged?
+[ ] Are quality-control checks included?
+[ ] Is the interpretation cautious?
+[ ] Is the final decision left to the analyst?
+```
+
+This keeps the agent in a support role.
+
+It does not allow the agent to replace the analyst's responsibility.
+
+---
+
+## Output Standards for Teaching and Mentorship
+
+In learning environments, output standards also teach discipline.
+
+Learners should not only ask AI for answers.
+
+They should learn how to judge whether an answer is usable.
+
+A teaching-oriented AI agent can require learners to review outputs using questions such as:
+
+```text
+What did the AI get right?
+What might be missing?
+What needs evidence?
+What should be checked by a human?
+What did I learn from this output?
+What will I change before using it?
+```
+
+This builds AI literacy.
+
+It also protects learners from becoming passive users of generated text.
+
+---
+
+## Documentation of Agent Outputs
+
+Reusable agents should leave a small documentation trail.
+
+This does not need to be complex.
+
+A simple log can record:
+
+```text
+Date
+Agent name
+Task
+Input source
+Output type
+Reviewer
+Review status
+Main revision needed
+Final decision
+```
+
+For example:
+
+```text
+2026-07-01 | Research Summary Agent | Summarize three articles | Uploaded PDFs | Evidence summary | TMB | Revise | Add missing limitations | Revised before use
+```
+
+This kind of record supports accountability.
+
+It also helps improve the agent over time.
+
+---
+
+## Common Output Failures
+
+Common output failures include:
+
+| Failure | What it looks like | How to respond |
+|---|---|---|
+| Format drift | The output ignores the required structure | Strengthen the output template |
+| Overconfidence | The output sounds certain without evidence | Require uncertainty and limitations |
+| Missing context | The output does not use supplied materials | Improve input and context checks |
+| Hallucinated facts | The output invents details | Add source requirements and review |
+| Weak audience fit | The tone or complexity is wrong | Define audience and style clearly |
+| Scope creep | The agent performs tasks outside its role | Add boundaries and escalation rules |
+| No decision trail | The output gives no review status | Require Ready / Revise / Reject |
+
+These failures are not only model problems.
+
+They are system design problems.
+
+Better standards reduce the chance of repeated failure.
+
+---
+
+## Agent Output Standard Template
+
+The following template can be reused when designing an agent.
+
+```text
+# Agent Output Standard
+
+Agent name:
+Primary task:
+Output type:
+Audience:
+
+Required output structure:
+1.
+2.
+3.
+
+Required evidence or context:
+-
+-
+
+Required limitations section:
+Yes / No
+
+Required assumptions section:
+Yes / No
+
+Review checklist:
+[ ]
+[ ]
+[ ]
+
+Readiness status:
+Ready / Revise / Reject
+
+Escalation rule:
+When should this output require expert or supervisor review?
+```
+
+This template can be adapted for research, writing, data analysis, learning, career development, or reporting agents.
+
+---
+
+## CDI Practice Pattern
+
+In the CDI approach, an agent output is not considered complete simply because it was generated.
+
+It becomes complete only after it passes through human review.
+
+```text
+Agent produces output
+        ↓
+Output is checked against standards
+        ↓
+Human reviewer accepts, revises, or rejects
+        ↓
+Final output is documented and used responsibly
+```
+
+This pattern keeps AI work practical and accountable.
+
+It also keeps the Human–AI–Human model visible.
+
+---
+
+## Chapter Summary
+
+Reusable agents need output standards.
+
+A good output standard defines the expected structure, evidence, tone, limitations, assumptions, and review criteria.
+
+Human review should be matched to risk.
+
+Low-risk outputs may need light review.
+
+Medium-risk outputs need structured review.
+
+High-risk outputs require expert judgment or should not be delegated to an agent.
+
+The goal is not to slow down AI use.
+
+The goal is to make AI-supported work reliable enough to repeat, teach, improve, and share.
+
+## Looking Ahead
+
+The next chapter focuses on agent improvement and maintenance.
+
+Once an agent has a clear purpose, inputs, workflow logic, and output standard, it still needs to be monitored.
+
+Agents should be revised when tasks change, when outputs drift, when reviewers find recurring errors, or when new standards are needed.
+
+A reusable agent is therefore not a one-time prompt.
+
+It is a maintained workflow component.

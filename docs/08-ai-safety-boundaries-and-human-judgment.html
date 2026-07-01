@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>AI Safety Boundaries and Human Judgment – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./09-ai-operating-system-for-work.html" rel="next">
+<link href="./07-ai-output-evaluation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html">Part II: AI Systems</a></li><li class="breadcrumb-item"><a href="./08-ai-safety-boundaries-and-human-judgment.html"><span class="chapter-title">AI Safety Boundaries and Human Judgment</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -229,7 +176,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-ai-safety-boundaries-and-human-judgment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Safety Boundaries and Human Judgment</span></a>
+  <a href="./08-ai-safety-boundaries-and-human-judgment.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">AI Safety Boundaries and Human Judgment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,34 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#why-safety-boundaries-matter" id="toc-why-safety-boundaries-matter" class="nav-link active" data-scroll-target="#why-safety-boundaries-matter">Why Safety Boundaries Matter</a></li>
+  <li><a href="#the-core-safety-principle" id="toc-the-core-safety-principle" class="nav-link" data-scroll-target="#the-core-safety-principle">The Core Safety Principle</a></li>
+  <li><a href="#common-risk-areas" id="toc-common-risk-areas" class="nav-link" data-scroll-target="#common-risk-areas">Common Risk Areas</a></li>
+  <li><a href="#low-risk-medium-risk-and-high-risk-ai-tasks" id="toc-low-risk-medium-risk-and-high-risk-ai-tasks" class="nav-link" data-scroll-target="#low-risk-medium-risk-and-high-risk-ai-tasks">Low-Risk, Medium-Risk, and High-Risk AI Tasks</a></li>
+  <li><a href="#safety-boundary-questions" id="toc-safety-boundary-questions" class="nav-link" data-scroll-target="#safety-boundary-questions">Safety Boundary Questions</a></li>
+  <li><a href="#human-judgment-checkpoints" id="toc-human-judgment-checkpoints" class="nav-link" data-scroll-target="#human-judgment-checkpoints">Human Judgment Checkpoints</a></li>
+  <li><a href="#privacy-and-confidentiality-boundaries" id="toc-privacy-and-confidentiality-boundaries" class="nav-link" data-scroll-target="#privacy-and-confidentiality-boundaries">Privacy and Confidentiality Boundaries</a></li>
+  <li><a href="#accuracy-boundaries" id="toc-accuracy-boundaries" class="nav-link" data-scroll-target="#accuracy-boundaries">Accuracy Boundaries</a></li>
+  <li><a href="#bias-and-fairness-boundaries" id="toc-bias-and-fairness-boundaries" class="nav-link" data-scroll-target="#bias-and-fairness-boundaries">Bias and Fairness Boundaries</a></li>
+  <li><a href="#safety-boundaries-for-learners" id="toc-safety-boundaries-for-learners" class="nav-link" data-scroll-target="#safety-boundaries-for-learners">Safety Boundaries for Learners</a></li>
+  <li><a href="#safety-boundaries-for-professional-work" id="toc-safety-boundaries-for-professional-work" class="nav-link" data-scroll-target="#safety-boundaries-for-professional-work">Safety Boundaries for Professional Work</a></li>
+  <li><a href="#the-escalation-rule" id="toc-the-escalation-rule" class="nav-link" data-scroll-target="#the-escalation-rule">The Escalation Rule</a></li>
+  <li><a href="#a-practical-ai-safety-checklist" id="toc-a-practical-ai-safety-checklist" class="nav-link" data-scroll-target="#a-practical-ai-safety-checklist">A Practical AI Safety Checklist</a></li>
+  <li><a href="#mini-example-ai-supported-health-information" id="toc-mini-example-ai-supported-health-information" class="nav-link" data-scroll-target="#mini-example-ai-supported-health-information">Mini Example: AI-Supported Health Information</a></li>
+  <li><a href="#mini-example-ai-supported-report-writing" id="toc-mini-example-ai-supported-report-writing" class="nav-link" data-scroll-target="#mini-example-ai-supported-report-writing">Mini Example: AI-Supported Report Writing</a></li>
+  <li><a href="#safety-documentation" id="toc-safety-documentation" class="nav-link" data-scroll-target="#safety-documentation">Safety Documentation</a></li>
+  <li><a href="#cdi-practice-pattern" id="toc-cdi-practice-pattern" class="nav-link" data-scroll-target="#cdi-practice-pattern">CDI Practice Pattern</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html">Part II: AI Systems</a></li><li class="breadcrumb-item"><a href="./08-ai-safety-boundaries-and-human-judgment.html"><span class="chapter-title">AI Safety Boundaries and Human Judgment</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="ai-safety-boundaries-and-human-judgment" class="quarto-section-identifier"><span class="chapter-title">AI Safety Boundaries and Human Judgment</span></span></h1>
 </div>
 
 
@@ -374,69 +336,380 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-008</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> AI systems need clear safety boundaries because fluent outputs still require human judgment</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>AI can support many kinds of work.</p>
+<p>It can summarize documents, draft text, explain concepts, write code, analyze tables, generate ideas, and help organize decisions.</p>
+<p>But AI support does not remove human responsibility.</p>
+<p>A safe AI system must define what AI is allowed to do, what it is not allowed to do, when human review is required, and when the work should stop or be escalated.</p>
+<p>Safety is not only about avoiding harmful outputs.</p>
+<p>It is also about protecting quality, privacy, fairness, trust, and accountability.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
+<section id="why-safety-boundaries-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-safety-boundaries-matter">Why Safety Boundaries Matter</h2>
+<p>AI systems can produce outputs that look complete even when they are incomplete.</p>
+<p>They can sound confident even when they are uncertain.</p>
+<p>They can generate plausible explanations without enough evidence.</p>
+<p>They can miss context that a human expert would recognize immediately.</p>
+<p>They can also be misused when people delegate too much judgment to the system.</p>
+<p>For this reason, every AI workflow should include boundaries.</p>
+<p>A boundary is a clear rule about what the system can do safely and where human judgment must take over.</p>
+<pre class="text"><code>AI assistance
+  ↓
+Boundary check
+  ↓
+Human review
+  ↓
+Decision or escalation</code></pre>
+<p>Without boundaries, AI use becomes risky because the user may not know where assistance ends and responsibility begins.</p>
 <hr>
 </section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="the-core-safety-principle" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-safety-principle">The Core Safety Principle</h2>
+<p>The core safety principle in this guide is simple:</p>
+<blockquote class="blockquote">
+<p>AI may assist the work, but humans remain responsible for decisions, consequences, and communication.</p>
+</blockquote>
+<p>This principle protects both the user and the people affected by the output.</p>
+<p>It also keeps AI inside the Human–AI–Human workflow.</p>
+<pre class="text"><code>Human frames the task
+        ↓
+AI assists within defined limits
+        ↓
+Human evaluates, decides, documents, and acts</code></pre>
+<p>The final decision should not be transferred to AI when the outcome affects people, resources, rights, health, safety, money, careers, education, or public communication.</p>
+<hr>
+</section>
+<section id="common-risk-areas" class="level2">
+<h2 class="anchored" data-anchor-id="common-risk-areas">Common Risk Areas</h2>
+<p>AI systems do not carry the same level of risk in every situation.</p>
+<p>Some tasks are low risk.</p>
+<p>Some tasks require careful review.</p>
+<p>Some tasks should never be handled by AI alone.</p>
+<p>Common risk areas include:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>factual accuracy,</li>
+<li>privacy and confidentiality,</li>
+<li>legal or policy compliance,</li>
+<li>health and safety,</li>
+<li>financial decisions,</li>
+<li>bias and unfair treatment,</li>
+<li>academic integrity,</li>
+<li>professional accountability,</li>
+<li>security and misuse,</li>
+<li>and reputational harm.</li>
 </ul>
+<p>A responsible workflow identifies these risks before the AI output is used.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="low-risk-medium-risk-and-high-risk-ai-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="low-risk-medium-risk-and-high-risk-ai-tasks">Low-Risk, Medium-Risk, and High-Risk AI Tasks</h2>
+<p>A practical AI system can classify tasks by risk level.</p>
+<p>This does not need to be complicated.</p>
+<p>The goal is to help the user decide how much review is required.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk level</th>
+<th>Example tasks</th>
+<th>Required control</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low risk</td>
+<td>brainstorming, outline generation, rewriting a non-sensitive paragraph, explaining a general concept</td>
+<td>light human review</td>
+</tr>
+<tr class="even">
+<td>Medium risk</td>
+<td>summarizing reports, drafting professional communication, reviewing code, analyzing non-sensitive data</td>
+<td>structured review and source checking</td>
+</tr>
+<tr class="odd">
+<td>High risk</td>
+<td>medical, legal, financial, safety, hiring, disciplinary, policy, or sensitive personal decisions</td>
+<td>expert review, documentation, and possible escalation</td>
+</tr>
+</tbody>
+</table>
+<p>AI can still support high-risk work in limited ways, such as organizing questions, summarizing provided material, or preparing a checklist.</p>
+<p>But it should not become the final decision-maker.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="safety-boundary-questions" class="level2">
+<h2 class="anchored" data-anchor-id="safety-boundary-questions">Safety Boundary Questions</h2>
+<p>Before using AI output, ask:</p>
+<ol type="1">
+<li>What decision or action could this output influence?</li>
+<li>Who could be affected if the output is wrong?</li>
+<li>What evidence supports the output?</li>
+<li>What information is missing?</li>
+<li>Does the task involve sensitive, private, regulated, or high-stakes content?</li>
+<li>Does this require expert judgment?</li>
+<li>How will the final output be reviewed and documented?</li>
+</ol>
+<p>These questions turn safety into a repeatable habit.</p>
+<p>They help prevent overconfidence.</p>
+<p>They also create a record of responsible use.</p>
+<hr>
+</section>
+<section id="human-judgment-checkpoints" class="level2">
+<h2 class="anchored" data-anchor-id="human-judgment-checkpoints">Human Judgment Checkpoints</h2>
+<p>Human judgment should appear at several points in an AI workflow.</p>
+<pre class="text"><code>Task framing
+  ↓
+Context selection
+  ↓
+AI generation
+  ↓
+Output evaluation
+  ↓
+Risk review
+  ↓
+Final decision
+  ↓
+Documentation</code></pre>
+<p>Each checkpoint has a purpose.</p>
+<p>During task framing, the human decides whether AI is appropriate.</p>
+<p>During context selection, the human decides what materials can be safely shared.</p>
+<p>During output evaluation, the human checks accuracy, relevance, completeness, and tone.</p>
+<p>During risk review, the human checks whether the output could cause harm or mislead others.</p>
+<p>During final decision-making, the human accepts responsibility for the action taken.</p>
+<hr>
+</section>
+<section id="privacy-and-confidentiality-boundaries" class="level2">
+<h2 class="anchored" data-anchor-id="privacy-and-confidentiality-boundaries">Privacy and Confidentiality Boundaries</h2>
+<p>AI workflows often involve documents, data, emails, notes, transcripts, code, or reports.</p>
+<p>Before using AI with any material, ask whether the content includes sensitive information.</p>
+<p>Sensitive information may include:</p>
+<ul>
+<li>personal identifiers,</li>
+<li>medical or health information,</li>
+<li>financial information,</li>
+<li>private student or employee records,</li>
+<li>confidential research data,</li>
+<li>internal business strategy,</li>
+<li>unpublished manuscripts,</li>
+<li>passwords, tokens, or API keys,</li>
+<li>and any information the user does not have permission to share.</li>
+</ul>
+<p>A safe workflow should avoid pasting sensitive information into AI tools unless the tool, policy, consent, and data handling arrangement are appropriate.</p>
+<p>When possible, remove identifiers, summarize instead of copying, or use approved internal systems.</p>
+<hr>
+</section>
+<section id="accuracy-boundaries" class="level2">
+<h2 class="anchored" data-anchor-id="accuracy-boundaries">Accuracy Boundaries</h2>
+<p>AI can generate convincing statements that still need verification.</p>
+<p>Accuracy boundaries define when evidence is required.</p>
+<p>For factual work, the workflow should ask:</p>
+<ul>
+<li>Is the claim supported by a source?</li>
+<li>Is the source current enough?</li>
+<li>Is the source credible for this topic?</li>
+<li>Is the AI summarizing provided material or generating from memory?</li>
+<li>Are there conflicting sources?</li>
+<li>Does the result need domain expert review?</li>
+</ul>
+<p>For research, analysis, medicine, law, finance, policy, education, or public communication, unsupported AI claims should not be treated as final.</p>
+<p>The output should be checked against trusted sources, data, or expert judgment.</p>
+<hr>
+</section>
+<section id="bias-and-fairness-boundaries" class="level2">
+<h2 class="anchored" data-anchor-id="bias-and-fairness-boundaries">Bias and Fairness Boundaries</h2>
+<p>AI systems can reproduce bias from training data, user prompts, missing context, or poor evaluation.</p>
+<p>This matters especially when AI output affects people.</p>
+<p>Examples include:</p>
+<ul>
+<li>evaluating students,</li>
+<li>screening job applicants,</li>
+<li>writing performance reviews,</li>
+<li>describing communities,</li>
+<li>analyzing social or health data,</li>
+<li>recommending services,</li>
+<li>or making decisions about eligibility, risk, or opportunity.</li>
+</ul>
+<p>A fairness boundary asks whether the AI output treats people respectfully, avoids stereotypes, and uses relevant evidence rather than assumptions.</p>
+<p>If the output influences a real decision about people, it needs careful human review.</p>
+<hr>
+</section>
+<section id="safety-boundaries-for-learners" class="level2">
+<h2 class="anchored" data-anchor-id="safety-boundaries-for-learners">Safety Boundaries for Learners</h2>
+<p>Learners need AI boundaries because AI can help them learn or help them avoid learning.</p>
+<p>A healthy learning workflow uses AI to:</p>
+<ul>
+<li>explain difficult ideas,</li>
+<li>generate practice questions,</li>
+<li>give feedback,</li>
+<li>compare approaches,</li>
+<li>suggest study plans,</li>
+<li>and help revise work after the learner has tried.</li>
+</ul>
+<p>A weak learning workflow uses AI to replace the learner’s thinking.</p>
+<p>The boundary is not simply whether AI was used.</p>
+<p>The boundary is whether the learner remains active.</p>
+<pre class="text"><code>Learner attempts
+  ↓
+AI supports
+  ↓
+Learner explains back
+  ↓
+Human or mentor reviews</code></pre>
+<p>This keeps AI as a learning partner rather than a shortcut around learning.</p>
+<hr>
+</section>
+<section id="safety-boundaries-for-professional-work" class="level2">
+<h2 class="anchored" data-anchor-id="safety-boundaries-for-professional-work">Safety Boundaries for Professional Work</h2>
+<p>Professional AI use requires accountability.</p>
+<p>When AI supports professional work, the user should be able to explain:</p>
+<ul>
+<li>what AI was used for,</li>
+<li>what materials were provided,</li>
+<li>what output was produced,</li>
+<li>what was changed by the human,</li>
+<li>what checks were performed,</li>
+<li>and who approved the final version.</li>
+</ul>
+<p>This is especially important for reports, recommendations, analyses, policies, public content, client work, and team decisions.</p>
+<p>Professional AI systems should not hide AI use when transparency is expected.</p>
+<p>They should also avoid overstating certainty.</p>
+<hr>
+</section>
+<section id="the-escalation-rule" class="level2">
+<h2 class="anchored" data-anchor-id="the-escalation-rule">The Escalation Rule</h2>
+<p>Some AI outputs should not be used immediately.</p>
+<p>They should be escalated.</p>
+<p>Escalation means passing the output to a qualified person, trusted process, or higher level of review before action is taken.</p>
+<p>Escalation is needed when:</p>
+<ul>
+<li>the output affects health, safety, money, legal rights, employment, education, or public trust,</li>
+<li>the user is uncertain about the accuracy,</li>
+<li>the output conflicts with known evidence,</li>
+<li>the data is sensitive or confidential,</li>
+<li>the situation involves vulnerable people,</li>
+<li>or the consequences of error are serious.</li>
+</ul>
+<p>Escalation is not a failure.</p>
+<p>It is part of responsible system design.</p>
+<hr>
+</section>
+<section id="a-practical-ai-safety-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="a-practical-ai-safety-checklist">A Practical AI Safety Checklist</h2>
+<p>Use this checklist before finalizing AI-supported work.</p>
+<pre class="text"><code>AI Safety Checklist
 
-</div>
+[ ] The task is appropriate for AI support.
+[ ] Sensitive information was protected.
+[ ] The output was checked for factual accuracy.
+[ ] The output was checked against the provided context.
+[ ] Unsupported claims were removed or verified.
+[ ] Possible bias or unfair framing was reviewed.
+[ ] The level of risk was identified.
+[ ] High-risk outputs were escalated for expert review.
+[ ] The human user made the final decision.
+[ ] AI use was documented where appropriate.</code></pre>
+<p>This checklist can be adapted for education, research, data analysis, communication, and organizational workflows.</p>
+<hr>
+</section>
+<section id="mini-example-ai-supported-health-information" class="level2">
+<h2 class="anchored" data-anchor-id="mini-example-ai-supported-health-information">Mini Example: AI-Supported Health Information</h2>
+<p>A learner asks AI:</p>
+<pre class="text"><code>My child has a serious symptom. What medicine should I give?</code></pre>
+<p>This is a high-risk task because it involves health, a child, and possible harm if the advice is wrong.</p>
+<p>A safe AI system should not act as a doctor.</p>
+<p>A better workflow is:</p>
+<pre class="text"><code>Identify the seriousness of the symptom
+  ↓
+Encourage urgent medical care when warning signs appear
+  ↓
+Help the user prepare questions and observations for a clinician
+  ↓
+Avoid prescribing medicine without examination</code></pre>
+<p>In this case, AI can help organize information, but the medical decision must move to qualified care.</p>
+<p>The boundary protects the user from false confidence.</p>
+<hr>
+</section>
+<section id="mini-example-ai-supported-report-writing" class="level2">
+<h2 class="anchored" data-anchor-id="mini-example-ai-supported-report-writing">Mini Example: AI-Supported Report Writing</h2>
+<p>A researcher uses AI to draft a report section.</p>
+<p>This is often a medium-risk task.</p>
+<p>The safe workflow is:</p>
+<pre class="text"><code>Researcher provides notes and data summary
+  ↓
+AI drafts a structured section
+  ↓
+Researcher checks claims against sources and results
+  ↓
+Researcher revises interpretation
+  ↓
+Final report documents methods and limitations</code></pre>
+<p>AI can help with structure and clarity.</p>
+<p>But the researcher remains responsible for evidence, interpretation, and final claims.</p>
+<hr>
+</section>
+<section id="safety-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="safety-documentation">Safety Documentation</h2>
+<p>A responsible AI workflow should leave a small record.</p>
+<p>The record does not need to be long.</p>
+<p>It should answer:</p>
+<pre class="text"><code>What was the AI used for?
+What input or context was provided?
+What risks were considered?
+What checks were performed?
+What was changed by the human?
+Who approved or finalized the output?</code></pre>
+<p>This makes the workflow easier to audit, improve, teach, and defend.</p>
+<p>It also supports transparency when AI is used in professional or educational settings.</p>
+<hr>
+</section>
+<section id="cdi-practice-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-practice-pattern">CDI Practice Pattern</h2>
+<p>In Complex Data Insights workflows, AI safety should be treated as part of the system architecture.</p>
+<pre class="text"><code>Problem framing
+  ↓
+Context design
+  ↓
+AI assistance
+  ↓
+Evaluation
+  ↓
+Safety boundary check
+  ↓
+Human judgment
+  ↓
+Documentation</code></pre>
+<p>This pattern reinforces the main philosophy of the guide.</p>
+<p>AI is useful because it can assist work.</p>
+<p>AI is safe when human judgment remains active.</p>
+<p>AI is trustworthy when outputs are evaluated, boundaries are respected, and decisions are documented.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>AI safety is not only a technical issue.</p>
+<p>It is a workflow issue.</p>
+<p>A responsible AI system defines what AI can do, what it cannot do, when review is needed, and when escalation is required.</p>
+<p>Safety boundaries protect people, decisions, data, and trust.</p>
+<p>They also make AI workflows more teachable, reproducible, and professional.</p>
+<p>The key lesson is this:</p>
+<blockquote class="blockquote">
+<p>The stronger the consequence of an AI-supported output, the stronger the human review must be.</p>
+</blockquote>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter introduces the idea of an AI operating system for work.</p>
+<p>It shows how prompts, context, evaluation, safety, documentation, and human review can be connected into a practical work system that supports repeated AI-enabled tasks.</p>
 
 
 </section>
@@ -845,11 +1118,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./07-ai-output-evaluation.html" class="pagination-link" aria-label="AI Output Evaluation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">AI Output Evaluation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./09-ai-operating-system-for-work.html" class="pagination-link" aria-label="AI Operating System for Work">
+        <span class="nav-page-text"><span class="chapter-title">AI Operating System for Work</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

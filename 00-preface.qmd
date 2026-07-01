@@ -1,0 +1,435 @@
+# Preface and Overview {#preface}
+
+:::cdi-message
+- **ID:** AI-000
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows
+- **Theme:** AI should be treated as a human-led system, not a magic tool
+:::
+
+AI is now part of everyday learning, research, analysis, writing, coding, decision-making, and professional work.
+
+But using AI is not the same as building an AI system.
+
+A person can ask a chatbot a question and get an answer.
+
+That is AI use.
+
+A person can design a workflow where the problem is clearly framed, the context is provided, the output is evaluated, the limitations are documented, and the final decision remains human-led.
+
+That is an AI system.
+
+This guide is about the second path.
+
+It teaches AI as a practical system for responsible, reproducible, and impactful work.
+
+---
+
+## Why This Guide Exists
+
+Many people learn AI through tools.
+
+They learn prompts.
+
+They learn apps.
+
+They learn shortcuts.
+
+That is useful, but incomplete.
+
+Tools change quickly. Workflows, reasoning habits, evaluation practices, and documentation standards last longer.
+
+The purpose of this guide is to help learners move beyond casual AI use into structured AI practice.
+
+The goal is not to make AI mysterious.
+
+The goal is to make AI usable, inspectable, teachable, and accountable.
+
+In Complex Data Insights, AI is treated as part of a broader data and decision ecosystem.
+
+AI can support discovery, analysis, communication, automation, and learning. But it must remain connected to human judgment, evidence, context, and responsibility.
+
+---
+
+## The Core Philosophy
+
+The central philosophy of this guide is simple:
+
+> AI should assist human thinking, not replace human responsibility.
+
+This guide uses a **Human–AI–Human** model.
+
+```text
+Human frames the problem
+        ↓
+AI assists with generation, reasoning, analysis, or automation
+        ↓
+Human evaluates, decides, documents, and acts
+```
+
+The workflow begins with a human question and ends with a human decision.
+
+AI sits in the middle as an assistant, accelerator, analyst, reviewer, coder, summarizer, or workflow component.
+
+This framing is important because AI outputs can be fluent without being correct. They can be useful without being complete. They can be impressive without being reliable.
+
+A responsible AI system must therefore include evaluation, review, and documentation from the beginning.
+
+---
+
+## Relationship to Thinking with AI
+
+This guide connects naturally to the earlier **Thinking with AI** idea, but it is not the same thing.
+
+**Thinking with AI** focuses on reasoning habits:
+
+- asking better questions,
+- exploring ideas,
+- challenging assumptions,
+- improving explanations,
+- reflecting before deciding,
+- and using AI to strengthen human thinking.
+
+**AI Systems** is broader and more operational.
+
+It asks how AI-supported work can be designed, evaluated, repeated, documented, governed, and shared.
+
+The relationship can be viewed as:
+
+```text
+Thinking with AI
+        ↓
+Human–AI–Human reasoning loop
+        ↓
+AI Systems
+        ↓
+Reusable agents, applied workflows, evaluation, governance, and impact
+```
+
+Thinking with AI is therefore a foundation inside AI Systems.
+
+AI Systems extends that foundation into real workflows.
+
+---
+
+## Who This Guide Is For
+
+This guide is for people who want to use AI seriously and responsibly.
+
+It is especially useful for:
+
+- students learning how to work with AI without becoming dependent on it,
+- researchers using AI to support reading, synthesis, coding, analysis, or writing,
+- data scientists building reproducible AI-assisted workflows,
+- educators designing AI-aware learning activities,
+- professionals using AI to improve productivity and communication,
+- mentors training learners for an AI-enabled workplace,
+- and teams that need governance, documentation, and quality control.
+
+The guide does not assume that the reader is an AI engineer.
+
+It does assume that the reader wants to think carefully, work reproducibly, and communicate limitations honestly.
+
+---
+
+## What This Guide Is Not
+
+This guide is not a collection of prompt tricks.
+
+It is not a list of AI tools.
+
+It is not a promise that AI can solve every problem.
+
+It is not a replacement for domain expertise, statistical reasoning, data science, ethics, or human judgment.
+
+Instead, it is a system-level guide for using AI in a structured way.
+
+The focus is on workflows that can be explained, repeated, evaluated, improved, and responsibly shared.
+
+---
+
+## Learning Outcomes
+
+By the end of this guide, the learner should be able to:
+
+1. Explain AI as part of a broader human-led system.
+2. Distinguish casual AI use from structured AI workflows.
+3. Frame AI tasks with clear goals, context, constraints, and expected outputs.
+4. Design prompts and context packages that improve output quality.
+5. Use grounding materials such as data, documents, code, examples, and references.
+6. Evaluate AI outputs for correctness, relevance, completeness, clarity, and risk.
+7. Build human-in-the-loop review workflows.
+8. Document AI use transparently.
+9. Identify governance, privacy, bias, and safety concerns.
+10. Design reusable AI agent templates with clear scope, inputs, workflow logic, and review standards.
+11. Apply AI agents to research, learning, career development, data analysis support, communication, and reporting.
+12. Communicate AI-supported outputs without overstating certainty.
+13. Prepare learners and professionals for responsible AI-enabled careers.
+
+---
+
+## The AI Systems Architecture
+
+This guide organizes AI work into a layered system.
+
+```text
+Problem
+  ↓
+Context
+  ↓
+Data and Knowledge
+  ↓
+Prompt or Workflow Design
+  ↓
+AI Assistance
+  ↓
+Evaluation
+  ↓
+Human Decision
+  ↓
+Documentation and Impact
+```
+
+Each layer matters.
+
+A weak problem statement produces unclear outputs.
+
+Poor context produces shallow responses.
+
+Ungrounded AI work increases the risk of error.
+
+No evaluation makes outputs difficult to trust.
+
+No documentation makes the workflow difficult to repeat or defend.
+
+A strong AI system connects all of these layers.
+
+---
+
+## Guide Structure
+
+The guide is organized into four major parts.
+
+```text
+Part I: AI Foundations
+        ↓
+Part II: AI Systems
+        ↓
+Part III: Reusable AI Agent Template
+        ↓
+Part IV: Applied AI Agents
+```
+
+This structure moves from understanding AI, to designing AI-supported systems, to creating reusable agents, to applying those agents in real work.
+
+### Part I: AI Foundations
+
+The foundation chapters introduce the core ideas needed before building AI-supported workflows.
+
+This part covers AI systems thinking, Thinking with AI, the Human–AI–Human framework, and prompting as system design.
+
+The purpose of this part is to establish the mindset: AI should be used deliberately, with clear human judgment before and after AI assistance.
+
+### Part II: AI Systems
+
+The systems chapters show how AI-supported work can be designed, evaluated, and governed.
+
+This part covers workflow design, context and knowledge systems, output evaluation, safety boundaries, human judgment, and an AI operating system for work.
+
+The purpose of this part is to move from individual AI interactions into repeatable work systems.
+
+### Part III: Reusable AI Agent Template
+
+The reusable agent chapters define a practical template for designing AI agents.
+
+This part covers agent purpose and scope, inputs, context, memory, workflow logic, decision logic, output standards, review practices, improvement, and maintenance.
+
+The purpose of this part is to make agent design reusable instead of ad hoc.
+
+### Part IV: Applied AI Agents
+
+The applied agent chapters show how the reusable template can support real work.
+
+This part covers research and learning agents, career and portfolio agents, data analysis support agents, and communication and reporting agents.
+
+The purpose of this part is to demonstrate how AI agents can support practical workflows while remaining human-led, evaluated, and documented.
+
+### Appendices
+
+The appendices provide supporting templates, checklists, references, and reusable materials.
+
+They are designed to make the guide easier to apply in learning programs, professional workflows, and future CDI systems.
+
+---
+
+## Reproducible Project Layout
+
+This guide is designed as a publishable Quarto book from the beginning.
+
+A typical project layout is:
+
+```text
+ai-systems/
+├── index.qmd
+├── 00-preface.qmd
+├── 01-ai-system-overview.qmd
+├── 02-thinking-with-ai.qmd
+├── 03-human-ai-human-framework.qmd
+├── 04-prompting-as-system-design.qmd
+├── 05-ai-workflow-design.qmd
+├── 06-context-and-knowledge-systems.qmd
+├── 07-ai-output-evaluation.qmd
+├── 08-ai-safety-boundaries-and-human-judgment.qmd
+├── 09-ai-operating-system-for-work.qmd
+├── 10-agent-purpose-and-scope.qmd
+├── 11-agent-inputs-context-and-memory.qmd
+├── 12-agent-workflow-and-decision-logic.qmd
+├── 13-agent-output-standards-and-review.qmd
+├── 14-agent-improvement-and-maintenance.qmd
+├── 15-research-and-learning-agent.qmd
+├── 16-career-and-portfolio-agent.qmd
+├── 17-data-analysis-support-agent.qmd
+├── 18-communication-and-reporting-agent.qmd
+├── 999-appendix.qmd
+├── 999-references.qmd
+├── assets/
+├── data/
+├── scripts/
+├── library/
+├── docs/
+├── _quarto.yml
+└── README.md
+```
+
+The project is intended to support both learning and publication.
+
+The `qmd` files explain the concepts.
+
+The scripts create small reproducible examples.
+
+The `data/` directory stores example inputs and outputs.
+
+The `docs/` directory stores the rendered website for GitHub Pages.
+
+---
+
+## Supporting Scripts
+
+The scaffold can include small scripts to demonstrate AI systems practice without requiring live API keys.
+
+The first example workflow creates a simple AI task log, evaluates the quality of AI-supported outputs, builds a prompt registry, and plots an evaluation summary.
+
+```bash
+bash scripts/bash/00-check-environment.sh
+bash scripts/bash/01-create-example-ai-task-log.sh
+
+python scripts/python/02-evaluate-ai-output-quality.py \
+  data/example/ai-task-log.csv \
+  data/results
+
+python scripts/python/03-build-prompt-registry.py \
+  data/example/ai-task-log.csv \
+  data/results
+
+Rscript scripts/R/04-plot-evaluation-summary.R \
+  data/results/ai-evaluation-summary.csv \
+  data/reports
+```
+
+Expected outputs include:
+
+```text
+data/example/ai-task-log.csv
+data/results/ai-evaluation-summary.csv
+data/results/prompt-registry.csv
+data/reports/ai-evaluation-summary.png
+```
+
+These examples are intentionally lightweight.
+
+They teach the structure of responsible AI workflows without forcing learners to use paid APIs or expose secret keys.
+
+---
+
+## Publication Workflow
+
+The guide is designed to render locally and publish through GitHub Pages.
+
+To render the site:
+
+```bash
+quarto render
+```
+
+Expected output:
+
+```text
+docs/index.html
+```
+
+A typical Git workflow is:
+
+```bash
+git status
+git add .
+git commit -m "Add AI Systems guide content"
+git push
+```
+
+The repository can then publish the rendered `docs/` output using the configured GitHub Pages workflow.
+
+---
+
+## How to Read This Guide
+
+This guide can be read sequentially, but it is also designed as a reference.
+
+Readers who are new to AI should begin with Part I.
+
+Readers who already use AI regularly may want to focus on Part II, especially evaluation, human review, safety boundaries, and documentation.
+
+Readers designing reusable AI agents should focus on Part III.
+
+Readers applying AI agents to practical work should focus on Part IV.
+
+The most important idea is repeated throughout the guide:
+
+> AI work becomes stronger when it is framed, grounded, evaluated, documented, and kept human-led.
+
+---
+
+## Closing Note
+
+AI systems are not only technical systems.
+
+They are learning systems.
+
+They are communication systems.
+
+They are decision-support systems.
+
+They are professional systems.
+
+They affect how people think, work, teach, analyze, and act.
+
+For that reason, AI should be approached with both curiosity and discipline.
+
+This guide begins from that balance.
+
+---
+
+## Looking Ahead
+
+The next chapter introduces the AI Systems overview.
+
+From there, the guide moves step by step from AI foundations into workflow design, context systems, evaluation, safety boundaries, reusable agent templates, applied agents, and responsible professional use.
+
+By the end of this guide, you should be able to move beyond isolated AI use and begin designing responsible, reproducible, human-led AI workflows.
+
+The central pattern throughout the guide is the Human–AI–Human workflow:
+
+Human defines the problem.
+
+AI assists with generation, reasoning, analysis, or automation.
+
+Human evaluates, decides, documents, and acts.

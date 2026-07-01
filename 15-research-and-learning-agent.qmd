@@ -1,0 +1,689 @@
+# Research and Learning Agent {#research-and-learning-agent}
+
+:::cdi-message
+- **ID:** AI-015
+- **Type:** System Guide
+- **Audience:** Learners, researchers, educators, analysts, and professionals using AI to support study, research, and knowledge building
+- **Theme:** A research and learning agent should help people understand, question, synthesize, and apply knowledge without replacing human judgment
+:::
+
+A research and learning agent is an AI-supported workflow that helps a person learn more deliberately.
+
+It can help summarize materials.
+
+It can generate questions.
+
+It can compare ideas.
+
+It can explain difficult concepts.
+
+It can help build a study plan.
+
+It can support literature scanning, note organization, and synthesis.
+
+But it should not replace reading, verification, or independent thinking.
+
+A useful research and learning agent does not simply produce answers.
+
+It helps the learner move through a structured process:
+
+```text
+Learning Goal
+  ↓
+Source Materials
+  ↓
+Questioning
+  ↓
+Explanation
+  ↓
+Synthesis
+  ↓
+Practice
+  ↓
+Human Review and Reflection
+```
+
+The goal is not to make learning passive.
+
+The goal is to make learning more active, organized, and accountable.
+
+---
+
+## Why a Research and Learning Agent Matters
+
+Many learners use AI by asking quick questions.
+
+That can be helpful, but it is often shallow.
+
+A learner may ask:
+
+```text
+Explain machine learning.
+```
+
+The AI may produce a fluent explanation.
+
+But the learner may not know whether the explanation is complete, accurate, appropriate for their level, or connected to their real learning goal.
+
+A research and learning agent improves this by requiring structure.
+
+It asks:
+
+- What is the learner trying to understand?
+- What materials should be used?
+- What level of explanation is needed?
+- What concepts are already known?
+- What questions remain unclear?
+- What evidence supports the answer?
+- How will understanding be tested?
+- What should the learner do next?
+
+This turns AI from a shortcut into a learning partner.
+
+---
+
+## Core Purpose
+
+The purpose of a research and learning agent is to support human learning through structured assistance.
+
+It can help with:
+
+- reading support,
+- concept explanation,
+- question generation,
+- comparison of ideas,
+- study planning,
+- literature scanning,
+- synthesis of notes,
+- practice activities,
+- reflection prompts,
+- and learning documentation.
+
+The agent should not pretend to be the final authority.
+
+It should help the learner become more capable of asking, checking, explaining, and applying knowledge.
+
+---
+
+## What the Agent Should Do
+
+A research and learning agent should support the learner through a repeatable process.
+
+```text
+1. Clarify the learning goal
+2. Identify available materials
+3. Extract key ideas
+4. Explain concepts at the right level
+5. Generate questions
+6. Compare related ideas
+7. Build a learning summary
+8. Suggest practice tasks
+9. Identify uncertainty
+10. Recommend next steps
+```
+
+This sequence keeps the work grounded.
+
+The agent is not only answering.
+
+It is helping the learner build a path from confusion to understanding.
+
+---
+
+## What the Agent Should Not Do
+
+A research and learning agent should not:
+
+- invent references,
+- replace source reading,
+- complete graded assignments dishonestly,
+- present uncertain claims as facts,
+- remove the learner from the reasoning process,
+- hide limitations,
+- or encourage dependence on AI-generated explanations.
+
+The agent should be designed to strengthen learning, not bypass it.
+
+When the task involves academic submission, professional decisions, medical advice, legal interpretation, financial advice, or policy decisions, the agent should clearly require human review and appropriate expert verification.
+
+---
+
+## Agent Inputs
+
+A research and learning agent works best when it receives clear inputs.
+
+Useful inputs include:
+
+```text
+Learning goal:
+What the learner wants to understand or produce.
+
+Current level:
+Beginner, intermediate, advanced, or domain-specific background.
+
+Source materials:
+Notes, papers, textbook sections, slides, transcripts, datasets, documentation, or links.
+
+Output need:
+Summary, explanation, study plan, comparison table, questions, flashcards, or synthesis.
+
+Constraints:
+Length, tone, citation needs, deadline, language, or required format.
+
+Review requirement:
+What must be checked by the learner or expert before use.
+```
+
+The stronger the inputs, the stronger the learning support.
+
+Poor inputs often produce generic outputs.
+
+---
+
+## Example Input Template
+
+A learner can use the following template to work with a research and learning agent.
+
+```text
+Learning goal:
+I want to understand [topic] so that I can [use/application].
+
+My current level:
+I know [what I already understand], but I struggle with [unclear area].
+
+Materials to use:
+Use the following notes, article, chapter, dataset, code, or transcript: [materials].
+
+Task:
+Help me [summarize/explain/compare/question/practice/synthesize].
+
+Output format:
+Provide [bullets/table/study plan/questions/explanation/report outline].
+
+Quality requirements:
+Separate facts from interpretation. Flag uncertainty. Do not invent sources. Tell me what I should verify.
+```
+
+This prompt makes the learner’s need visible.
+
+It also gives the agent a clear boundary.
+
+---
+
+## Example Agent Prompt
+
+The following reusable prompt can define the agent behavior.
+
+```text
+You are a Research and Learning Agent.
+
+Your role is to help the learner understand, question, synthesize, and apply knowledge.
+
+Do not replace the learner’s thinking.
+Do not invent facts, references, or evidence.
+Use the materials provided when available.
+Separate what is supported by the material from what is your interpretation.
+Flag uncertainty clearly.
+Ask for clarification only when the task cannot be completed safely or usefully.
+
+Workflow:
+1. Restate the learning goal.
+2. Identify the main concepts involved.
+3. Explain the concepts at the learner’s level.
+4. Create a structured summary.
+5. Generate questions that test understanding.
+6. Identify gaps, uncertainties, or points needing verification.
+7. Suggest next learning actions.
+
+Output sections:
+- Learning Goal
+- Key Concepts
+- Explanation
+- Structured Summary
+- Practice Questions
+- What to Verify
+- Next Steps
+```
+
+This prompt turns the agent into a guided learning workflow.
+
+It also prevents the agent from acting as a careless answer generator.
+
+---
+
+## Human–AI–Human Pattern
+
+The research and learning agent follows the Human–AI–Human model.
+
+```text
+Human defines the learning need
+        ↓
+AI organizes, explains, questions, and synthesizes
+        ↓
+Human checks, practices, reflects, and applies
+```
+
+The first human step matters because the learner must define the purpose.
+
+The AI step matters because it can reduce friction and support exploration.
+
+The final human step matters because learning only becomes real when the learner reviews, practices, explains, and applies the knowledge.
+
+---
+
+## Learning Workflow
+
+A practical research and learning workflow can be organized as follows.
+
+```text
+Topic Selection
+  ↓
+Learning Goal
+  ↓
+Material Collection
+  ↓
+AI-Assisted Explanation
+  ↓
+AI-Assisted Questioning
+  ↓
+Human Practice
+  ↓
+Human Reflection
+  ↓
+Learning Notes
+```
+
+Each stage produces an artifact.
+
+```text
+Topic Selection        → Topic statement
+Learning Goal          → Learning objective
+Material Collection    → Source list or notes
+AI Explanation         → Concept explanation
+AI Questioning         → Practice questions
+Human Practice         → Answers or exercises
+Human Reflection       → What is understood and what remains unclear
+Learning Notes         → Reusable knowledge record
+```
+
+This makes learning visible.
+
+It also makes progress easier to review.
+
+---
+
+## Research Workflow
+
+For research work, the agent can support a slightly different workflow.
+
+```text
+Research Question
+  ↓
+Search Terms
+  ↓
+Source Collection
+  ↓
+Screening
+  ↓
+Reading Notes
+  ↓
+Thematic Synthesis
+  ↓
+Evidence Map
+  ↓
+Human Interpretation
+```
+
+The agent can help generate search terms, summarize abstracts, group themes, compare arguments, and organize evidence.
+
+But source selection, interpretation, and claims must remain human-led.
+
+A research agent should not invent a literature review.
+
+It should support the researcher in building one.
+
+---
+
+## Source-Aware Learning
+
+A strong research and learning agent should distinguish between three types of material.
+
+| Material type | Meaning | How the agent should treat it |
+|---|---|---|
+| Provided source | Material supplied by the learner | Use as the main grounding material |
+| General background | Common knowledge or model knowledge | Use cautiously and label as background |
+| Unverified claim | Statement without a source | Flag for verification |
+
+This distinction is important.
+
+AI can produce fluent statements that sound confident.
+
+A research and learning agent must help the learner see which claims are grounded and which claims need checking.
+
+---
+
+## Output Standards
+
+The agent’s outputs should be clear, structured, and reviewable.
+
+Good outputs should include:
+
+- the learning goal,
+- the main concepts,
+- the explanation,
+- important distinctions,
+- examples,
+- practice questions,
+- uncertainties,
+- and next steps.
+
+For research tasks, outputs should also include:
+
+- source notes,
+- evidence categories,
+- limitations,
+- possible disagreements,
+- and claims that require verification.
+
+The output should not hide uncertainty.
+
+Uncertainty is part of responsible learning.
+
+---
+
+## Example Output Format
+
+```text
+Learning Goal
+- [Restated goal]
+
+Key Concepts
+- [Concept 1]
+- [Concept 2]
+- [Concept 3]
+
+Explanation
+[Plain-language explanation matched to the learner’s level]
+
+Structured Summary
+- Main idea:
+- Supporting idea:
+- Important distinction:
+- Example:
+
+Practice Questions
+1. [Question]
+2. [Question]
+3. [Question]
+
+What to Verify
+- [Claim, source, or detail that needs checking]
+
+Next Steps
+- [Recommended action]
+```
+
+A consistent output format makes the agent easier to reuse.
+
+It also makes the learning record easier to save.
+
+---
+
+## Learning Quality Checklist
+
+Before accepting the agent output, the learner should review it.
+
+```text
+Did the output answer the learning goal?
+Was the explanation appropriate for my level?
+Were key terms defined clearly?
+Were examples useful and accurate?
+Were uncertainties flagged?
+Were sources used honestly?
+Can I explain the idea in my own words?
+Can I answer practice questions without copying the AI?
+Do I know what to study next?
+```
+
+The most important test is not whether the AI output sounds good.
+
+The most important test is whether the learner can now think, explain, and apply the idea more clearly.
+
+---
+
+## Avoiding Passive Learning
+
+One risk of AI-supported learning is passivity.
+
+The learner may read an AI answer and feel that they understand.
+
+But recognition is not the same as understanding.
+
+A research and learning agent should therefore include active learning prompts.
+
+Examples include:
+
+```text
+Explain this concept back in your own words.
+Create one example from your own field.
+Identify one assumption in this argument.
+Compare this idea with a related idea.
+Answer these questions before reading the suggested answer.
+List what still confuses you.
+```
+
+These prompts return responsibility to the learner.
+
+---
+
+## Study Plan Mode
+
+The same agent can help design a study plan.
+
+A good study plan should include:
+
+```text
+Goal
+Current level
+Available time
+Key topics
+Learning sequence
+Practice tasks
+Review schedule
+Assessment method
+Reflection checkpoint
+```
+
+Example prompt:
+
+```text
+Help me create a two-week study plan for [topic].
+My current level is [level].
+I can study [time] per day.
+I need to be able to [outcome].
+Include reading, practice, review, and self-testing.
+Do not make the plan too crowded.
+```
+
+The agent should avoid unrealistic plans.
+
+A useful study plan is one the learner can actually follow.
+
+---
+
+## Research Synthesis Mode
+
+For research synthesis, the agent can help organize notes into themes.
+
+Example prompt:
+
+```text
+Using the notes below, help me identify the main themes, agreements, disagreements, methods, limitations, and open questions.
+Do not add claims that are not supported by the notes.
+Separate evidence from interpretation.
+End with a list of points I should verify before writing.
+```
+
+Possible output sections:
+
+```text
+Main Themes
+Areas of Agreement
+Areas of Disagreement
+Methods Mentioned
+Limitations
+Evidence Gaps
+Possible Synthesis Statement
+Claims to Verify
+```
+
+This supports the researcher without writing beyond the evidence.
+
+---
+
+## Teaching Mode
+
+Educators can use a research and learning agent to prepare learning support materials.
+
+The agent can help create:
+
+- concept explanations,
+- discussion questions,
+- revision prompts,
+- formative assessment questions,
+- examples,
+- analogies,
+- and feedback templates.
+
+However, educators should review outputs carefully.
+
+Teaching materials influence how learners understand a subject.
+
+The educator remains responsible for accuracy, fairness, level, and alignment with the learning objective.
+
+---
+
+## Example Use Case: Learning a New Concept
+
+A learner wants to understand the difference between automation and AI agents.
+
+The learner provides this goal:
+
+```text
+I want to understand the difference between automation and AI agents so I can explain it to beginners.
+I know that automation follows rules, but I am confused about what makes an agent different.
+Give me a simple explanation, a comparison table, and three practice questions.
+```
+
+A useful agent response should:
+
+- restate the goal,
+- define automation,
+- define AI agents,
+- compare them,
+- give examples,
+- ask practice questions,
+- and identify where the distinction can become blurry.
+
+The learner should then explain the difference in their own words.
+
+That final explanation is the evidence of learning.
+
+---
+
+## Example Use Case: Reading a Paper
+
+A researcher wants help reading a paper.
+
+A structured request could be:
+
+```text
+I am reading this paper for background understanding.
+Help me extract the research question, methods, data, key findings, limitations, and relevance to my project.
+Do not evaluate claims beyond the text provided.
+Flag any methods or terms I should study further.
+```
+
+The agent can produce a structured reading note.
+
+The researcher then checks the note against the paper.
+
+This is not a substitute for reading.
+
+It is a support system for reading carefully.
+
+---
+
+## Documentation
+
+A research and learning agent should leave behind useful learning records.
+
+Possible records include:
+
+```text
+learning-notes.md
+source-summary-table.csv
+practice-questions.md
+study-plan.md
+research-synthesis.md
+uncertainty-log.md
+```
+
+Documentation helps the learner return to previous work.
+
+It also makes the learning process visible to mentors, teachers, collaborators, or future self-review.
+
+---
+
+## Mini Template
+
+A reusable research and learning agent can be summarized as:
+
+```text
+Agent name:
+Research and Learning Agent
+
+Purpose:
+Support structured learning, reading, questioning, synthesis, and reflection.
+
+Inputs:
+Learning goal, current level, source materials, task type, output format, constraints.
+
+Workflow:
+Clarify goal → identify concepts → explain → summarize → question → verify → recommend next steps.
+
+Outputs:
+Explanation, summary, questions, synthesis, study plan, uncertainty list, next actions.
+
+Review:
+Learner checks accuracy, source alignment, understanding, and ability to explain independently.
+
+Boundaries:
+No invented sources, no dishonest academic completion, no unsupported claims, no replacement of expert review.
+```
+
+This template can be adapted for students, researchers, educators, and professionals.
+
+---
+
+## Key Takeaways
+
+A research and learning agent is not just a chatbot for answers.
+
+It is a structured learning support system.
+
+It helps a learner clarify goals, work with materials, ask better questions, synthesize ideas, practice understanding, and document progress.
+
+The best version of this agent does not make the learner dependent.
+
+It makes the learner more capable.
+
+The human remains responsible for reading, checking, reflecting, and applying the knowledge.
+
+## Looking Ahead
+
+The next chapter applies the same reusable agent logic to career and portfolio development.
+
+A career and portfolio agent helps a learner or professional connect skills, projects, evidence, communication, and opportunity.
+
+It extends the AI Systems framework from learning into professional growth.

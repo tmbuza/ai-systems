@@ -1,0 +1,710 @@
+# Data Analysis Support Agent {#data-analysis-support-agent}
+
+:::cdi-message
+- **ID:** AI-017
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, data scientists, educators, and professionals using AI to support data analysis workflows
+- **Theme:** AI can support data analysis, but evidence, code, interpretation, and decisions must remain human-reviewed
+:::
+
+A data analysis support agent helps a person move through an analytical workflow more clearly.
+
+It can help frame questions, inspect tables, suggest checks, explain code, draft analysis plans, summarize results, and prepare communication materials.
+
+But it should not replace analytical judgment.
+
+It should not invent results.
+
+It should not make unsupported claims.
+
+It should not hide uncertainty.
+
+A responsible data analysis support agent works inside a human-led system where data, code, assumptions, outputs, and interpretations can be checked.
+
+The goal of this chapter is to define a reusable agent pattern for AI-supported data analysis.
+
+---
+
+## Why Data Analysis Needs Support
+
+Data analysis is rarely just one task.
+
+It usually includes many connected activities:
+
+- understanding the question,
+- identifying the data source,
+- checking the structure of the data,
+- cleaning and preparing variables,
+- choosing an analytical method,
+- running code,
+- checking outputs,
+- interpreting results,
+- explaining limitations,
+- and communicating findings.
+
+AI can help with many of these steps.
+
+However, data analysis also carries risk.
+
+A small mistake in data structure, variable meaning, method choice, code logic, or interpretation can change the conclusion.
+
+For that reason, AI-supported analysis must be designed with review points.
+
+The agent should support the analyst, not act as the analyst.
+
+---
+
+## The Role of the Data Analysis Support Agent
+
+The role of this agent is to help a human analyst work more systematically.
+
+It can support:
+
+```text
+Question framing
+Data understanding
+Analysis planning
+Code support
+Quality checks
+Result interpretation
+Communication
+Documentation
+```
+
+The agent should ask for the necessary context before giving strong recommendations.
+
+It should distinguish between what is known, what is assumed, and what needs checking.
+
+It should help the analyst slow down at important decision points.
+
+A useful data analysis support agent does not only produce code.
+
+It helps protect the quality of the analysis process.
+
+---
+
+## Human--AI--Human Pattern for Data Analysis
+
+The Human--AI--Human pattern is especially important in data work.
+
+```{mermaid}
+flowchart TD
+    A[Human defines analytical question]
+    B[Human provides data context]
+    C[AI assists with workflow planning]
+    D[AI supports code, checks, summaries, or interpretation]
+    E[Human runs or reviews code]
+    F[Human checks outputs against data and methods]
+    G[Human decides what can be claimed]
+    H[Human documents analysis and limitations]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+```
+
+The human begins the process by defining the analytical goal.
+
+The AI assists in the middle.
+
+The human completes the process by checking evidence and deciding what can responsibly be said.
+
+This is different from asking AI to “analyze this data” without a review system.
+
+A responsible system makes the steps visible.
+
+---
+
+## What the Agent Can Help With
+
+A data analysis support agent can be useful across the analysis lifecycle.
+
+### 1. Clarifying the analytical question
+
+The agent can help turn broad questions into clearer analytical questions.
+
+For example:
+
+```text
+Broad question:
+Does this training program work?
+
+Clearer analytical question:
+Among learners who completed the program, how did assessment scores change from baseline to final evaluation, and what limitations affect interpretation?
+```
+
+This step matters because unclear questions produce unfocused analysis.
+
+The agent should help define:
+
+- the population,
+- the outcome,
+- the comparison,
+- the time period,
+- the unit of analysis,
+- and the intended decision.
+
+### 2. Understanding the dataset
+
+The agent can help the analyst inspect the structure of a dataset.
+
+It can suggest checks such as:
+
+```text
+Number of rows
+Number of columns
+Column names
+Variable types
+Missing values
+Duplicate records
+Unexpected categories
+Date ranges
+Outliers
+Identifier uniqueness
+```
+
+The agent should not assume that column names are self-explanatory.
+
+It should encourage use of a data dictionary, metadata file, codebook, or project notes.
+
+### 3. Planning the analysis
+
+The agent can help create a simple analysis plan.
+
+A good plan includes:
+
+```text
+Question
+Dataset
+Variables
+Inclusion and exclusion rules
+Cleaning steps
+Exploratory checks
+Main method
+Sensitivity checks
+Expected outputs
+Review points
+Limitations
+```
+
+This keeps the analysis from becoming a collection of disconnected code snippets.
+
+### 4. Supporting code development
+
+The agent can help draft, explain, debug, or improve code.
+
+This can include code in:
+
+```text
+R
+Python
+SQL
+Bash
+Quarto
+Markdown
+```
+
+However, generated code must be reviewed and run by the human analyst.
+
+The agent should not claim that code works unless it has actually been tested in the relevant environment.
+
+When possible, code should be written in small, inspectable steps.
+
+### 5. Checking outputs
+
+The agent can help create output review checklists.
+
+For example:
+
+```text
+Do row counts match expectations?
+Are missing values handled consistently?
+Are categories labeled correctly?
+Do summaries match the analysis question?
+Are plots readable and correctly labeled?
+Are statistical outputs interpreted cautiously?
+Are claims supported by the actual results?
+```
+
+This is one of the most important uses of AI in analysis: helping the analyst remember what to check.
+
+### 6. Interpreting results
+
+The agent can help translate results into plain language.
+
+But interpretation must remain evidence-based.
+
+The agent should help separate:
+
+```text
+What the results show
+What the results suggest
+What the results do not prove
+What needs further analysis
+What limitations must be stated
+```
+
+This prevents overclaiming.
+
+### 7. Communicating findings
+
+The agent can support drafting summaries, reports, slides, briefs, and README sections.
+
+For example, it can help produce:
+
+```text
+Executive summary
+Methods summary
+Results narrative
+Limitations section
+Recommendation memo
+Project README
+Presentation speaker notes
+```
+
+The human must verify that the communication matches the analysis.
+
+Beautiful language should never be allowed to cover weak evidence.
+
+---
+
+## What the Agent Should Not Do
+
+The data analysis support agent should have clear limits.
+
+It should not:
+
+- invent datasets,
+- invent results,
+- fabricate citations,
+- hide uncertainty,
+- choose methods without context,
+- treat correlation as causation,
+- ignore missing data,
+- ignore measurement problems,
+- make high-stakes decisions alone,
+- or present untested code as verified.
+
+These limits should be part of the agent instructions.
+
+A useful agent is not only powerful.
+
+It is bounded.
+
+---
+
+## Agent Input Requirements
+
+Before helping with an analysis task, the agent should ask for or identify the required inputs.
+
+A basic input checklist is:
+
+```text
+1. Analytical question
+2. Dataset or table description
+3. Variable definitions
+4. Unit of analysis
+5. Desired output
+6. Tooling environment
+7. Known limitations
+8. Review requirements
+```
+
+For example:
+
+```text
+Question:
+What are we trying to learn or decide?
+
+Dataset:
+What table, file, database, or result object is being used?
+
+Variables:
+What do the important columns mean?
+
+Unit of analysis:
+Is each row a person, sample, observation, transaction, gene, protein, document, or event?
+
+Output:
+Do we need a table, plot, report, interpretation, or decision memo?
+
+Environment:
+Should the workflow use R, Python, SQL, Quarto, Excel, or another tool?
+
+Limitations:
+What should not be assumed?
+
+Review:
+Who checks the final output before it is used?
+```
+
+Without these inputs, the agent should be cautious.
+
+---
+
+## Reusable Agent Template
+
+A reusable data analysis support agent can be defined like this:
+
+```text
+Agent name:
+Data Analysis Support Agent
+
+Purpose:
+Support a human analyst in planning, checking, coding, interpreting, and communicating data analysis work.
+
+Primary users:
+Learners, analysts, researchers, data scientists, educators, and project teams.
+
+Inputs:
+Analytical question, dataset description, variable definitions, sample rows or schema, preferred tools, expected output, and known limitations.
+
+Core workflow:
+1. Clarify the analytical question.
+2. Identify the unit of analysis.
+3. Review available data and metadata.
+4. Propose an analysis plan.
+5. Suggest or draft code in small steps.
+6. Identify quality checks.
+7. Help interpret outputs cautiously.
+8. Draft communication materials.
+9. Document assumptions and limitations.
+10. Require human review before use.
+
+Output standards:
+Outputs should distinguish evidence from interpretation, state assumptions clearly, avoid unsupported claims, and include review notes.
+
+Boundaries:
+The agent must not fabricate results, invent data, make unsupported causal claims, or replace human analytical responsibility.
+```
+
+This template can be adapted to different fields.
+
+For example, the same pattern can support public health analysis, omics analysis, education program evaluation, business reporting, or portfolio project review.
+
+---
+
+## Example Prompt for the Agent
+
+A useful starting prompt is:
+
+```text
+You are a Data Analysis Support Agent.
+
+Your role is to support, not replace, the human analyst.
+
+Help me clarify the analytical question, identify the required data inputs, plan the analysis, suggest quality checks, support code development, and prepare cautious interpretation.
+
+Do not invent results.
+Do not assume variable meanings without evidence.
+Do not make causal claims unless the study design supports them.
+Separate what is known, what is assumed, and what needs checking.
+Ask for missing context when it affects the analysis.
+End with a human review checklist.
+```
+
+This prompt gives the agent a role, purpose, boundaries, and expected behavior.
+
+It is better than asking:
+
+```text
+Analyze my data.
+```
+
+The better prompt creates a system.
+
+The weaker prompt creates an uncontrolled task.
+
+---
+
+## Example Use Case: Reviewing an Analysis Table
+
+Suppose an analyst has a results table from a model or statistical test.
+
+The agent can help inspect the table by asking:
+
+```text
+What does each row represent?
+What is the outcome variable?
+What is the comparison or predictor?
+Which columns contain estimates?
+Which columns contain uncertainty measures?
+Which columns contain p-values or adjusted p-values?
+Were multiple comparisons performed?
+What threshold is being used, and why?
+What claims are allowed from this design?
+```
+
+For a CDI data workflow, this connects naturally to the broader data science foundation:
+
+```text
+Raw or processed data
+        ↓
+Tidy results table
+        ↓
+Quality checks
+        ↓
+Interpretation
+        ↓
+Communication
+        ↓
+Decision or next action
+```
+
+The agent can support the movement from table to interpretation.
+
+But the analyst must verify that the table is real, correctly produced, and correctly understood.
+
+---
+
+## Example Use Case: Supporting Reproducible Code
+
+The agent can also help with reproducible code.
+
+A responsible code-support interaction might ask the agent to:
+
+```text
+Review this R script for readability and reproducibility.
+Identify any assumptions.
+Suggest checks for missing values and duplicate IDs.
+Do not change the analysis method unless you explain why.
+Return a revised script and a short review checklist.
+```
+
+This is better than simply asking for code.
+
+It makes review part of the task.
+
+When AI writes code, the human should check:
+
+```text
+Does the code run?
+Are file paths correct?
+Are packages available?
+Are objects named consistently?
+Are joins performed safely?
+Are missing values handled intentionally?
+Are outputs saved in the expected location?
+Are results reproducible?
+```
+
+The agent can support this checklist, but the human must perform the final validation.
+
+---
+
+## Example Use Case: Drafting a Results Narrative
+
+The agent can help turn results into a written explanation.
+
+A strong request would be:
+
+```text
+Using the results table below, draft a cautious results narrative.
+Separate findings, interpretation, and limitations.
+Do not add numbers that are not present in the table.
+Do not claim causality.
+Use plain language suitable for a non-technical audience.
+```
+
+This protects against a common risk: fluent overinterpretation.
+
+The output should be checked against the original table before being shared.
+
+---
+
+## Data Analysis Review Checklist
+
+Before using an AI-supported analysis output, the human analyst should review:
+
+```text
+Question
+[ ] Is the analytical question clearly stated?
+[ ] Is the decision or purpose of the analysis clear?
+
+Data
+[ ] Is the data source documented?
+[ ] Is the unit of analysis clear?
+[ ] Are key variables defined?
+[ ] Are missing values checked?
+[ ] Are duplicates checked where relevant?
+
+Methods
+[ ] Is the chosen method appropriate for the question?
+[ ] Are assumptions stated?
+[ ] Are limitations documented?
+
+Code
+[ ] Does the code run in the intended environment?
+[ ] Are file paths and outputs correct?
+[ ] Are transformations inspectable?
+[ ] Are results reproducible?
+
+Outputs
+[ ] Are tables and plots labeled clearly?
+[ ] Do results match the analysis question?
+[ ] Are interpretations supported by evidence?
+[ ] Are uncertainty and limitations included?
+
+Communication
+[ ] Is the language clear?
+[ ] Are claims cautious?
+[ ] Is human review complete before sharing?
+```
+
+This checklist turns AI support into accountable analysis practice.
+
+---
+
+## Common Failure Modes
+
+AI-supported data analysis can fail in predictable ways.
+
+### Failure mode 1: The agent assumes column meanings
+
+A column named `score` may refer to many things.
+
+It could be an assessment score, risk score, model score, satisfaction score, or quality score.
+
+The agent should not assume meaning without metadata.
+
+### Failure mode 2: The agent writes code that looks right but does not run
+
+Generated code can contain wrong package names, wrong function arguments, or objects that do not exist.
+
+The human must test the code.
+
+### Failure mode 3: The agent overstates the result
+
+A descriptive comparison may be written as if it proves impact.
+
+The human must check whether the study design supports the claim.
+
+### Failure mode 4: The agent ignores missingness
+
+Missing data can change interpretation.
+
+A responsible analysis should report missingness and explain how it was handled.
+
+### Failure mode 5: The agent produces polished but unsupported language
+
+Professional writing is not the same as valid interpretation.
+
+The final narrative must be checked against the evidence.
+
+---
+
+## Documentation Standard
+
+Every AI-supported analysis should leave a small record.
+
+A simple documentation note can include:
+
+```text
+AI use record
+
+Project:
+Date:
+Human analyst:
+AI role:
+Input materials used:
+Outputs generated:
+Checks performed:
+Known limitations:
+Final human decision:
+```
+
+This does not need to be complicated.
+
+The purpose is to make the workflow inspectable.
+
+If someone later asks how the result was produced, the team should be able to explain the process.
+
+---
+
+## How This Connects to CDI Data Science Guides
+
+In the CDI ecosystem, data analysis is not treated as isolated computation.
+
+It is part of a system:
+
+```text
+Question
+  ↓
+Data
+  ↓
+Analysis
+  ↓
+Interpretation
+  ↓
+Communication
+  ↓
+Decision
+```
+
+The data analysis support agent fits into this system as an assistant.
+
+It can help learners and professionals use the Data Science Foundations, Applied Data Science, Omics Systems, Career System, and other CDI guides more effectively.
+
+However, the same principle remains:
+
+> AI may support the workflow, but the evidence must carry the claim.
+
+This is especially important in scientific, medical, educational, financial, and policy settings.
+
+---
+
+## Practical Exercise
+
+Choose one small dataset or results table.
+
+Use the data analysis support agent pattern to prepare a review plan.
+
+Your output should include:
+
+```text
+1. Analytical question
+2. Dataset description
+3. Unit of analysis
+4. Key variables
+5. Proposed checks
+6. Suggested analysis steps
+7. Expected outputs
+8. Interpretation cautions
+9. Human review checklist
+```
+
+Do not begin with code.
+
+Begin with the system.
+
+After the plan is clear, then code becomes easier to write, test, and explain.
+
+---
+
+## Chapter Summary
+
+A data analysis support agent helps a human analyst work more clearly and carefully.
+
+It can support question framing, data understanding, analysis planning, code development, quality checks, interpretation, communication, and documentation.
+
+But it must remain bounded.
+
+It should not invent data, fabricate results, make unsupported claims, or replace human responsibility.
+
+The strongest use of this agent is not to speed through analysis blindly.
+
+It is to make analysis more inspectable, reproducible, and explainable.
+
+## Looking Ahead
+
+The next chapter introduces the **Communication and Reporting Agent**.
+
+That agent focuses on turning reviewed work into clear messages, reports, briefs, slides, documentation, and public-facing communication.
+
+The same principle continues:
+
+AI can help shape communication, but human review must protect accuracy, context, tone, and responsibility.

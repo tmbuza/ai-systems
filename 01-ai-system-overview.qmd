@@ -1,0 +1,518 @@
+# AI System Overview {#ai-system-overview}
+
+:::cdi-message
+- **ID:** AI-001
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, mentors, and professionals building responsible AI-enabled workflows
+- **Theme:** AI becomes more useful when it is designed as a human-led system with clear purpose, context, evaluation, and documentation
+:::
+
+AI is often introduced as a tool.
+
+A chatbot.
+
+A writing assistant.
+
+A coding helper.
+
+A summarizer.
+
+A search companion.
+
+A productivity shortcut.
+
+These uses are real and valuable.
+
+But they are only the beginning.
+
+An **AI system** is not defined by the tool alone.
+
+It is defined by how people frame the work, provide context, guide the interaction, evaluate the output, document the process, and decide what to do next.
+
+This chapter introduces the overall AI Systems framework used throughout this guide.
+
+The purpose is to move from isolated AI use toward structured, responsible, reusable, and applied AI workflows.
+
+---
+
+## From AI Use to AI Systems
+
+Casual AI use usually begins with a single request.
+
+```text
+Ask AI a question
+        ↓
+Receive an answer
+        ↓
+Use or ignore the answer
+```
+
+This can be helpful, especially for brainstorming, drafting, summarizing, or explaining a concept.
+
+But casual AI use has limits.
+
+The task may be unclear.
+
+The context may be incomplete.
+
+The output may sound confident but contain errors.
+
+The reasoning may not match the real situation.
+
+The final decision may be made without enough review.
+
+A system-based approach adds structure.
+
+```text
+Define the problem
+        ↓
+Provide context
+        ↓
+Design the AI interaction
+        ↓
+Generate or analyze output
+        ↓
+Evaluate the output
+        ↓
+Make a human decision
+        ↓
+Document the workflow
+```
+
+This shift is the foundation of the guide.
+
+The goal is not simply to use AI more often.
+
+The goal is to use AI more responsibly, more reproducibly, and more effectively.
+
+---
+
+## What Is an AI System?
+
+In this guide, an AI system is a human-led workflow that uses AI to support thinking, analysis, creation, communication, automation, or decision support.
+
+An AI system includes:
+
+- a clear purpose,
+- a defined task or workflow,
+- relevant context,
+- appropriate AI assistance,
+- human review,
+- quality checks,
+- documentation,
+- and a final human decision or action.
+
+The AI model is only one part of the system.
+
+The surrounding workflow determines whether the AI output becomes useful, risky, confusing, reproducible, or trustworthy.
+
+A weak AI system may produce polished but unreliable work.
+
+A strong AI system makes the work easier to inspect, improve, explain, and defend.
+
+---
+
+## The Core AI Systems Pattern
+
+The core pattern used throughout this guide is:
+
+```text
+Problem
+  ↓
+Context
+  ↓
+AI Assistance
+  ↓
+Evaluation
+  ↓
+Human Decision
+  ↓
+Documentation
+```
+
+Each layer has a role.
+
+The **problem** defines what the work is trying to accomplish.
+
+The **context** gives the AI relevant background, constraints, examples, data, documents, or standards.
+
+The **AI assistance** supports generation, reasoning, coding, summarization, classification, transformation, review, or planning.
+
+The **evaluation** checks whether the output is correct, useful, complete, appropriate, and safe.
+
+The **human decision** determines what is accepted, revised, rejected, shared, implemented, or escalated.
+
+The **documentation** records enough information for the workflow to be reviewed, repeated, improved, or taught.
+
+---
+
+## The Human–AI–Human Loop
+
+AI Systems uses a Human–AI–Human model.
+
+```text
+Human frames the task
+        ↓
+AI assists with the work
+        ↓
+Human evaluates and decides
+```
+
+This loop protects the role of human judgment.
+
+It also makes AI easier to use responsibly.
+
+The human begins the workflow by identifying the real need.
+
+The AI contributes support in the middle.
+
+The human closes the loop by reviewing the result and deciding what should happen next.
+
+This is important because AI outputs can be fluent without being true.
+
+They can be structured without being complete.
+
+They can be helpful without being sufficient.
+
+They can be fast without being appropriate.
+
+The Human–AI–Human loop keeps responsibility visible.
+
+---
+
+## AI Systems Architecture
+
+The full guide is organized around four connected layers.
+
+```{mermaid}
+flowchart TD
+
+    A[Part I: AI Foundations]
+    B[Part II: AI Systems]
+    C[Part III: Reusable AI Agent Template]
+    D[Part IV: Applied AI Agents]
+
+    A --> B
+    B --> C
+    C --> D
+```
+
+The four parts are sequential, but they also work as a reusable reference system.
+
+Part I builds the mindset.
+
+Part II builds the workflow.
+
+Part III builds the reusable agent template.
+
+Part IV applies the template to real professional tasks.
+
+---
+
+## Part I: AI Foundations
+
+The first part introduces the foundations needed before designing AI workflows.
+
+It includes:
+
+```text
+00-preface.qmd
+01-ai-system-overview.qmd
+02-thinking-with-ai.qmd
+03-human-ai-human-framework.qmd
+04-prompting-as-system-design.qmd
+```
+
+This part answers the question:
+
+> How should we think about AI before we build with it?
+
+The emphasis is on AI as a thinking partner, workflow assistant, and decision-support component.
+
+The foundation is not tool-centered.
+
+It is human-centered.
+
+---
+
+## Part II: AI Systems
+
+The second part moves from foundations into workflow design.
+
+It includes:
+
+```text
+05-ai-workflow-design.qmd
+06-context-and-knowledge-systems.qmd
+07-ai-output-evaluation.qmd
+08-ai-safety-boundaries-and-human-judgment.qmd
+09-ai-operating-system-for-work.qmd
+```
+
+This part answers the question:
+
+> How do we design AI-supported workflows that can be repeated, reviewed, and improved?
+
+The emphasis is on structure.
+
+AI work becomes stronger when it includes clear workflow steps, reusable context, evaluation criteria, safety boundaries, and documentation habits.
+
+---
+
+## Part III: Reusable AI Agent Template
+
+The third part turns the AI workflow into a reusable agent template.
+
+It includes:
+
+```text
+10-agent-purpose-and-scope.qmd
+11-agent-inputs-context-and-memory.qmd
+12-agent-workflow-and-decision-logic.qmd
+13-agent-output-standards-and-review.qmd
+14-agent-improvement-and-maintenance.qmd
+```
+
+This part answers the question:
+
+> How can we design AI agents that have clear purpose, inputs, logic, output standards, and review processes?
+
+In this guide, an AI agent does not mean uncontrolled automation.
+
+An agent is treated as a structured assistant with a defined role, boundaries, workflow, and review process.
+
+The reusable template helps learners design agents that can support real work without hiding responsibility.
+
+---
+
+## Part IV: Applied AI Agents
+
+The fourth part applies the reusable agent template to practical work.
+
+It includes:
+
+```text
+15-research-and-learning-agent.qmd
+16-career-and-portfolio-agent.qmd
+17-data-analysis-support-agent.qmd
+18-communication-and-reporting-agent.qmd
+```
+
+This part answers the question:
+
+> How can reusable AI agents support learning, career growth, data work, communication, and reporting?
+
+The applied agents are examples, not fixed limits.
+
+They show how the same system pattern can be adapted across domains.
+
+A research agent, a career agent, a data analysis agent, and a reporting agent may appear different on the surface.
+
+But they all depend on the same core structure:
+
+```text
+Purpose
+  ↓
+Inputs
+  ↓
+Context
+  ↓
+Workflow
+  ↓
+Output
+  ↓
+Review
+  ↓
+Improvement
+```
+
+---
+
+## Why Systems Thinking Matters
+
+Systems thinking matters because AI work is rarely only about the AI model.
+
+The quality of AI-supported work depends on the full environment around the model.
+
+This includes:
+
+- the person using the system,
+- the problem being addressed,
+- the available evidence,
+- the prompt or instruction design,
+- the quality of the input materials,
+- the evaluation process,
+- the risk level of the task,
+- the communication context,
+- and the final human decision.
+
+When these parts are disconnected, AI work becomes fragile.
+
+When these parts are connected, AI becomes easier to use responsibly.
+
+---
+
+## A Simple AI Workflow Example
+
+Consider a learner using AI to summarize a research article.
+
+A weak workflow might be:
+
+```text
+Paste article title
+Ask for summary
+Accept the answer
+```
+
+A stronger workflow would be:
+
+```text
+Define the purpose of the summary
+        ↓
+Provide the article text or abstract
+        ↓
+Ask for claims, evidence, limitations, and unanswered questions
+        ↓
+Compare the AI summary with the source
+        ↓
+Revise errors or missing points
+        ↓
+Document how AI was used
+```
+
+The second workflow is slower than a single prompt, but it is more reliable.
+
+It makes the work easier to inspect and improve.
+
+It also teaches the learner how to think with AI instead of simply receiving AI output.
+
+---
+
+## A Simple Agent Example
+
+An AI agent can be understood as a reusable workflow assistant.
+
+For example, a research and learning agent may have this structure:
+
+```text
+Role:
+Support structured reading and synthesis
+
+Inputs:
+Research question, article, notes, or topic
+
+Workflow:
+Summarize, extract claims, identify evidence, list limitations, suggest next questions
+
+Output:
+Structured learning brief
+
+Review:
+Human checks source alignment and corrects errors
+```
+
+This is not magic.
+
+It is a reusable work pattern.
+
+The value comes from defining the agent clearly enough that it can be used, reviewed, improved, and adapted.
+
+---
+
+## What Makes an AI System Responsible?
+
+A responsible AI system does not rely on AI output alone.
+
+It includes human judgment at important points.
+
+It identifies when the task is high risk.
+
+It checks outputs against evidence.
+
+It documents assumptions and limitations.
+
+It protects sensitive information.
+
+It avoids overstating certainty.
+
+It makes clear who is responsible for the final decision.
+
+In practical terms, responsibility is not only an ethical idea.
+
+It is also a workflow design requirement.
+
+---
+
+## What Makes an AI System Reproducible?
+
+A reproducible AI system is one where the workflow can be repeated or reviewed with reasonable clarity.
+
+This does not mean every AI response will be identical.
+
+AI outputs may vary.
+
+But the process can still be documented.
+
+A reproducible AI workflow records:
+
+- the task goal,
+- the input materials,
+- the prompt or instruction pattern,
+- the model or tool used where relevant,
+- the evaluation criteria,
+- the human review decision,
+- and the final output or action.
+
+This makes AI-supported work easier to teach, audit, improve, and communicate.
+
+---
+
+## CDI Positioning
+
+Within Complex Data Insights, AI Systems sits beside other CDI systems such as data science, omics, clinical data, career development, and systematic dataset discovery.
+
+The role of AI Systems is not to replace those domains.
+
+It supports them.
+
+AI can help with reading, planning, coding, summarizing, documenting, communication, and workflow design.
+
+But domain knowledge still matters.
+
+Data quality still matters.
+
+Statistical reasoning still matters.
+
+Ethics still matters.
+
+Human judgment still matters.
+
+AI Systems therefore functions as a cross-cutting layer across the CDI ecosystem.
+
+---
+
+## Chapter Summary
+
+An AI system is more than a prompt or a tool.
+
+It is a human-led workflow that connects purpose, context, AI assistance, evaluation, decision-making, and documentation.
+
+This guide is organized into four parts:
+
+```text
+Part I: AI Foundations
+        ↓
+Part II: AI Systems
+        ↓
+Part III: Reusable AI Agent Template
+        ↓
+Part IV: Applied AI Agents
+```
+
+The core message is simple:
+
+> AI becomes more useful when it is framed, grounded, evaluated, documented, and kept human-led.
+
+The next chapter focuses on **Thinking with AI**.
+
+It introduces the reasoning habits that make AI more useful as a partner in learning, analysis, explanation, reflection, and decision support.

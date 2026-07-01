@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>Research and Learning Agent – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./16-career-and-portfolio-agent.html" rel="next">
+<link href="./14-agent-improvement-and-maintenance.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15-research-and-learning-agent.html">Part IV: Applied AI Agents</a></li><li class="breadcrumb-item"><a href="./15-research-and-learning-agent.html"><span class="chapter-title">Research and Learning Agent</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -286,7 +233,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-research-and-learning-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Research and Learning Agent</span></a>
+  <a href="./15-research-and-learning-agent.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Research and Learning Agent</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,39 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#why-a-research-and-learning-agent-matters" id="toc-why-a-research-and-learning-agent-matters" class="nav-link active" data-scroll-target="#why-a-research-and-learning-agent-matters">Why a Research and Learning Agent Matters</a></li>
+  <li><a href="#core-purpose" id="toc-core-purpose" class="nav-link" data-scroll-target="#core-purpose">Core Purpose</a></li>
+  <li><a href="#what-the-agent-should-do" id="toc-what-the-agent-should-do" class="nav-link" data-scroll-target="#what-the-agent-should-do">What the Agent Should Do</a></li>
+  <li><a href="#what-the-agent-should-not-do" id="toc-what-the-agent-should-not-do" class="nav-link" data-scroll-target="#what-the-agent-should-not-do">What the Agent Should Not Do</a></li>
+  <li><a href="#agent-inputs" id="toc-agent-inputs" class="nav-link" data-scroll-target="#agent-inputs">Agent Inputs</a></li>
+  <li><a href="#example-input-template" id="toc-example-input-template" class="nav-link" data-scroll-target="#example-input-template">Example Input Template</a></li>
+  <li><a href="#example-agent-prompt" id="toc-example-agent-prompt" class="nav-link" data-scroll-target="#example-agent-prompt">Example Agent Prompt</a></li>
+  <li><a href="#humanaihuman-pattern" id="toc-humanaihuman-pattern" class="nav-link" data-scroll-target="#humanaihuman-pattern">Human–AI–Human Pattern</a></li>
+  <li><a href="#learning-workflow" id="toc-learning-workflow" class="nav-link" data-scroll-target="#learning-workflow">Learning Workflow</a></li>
+  <li><a href="#research-workflow" id="toc-research-workflow" class="nav-link" data-scroll-target="#research-workflow">Research Workflow</a></li>
+  <li><a href="#source-aware-learning" id="toc-source-aware-learning" class="nav-link" data-scroll-target="#source-aware-learning">Source-Aware Learning</a></li>
+  <li><a href="#output-standards" id="toc-output-standards" class="nav-link" data-scroll-target="#output-standards">Output Standards</a></li>
+  <li><a href="#example-output-format" id="toc-example-output-format" class="nav-link" data-scroll-target="#example-output-format">Example Output Format</a></li>
+  <li><a href="#learning-quality-checklist" id="toc-learning-quality-checklist" class="nav-link" data-scroll-target="#learning-quality-checklist">Learning Quality Checklist</a></li>
+  <li><a href="#avoiding-passive-learning" id="toc-avoiding-passive-learning" class="nav-link" data-scroll-target="#avoiding-passive-learning">Avoiding Passive Learning</a></li>
+  <li><a href="#study-plan-mode" id="toc-study-plan-mode" class="nav-link" data-scroll-target="#study-plan-mode">Study Plan Mode</a></li>
+  <li><a href="#research-synthesis-mode" id="toc-research-synthesis-mode" class="nav-link" data-scroll-target="#research-synthesis-mode">Research Synthesis Mode</a></li>
+  <li><a href="#teaching-mode" id="toc-teaching-mode" class="nav-link" data-scroll-target="#teaching-mode">Teaching Mode</a></li>
+  <li><a href="#example-use-case-learning-a-new-concept" id="toc-example-use-case-learning-a-new-concept" class="nav-link" data-scroll-target="#example-use-case-learning-a-new-concept">Example Use Case: Learning a New Concept</a></li>
+  <li><a href="#example-use-case-reading-a-paper" id="toc-example-use-case-reading-a-paper" class="nav-link" data-scroll-target="#example-use-case-reading-a-paper">Example Use Case: Reading a Paper</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
+  <li><a href="#mini-template" id="toc-mini-template" class="nav-link" data-scroll-target="#mini-template">Mini Template</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15-research-and-learning-agent.html">Part IV: Applied AI Agents</a></li><li class="breadcrumb-item"><a href="./15-research-and-learning-agent.html"><span class="chapter-title">Research and Learning Agent</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="research-and-learning-agent" class="quarto-section-identifier"><span class="chapter-title">Research and Learning Agent</span></span></h1>
 </div>
 
 
@@ -374,69 +341,548 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-015</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, researchers, educators, analysts, and professionals using AI to support study, research, and knowledge building</li>
+<li><strong>Theme:</strong> A research and learning agent should help people understand, question, synthesize, and apply knowledge without replacing human judgment</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A research and learning agent is an AI-supported workflow that helps a person learn more deliberately.</p>
+<p>It can help summarize materials.</p>
+<p>It can generate questions.</p>
+<p>It can compare ideas.</p>
+<p>It can explain difficult concepts.</p>
+<p>It can help build a study plan.</p>
+<p>It can support literature scanning, note organization, and synthesis.</p>
+<p>But it should not replace reading, verification, or independent thinking.</p>
+<p>A useful research and learning agent does not simply produce answers.</p>
+<p>It helps the learner move through a structured process:</p>
+<pre class="text"><code>Learning Goal
+  ↓
+Source Materials
+  ↓
+Questioning
+  ↓
+Explanation
+  ↓
+Synthesis
+  ↓
+Practice
+  ↓
+Human Review and Reflection</code></pre>
+<p>The goal is not to make learning passive.</p>
+<p>The goal is to make learning more active, organized, and accountable.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
-<hr>
-</section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="why-a-research-and-learning-agent-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-a-research-and-learning-agent-matters">Why a Research and Learning Agent Matters</h2>
+<p>Many learners use AI by asking quick questions.</p>
+<p>That can be helpful, but it is often shallow.</p>
+<p>A learner may ask:</p>
+<pre class="text"><code>Explain machine learning.</code></pre>
+<p>The AI may produce a fluent explanation.</p>
+<p>But the learner may not know whether the explanation is complete, accurate, appropriate for their level, or connected to their real learning goal.</p>
+<p>A research and learning agent improves this by requiring structure.</p>
+<p>It asks:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>What is the learner trying to understand?</li>
+<li>What materials should be used?</li>
+<li>What level of explanation is needed?</li>
+<li>What concepts are already known?</li>
+<li>What questions remain unclear?</li>
+<li>What evidence supports the answer?</li>
+<li>How will understanding be tested?</li>
+<li>What should the learner do next?</li>
 </ul>
+<p>This turns AI from a shortcut into a learning partner.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="core-purpose" class="level2">
+<h2 class="anchored" data-anchor-id="core-purpose">Core Purpose</h2>
+<p>The purpose of a research and learning agent is to support human learning through structured assistance.</p>
+<p>It can help with:</p>
+<ul>
+<li>reading support,</li>
+<li>concept explanation,</li>
+<li>question generation,</li>
+<li>comparison of ideas,</li>
+<li>study planning,</li>
+<li>literature scanning,</li>
+<li>synthesis of notes,</li>
+<li>practice activities,</li>
+<li>reflection prompts,</li>
+<li>and learning documentation.</li>
+</ul>
+<p>The agent should not pretend to be the final authority.</p>
+<p>It should help the learner become more capable of asking, checking, explaining, and applying knowledge.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="what-the-agent-should-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-agent-should-do">What the Agent Should Do</h2>
+<p>A research and learning agent should support the learner through a repeatable process.</p>
+<pre class="text"><code>1. Clarify the learning goal
+2. Identify available materials
+3. Extract key ideas
+4. Explain concepts at the right level
+5. Generate questions
+6. Compare related ideas
+7. Build a learning summary
+8. Suggest practice tasks
+9. Identify uncertainty
+10. Recommend next steps</code></pre>
+<p>This sequence keeps the work grounded.</p>
+<p>The agent is not only answering.</p>
+<p>It is helping the learner build a path from confusion to understanding.</p>
+<hr>
+</section>
+<section id="what-the-agent-should-not-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-agent-should-not-do">What the Agent Should Not Do</h2>
+<p>A research and learning agent should not:</p>
+<ul>
+<li>invent references,</li>
+<li>replace source reading,</li>
+<li>complete graded assignments dishonestly,</li>
+<li>present uncertain claims as facts,</li>
+<li>remove the learner from the reasoning process,</li>
+<li>hide limitations,</li>
+<li>or encourage dependence on AI-generated explanations.</li>
+</ul>
+<p>The agent should be designed to strengthen learning, not bypass it.</p>
+<p>When the task involves academic submission, professional decisions, medical advice, legal interpretation, financial advice, or policy decisions, the agent should clearly require human review and appropriate expert verification.</p>
+<hr>
+</section>
+<section id="agent-inputs" class="level2">
+<h2 class="anchored" data-anchor-id="agent-inputs">Agent Inputs</h2>
+<p>A research and learning agent works best when it receives clear inputs.</p>
+<p>Useful inputs include:</p>
+<pre class="text"><code>Learning goal:
+What the learner wants to understand or produce.
 
-</div>
+Current level:
+Beginner, intermediate, advanced, or domain-specific background.
+
+Source materials:
+Notes, papers, textbook sections, slides, transcripts, datasets, documentation, or links.
+
+Output need:
+Summary, explanation, study plan, comparison table, questions, flashcards, or synthesis.
+
+Constraints:
+Length, tone, citation needs, deadline, language, or required format.
+
+Review requirement:
+What must be checked by the learner or expert before use.</code></pre>
+<p>The stronger the inputs, the stronger the learning support.</p>
+<p>Poor inputs often produce generic outputs.</p>
+<hr>
+</section>
+<section id="example-input-template" class="level2">
+<h2 class="anchored" data-anchor-id="example-input-template">Example Input Template</h2>
+<p>A learner can use the following template to work with a research and learning agent.</p>
+<pre class="text"><code>Learning goal:
+I want to understand [topic] so that I can [use/application].
+
+My current level:
+I know [what I already understand], but I struggle with [unclear area].
+
+Materials to use:
+Use the following notes, article, chapter, dataset, code, or transcript: [materials].
+
+Task:
+Help me [summarize/explain/compare/question/practice/synthesize].
+
+Output format:
+Provide [bullets/table/study plan/questions/explanation/report outline].
+
+Quality requirements:
+Separate facts from interpretation. Flag uncertainty. Do not invent sources. Tell me what I should verify.</code></pre>
+<p>This prompt makes the learner’s need visible.</p>
+<p>It also gives the agent a clear boundary.</p>
+<hr>
+</section>
+<section id="example-agent-prompt" class="level2">
+<h2 class="anchored" data-anchor-id="example-agent-prompt">Example Agent Prompt</h2>
+<p>The following reusable prompt can define the agent behavior.</p>
+<pre class="text"><code>You are a Research and Learning Agent.
+
+Your role is to help the learner understand, question, synthesize, and apply knowledge.
+
+Do not replace the learner’s thinking.
+Do not invent facts, references, or evidence.
+Use the materials provided when available.
+Separate what is supported by the material from what is your interpretation.
+Flag uncertainty clearly.
+Ask for clarification only when the task cannot be completed safely or usefully.
+
+Workflow:
+1. Restate the learning goal.
+2. Identify the main concepts involved.
+3. Explain the concepts at the learner’s level.
+4. Create a structured summary.
+5. Generate questions that test understanding.
+6. Identify gaps, uncertainties, or points needing verification.
+7. Suggest next learning actions.
+
+Output sections:
+- Learning Goal
+- Key Concepts
+- Explanation
+- Structured Summary
+- Practice Questions
+- What to Verify
+- Next Steps</code></pre>
+<p>This prompt turns the agent into a guided learning workflow.</p>
+<p>It also prevents the agent from acting as a careless answer generator.</p>
+<hr>
+</section>
+<section id="humanaihuman-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="humanaihuman-pattern">Human–AI–Human Pattern</h2>
+<p>The research and learning agent follows the Human–AI–Human model.</p>
+<pre class="text"><code>Human defines the learning need
+        ↓
+AI organizes, explains, questions, and synthesizes
+        ↓
+Human checks, practices, reflects, and applies</code></pre>
+<p>The first human step matters because the learner must define the purpose.</p>
+<p>The AI step matters because it can reduce friction and support exploration.</p>
+<p>The final human step matters because learning only becomes real when the learner reviews, practices, explains, and applies the knowledge.</p>
+<hr>
+</section>
+<section id="learning-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="learning-workflow">Learning Workflow</h2>
+<p>A practical research and learning workflow can be organized as follows.</p>
+<pre class="text"><code>Topic Selection
+  ↓
+Learning Goal
+  ↓
+Material Collection
+  ↓
+AI-Assisted Explanation
+  ↓
+AI-Assisted Questioning
+  ↓
+Human Practice
+  ↓
+Human Reflection
+  ↓
+Learning Notes</code></pre>
+<p>Each stage produces an artifact.</p>
+<pre class="text"><code>Topic Selection        → Topic statement
+Learning Goal          → Learning objective
+Material Collection    → Source list or notes
+AI Explanation         → Concept explanation
+AI Questioning         → Practice questions
+Human Practice         → Answers or exercises
+Human Reflection       → What is understood and what remains unclear
+Learning Notes         → Reusable knowledge record</code></pre>
+<p>This makes learning visible.</p>
+<p>It also makes progress easier to review.</p>
+<hr>
+</section>
+<section id="research-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="research-workflow">Research Workflow</h2>
+<p>For research work, the agent can support a slightly different workflow.</p>
+<pre class="text"><code>Research Question
+  ↓
+Search Terms
+  ↓
+Source Collection
+  ↓
+Screening
+  ↓
+Reading Notes
+  ↓
+Thematic Synthesis
+  ↓
+Evidence Map
+  ↓
+Human Interpretation</code></pre>
+<p>The agent can help generate search terms, summarize abstracts, group themes, compare arguments, and organize evidence.</p>
+<p>But source selection, interpretation, and claims must remain human-led.</p>
+<p>A research agent should not invent a literature review.</p>
+<p>It should support the researcher in building one.</p>
+<hr>
+</section>
+<section id="source-aware-learning" class="level2">
+<h2 class="anchored" data-anchor-id="source-aware-learning">Source-Aware Learning</h2>
+<p>A strong research and learning agent should distinguish between three types of material.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Material type</th>
+<th>Meaning</th>
+<th>How the agent should treat it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Provided source</td>
+<td>Material supplied by the learner</td>
+<td>Use as the main grounding material</td>
+</tr>
+<tr class="even">
+<td>General background</td>
+<td>Common knowledge or model knowledge</td>
+<td>Use cautiously and label as background</td>
+</tr>
+<tr class="odd">
+<td>Unverified claim</td>
+<td>Statement without a source</td>
+<td>Flag for verification</td>
+</tr>
+</tbody>
+</table>
+<p>This distinction is important.</p>
+<p>AI can produce fluent statements that sound confident.</p>
+<p>A research and learning agent must help the learner see which claims are grounded and which claims need checking.</p>
+<hr>
+</section>
+<section id="output-standards" class="level2">
+<h2 class="anchored" data-anchor-id="output-standards">Output Standards</h2>
+<p>The agent’s outputs should be clear, structured, and reviewable.</p>
+<p>Good outputs should include:</p>
+<ul>
+<li>the learning goal,</li>
+<li>the main concepts,</li>
+<li>the explanation,</li>
+<li>important distinctions,</li>
+<li>examples,</li>
+<li>practice questions,</li>
+<li>uncertainties,</li>
+<li>and next steps.</li>
+</ul>
+<p>For research tasks, outputs should also include:</p>
+<ul>
+<li>source notes,</li>
+<li>evidence categories,</li>
+<li>limitations,</li>
+<li>possible disagreements,</li>
+<li>and claims that require verification.</li>
+</ul>
+<p>The output should not hide uncertainty.</p>
+<p>Uncertainty is part of responsible learning.</p>
+<hr>
+</section>
+<section id="example-output-format" class="level2">
+<h2 class="anchored" data-anchor-id="example-output-format">Example Output Format</h2>
+<pre class="text"><code>Learning Goal
+- [Restated goal]
+
+Key Concepts
+- [Concept 1]
+- [Concept 2]
+- [Concept 3]
+
+Explanation
+[Plain-language explanation matched to the learner’s level]
+
+Structured Summary
+- Main idea:
+- Supporting idea:
+- Important distinction:
+- Example:
+
+Practice Questions
+1. [Question]
+2. [Question]
+3. [Question]
+
+What to Verify
+- [Claim, source, or detail that needs checking]
+
+Next Steps
+- [Recommended action]</code></pre>
+<p>A consistent output format makes the agent easier to reuse.</p>
+<p>It also makes the learning record easier to save.</p>
+<hr>
+</section>
+<section id="learning-quality-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="learning-quality-checklist">Learning Quality Checklist</h2>
+<p>Before accepting the agent output, the learner should review it.</p>
+<pre class="text"><code>Did the output answer the learning goal?
+Was the explanation appropriate for my level?
+Were key terms defined clearly?
+Were examples useful and accurate?
+Were uncertainties flagged?
+Were sources used honestly?
+Can I explain the idea in my own words?
+Can I answer practice questions without copying the AI?
+Do I know what to study next?</code></pre>
+<p>The most important test is not whether the AI output sounds good.</p>
+<p>The most important test is whether the learner can now think, explain, and apply the idea more clearly.</p>
+<hr>
+</section>
+<section id="avoiding-passive-learning" class="level2">
+<h2 class="anchored" data-anchor-id="avoiding-passive-learning">Avoiding Passive Learning</h2>
+<p>One risk of AI-supported learning is passivity.</p>
+<p>The learner may read an AI answer and feel that they understand.</p>
+<p>But recognition is not the same as understanding.</p>
+<p>A research and learning agent should therefore include active learning prompts.</p>
+<p>Examples include:</p>
+<pre class="text"><code>Explain this concept back in your own words.
+Create one example from your own field.
+Identify one assumption in this argument.
+Compare this idea with a related idea.
+Answer these questions before reading the suggested answer.
+List what still confuses you.</code></pre>
+<p>These prompts return responsibility to the learner.</p>
+<hr>
+</section>
+<section id="study-plan-mode" class="level2">
+<h2 class="anchored" data-anchor-id="study-plan-mode">Study Plan Mode</h2>
+<p>The same agent can help design a study plan.</p>
+<p>A good study plan should include:</p>
+<pre class="text"><code>Goal
+Current level
+Available time
+Key topics
+Learning sequence
+Practice tasks
+Review schedule
+Assessment method
+Reflection checkpoint</code></pre>
+<p>Example prompt:</p>
+<pre class="text"><code>Help me create a two-week study plan for [topic].
+My current level is [level].
+I can study [time] per day.
+I need to be able to [outcome].
+Include reading, practice, review, and self-testing.
+Do not make the plan too crowded.</code></pre>
+<p>The agent should avoid unrealistic plans.</p>
+<p>A useful study plan is one the learner can actually follow.</p>
+<hr>
+</section>
+<section id="research-synthesis-mode" class="level2">
+<h2 class="anchored" data-anchor-id="research-synthesis-mode">Research Synthesis Mode</h2>
+<p>For research synthesis, the agent can help organize notes into themes.</p>
+<p>Example prompt:</p>
+<pre class="text"><code>Using the notes below, help me identify the main themes, agreements, disagreements, methods, limitations, and open questions.
+Do not add claims that are not supported by the notes.
+Separate evidence from interpretation.
+End with a list of points I should verify before writing.</code></pre>
+<p>Possible output sections:</p>
+<pre class="text"><code>Main Themes
+Areas of Agreement
+Areas of Disagreement
+Methods Mentioned
+Limitations
+Evidence Gaps
+Possible Synthesis Statement
+Claims to Verify</code></pre>
+<p>This supports the researcher without writing beyond the evidence.</p>
+<hr>
+</section>
+<section id="teaching-mode" class="level2">
+<h2 class="anchored" data-anchor-id="teaching-mode">Teaching Mode</h2>
+<p>Educators can use a research and learning agent to prepare learning support materials.</p>
+<p>The agent can help create:</p>
+<ul>
+<li>concept explanations,</li>
+<li>discussion questions,</li>
+<li>revision prompts,</li>
+<li>formative assessment questions,</li>
+<li>examples,</li>
+<li>analogies,</li>
+<li>and feedback templates.</li>
+</ul>
+<p>However, educators should review outputs carefully.</p>
+<p>Teaching materials influence how learners understand a subject.</p>
+<p>The educator remains responsible for accuracy, fairness, level, and alignment with the learning objective.</p>
+<hr>
+</section>
+<section id="example-use-case-learning-a-new-concept" class="level2">
+<h2 class="anchored" data-anchor-id="example-use-case-learning-a-new-concept">Example Use Case: Learning a New Concept</h2>
+<p>A learner wants to understand the difference between automation and AI agents.</p>
+<p>The learner provides this goal:</p>
+<pre class="text"><code>I want to understand the difference between automation and AI agents so I can explain it to beginners.
+I know that automation follows rules, but I am confused about what makes an agent different.
+Give me a simple explanation, a comparison table, and three practice questions.</code></pre>
+<p>A useful agent response should:</p>
+<ul>
+<li>restate the goal,</li>
+<li>define automation,</li>
+<li>define AI agents,</li>
+<li>compare them,</li>
+<li>give examples,</li>
+<li>ask practice questions,</li>
+<li>and identify where the distinction can become blurry.</li>
+</ul>
+<p>The learner should then explain the difference in their own words.</p>
+<p>That final explanation is the evidence of learning.</p>
+<hr>
+</section>
+<section id="example-use-case-reading-a-paper" class="level2">
+<h2 class="anchored" data-anchor-id="example-use-case-reading-a-paper">Example Use Case: Reading a Paper</h2>
+<p>A researcher wants help reading a paper.</p>
+<p>A structured request could be:</p>
+<pre class="text"><code>I am reading this paper for background understanding.
+Help me extract the research question, methods, data, key findings, limitations, and relevance to my project.
+Do not evaluate claims beyond the text provided.
+Flag any methods or terms I should study further.</code></pre>
+<p>The agent can produce a structured reading note.</p>
+<p>The researcher then checks the note against the paper.</p>
+<p>This is not a substitute for reading.</p>
+<p>It is a support system for reading carefully.</p>
+<hr>
+</section>
+<section id="documentation" class="level2">
+<h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
+<p>A research and learning agent should leave behind useful learning records.</p>
+<p>Possible records include:</p>
+<pre class="text"><code>learning-notes.md
+source-summary-table.csv
+practice-questions.md
+study-plan.md
+research-synthesis.md
+uncertainty-log.md</code></pre>
+<p>Documentation helps the learner return to previous work.</p>
+<p>It also makes the learning process visible to mentors, teachers, collaborators, or future self-review.</p>
+<hr>
+</section>
+<section id="mini-template" class="level2">
+<h2 class="anchored" data-anchor-id="mini-template">Mini Template</h2>
+<p>A reusable research and learning agent can be summarized as:</p>
+<pre class="text"><code>Agent name:
+Research and Learning Agent
+
+Purpose:
+Support structured learning, reading, questioning, synthesis, and reflection.
+
+Inputs:
+Learning goal, current level, source materials, task type, output format, constraints.
+
+Workflow:
+Clarify goal → identify concepts → explain → summarize → question → verify → recommend next steps.
+
+Outputs:
+Explanation, summary, questions, synthesis, study plan, uncertainty list, next actions.
+
+Review:
+Learner checks accuracy, source alignment, understanding, and ability to explain independently.
+
+Boundaries:
+No invented sources, no dishonest academic completion, no unsupported claims, no replacement of expert review.</code></pre>
+<p>This template can be adapted for students, researchers, educators, and professionals.</p>
+<hr>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<p>A research and learning agent is not just a chatbot for answers.</p>
+<p>It is a structured learning support system.</p>
+<p>It helps a learner clarify goals, work with materials, ask better questions, synthesize ideas, practice understanding, and document progress.</p>
+<p>The best version of this agent does not make the learner dependent.</p>
+<p>It makes the learner more capable.</p>
+<p>The human remains responsible for reading, checking, reflecting, and applying the knowledge.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter applies the same reusable agent logic to career and portfolio development.</p>
+<p>A career and portfolio agent helps a learner or professional connect skills, projects, evidence, communication, and opportunity.</p>
+<p>It extends the AI Systems framework from learning into professional growth.</p>
 
 
 </section>
@@ -845,11 +1291,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./14-agent-improvement-and-maintenance.html" class="pagination-link" aria-label="Agent Improvement and Maintenance">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Agent Improvement and Maintenance</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./16-career-and-portfolio-agent.html" class="pagination-link" aria-label="Career and Portfolio Agent">
+        <span class="nav-page-text"><span class="chapter-title">Career and Portfolio Agent</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

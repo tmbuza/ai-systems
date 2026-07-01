@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>Communication and Reporting Agent – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./999-appendix.html" rel="next">
+<link href="./17-data-analysis-support-agent.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15-research-and-learning-agent.html">Part IV: Applied AI Agents</a></li><li class="breadcrumb-item"><a href="./18-communication-and-reporting-agent.html"><span class="chapter-title">Communication and Reporting Agent</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -301,7 +248,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./18-communication-and-reporting-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Communication and Reporting Agent</span></a>
+  <a href="./18-communication-and-reporting-agent.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Communication and Reporting Agent</span></a>
   </div>
 </li>
       </ul>
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,36 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#purpose-of-a-communication-and-reporting-agent" id="toc-purpose-of-a-communication-and-reporting-agent" class="nav-link active" data-scroll-target="#purpose-of-a-communication-and-reporting-agent">Purpose of a Communication and Reporting Agent</a></li>
+  <li><a href="#where-the-agent-fits-in-the-humanaihuman-workflow" id="toc-where-the-agent-fits-in-the-humanaihuman-workflow" class="nav-link" data-scroll-target="#where-the-agent-fits-in-the-humanaihuman-workflow">Where the Agent Fits in the Human–AI–Human Workflow</a></li>
+  <li><a href="#common-use-cases" id="toc-common-use-cases" class="nav-link" data-scroll-target="#common-use-cases">Common Use Cases</a>
+  <ul class="collapse">
+  <li><a href="#email-and-message-drafting" id="toc-email-and-message-drafting" class="nav-link" data-scroll-target="#email-and-message-drafting">Email and Message Drafting</a></li>
+  <li><a href="#research-and-analysis-summaries" id="toc-research-and-analysis-summaries" class="nav-link" data-scroll-target="#research-and-analysis-summaries">Research and Analysis Summaries</a></li>
+  <li><a href="#reports-and-documentation" id="toc-reports-and-documentation" class="nav-link" data-scroll-target="#reports-and-documentation">Reports and Documentation</a></li>
+  <li><a href="#public-communication" id="toc-public-communication" class="nav-link" data-scroll-target="#public-communication">Public Communication</a></li>
+  </ul></li>
+  <li><a href="#required-inputs" id="toc-required-inputs" class="nav-link" data-scroll-target="#required-inputs">Required Inputs</a></li>
+  <li><a href="#communication-context-package" id="toc-communication-context-package" class="nav-link" data-scroll-target="#communication-context-package">Communication Context Package</a></li>
+  <li><a href="#output-standards" id="toc-output-standards" class="nav-link" data-scroll-target="#output-standards">Output Standards</a></li>
+  <li><a href="#review-checklist" id="toc-review-checklist" class="nav-link" data-scroll-target="#review-checklist">Review Checklist</a></li>
+  <li><a href="#reporting-agent-workflow" id="toc-reporting-agent-workflow" class="nav-link" data-scroll-target="#reporting-agent-workflow">Reporting Agent Workflow</a></li>
+  <li><a href="#example-agent-specification" id="toc-example-agent-specification" class="nav-link" data-scroll-target="#example-agent-specification">Example Agent Specification</a></li>
+  <li><a href="#example-prompt-template" id="toc-example-prompt-template" class="nav-link" data-scroll-target="#example-prompt-template">Example Prompt Template</a></li>
+  <li><a href="#risks-and-failure-modes" id="toc-risks-and-failure-modes" class="nav-link" data-scroll-target="#risks-and-failure-modes">Risks and Failure Modes</a></li>
+  <li><a href="#human-judgment-in-communication" id="toc-human-judgment-in-communication" class="nav-link" data-scroll-target="#human-judgment-in-communication">Human Judgment in Communication</a></li>
+  <li><a href="#connection-to-the-full-ai-systems-guide" id="toc-connection-to-the-full-ai-systems-guide" class="nav-link" data-scroll-target="#connection-to-the-full-ai-systems-guide">Connection to the Full AI Systems Guide</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15-research-and-learning-agent.html">Part IV: Applied AI Agents</a></li><li class="breadcrumb-item"><a href="./18-communication-and-reporting-agent.html"><span class="chapter-title">Communication and Reporting Agent</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="communication-and-reporting-agent" class="quarto-section-identifier"><span class="chapter-title">Communication and Reporting Agent</span></span></h1>
 </div>
 
 
@@ -374,69 +338,423 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-018</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, mentors, and professionals using AI to communicate work clearly and responsibly</li>
+<li><strong>Theme:</strong> AI can support communication and reporting, but the message, evidence, tone, and responsibility must remain human-led</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Communication is one of the most common ways people use AI.</p>
+<p>They ask AI to draft emails.</p>
+<p>They ask AI to summarize documents.</p>
+<p>They ask AI to rewrite reports.</p>
+<p>They ask AI to turn technical notes into plain language.</p>
+<p>They ask AI to prepare presentations, announcements, captions, and explanations.</p>
+<p>This is useful.</p>
+<p>But communication is not only writing.</p>
+<p>Communication carries meaning, evidence, audience expectations, professional judgment, and responsibility.</p>
+<p>A communication and reporting agent should therefore not be treated as a tool for producing polished words only.</p>
+<p>It should be treated as a system for helping humans communicate clearly, honestly, and appropriately.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
-<hr>
-</section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="purpose-of-a-communication-and-reporting-agent" class="level2">
+<h2 class="anchored" data-anchor-id="purpose-of-a-communication-and-reporting-agent">Purpose of a Communication and Reporting Agent</h2>
+<p>A communication and reporting agent helps transform information into useful messages for specific audiences.</p>
+<p>Its purpose is to support:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>clearer writing,</li>
+<li>better structure,</li>
+<li>appropriate tone,</li>
+<li>audience adaptation,</li>
+<li>transparent reporting,</li>
+<li>evidence-based summaries,</li>
+<li>and reusable communication workflows.</li>
 </ul>
+<p>The agent can assist with many communication tasks, including:</p>
+<ul>
+<li>drafting emails,</li>
+<li>rewriting messages,</li>
+<li>summarizing findings,</li>
+<li>preparing reports,</li>
+<li>converting technical language into plain language,</li>
+<li>generating slide outlines,</li>
+<li>preparing public updates,</li>
+<li>writing learner feedback,</li>
+<li>and creating project documentation.</li>
+</ul>
+<p>However, the agent should not decide what should be communicated without human oversight.</p>
+<p>It should not invent evidence.</p>
+<p>It should not exaggerate results.</p>
+<p>It should not remove uncertainty.</p>
+<p>It should not make claims that the human cannot defend.</p>
+<p>The agent supports communication.</p>
+<p>The human owns the message.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="where-the-agent-fits-in-the-humanaihuman-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="where-the-agent-fits-in-the-humanaihuman-workflow">Where the Agent Fits in the Human–AI–Human Workflow</h2>
+<p>The communication and reporting agent follows the same Human–AI–Human model used throughout this guide.</p>
+<pre class="text"><code>Human defines the communication purpose
+        ↓
+Human provides audience, context, evidence, and constraints
+        ↓
+AI drafts, rewrites, summarizes, structures, or adapts the message
+        ↓
+Human reviews accuracy, tone, completeness, and risk
+        ↓
+Human approves, edits, sends, publishes, or archives the final output</code></pre>
+<p>The workflow begins with human intent and ends with human approval.</p>
+<p>This is important because communication can affect trust.</p>
+<p>A technically correct message can still be inappropriate for the audience.</p>
+<p>A polished report can still overstate the evidence.</p>
+<p>A friendly email can still create the wrong expectation.</p>
+<p>A summary can omit important limitations.</p>
+<p>For that reason, the agent must be designed with review built in from the beginning.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="common-use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="common-use-cases">Common Use Cases</h2>
+<p>A communication and reporting agent can support many recurring professional tasks.</p>
+<section id="email-and-message-drafting" class="level3">
+<h3 class="anchored" data-anchor-id="email-and-message-drafting">Email and Message Drafting</h3>
+<p>The agent can help draft:</p>
+<ul>
+<li>professional emails,</li>
+<li>follow-up messages,</li>
+<li>reminders,</li>
+<li>announcements,</li>
+<li>thank-you notes,</li>
+<li>mentorship messages,</li>
+<li>project updates,</li>
+<li>and stakeholder responses.</li>
+</ul>
+<p>For these tasks, the agent needs the relationship, purpose, tone, and required action.</p>
+<p>A good input might include:</p>
+<pre class="text"><code>Audience: A student mentee
+Purpose: Congratulate them for creating a GitHub account
+Tone: Warm, encouraging, simple, mentor-like
+Must include: Keep learning, keep building, portfolio mindset
+Avoid: Too much technical language
+Signature: Teresia Mrema Buza, Mentor, JIONGEZE Youth Skills Mentorship, Founder, Complex Data Insights</code></pre>
+<p>This gives the agent enough structure to produce a useful draft.</p>
+<p>The human still reviews whether the message sounds genuine and appropriate.</p>
+</section>
+<section id="research-and-analysis-summaries" class="level3">
+<h3 class="anchored" data-anchor-id="research-and-analysis-summaries">Research and Analysis Summaries</h3>
+<p>The agent can help turn long notes into:</p>
+<ul>
+<li>executive summaries,</li>
+<li>literature summaries,</li>
+<li>finding summaries,</li>
+<li>methods summaries,</li>
+<li>interpretation notes,</li>
+<li>and limitation statements.</li>
+</ul>
+<p>For these tasks, the agent must be grounded in source material.</p>
+<p>It should not summarize from memory when evidence is required.</p>
+<p>A useful instruction is:</p>
+<pre class="text"><code>Use only the notes provided below.
+Do not add claims that are not supported by the notes.
+Separate findings, limitations, and next steps.
+Mark any unclear point as needing human review.</code></pre>
+<p>This keeps the output closer to the available evidence.</p>
+</section>
+<section id="reports-and-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="reports-and-documentation">Reports and Documentation</h3>
+<p>The agent can help prepare structured reports from project outputs.</p>
+<p>For example:</p>
+<pre class="text"><code>Inputs:
+- analysis summary table
+- methods notes
+- interpretation notes
+- figures
+- audience description
 
-</div>
+Outputs:
+- report title
+- short background
+- methods summary
+- key findings
+- limitations
+- recommendations
+- appendix checklist</code></pre>
+<p>This is especially useful in data science, omics, clinical data, career, and AI systems projects.</p>
+<p>The agent helps organize the report.</p>
+<p>The human verifies the claims.</p>
+</section>
+<section id="public-communication" class="level3">
+<h3 class="anchored" data-anchor-id="public-communication">Public Communication</h3>
+<p>The agent can help convert internal work into public-facing communication such as:</p>
+<ul>
+<li>LinkedIn posts,</li>
+<li>website descriptions,</li>
+<li>repository descriptions,</li>
+<li>README introductions,</li>
+<li>project announcements,</li>
+<li>learning reflections,</li>
+<li>and program updates.</li>
+</ul>
+<p>Public communication requires extra care.</p>
+<p>The agent should avoid overclaiming.</p>
+<p>It should respect privacy.</p>
+<p>It should avoid presenting early work as finished evidence.</p>
+<p>It should make the purpose of the work clear.</p>
+<hr>
+</section>
+</section>
+<section id="required-inputs" class="level2">
+<h2 class="anchored" data-anchor-id="required-inputs">Required Inputs</h2>
+<p>A communication and reporting agent works best when the human provides clear input.</p>
+<p>The minimum input package should include:</p>
+<pre class="text"><code>Communication purpose:
+Audience:
+Relationship to audience:
+Main message:
+Evidence or source material:
+Required details:
+Tone:
+Length:
+Format:
+Things to avoid:
+Review criteria:</code></pre>
+<p>Without these inputs, the agent may produce generic writing.</p>
+<p>Generic writing can sound polished but fail the real task.</p>
+<p>For example, a message to a student should not sound like a corporate press release.</p>
+<p>A scientific report should not sound like a marketing caption.</p>
+<p>A professional update should not overstate uncertain results.</p>
+<p>A communication agent must adapt to the situation.</p>
+<hr>
+</section>
+<section id="communication-context-package" class="level2">
+<h2 class="anchored" data-anchor-id="communication-context-package">Communication Context Package</h2>
+<p>For repeatable communication tasks, it helps to create a context package.</p>
+<p>A context package contains the stable information that the agent needs repeatedly.</p>
+<p>For example:</p>
+<pre class="text"><code>Brand or organization:
+Complex Data Insights
+
+Communication style:
+Clear, practical, professional, human-led, educational
+
+Common audiences:
+Learners, researchers, analysts, educators, mentors, professionals
+
+Preferred principles:
+- Evidence before claims
+- Human responsibility before automation
+- Clarity before complexity
+- Reproducibility before speed
+- Respectful and encouraging tone
+
+Signature style:
+Teresia Mrema Buza | Complex Data Insights</code></pre>
+<p>This package can be reused across reports, emails, guides, and announcements.</p>
+<p>It helps the agent maintain consistency.</p>
+<p>However, the context package should not replace task-specific instructions.</p>
+<p>Each communication task still needs its own audience, purpose, and evidence.</p>
+<hr>
+</section>
+<section id="output-standards" class="level2">
+<h2 class="anchored" data-anchor-id="output-standards">Output Standards</h2>
+<p>A communication and reporting agent should produce outputs that are:</p>
+<ul>
+<li>accurate,</li>
+<li>clear,</li>
+<li>audience-aware,</li>
+<li>appropriately toned,</li>
+<li>evidence-based,</li>
+<li>complete enough for the purpose,</li>
+<li>transparent about uncertainty,</li>
+<li>and ready for human review.</li>
+</ul>
+<p>The output should also match the requested format.</p>
+<p>For example, if the user asks for an email, the output should look like an email.</p>
+<p>If the user asks for a report section, the output should read like a report section.</p>
+<p>If the user asks for a summary, the output should not become a long essay.</p>
+<p>If the user asks for a public caption, the output should be concise and readable.</p>
+<p>Format is part of quality.</p>
+<hr>
+</section>
+<section id="review-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="review-checklist">Review Checklist</h2>
+<p>Before sending, publishing, or submitting AI-assisted communication, the human should review the output.</p>
+<p>A practical checklist is:</p>
+<pre class="text"><code>Accuracy:
+Does every factual claim match the available evidence?
+
+Audience:
+Is the language appropriate for the reader?
+
+Tone:
+Does it sound respectful, professional, and human?
+
+Completeness:
+Does it include the required information?
+
+Privacy:
+Does it avoid exposing sensitive or unnecessary details?
+
+Uncertainty:
+Does it avoid overstating confidence?
+
+Action:
+Is it clear what the reader should know, do, or decide?
+
+Ownership:
+Would I be comfortable signing, sending, publishing, or defending this?</code></pre>
+<p>The final question is the most important.</p>
+<p>If the human would not be comfortable owning the message, the message is not ready.</p>
+<hr>
+</section>
+<section id="reporting-agent-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-agent-workflow">Reporting Agent Workflow</h2>
+<p>A reusable reporting agent can follow this workflow.</p>
+<pre class="text"><code>1. Receive the reporting purpose
+2. Identify the audience
+3. Review the supplied evidence
+4. Separate facts, interpretations, limitations, and recommendations
+5. Draft the report structure
+6. Generate the first draft
+7. Flag unsupported claims or missing information
+8. Apply tone and format requirements
+9. Produce a review checklist
+10. Wait for human approval before final use</code></pre>
+<p>This workflow makes reporting more reliable.</p>
+<p>It also prevents the agent from jumping too quickly into polished writing before the evidence is understood.</p>
+<hr>
+</section>
+<section id="example-agent-specification" class="level2">
+<h2 class="anchored" data-anchor-id="example-agent-specification">Example Agent Specification</h2>
+<p>A reusable communication and reporting agent can be described like this:</p>
+<pre class="text"><code>Agent name:
+Communication and Reporting Agent
+
+Purpose:
+Help transform human-provided notes, evidence, and instructions into clear communication outputs.
+
+Primary users:
+Learners, researchers, analysts, mentors, educators, and professionals.
+
+Supported outputs:
+Emails, summaries, reports, announcements, README sections, social posts, slide outlines, and documentation drafts.
+
+Required inputs:
+Audience, purpose, source material, tone, length, format, required details, and review criteria.
+
+Boundaries:
+Do not invent facts.
+Do not exaggerate findings.
+Do not remove important uncertainty.
+Do not publish or send without human approval.
+Do not expose private or sensitive information unnecessarily.
+
+Review requirements:
+Human must check accuracy, tone, completeness, privacy, and actionability before use.</code></pre>
+<p>This specification makes the agent easier to reuse and improve.</p>
+<hr>
+</section>
+<section id="example-prompt-template" class="level2">
+<h2 class="anchored" data-anchor-id="example-prompt-template">Example Prompt Template</h2>
+<p>A practical prompt template is:</p>
+<pre class="text"><code>You are helping me prepare a communication output.
+
+Purpose:
+[Explain why this message or report is needed]
+
+Audience:
+[Describe who will read it]
+
+Context:
+[Provide background information]
+
+Source material:
+[Paste notes, findings, tables, messages, or draft text]
+
+Required content:
+[List details that must be included]
+
+Tone:
+[Professional, warm, concise, encouraging, formal, plain-language, etc.]
+
+Format:
+[Email, report section, summary, README, announcement, slide outline, etc.]
+
+Constraints:
+[Length, words to avoid, privacy concerns, claims not to make]
+
+Review task:
+Before giving the final draft, flag any missing information, unsupported claims, or risk areas.
+Then provide a clean draft for human review.</code></pre>
+<p>This template supports both writing and review.</p>
+<p>It reminds the agent that communication quality depends on evidence, audience, and responsibility.</p>
+<hr>
+</section>
+<section id="risks-and-failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="risks-and-failure-modes">Risks and Failure Modes</h2>
+<p>Communication agents can fail in several ways.</p>
+<p>They may produce writing that is too generic.</p>
+<p>They may make the message sound less human.</p>
+<p>They may overstate results.</p>
+<p>They may remove important limitations.</p>
+<p>They may invent details.</p>
+<p>They may use a tone that does not fit the relationship.</p>
+<p>They may expose information that should remain private.</p>
+<p>They may make a draft sound final before it has been reviewed.</p>
+<p>These failures are not only writing problems.</p>
+<p>They are system problems.</p>
+<p>The solution is to design the workflow with grounding, constraints, and review.</p>
+<hr>
+</section>
+<section id="human-judgment-in-communication" class="level2">
+<h2 class="anchored" data-anchor-id="human-judgment-in-communication">Human Judgment in Communication</h2>
+<p>Human judgment is especially important in communication because people respond not only to information, but also to tone, timing, relationship, and trust.</p>
+<p>An AI system may help write a message.</p>
+<p>It cannot fully understand the relationship behind the message.</p>
+<p>It may help summarize a report.</p>
+<p>It cannot take responsibility for how the report is used.</p>
+<p>It may help polish a public statement.</p>
+<p>It cannot know every social, professional, or ethical implication.</p>
+<p>For that reason, communication should always return to human responsibility.</p>
+<p>The human decides what is true.</p>
+<p>The human decides what is appropriate.</p>
+<p>The human decides what should be sent.</p>
+<p>The human decides what should be published.</p>
+<hr>
+</section>
+<section id="connection-to-the-full-ai-systems-guide" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-the-full-ai-systems-guide">Connection to the Full AI Systems Guide</h2>
+<p>This chapter completes the applied agent section of the guide.</p>
+<p>The full guide has moved through four layers:</p>
+<pre class="text"><code>AI Foundations
+        ↓
+AI Systems
+        ↓
+Reusable AI Agent Template
+        ↓
+Applied AI Agents</code></pre>
+<p>The communication and reporting agent brings these ideas together.</p>
+<p>It uses foundations because communication must remain human-led.</p>
+<p>It uses systems thinking because communication work has inputs, workflows, outputs, review points, and risks.</p>
+<p>It uses reusable agent design because communication tasks often repeat.</p>
+<p>It becomes applied because real people need real messages, reports, summaries, and documentation.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>A communication and reporting agent helps humans turn information into clear, audience-aware outputs.</p>
+<p>It can support emails, reports, summaries, announcements, public posts, documentation, and presentations.</p>
+<p>Its value is not only speed.</p>
+<p>Its value is structure, clarity, consistency, and review support.</p>
+<p>However, the agent must not invent evidence, exaggerate findings, or replace human approval.</p>
+<p>Responsible communication remains grounded in human judgment.</p>
+<p>The final message should always be something the human is willing to own.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The main chapters of the AI Systems guide are now complete.</p>
+<p>The next section moves into appendices and references.</p>
+<p>The appendix can provide reusable templates, checklists, agent specification formats, evaluation rubrics, and workflow examples.</p>
+<p>The references section can document the sources and broader ideas that support responsible, human-led AI systems.</p>
 
 
 </section>
@@ -845,11 +1163,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./17-data-analysis-support-agent.html" class="pagination-link" aria-label="Data Analysis Support Agent">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Data Analysis Support Agent</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
+        <span class="nav-page-text"><span class="chapter-title">Appendix</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

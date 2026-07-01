@@ -1,0 +1,451 @@
+# Human--AI--Human Framework {#human-ai-human-framework}
+
+:::cdi-message
+- **ID:** AI-003
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI-supported workflows
+- **Theme:** Responsible AI work begins with human framing and ends with human judgment
+:::
+
+AI systems should not begin with a tool.
+
+They should begin with a human purpose.
+
+A person identifies a problem, defines the context, clarifies the expected output, and decides what kind of support is needed.
+
+AI may then assist with generation, reasoning, summarization, coding, analysis, critique, or workflow acceleration.
+
+But the work does not end with the AI output.
+
+A human must review the result, check the evidence, evaluate risk, revise the output, document the process, and decide what action to take.
+
+This is the **Human--AI--Human** framework.
+
+```text
+Human frames the work
+        ↓
+AI assists with the task
+        ↓
+Human evaluates and acts
+```
+
+The framework is simple, but it changes how AI is used.
+
+It moves AI from a replacement mindset to a support-system mindset.
+
+---
+
+## Why the Framework Matters
+
+AI outputs can sound confident even when they are incomplete, outdated, biased, unsupported, or wrong.
+
+This means a responsible workflow cannot treat AI output as the final answer.
+
+The Human--AI--Human framework protects the quality of the work by keeping human responsibility at both ends of the process.
+
+The first human step gives the AI direction.
+
+The final human step gives the work accountability.
+
+Without the first step, AI may respond to a vague or poorly framed task.
+
+Without the final step, AI output may be accepted without inspection.
+
+A strong AI system needs both.
+
+---
+
+## The Three Core Stages
+
+The framework has three core stages.
+
+```text
+1. Human framing
+2. AI assistance
+3. Human review and decision
+```
+
+Each stage has a different role.
+
+### Stage 1: Human Framing
+
+Human framing defines the work before AI is used.
+
+This stage answers questions such as:
+
+- What problem are we trying to solve?
+- Why does the problem matter?
+- Who is the audience?
+- What context does the AI need?
+- What constraints must be respected?
+- What kind of output is expected?
+- What risks should be considered?
+- What evidence or data should guide the response?
+
+Good framing reduces confusion.
+
+It helps the AI produce a more useful response.
+
+It also helps the human evaluate whether the response is appropriate.
+
+A weak frame might say:
+
+```text
+Write something about AI.
+```
+
+A stronger frame might say:
+
+```text
+Draft a short explanation for undergraduate learners showing why AI outputs need human review. Use simple language, include one practical example, and avoid presenting AI as always correct.
+```
+
+The second version gives the AI a purpose, audience, scope, style, and safety boundary.
+
+That is system design.
+
+---
+
+### Stage 2: AI Assistance
+
+AI assistance is the middle of the workflow.
+
+In this stage, AI may help by:
+
+- generating a first draft,
+- summarizing long material,
+- comparing options,
+- explaining a concept,
+- creating code,
+- checking logic,
+- organizing ideas,
+- transforming notes into a structured output,
+- identifying possible gaps,
+- or proposing next steps.
+
+AI is useful because it can accelerate work.
+
+But acceleration is not the same as correctness.
+
+The AI output should be treated as a candidate output, not the final authority.
+
+A responsible user asks:
+
+```text
+What did the AI help produce?
+What assumptions appear in the output?
+What information may be missing?
+What needs verification?
+What should not be accepted without review?
+```
+
+The goal is not to distrust everything.
+
+The goal is to inspect the work before using it.
+
+---
+
+### Stage 3: Human Review and Decision
+
+Human review turns AI output into responsible work.
+
+This stage may include:
+
+- checking factual accuracy,
+- comparing the output with source materials,
+- reviewing calculations or code,
+- testing whether the output fits the audience,
+- identifying unsupported claims,
+- checking for privacy or safety concerns,
+- revising unclear language,
+- documenting AI involvement,
+- and deciding whether the output is ready to use.
+
+The final decision belongs to the human.
+
+AI can support the process, but the human remains responsible for what is submitted, published, shared, taught, or acted upon.
+
+This is especially important in education, research, data analysis, health, finance, policy, legal work, and professional communication.
+
+---
+
+## Human--AI--Human as a Feedback Loop
+
+The framework is not always a single pass.
+
+Most useful AI work happens through iteration.
+
+```text
+Human frames task
+        ↓
+AI produces draft or analysis
+        ↓
+Human reviews output
+        ↓
+Human refines prompt, context, or constraints
+        ↓
+AI improves output
+        ↓
+Human evaluates and decides
+```
+
+This loop makes AI work stronger.
+
+The human does not simply ask once and accept the answer.
+
+The human guides the system, learns from the output, improves the context, and reviews again.
+
+In this sense, AI becomes part of a learning and decision-support workflow.
+
+---
+
+## A Practical Example
+
+Consider a learner who wants to write a short reflection on data ethics.
+
+A casual AI-use approach might be:
+
+```text
+Write a reflection on data ethics.
+```
+
+The AI may produce a fluent answer.
+
+But the learner may not understand the reasoning behind it.
+
+They may submit an output that does not reflect their own experience.
+
+They may also miss important issues such as consent, privacy, bias, or accountability.
+
+A Human--AI--Human approach is different.
+
+### Human framing
+
+The learner first defines the task:
+
+```text
+I need to write a 500-word reflection for a class on data ethics. The reflection should connect privacy, consent, and bias to a real-world example. I want help organizing my own ideas, not a final essay.
+```
+
+### AI assistance
+
+The AI can help by producing:
+
+```text
+- a possible outline,
+- guiding questions,
+- examples of ethical issues,
+- and suggestions for improving clarity.
+```
+
+### Human review and decision
+
+The learner then:
+
+```text
+- chooses the example,
+- writes in their own voice,
+- checks the course requirements,
+- removes unsupported claims,
+- and submits work they understand and can defend.
+```
+
+The AI supports the learner.
+
+It does not replace the learner.
+
+---
+
+## The Role of Context
+
+The Human--AI--Human framework depends heavily on context.
+
+AI systems do not automatically know the full situation.
+
+The human must decide what context to provide.
+
+Useful context may include:
+
+- the problem statement,
+- the audience,
+- the purpose,
+- relevant data,
+- documents or notes,
+- definitions,
+- examples,
+- constraints,
+- output format,
+- quality criteria,
+- and known risks.
+
+The better the context, the more useful the AI assistance can become.
+
+But context also creates responsibility.
+
+Sensitive information should not be shared casually.
+
+Private data, confidential documents, student records, patient information, business secrets, or personal identifiers require careful handling.
+
+Responsible AI use requires both context and boundaries.
+
+---
+
+## Human Judgment Cannot Be Outsourced
+
+AI can assist with reasoning.
+
+But it does not carry human accountability.
+
+It does not know the full consequences of a decision.
+
+It does not replace professional responsibility.
+
+It cannot fully understand local context, lived experience, institutional requirements, ethical obligations, or stakeholder impact unless those are carefully represented and still reviewed by a human.
+
+For that reason, the Human--AI--Human framework keeps judgment where it belongs.
+
+```text
+AI may assist with the work.
+Human judgment remains responsible for the work.
+```
+
+This distinction is central to the entire AI Systems guide.
+
+---
+
+## Common Failure Patterns
+
+The Human--AI--Human framework helps prevent several common failure patterns.
+
+### Failure Pattern 1: Tool-First Thinking
+
+Tool-first thinking begins with:
+
+```text
+Which AI tool should I use?
+```
+
+System-first thinking begins with:
+
+```text
+What problem am I trying to solve, and what kind of support is appropriate?
+```
+
+The second question is stronger.
+
+It prevents the tool from defining the work.
+
+---
+
+### Failure Pattern 2: Prompt Without Context
+
+A prompt without context often produces generic output.
+
+Generic output may sound useful but fail the actual task.
+
+A stronger workflow provides enough context for the AI to respond to the real situation.
+
+---
+
+### Failure Pattern 3: Output Without Evaluation
+
+AI output should not be treated as complete simply because it is fluent.
+
+Evaluation is part of the workflow, not an optional final step.
+
+The human must ask whether the output is correct, relevant, complete, clear, and safe to use.
+
+---
+
+### Failure Pattern 4: Automation Without Responsibility
+
+Automation can save time.
+
+But automation without review can scale errors.
+
+The more an AI-supported workflow affects people, decisions, data, or public communication, the more important the review layer becomes.
+
+---
+
+## Human--AI--Human Checklist
+
+Before using AI, ask:
+
+```text
+Have I defined the problem clearly?
+Have I identified the audience and purpose?
+Have I provided enough context?
+Have I set constraints and boundaries?
+Have I stated the expected output format?
+```
+
+After receiving AI output, ask:
+
+```text
+Is the output accurate?
+Is it relevant to the task?
+Is anything missing?
+Are any claims unsupported?
+Does it respect the audience and context?
+Does it introduce privacy, bias, safety, or ethical concerns?
+What must I revise before using it?
+How should AI involvement be documented?
+```
+
+This checklist turns AI use into a reviewable workflow.
+
+---
+
+## How This Framework Supports Agents
+
+Later in the guide, we will design reusable AI agents.
+
+An agent is not only a prompt.
+
+An agent is a structured workflow with a purpose, inputs, context, decision logic, output standards, review expectations, and improvement process.
+
+The Human--AI--Human framework becomes the safety and quality backbone for those agents.
+
+```text
+Human defines agent purpose
+        ↓
+Agent assists within defined scope
+        ↓
+Human reviews output and improves the system
+```
+
+This prevents agents from becoming uncontrolled black boxes.
+
+It keeps them connected to human goals, human review, and human accountability.
+
+---
+
+## Chapter Summary
+
+The Human--AI--Human framework is the core operating model for responsible AI systems.
+
+It begins with human framing.
+
+It uses AI as an assistant inside a defined workflow.
+
+It ends with human review, decision-making, documentation, and accountability.
+
+The framework can be used by learners, professionals, educators, researchers, analysts, and teams.
+
+It also prepares the foundation for reusable AI agent design.
+
+The central message is:
+
+> AI should support human thinking and action, not remove human responsibility.
+
+---
+
+## Looking Ahead
+
+The next chapter moves from the Human--AI--Human framework into prompt design.
+
+We will treat prompting not as a trick, but as a form of system design.
+
+A strong prompt defines purpose, context, constraints, output format, review criteria, and boundaries.
+
+That is where responsible AI workflows begin to become reproducible.

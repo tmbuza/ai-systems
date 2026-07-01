@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>Career and Portfolio Agent – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./17-data-analysis-support-agent.html" rel="next">
+<link href="./15-research-and-learning-agent.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15-research-and-learning-agent.html">Part IV: Applied AI Agents</a></li><li class="breadcrumb-item"><a href="./16-career-and-portfolio-agent.html"><span class="chapter-title">Career and Portfolio Agent</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -291,7 +238,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./16-career-and-portfolio-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Career and Portfolio Agent</span></a>
+  <a href="./16-career-and-portfolio-agent.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Career and Portfolio Agent</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,33 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#purpose-of-a-career-and-portfolio-agent" id="toc-purpose-of-a-career-and-portfolio-agent" class="nav-link active" data-scroll-target="#purpose-of-a-career-and-portfolio-agent">Purpose of a Career and Portfolio Agent</a></li>
+  <li><a href="#humanaihuman-career-workflow" id="toc-humanaihuman-career-workflow" class="nav-link" data-scroll-target="#humanaihuman-career-workflow">Human–AI–Human Career Workflow</a></li>
+  <li><a href="#core-inputs" id="toc-core-inputs" class="nav-link" data-scroll-target="#core-inputs">Core Inputs</a></li>
+  <li><a href="#core-outputs" id="toc-core-outputs" class="nav-link" data-scroll-target="#core-outputs">Core Outputs</a></li>
+  <li><a href="#career-agent-system-map" id="toc-career-agent-system-map" class="nav-link" data-scroll-target="#career-agent-system-map">Career Agent System Map</a></li>
+  <li><a href="#skills-inventory" id="toc-skills-inventory" class="nav-link" data-scroll-target="#skills-inventory">Skills Inventory</a></li>
+  <li><a href="#gap-analysis" id="toc-gap-analysis" class="nav-link" data-scroll-target="#gap-analysis">Gap Analysis</a></li>
+  <li><a href="#portfolio-project-planning" id="toc-portfolio-project-planning" class="nav-link" data-scroll-target="#portfolio-project-planning">Portfolio Project Planning</a></li>
+  <li><a href="#portfolio-evidence-standard" id="toc-portfolio-evidence-standard" class="nav-link" data-scroll-target="#portfolio-evidence-standard">Portfolio Evidence Standard</a></li>
+  <li><a href="#communication-support" id="toc-communication-support" class="nav-link" data-scroll-target="#communication-support">Communication Support</a></li>
+  <li><a href="#example-agent-prompt" id="toc-example-agent-prompt" class="nav-link" data-scroll-target="#example-agent-prompt">Example Agent Prompt</a></li>
+  <li><a href="#review-checklist" id="toc-review-checklist" class="nav-link" data-scroll-target="#review-checklist">Review Checklist</a></li>
+  <li><a href="#risks-and-boundaries" id="toc-risks-and-boundaries" class="nav-link" data-scroll-target="#risks-and-boundaries">Risks and Boundaries</a></li>
+  <li><a href="#mentor-use" id="toc-mentor-use" class="nav-link" data-scroll-target="#mentor-use">Mentor Use</a></li>
+  <li><a href="#relationship-to-the-career-system" id="toc-relationship-to-the-career-system" class="nav-link" data-scroll-target="#relationship-to-the-career-system">Relationship to the Career System</a></li>
+  <li><a href="#practical-mini-workflow" id="toc-practical-mini-workflow" class="nav-link" data-scroll-target="#practical-mini-workflow">Practical Mini-Workflow</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15-research-and-learning-agent.html">Part IV: Applied AI Agents</a></li><li class="breadcrumb-item"><a href="./16-career-and-portfolio-agent.html"><span class="chapter-title">Career and Portfolio Agent</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="career-and-portfolio-agent" class="quarto-section-identifier"><span class="chapter-title">Career and Portfolio Agent</span></span></h1>
 </div>
 
 
@@ -374,69 +335,360 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-016</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, professionals, mentors, educators, career coaches, and people building evidence-based portfolios</li>
+<li><strong>Theme:</strong> A career and portfolio agent should help people connect skills, evidence, communication, and opportunity without replacing human judgment</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Career development is not only about finding a job.</p>
+<p>It is about building direction, skills, proof, visibility, confidence, and readiness for real opportunities.</p>
+<p>AI can support this process when it is used carefully.</p>
+<p>A career and portfolio agent can help a learner or professional organize their skills, identify gaps, plan projects, improve written communication, prepare for interviews, and turn scattered experience into a coherent portfolio.</p>
+<p>But career decisions remain human decisions.</p>
+<p>The agent can suggest.</p>
+<p>The human must evaluate.</p>
+<p>The agent can help structure evidence.</p>
+<p>The human must decide what is true, ethical, appropriate, and aligned with their goals.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
-<hr>
-</section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
+<section id="purpose-of-a-career-and-portfolio-agent" class="level2">
+<h2 class="anchored" data-anchor-id="purpose-of-a-career-and-portfolio-agent">Purpose of a Career and Portfolio Agent</h2>
+<p>The purpose of a career and portfolio agent is to help a person move from unclear experience to visible professional evidence.</p>
+<p>It supports questions such as:</p>
 <ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
+<li>What skills do I already have?</li>
+<li>What skills do I need to build next?</li>
+<li>What projects can show my ability?</li>
+<li>How can I explain my work clearly?</li>
+<li>How can I prepare for interviews, applications, mentorship, or career transitions?</li>
+<li>How can I keep my portfolio honest, useful, and up to date?</li>
 </ul>
+<p>The agent does not invent experience.</p>
+<p>It does not exaggerate qualifications.</p>
+<p>It does not make career promises.</p>
+<p>It helps the person organize, communicate, and improve what is real.</p>
 <hr>
 </section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
+<section id="humanaihuman-career-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="humanaihuman-career-workflow">Human–AI–Human Career Workflow</h2>
+<p>A responsible career agent follows the same Human–AI–Human pattern used throughout this guide.</p>
+<pre class="text"><code>Human provides goals, background, constraints, and real evidence
+        ↓
+AI helps organize, question, draft, compare, plan, and improve
+        ↓
+Human verifies accuracy, selects direction, edits language, and acts</code></pre>
+<p>The first human step is especially important.</p>
+<p>The agent cannot responsibly support a career pathway if the person does not provide truthful information about their current skills, education, experience, interests, constraints, and available time.</p>
+<p>The final human step is equally important.</p>
+<p>The person must check that any portfolio statement, CV bullet, cover letter, biography, or project description is accurate.</p>
 <hr>
 </section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="core-inputs" class="level2">
+<h2 class="anchored" data-anchor-id="core-inputs">Core Inputs</h2>
+<p>A career and portfolio agent works best when the inputs are structured.</p>
+<p>Useful inputs include:</p>
+<ul>
+<li>current education or training background,</li>
+<li>work or volunteer experience,</li>
+<li>technical and non-technical skills,</li>
+<li>completed projects,</li>
+<li>unfinished project ideas,</li>
+<li>GitHub repositories or portfolio links,</li>
+<li>writing samples,</li>
+<li>certificates or course completions,</li>
+<li>target roles or opportunity areas,</li>
+<li>time available for learning,</li>
+<li>preferred working style,</li>
+<li>language and communication needs,</li>
+<li>constraints such as device access, internet access, cost, location, or schedule.</li>
+</ul>
+<p>These inputs should be treated as career context, not as material for exaggeration.</p>
+<p>A career agent should help the person build from where they are.</p>
+<hr>
+</section>
+<section id="core-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="core-outputs">Core Outputs</h2>
+<p>The agent may produce several kinds of outputs.</p>
+<p>Examples include:</p>
+<ul>
+<li>skills inventory,</li>
+<li>gap analysis,</li>
+<li>learning plan,</li>
+<li>portfolio project plan,</li>
+<li>GitHub repository description,</li>
+<li>project README draft,</li>
+<li>CV or resume bullet suggestions,</li>
+<li>professional bio,</li>
+<li>LinkedIn profile draft,</li>
+<li>mentorship reflection,</li>
+<li>interview preparation questions,</li>
+<li>application checklist,</li>
+<li>weekly career development plan.</li>
+</ul>
+<p>Each output should be reviewed before use.</p>
+<p>Career documents affect reputation and opportunity.</p>
+<p>They must be accurate, respectful, and appropriate for the context.</p>
+<hr>
+</section>
+<section id="career-agent-system-map" class="level2">
+<h2 class="anchored" data-anchor-id="career-agent-system-map">Career Agent System Map</h2>
+<p>A career and portfolio agent can be viewed as a system that connects personal background to visible professional evidence.</p>
+<pre class="text"><code>Background
+  ↓
+Skills Inventory
+  ↓
+Gap Identification
+  ↓
+Learning Plan
+  ↓
+Portfolio Project
+  ↓
+Evidence and Documentation
+  ↓
+Communication Materials
+  ↓
+Opportunity Preparation
+  ↓
+Human Review and Action</code></pre>
+<p>This system is not a shortcut around learning.</p>
+<p>It is a structure for making learning visible.</p>
+<hr>
+</section>
+<section id="skills-inventory" class="level2">
+<h2 class="anchored" data-anchor-id="skills-inventory">Skills Inventory</h2>
+<p>The agent should begin by helping the person describe their current skills clearly.</p>
+<p>A useful skills inventory separates:</p>
+<ul>
+<li>technical skills,</li>
+<li>analytical skills,</li>
+<li>communication skills,</li>
+<li>teamwork and leadership skills,</li>
+<li>domain knowledge,</li>
+<li>tools and platforms,</li>
+<li>evidence for each skill.</li>
+</ul>
+<p>The most important part is evidence.</p>
+<p>A skill is stronger when it is connected to proof.</p>
+<pre class="text"><code>Skill: Data visualization
+Evidence: Created a chart showing monthly attendance trends using R and ggplot2
+Current level: Beginner to intermediate
+Next step: Improve labeling, interpretation, and reproducibility</code></pre>
+<p>The agent should encourage honest self-assessment.</p>
+<p>It should not label someone as advanced simply because they have used a tool once.</p>
+<hr>
+</section>
+<section id="gap-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="gap-analysis">Gap Analysis</h2>
+<p>After skills are listed, the agent can compare the current profile with a target direction.</p>
+<p>For example:</p>
+<pre class="text"><code>Target direction: Junior data analyst
+Current strengths: Excel, basic Python, communication, report writing
+Gaps: SQL, dashboard design, reproducible project structure, portfolio examples
+Suggested next step: Build one small data cleaning and reporting project</code></pre>
+<p>A good gap analysis is specific.</p>
+<p>A weak gap analysis says:</p>
+<pre class="text"><code>Learn more AI and data science.</code></pre>
+<p>A stronger gap analysis says:</p>
+<pre class="text"><code>Practice reading CSV files, cleaning missing values, summarizing results, and explaining findings in a short report.</code></pre>
+<p>Specific gaps lead to practical learning plans.</p>
+<hr>
+</section>
+<section id="portfolio-project-planning" class="level2">
+<h2 class="anchored" data-anchor-id="portfolio-project-planning">Portfolio Project Planning</h2>
+<p>A career and portfolio agent should help convert learning goals into projects.</p>
+<p>A project is useful when it produces evidence.</p>
+<p>A portfolio project should usually include:</p>
+<ul>
+<li>a clear question,</li>
+<li>a small dataset or realistic example,</li>
+<li>a reproducible workflow,</li>
+<li>readable code or steps,</li>
+<li>outputs such as tables, figures, reports, or summaries,</li>
+<li>an explanation of what was learned,</li>
+<li>limitations and next steps.</li>
+</ul>
+<p>For beginners, the project does not need to be large.</p>
+<p>It needs to be understandable and complete.</p>
+<pre class="text"><code>Mini-project: Student Study Planner
+Goal: Help O-Level students organize weekly study time
+Evidence: README, sample timetable, simple web page, screenshots, reflection
+Skills shown: planning, communication, GitHub, basic digital publishing</code></pre>
+<p>The agent can help shape the project, but the learner should do the work.</p>
+<hr>
+</section>
+<section id="portfolio-evidence-standard" class="level2">
+<h2 class="anchored" data-anchor-id="portfolio-evidence-standard">Portfolio Evidence Standard</h2>
+<p>A portfolio agent should evaluate whether the evidence is strong enough to show.</p>
+<p>A simple evidence standard is:</p>
+<pre class="text"><code>Claim
+  ↓
+Proof
+  ↓
+Explanation
+  ↓
+Reflection</code></pre>
+<p>For example:</p>
+<pre class="text"><code>Claim: I can organize a learning resource for students.
+Proof: Morgan Study Hub GitHub repository
+Explanation: The project provides study guidance and planning support for O-Level learners
+Reflection: The next improvement is to add clearer navigation and more subject-specific resources</code></pre>
+<p>This helps the person avoid empty claims.</p>
+<p>It also helps mentors and reviewers understand the value of the work.</p>
+<hr>
+</section>
+<section id="communication-support" class="level2">
+<h2 class="anchored" data-anchor-id="communication-support">Communication Support</h2>
+<p>The agent can help turn evidence into communication.</p>
+<p>This may include:</p>
+<ul>
+<li>shorter project descriptions,</li>
+<li>clearer README files,</li>
+<li>professional bios,</li>
+<li>application statements,</li>
+<li>email drafts,</li>
+<li>mentoring messages,</li>
+<li>presentation notes,</li>
+<li>interview answers.</li>
+</ul>
+<p>However, the agent should preserve the person’s real voice and truth.</p>
+<p>The goal is not to sound artificial.</p>
+<p>The goal is to communicate clearly.</p>
+<p>A useful communication workflow is:</p>
+<pre class="text"><code>Human provides real information
+        ↓
+AI drafts a clearer version
+        ↓
+Human edits for truth, tone, and personal voice
+        ↓
+Final message is sent or published by the human</code></pre>
+<hr>
+</section>
+<section id="example-agent-prompt" class="level2">
+<h2 class="anchored" data-anchor-id="example-agent-prompt">Example Agent Prompt</h2>
+<p>A reusable career and portfolio agent can begin with a prompt like this:</p>
+<pre class="text"><code>You are a Career and Portfolio Agent.
 
-</div>
+Your role is to help the user organize real skills, projects, evidence, and career goals into clear, honest, and practical career development outputs.
+
+Do not invent experience, certificates, achievements, employers, education, or technical ability.
+
+For every career claim, ask for or identify supporting evidence.
+
+Help the user:
+1. list current skills,
+2. connect skills to proof,
+3. identify realistic gaps,
+4. plan portfolio projects,
+5. improve communication materials,
+6. prepare for opportunities,
+7. document next steps.
+
+Use the Human--AI--Human model.
+The user makes final decisions.</code></pre>
+<p>This prompt defines the agent’s purpose and boundaries.</p>
+<p>It also protects against one of the biggest career AI risks: exaggeration.</p>
+<hr>
+</section>
+<section id="review-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="review-checklist">Review Checklist</h2>
+<p>Before using any career output produced with AI support, the human reviewer should ask:</p>
+<pre class="text"><code>Is this true?
+Is this specific?
+Is this supported by evidence?
+Is the tone appropriate?
+Does it sound like the person?
+Does it avoid exaggeration?
+Does it match the opportunity or audience?
+Does it include limitations where needed?
+Is the final decision still human-led?</code></pre>
+<p>This checklist should be used for CVs, bios, LinkedIn profiles, emails, project descriptions, and application materials.</p>
+<hr>
+</section>
+<section id="risks-and-boundaries" class="level2">
+<h2 class="anchored" data-anchor-id="risks-and-boundaries">Risks and Boundaries</h2>
+<p>Career agents can create harm if used carelessly.</p>
+<p>Common risks include:</p>
+<ul>
+<li>inventing experience,</li>
+<li>overstating technical skill,</li>
+<li>copying generic career language,</li>
+<li>producing applications that do not reflect the person,</li>
+<li>hiding gaps instead of planning to improve them,</li>
+<li>encouraging unrealistic career decisions,</li>
+<li>exposing private personal information,</li>
+<li>making biased assumptions about ability or opportunity.</li>
+</ul>
+<p>A responsible career agent should be grounded in real evidence and should avoid making promises.</p>
+<p>It may suggest options.</p>
+<p>It should not guarantee outcomes.</p>
+<hr>
+</section>
+<section id="mentor-use" class="level2">
+<h2 class="anchored" data-anchor-id="mentor-use">Mentor Use</h2>
+<p>Mentors can use a career and portfolio agent to support learners more systematically.</p>
+<p>For example, a mentor may use the agent to help a learner:</p>
+<ul>
+<li>describe a new GitHub project,</li>
+<li>write a short reflection,</li>
+<li>prepare a project card,</li>
+<li>identify the next skill to practice,</li>
+<li>turn a small achievement into portfolio evidence,</li>
+<li>prepare a respectful email or introduction.</li>
+</ul>
+<p>The mentor still provides human encouragement, correction, and judgment.</p>
+<p>The agent supports structure.</p>
+<p>The mentor supports growth.</p>
+<hr>
+</section>
+<section id="relationship-to-the-career-system" class="level2">
+<h2 class="anchored" data-anchor-id="relationship-to-the-career-system">Relationship to the Career System</h2>
+<p>This chapter connects directly to the broader Career System.</p>
+<p>The Career System moves from skills to practice, evidence, communication, opportunity, performance, and sustainable growth.</p>
+<p>The career and portfolio agent supports this movement by helping the person organize and review each stage.</p>
+<pre class="text"><code>Skills
+  ↓
+Practice
+  ↓
+Evidence
+  ↓
+Portfolio
+  ↓
+Communication
+  ↓
+Opportunity Preparation
+  ↓
+Human Decision and Growth</code></pre>
+<p>The agent is not the career system itself.</p>
+<p>It is a support layer inside the system.</p>
+<hr>
+</section>
+<section id="practical-mini-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="practical-mini-workflow">Practical Mini-Workflow</h2>
+<p>A simple weekly career agent workflow may look like this:</p>
+<pre class="text"><code>Monday: Review current skill goal
+Tuesday: Work on one small project task
+Wednesday: Document progress
+Thursday: Improve README, portfolio note, or reflection
+Friday: Review evidence and choose next step
+Weekend: Rest, reflect, or share progress if appropriate</code></pre>
+<p>This keeps career development active without making it overwhelming.</p>
+<p>Small repeated actions create stronger portfolios than occasional large efforts.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>A career and portfolio agent helps people organize skills, projects, evidence, and communication.</p>
+<p>It should be honest, evidence-based, and human-led.</p>
+<p>Its strongest role is not to invent a career story.</p>
+<p>Its role is to help a person see, build, document, and communicate the real work they are doing.</p>
+<p>A responsible career agent supports confidence without exaggeration.</p>
+<p>It supports opportunity without false promises.</p>
+<p>It supports growth by connecting learning to visible evidence.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter applies the agent template to data analysis support.</p>
+<p>We will look at how AI can help with data questions, code planning, result interpretation, reporting, and review while keeping analysis reproducible and human-verified.</p>
 
 
 </section>
@@ -845,11 +1097,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./15-research-and-learning-agent.html" class="pagination-link" aria-label="Research and Learning Agent">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Research and Learning Agent</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./17-data-analysis-support-agent.html" class="pagination-link" aria-label="Data Analysis Support Agent">
+        <span class="nav-page-text"><span class="chapter-title">Data Analysis Support Agent</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

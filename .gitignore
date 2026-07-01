@@ -1,12 +1,65 @@
+# =====================================================
+# Quarto build artifacts
+# =====================================================
 .quarto/
+_cache/
 _freeze/
 _site/
-*.Rproj.user
-.Rhistory
-.RData
+
+# Ignore HTML everywhere except rendered site in docs/
+*.html
+!docs/**/*.html
+
+# Ignore Quarto figure folders everywhere except docs/
+*_files/
+!docs/**/*_files/
+!docs/**/*_files/**
+
+# Ignore exported documents
+*.pdf
+*.docx
+
+
+# =====================================================
+# Python
+# =====================================================
 .venv/
 __pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.ipynb_checkpoints/
 .env
+
+
+# =====================================================
+# R
+# =====================================================
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj.user
+
+
+# =====================================================
+# OS / editor files
+# =====================================================
 .DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+
+# =====================================================
+# Logs
+# =====================================================
+*.log
+
+
+# =====================================================
+# Project-specific local/reference folders
+# =====================================================
+REFER/
 
 /.quarto/

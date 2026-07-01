@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – AI Systems</title>
+<title>Prompting as System Design – AI Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,61 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./999-appendix.html" rel="prev">
+<link href="./05-ai-workflow-design.html" rel="next">
+<link href="./03-human-ai-human-framework.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -137,7 +84,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Part I: AI Foundations</a></li><li class="breadcrumb-item"><a href="./04-prompting-as-system-design.html"><span class="chapter-title">Prompting as System Design</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -198,7 +145,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-prompting-as-system-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Prompting as System Design</span></a>
+  <a href="./04-prompting-as-system-design.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Prompting as System Design</span></a>
   </div>
 </li>
       </ul>
@@ -322,7 +269,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./999-references.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -337,19 +284,33 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-references-are-used-in-this-guide" id="toc-how-references-are-used-in-this-guide" class="nav-link active" data-scroll-target="#how-references-are-used-in-this-guide">How References Are Used in This Guide</a></li>
-  <li><a href="#suggested-reference-categories" id="toc-suggested-reference-categories" class="nav-link" data-scroll-target="#suggested-reference-categories">Suggested Reference Categories</a></li>
-  <li><a href="#adding-a-new-reference" id="toc-adding-a-new-reference" class="nav-link" data-scroll-target="#adding-a-new-reference">Adding a New Reference</a></li>
-  <li><a href="#reference-list" id="toc-reference-list" class="nav-link" data-scroll-target="#reference-list">Reference List</a></li>
+  <li><a href="#from-prompt-tricks-to-prompt-systems" id="toc-from-prompt-tricks-to-prompt-systems" class="nav-link active" data-scroll-target="#from-prompt-tricks-to-prompt-systems">From Prompt Tricks to Prompt Systems</a></li>
+  <li><a href="#the-core-prompt-design-pattern" id="toc-the-core-prompt-design-pattern" class="nav-link" data-scroll-target="#the-core-prompt-design-pattern">The Core Prompt Design Pattern</a></li>
+  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
+  <li><a href="#context" id="toc-context" class="nav-link" data-scroll-target="#context">Context</a></li>
+  <li><a href="#inputs" id="toc-inputs" class="nav-link" data-scroll-target="#inputs">Inputs</a></li>
+  <li><a href="#constraints" id="toc-constraints" class="nav-link" data-scroll-target="#constraints">Constraints</a></li>
+  <li><a href="#output-format" id="toc-output-format" class="nav-link" data-scroll-target="#output-format">Output Format</a></li>
+  <li><a href="#review-criteria" id="toc-review-criteria" class="nav-link" data-scroll-target="#review-criteria">Review Criteria</a></li>
+  <li><a href="#a-reusable-prompt-template" id="toc-a-reusable-prompt-template" class="nav-link" data-scroll-target="#a-reusable-prompt-template">A Reusable Prompt Template</a></li>
+  <li><a href="#example-weak-prompt-vs-system-prompt" id="toc-example-weak-prompt-vs-system-prompt" class="nav-link" data-scroll-target="#example-weak-prompt-vs-system-prompt">Example: Weak Prompt vs System Prompt</a></li>
+  <li><a href="#prompting-as-workflow-design" id="toc-prompting-as-workflow-design" class="nav-link" data-scroll-target="#prompting-as-workflow-design">Prompting as Workflow Design</a></li>
+  <li><a href="#prompt-libraries-and-reuse" id="toc-prompt-libraries-and-reuse" class="nav-link" data-scroll-target="#prompt-libraries-and-reuse">Prompt Libraries and Reuse</a></li>
+  <li><a href="#prompt-versioning" id="toc-prompt-versioning" class="nav-link" data-scroll-target="#prompt-versioning">Prompt Versioning</a></li>
+  <li><a href="#common-prompting-mistakes" id="toc-common-prompting-mistakes" class="nav-link" data-scroll-target="#common-prompting-mistakes">Common Prompting Mistakes</a></li>
+  <li><a href="#human-responsibility-in-prompting" id="toc-human-responsibility-in-prompting" class="nav-link" data-scroll-target="#human-responsibility-in-prompting">Human Responsibility in Prompting</a></li>
+  <li><a href="#cdi-practice-pattern" id="toc-cdi-practice-pattern" class="nav-link" data-scroll-target="#cdi-practice-pattern">CDI Practice Pattern</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./999-appendix.html">Appendices</a></li><li class="breadcrumb-item"><a href="./999-references.html"><span class="chapter-title">References</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Part I: AI Foundations</a></li><li class="breadcrumb-item"><a href="./04-prompting-as-system-design.html"><span class="chapter-title">Prompting as System Design</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="references" class="quarto-section-identifier"><span class="chapter-title">References</span></span></h1>
+<h1 class="title"><span id="prompting-as-system-design" class="quarto-section-identifier"><span class="chapter-title">Prompting as System Design</span></span></h1>
 </div>
 
 
@@ -374,69 +335,336 @@ div.csl-indent {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> AI-999-REF</li>
-<li><strong>Type:</strong> References</li>
-<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams using AI responsibly</li>
-<li><strong>Theme:</strong> Responsible AI systems should be grounded in documented sources, standards, and reusable references</li>
+<li><strong>ID:</strong> AI-004</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> Good prompting is not clever wording; it is structured task design</li>
 </ul>
 </div>
-<p>This page collects the references used throughout the <strong>AI Systems</strong> guide.</p>
-<p>The guide uses a bibliography file stored at:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>Quarto automatically uses this file because it is declared in <code>_quarto.yml</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> library/references.bib</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Prompting is often presented as a trick.</p>
+<p>People search for the perfect phrase, the secret formula, or the best prompt template.</p>
+<p>But in serious AI work, prompting is not mainly about clever wording.</p>
+<p>Prompting is system design.</p>
+<p>A prompt defines what the AI system is being asked to do, what context it should use, what constraints it must respect, what output is expected, and how the human will review the result.</p>
+<p>A weak prompt usually produces a weak workflow.</p>
+<p>A strong prompt makes the work clearer, more inspectable, and easier to evaluate.</p>
 <hr>
-<section id="how-references-are-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-references-are-used-in-this-guide">How References Are Used in This Guide</h2>
-<p>References support the guide in four main ways.</p>
-<p>First, they connect AI systems practice to established work on artificial intelligence, human judgment, automation, evaluation, and responsible technology use.</p>
-<p>Second, they help learners see that AI workflows should not be treated as isolated tool tricks. They belong to a broader ecosystem of research, documentation, governance, learning, communication, and professional responsibility.</p>
-<p>Third, they provide a foundation for future expansion. As AI tools, standards, and regulations change, the bibliography can be updated without changing the structure of the guide.</p>
-<p>Fourth, they model good practice. A responsible AI workflow should document where ideas, claims, definitions, methods, and frameworks come from.</p>
-<hr>
-</section>
-<section id="suggested-reference-categories" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reference-categories">Suggested Reference Categories</h2>
-<p>The bibliography for this guide may include sources related to:</p>
-<ul>
-<li>artificial intelligence foundations,</li>
-<li>human-centered AI,</li>
-<li>responsible AI,</li>
-<li>AI evaluation,</li>
-<li>human-in-the-loop systems,</li>
-<li>automation and decision support,</li>
-<li>AI literacy and education,</li>
-<li>prompt design and context engineering,</li>
-<li>data governance,</li>
-<li>algorithmic accountability,</li>
-<li>AI safety,</li>
-<li>reproducible workflows,</li>
-<li>documentation practices,</li>
-<li>and professional AI use.</li>
-</ul>
-<hr>
-</section>
-<section id="adding-a-new-reference" class="level2">
-<h2 class="anchored" data-anchor-id="adding-a-new-reference">Adding a New Reference</h2>
-<p>To add a new source, place a BibTeX entry inside:</p>
-<pre class="text"><code>library/references.bib</code></pre>
-<p>A simple example is:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">example2026</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>     = {Example Title},</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>    = {Author, Firstname},</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>      = {2026},</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">publisher</span> = {Example Publisher}</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then cite it inside any chapter using:</p>
-<pre class="text"><code>[@example2026]</code></pre>
-<p>Quarto will collect cited sources and display them on the references page.</p>
-<hr>
-</section>
-<section id="reference-list" class="level2">
-<h2 class="anchored" data-anchor-id="reference-list">Reference List</h2>
-<div id="refs" role="list" style="display: none">
+<section id="from-prompt-tricks-to-prompt-systems" class="level2">
+<h2 class="anchored" data-anchor-id="from-prompt-tricks-to-prompt-systems">From Prompt Tricks to Prompt Systems</h2>
+<p>A prompt trick is usually a one-time instruction.</p>
+<p>It may work once.</p>
+<p>It may fail in a different context.</p>
+<p>It may produce a useful answer, but the process is difficult to repeat or explain.</p>
+<p>A prompt system is different.</p>
+<p>It is designed intentionally.</p>
+<p>It includes the task, the role of the AI, the context, the expected output, the review criteria, and the human decision point.</p>
+<pre class="text"><code>Prompt trick
+  ↓
+One-time answer
+  ↓
+Limited repeatability
 
-</div>
+Prompt system
+  ↓
+Structured task design
+  ↓
+Repeatable, reviewable, human-led workflow</code></pre>
+<p>The goal is not to make the AI sound impressive.</p>
+<p>The goal is to make the work reliable enough to inspect, improve, and reuse.</p>
+<hr>
+</section>
+<section id="the-core-prompt-design-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-prompt-design-pattern">The Core Prompt Design Pattern</h2>
+<p>A useful AI prompt normally has six parts.</p>
+<pre class="text"><code>Goal
+  ↓
+Context
+  ↓
+Inputs
+  ↓
+Constraints
+  ↓
+Output Format
+  ↓
+Review Criteria</code></pre>
+<p>Each part reduces ambiguity.</p>
+<p>Each part helps the AI understand the task more clearly.</p>
+<p>Each part also helps the human evaluate the result.</p>
+<hr>
+</section>
+<section id="goal" class="level2">
+<h2 class="anchored" data-anchor-id="goal">Goal</h2>
+<p>The goal explains what the AI is being asked to accomplish.</p>
+<p>A vague goal produces vague output.</p>
+<p>A clear goal gives direction.</p>
+<p>Weak goal:</p>
+<pre class="text"><code>Help me with this report.</code></pre>
+<p>Stronger goal:</p>
+<pre class="text"><code>Review this draft report and identify where the interpretation is unclear, where evidence is missing, and where the conclusion may overstate the results.</code></pre>
+<p>The stronger version tells the AI what kind of help is needed.</p>
+<p>It also gives the human a clearer basis for review.</p>
+<hr>
+</section>
+<section id="context" class="level2">
+<h2 class="anchored" data-anchor-id="context">Context</h2>
+<p>Context explains the situation around the task.</p>
+<p>This may include:</p>
+<ul>
+<li>the audience,</li>
+<li>the purpose,</li>
+<li>the level of detail required,</li>
+<li>the domain,</li>
+<li>the stage of the workflow,</li>
+<li>and the intended use of the output.</li>
+</ul>
+<p>Context turns a generic AI answer into a more useful response.</p>
+<p>For example:</p>
+<pre class="text"><code>I am preparing a beginner-friendly lesson for students who are new to data analysis. The goal is to explain model evaluation without using advanced mathematics.</code></pre>
+<p>This context helps the AI choose the right language, examples, and level of explanation.</p>
+<p>Without context, the AI may answer at the wrong level.</p>
+<hr>
+</section>
+<section id="inputs" class="level2">
+<h2 class="anchored" data-anchor-id="inputs">Inputs</h2>
+<p>Inputs are the materials the AI should use.</p>
+<p>They may include:</p>
+<ul>
+<li>notes,</li>
+<li>data tables,</li>
+<li>code,</li>
+<li>draft text,</li>
+<li>rubrics,</li>
+<li>instructions,</li>
+<li>examples,</li>
+<li>references,</li>
+<li>or previous outputs.</li>
+</ul>
+<p>A responsible AI workflow should make the source material clear.</p>
+<pre class="text"><code>Use only the notes below.
+Do not add outside claims.
+Summarize the main points for a non-technical audience.</code></pre>
+<p>This helps reduce unsupported invention.</p>
+<p>It also makes the output easier to audit.</p>
+<hr>
+</section>
+<section id="constraints" class="level2">
+<h2 class="anchored" data-anchor-id="constraints">Constraints</h2>
+<p>Constraints define boundaries.</p>
+<p>They tell the AI what to avoid, what to preserve, and what standards to follow.</p>
+<p>Examples include:</p>
+<ul>
+<li>keep the tone professional,</li>
+<li>avoid unsupported claims,</li>
+<li>do not change technical terms,</li>
+<li>use plain language,</li>
+<li>keep the answer under 300 words,</li>
+<li>separate facts from assumptions,</li>
+<li>cite only the supplied source material,</li>
+<li>flag uncertainty instead of guessing.</li>
+</ul>
+<p>Constraints are not decorations.</p>
+<p>They are quality controls.</p>
+<p>They help align the output with the real needs of the work.</p>
+<hr>
+</section>
+<section id="output-format" class="level2">
+<h2 class="anchored" data-anchor-id="output-format">Output Format</h2>
+<p>Output format tells the AI how the answer should be structured.</p>
+<p>This is especially important when the output will be reused in a report, workflow, checklist, lesson, table, or decision process.</p>
+<p>Examples:</p>
+<pre class="text"><code>Return the answer as a table with three columns: issue, why it matters, and recommended fix.</code></pre>
+<pre class="text"><code>Return a short executive summary followed by bullet points for risks, assumptions, and next steps.</code></pre>
+<pre class="text"><code>Return the revised paragraph only, without extra explanation.</code></pre>
+<p>A clear output format makes AI output easier to use.</p>
+<p>It also reduces time spent cleaning or reorganizing the result.</p>
+<hr>
+</section>
+<section id="review-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="review-criteria">Review Criteria</h2>
+<p>Review criteria explain how the human will judge the output.</p>
+<p>This is one of the most important parts of responsible AI use.</p>
+<p>A prompt should not only ask for output.</p>
+<p>It should also make evaluation possible.</p>
+<pre class="text"><code>After producing the answer, check whether it is accurate, complete, relevant, clear, and appropriately cautious.</code></pre>
+<p>For higher-risk work, the review criteria should be stricter.</p>
+<pre class="text"><code>Flag any claim that would require verification before being used in a public report.
+Separate confirmed information from assumptions.
+Do not present uncertain claims as facts.</code></pre>
+<p>The AI can assist with self-checking, but the final review remains human responsibility.</p>
+<hr>
+</section>
+<section id="a-reusable-prompt-template" class="level2">
+<h2 class="anchored" data-anchor-id="a-reusable-prompt-template">A Reusable Prompt Template</h2>
+<p>A reusable prompt template helps learners move from casual AI use to structured AI practice.</p>
+<pre class="text"><code>Task:
+Describe what you want the AI to do.
+
+Context:
+Explain the audience, purpose, domain, and situation.
+
+Inputs:
+Provide the text, data, code, notes, or materials the AI should use.
+
+Constraints:
+State what the AI must preserve, avoid, or be careful about.
+
+Output format:
+Describe the structure of the expected response.
+
+Review criteria:
+Explain how the output should be checked before use.</code></pre>
+<p>This template can be adapted to many workflows.</p>
+<p>It can support writing, analysis, coding, lesson design, research synthesis, communication, and planning.</p>
+<hr>
+</section>
+<section id="example-weak-prompt-vs-system-prompt" class="level2">
+<h2 class="anchored" data-anchor-id="example-weak-prompt-vs-system-prompt">Example: Weak Prompt vs System Prompt</h2>
+<p>Weak prompt:</p>
+<pre class="text"><code>Summarize this article.</code></pre>
+<p>System-style prompt:</p>
+<pre class="text"><code>Task:
+Summarize the article below.
+
+Context:
+The summary is for learners who are new to AI systems and need a plain-language explanation.
+
+Inputs:
+Use only the article text provided below.
+
+Constraints:
+Do not add claims that are not in the article. Flag any point that seems unclear or unsupported.
+
+Output format:
+Return five short bullet points, followed by one sentence explaining why the article matters.
+
+Review criteria:
+Check that the summary is accurate, beginner-friendly, and does not overstate the article.</code></pre>
+<p>The second prompt is longer, but it is not longer for the sake of length.</p>
+<p>It is more structured.</p>
+<p>It gives the AI a clearer job and gives the human a clearer review path.</p>
+<hr>
+</section>
+<section id="prompting-as-workflow-design" class="level2">
+<h2 class="anchored" data-anchor-id="prompting-as-workflow-design">Prompting as Workflow Design</h2>
+<p>In an AI system, prompting is not isolated from the rest of the workflow.</p>
+<p>It connects to problem framing, context design, knowledge grounding, evaluation, documentation, and human decision-making.</p>
+<pre class="text"><code>Problem framing
+  ↓
+Prompt design
+  ↓
+AI output
+  ↓
+Evaluation
+  ↓
+Human decision
+  ↓
+Documentation</code></pre>
+<p>This means a prompt should be designed with the end of the workflow in mind.</p>
+<p>Before writing the prompt, ask:</p>
+<ul>
+<li>What decision will this output support?</li>
+<li>Who will use the output?</li>
+<li>What evidence does the AI need?</li>
+<li>What risks must be checked?</li>
+<li>What format will make the result useful?</li>
+<li>What must the human verify before acting?</li>
+</ul>
+<p>Prompting becomes stronger when it is connected to the full system.</p>
+<hr>
+</section>
+<section id="prompt-libraries-and-reuse" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-libraries-and-reuse">Prompt Libraries and Reuse</h2>
+<p>A mature AI workflow does not depend on memory or improvisation every time.</p>
+<p>It can use prompt libraries.</p>
+<p>A prompt library is a collection of reusable prompts that have been tested, improved, and documented.</p>
+<p>Each prompt can include:</p>
+<pre class="text"><code>Prompt name
+Purpose
+Best use case
+Required inputs
+Output format
+Review checklist
+Known limitations
+Version or update date</code></pre>
+<p>Prompt libraries are useful because they make AI-supported work more consistent.</p>
+<p>They also help teams teach, review, and improve their workflows over time.</p>
+<hr>
+</section>
+<section id="prompt-versioning" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-versioning">Prompt Versioning</h2>
+<p>Prompts change.</p>
+<p>A prompt may be improved after a weak output.</p>
+<p>A new constraint may be added after a risk is discovered.</p>
+<p>A better output format may be developed after repeated use.</p>
+<p>For important workflows, prompts should be versioned.</p>
+<pre class="text"><code>prompt-name: literature-summary
+version: 0.1
+purpose: summarize supplied research notes for beginner learners
+last-updated: 2026-07
+review-status: draft</code></pre>
+<p>Versioning does not need to be complicated.</p>
+<p>The important point is that prompt changes should be visible when the workflow matters.</p>
+<hr>
+</section>
+<section id="common-prompting-mistakes" class="level2">
+<h2 class="anchored" data-anchor-id="common-prompting-mistakes">Common Prompting Mistakes</h2>
+<p>Many AI problems begin before the AI produces an answer.</p>
+<p>They begin in the prompt.</p>
+<p>Common mistakes include:</p>
+<ul>
+<li>asking a vague question,</li>
+<li>providing no audience or purpose,</li>
+<li>mixing too many tasks in one prompt,</li>
+<li>failing to provide source material,</li>
+<li>asking for certainty where uncertainty exists,</li>
+<li>requesting polished output before checking accuracy,</li>
+<li>not specifying the output format,</li>
+<li>and using the output without human review.</li>
+</ul>
+<p>These mistakes do not mean AI is useless.</p>
+<p>They mean the workflow needs better design.</p>
+<hr>
+</section>
+<section id="human-responsibility-in-prompting" class="level2">
+<h2 class="anchored" data-anchor-id="human-responsibility-in-prompting">Human Responsibility in Prompting</h2>
+<p>A prompt does not transfer responsibility to the AI.</p>
+<p>The human remains responsible for the task definition, the context, the decision, and the final use of the output.</p>
+<p>AI can assist.</p>
+<p>AI can accelerate.</p>
+<p>AI can suggest.</p>
+<p>AI can organize.</p>
+<p>AI can review.</p>
+<p>But the human must decide whether the output is appropriate, accurate, ethical, and ready to use.</p>
+<p>This is especially important in education, health, law, finance, research, employment, public communication, and any workflow where people may be affected by the result.</p>
+<hr>
+</section>
+<section id="cdi-practice-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-practice-pattern">CDI Practice Pattern</h2>
+<p>In Complex Data Insights workflows, a prompt should usually answer five questions:</p>
+<pre class="text"><code>What is the task?
+What context matters?
+What evidence should be used?
+What output is expected?
+How will the result be reviewed?</code></pre>
+<p>This pattern keeps prompting connected to system thinking.</p>
+<p>It also prepares the learner for later chapters on workflow design, context systems, output evaluation, agent templates, and applied AI agents.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>Prompting is not only a communication skill.</p>
+<p>It is a system design skill.</p>
+<p>A strong prompt defines the goal, context, inputs, constraints, output format, and review criteria.</p>
+<p>This makes AI-supported work easier to evaluate, repeat, teach, and improve.</p>
+<p>The best prompts do not remove human judgment.</p>
+<p>They make human judgment easier to apply.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter moves from prompting to full AI workflow design.</p>
+<p>We will examine how AI tasks can be organized into repeatable workflows that include inputs, steps, outputs, review points, and documentation.</p>
+<p>This begins Part II of the guide: <strong>AI Systems</strong>.</p>
 
 
 </section>
@@ -845,11 +1073,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Appendix</span></span>
+      <a href="./03-human-ai-human-framework.html" class="pagination-link" aria-label="Human--AI--Human Framework">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Human–AI–Human Framework</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./05-ai-workflow-design.html" class="pagination-link" aria-label="AI Workflow Design">
+        <span class="nav-page-text"><span class="chapter-title">AI Workflow Design</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

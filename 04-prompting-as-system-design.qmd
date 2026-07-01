@@ -1,0 +1,489 @@
+# Prompting as System Design {#prompting-as-system-design}
+
+:::cdi-message
+- **ID:** AI-004
+- **Type:** System Guide
+- **Audience:** Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows
+- **Theme:** Good prompting is not clever wording; it is structured task design
+:::
+
+Prompting is often presented as a trick.
+
+People search for the perfect phrase, the secret formula, or the best prompt template.
+
+But in serious AI work, prompting is not mainly about clever wording.
+
+Prompting is system design.
+
+A prompt defines what the AI system is being asked to do, what context it should use, what constraints it must respect, what output is expected, and how the human will review the result.
+
+A weak prompt usually produces a weak workflow.
+
+A strong prompt makes the work clearer, more inspectable, and easier to evaluate.
+
+---
+
+## From Prompt Tricks to Prompt Systems
+
+A prompt trick is usually a one-time instruction.
+
+It may work once.
+
+It may fail in a different context.
+
+It may produce a useful answer, but the process is difficult to repeat or explain.
+
+A prompt system is different.
+
+It is designed intentionally.
+
+It includes the task, the role of the AI, the context, the expected output, the review criteria, and the human decision point.
+
+```text
+Prompt trick
+  ↓
+One-time answer
+  ↓
+Limited repeatability
+
+Prompt system
+  ↓
+Structured task design
+  ↓
+Repeatable, reviewable, human-led workflow
+```
+
+The goal is not to make the AI sound impressive.
+
+The goal is to make the work reliable enough to inspect, improve, and reuse.
+
+---
+
+## The Core Prompt Design Pattern
+
+A useful AI prompt normally has six parts.
+
+```text
+Goal
+  ↓
+Context
+  ↓
+Inputs
+  ↓
+Constraints
+  ↓
+Output Format
+  ↓
+Review Criteria
+```
+
+Each part reduces ambiguity.
+
+Each part helps the AI understand the task more clearly.
+
+Each part also helps the human evaluate the result.
+
+---
+
+## Goal
+
+The goal explains what the AI is being asked to accomplish.
+
+A vague goal produces vague output.
+
+A clear goal gives direction.
+
+Weak goal:
+
+```text
+Help me with this report.
+```
+
+Stronger goal:
+
+```text
+Review this draft report and identify where the interpretation is unclear, where evidence is missing, and where the conclusion may overstate the results.
+```
+
+The stronger version tells the AI what kind of help is needed.
+
+It also gives the human a clearer basis for review.
+
+---
+
+## Context
+
+Context explains the situation around the task.
+
+This may include:
+
+- the audience,
+- the purpose,
+- the level of detail required,
+- the domain,
+- the stage of the workflow,
+- and the intended use of the output.
+
+Context turns a generic AI answer into a more useful response.
+
+For example:
+
+```text
+I am preparing a beginner-friendly lesson for students who are new to data analysis. The goal is to explain model evaluation without using advanced mathematics.
+```
+
+This context helps the AI choose the right language, examples, and level of explanation.
+
+Without context, the AI may answer at the wrong level.
+
+---
+
+## Inputs
+
+Inputs are the materials the AI should use.
+
+They may include:
+
+- notes,
+- data tables,
+- code,
+- draft text,
+- rubrics,
+- instructions,
+- examples,
+- references,
+- or previous outputs.
+
+A responsible AI workflow should make the source material clear.
+
+```text
+Use only the notes below.
+Do not add outside claims.
+Summarize the main points for a non-technical audience.
+```
+
+This helps reduce unsupported invention.
+
+It also makes the output easier to audit.
+
+---
+
+## Constraints
+
+Constraints define boundaries.
+
+They tell the AI what to avoid, what to preserve, and what standards to follow.
+
+Examples include:
+
+- keep the tone professional,
+- avoid unsupported claims,
+- do not change technical terms,
+- use plain language,
+- keep the answer under 300 words,
+- separate facts from assumptions,
+- cite only the supplied source material,
+- flag uncertainty instead of guessing.
+
+Constraints are not decorations.
+
+They are quality controls.
+
+They help align the output with the real needs of the work.
+
+---
+
+## Output Format
+
+Output format tells the AI how the answer should be structured.
+
+This is especially important when the output will be reused in a report, workflow, checklist, lesson, table, or decision process.
+
+Examples:
+
+```text
+Return the answer as a table with three columns: issue, why it matters, and recommended fix.
+```
+
+```text
+Return a short executive summary followed by bullet points for risks, assumptions, and next steps.
+```
+
+```text
+Return the revised paragraph only, without extra explanation.
+```
+
+A clear output format makes AI output easier to use.
+
+It also reduces time spent cleaning or reorganizing the result.
+
+---
+
+## Review Criteria
+
+Review criteria explain how the human will judge the output.
+
+This is one of the most important parts of responsible AI use.
+
+A prompt should not only ask for output.
+
+It should also make evaluation possible.
+
+```text
+After producing the answer, check whether it is accurate, complete, relevant, clear, and appropriately cautious.
+```
+
+For higher-risk work, the review criteria should be stricter.
+
+```text
+Flag any claim that would require verification before being used in a public report.
+Separate confirmed information from assumptions.
+Do not present uncertain claims as facts.
+```
+
+The AI can assist with self-checking, but the final review remains human responsibility.
+
+---
+
+## A Reusable Prompt Template
+
+A reusable prompt template helps learners move from casual AI use to structured AI practice.
+
+```text
+Task:
+Describe what you want the AI to do.
+
+Context:
+Explain the audience, purpose, domain, and situation.
+
+Inputs:
+Provide the text, data, code, notes, or materials the AI should use.
+
+Constraints:
+State what the AI must preserve, avoid, or be careful about.
+
+Output format:
+Describe the structure of the expected response.
+
+Review criteria:
+Explain how the output should be checked before use.
+```
+
+This template can be adapted to many workflows.
+
+It can support writing, analysis, coding, lesson design, research synthesis, communication, and planning.
+
+---
+
+## Example: Weak Prompt vs System Prompt
+
+Weak prompt:
+
+```text
+Summarize this article.
+```
+
+System-style prompt:
+
+```text
+Task:
+Summarize the article below.
+
+Context:
+The summary is for learners who are new to AI systems and need a plain-language explanation.
+
+Inputs:
+Use only the article text provided below.
+
+Constraints:
+Do not add claims that are not in the article. Flag any point that seems unclear or unsupported.
+
+Output format:
+Return five short bullet points, followed by one sentence explaining why the article matters.
+
+Review criteria:
+Check that the summary is accurate, beginner-friendly, and does not overstate the article.
+```
+
+The second prompt is longer, but it is not longer for the sake of length.
+
+It is more structured.
+
+It gives the AI a clearer job and gives the human a clearer review path.
+
+---
+
+## Prompting as Workflow Design
+
+In an AI system, prompting is not isolated from the rest of the workflow.
+
+It connects to problem framing, context design, knowledge grounding, evaluation, documentation, and human decision-making.
+
+```text
+Problem framing
+  ↓
+Prompt design
+  ↓
+AI output
+  ↓
+Evaluation
+  ↓
+Human decision
+  ↓
+Documentation
+```
+
+This means a prompt should be designed with the end of the workflow in mind.
+
+Before writing the prompt, ask:
+
+- What decision will this output support?
+- Who will use the output?
+- What evidence does the AI need?
+- What risks must be checked?
+- What format will make the result useful?
+- What must the human verify before acting?
+
+Prompting becomes stronger when it is connected to the full system.
+
+---
+
+## Prompt Libraries and Reuse
+
+A mature AI workflow does not depend on memory or improvisation every time.
+
+It can use prompt libraries.
+
+A prompt library is a collection of reusable prompts that have been tested, improved, and documented.
+
+Each prompt can include:
+
+```text
+Prompt name
+Purpose
+Best use case
+Required inputs
+Output format
+Review checklist
+Known limitations
+Version or update date
+```
+
+Prompt libraries are useful because they make AI-supported work more consistent.
+
+They also help teams teach, review, and improve their workflows over time.
+
+---
+
+## Prompt Versioning
+
+Prompts change.
+
+A prompt may be improved after a weak output.
+
+A new constraint may be added after a risk is discovered.
+
+A better output format may be developed after repeated use.
+
+For important workflows, prompts should be versioned.
+
+```text
+prompt-name: literature-summary
+version: 0.1
+purpose: summarize supplied research notes for beginner learners
+last-updated: 2026-07
+review-status: draft
+```
+
+Versioning does not need to be complicated.
+
+The important point is that prompt changes should be visible when the workflow matters.
+
+---
+
+## Common Prompting Mistakes
+
+Many AI problems begin before the AI produces an answer.
+
+They begin in the prompt.
+
+Common mistakes include:
+
+- asking a vague question,
+- providing no audience or purpose,
+- mixing too many tasks in one prompt,
+- failing to provide source material,
+- asking for certainty where uncertainty exists,
+- requesting polished output before checking accuracy,
+- not specifying the output format,
+- and using the output without human review.
+
+These mistakes do not mean AI is useless.
+
+They mean the workflow needs better design.
+
+---
+
+## Human Responsibility in Prompting
+
+A prompt does not transfer responsibility to the AI.
+
+The human remains responsible for the task definition, the context, the decision, and the final use of the output.
+
+AI can assist.
+
+AI can accelerate.
+
+AI can suggest.
+
+AI can organize.
+
+AI can review.
+
+But the human must decide whether the output is appropriate, accurate, ethical, and ready to use.
+
+This is especially important in education, health, law, finance, research, employment, public communication, and any workflow where people may be affected by the result.
+
+---
+
+## CDI Practice Pattern
+
+In Complex Data Insights workflows, a prompt should usually answer five questions:
+
+```text
+What is the task?
+What context matters?
+What evidence should be used?
+What output is expected?
+How will the result be reviewed?
+```
+
+This pattern keeps prompting connected to system thinking.
+
+It also prepares the learner for later chapters on workflow design, context systems, output evaluation, agent templates, and applied AI agents.
+
+---
+
+## Chapter Summary
+
+Prompting is not only a communication skill.
+
+It is a system design skill.
+
+A strong prompt defines the goal, context, inputs, constraints, output format, and review criteria.
+
+This makes AI-supported work easier to evaluate, repeat, teach, and improve.
+
+The best prompts do not remove human judgment.
+
+They make human judgment easier to apply.
+
+---
+
+## Looking Ahead
+
+The next chapter moves from prompting to full AI workflow design.
+
+We will examine how AI tasks can be organized into repeatable workflows that include inputs, steps, outputs, review points, and documentation.
+
+This begins Part II of the guide: **AI Systems**.
