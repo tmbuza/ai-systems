@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Agent Workflow and Decision Logic – AI Systems</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./13-agent-output-standards-and-review.html" rel="next">
+<link href="./11-agent-inputs-context-and-memory.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="assets/css/cdi.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html">Part III: Reusable AI Agent Template</a></li><li class="breadcrumb-item"><a href="./12-agent-workflow-and-decision-logic.html"><span class="chapter-title">Agent Workflow and Decision Logic</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI Systems</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">index.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I: AI Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface and Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-ai-system-overview.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI System Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-thinking-with-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Thinking with AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-human-ai-human-framework.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Human–AI–Human Framework</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-prompting-as-system-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Prompting as System Design</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II: AI Systems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-ai-workflow-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Workflow Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-context-and-knowledge-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Context and Knowledge Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-ai-output-evaluation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Output Evaluation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-ai-safety-boundaries-and-human-judgment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Safety Boundaries and Human Judgment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-ai-operating-system-for-work.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Operating System for Work</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III: Reusable AI Agent Template</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-agent-purpose-and-scope.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Purpose and Scope</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-agent-inputs-context-and-memory.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Inputs, Context, and Memory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-agent-workflow-and-decision-logic.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Agent Workflow and Decision Logic</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-agent-output-standards-and-review.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Output Standards and Review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-agent-improvement-and-maintenance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Improvement and Maintenance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV: Applied AI Agents</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-research-and-learning-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Research and Learning Agent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-career-and-portfolio-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Career and Portfolio Agent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-data-analysis-support-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Analysis Support Agent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-communication-and-reporting-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Communication and Reporting Agent</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#from-prompt-to-workflow" id="toc-from-prompt-to-workflow" class="nav-link active" data-scroll-target="#from-prompt-to-workflow">From Prompt to Workflow</a></li>
+  <li><a href="#why-decision-logic-matters" id="toc-why-decision-logic-matters" class="nav-link" data-scroll-target="#why-decision-logic-matters">Why Decision Logic Matters</a></li>
+  <li><a href="#the-basic-agent-workflow" id="toc-the-basic-agent-workflow" class="nav-link" data-scroll-target="#the-basic-agent-workflow">The Basic Agent Workflow</a></li>
+  <li><a href="#stage-1-understand-the-task" id="toc-stage-1-understand-the-task" class="nav-link" data-scroll-target="#stage-1-understand-the-task">Stage 1: Understand the Task</a></li>
+  <li><a href="#stage-2-check-the-available-context" id="toc-stage-2-check-the-available-context" class="nav-link" data-scroll-target="#stage-2-check-the-available-context">Stage 2: Check the Available Context</a></li>
+  <li><a href="#stage-3-execute-the-workflow" id="toc-stage-3-execute-the-workflow" class="nav-link" data-scroll-target="#stage-3-execute-the-workflow">Stage 3: Execute the Workflow</a></li>
+  <li><a href="#stage-4-review-the-output" id="toc-stage-4-review-the-output" class="nav-link" data-scroll-target="#stage-4-review-the-output">Stage 4: Review the Output</a></li>
+  <li><a href="#stage-5-deliver-or-escalate" id="toc-stage-5-deliver-or-escalate" class="nav-link" data-scroll-target="#stage-5-deliver-or-escalate">Stage 5: Deliver or Escalate</a></li>
+  <li><a href="#workflow-logic-as-a-decision-tree" id="toc-workflow-logic-as-a-decision-tree" class="nav-link" data-scroll-target="#workflow-logic-as-a-decision-tree">Workflow Logic as a Decision Tree</a></li>
+  <li><a href="#a-reusable-agent-workflow-template" id="toc-a-reusable-agent-workflow-template" class="nav-link" data-scroll-target="#a-reusable-agent-workflow-template">A Reusable Agent Workflow Template</a></li>
+  <li><a href="#example-research-and-learning-agent" id="toc-example-research-and-learning-agent" class="nav-link" data-scroll-target="#example-research-and-learning-agent">Example: Research and Learning Agent</a></li>
+  <li><a href="#example-communication-and-reporting-agent" id="toc-example-communication-and-reporting-agent" class="nav-link" data-scroll-target="#example-communication-and-reporting-agent">Example: Communication and Reporting Agent</a></li>
+  <li><a href="#decision-rules-should-be-simple" id="toc-decision-rules-should-be-simple" class="nav-link" data-scroll-target="#decision-rules-should-be-simple">Decision Rules Should Be Simple</a></li>
+  <li><a href="#review-gates" id="toc-review-gates" class="nav-link" data-scroll-target="#review-gates">Review Gates</a></li>
+  <li><a href="#escalation-logic" id="toc-escalation-logic" class="nav-link" data-scroll-target="#escalation-logic">Escalation Logic</a></li>
+  <li><a href="#human-in-the-loop-design" id="toc-human-in-the-loop-design" class="nav-link" data-scroll-target="#human-in-the-loop-design">Human-in-the-Loop Design</a></li>
+  <li><a href="#common-workflow-design-mistakes" id="toc-common-workflow-design-mistakes" class="nav-link" data-scroll-target="#common-workflow-design-mistakes">Common Workflow Design Mistakes</a></li>
+  <li><a href="#lightweight-workflow-documentation" id="toc-lightweight-workflow-documentation" class="nav-link" data-scroll-target="#lightweight-workflow-documentation">Lightweight Workflow Documentation</a></li>
+  <li><a href="#practical-exercise" id="toc-practical-exercise" class="nav-link" data-scroll-target="#practical-exercise">Practical Exercise</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html">Part III: Reusable AI Agent Template</a></li><li class="breadcrumb-item"><a href="./12-agent-workflow-and-decision-logic.html"><span class="chapter-title">Agent Workflow and Decision Logic</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="agent-workflow-and-decision-logic" class="quarto-section-identifier"><span class="chapter-title">Agent Workflow and Decision Logic</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Jul 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cdi-message">
+<ul>
+<li><strong>ID:</strong> AI-012</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams designing reusable AI agents</li>
+<li><strong>Theme:</strong> A reusable AI agent needs clear workflow logic, decision rules, review gates, and human escalation points</li>
+</ul>
+</div>
+<p>An AI agent is not only a prompt.</p>
+<p>A prompt may ask for one output.</p>
+<p>An agent needs a workflow.</p>
+<p>The workflow explains what the agent does first, what it checks, how it decides what to do next, what it produces, when it should stop, and when a human should review or intervene.</p>
+<p>Without workflow logic, an agent becomes unpredictable.</p>
+<p>It may produce useful outputs sometimes, but the process is difficult to repeat, inspect, improve, or teach.</p>
+<p>A reusable agent should therefore be designed as a small operating system for a specific task.</p>
+<p>It needs inputs.</p>
+<p>It needs steps.</p>
+<p>It needs rules.</p>
+<p>It needs review points.</p>
+<p>It needs output standards.</p>
+<p>It needs boundaries.</p>
+<p>This chapter explains how to design that workflow and decision logic.</p>
+<hr>
+<section id="from-prompt-to-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="from-prompt-to-workflow">From Prompt to Workflow</h2>
+<p>A single prompt usually follows a simple pattern.</p>
+<pre class="text"><code>User request
+  ↓
+AI response</code></pre>
+<p>That is useful for quick tasks.</p>
+<p>But reusable agents need a more structured pattern.</p>
+<pre class="text"><code>Task request
+  ↓
+Input check
+  ↓
+Context review
+  ↓
+Workflow steps
+  ↓
+Decision logic
+  ↓
+Draft output
+  ↓
+Quality review
+  ↓
+Final output or escalation</code></pre>
+<p>The difference is important.</p>
+<p>A prompt focuses on asking.</p>
+<p>A workflow focuses on working.</p>
+<p>The workflow gives the agent a repeatable process that can be explained to another person.</p>
+<hr>
+</section>
+<section id="why-decision-logic-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-decision-logic-matters">Why Decision Logic Matters</h2>
+<p>Decision logic tells the agent how to respond when the task is not simple.</p>
+<p>For example, an agent may need to decide:</p>
+<ul>
+<li>whether the request is clear enough,</li>
+<li>whether enough context has been provided,</li>
+<li>whether the task is low-risk or high-risk,</li>
+<li>whether a source should be checked,</li>
+<li>whether an output should be brief or detailed,</li>
+<li>whether the work can proceed or should be escalated,</li>
+<li>whether the final output is ready or needs revision.</li>
+</ul>
+<p>These decisions should not be left entirely to chance.</p>
+<p>A strong agent has explicit rules for common situations.</p>
+<p>The rules do not remove judgment.</p>
+<p>They make judgment more consistent.</p>
+<hr>
+</section>
+<section id="the-basic-agent-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-basic-agent-workflow">The Basic Agent Workflow</h2>
+<p>A reusable agent can begin with five core stages.</p>
+<pre class="text"><code>1. Understand the task
+2. Check the available context
+3. Execute the workflow
+4. Review the output
+5. Deliver or escalate</code></pre>
+<p>Each stage has a purpose.</p>
+<p>The first stage prevents the agent from solving the wrong problem.</p>
+<p>The second stage prevents the agent from inventing missing information.</p>
+<p>The third stage performs the work.</p>
+<p>The fourth stage checks the quality and risk of the output.</p>
+<p>The fifth stage decides what should happen next.</p>
+<p>This is the minimum workflow structure for a responsible agent.</p>
+<hr>
+</section>
+<section id="stage-1-understand-the-task" class="level2">
+<h2 class="anchored" data-anchor-id="stage-1-understand-the-task">Stage 1: Understand the Task</h2>
+<p>The agent should first identify what kind of task it is handling.</p>
+<p>A task may involve:</p>
+<ul>
+<li>summarizing information,</li>
+<li>drafting communication,</li>
+<li>reviewing a document,</li>
+<li>planning a workflow,</li>
+<li>generating code,</li>
+<li>analyzing data,</li>
+<li>comparing options,</li>
+<li>preparing a report,</li>
+<li>creating a teaching resource,</li>
+<li>or supporting a decision.</li>
+</ul>
+<p>The agent should also identify the intended user and use case.</p>
+<p>A summary for a student is different from a summary for a policy memo.</p>
+<p>A code review for learning is different from a code review for production.</p>
+<p>A career plan for a beginner is different from a portfolio strategy for an experienced professional.</p>
+<p>Understanding the task means understanding both the action and the context.</p>
+<hr>
+</section>
+<section id="stage-2-check-the-available-context" class="level2">
+<h2 class="anchored" data-anchor-id="stage-2-check-the-available-context">Stage 2: Check the Available Context</h2>
+<p>Before doing the work, the agent should check whether it has enough context.</p>
+<p>Useful context may include:</p>
+<ul>
+<li>the goal,</li>
+<li>the audience,</li>
+<li>the input material,</li>
+<li>the expected output format,</li>
+<li>the tone or style,</li>
+<li>the deadline or use case,</li>
+<li>the quality standard,</li>
+<li>the risk level,</li>
+<li>and any constraints.</li>
+</ul>
+<p>The agent should not treat missing context as permission to invent.</p>
+<p>It should either make a reasonable assumption and state it, use a safe default, or ask for clarification when the missing information is essential.</p>
+<p>The agent should also recognize when context is outdated, uncertain, incomplete, or outside its competence.</p>
+<hr>
+</section>
+<section id="stage-3-execute-the-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="stage-3-execute-the-workflow">Stage 3: Execute the Workflow</h2>
+<p>Execution is where the agent performs the task.</p>
+<p>But execution should still be structured.</p>
+<p>A research agent may follow this workflow:</p>
+<pre class="text"><code>Define the question
+  ↓
+Identify useful sources
+  ↓
+Extract key points
+  ↓
+Compare findings
+  ↓
+Summarize with citations
+  ↓
+Flag uncertainty</code></pre>
+<p>A writing agent may follow this workflow:</p>
+<pre class="text"><code>Identify purpose and audience
+  ↓
+Draft the message
+  ↓
+Improve clarity and tone
+  ↓
+Check completeness
+  ↓
+Return a send-ready version</code></pre>
+<p>A data analysis support agent may follow this workflow:</p>
+<pre class="text"><code>Clarify the analytical question
+  ↓
+Inspect the data structure
+  ↓
+Suggest analysis steps
+  ↓
+Generate reproducible code
+  ↓
+Check assumptions and limitations
+  ↓
+Support interpretation</code></pre>
+<p>The workflow should match the agent purpose.</p>
+<p>A generic process is not enough.</p>
+<p>The agent should have a process designed for its task family.</p>
+<hr>
+</section>
+<section id="stage-4-review-the-output" class="level2">
+<h2 class="anchored" data-anchor-id="stage-4-review-the-output">Stage 4: Review the Output</h2>
+<p>Every reusable agent needs a review stage.</p>
+<p>The review stage asks whether the output is ready to use.</p>
+<p>A simple review checklist may include:</p>
+<pre class="text"><code>Is the output aligned with the task?
+Is the output complete enough for the use case?
+Is the output clear?
+Is the output grounded in the provided context?
+Are assumptions visible?
+Are risks or limitations stated?
+Does a human need to verify anything before use?</code></pre>
+<p>This review stage is especially important for AI systems because outputs can sound confident even when they are incomplete or wrong.</p>
+<p>The review step protects the user, the learner, the organization, and the credibility of the work.</p>
+<hr>
+</section>
+<section id="stage-5-deliver-or-escalate" class="level2">
+<h2 class="anchored" data-anchor-id="stage-5-deliver-or-escalate">Stage 5: Deliver or Escalate</h2>
+<p>The final stage is not always delivery.</p>
+<p>Sometimes the correct action is escalation.</p>
+<p>The agent may need to stop and involve a human when:</p>
+<ul>
+<li>the request is high-risk,</li>
+<li>the context is insufficient,</li>
+<li>the task requires professional judgment,</li>
+<li>the result could affect health, legal, financial, academic, employment, or safety outcomes,</li>
+<li>the output depends on facts that must be verified,</li>
+<li>or the user is asking for something outside the agent boundary.</li>
+</ul>
+<p>Escalation is not failure.</p>
+<p>Escalation is part of responsible system design.</p>
+<p>A well-designed agent knows when not to continue alone.</p>
+<hr>
+</section>
+<section id="workflow-logic-as-a-decision-tree" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-logic-as-a-decision-tree">Workflow Logic as a Decision Tree</h2>
+<p>Decision logic can be represented as a simple decision tree.</p>
+<pre class="text"><code>Start
+  ↓
+Is the task within scope?
+  ├── No → Decline or redirect
+  └── Yes
+        ↓
+Is the context sufficient?
+  ├── No → Ask, assume carefully, or provide partial support
+  └── Yes
+        ↓
+Is the task high-risk?
+  ├── Yes → Add stronger review, caution, or escalation
+  └── No
+        ↓
+Produce draft output
+        ↓
+Does the output meet the standard?
+  ├── No → Revise or flag limitations
+  └── Yes → Deliver</code></pre>
+<p>This type of decision tree helps the agent behave consistently.</p>
+<p>It also helps the designer explain the agent to learners, colleagues, or reviewers.</p>
+<hr>
+</section>
+<section id="a-reusable-agent-workflow-template" class="level2">
+<h2 class="anchored" data-anchor-id="a-reusable-agent-workflow-template">A Reusable Agent Workflow Template</h2>
+<p>A practical agent workflow can be documented using this template.</p>
+<pre class="text"><code>Agent name:
+
+Purpose:
+
+Primary users:
+
+Supported tasks:
+
+Unsupported tasks:
+
+Required inputs:
+
+Optional context:
+
+Workflow steps:
+1.
+2.
+3.
+4.
+5.
+
+Decision rules:
+- If ... then ...
+- If ... then ...
+- If ... then ...
+
+Review checklist:
+- 
+- 
+- 
+
+Escalation triggers:
+- 
+- 
+- 
+
+Output format:
+
+Human review requirement:</code></pre>
+<p>This template turns an agent idea into a usable design document.</p>
+<p>It also makes the agent easier to improve over time.</p>
+<hr>
+</section>
+<section id="example-research-and-learning-agent" class="level2">
+<h2 class="anchored" data-anchor-id="example-research-and-learning-agent">Example: Research and Learning Agent</h2>
+<p>A research and learning agent may be designed like this.</p>
+<pre class="text"><code>Agent name:
+Research and Learning Agent
+
+Purpose:
+Help learners understand a topic, compare sources, summarize key ideas, and identify gaps.
+
+Primary users:
+Students, researchers, mentors, educators, and self-directed learners.
+
+Supported tasks:
+- Explain a concept
+- Summarize provided material
+- Compare ideas
+- Generate study questions
+- Build a learning plan
+
+Unsupported tasks:
+- Fabricating citations
+- Replacing expert review
+- Making unsupported claims
+- Completing dishonest academic work
+
+Required inputs:
+- Topic or question
+- Learner level
+- Purpose of learning
+
+Optional context:
+- Course notes
+- Articles
+- Dataset descriptions
+- Existing draft
+
+Workflow steps:
+1. Identify the learning goal.
+2. Check the learner level and available context.
+3. Explain the topic in clear language.
+4. Provide examples or analogies.
+5. Suggest review questions or next steps.
+6. Flag uncertainty or areas needing verification.
+
+Decision rules:
+- If the topic is unfamiliar or current, use reliable sources or ask for source material.
+- If the learner is a beginner, reduce jargon and add examples.
+- If the output may be used academically, encourage citation and independent understanding.
+
+Review checklist:
+- Is the explanation accurate?
+- Is it appropriate for the learner level?
+- Are limitations visible?
+- Is the learner encouraged to think, not just copy?
+
+Escalation triggers:
+- Medical, legal, financial, or safety-critical interpretation
+- Unsupported claims from weak sources
+- Requests to bypass learning or assessment rules
+
+Output format:
+Clear explanation, key points, example, reflection questions, and suggested next step.
+
+Human review requirement:
+Learner or mentor reviews before use in formal work.</code></pre>
+<p>This example shows that the agent is not only a response generator.</p>
+<p>It has purpose, boundaries, steps, rules, and review logic.</p>
+<hr>
+</section>
+<section id="example-communication-and-reporting-agent" class="level2">
+<h2 class="anchored" data-anchor-id="example-communication-and-reporting-agent">Example: Communication and Reporting Agent</h2>
+<p>A communication and reporting agent may have a different workflow.</p>
+<pre class="text"><code>Agent name:
+Communication and Reporting Agent
+
+Purpose:
+Support clear, audience-aware communication for reports, emails, summaries, proposals, and professional updates.
+
+Primary users:
+Professionals, analysts, researchers, mentors, and project teams.
+
+Supported tasks:
+- Draft emails
+- Improve clarity
+- Summarize findings
+- Prepare report sections
+- Adjust tone for audience
+
+Unsupported tasks:
+- Misleading communication
+- Hiding uncertainty
+- Inventing results
+- Sending messages without human review where review is required
+
+Required inputs:
+- Message goal
+- Audience
+- Key points
+- Desired tone
+
+Optional context:
+- Previous draft
+- Data summary
+- Report outline
+- Organizational style
+
+Workflow steps:
+1. Identify purpose and audience.
+2. Extract the key message.
+3. Organize the content logically.
+4. Draft in the requested tone.
+5. Review for clarity, accuracy, and completeness.
+6. Return send-ready text or a revision.
+
+Decision rules:
+- If the message is sensitive, use careful and respectful language.
+- If evidence is missing, avoid overstating claims.
+- If the message is formal, keep structure and tone professional.
+
+Review checklist:
+- Is the message clear?
+- Is the tone appropriate?
+- Are claims supported?
+- Is anything missing before sending?
+
+Escalation triggers:
+- Conflict, HR, legal, medical, or financial matters
+- Public statements on behalf of an organization
+- High-impact decisions
+
+Output format:
+Ready-to-use draft with optional notes.
+
+Human review requirement:
+Sender reviews before sending.</code></pre>
+<p>The workflow is similar in structure but different in content.</p>
+<p>That is the point.</p>
+<p>Reusable agent design should use a common architecture while adapting to the task.</p>
+<hr>
+</section>
+<section id="decision-rules-should-be-simple" class="level2">
+<h2 class="anchored" data-anchor-id="decision-rules-should-be-simple">Decision Rules Should Be Simple</h2>
+<p>Decision rules do not need to be complicated.</p>
+<p>They should be clear enough to guide behavior.</p>
+<p>Useful decision rules often follow this pattern:</p>
+<pre class="text"><code>If the task is outside scope, redirect.
+If context is missing but not essential, state the assumption.
+If context is missing and essential, ask for it or provide only partial support.
+If the topic is high-risk, include caution and recommend human expert review.
+If the output is based on provided material, stay close to that material.
+If the user needs a reusable output, return a clean finished version.</code></pre>
+<p>Simple rules are easier to teach, inspect, and improve.</p>
+<p>Complex rules may be needed later, but the first version of an agent should usually begin with clear basics.</p>
+<hr>
+</section>
+<section id="review-gates" class="level2">
+<h2 class="anchored" data-anchor-id="review-gates">Review Gates</h2>
+<p>A review gate is a point in the workflow where the agent or human checks whether it is safe and useful to continue.</p>
+<p>Common review gates include:</p>
+<pre class="text"><code>Input review
+Context review
+Risk review
+Draft review
+Final human review</code></pre>
+<p>Each gate answers a different question.</p>
+<p>The input review asks whether the task is understood.</p>
+<p>The context review asks whether enough information is available.</p>
+<p>The risk review asks whether the task requires special caution.</p>
+<p>The draft review asks whether the output meets the quality standard.</p>
+<p>The final human review asks whether the output is ready for use in the real world.</p>
+<p>Review gates are important because they prevent the agent from rushing from request to output without inspection.</p>
+<hr>
+</section>
+<section id="escalation-logic" class="level2">
+<h2 class="anchored" data-anchor-id="escalation-logic">Escalation Logic</h2>
+<p>Escalation logic defines when the agent should stop, warn, redirect, or involve a human.</p>
+<p>Escalation may be needed when a task is:</p>
+<ul>
+<li>high-stakes,</li>
+<li>uncertain,</li>
+<li>sensitive,</li>
+<li>outside the agent scope,</li>
+<li>dependent on unavailable information,</li>
+<li>or likely to create harm if handled poorly.</li>
+</ul>
+<p>A reusable agent should document these conditions.</p>
+<p>For example:</p>
+<pre class="text"><code>Escalate when:
+- The user asks for medical diagnosis or treatment.
+- The user asks for legal advice about a real case.
+- The user asks for financial decisions involving real money.
+- The user asks to misrepresent evidence.
+- The user asks for unsupported claims.
+- The user provides incomplete data but expects a final decision.</code></pre>
+<p>Escalation keeps the system honest.</p>
+<p>It reminds the user that AI assistance does not remove human responsibility.</p>
+<hr>
+</section>
+<section id="human-in-the-loop-design" class="level2">
+<h2 class="anchored" data-anchor-id="human-in-the-loop-design">Human-in-the-Loop Design</h2>
+<p>A reusable agent should make the role of the human explicit.</p>
+<p>The human may act as:</p>
+<ul>
+<li>task owner,</li>
+<li>context provider,</li>
+<li>reviewer,</li>
+<li>decision-maker,</li>
+<li>editor,</li>
+<li>domain expert,</li>
+<li>ethical supervisor,</li>
+<li>or final approver.</li>
+</ul>
+<p>The agent should not hide this role.</p>
+<p>Instead, the workflow should show where human judgment enters.</p>
+<pre class="text"><code>Human defines the task
+  ↓
+Agent processes and drafts
+  ↓
+Human reviews and decides</code></pre>
+<p>This is the Human–AI–Human model applied to agent design.</p>
+<hr>
+</section>
+<section id="common-workflow-design-mistakes" class="level2">
+<h2 class="anchored" data-anchor-id="common-workflow-design-mistakes">Common Workflow Design Mistakes</h2>
+<p>A weak agent workflow often has one or more of these problems.</p>
+<pre class="text"><code>No clear purpose
+No task boundary
+No input requirements
+No decision rules
+No review stage
+No escalation logic
+No output standard
+No human responsibility</code></pre>
+<p>These weaknesses make the agent harder to trust.</p>
+<p>They also make it harder to improve.</p>
+<p>When an agent produces a poor result, the designer cannot easily tell whether the problem came from the input, the prompt, the context, the workflow, the decision rule, or the review process.</p>
+<p>A documented workflow makes improvement possible.</p>
+<hr>
+</section>
+<section id="lightweight-workflow-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="lightweight-workflow-documentation">Lightweight Workflow Documentation</h2>
+<p>The agent workflow does not need to become a long manual.</p>
+<p>A lightweight version can be enough.</p>
+<pre class="text"><code>Agent:
+Task:
+Inputs needed:
+Steps:
+Decision rules:
+Review checks:
+Escalation triggers:
+Final output:</code></pre>
+<p>For small learning agents, this may be sufficient.</p>
+<p>For high-stakes or team-facing agents, the documentation should be more detailed.</p>
+<p>The level of documentation should match the risk and importance of the task.</p>
+<hr>
+</section>
+<section id="practical-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="practical-exercise">Practical Exercise</h2>
+<p>Choose one AI agent you would like to create.</p>
+<p>It may be for research, learning, career development, data analysis, reporting, teaching, mentoring, or project management.</p>
+<p>Complete this workflow draft.</p>
+<pre class="text"><code>Agent name:
+
+What problem does this agent help solve?
+
+Who will use it?
+
+What inputs does it need?
+
+What should it do first?
+
+What should it do second?
+
+What should it check before producing the final output?
+
+When should it stop or escalate?
+
+What should the final output look like?
+
+What should the human review before using the output?</code></pre>
+<p>This exercise turns an agent idea into an operational design.</p>
+<hr>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<p>A reusable AI agent needs more than a good prompt.</p>
+<p>It needs a workflow.</p>
+<p>It needs decision logic.</p>
+<p>It needs review gates.</p>
+<p>It needs escalation rules.</p>
+<p>It needs human responsibility built into the process.</p>
+<p>The workflow does not need to be complicated, but it must be visible.</p>
+<p>A visible workflow can be taught, tested, improved, reused, and trusted more than an invisible one.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter focuses on agent output standards and review.</p>
+<p>Once the workflow is defined, the agent still needs clear standards for what a good output looks like.</p>
+<p>That includes structure, clarity, completeness, evidence, limitations, formatting, and human approval before real-world use.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./11-agent-inputs-context-and-memory.html" class="pagination-link" aria-label="Agent Inputs, Context, and Memory">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Agent Inputs, Context, and Memory</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./13-agent-output-standards-and-review.html" class="pagination-link" aria-label="Agent Output Standards and Review">
+        <span class="nav-page-text"><span class="chapter-title">Agent Output Standards and Review</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

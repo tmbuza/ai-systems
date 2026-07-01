@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Agent Output Standards and Review – AI Systems</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./14-agent-improvement-and-maintenance.html" rel="next">
+<link href="./12-agent-workflow-and-decision-logic.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="assets/css/cdi.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html">Part III: Reusable AI Agent Template</a></li><li class="breadcrumb-item"><a href="./13-agent-output-standards-and-review.html"><span class="chapter-title">Agent Output Standards and Review</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI Systems</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">index.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I: AI Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface and Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-ai-system-overview.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI System Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-thinking-with-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Thinking with AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-human-ai-human-framework.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Human–AI–Human Framework</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-prompting-as-system-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Prompting as System Design</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II: AI Systems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-ai-workflow-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Workflow Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-context-and-knowledge-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Context and Knowledge Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-ai-output-evaluation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Output Evaluation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-ai-safety-boundaries-and-human-judgment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Safety Boundaries and Human Judgment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-ai-operating-system-for-work.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Operating System for Work</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III: Reusable AI Agent Template</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-agent-purpose-and-scope.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Purpose and Scope</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-agent-inputs-context-and-memory.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Inputs, Context, and Memory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-agent-workflow-and-decision-logic.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Workflow and Decision Logic</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-agent-output-standards-and-review.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Agent Output Standards and Review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-agent-improvement-and-maintenance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Improvement and Maintenance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV: Applied AI Agents</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-research-and-learning-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Research and Learning Agent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-career-and-portfolio-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Career and Portfolio Agent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-data-analysis-support-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Analysis Support Agent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-communication-and-reporting-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Communication and Reporting Agent</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-output-standards-matter" id="toc-why-output-standards-matter" class="nav-link active" data-scroll-target="#why-output-standards-matter">Why Output Standards Matter</a></li>
+  <li><a href="#from-output-to-deliverable" id="toc-from-output-to-deliverable" class="nav-link" data-scroll-target="#from-output-to-deliverable">From Output to Deliverable</a></li>
+  <li><a href="#common-agent-output-types" id="toc-common-agent-output-types" class="nav-link" data-scroll-target="#common-agent-output-types">Common Agent Output Types</a></li>
+  <li><a href="#minimum-output-standard" id="toc-minimum-output-standard" class="nav-link" data-scroll-target="#minimum-output-standard">Minimum Output Standard</a></li>
+  <li><a href="#output-format-as-a-control-mechanism" id="toc-output-format-as-a-control-mechanism" class="nav-link" data-scroll-target="#output-format-as-a-control-mechanism">Output Format as a Control Mechanism</a></li>
+  <li><a href="#designing-an-output-specification" id="toc-designing-an-output-specification" class="nav-link" data-scroll-target="#designing-an-output-specification">Designing an Output Specification</a></li>
+  <li><a href="#acceptance-criteria" id="toc-acceptance-criteria" class="nav-link" data-scroll-target="#acceptance-criteria">Acceptance Criteria</a></li>
+  <li><a href="#review-levels" id="toc-review-levels" class="nav-link" data-scroll-target="#review-levels">Review Levels</a></li>
+  <li><a href="#human-review-checklist" id="toc-human-review-checklist" class="nav-link" data-scroll-target="#human-review-checklist">Human Review Checklist</a></li>
+  <li><a href="#ready-revise-or-reject" id="toc-ready-revise-or-reject" class="nav-link" data-scroll-target="#ready-revise-or-reject">Ready, Revise, or Reject</a></li>
+  <li><a href="#example-reviewing-a-communication-agent-output" id="toc-example-reviewing-a-communication-agent-output" class="nav-link" data-scroll-target="#example-reviewing-a-communication-agent-output">Example: Reviewing a Communication Agent Output</a></li>
+  <li><a href="#example-reviewing-a-data-support-agent-output" id="toc-example-reviewing-a-data-support-agent-output" class="nav-link" data-scroll-target="#example-reviewing-a-data-support-agent-output">Example: Reviewing a Data Support Agent Output</a></li>
+  <li><a href="#output-standards-for-teaching-and-mentorship" id="toc-output-standards-for-teaching-and-mentorship" class="nav-link" data-scroll-target="#output-standards-for-teaching-and-mentorship">Output Standards for Teaching and Mentorship</a></li>
+  <li><a href="#documentation-of-agent-outputs" id="toc-documentation-of-agent-outputs" class="nav-link" data-scroll-target="#documentation-of-agent-outputs">Documentation of Agent Outputs</a></li>
+  <li><a href="#common-output-failures" id="toc-common-output-failures" class="nav-link" data-scroll-target="#common-output-failures">Common Output Failures</a></li>
+  <li><a href="#agent-output-standard-template" id="toc-agent-output-standard-template" class="nav-link" data-scroll-target="#agent-output-standard-template">Agent Output Standard Template</a></li>
+  <li><a href="#cdi-practice-pattern" id="toc-cdi-practice-pattern" class="nav-link" data-scroll-target="#cdi-practice-pattern">CDI Practice Pattern</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-agent-purpose-and-scope.html">Part III: Reusable AI Agent Template</a></li><li class="breadcrumb-item"><a href="./13-agent-output-standards-and-review.html"><span class="chapter-title">Agent Output Standards and Review</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="agent-output-standards-and-review" class="quarto-section-identifier"><span class="chapter-title">Agent Output Standards and Review</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Jul 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cdi-message">
+<ul>
+<li><strong>ID:</strong> AI-013</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, professionals, and teams designing reusable AI agents</li>
+<li><strong>Theme:</strong> Reusable agents need clear output standards and human review before their work can be trusted</li>
+</ul>
+</div>
+<p>An AI agent is only useful if its outputs can be understood, checked, reused, and improved.</p>
+<p>A prompt may produce a helpful answer once.</p>
+<p>An agent must produce outputs that are consistent enough to support repeated work.</p>
+<p>That means the agent needs standards.</p>
+<p>It needs to know what kind of output is expected, what structure to follow, what evidence to include, what uncertainty to show, what assumptions to document, and when the output should be reviewed by a human.</p>
+<p>Without output standards, an agent becomes unpredictable.</p>
+<p>With output standards, an agent becomes easier to evaluate, teach, maintain, and trust.</p>
+<hr>
+<section id="why-output-standards-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-output-standards-matter">Why Output Standards Matter</h2>
+<p>AI outputs can look polished even when they are incomplete or incorrect.</p>
+<p>They may use confident language.</p>
+<p>They may organize information well.</p>
+<p>They may sound professional.</p>
+<p>But presentation quality is not the same as reliability.</p>
+<p>A reusable agent should not be judged only by whether its answer sounds good.</p>
+<p>It should be judged by whether the output meets the standard required for the task.</p>
+<p>Good output standards help answer questions such as:</p>
+<ul>
+<li>Did the agent answer the actual task?</li>
+<li>Did it use the required context?</li>
+<li>Did it separate facts from assumptions?</li>
+<li>Did it identify uncertainty?</li>
+<li>Did it provide the requested format?</li>
+<li>Did it avoid unsupported claims?</li>
+<li>Did it stay within safety and scope boundaries?</li>
+<li>Is the output ready to use, or does it require revision?</li>
+</ul>
+<p>The standard makes review easier because the reviewer knows what to check.</p>
+<hr>
+</section>
+<section id="from-output-to-deliverable" class="level2">
+<h2 class="anchored" data-anchor-id="from-output-to-deliverable">From Output to Deliverable</h2>
+<p>An agent output is not always the final deliverable.</p>
+<p>Sometimes the output is a draft.</p>
+<p>Sometimes it is a summary.</p>
+<p>Sometimes it is a table.</p>
+<p>Sometimes it is a recommendation.</p>
+<p>Sometimes it is code.</p>
+<p>Sometimes it is a checklist, plan, or report section.</p>
+<p>The first question is therefore:</p>
+<pre class="text"><code>What kind of output should this agent produce?</code></pre>
+<p>The second question is:</p>
+<pre class="text"><code>What must be true before this output can be used?</code></pre>
+<p>These two questions separate casual AI generation from agent-based workflow design.</p>
+<hr>
+</section>
+<section id="common-agent-output-types" class="level2">
+<h2 class="anchored" data-anchor-id="common-agent-output-types">Common Agent Output Types</h2>
+<p>Reusable agents can produce many kinds of outputs.</p>
+<p>Examples include:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Agent type</th>
+<th>Typical output</th>
+<th>Review focus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Research agent</td>
+<td>Reading summary, source table, evidence map</td>
+<td>Accuracy, citation quality, relevance</td>
+</tr>
+<tr class="even">
+<td>Learning agent</td>
+<td>Explanation, quiz, study plan, reflection prompts</td>
+<td>Clarity, level, correctness</td>
+</tr>
+<tr class="odd">
+<td>Career agent</td>
+<td>Portfolio plan, CV feedback, project description</td>
+<td>Fit, honesty, evidence, tone</td>
+</tr>
+<tr class="even">
+<td>Data support agent</td>
+<td>Analysis plan, code review, interpretation draft</td>
+<td>Reproducibility, statistical caution, assumptions</td>
+</tr>
+<tr class="odd">
+<td>Communication agent</td>
+<td>Email, report section, announcement, presentation notes</td>
+<td>Tone, audience fit, completeness</td>
+</tr>
+<tr class="even">
+<td>Decision-support agent</td>
+<td>Options, trade-offs, recommendation framework</td>
+<td>Risk, evidence, uncertainty, human judgment</td>
+</tr>
+</tbody>
+</table>
+<p>The output standard should match the agent type.</p>
+<p>A communication agent needs tone and audience standards.</p>
+<p>A data support agent needs reproducibility and limitation standards.</p>
+<p>A research agent needs evidence and source standards.</p>
+<p>A career agent needs honesty and relevance standards.</p>
+<hr>
+</section>
+<section id="minimum-output-standard" class="level2">
+<h2 class="anchored" data-anchor-id="minimum-output-standard">Minimum Output Standard</h2>
+<p>Every reusable agent should have a minimum output standard.</p>
+<p>At a basic level, the output should include:</p>
+<ol type="1">
+<li><strong>Task response</strong> — the direct answer or deliverable requested.</li>
+<li><strong>Reasoning support</strong> — the explanation, evidence, or logic behind the output.</li>
+<li><strong>Assumptions</strong> — any missing information the agent had to infer.</li>
+<li><strong>Limitations</strong> — what the output does not prove or cover.</li>
+<li><strong>Review status</strong> — whether the output is ready, needs human review, or requires more information.</li>
+</ol>
+<p>This does not mean every agent output must be long.</p>
+<p>A short email draft may not need a long explanation.</p>
+<p>But the agent design should still make clear what counts as acceptable output.</p>
+<hr>
+</section>
+<section id="output-format-as-a-control-mechanism" class="level2">
+<h2 class="anchored" data-anchor-id="output-format-as-a-control-mechanism">Output Format as a Control Mechanism</h2>
+<p>Output format is not only about appearance.</p>
+<p>It is a control mechanism.</p>
+<p>A clear format reduces ambiguity.</p>
+<p>It makes comparison easier.</p>
+<p>It helps reviewers find missing parts.</p>
+<p>It also makes outputs easier to reuse in reports, spreadsheets, repositories, learning materials, or decision documents.</p>
+<p>For example, instead of asking an agent:</p>
+<pre class="text"><code>Review this response.</code></pre>
+<p>A stronger instruction is:</p>
+<pre class="text"><code>Review this response using the following structure:
+
+1. Main strengths
+2. Missing information
+3. Unsupported claims
+4. Suggested revisions
+5. Final readiness status: Ready / Needs revision / Not ready</code></pre>
+<p>The second version gives the agent a standard.</p>
+<p>It also gives the human reviewer a structure for checking the response.</p>
+<hr>
+</section>
+<section id="designing-an-output-specification" class="level2">
+<h2 class="anchored" data-anchor-id="designing-an-output-specification">Designing an Output Specification</h2>
+<p>An output specification defines what the agent should produce.</p>
+<p>A simple specification can include:</p>
+<pre class="text"><code>Agent name:
+Output purpose:
+Audience:
+Required sections:
+Required evidence:
+Required format:
+Tone or style:
+Length range:
+Review criteria:
+Escalation rules:</code></pre>
+<p>For example:</p>
+<pre class="text"><code>Agent name: Research Summary Agent
+Output purpose: Summarize selected documents for human review
+Audience: Researcher or analyst
+Required sections: Question, key findings, evidence table, uncertainty, next steps
+Required evidence: Source title, date, and short relevance note
+Required format: Markdown with one summary table
+Tone or style: Clear, cautious, non-promotional
+Length range: 600–900 words
+Review criteria: Accuracy, source relevance, completeness, uncertainty
+Escalation rules: Flag conflicting evidence or missing sources</code></pre>
+<p>This kind of specification turns the agent from a loose assistant into a workflow component.</p>
+<hr>
+</section>
+<section id="acceptance-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="acceptance-criteria">Acceptance Criteria</h2>
+<p>Acceptance criteria define what must be true before an output is considered usable.</p>
+<p>They should be specific enough for a human reviewer to apply.</p>
+<p>Examples:</p>
+<pre class="text"><code>The output is acceptable if:
+- it answers the requested question directly,
+- it uses the provided context,
+- it does not invent unsupported facts,
+- it identifies assumptions,
+- it includes limitations,
+- it follows the requested structure,
+- it is appropriate for the intended audience,
+- and it clearly states whether human review is still needed.</code></pre>
+<p>Acceptance criteria are especially important when agents support repeated work.</p>
+<p>They prevent the agent from drifting into attractive but unreliable outputs.</p>
+<hr>
+</section>
+<section id="review-levels" class="level2">
+<h2 class="anchored" data-anchor-id="review-levels">Review Levels</h2>
+<p>Not all outputs require the same level of review.</p>
+<p>A reusable AI system should define review levels based on risk.</p>
+<pre class="text"><code>Low-risk output
+  ↓
+Light review
+
+Medium-risk output
+  ↓
+Structured review
+
+High-risk output
+  ↓
+Expert review or no autonomous use</code></pre>
+<p>Low-risk outputs may include brainstorming, formatting help, or internal learning notes.</p>
+<p>Medium-risk outputs may include public communication, project plans, summaries, or draft reports.</p>
+<p>High-risk outputs may involve health, legal, financial, safety, employment, governance, or sensitive personal decisions.</p>
+<p>The higher the risk, the stronger the human review must be.</p>
+<hr>
+</section>
+<section id="human-review-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="human-review-checklist">Human Review Checklist</h2>
+<p>A practical agent review checklist can include:</p>
+<pre class="text"><code>Output review checklist
+
+[ ] The output answers the actual task.
+[ ] The output follows the required format.
+[ ] The output uses the provided context correctly.
+[ ] The output avoids unsupported claims.
+[ ] The output separates facts from assumptions.
+[ ] The output identifies uncertainty or limitations.
+[ ] The output is appropriate for the audience.
+[ ] The output stays within the agent scope.
+[ ] The output does not create privacy, safety, or ethical concerns.
+[ ] The final human decision is documented.</code></pre>
+<p>The checklist does not need to be complicated.</p>
+<p>It needs to be used consistently.</p>
+<hr>
+</section>
+<section id="ready-revise-or-reject" class="level2">
+<h2 class="anchored" data-anchor-id="ready-revise-or-reject">Ready, Revise, or Reject</h2>
+<p>A simple review status helps make decisions visible.</p>
+<p>Every important agent output can be classified as:</p>
+<pre class="text"><code>Ready</code></pre>
+<p>The output meets the standard and can be used after normal human approval.</p>
+<pre class="text"><code>Revise</code></pre>
+<p>The output is useful but needs correction, clarification, evidence, restructuring, or tone adjustment.</p>
+<pre class="text"><code>Reject</code></pre>
+<p>The output is misleading, unsafe, unsupported, outside scope, or not useful for the task.</p>
+<p>This three-part status system is simple enough for learners and teams to adopt.</p>
+<p>It also supports documentation.</p>
+<hr>
+</section>
+<section id="example-reviewing-a-communication-agent-output" class="level2">
+<h2 class="anchored" data-anchor-id="example-reviewing-a-communication-agent-output">Example: Reviewing a Communication Agent Output</h2>
+<p>Suppose a communication agent drafts an email for a mentor to send to a student.</p>
+<p>The output standard may require the message to be:</p>
+<ul>
+<li>encouraging,</li>
+<li>age-appropriate,</li>
+<li>clear,</li>
+<li>not too long,</li>
+<li>respectful,</li>
+<li>and aligned with the mentor’s voice.</li>
+</ul>
+<p>The review checklist may ask:</p>
+<pre class="text"><code>[ ] Is the student addressed respectfully?
+[ ] Is the message encouraging without exaggeration?
+[ ] Is the language simple enough for the audience?
+[ ] Is the purpose clear?
+[ ] Is the ending appropriate?
+[ ] Does the message avoid unnecessary pressure?</code></pre>
+<p>The agent may produce the draft.</p>
+<p>But the mentor remains responsible for approving the final message.</p>
+<hr>
+</section>
+<section id="example-reviewing-a-data-support-agent-output" class="level2">
+<h2 class="anchored" data-anchor-id="example-reviewing-a-data-support-agent-output">Example: Reviewing a Data Support Agent Output</h2>
+<p>Suppose a data support agent reviews an analysis plan.</p>
+<p>The output standard may require the agent to identify:</p>
+<ul>
+<li>the analysis question,</li>
+<li>the expected data inputs,</li>
+<li>the proposed method,</li>
+<li>assumptions,</li>
+<li>possible limitations,</li>
+<li>reproducibility concerns,</li>
+<li>and suggested checks.</li>
+</ul>
+<p>The review checklist may ask:</p>
+<pre class="text"><code>[ ] Is the analysis question clear?
+[ ] Are the required data inputs listed?
+[ ] Are assumptions stated?
+[ ] Are limitations acknowledged?
+[ ] Are quality-control checks included?
+[ ] Is the interpretation cautious?
+[ ] Is the final decision left to the analyst?</code></pre>
+<p>This keeps the agent in a support role.</p>
+<p>It does not allow the agent to replace the analyst’s responsibility.</p>
+<hr>
+</section>
+<section id="output-standards-for-teaching-and-mentorship" class="level2">
+<h2 class="anchored" data-anchor-id="output-standards-for-teaching-and-mentorship">Output Standards for Teaching and Mentorship</h2>
+<p>In learning environments, output standards also teach discipline.</p>
+<p>Learners should not only ask AI for answers.</p>
+<p>They should learn how to judge whether an answer is usable.</p>
+<p>A teaching-oriented AI agent can require learners to review outputs using questions such as:</p>
+<pre class="text"><code>What did the AI get right?
+What might be missing?
+What needs evidence?
+What should be checked by a human?
+What did I learn from this output?
+What will I change before using it?</code></pre>
+<p>This builds AI literacy.</p>
+<p>It also protects learners from becoming passive users of generated text.</p>
+<hr>
+</section>
+<section id="documentation-of-agent-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="documentation-of-agent-outputs">Documentation of Agent Outputs</h2>
+<p>Reusable agents should leave a small documentation trail.</p>
+<p>This does not need to be complex.</p>
+<p>A simple log can record:</p>
+<pre class="text"><code>Date
+Agent name
+Task
+Input source
+Output type
+Reviewer
+Review status
+Main revision needed
+Final decision</code></pre>
+<p>For example:</p>
+<pre class="text"><code>2026-07-01 | Research Summary Agent | Summarize three articles | Uploaded PDFs | Evidence summary | TMB | Revise | Add missing limitations | Revised before use</code></pre>
+<p>This kind of record supports accountability.</p>
+<p>It also helps improve the agent over time.</p>
+<hr>
+</section>
+<section id="common-output-failures" class="level2">
+<h2 class="anchored" data-anchor-id="common-output-failures">Common Output Failures</h2>
+<p>Common output failures include:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Failure</th>
+<th>What it looks like</th>
+<th>How to respond</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Format drift</td>
+<td>The output ignores the required structure</td>
+<td>Strengthen the output template</td>
+</tr>
+<tr class="even">
+<td>Overconfidence</td>
+<td>The output sounds certain without evidence</td>
+<td>Require uncertainty and limitations</td>
+</tr>
+<tr class="odd">
+<td>Missing context</td>
+<td>The output does not use supplied materials</td>
+<td>Improve input and context checks</td>
+</tr>
+<tr class="even">
+<td>Hallucinated facts</td>
+<td>The output invents details</td>
+<td>Add source requirements and review</td>
+</tr>
+<tr class="odd">
+<td>Weak audience fit</td>
+<td>The tone or complexity is wrong</td>
+<td>Define audience and style clearly</td>
+</tr>
+<tr class="even">
+<td>Scope creep</td>
+<td>The agent performs tasks outside its role</td>
+<td>Add boundaries and escalation rules</td>
+</tr>
+<tr class="odd">
+<td>No decision trail</td>
+<td>The output gives no review status</td>
+<td>Require Ready / Revise / Reject</td>
+</tr>
+</tbody>
+</table>
+<p>These failures are not only model problems.</p>
+<p>They are system design problems.</p>
+<p>Better standards reduce the chance of repeated failure.</p>
+<hr>
+</section>
+<section id="agent-output-standard-template" class="level2">
+<h2 class="anchored" data-anchor-id="agent-output-standard-template">Agent Output Standard Template</h2>
+<p>The following template can be reused when designing an agent.</p>
+<pre class="text"><code># Agent Output Standard
+
+Agent name:
+Primary task:
+Output type:
+Audience:
+
+Required output structure:
+1.
+2.
+3.
+
+Required evidence or context:
+-
+-
+
+Required limitations section:
+Yes / No
+
+Required assumptions section:
+Yes / No
+
+Review checklist:
+[ ]
+[ ]
+[ ]
+
+Readiness status:
+Ready / Revise / Reject
+
+Escalation rule:
+When should this output require expert or supervisor review?</code></pre>
+<p>This template can be adapted for research, writing, data analysis, learning, career development, or reporting agents.</p>
+<hr>
+</section>
+<section id="cdi-practice-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-practice-pattern">CDI Practice Pattern</h2>
+<p>In the CDI approach, an agent output is not considered complete simply because it was generated.</p>
+<p>It becomes complete only after it passes through human review.</p>
+<pre class="text"><code>Agent produces output
+        ↓
+Output is checked against standards
+        ↓
+Human reviewer accepts, revises, or rejects
+        ↓
+Final output is documented and used responsibly</code></pre>
+<p>This pattern keeps AI work practical and accountable.</p>
+<p>It also keeps the Human–AI–Human model visible.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>Reusable agents need output standards.</p>
+<p>A good output standard defines the expected structure, evidence, tone, limitations, assumptions, and review criteria.</p>
+<p>Human review should be matched to risk.</p>
+<p>Low-risk outputs may need light review.</p>
+<p>Medium-risk outputs need structured review.</p>
+<p>High-risk outputs require expert judgment or should not be delegated to an agent.</p>
+<p>The goal is not to slow down AI use.</p>
+<p>The goal is to make AI-supported work reliable enough to repeat, teach, improve, and share.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter focuses on agent improvement and maintenance.</p>
+<p>Once an agent has a clear purpose, inputs, workflow logic, and output standard, it still needs to be monitored.</p>
+<p>Agents should be revised when tasks change, when outputs drift, when reviewers find recurring errors, or when new standards are needed.</p>
+<p>A reusable agent is therefore not a one-time prompt.</p>
+<p>It is a maintained workflow component.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./12-agent-workflow-and-decision-logic.html" class="pagination-link" aria-label="Agent Workflow and Decision Logic">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Agent Workflow and Decision Logic</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./14-agent-improvement-and-maintenance.html" class="pagination-link" aria-label="Agent Improvement and Maintenance">
+        <span class="nav-page-text"><span class="chapter-title">Agent Improvement and Maintenance</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
