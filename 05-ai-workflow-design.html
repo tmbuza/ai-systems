@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>AI Workflow Design – AI Systems</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./06-context-and-knowledge-systems.html" rel="next">
+<link href="./04-prompting-as-system-design.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<meta name="mermaid-theme" content="forest">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="assets/css/cdi.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html">Part II: AI Systems</a></li><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html"><span class="chapter-title">AI Workflow Design</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI Systems</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">index.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I: AI Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface and Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-ai-system-overview.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI System Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-thinking-with-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Thinking with AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-human-ai-human-framework.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Human–AI–Human Framework</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-prompting-as-system-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Prompting as System Design</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II: AI Systems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-ai-workflow-design.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">AI Workflow Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-context-and-knowledge-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Context and Knowledge Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-ai-output-evaluation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Output Evaluation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-ai-safety-boundaries-and-human-judgment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Safety Boundaries and Human Judgment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-ai-operating-system-for-work.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Operating System for Work</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III: Reusable AI Agent Template</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-agent-purpose-and-scope.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Purpose and Scope</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-agent-inputs-context-and-memory.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Inputs, Context, and Memory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-agent-workflow-and-decision-logic.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Workflow and Decision Logic</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-agent-output-standards-and-review.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Output Standards and Review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-agent-improvement-and-maintenance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Improvement and Maintenance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV: Applied AI Agents</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-research-and-learning-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Research and Learning Agent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-career-and-portfolio-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Career and Portfolio Agent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-data-analysis-support-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Analysis Support Agent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-communication-and-reporting-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Communication and Reporting Agent</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#from-prompting-to-workflow-design" id="toc-from-prompting-to-workflow-design" class="nav-link active" data-scroll-target="#from-prompting-to-workflow-design">From Prompting to Workflow Design</a></li>
+  <li><a href="#why-ai-workflows-matter" id="toc-why-ai-workflows-matter" class="nav-link" data-scroll-target="#why-ai-workflows-matter">Why AI Workflows Matter</a></li>
+  <li><a href="#the-core-ai-workflow-pattern" id="toc-the-core-ai-workflow-pattern" class="nav-link" data-scroll-target="#the-core-ai-workflow-pattern">The Core AI Workflow Pattern</a>
+  <ul class="collapse">
+  <li><a href="#define" id="toc-define" class="nav-link" data-scroll-target="#define">Define</a></li>
+  <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a></li>
+  <li><a href="#generate" id="toc-generate" class="nav-link" data-scroll-target="#generate">Generate</a></li>
+  <li><a href="#evaluate" id="toc-evaluate" class="nav-link" data-scroll-target="#evaluate">Evaluate</a></li>
+  <li><a href="#improve" id="toc-improve" class="nav-link" data-scroll-target="#improve">Improve</a></li>
+  <li><a href="#use" id="toc-use" class="nav-link" data-scroll-target="#use">Use</a></li>
+  <li><a href="#document" id="toc-document" class="nav-link" data-scroll-target="#document">Document</a></li>
+  </ul></li>
+  <li><a href="#workflow-design-as-a-table" id="toc-workflow-design-as-a-table" class="nav-link" data-scroll-target="#workflow-design-as-a-table">Workflow Design as a Table</a></li>
+  <li><a href="#example-weak-ai-use-versus-workflow-based-ai-use" id="toc-example-weak-ai-use-versus-workflow-based-ai-use" class="nav-link" data-scroll-target="#example-weak-ai-use-versus-workflow-based-ai-use">Example: Weak AI Use Versus Workflow-Based AI Use</a></li>
+  <li><a href="#ai-workflow-roles" id="toc-ai-workflow-roles" class="nav-link" data-scroll-target="#ai-workflow-roles">AI Workflow Roles</a></li>
+  <li><a href="#designing-inputs" id="toc-designing-inputs" class="nav-link" data-scroll-target="#designing-inputs">Designing Inputs</a></li>
+  <li><a href="#designing-outputs" id="toc-designing-outputs" class="nav-link" data-scroll-target="#designing-outputs">Designing Outputs</a></li>
+  <li><a href="#evaluation-points-in-a-workflow" id="toc-evaluation-points-in-a-workflow" class="nav-link" data-scroll-target="#evaluation-points-in-a-workflow">Evaluation Points in a Workflow</a></li>
+  <li><a href="#workflow-failure-modes" id="toc-workflow-failure-modes" class="nav-link" data-scroll-target="#workflow-failure-modes">Workflow Failure Modes</a></li>
+  <li><a href="#lightweight-ai-workflow-template" id="toc-lightweight-ai-workflow-template" class="nav-link" data-scroll-target="#lightweight-ai-workflow-template">Lightweight AI Workflow Template</a></li>
+  <li><a href="#example-ai-workflow-for-literature-reading" id="toc-example-ai-workflow-for-literature-reading" class="nav-link" data-scroll-target="#example-ai-workflow-for-literature-reading">Example: AI Workflow for Literature Reading</a></li>
+  <li><a href="#example-ai-workflow-for-data-analysis-support" id="toc-example-ai-workflow-for-data-analysis-support" class="nav-link" data-scroll-target="#example-ai-workflow-for-data-analysis-support">Example: AI Workflow for Data Analysis Support</a></li>
+  <li><a href="#example-ai-workflow-for-communication" id="toc-example-ai-workflow-for-communication" class="nav-link" data-scroll-target="#example-ai-workflow-for-communication">Example: AI Workflow for Communication</a></li>
+  <li><a href="#mermaid-view-of-an-ai-workflow" id="toc-mermaid-view-of-an-ai-workflow" class="nav-link" data-scroll-target="#mermaid-view-of-an-ai-workflow">Mermaid View of an AI Workflow</a></li>
+  <li><a href="#a-practical-checklist" id="toc-a-practical-checklist" class="nav-link" data-scroll-target="#a-practical-checklist">A Practical Checklist</a></li>
+  <li><a href="#connection-to-the-ai-systems-guide" id="toc-connection-to-the-ai-systems-guide" class="nav-link" data-scroll-target="#connection-to-the-ai-systems-guide">Connection to the AI Systems Guide</a></li>
+  <li><a href="#closing-reflection" id="toc-closing-reflection" class="nav-link" data-scroll-target="#closing-reflection">Closing Reflection</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html">Part II: AI Systems</a></li><li class="breadcrumb-item"><a href="./05-ai-workflow-design.html"><span class="chapter-title">AI Workflow Design</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="ai-workflow-design" class="quarto-section-identifier"><span class="chapter-title">AI Workflow Design</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Jul 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cdi-message">
+<ul>
+<li><strong>ID:</strong> AI-005</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> AI work becomes reliable when it is designed as a repeatable workflow, not handled as isolated prompts</li>
+</ul>
+</div>
+<p>AI becomes more useful when it is part of a workflow.</p>
+<p>A single prompt can produce a helpful answer.</p>
+<p>But a workflow can produce a repeatable process.</p>
+<p>That difference matters.</p>
+<p>A prompt asks AI to do something.</p>
+<p>A workflow defines why the task is being done, what information is needed, how the task should proceed, how the output will be checked, and what human decision follows.</p>
+<p>This chapter introduces AI workflow design as the bridge between AI foundations and operational AI systems.</p>
+<hr>
+<section id="from-prompting-to-workflow-design" class="level2">
+<h2 class="anchored" data-anchor-id="from-prompting-to-workflow-design">From Prompting to Workflow Design</h2>
+<p>Prompting is important, but prompting alone is not enough.</p>
+<p>A strong prompt may still fail if the task is poorly framed, the context is incomplete, the expected output is unclear, or the review process is missing.</p>
+<p>AI workflow design asks a broader question:</p>
+<blockquote class="blockquote">
+<p>What repeatable process should guide this AI-supported task from human intention to human decision?</p>
+</blockquote>
+<p>The workflow includes the prompt, but it also includes the surrounding structure.</p>
+<pre class="text"><code>Human goal
+  ↓
+Task definition
+  ↓
+Context package
+  ↓
+AI-assisted step
+  ↓
+Output review
+  ↓
+Revision or escalation
+  ↓
+Human decision
+  ↓
+Documentation</code></pre>
+<p>The prompt sits inside this system.</p>
+<p>It is not the whole system.</p>
+<hr>
+</section>
+<section id="why-ai-workflows-matter" class="level2">
+<h2 class="anchored" data-anchor-id="why-ai-workflows-matter">Why AI Workflows Matter</h2>
+<p>AI tools can make work faster.</p>
+<p>But speed without structure can create new risks.</p>
+<p>A person may accept an answer too quickly.</p>
+<p>A team may reuse an output without checking it.</p>
+<p>A learner may depend on AI without understanding the reasoning.</p>
+<p>A report may include confident claims that are not supported by evidence.</p>
+<p>Workflow design reduces these risks by making the process visible.</p>
+<p>A good AI workflow helps answer questions such as:</p>
+<ul>
+<li>What task are we asking AI to support?</li>
+<li>What information does AI need?</li>
+<li>What should AI not do?</li>
+<li>What output format is expected?</li>
+<li>How will the result be checked?</li>
+<li>Who makes the final decision?</li>
+<li>What should be documented?</li>
+</ul>
+<p>These questions turn AI from a casual assistant into part of a responsible working system.</p>
+<hr>
+</section>
+<section id="the-core-ai-workflow-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-ai-workflow-pattern">The Core AI Workflow Pattern</h2>
+<p>Most AI workflows can begin with a simple pattern.</p>
+<pre class="text"><code>Define
+  ↓
+Prepare
+  ↓
+Generate
+  ↓
+Evaluate
+  ↓
+Improve
+  ↓
+Use
+  ↓
+Document</code></pre>
+<p>Each step has a purpose.</p>
+<section id="define" class="level3">
+<h3 class="anchored" data-anchor-id="define">Define</h3>
+<p>The human defines the task.</p>
+<p>This includes the goal, audience, constraints, and desired outcome.</p>
+<p>A weak definition creates unstable AI output.</p>
+<p>A strong definition gives the AI system direction.</p>
+</section>
+<section id="prepare" class="level3">
+<h3 class="anchored" data-anchor-id="prepare">Prepare</h3>
+<p>The human prepares the context.</p>
+<p>This may include notes, data, documents, code, examples, prior decisions, style requirements, or evaluation criteria.</p>
+<p>AI output improves when the input context is clear and relevant.</p>
+</section>
+<section id="generate" class="level3">
+<h3 class="anchored" data-anchor-id="generate">Generate</h3>
+<p>The AI assists with producing a draft, summary, analysis, plan, code, explanation, comparison, or structured output.</p>
+<p>At this stage, the output should be treated as provisional.</p>
+<p>It is a candidate output, not a final answer.</p>
+</section>
+<section id="evaluate" class="level3">
+<h3 class="anchored" data-anchor-id="evaluate">Evaluate</h3>
+<p>The human evaluates the AI output.</p>
+<p>Evaluation may check accuracy, completeness, clarity, relevance, evidence, tone, safety, privacy, bias, and practical usefulness.</p>
+<p>This is where human responsibility becomes visible.</p>
+</section>
+<section id="improve" class="level3">
+<h3 class="anchored" data-anchor-id="improve">Improve</h3>
+<p>The workflow may require revision.</p>
+<p>The human may ask AI to correct gaps, compare alternatives, simplify language, add citations, restructure the output, or explain uncertainty.</p>
+<p>Improvement is not just editing.</p>
+<p>It is quality control.</p>
+</section>
+<section id="use" class="level3">
+<h3 class="anchored" data-anchor-id="use">Use</h3>
+<p>The human decides how to use the output.</p>
+<p>This may mean publishing, sending, applying, coding, teaching, analyzing, or rejecting the output.</p>
+<p>The decision remains human-led.</p>
+</section>
+<section id="document" class="level3">
+<h3 class="anchored" data-anchor-id="document">Document</h3>
+<p>The workflow records what was done.</p>
+<p>Documentation may include the task goal, source materials, prompt version, model/tool used, review notes, limitations, and final decision.</p>
+<p>Documentation makes the workflow easier to repeat, audit, improve, and teach.</p>
+<hr>
+</section>
+</section>
+<section id="workflow-design-as-a-table" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-design-as-a-table">Workflow Design as a Table</h2>
+<p>A practical AI workflow can be documented using a simple table.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Workflow layer</th>
+<th>Guiding question</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Goal</td>
+<td>What are we trying to accomplish?</td>
+<td>Summarize interview notes into key themes</td>
+</tr>
+<tr class="even">
+<td>Input</td>
+<td>What materials are provided?</td>
+<td>Transcript, research question, coding framework</td>
+</tr>
+<tr class="odd">
+<td>Constraints</td>
+<td>What limits apply?</td>
+<td>Do not invent quotes; preserve participant meaning</td>
+</tr>
+<tr class="even">
+<td>AI task</td>
+<td>What should AI do?</td>
+<td>Group responses into themes and draft a summary</td>
+</tr>
+<tr class="odd">
+<td>Output format</td>
+<td>What should the result look like?</td>
+<td>Table with theme, evidence, and interpretation</td>
+</tr>
+<tr class="even">
+<td>Review</td>
+<td>How will quality be checked?</td>
+<td>Compare against transcript and mark unsupported claims</td>
+</tr>
+<tr class="odd">
+<td>Human decision</td>
+<td>What will the human decide?</td>
+<td>Accept, revise, or reject each theme</td>
+</tr>
+<tr class="even">
+<td>Documentation</td>
+<td>What should be recorded?</td>
+<td>Prompt, source file, review notes, final version</td>
+</tr>
+</tbody>
+</table>
+<p>This table is simple enough for learners and structured enough for professional teams.</p>
+<hr>
+</section>
+<section id="example-weak-ai-use-versus-workflow-based-ai-use" class="level2">
+<h2 class="anchored" data-anchor-id="example-weak-ai-use-versus-workflow-based-ai-use">Example: Weak AI Use Versus Workflow-Based AI Use</h2>
+<p>A weak AI interaction might look like this:</p>
+<pre class="text"><code>Summarize this report.</code></pre>
+<p>That prompt may produce a useful summary.</p>
+<p>But it does not define the audience, purpose, level of detail, evidence expectations, or review process.</p>
+<p>A workflow-based version is stronger:</p>
+<pre class="text"><code>Goal:
+Summarize this report for a non-technical program manager.
+
+Context:
+The manager needs to understand the main findings, risks, and recommended next steps.
+
+Task:
+Create a structured summary with four sections:
+1. Main findings
+2. Supporting evidence
+3. Limitations
+4. Recommended next steps
+
+Constraints:
+Do not add claims that are not supported by the report.
+Use plain language.
+Flag uncertainty clearly.
+
+Review criteria:
+After the summary, list any claims that require human verification.</code></pre>
+<p>The second version is not only a better prompt.</p>
+<p>It is a better workflow.</p>
+<p>It defines the task environment around the AI interaction.</p>
+<hr>
+</section>
+<section id="ai-workflow-roles" class="level2">
+<h2 class="anchored" data-anchor-id="ai-workflow-roles">AI Workflow Roles</h2>
+<p>An AI workflow should clarify the role of both the human and the AI system.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Role</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Human</td>
+<td>Frames the problem, provides context, sets constraints, reviews output, makes decisions</td>
+</tr>
+<tr class="even">
+<td>AI</td>
+<td>Assists with generation, organization, comparison, analysis, drafting, or automation</td>
+</tr>
+<tr class="odd">
+<td>Human reviewer</td>
+<td>Checks quality, risk, evidence, and suitability</td>
+</tr>
+<tr class="even">
+<td>Documentation layer</td>
+<td>Records the process, decisions, limitations, and outputs</td>
+</tr>
+</tbody>
+</table>
+<p>In small projects, one person may play all human roles.</p>
+<p>In team settings, the roles may be separated.</p>
+<p>For example, one person may prepare the context package, another may review the output, and another may approve the final use.</p>
+<hr>
+</section>
+<section id="designing-inputs" class="level2">
+<h2 class="anchored" data-anchor-id="designing-inputs">Designing Inputs</h2>
+<p>An AI workflow is only as strong as its inputs.</p>
+<p>Before asking AI to help, the human should prepare the task materials.</p>
+<p>Useful inputs may include:</p>
+<ul>
+<li>the problem statement,</li>
+<li>the audience,</li>
+<li>background notes,</li>
+<li>source documents,</li>
+<li>data tables,</li>
+<li>code snippets,</li>
+<li>examples of preferred output,</li>
+<li>definitions,</li>
+<li>constraints,</li>
+<li>evaluation criteria,</li>
+<li>and known limitations.</li>
+</ul>
+<p>The goal is not to overload the AI system with information.</p>
+<p>The goal is to provide the right context for the task.</p>
+<p>Good input design reduces ambiguity.</p>
+<hr>
+</section>
+<section id="designing-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="designing-outputs">Designing Outputs</h2>
+<p>AI workflows should also define outputs clearly.</p>
+<p>A vague output request creates inconsistent results.</p>
+<p>A clear output design makes the work easier to review and reuse.</p>
+<p>Useful output specifications include:</p>
+<ul>
+<li>format,</li>
+<li>length,</li>
+<li>tone,</li>
+<li>sections,</li>
+<li>table structure,</li>
+<li>required fields,</li>
+<li>citation expectations,</li>
+<li>uncertainty labels,</li>
+<li>and review notes.</li>
+</ul>
+<p>For example, instead of asking for “ideas,” ask for a structured table:</p>
+<pre class="text"><code>Return a table with the following columns:
+- idea
+- purpose
+- required input
+- expected output
+- risk or limitation
+- human review step</code></pre>
+<p>Structured outputs are easier to compare, revise, document, and convert into downstream work.</p>
+<hr>
+</section>
+<section id="evaluation-points-in-a-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-points-in-a-workflow">Evaluation Points in a Workflow</h2>
+<p>Evaluation should not happen only at the end.</p>
+<p>Strong workflows include review points throughout the process.</p>
+<pre class="text"><code>Before AI use:
+Check that the task is appropriate for AI support.
+
+During AI use:
+Check whether the output follows the task and constraints.
+
+After AI use:
+Check accuracy, evidence, risk, and usefulness.
+
+Before final use:
+Confirm that the human decision is documented.</code></pre>
+<p>This protects the workflow from common problems such as unsupported claims, missing context, overconfident language, privacy risks, and poor fit for the intended audience.</p>
+<hr>
+</section>
+<section id="workflow-failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-failure-modes">Workflow Failure Modes</h2>
+<p>AI workflows can fail in predictable ways.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Failure mode</th>
+<th>What happens</th>
+<th>Prevention</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unclear goal</td>
+<td>Output is broad or unfocused</td>
+<td>Define the task and audience first</td>
+</tr>
+<tr class="even">
+<td>Missing context</td>
+<td>Output is shallow or inaccurate</td>
+<td>Provide relevant source material</td>
+</tr>
+<tr class="odd">
+<td>Weak constraints</td>
+<td>Output ignores important limits</td>
+<td>State boundaries explicitly</td>
+</tr>
+<tr class="even">
+<td>No review step</td>
+<td>Errors pass into final work</td>
+<td>Add human evaluation checkpoints</td>
+</tr>
+<tr class="odd">
+<td>No documentation</td>
+<td>Workflow cannot be repeated</td>
+<td>Save prompts, inputs, outputs, and decisions</td>
+</tr>
+<tr class="even">
+<td>Over-automation</td>
+<td>Humans stop checking the work</td>
+<td>Keep human approval in the loop</td>
+</tr>
+</tbody>
+</table>
+<p>These failure modes are not signs that AI is useless.</p>
+<p>They are signs that the workflow needs better design.</p>
+<hr>
+</section>
+<section id="lightweight-ai-workflow-template" class="level2">
+<h2 class="anchored" data-anchor-id="lightweight-ai-workflow-template">Lightweight AI Workflow Template</h2>
+<p>The following template can be reused for many AI-supported tasks.</p>
+<pre class="text"><code>AI Workflow Template
+
+1. Task name:
+
+2. Human goal:
+
+3. Intended audience:
+
+4. Input materials:
+
+5. Context AI should use:
+
+6. Context AI should not assume:
+
+7. AI task:
+
+8. Required output format:
+
+9. Quality criteria:
+
+10. Risk or sensitivity level:
+
+11. Human review step:
+
+12. Final decision:
+
+13. Documentation notes:</code></pre>
+<p>This template is intentionally simple.</p>
+<p>It can be used by students, researchers, analysts, educators, and teams.</p>
+<p>Later chapters will extend this pattern into context systems, output evaluation, safety boundaries, operating systems, and reusable agent templates.</p>
+<hr>
+</section>
+<section id="example-ai-workflow-for-literature-reading" class="level2">
+<h2 class="anchored" data-anchor-id="example-ai-workflow-for-literature-reading">Example: AI Workflow for Literature Reading</h2>
+<p>A researcher may use AI to support reading a paper.</p>
+<p>A weak workflow would be:</p>
+<pre class="text"><code>Explain this paper.</code></pre>
+<p>A stronger workflow would be:</p>
+<pre class="text"><code>Task name:
+Research paper reading support
+
+Human goal:
+Understand the paper's research question, methods, findings, limitations, and relevance to my project.
+
+Input materials:
+Paper text, abstract, methods section, results section, and my research question.
+
+AI task:
+Summarize the paper using only the provided material.
+
+Required output format:
+Return five sections:
+1. Research question
+2. Data and methods
+3. Main findings
+4. Limitations
+5. Relevance to my project
+
+Quality criteria:
+Do not invent information.
+Separate what the paper says from your interpretation.
+Flag anything that requires human verification.
+
+Human review step:
+Compare the summary with the abstract, methods, and results before using it.</code></pre>
+<p>This workflow makes AI useful without giving it authority over the final interpretation.</p>
+<hr>
+</section>
+<section id="example-ai-workflow-for-data-analysis-support" class="level2">
+<h2 class="anchored" data-anchor-id="example-ai-workflow-for-data-analysis-support">Example: AI Workflow for Data Analysis Support</h2>
+<p>An analyst may use AI to support a coding or analysis task.</p>
+<p>The workflow should protect against hidden errors.</p>
+<pre class="text"><code>Task name:
+Data analysis support
+
+Human goal:
+Write code to clean a small dataset and produce a summary table.
+
+Input materials:
+Column names, sample rows, desired output table, and known data issues.
+
+AI task:
+Suggest code and explain each step.
+
+Required output format:
+Return code first, followed by a short explanation and a list of assumptions.
+
+Quality criteria:
+Code must not overwrite raw data.
+Code must save outputs to a clear results directory.
+Code must include basic checks for missing values and column names.
+
+Human review step:
+Run the code on a copy of the data and inspect outputs before using them.</code></pre>
+<p>The AI may help write code, but the human remains responsible for testing it.</p>
+<hr>
+</section>
+<section id="example-ai-workflow-for-communication" class="level2">
+<h2 class="anchored" data-anchor-id="example-ai-workflow-for-communication">Example: AI Workflow for Communication</h2>
+<p>A professional may use AI to draft a message.</p>
+<p>The workflow should protect tone, accuracy, and relationship context.</p>
+<pre class="text"><code>Task name:
+Professional message drafting
+
+Human goal:
+Write a respectful follow-up message.
+
+Input materials:
+Relationship context, purpose of the message, desired tone, and key points.
+
+AI task:
+Draft a concise message that sounds warm and professional.
+
+Required output format:
+Return one polished version and one shorter version.
+
+Quality criteria:
+Do not overpromise.
+Do not sound demanding.
+Keep the message human and direct.
+
+Human review step:
+Read aloud, adjust personal details, and send only after confirming the meaning.</code></pre>
+<p>AI can support communication, but it should not erase the human voice.</p>
+<hr>
+</section>
+<section id="mermaid-view-of-an-ai-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="mermaid-view-of-an-ai-workflow">Mermaid View of an AI Workflow</h2>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>flowchart TD</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    A[Human goal] --&gt; B[Task definition]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    B --&gt; C[Context package]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    C --&gt; D[Prompt or workflow instruction]</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    D --&gt; E[AI-assisted output]</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    E --&gt; F[Human review]</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    F --&gt; G{Acceptable?}</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    G -- No --&gt; H[Revise prompt, context, or task]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    H --&gt; D</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    G -- Yes --&gt; I[Human decision]</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    I --&gt; J[Documentation]</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    J --&gt; K[Use or share output]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A[Human goal] --&gt; B[Task definition]
+    B --&gt; C[Context package]
+    C --&gt; D[Prompt or workflow instruction]
+    D --&gt; E[AI-assisted output]
+    E --&gt; F[Human review]
+    F --&gt; G{Acceptable?}
+    G -- No --&gt; H[Revise prompt, context, or task]
+    H --&gt; D
+    G -- Yes --&gt; I[Human decision]
+    I --&gt; J[Documentation]
+    J --&gt; K[Use or share output]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>This diagram shows why AI workflow design is not a single-pass activity.</p>
+<p>Review and revision are part of the system.</p>
+<hr>
+</section>
+<section id="a-practical-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="a-practical-checklist">A Practical Checklist</h2>
+<p>Before using AI in a workflow, ask:</p>
+<ul>
+<li>Is the task appropriate for AI support?</li>
+<li>Have I defined the goal and audience?</li>
+<li>Have I provided enough context?</li>
+<li>Have I stated what AI should not assume?</li>
+<li>Have I defined the expected output format?</li>
+<li>Have I included a human review step?</li>
+<li>Have I considered risk, privacy, bias, and safety?</li>
+<li>Have I documented the process well enough to repeat it?</li>
+</ul>
+<p>This checklist is simple, but it changes the quality of AI work.</p>
+<p>It slows the user down just enough to prevent careless automation.</p>
+<hr>
+</section>
+<section id="connection-to-the-ai-systems-guide" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-the-ai-systems-guide">Connection to the AI Systems Guide</h2>
+<p>This chapter begins Part II of the guide.</p>
+<p>Part I introduced the foundations of AI thinking, prompting, and the Human–AI–Human model.</p>
+<p>Part II now turns those ideas into operational workflows.</p>
+<p>The next chapters will examine:</p>
+<pre class="text"><code>AI workflow design
+  ↓
+Context and knowledge systems
+  ↓
+AI output evaluation
+  ↓
+Safety boundaries and human judgment
+  ↓
+AI operating system for work</code></pre>
+<p>Together, these chapters prepare the reader to design reusable AI agents in Part III.</p>
+<hr>
+</section>
+<section id="closing-reflection" class="level2">
+<h2 class="anchored" data-anchor-id="closing-reflection">Closing Reflection</h2>
+<p>AI workflow design is not about making AI more complicated.</p>
+<p>It is about making AI use more responsible.</p>
+<p>A workflow gives structure to the relationship between human intention, AI assistance, human review, and final action.</p>
+<p>When AI is used without a workflow, the user may get speed but lose control.</p>
+<p>When AI is used inside a clear workflow, the user gains support while preserving judgment.</p>
+<p>That is the purpose of AI Systems.</p>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter focuses on context and knowledge systems.</p>
+<p>It explains how to prepare the information AI needs, how to organize reusable context, and how to reduce the risk of shallow or unsupported outputs.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./04-prompting-as-system-design.html" class="pagination-link" aria-label="Prompting as System Design">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Prompting as System Design</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./06-context-and-knowledge-systems.html" class="pagination-link" aria-label="Context and Knowledge Systems">
+        <span class="nav-page-text"><span class="chapter-title">Context and Knowledge Systems</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

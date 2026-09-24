@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Prompting as System Design – AI Systems</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05-ai-workflow-design.html" rel="next">
+<link href="./03-human-ai-human-framework.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="assets/css/cdi.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Part I: AI Foundations</a></li><li class="breadcrumb-item"><a href="./04-prompting-as-system-design.html"><span class="chapter-title">Prompting as System Design</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI Systems</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">index.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I: AI Foundations</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Preface and Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-ai-system-overview.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI System Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-thinking-with-ai.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Thinking with AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-human-ai-human-framework.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Human–AI–Human Framework</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-prompting-as-system-design.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Prompting as System Design</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II: AI Systems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-ai-workflow-design.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Workflow Design</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-context-and-knowledge-systems.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Context and Knowledge Systems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-ai-output-evaluation.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Output Evaluation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-ai-safety-boundaries-and-human-judgment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Safety Boundaries and Human Judgment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-ai-operating-system-for-work.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI Operating System for Work</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III: Reusable AI Agent Template</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-agent-purpose-and-scope.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Purpose and Scope</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-agent-inputs-context-and-memory.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Inputs, Context, and Memory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-agent-workflow-and-decision-logic.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Workflow and Decision Logic</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-agent-output-standards-and-review.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Output Standards and Review</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-agent-improvement-and-maintenance.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Agent Improvement and Maintenance</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV: Applied AI Agents</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-research-and-learning-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Research and Learning Agent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-career-and-portfolio-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Career and Portfolio Agent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-data-analysis-support-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Data Analysis Support Agent</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-communication-and-reporting-agent.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Communication and Reporting Agent</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#from-prompt-tricks-to-prompt-systems" id="toc-from-prompt-tricks-to-prompt-systems" class="nav-link active" data-scroll-target="#from-prompt-tricks-to-prompt-systems">From Prompt Tricks to Prompt Systems</a></li>
+  <li><a href="#the-core-prompt-design-pattern" id="toc-the-core-prompt-design-pattern" class="nav-link" data-scroll-target="#the-core-prompt-design-pattern">The Core Prompt Design Pattern</a></li>
+  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
+  <li><a href="#context" id="toc-context" class="nav-link" data-scroll-target="#context">Context</a></li>
+  <li><a href="#inputs" id="toc-inputs" class="nav-link" data-scroll-target="#inputs">Inputs</a></li>
+  <li><a href="#constraints" id="toc-constraints" class="nav-link" data-scroll-target="#constraints">Constraints</a></li>
+  <li><a href="#output-format" id="toc-output-format" class="nav-link" data-scroll-target="#output-format">Output Format</a></li>
+  <li><a href="#review-criteria" id="toc-review-criteria" class="nav-link" data-scroll-target="#review-criteria">Review Criteria</a></li>
+  <li><a href="#a-reusable-prompt-template" id="toc-a-reusable-prompt-template" class="nav-link" data-scroll-target="#a-reusable-prompt-template">A Reusable Prompt Template</a></li>
+  <li><a href="#example-weak-prompt-vs-system-prompt" id="toc-example-weak-prompt-vs-system-prompt" class="nav-link" data-scroll-target="#example-weak-prompt-vs-system-prompt">Example: Weak Prompt vs System Prompt</a></li>
+  <li><a href="#prompting-as-workflow-design" id="toc-prompting-as-workflow-design" class="nav-link" data-scroll-target="#prompting-as-workflow-design">Prompting as Workflow Design</a></li>
+  <li><a href="#prompt-libraries-and-reuse" id="toc-prompt-libraries-and-reuse" class="nav-link" data-scroll-target="#prompt-libraries-and-reuse">Prompt Libraries and Reuse</a></li>
+  <li><a href="#prompt-versioning" id="toc-prompt-versioning" class="nav-link" data-scroll-target="#prompt-versioning">Prompt Versioning</a></li>
+  <li><a href="#common-prompting-mistakes" id="toc-common-prompting-mistakes" class="nav-link" data-scroll-target="#common-prompting-mistakes">Common Prompting Mistakes</a></li>
+  <li><a href="#human-responsibility-in-prompting" id="toc-human-responsibility-in-prompting" class="nav-link" data-scroll-target="#human-responsibility-in-prompting">Human Responsibility in Prompting</a></li>
+  <li><a href="#cdi-practice-pattern" id="toc-cdi-practice-pattern" class="nav-link" data-scroll-target="#cdi-practice-pattern">CDI Practice Pattern</a></li>
+  <li><a href="#chapter-summary" id="toc-chapter-summary" class="nav-link" data-scroll-target="#chapter-summary">Chapter Summary</a></li>
+  <li><a href="#looking-ahead" id="toc-looking-ahead" class="nav-link" data-scroll-target="#looking-ahead">Looking Ahead</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Part I: AI Foundations</a></li><li class="breadcrumb-item"><a href="./04-prompting-as-system-design.html"><span class="chapter-title">Prompting as System Design</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="prompting-as-system-design" class="quarto-section-identifier"><span class="chapter-title">Prompting as System Design</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Jul 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cdi-message">
+<ul>
+<li><strong>ID:</strong> AI-004</li>
+<li><strong>Type:</strong> System Guide</li>
+<li><strong>Audience:</strong> Learners, analysts, researchers, educators, data scientists, and professionals building responsible AI-enabled workflows</li>
+<li><strong>Theme:</strong> Good prompting is not clever wording; it is structured task design</li>
+</ul>
+</div>
+<p>Prompting is often presented as a trick.</p>
+<p>People search for the perfect phrase, the secret formula, or the best prompt template.</p>
+<p>But in serious AI work, prompting is not mainly about clever wording.</p>
+<p>Prompting is system design.</p>
+<p>A prompt defines what the AI system is being asked to do, what context it should use, what constraints it must respect, what output is expected, and how the human will review the result.</p>
+<p>A weak prompt usually produces a weak workflow.</p>
+<p>A strong prompt makes the work clearer, more inspectable, and easier to evaluate.</p>
+<hr>
+<section id="from-prompt-tricks-to-prompt-systems" class="level2">
+<h2 class="anchored" data-anchor-id="from-prompt-tricks-to-prompt-systems">From Prompt Tricks to Prompt Systems</h2>
+<p>A prompt trick is usually a one-time instruction.</p>
+<p>It may work once.</p>
+<p>It may fail in a different context.</p>
+<p>It may produce a useful answer, but the process is difficult to repeat or explain.</p>
+<p>A prompt system is different.</p>
+<p>It is designed intentionally.</p>
+<p>It includes the task, the role of the AI, the context, the expected output, the review criteria, and the human decision point.</p>
+<pre class="text"><code>Prompt trick
+  ↓
+One-time answer
+  ↓
+Limited repeatability
+
+Prompt system
+  ↓
+Structured task design
+  ↓
+Repeatable, reviewable, human-led workflow</code></pre>
+<p>The goal is not to make the AI sound impressive.</p>
+<p>The goal is to make the work reliable enough to inspect, improve, and reuse.</p>
+<hr>
+</section>
+<section id="the-core-prompt-design-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="the-core-prompt-design-pattern">The Core Prompt Design Pattern</h2>
+<p>A useful AI prompt normally has six parts.</p>
+<pre class="text"><code>Goal
+  ↓
+Context
+  ↓
+Inputs
+  ↓
+Constraints
+  ↓
+Output Format
+  ↓
+Review Criteria</code></pre>
+<p>Each part reduces ambiguity.</p>
+<p>Each part helps the AI understand the task more clearly.</p>
+<p>Each part also helps the human evaluate the result.</p>
+<hr>
+</section>
+<section id="goal" class="level2">
+<h2 class="anchored" data-anchor-id="goal">Goal</h2>
+<p>The goal explains what the AI is being asked to accomplish.</p>
+<p>A vague goal produces vague output.</p>
+<p>A clear goal gives direction.</p>
+<p>Weak goal:</p>
+<pre class="text"><code>Help me with this report.</code></pre>
+<p>Stronger goal:</p>
+<pre class="text"><code>Review this draft report and identify where the interpretation is unclear, where evidence is missing, and where the conclusion may overstate the results.</code></pre>
+<p>The stronger version tells the AI what kind of help is needed.</p>
+<p>It also gives the human a clearer basis for review.</p>
+<hr>
+</section>
+<section id="context" class="level2">
+<h2 class="anchored" data-anchor-id="context">Context</h2>
+<p>Context explains the situation around the task.</p>
+<p>This may include:</p>
+<ul>
+<li>the audience,</li>
+<li>the purpose,</li>
+<li>the level of detail required,</li>
+<li>the domain,</li>
+<li>the stage of the workflow,</li>
+<li>and the intended use of the output.</li>
+</ul>
+<p>Context turns a generic AI answer into a more useful response.</p>
+<p>For example:</p>
+<pre class="text"><code>I am preparing a beginner-friendly lesson for students who are new to data analysis. The goal is to explain model evaluation without using advanced mathematics.</code></pre>
+<p>This context helps the AI choose the right language, examples, and level of explanation.</p>
+<p>Without context, the AI may answer at the wrong level.</p>
+<hr>
+</section>
+<section id="inputs" class="level2">
+<h2 class="anchored" data-anchor-id="inputs">Inputs</h2>
+<p>Inputs are the materials the AI should use.</p>
+<p>They may include:</p>
+<ul>
+<li>notes,</li>
+<li>data tables,</li>
+<li>code,</li>
+<li>draft text,</li>
+<li>rubrics,</li>
+<li>instructions,</li>
+<li>examples,</li>
+<li>references,</li>
+<li>or previous outputs.</li>
+</ul>
+<p>A responsible AI workflow should make the source material clear.</p>
+<pre class="text"><code>Use only the notes below.
+Do not add outside claims.
+Summarize the main points for a non-technical audience.</code></pre>
+<p>This helps reduce unsupported invention.</p>
+<p>It also makes the output easier to audit.</p>
+<hr>
+</section>
+<section id="constraints" class="level2">
+<h2 class="anchored" data-anchor-id="constraints">Constraints</h2>
+<p>Constraints define boundaries.</p>
+<p>They tell the AI what to avoid, what to preserve, and what standards to follow.</p>
+<p>Examples include:</p>
+<ul>
+<li>keep the tone professional,</li>
+<li>avoid unsupported claims,</li>
+<li>do not change technical terms,</li>
+<li>use plain language,</li>
+<li>keep the answer under 300 words,</li>
+<li>separate facts from assumptions,</li>
+<li>cite only the supplied source material,</li>
+<li>flag uncertainty instead of guessing.</li>
+</ul>
+<p>Constraints are not decorations.</p>
+<p>They are quality controls.</p>
+<p>They help align the output with the real needs of the work.</p>
+<hr>
+</section>
+<section id="output-format" class="level2">
+<h2 class="anchored" data-anchor-id="output-format">Output Format</h2>
+<p>Output format tells the AI how the answer should be structured.</p>
+<p>This is especially important when the output will be reused in a report, workflow, checklist, lesson, table, or decision process.</p>
+<p>Examples:</p>
+<pre class="text"><code>Return the answer as a table with three columns: issue, why it matters, and recommended fix.</code></pre>
+<pre class="text"><code>Return a short executive summary followed by bullet points for risks, assumptions, and next steps.</code></pre>
+<pre class="text"><code>Return the revised paragraph only, without extra explanation.</code></pre>
+<p>A clear output format makes AI output easier to use.</p>
+<p>It also reduces time spent cleaning or reorganizing the result.</p>
+<hr>
+</section>
+<section id="review-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="review-criteria">Review Criteria</h2>
+<p>Review criteria explain how the human will judge the output.</p>
+<p>This is one of the most important parts of responsible AI use.</p>
+<p>A prompt should not only ask for output.</p>
+<p>It should also make evaluation possible.</p>
+<pre class="text"><code>After producing the answer, check whether it is accurate, complete, relevant, clear, and appropriately cautious.</code></pre>
+<p>For higher-risk work, the review criteria should be stricter.</p>
+<pre class="text"><code>Flag any claim that would require verification before being used in a public report.
+Separate confirmed information from assumptions.
+Do not present uncertain claims as facts.</code></pre>
+<p>The AI can assist with self-checking, but the final review remains human responsibility.</p>
+<hr>
+</section>
+<section id="a-reusable-prompt-template" class="level2">
+<h2 class="anchored" data-anchor-id="a-reusable-prompt-template">A Reusable Prompt Template</h2>
+<p>A reusable prompt template helps learners move from casual AI use to structured AI practice.</p>
+<pre class="text"><code>Task:
+Describe what you want the AI to do.
+
+Context:
+Explain the audience, purpose, domain, and situation.
+
+Inputs:
+Provide the text, data, code, notes, or materials the AI should use.
+
+Constraints:
+State what the AI must preserve, avoid, or be careful about.
+
+Output format:
+Describe the structure of the expected response.
+
+Review criteria:
+Explain how the output should be checked before use.</code></pre>
+<p>This template can be adapted to many workflows.</p>
+<p>It can support writing, analysis, coding, lesson design, research synthesis, communication, and planning.</p>
+<hr>
+</section>
+<section id="example-weak-prompt-vs-system-prompt" class="level2">
+<h2 class="anchored" data-anchor-id="example-weak-prompt-vs-system-prompt">Example: Weak Prompt vs System Prompt</h2>
+<p>Weak prompt:</p>
+<pre class="text"><code>Summarize this article.</code></pre>
+<p>System-style prompt:</p>
+<pre class="text"><code>Task:
+Summarize the article below.
+
+Context:
+The summary is for learners who are new to AI systems and need a plain-language explanation.
+
+Inputs:
+Use only the article text provided below.
+
+Constraints:
+Do not add claims that are not in the article. Flag any point that seems unclear or unsupported.
+
+Output format:
+Return five short bullet points, followed by one sentence explaining why the article matters.
+
+Review criteria:
+Check that the summary is accurate, beginner-friendly, and does not overstate the article.</code></pre>
+<p>The second prompt is longer, but it is not longer for the sake of length.</p>
+<p>It is more structured.</p>
+<p>It gives the AI a clearer job and gives the human a clearer review path.</p>
+<hr>
+</section>
+<section id="prompting-as-workflow-design" class="level2">
+<h2 class="anchored" data-anchor-id="prompting-as-workflow-design">Prompting as Workflow Design</h2>
+<p>In an AI system, prompting is not isolated from the rest of the workflow.</p>
+<p>It connects to problem framing, context design, knowledge grounding, evaluation, documentation, and human decision-making.</p>
+<pre class="text"><code>Problem framing
+  ↓
+Prompt design
+  ↓
+AI output
+  ↓
+Evaluation
+  ↓
+Human decision
+  ↓
+Documentation</code></pre>
+<p>This means a prompt should be designed with the end of the workflow in mind.</p>
+<p>Before writing the prompt, ask:</p>
+<ul>
+<li>What decision will this output support?</li>
+<li>Who will use the output?</li>
+<li>What evidence does the AI need?</li>
+<li>What risks must be checked?</li>
+<li>What format will make the result useful?</li>
+<li>What must the human verify before acting?</li>
+</ul>
+<p>Prompting becomes stronger when it is connected to the full system.</p>
+<hr>
+</section>
+<section id="prompt-libraries-and-reuse" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-libraries-and-reuse">Prompt Libraries and Reuse</h2>
+<p>A mature AI workflow does not depend on memory or improvisation every time.</p>
+<p>It can use prompt libraries.</p>
+<p>A prompt library is a collection of reusable prompts that have been tested, improved, and documented.</p>
+<p>Each prompt can include:</p>
+<pre class="text"><code>Prompt name
+Purpose
+Best use case
+Required inputs
+Output format
+Review checklist
+Known limitations
+Version or update date</code></pre>
+<p>Prompt libraries are useful because they make AI-supported work more consistent.</p>
+<p>They also help teams teach, review, and improve their workflows over time.</p>
+<hr>
+</section>
+<section id="prompt-versioning" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-versioning">Prompt Versioning</h2>
+<p>Prompts change.</p>
+<p>A prompt may be improved after a weak output.</p>
+<p>A new constraint may be added after a risk is discovered.</p>
+<p>A better output format may be developed after repeated use.</p>
+<p>For important workflows, prompts should be versioned.</p>
+<pre class="text"><code>prompt-name: literature-summary
+version: 0.1
+purpose: summarize supplied research notes for beginner learners
+last-updated: 2026-07
+review-status: draft</code></pre>
+<p>Versioning does not need to be complicated.</p>
+<p>The important point is that prompt changes should be visible when the workflow matters.</p>
+<hr>
+</section>
+<section id="common-prompting-mistakes" class="level2">
+<h2 class="anchored" data-anchor-id="common-prompting-mistakes">Common Prompting Mistakes</h2>
+<p>Many AI problems begin before the AI produces an answer.</p>
+<p>They begin in the prompt.</p>
+<p>Common mistakes include:</p>
+<ul>
+<li>asking a vague question,</li>
+<li>providing no audience or purpose,</li>
+<li>mixing too many tasks in one prompt,</li>
+<li>failing to provide source material,</li>
+<li>asking for certainty where uncertainty exists,</li>
+<li>requesting polished output before checking accuracy,</li>
+<li>not specifying the output format,</li>
+<li>and using the output without human review.</li>
+</ul>
+<p>These mistakes do not mean AI is useless.</p>
+<p>They mean the workflow needs better design.</p>
+<hr>
+</section>
+<section id="human-responsibility-in-prompting" class="level2">
+<h2 class="anchored" data-anchor-id="human-responsibility-in-prompting">Human Responsibility in Prompting</h2>
+<p>A prompt does not transfer responsibility to the AI.</p>
+<p>The human remains responsible for the task definition, the context, the decision, and the final use of the output.</p>
+<p>AI can assist.</p>
+<p>AI can accelerate.</p>
+<p>AI can suggest.</p>
+<p>AI can organize.</p>
+<p>AI can review.</p>
+<p>But the human must decide whether the output is appropriate, accurate, ethical, and ready to use.</p>
+<p>This is especially important in education, health, law, finance, research, employment, public communication, and any workflow where people may be affected by the result.</p>
+<hr>
+</section>
+<section id="cdi-practice-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-practice-pattern">CDI Practice Pattern</h2>
+<p>In Complex Data Insights workflows, a prompt should usually answer five questions:</p>
+<pre class="text"><code>What is the task?
+What context matters?
+What evidence should be used?
+What output is expected?
+How will the result be reviewed?</code></pre>
+<p>This pattern keeps prompting connected to system thinking.</p>
+<p>It also prepares the learner for later chapters on workflow design, context systems, output evaluation, agent templates, and applied AI agents.</p>
+<hr>
+</section>
+<section id="chapter-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-summary">Chapter Summary</h2>
+<p>Prompting is not only a communication skill.</p>
+<p>It is a system design skill.</p>
+<p>A strong prompt defines the goal, context, inputs, constraints, output format, and review criteria.</p>
+<p>This makes AI-supported work easier to evaluate, repeat, teach, and improve.</p>
+<p>The best prompts do not remove human judgment.</p>
+<p>They make human judgment easier to apply.</p>
+<hr>
+</section>
+<section id="looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="looking-ahead">Looking Ahead</h2>
+<p>The next chapter moves from prompting to full AI workflow design.</p>
+<p>We will examine how AI tasks can be organized into repeatable workflows that include inputs, steps, outputs, review points, and documentation.</p>
+<p>This begins Part II of the guide: <strong>AI Systems</strong>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03-human-ai-human-framework.html" class="pagination-link" aria-label="Human--AI--Human Framework">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Human–AI–Human Framework</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05-ai-workflow-design.html" class="pagination-link" aria-label="AI Workflow Design">
+        <span class="nav-page-text"><span class="chapter-title">AI Workflow Design</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
